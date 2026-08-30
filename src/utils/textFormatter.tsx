@@ -59,9 +59,13 @@ function splitReadableBlocks(text: string, mode: TextMode, preserveLineBreaks: b
 
     const blocks: string[] = [];
     let current = '';
-    for (const line of lines) {
+    const longestLine = Math.max(...lines.map(line => stripInlineMarkers(line).length), 1);
+    for (let lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
+      const line = lines[lineIndex];
+      const previousLine = lineIndex > 0 ? lines[lineIndex - 1] : '';
       const startsStructuredItem = isStructuredItem(line)
-        || (mode === 'statement' && current.length > 0 && startsEmphasizedInstruction(line));
+        || (mode === 'statement' && current.length > 0 && startsEmphasizedInstruction(line))
+        || (mode === 'reading' && current.length > 0 && startsReadingParagraph(line, previousLine, longestLine));
 
       if (startsStructuredItem && current) {
         blocks.push(current);
@@ -75,9 +79,24 @@ function splitReadableBlocks(text: string, mode: TextMode, preserveLineBreaks: b
   }).filter(Boolean);
 }
 
+function startsReadingParagraph(line: string, previousLine: string, longestLine: number): boolean {
+  const plainLine = stripInlineMarkers(line);
+  const plainPrevious = stripInlineMarkers(previousLine);
+  if (/^[—–-]\s+/.test(plainLine)) return true;
+  if (!/[.!?…][”"')\]]?$/.test(plainPrevious)) return false;
+  if (!/^[A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ]/.test(plainLine)) return false;
+  // A short final line followed by a new capitalized sentence is the most
+  // reliable paragraph signal left by these PDFs after text extraction.
+  return plainPrevious.length <= longestLine * 0.74;
+}
+
+function stripInlineMarkers(text: string): string {
+  return text.replace(/\*\*|<\/?u>|<\/?(?:b|strong)>/g, '');
+}
+
 function isStructuredItem(line: string): boolean {
-  // Bullets, numbered relations, Roman items, and C/E sequences.
-  return /^(?:[•●▪◦]|\(?[IVX]{1,4}\)?\s*[-–—:.]|\d{1,2}\s*[-–—.)]|[A-E]\s*[).:-]|\(\s*\)\s*)/i.test(line);
+  // Bullets, numbered relations/paragraphs, Roman items, and C/E sequences.
+  return /^(?:[•●▪◦]|\(?[IVX]{1,4}\)?\s*[-–—:.]|\d{1,2}\s*(?:[-–—.)]|[§º°])|[A-E]\s*[).:-]|\(\s*\)\s*)/i.test(line);
 }
 
 function startsEmphasizedInstruction(line: string): boolean {

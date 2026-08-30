@@ -713,28 +713,28 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "O que pude oferecer sem mácula foi meu choro por beleza ou cansaço (Adélia Prado)",
+        "text": "O que pude oferecer sem mácula foi meu chfifloro por beleza ou cansaço (Adélia Prado)",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "O céu bordado d'estrelas, A terra de aromas cheia (Casimiro de Abreu)",
+        "text": "O céu bordado d'estrelas, A te**rr**a de aromas cheia (Casimiro de Abreu)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Tomara Que você volte depressa Que você não se despeça (Vinícius de Moraes)",
+        "text": "Tomara Que você volte depre**ss**a Que você não se despeça (Vinícius de Moraes)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Ou isto ou aquilo: ou isto ou aquilo… e vivo escolhendo o dia inteiro! (Cecília Meireles)",
+        "text": "Ou isto ou aquilo: ou isto ou aquilo… e vivo e**sc**olhendo o dia inteiro! (Cecília Meireles)",
         "correct": false
       }
     ],
     "correctLetter": "A",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "“O histórico da produção de lã no Brasil e no mundo: Total produzido em 2019 é mais de 80%\nmenor que os recordes históricos da década de 1970. Rio Grande do Sul concentra cerca de 90%\ndo rebanho de ovinos tos**qu**iado”"
+    "readingText": "“O histórico da produção de lã no Brasil e no mundo: Total produzido em 2019 é mais de 80%\nmenor que os recordes históricos da década de 1970. Rio Grande do Sul concentra cerca de 90%\ndo rebanho de ovinos tosquiado”"
   },
   {
     "id": "fonetica-pdf_1_fonetica-q21",
@@ -747,27 +747,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "O filme era muito sanguento.",
+        "text": "O filme era muito <u>sanguento.</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Comprei tinta para pintar o cabelo.",
+        "text": "Comprei <u>tinta</u> para pintar o cabelo.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "A entrada do prédio estava fechada.",
+        "text": "A <u>entrada</u> do prédio estava fechada.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "A agulha estava enferrujada.",
+        "text": "A <u>agulha</u> estava enferrujada.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "A denúncia foi aceita com sucesso.",
+        "text": "A <u>denúncia</u> foi aceita com sucesso. ",
         "correct": false
       }
     ],
@@ -785,27 +785,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Ele segurou o corrimão para não cair.",
+        "text": "Ele segurou o <u>corrimão</u> para não cair.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "O passeio com o filho foi muito proveitoso.",
+        "text": "O <u>passeio</u> com o filho foi muito proveitoso.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Estava muito quente naquela manhã.",
+        "text": "Estava muito <u>quente</u> naquela manhã.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Havia uma sombra em seus olhos.",
+        "text": "Havia uma <u>sombra</u> em seus olhos.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "Vinho tinto costuma ser uma bebida boa.",
+        "text": "<u>Vinho</u> tinto costuma ser uma bebida boa. ",
         "correct": false
       }
     ],
@@ -861,27 +861,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Foi um encontro muito fortuito o nosso.",
+        "text": "Foi um encontro muito <u>fortuito</u> o nosso.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "O evento seria gratuito para estudantes.",
+        "text": "O evento seria <u>gratuito</u> para estudantes.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Eu morria de ciúme do meu namorado.",
+        "text": "Eu morria de <u>ciúme</u> do meu namorado.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Ele averiguou tudo com muito cuidado.",
+        "text": "Ele <u>averiguou</u> tudo com muito cuidado.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Tinha só um radiouvinte fiel ao seu programa.",
+        "text": "Tinha só um <u>radiouvinte</u> fiel ao seu programa. ",
         "correct": false
       }
     ],
@@ -899,27 +899,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Sua flor favorita era a orquídea.",
+        "text": "Sua flor favorita era a fifl<u>orquídea.</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Viajamos para o Paraguai nas férias.",
+        "text": "Viajamos para o <u>Paraguai</u> nas férias.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Havia algo de poético naquela situação.",
+        "text": "Havia algo de <u>poético</u> naquela situação.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Eles não se propõe a serem mais gentis.",
+        "text": "Eles não se <u>propõe</u> a serem mais gentis.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Ele praticava esportes aquáticos.",
+        "text": "Ele praticava esportes <u>aquáticos.</u>",
         "correct": false
       }
     ],
@@ -937,27 +937,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Esperarei no saguão do hotel até a meia-noite.",
+        "text": "Esperarei no <u>saguão</u> do hotel até a meia-noite.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Você é minha pessoa favorita no mundo.",
+        "text": "Você é minha <u>pessoa</u> favorita no mundo.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Não se deve reagir a nenhum assalto.",
+        "text": "Não se deve <u>reagir</u> a nenhum assalto.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "O político corrupto não conseguiu ser reeleito.",
+        "text": "O político corrupto não conseguiu ser <u>reeleito.</u>",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "Quaisquer outras dúvidas, encaminhe para mim.",
+        "text": "<u>Quaisquer</u> outras dúvidas, encaminhe para mim. ",
         "correct": false
       }
     ],
@@ -975,27 +975,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "A múmia era a grande atração do museu.",
+        "text": "A <u>múmia</u> era a grande atração do museu.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "O parafuso da cadeira estava frouxo.",
+        "text": "O parafuso da cadeira estava <u>frouxo.</u>",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Eu nunca gostei de comer peixe.",
+        "text": "Eu nunca gostei de comer <u>peixe.</u>",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Você pode comprar sabão no mercado?",
+        "text": "Você pode comprar <u>sabão</u> no mercado?",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Eu fiquei muito feliz que você voltou.",
+        "text": "Eu fiquei <u>muito</u> feliz que você voltou. ",
         "correct": false
       }
     ],
@@ -1051,27 +1051,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Não deixarei meu futuro na mão de outrem.",
+        "text": "Não deixarei meu futuro na mão de <u>outrem.</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "A ginasta bateu o recorde olímpico.",
+        "text": "A ginasta bateu o <u>recorde</u> olímpico.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Ela disse que achava o filme ruim.",
+        "text": "Ela disse que achava o filme <u>ruim.</u>",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Isso não passa de um desvario seu.",
+        "text": "Isso não passa de um <u>desvario</u> seu.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "O professor era considerado um filantropo.",
+        "text": "O professor era considerado um <u>filantropo.</u>",
         "correct": false
       }
     ],
@@ -1127,27 +1127,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Aquilo não parecia possível.",
+        "text": "<u>Aquilo</u> não parecia possível.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "A novela terminará na semana seguinte.",
+        "text": "A novela terminará na semana <u>seguinte.</u>",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Ele resolveu o problema de improviso.",
+        "text": "Ele resolveu o problema de <u>improviso.</u>",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Os professores falam muito rápido.",
+        "text": "Os professores <u>falam</u> muito rápido.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Será que alguém pode me ajudar?",
+        "text": "Será que <u>alguém</u> pode me ajudar? ",
         "correct": false
       }
     ],
@@ -1237,7 +1237,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_1_fonetica",
     "listTitle": "Fonética e Fonologia (Aprofundamento Militar)",
     "questionNumber": 34,
-    "statement": "Em “Graças à margem de manobra conferida pela chegada tardia da pandemia, muitos Governos\nforam rápidos na adoção de medidas que buscavam evitar o colapso de suas redes hospitalares.”,\nas palavras sublinhadas apresentam, respectivamente,",
+    "statement": "Em “Graças à <u>margem</u> de manobra conferida pela chegada tardia da <u>pandemia,</u> muitos Governos\nforam rápidos na adoção de medidas que buscavam evitar o <u>colapso</u> de suas redes hospitalares.”,\nas palavras sublinhadas apresentam, respectivamente,",
     "options": [
       {
         "letter": "A",
@@ -1460,16 +1460,16 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_1_fonetica",
     "listTitle": "Fonética e Fonologia (Aprofundamento Militar)",
     "questionNumber": 40,
-    "statement": "A letra destacada na palavra “próximo” possui o mesmo fonema que a letra destacada em:",
+    "statement": "A letra destacada na palavra “pró**x**imo” possui o mesmo fonema que a letra destacada em:",
     "options": [
       {
         "letter": "A",
-        "text": "precisam",
+        "text": "preci**s**am",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "baixo",
+        "text": "bai**x**o",
         "correct": false
       },
       {
@@ -1479,12 +1479,12 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "D",
-        "text": "precarizados",
+        "text": "precari**z**ados",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "exemplo",
+        "text": "e**x**emplo",
         "correct": false
       }
     ],
@@ -1595,7 +1595,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "As operárias concorreram ao chamado da abelha **rainha**."
+    "readingText": "As operárias concorreram ao chamado da abelha <u>rainha.</u>"
   },
   {
     "id": "fonetica-pdf_1_fonetica-q44",
@@ -1608,28 +1608,28 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Tem tantas belezas, tantas,/ A minha terra natal,/ Que nem as sonha um poeta/ E nem as canta um mortal!” (Casimiro de Abreu)",
+        "text": "“Tem tantas belezas, tantas,/ A minha te**rr**a natal,/ Que nem as sonha um poeta/ E nem as canta um mortal!” (Casimiro de Abreu)",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "A garota olhava com convicção para o pai a informar-lhe, desse modo, que não desistia de seu pedido.",
+        "text": "A garota olhava com convi**cç**ão para o pai a informar-lhe, desse modo, que não desistia de seu pedido.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Ocupado como sempre estava com os obséquios, o rei demorava a resposta (...).” (José Saramago)",
+        "text": "“Ocupado como sempre estava com os o**bs**équios, o rei demorava a resposta (...).” (José Saramago)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Em êxtase, as cerejeiras oferecem aos olhos o espetáculo de uma florada.",
+        "text": "Em ê**xt**ase, as cerejeiras oferecem aos olhos o espetáculo de uma florada.",
         "correct": false
       }
     ],
     "correctLetter": "A",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "O homem deixou a sala cabisbaixo, envergonhado, e**xs**udado, como se sobre ele houvesse um sol\nde 40 graus."
+    "readingText": "O homem deixou a sala cabisbaixo, envergonhado, exsudado, como se sobre ele houvesse um sol\nde 40 graus."
   },
   {
     "id": "fonetica-pdf_1_fonetica-q45",
@@ -1638,7 +1638,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_1_fonetica",
     "listTitle": "Fonética e Fonologia (Aprofundamento Militar)",
     "questionNumber": 45,
-    "statement": "Assinale a alternativa que traz a regra ortográfica pertinente ao termo em destaque no seguinte\ntrecho: O som da sanfona e os **mexidos** dos corpos a dançar nem de longe davam sinal de\ncansaço.",
+    "statement": "Assinale a alternativa que traz a regra ortográfica pertinente ao termo em destaque no seguinte\ntrecho: O som da sanfona e os mexidos dos corpos a dançar nem de longe davam sinal de\ncansaço.",
     "options": [
       {
         "letter": "A",
@@ -1657,7 +1657,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "D",
-        "text": "A letra x determina a homonímia com mexido(s) (particípio passado).",
+        "text": "A letra x determina a homonímia com **mexido(s) (particípio passado).** ",
         "correct": false
       }
     ],
@@ -2308,22 +2308,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "gratuito – crisantemo",
+        "text": "gratuito – <u>crisantemo</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "fluido – interim",
+        "text": "fluido – <u>interim</u>",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "latex – rubrica",
+        "text": "<u>latex</u> – rubrica",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Nobel – condor",
+        "text": "<u>Nobel</u> – <u>condor</u> ",
         "correct": true
       }
     ],
@@ -2371,26 +2371,26 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_1_fonetica",
     "listTitle": "Fonética e Fonologia (Aprofundamento Militar)",
     "questionNumber": 66,
-    "statement": "Observe as palavras destacadas. Em seguida, assinale a alternativa em que a regra de acentuação\nnão foi obedecida.",
+    "statement": "Observe as palavras destacadas. Em seguida, assinale a alternativa em que a regra de acentuação\n**não** foi obedecida.",
     "options": [
       {
         "letter": "A",
-        "text": "Qualquer instrumento usado para medição de árvores, especialmente aquele que determina o volume do tronco a partir de sua altura e diâmetro, é chamado de dendômetro.",
+        "text": "Qualquer instrumento usado para medição de árvores, especialmente aquele que determina o volume do tronco a partir de sua altura e diâmetro, é chamado de **dendômetro**.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "O gueledé é uma máscara de madeira em forma de rosto humano estilizado, usado em algumas cerimônias de culto aos mortos.",
+        "text": "O **gueledé** é uma máscara de madeira em forma de rosto humano estilizado, usado em algumas cerimônias de culto aos mortos.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Aquilo que não se pode esconder ou dissimular pode ser caracterizado como inocultavel.",
+        "text": "Aquilo que não se pode esconder ou dissimular pode ser caracterizado como **inocultavel**.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Piraquém é uma variedade de coco.",
+        "text": "**Piraquém é uma variedade de coco.** ",
         "correct": false
       }
     ],
@@ -2429,7 +2429,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "I. O Presidente Obama acredita que haverá gastos vultuosíssimos para o próximo ano.\nII. Havia na despensa muitos alimentos que estavam com o prazo de validade vencido.\nIII. O eminente Senador declarou-se a favor da greve dos militares em Minas Gerais.\nIV. Os deputados, sem exceção, desfrutam de muitos privilégios."
+    "readingText": "I. O Presidente Obama acredita que haverá gastos **vultuosíssimos** para o próximo ano.\nII. Havia na **despensa** muitos alimentos que estavam com o prazo de validade vencido.\nIII. O **eminente** Senador declarou-se a favor da greve dos militares em Minas Gerais.\nIV. Os deputados, sem exceção, desfrutam de muitos **privilégios**."
   },
   {
     "id": "fonetica-pdf_1_fonetica-q68",
@@ -2463,7 +2463,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Observe:\nfr**e-a**r: contém hiato\np**ou**-co: contém ditongo oral decrescente"
+    "readingText": "Observe:\nfre-ar: contém hiato\npou-co: contém ditongo oral decrescente"
   },
   {
     "id": "fonetica-pdf_1_fonetica-q69",
@@ -2597,7 +2597,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "I - Os bandidos fizeram doze reféns.\nII - Chequei todos os tréns de pouso.\nIII - Guardava-se soja nos armazéns."
+    "readingText": "I - Os bandidos fizeram doze **reféns**.\nII - Chequei todos os **tréns** de pouso.\nIII - Guardava-se soja nos **armazéns**."
   },
   {
     "id": "fonetica-pdf_1_fonetica-q73",
@@ -2665,7 +2665,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Fui à Janela indagar da noite por que razão os sonhos hão de ser assim tão tênues que se\nesgarçam ao menor abrir de olhos. Nesse momento os morros palejavam de luar e o espaço\nmorria de silêncio."
+    "readingText": "Fui à Janela indagar da **noite** por que razão os sonhos hão de ser assim tão **tênues** que se\nesgarçam ao menor abrir de olhos. Nesse momento os morros palejavam de **luar** e o espaço\nmorria de silêncio."
   },
   {
     "id": "fonetica-pdf_1_fonetica-q75",
@@ -2860,7 +2860,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "D",
-        "text": "deságuam",
+        "text": "deságuam ",
         "correct": true
       }
     ],
@@ -2977,7 +2977,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "E",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Recado pro bolsinho da camisa\nLourenço Diaféria\nNão sei como você se chama, garoto, mas te vi um dia atravessando o viaduto de concreto.\nCaía chuvisco.\nTeus cabelos estavam ensopados e a camisa de brim grudada no teu corpo magro e ágil como\nflecha disparada pelo arco do trabalho.\nVocê corria saltando no reflexo do asfalto molhado, como bolinha de gude rolada na infância.\nNão deu tempo para perguntar teu nome. Tuas pernas finas tinham pressa. Você carregava a\nmaleta de mão com fecho cromado, e dentro dela havia o peso da responsabilidade de papéis\nsérios e urgentes, que deveriam chegar a um ponto qualquer da Cidade, antes que se fechassem\nos guichês e portarias.\nOutra vez te vi, garoto.\nFazia então um sol redondo e cheio pendurado no travessão do espaço.\nOutra vez, teus cabelos úmidos de suor, a camisa de brim manchada, as calças rústicas mostrando\na marca da barra que tua mãe soltou de noite, fio por fio, com um sorriso e um orgulho:\n— O moleque está crescendo!\nNão sei como você se chama, garoto.\nTe conheço de vista escalando os edifícios, alpinista de elevadores, abridor de picadas na\nmultidão, ponta de lança rompedor nesta briga de foice que são as ruas da Cidade.\nGaroto que cresce sob o sol e chuva carregando na maleta cheques, duplicatas, títulos, recibos,\ncartas, telegramas, tutu, bufunfa, grana e um retrato da menina que te espera na lanchonete.\nTeu nome é: — gente.\nInventaram outro nome enrolado para dizer que você é garoto do batente.\nOffice-boy.\nGuri que finta banco, escritório, repartição, fila, balcão, pedido de certidão, imposto a pagar, taxa\nde conservação, título no protesto e que mata no peito e baixa no terreno quando encontra os\nolhos da garota da caixa, que pergunta de modo muito legal:\n—Tem dois cruzeiros trocados?\nMoleque valente que acorda cedo, engole café com pão, fala tchau mesmo, vai pro ponto do\nônibus ou estação, se pendura na condução, se vira mais que pião, tem sua turma, conta\nvantagem, lê jornal na banca, esquenta a marmita, discute a seleção, e depois do almoço bebe um\nrefrigerante gelado e pede uma esfirra com limão.\nE depois toca de novo a zunir pela Cidade, conhecido em tudo que é esquina, oi daqui, oi dali, até\nque a tarde chega e o garoto sai correndo de volta pra casa, vestir o guarda-pó, apanhar a\nesferográfica, enfiar os cadernos na sacola e enfrentar a escola, o sono, a voz do professor, o\nquadro-negro, a equação de duas incógnitas, depois de ter passado o dia inteiro gastando sola.\nGuri, teu nome é: — gente.\nMenino de escritório, menino do batente, que agarra o trabalho com unhas e dentes, sem você a\nCidade amanheceria paralisada como bicho enorme ao qual houvessem cortado as pernas.\nPois bem: este recado não é para ser entregue a ninguém, a não ser a você mesmo.\nSe quiser, guarde-o no bolsinho da camisa.\nUm dia, quando você estiver completamente crescido, quando tiver bigodes, telefones, papéis\nimportantes para preencher, alguns cabelos brancos; e sua mãe não precisar (ou não puder mais)\ndesmanchar a barra de suas calças que ficaram curtas; quando você tiver de dar ordens de serviço\na outros garotos da Cidade, saberá que, para chegar a qualquer lugar, o segredo é não desistir no\nmeio do caminho.\nMas não se esqueça nunca de que as oportunidades não apenas se recebem ou se conquistam.\nAs oportunidades também devem ser oferecidas para que as pessoas pequenas saibam que seu\nnome é: — gente.\nNo futebol da vida, garoto, a parada é dura e a bola, dividida. Jogue o jogo mais limpo que você\ntiver. Jogue sério.\nNão afrouxe se o passe recebido parecer longo demais.\nOs mais bonitos gols da vida são marcados pelos que acreditam na força de seu pique.\nPonha esse recado no bolsinho da camisa, guri.\nUm dia você descobrirá que a vida nem sempre é a conquista da taça.\nA vida é participar do campeonato.\nVai nela, garotão!\n(Antologia da crônica brasileira — de Machado de Assis a Lourenço Diaféria. São Paulo: Moderna,\n2005. p. 196-9.)\nFonte: Livro- Português: Linguagem, 3/ William Roberto Cereja, Thereza Cochar Magalhães, 11.ed\n— São Paulo: Saraiva, 2016. p.35-7.\nAnalise os fragmentos abaixo:\nI- “[...] mas te vi um dia atravessando o viaduto de concreto.”\nII - “Caía chuvisco.”\nIII-“[...] a camisa de brim grudada no teu corpo magro e ágil [...]”"
+    "readingText": "Recado pro bolsinho da camisa\nLourenço Diaféria\nNão sei como você se chama, garoto, mas te vi um dia atravessando o viaduto de concreto.\nCaía chuvisco.\nTeus cabelos estavam ensopados e a camisa de brim grudada no teu corpo magro e ágil como\nflecha disparada pelo arco do trabalho.\nVocê corria saltando no reflexo do asfalto molhado, como bolinha de gude rolada na infância.\nNão deu tempo para perguntar teu nome. Tuas pernas finas tinham pressa. Você carregava a\nmaleta de mão com fecho cromado, e dentro dela havia o peso da responsabilidade de papéis\nsérios e urgentes, que deveriam chegar a um ponto qualquer da Cidade, antes que se fechassem\nos guichês e portarias.\nOutra vez te vi, garoto.\nFazia então um sol redondo e cheio pendurado no travessão do espaço.\nOutra vez, teus cabelos úmidos de suor, a camisa de brim manchada, as calças rústicas mostrando\na marca da barra que tua mãe soltou de noite, fio por fio, com um sorriso e um orgulho:\n— O moleque está crescendo!\nNão sei como você se chama, garoto.\nTe conheço de vista escalando os edifícios, alpinista de elevadores, abridor de picadas na\nmultidão, ponta de lança rompedor nesta briga de foice que são as ruas da Cidade.\nGaroto que cresce sob o sol e chuva carregando na maleta cheques, duplicatas, títulos, recibos,\ncartas, telegramas, tutu, bufunfa, grana e um retrato da menina que te espera na lanchonete.\nTeu nome é: — gente.\nInventaram outro nome enrolado para dizer que você é garoto do batente.\nOffice-boy.\nGuri que finta banco, escritório, repartição, fila, balcão, pedido de certidão, imposto a pagar, taxa\nde conservação, título no protesto e que mata no peito e baixa no terreno quando encontra os\nolhos da garota da caixa, que pergunta de modo muito legal:\n—Tem dois cruzeiros trocados?\nMoleque valente que acorda cedo, engole café com pão, fala tchau mesmo, vai pro ponto do\nônibus ou estação, se pendura na condução, se vira mais que pião, tem sua turma, conta\nvantagem, lê jornal na banca, esquenta a marmita, discute a seleção, e depois do almoço bebe um\nrefrigerante gelado e pede uma esfirra com limão.\nE depois toca de novo a zunir pela Cidade, conhecido em tudo que é esquina, oi daqui, oi dali, até\nque a tarde chega e o garoto sai correndo de volta pra casa, vestir o guarda-pó, apanhar a\nesferográfica, enfiar os cadernos na sacola e enfrentar a escola, o sono, a voz do professor, o\nquadro-negro, a equação de duas incógnitas, depois de ter passado o dia inteiro gastando sola.\nGuri, teu nome é: — gente.\nMenino de escritório, menino do batente, que agarra o trabalho com unhas e dentes, sem você a\nCidade amanheceria paralisada como bicho enorme ao qual houvessem cortado as pernas.\nPois bem: este recado não é para ser entregue a ninguém, a não ser a você mesmo.\nSe quiser, guarde-o no bolsinho da camisa.\nUm dia, quando você estiver completamente crescido, quando tiver bigodes, telefones, papéis\nimportantes para preencher, alguns cabelos brancos; e sua mãe não precisar (ou não puder mais)\ndesmanchar a barra de suas calças que ficaram curtas; quando você tiver de dar ordens de serviço\na outros garotos da Cidade, saberá que, para chegar a qualquer lugar, o segredo é não desistir no\nmeio do caminho.\nMas não se esqueça nunca de que as oportunidades não apenas se recebem ou se conquistam.\nAs oportunidades também devem ser oferecidas para que as pessoas pequenas saibam que seu\nnome é: — gente.\nNo futebol da vida, garoto, a parada é dura e a bola, dividida. Jogue o jogo mais limpo que você\ntiver. Jogue sério.\nNão afrouxe se o passe recebido parecer longo demais.\nOs mais bonitos gols da vida são marcados pelos que acreditam na força de seu pique.\nPonha esse recado no bolsinho da camisa, guri.\nUm dia você descobrirá que a vida nem sempre é a conquista da taça.\nA vida é participar do campeonato.\nVai nela, garotão!\n(Antologia da crônica brasileira — de Machado de Assis a Lourenço Diaféria. São Paulo: Moderna,\n2005. p. 196-9.)\nFonte: Livro- Português: Linguagem, 3/ William Roberto Cereja, Thereza Cochar Magalhães, 11.ed\n— São Paulo: Saraiva, 2016. p.35-7.\nAnalise os fragmentos abaixo:\nI- “[...] mas te vi um dia atravessando o <u>viaduto</u> de concreto.”\nII - <u>“Caía</u> chuvisco.”\nIII-“[...] a camisa de brim grudada no teu corpo magro e <u>ágil</u> [...]”"
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q3",
@@ -3016,7 +3016,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Texto 2\nA LIBERDADE DE LER\nGabriel Perissé\nHá quem afirme a necessidade de lermos um livro de cada vez, de cabo a rabo, nunca, jamais\npulando páginas, e muito menos desistindo da leitura. Mais uma obrigatoriedade! Conheci\ninúmeros seguidores dessa lei que, empolgados marinheiros de primeira viagem, embarcaram num\nOs Buddenbrooks, de Thomas Mann, ou num A cidadela, de Saint-Exupéry, ou num Grande\nsertão: veredas, de Guimarães Rosa, ou num O jogo da amarelinha, de Júlio Cortázar, e trinta\npáginas depois já estavam encalhados para sempre, sem ânimo de ir em frente e sem coragem de\nabandonar o navio.\nNão é necessário levar uma leitura até o fim, embora se trate de clássico consagrado, ou até por\nisso mesmo, uma vez que os clássicos não são mero jornal (ler os clássicos é ler uma espécie de\njornal complexo e instigante), e mais vale ler e entender duas linhas de Dom Quixote a ler todas as\nnotícias de um ano sobre política ou economia. Também podemos pular as páginas do livro que\nfor, quantas quisermos, e ler o final do romance assim que se começar, enfim: liberdade.\nNinguém precisa ficar compromissado com um único livro. Podemos ler simultaneamente dois,\ntrês livros, com objetivos diferentes, em diferentes momentos do dia: ler uma biografia no ônibus,\npela manhã, prosseguir um pouco mais num livro de ensaios filosóficos após o almoço, e ir\ntraçando um romance em algum momento da noite.\nLer é uma arte, e, como toda arte, requer de seu artista sábia flexibilidade, capacidade de utilizar\nos meios de acordo com a finalidade primordial a ser alcançada. Leio para crescer, viver melhor,\nme ampliar, me expandir, me superar, me realizar.\nTal crescimento não exclui o esforço, constante, obstinado, até mesmo heroico, de concluir uma\nleitura exigente, para não dizer desagradável, mas que tenho consciência de ser basilar para minha\nformação, ou fundamental para realizar um trabalho acadêmico, realizar alguma tarefa, ou mesmo\nde participar de um concurso, de um vestibular com suas leituras obrigatórias. Ao contrário de um\nobstáculo paralisante, certos livros são desafio necessário para a continuidade de nosso\ndesenvolvimento como leitores, desafio do qual fugir seria realmente retroceder.\nAbrir mão de muitos livros (ou nem sequer conhecê-los...) faz parte de nossa vida de leitores, e ao\nmesmo tempo ter sempre à mão, trazer sempre para perto de nós um livro (ou mais de um) que de\nfato nos motive a pensar, a imaginar, a sentir, a desejar (a desejar utopias!), a pôr em ação nossa\ninterioridade. Um livro que nos acompanhe na sala de espera do dentista, na rodoviária, na estação\ndo metrô, no aeroporto... Livro que emprestaremos para alguém, livro que promoveremos como\npudermos, livro que fará parte de nossa biografia. O essencial é encontrá-lo e incorporá-lo à nossa\nvida.\nA arte de ler gera, com o tempo, uma segunda natureza, Ao nosso “eu” acrescentam-se e\nmesclam-se contribuições vivas de outras cabeças e outros corações. Assimilando e digerindo\nessas contribuições, estaremos nos autoeducando em vista de um aperfeiçoamento que, por sua\nvez, se refletirá em nossas ações, e, dentre elas, em tudo aquilo que dissermos e escrevermos.\nNa biblioteca particular de Guimarães Rosa, encontrou-se, conforme nos conta Suzi Frankl Sperber\nem seu livro Caos e cosmos, um exemplar de Devoirs, escrito pelo pensador francês Antoine D.\nSertillanges, com vários trechos sublinhados pelo escritor mineiro. Eis um deles: “O ser que\nrecebemos ao nascer não é definitivo; é embrionário, plástico”. Ora, lendo Grande sertão: veredas,\nvamos deparar com esta mesma ideia, ficcionalizada, retraduzida, reformulada: “Mire veja: o mais\nimportante e bonito, do mundo, é isto: que as pessoas não estão sempre iguais, ainda não foram\nterminadas - mas que elas vão sempre mudando. Afinam ou desafinam. Verdade maior.”\nA leitura daquele livro influenciou o autor mineiro de tal modo que uma das passagens que o\nimpressionou, e foi por ele grifada a fim de poder reencontrá-la e nela meditar, tornou-se conatural\nao escritor e aflorou espontaneamente (ou talvez nem tanto...) quando produzia seu próprio texto.\nO mesmo acontece conosco. Lendo, estamos apostando na construção de nós mesmos e, por\nconseguinte, também em nossa expressão verbal e escrita. Quem quiser melhorar seus textos\nprecisará humanizar-se, tornar mais lúcida sua visão de mundo, trabalhar a fonte daquilo que\nescreve - sua própria interioridade.\nPERISSE, Gabriel. Ler, pensar e escrever. São Paulo: Saraiva, 2011 (Texto adaptado)\nAnalise os trechos abaixo.\n“Tal crescimento não exclui o esforço, constante, obstinado, até mesmo heroico, de concluir uma\nleitura exigente, para não dizer desagradável [...]'(\n\n5º§)\n“Ora, lendo Grande sertão: veredas, vamos deparar com esta mesma ideia, ficcionalizada,\nretraduzida, reformulada: [...]'(\n\n8º§)"
+    "readingText": "Texto 2\nA LIBERDADE DE LER\nGabriel Perissé\nHá quem afirme a necessidade de lermos um livro de cada vez, de cabo a rabo, nunca, jamais\npulando páginas, e muito menos desistindo da leitura. Mais uma obrigatoriedade! Conheci\ninúmeros seguidores dessa lei que, empolgados marinheiros de primeira viagem, embarcaram num\nOs Buddenbrooks, de Thomas Mann, ou num A cidadela, de Saint-Exupéry, ou num Grande\nsertão: veredas, de Guimarães Rosa, ou num O jogo da amarelinha, de Júlio Cortázar, e trinta\npáginas depois já estavam encalhados para sempre, sem ânimo de ir em frente e sem coragem de\nabandonar o navio.\nNão é necessário levar uma leitura até o fim, embora se trate de clássico consagrado, ou até por\nisso mesmo, uma vez que os clássicos não são mero jornal (ler os clássicos é ler uma espécie de\njornal complexo e instigante), e mais vale ler e entender duas linhas de Dom Quixote a ler todas as\nnotícias de um ano sobre política ou economia. Também podemos pular as páginas do livro que\nfor, quantas quisermos, e ler o final do romance assim que se começar, enfim: liberdade.\nNinguém precisa ficar compromissado com um único livro. Podemos ler simultaneamente dois,\ntrês livros, com objetivos diferentes, em diferentes momentos do dia: ler uma biografia no ônibus,\npela manhã, prosseguir um pouco mais num livro de ensaios filosóficos após o almoço, e ir\ntraçando um romance em algum momento da noite.\nLer é uma arte, e, como toda arte, requer de seu artista sábia flexibilidade, capacidade de utilizar\nos meios de acordo com a finalidade primordial a ser alcançada. Leio para crescer, viver melhor,\nme ampliar, me expandir, me superar, me realizar.\nTal crescimento não exclui o esforço, constante, obstinado, até mesmo heroico, de concluir uma\nleitura exigente, para não dizer desagradável, mas que tenho consciência de ser basilar para minha\nformação, ou fundamental para realizar um trabalho acadêmico, realizar alguma tarefa, ou mesmo\nde participar de um concurso, de um vestibular com suas leituras obrigatórias. Ao contrário de um\nobstáculo paralisante, certos livros são desafio necessário para a continuidade de nosso\ndesenvolvimento como leitores, desafio do qual fugir seria realmente retroceder.\nAbrir mão de muitos livros (ou nem sequer conhecê-los...) faz parte de nossa vida de leitores, e ao\nmesmo tempo ter sempre à mão, trazer sempre para perto de nós um livro (ou mais de um) que de\nfato nos motive a pensar, a imaginar, a sentir, a desejar (a desejar utopias!), a pôr em ação nossa\ninterioridade. Um livro que nos acompanhe na sala de espera do dentista, na rodoviária, na estação\ndo metrô, no aeroporto... Livro que emprestaremos para alguém, livro que promoveremos como\npudermos, livro que fará parte de nossa biografia. O essencial é encontrá-lo e incorporá-lo à nossa\nvida.\nA arte de ler gera, com o tempo, uma segunda natureza, Ao nosso “eu” acrescentam-se e\nmesclam-se contribuições vivas de outras cabeças e outros corações. Assimilando e digerindo\nessas contribuições, estaremos nos autoeducando em vista de um aperfeiçoamento que, por sua\nvez, se refletirá em nossas ações, e, dentre elas, em tudo aquilo que dissermos e escrevermos.\nNa biblioteca particular de Guimarães Rosa, encontrou-se, conforme nos conta Suzi Frankl Sperber\nem seu livro Caos e cosmos, um exemplar de Devoirs, escrito pelo pensador francês Antoine D.\nSertillanges, com vários trechos sublinhados pelo escritor mineiro. Eis um deles: “O ser que\nrecebemos ao nascer não é definitivo; é embrionário, plástico”. Ora, lendo Grande sertão: veredas,\nvamos deparar com esta mesma <u>ideia,</u> ficcionalizada, retraduzida, reformulada: “Mire veja: o mais\nimportante e bonito, do mundo, é isto: que as pessoas não estão sempre iguais, ainda não foram\nterminadas - mas que elas vão sempre mudando. Afinam ou desafinam. Verdade maior.”\nA leitura daquele livro influenciou o autor mineiro de tal modo que uma das passagens que o\nimpressionou, e foi por ele grifada a fim de poder reencontrá-la e nela meditar, tornou-se conatural\nao escritor e aflorou espontaneamente (ou talvez nem tanto...) quando produzia seu próprio texto.\nO mesmo acontece conosco. Lendo, estamos apostando na construção de nós mesmos e, por\nconseguinte, também em nossa expressão verbal e escrita. Quem quiser melhorar seus textos\nprecisará humanizar-se, tornar mais lúcida sua visão de mundo, trabalhar a fonte daquilo que\nescreve - sua própria interioridade.\nPERISSE, Gabriel. Ler, pensar e escrever. São Paulo: Saraiva, 2011 (Texto adaptado)\nAnalise os trechos abaixo.\n“Tal crescimento não exclui o esforço, constante, obstinado, até mesmo <u>heroico,</u> de concluir uma\nleitura exigente, para não dizer desagradável [...]'(\n\n5º§)\n“Ora, lendo Grande sertão: veredas, vamos deparar com esta mesma <u>ideia,</u> ficcionalizada,\nretraduzida, reformulada: [...]'(\n\n8º§)"
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q4",
@@ -3137,7 +3137,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 7,
-    "statement": "Indique a alternativa em que se apresenta a mesma regra de acentuação da palavra destacada em\n\"Meias são peúgas.\"",
+    "statement": "Indique a alternativa em que se apresenta a mesma regra de acentuação da palavra destacada em\n\"Meias são <u>peúgas.\"</u>",
     "options": [
       {
         "letter": "A",
@@ -3315,7 +3315,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "O Capitalismo e a Sociedade de Consumo\nA sociedade de consumo situa-se em uma perspectiva econômica que vem apresentando sinais\nde esgotamento, o que avoluma o número de críticas.\nA sociedade atual encontra-se em um estágio altamente consumista\nA sociedade de consumo é um termo bastante utilizado para representar os avanços de\nprodução do sistema capitalista, que se intensificaram ao longo do século XX notadamente nos\nEstados Unidos e que, posteriormente, espalharam-se – e ainda vem se espalhando – pelo mundo.\nNesse sentido, o desenvolvimento econômico e social é pautado pelo aumento do consumo, que\nresulta em lucro ao comércio e às grandes empresas, gerando mais empregos, aumentando a\nrenda, o que acarreta ainda mais consumo. Uma ruptura nesse modelo representaria uma crise,\npois a renda diminuiria, o desemprego elevar-se-ia e o acesso a elementos básicos seria mais\ndificultado.\nUma das grandes críticas ao sistema capitalista é a emergência desse modelo. Suas raízes estão\nvinculadas ao processo de Revolução Industrial, mas foi a emergência do American Way Of Life\n(jeito americano de viver) em 1910, nos Estados Unidos, que intensificou essa problemática. A\nconsequência foi uma crise de superprodução das fábricas, que ficaram com grandes estoques de\nprodutos sem um mercado consumidor capaz de absorvê-los, gerando a crise de 1929. Na época,\npara combater os efeitos da crise, o governo desenvolveu formas de intervir na economia e\nprovocar o seu aquecimento em um plano chamado New Deal (Novo Acordo).\nConsequentemente, para que as fábricas continuassem produzindo em massa e os produtos\ndifundissem-se, foram estabelecidos modelos de desenvolvimento pautados na melhoria de renda\ne no crédito facilitado com o objetivo de ampliar ainda mais o consumo. Com isso, a crise\neconômica do século XX teve fim, mas uma problemática ainda maior se estabeleceu, pois o\nconsumo pelo consumo é uma maneira contraditória e ineficaz de manter o desenvolvimento das\nsociedades. Tal dinâmica não se modificou mesmo com a retomada do modelo neoliberal a partir\nda década de 1970 em todo o mundo.\nAs críticas sobre a sociedade de consumo direcionam-se não apenas pela perspectiva econômica,\nmas também pelo viés ambiental. Afinal, um dos efeitos do consumismo é a ampliação da\nexploração dos recursos naturais para a geração de matérias-primas voltadas à fabricação de mais\ne mais mercadorias. Estimativas apontam que seriam necessários quatro planetas e meio para\ngarantir os recursos naturais para a humanidade caso todos os países mantivessem o mesmo nível\nde consumo dos EUA.\nCom isso, há a devastação das florestas e o esgotamento até mesmo dos recursos renováveis, tais\ncomo a água própria para o consumo, as florestas e o solo. Além disso, os recursos não renováveis\nvão contando os dias para a escassez completa, tais como as reservas de petróleo e de diversos\nminérios utilizados para a fabricação dos mais diferentes produtos utilizados pela sociedade.\nUm dos aspectos mais criticados no que se refere à sociedade de consumo é a obsolescência\nprogramada – ou obsolescência planejada –, que consiste na produção de mercadorias\npreviamente elaboradas para serem rapidamente descartadas, fazendo com que o consumidor\ncompre um novo produto em breve. Assim, aumenta-se o consumo, mas também aumenta a\ndemanda por recursos naturais e maximiza a produção de lixo, elevando ainda mais a problemática\nambiental decorrente desse processo.\nA intensiva geração de lixo é um dos principais problemas da sociedade de consumo atual.\nCom isso, além da adoção de políticas sociais de controle ao consumismo exagerado, é preciso\nencontrar meios econômicos alternativos ao desenvolvimento pautado no consumo. Não\nobstante, faz-se necessária também a promoção de políticas de reciclagem, além da reutilização\nou reaproveitamento dos produtos não mais utilizados, contendo, assim, a geração de lixo e a\ndemanda desenfreada por matérias-primas.\nAcesso em 09/2022. Disponível em https://mundoeducacao.uol.com.br/geografia/o-capitalismo-\nsociedade-consumo.htm"
+    "readingText": "O Capitalismo e a Sociedade de Consumo\nA sociedade de consumo situa-se em uma perspectiva econômica que vem apresentando sinais\nde esgotamento, o que avoluma o número de críticas.\nA sociedade atual encontra-se em um estágio altamente consumista\nA sociedade de consumo é um termo bastante utilizado para representar os avanços de\nprodução do sistema capitalista, que se intensificaram ao longo do século XX notadamente nos\nEstados Unidos e que, posteriormente, espalharam-se – e ainda vem se espalhando – pelo mundo.\nNesse sentido, o desenvolvimento econômico e social é pautado pelo aumento do consumo, que\nresulta em lucro ao comércio e às grandes empresas, gerando mais empregos, aumentando a\nrenda, o que acarreta ainda mais consumo. Uma ruptura nesse modelo representaria uma crise,\npois a renda diminuiria, o desemprego elevar-se-ia e o acesso a elementos básicos seria mais\ndificultado.\nUma das grandes críticas ao sistema capitalista é a emergência desse modelo. Suas raízes estão\nvinculadas ao processo de Revolução Industrial, mas foi a emergência do <u>American Way Of Life</u>\n(jeito americano de viver) em 1910, nos Estados Unidos, que intensificou essa problemática. A\nconsequência foi uma crise de superprodução das fábricas, que ficaram com grandes estoques de\nprodutos sem um mercado consumidor capaz de absorvê-los, gerando a <u>crise de 1929.</u> Na época,\npara combater os efeitos da crise, o governo desenvolveu formas de intervir na economia e\nprovocar o seu aquecimento em um plano chamado New Deal (Novo Acordo).\nConsequentemente, para que as fábricas continuassem produzindo em massa e os produtos\ndifundissem-se, foram estabelecidos modelos de desenvolvimento pautados na melhoria de renda\ne no crédito facilitado com o objetivo de ampliar ainda mais o consumo. Com isso, a crise\neconômica do século XX teve fim, mas uma problemática ainda maior se estabeleceu, pois o\nconsumo pelo consumo é uma maneira contraditória e ineficaz de manter o desenvolvimento das\nsociedades. Tal dinâmica não se modificou mesmo com a retomada do modelo neoliberal a partir\nda década de 1970 em todo o mundo.\nAs críticas sobre a sociedade de consumo direcionam-se não apenas pela perspectiva econômica,\nmas também pelo viés ambiental. Afinal, um dos efeitos do consumismo é a ampliação da\nexploração dos recursos naturais para a geração de matérias-primas voltadas à fabricação de mais\ne mais mercadorias. Estimativas apontam que seriam necessários quatro planetas e meio para\ngarantir os recursos naturais para a humanidade caso todos os países mantivessem o mesmo nível\nde consumo dos EUA.\nCom isso, há a devastação das florestas e o esgotamento até mesmo dos recursos renováveis, tais\ncomo a água própria para o consumo, as florestas e o solo. Além disso, os recursos não renováveis\nvão contando os dias para a escassez completa, tais como as reservas de petróleo e de diversos\nminérios utilizados para a fabricação dos mais diferentes produtos utilizados pela sociedade.\nUm dos aspectos mais criticados no que se refere à sociedade de consumo é a obsolescência\nprogramada – ou obsolescência planejada –, que consiste na produção de mercadorias\npreviamente elaboradas para serem rapidamente descartadas, fazendo com que o consumidor\ncompre um novo produto em breve. Assim, aumenta-se o consumo, mas também aumenta a\ndemanda por recursos naturais e maximiza a produção de lixo, elevando ainda mais a problemática\nambiental decorrente desse processo.\nA intensiva geração de lixo é um dos principais problemas da sociedade de consumo atual.\nCom isso, além da adoção de políticas sociais de controle ao consumismo exagerado, é preciso\nencontrar meios econômicos alternativos ao desenvolvimento pautado no consumo. Não\nobstante, faz-se necessária também a promoção de políticas de reciclagem, além da reutilização\nou reaproveitamento dos produtos não mais utilizados, contendo, assim, a geração de lixo e a\ndemanda desenfreada por matérias-primas.\nAcesso em 09/2022. Disponível em https://mundoeducacao.uol.com.br/geografia/o-capitalismo-\nsociedade-consumo.htm"
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q12",
@@ -3354,7 +3354,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Quando a comida sai do lixo\nA culinária do lixo\nCerca de três mil pessoas do Distrito Federal alimentam-se do que é jogado fora nos contêineres\ndos supermercados e nas lixeiras das casas. Quem revira os restos sente vergonha da atividade e\nse diz cansado de pedir comidas.\n“Faltam 15 minutos para as quatro da tarde e só agora será servido o almoço na casa da\npernambucana Maria Zélia da Silva, 44 anos. Faz silêncio no local. O único barulho que se ouve é o\nchoro de Luciano Alves, 7 anos. Caçula de seis irmãos, a criança chora porque não aguenta mais\nesperar pela refeição.\nAs panelas acabaram de sair do fogão e a comida está quente. Na mesa, há carne cozida, feijão e\narroz. Salada de repolho, cenoura e couve-flor, além de frutas, como manga, mamão e banana.\nComo sobremesa será servido iogurte de morango. O cardápio seria saudável, se não fosse um\nporém: os ingredientes servidos na casa de Zélia não foram comprados na feira nem no\nsupermercado. Saíram todos de três contêineres de lixo, do Guará e do Cruzeiro.\nNo Distrito Federal, pelo menos três mil pessoas comem alimentos do lixo. O levantamento é do\nengenheiro florestal Benício de Melo Filho. Ele defendeu uma tese de mestrado na Universidade\nde Brasília (UnB), no ano passado, sobre o valor econômico e social daquilo que se joga fora.\nBenício não direcionou seu trabalho para a questão dos alimentos, mas ressalta que as pessoas\nque vivem do lixo se alimentam na mesma fonte. ‘Os catadores levam todo tipo de comida para\ncasa. Carne, queijo, refrigerante, frutas e legumes. Nada é desperdiçado’, descreve em seu\ntrabalho.\nMaria Zélia veio do município de Petrolândia (PE) para o DF no ano passado com toda a família.\nBuscava emprego. Não conseguiu vaga nem de diarista em casa de família e optou por sair pelas\nruas remexendo lixo. ‘A gente cata papelão para vender. Mas não tem como sobreviver disso. Para\nmeus filhos não passarem fome, comecei a pegar alimentos do lixo’, conta. De cabeça baixa, Zélia\nassume que sente vergonha de revirar o lixo em busca de comida. ‘Na minha terra, pobre não faz\nisso. Já pensou se meus parentes lá em Pernambuco ficam sabendo que eu vim pra Brasília comer\nlixo?’”\nFonte: Ulisses Campbell – CorreioWeb, Correiro Braziliense – 24 de fevereiro de 2002"
+    "readingText": "Quando a comida sai do lixo\nA culinária do lixo\nCerca de três mil pessoas do Distrito Federal alimentam-se do que é jogado fora nos contêineres\ndos supermercados e nas lixeiras das casas. Quem revira os restos sente vergonha da atividade e\nse diz cansado de pedir comidas.\n“Faltam 15 minutos para as quatro da tarde e só agora será servido o almoço na casa da\npernambucana Maria Zélia da Silva, 44 anos. Faz silêncio no local. O único barulho que se ouve é o\nchoro de Luciano Alves, 7 anos. Caçula de seis irmãos, a criança chora porque não aguenta mais\nesperar pela refeição.\nAs panelas acabaram de sair do fogão e a comida está quente. Na mesa, há carne cozida, feijão e\narroz. Salada de repolho, cenoura e couve-flor, além de frutas, como manga, mamão e banana.\nComo sobremesa será servido iogurte de morango. O cardápio seria saudável, se não fosse um\nporém: os ingredientes servidos na casa de Zélia não foram comprados na feira nem no\nsupermercado. Saíram todos de três contêineres de lixo, do Guará e do Cruzeiro.\nNo Distrito Federal, pelo menos três mil pessoas comem alimentos do lixo. O levantamento é do\nengenheiro florestal <u>Benício de Melo Filho.</u> Ele defendeu uma tese de mestrado na Universidade\nde Brasília (UnB), no ano passado, sobre o valor econômico e social daquilo que se joga fora.\nBenício não direcionou seu trabalho para a questão dos alimentos, mas ressalta que as pessoas\nque vivem do lixo se alimentam na mesma fonte. ‘Os catadores levam todo tipo de comida para\ncasa. Carne, queijo, refrigerante, frutas e legumes. Nada é desperdiçado’, descreve em seu\ntrabalho.\nMaria Zélia veio do município de Petrolândia (PE) para o DF no ano passado com toda a família.\nBuscava emprego. Não conseguiu vaga nem de diarista em casa de família e optou por sair pelas\nruas remexendo lixo. ‘A gente cata papelão para vender. Mas não tem como sobreviver disso. Para\nmeus filhos não passarem fome, comecei a pegar alimentos do lixo’, conta. De cabeça baixa, Zélia\nassume que sente vergonha de revirar o lixo em busca de comida. ‘Na minha terra, pobre não faz\nisso. Já pensou se meus parentes lá em Pernambuco ficam sabendo que eu vim pra Brasília comer\nlixo?’”\nFonte: Ulisses Campbell – CorreioWeb, Correiro Braziliense – 24 de fevereiro de 2002"
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q13",
@@ -3441,7 +3441,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 15,
-    "statement": "Assinale a opção na qual a palavra foi acentuada pelo mesmo motivo da destacada em “...como\num dos maiores feitos políticos de 2015 foi a circulação de uma mera foto, a foto do menino sírio\nmorto em um naufrágio no Mar Mediterrâneo.”",
+    "statement": "Assinale a opção na qual a palavra foi acentuada pelo mesmo motivo da destacada em “...como\num dos maiores feitos políticos de 2015 foi a circulação de uma mera foto, a foto do menino <u>sírio</u>\nmorto em um naufrágio no Mar Mediterrâneo.”",
     "options": [
       {
         "letter": "A",
@@ -3547,7 +3547,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "SER AUTOR\nEscrever é difícil? Parece que sim, a julgar pelo que ouço de pessoas muito diversas, até mesmo\nde escritores. Imagine para os pobres mortais! E, sobretudo, acrescentaria, numa sociedade que se\njulga eé julgada por não saber, em geral, escrever. Até mestrandos e doutorandos, vejam só,\nrecorrem a colegas, selecionados da área de Letras, que supõem “saber português”, para uma boa\nrevisto do que rascunharam em seus trabalhos acadêmicos.\nNo meu tempo de docência universitária, ouvia, frequentemente, alunos comentarem que\nconcluiriam o curso sem saberem escrever, que o português era difícil, com muitas regras e\nexceções! Tomava fôlego, quando este comentário era feito em sala de aula e, como quem não\nquer nada, indagava informalmente a um aluno: Por que você acha que não sabe português e que\nnossa(!) língua é difícil? Resposta invariável: Não domino bem estas classificações gramaticais e\ntenho também meus vacilos quanto ao uso da norma culta! Veja a gramática do inglês! Bem mais\nsimples, não? Então, você escreve bem textos em inglês? É, mais ou menos…\nRespiro fundo. Me lembro Iogo do Mário Quintana em situação semelhante: “Um dia de espantos,\nhoje. Conversando com uma rapariga em flor, estudante, queixa-se ela da dificuldade da língua\nportuguesa, espanto-me: Mas como pode ser difícil uma língua em que você está falando comigo\nhá dez minutos com toda a facilidade? Ela ficou espantada.”\nMeus espantos eram frequentes... Ainda são! A escola, embora queiram alguns tampar o sol com a\npeneira, estimula a cultura do erro, contribuindo muito, e desde cedo, para perpetuar esta\navaliação de que a língua é difícil, de que escrever “um texto correto” então nem se fala! Basta\numa concordância, uma regência, “as sintaxes de exceção”...\nPassava para os meus alunos testemunhos de alguns escritores, valorizados como tais, o de Rachel\nde Queiroz, por exemplo: Se eu dependesse, afirmava, para escrever, do domínio dos nomes tão\ncomplicados presentes no ensino da língua (ela se divertia), eu não poderia ser escritora. Como é\nmesmo? Oração reduzida de gerúndio? Sujeito inexistente? Substantivo epiceno?, caçoava. E ela,\nacrescento, mesmo pela fala da narradora, nem sempre se vale da língua bem comportada.\nEscrever, na verdade, ainda que adotado certinho o português que é ensinado, exige bem mais da\ngente: o conhecimento do real, a ordenação das ideias, o domínio do gênero textual, a intenção\ncomunicativa... Muitos outros conhecimentos, enfim! A vivência dos bancos escolares prossegue\natuante pela vida afora, qual uma corrente. Nos tornamos adultos, com curso superior, e carentes\nainda de um professor, por perto, para nos corrigir! Não dá para entender, dá? Só os escritores (e,\natualmente, nem todos, nem todos...) e os que se arvoram em conhecedores da língua escapam de\numa avaliação severa. Eta língua é difícil! Eta sociedade que fica então a afrontar o uso da língua\nlegitimado pelas autor(idades)!\nComo ficar seguro de se assumir como autor, na escola e na vida, com tanto isto não pode, isto\ndeve ser evitado, isto afronta as leis da língua, isto é de emprego não referendado pelos escritores\n(quais, na verdade?), isto, tenham paciência, é lá português? Perguntinha tola que me fica\nincomodando (gosto de me complicar - neurose? - com indagações perturbadoras): que língua\nfalam todos os brasileiros (e são tantos!) sem escolaridade?\nFui a uma boa papelaria comprar um cartão para escrever a uma amiga, que aniversariava. Em\nminha procura, fui me dando conta de que eu só selecionava cartões com ilustrações de gosto\nduvidoso para mim: em geral, multicoloridas, florezinhas que estressavam o cartão, com variedade\nnas partes externa e interna deles, borboletas estilizadas então, em quase todos... E as mensagens?\nSem erros gramaticais, diga-se logo! Mas que mensagens tolas, com palavras ou expressões mais\nque gastas, ou, ao contrário, meio solenes, com a pretensão, talvez, de darem ao texto certo sabor\nliterário. Estas mensagens pouco variavam. Pudera!, eram impessoais. Onde o autor?\nSempre considerei que a vida, asseguradas certas igualdades, está na diferença. Uma palavra\ndiferente pode nos proporcionar uma esperança nova. Indaguei a um funcionário da papelaria se\nnão havia cartão, desses duplos, sem mensagem, e que a ilustração, caso existente, fosse sóbria\n(empreguei outra palavra, mais corrente, na ocasião). Não tinha, me respondeu. Coube, então, ao\natendente me perguntar: Por que quer escrever a mensagem? Que trabalho! Já estão prontas em\ntodos estes cartões daquil\nCapitulei. A sociedade, de modo geral, quer mesmo textos prontos e quase iguais. Reflexo mais\nevidente de gente que não está habituada a pensar, que acha que não pode ser autora nem de\numa frasezinha (para que se expor assim à avaliação de um professor por ai?). Pego um destes\ncartões: “os primeiros raios de sol”, “iluminem seu coração”, “fazer seus pensamentos brilharem\"...\nPositivamente não imagino uma criança ou um jovem como autor destas expressões. Para um\nadulto ser o destinatário, iriam pensar, iriam sim!, que ele as copiou justamente de um cartão\ndestes, que já gozam de certa tradição, não se pode enganar!\nNo fundo mesmo, continuidade de uma rotina escolar antiga, em que o estudante, raramente, se\nsente autor do que escreve. Ouvi ou li outro dia o comentário pertinente que na escola se faz\nmuita redação, mas se escreve pouco. Diria, que, sobretudo, quando se espera que, no texto, se\ncrie um clima afetivo, com reticências, exclamações, interrogações. A escola se apresenta como a\nescola do ponto, fundamentalmente. Afinal, quase sempre, o interlocutor do aluno, - um\ninterlocutor potente!\n-, é o professor. Todo cuidado é pouco... não é? Por isso, muitas vezes, a presença, em textos\nescolares, de palavras com paletó e gravata, ainda que empregadas inadequadamente.\nO Manoel de Barros tem razão: Língua solene é coisa de políticos e advogados. É preciso ir ao\nencriançamento das palavras, palavras-brinquedo, palavras bolhas-de-sabão... Em certas\nsituações, naturalmente. Com crianças então! Para festejar o aniversário de uma amiga, por que,\nnum cartão, não começar a ser autor com um singelo, mas carinhoso \"Gosto de você\" ou num\ntorpedo com um sempre bem recebido “Um beijo, minha amiga”. Garantia assegurada de autoria\ntextual! E de afetividade...\nFonte: UCHOA, Garlos Eduardo Falcão. A vida e o tempo em tom de conversa: crônicas de um\nprofessor de linguagem. 1º ed. Rio de Janeiro: Odisseia, 2013, p. 141-145. {Texto adaptado)\nLeia o trecho abaixo.\n\"[...] o conhecimento do real, a ordenação das ideias, o domínio do gênero textual, a intenção\ncomunicativa...\" (\n\n6°§)"
+    "readingText": "SER AUTOR\nEscrever é difícil? Parece que sim, a julgar pelo que ouço de pessoas muito diversas, até mesmo\nde escritores. Imagine para os pobres mortais! E, sobretudo, acrescentaria, numa sociedade que se\njulga eé julgada por não saber, em geral, escrever. Até mestrandos e doutorandos, vejam só,\nrecorrem a colegas, selecionados da área de Letras, que supõem “saber português”, para uma boa\nrevisto do que rascunharam em seus trabalhos acadêmicos.\nNo meu tempo de docência universitária, ouvia, frequentemente, alunos comentarem que\nconcluiriam o curso sem saberem escrever, que o português era difícil, com muitas regras e\nexceções! Tomava fôlego, quando este comentário era feito em sala de aula e, como quem não\nquer nada, indagava informalmente a um aluno: Por que você acha que não sabe português e que\nnossa(!) língua é difícil? Resposta invariável: Não domino bem estas classificações gramaticais e\ntenho também meus vacilos quanto ao uso da norma culta! Veja a gramática do inglês! Bem mais\nsimples, não? Então, você escreve bem textos em inglês? É, mais ou menos…\nRespiro fundo. Me lembro Iogo do Mário Quintana em situação semelhante: “Um dia de espantos,\nhoje. Conversando com uma rapariga em flor, estudante, queixa-se ela da dificuldade da língua\nportuguesa, espanto-me: Mas como pode ser difícil uma língua em que você está falando comigo\nhá dez minutos com toda a facilidade? Ela ficou espantada.”\nMeus espantos eram frequentes... Ainda são! A escola, embora queiram alguns tampar o sol com a\npeneira, estimula a cultura do erro, contribuindo muito, e desde cedo, para perpetuar esta\navaliação de que a língua é difícil, de que escrever “um texto correto” então nem se fala! Basta\numa concordância, uma regência, “as sintaxes de exceção”...\nPassava para os meus alunos testemunhos de alguns escritores, valorizados como tais, o de Rachel\nde Queiroz, por exemplo: Se eu dependesse, afirmava, para escrever, do domínio dos nomes tão\ncomplicados presentes no ensino da língua (ela se divertia), eu não poderia ser escritora. Como é\nmesmo? Oração reduzida de gerúndio? Sujeito inexistente? Substantivo epiceno?, caçoava. E ela,\nacrescento, mesmo pela fala da narradora, nem sempre se vale da língua bem comportada.\nEscrever, na verdade, ainda que adotado certinho o português que é ensinado, exige bem mais da\ngente: o conhecimento do real, a ordenação das ideias, o domínio do gênero textual, a intenção\ncomunicativa... Muitos outros conhecimentos, enfim! A vivência dos bancos escolares prossegue\natuante pela vida afora, qual uma corrente. Nos tornamos adultos, com curso superior, e carentes\nainda de um professor, por perto, para nos corrigir! Não dá para entender, dá? Só os escritores (e,\natualmente, nem todos, nem todos...) e os que se arvoram em conhecedores da língua escapam de\numa avaliação severa. Eta língua é difícil! Eta sociedade que fica então a afrontar o uso da língua\nlegitimado pelas autor(idades)!\nComo ficar seguro de se assumir como autor, na escola e na vida, com tanto isto não pode, isto\ndeve ser evitado, isto afronta as leis da língua, isto é de emprego não referendado pelos escritores\n(quais, na verdade?), isto, tenham paciência, é lá português? Perguntinha tola que me fica\nincomodando (gosto de me complicar - neurose? - com indagações perturbadoras): que língua\nfalam todos os brasileiros (e são tantos!) sem escolaridade?\nFui a uma boa papelaria comprar um cartão para escrever a uma amiga, que aniversariava. Em\nminha procura, fui me dando conta de que eu só selecionava cartões com ilustrações de gosto\nduvidoso para mim: em geral, multicoloridas, florezinhas que estressavam o cartão, com variedade\nnas partes externa e interna deles, borboletas estilizadas então, em quase todos... E as mensagens?\nSem erros gramaticais, diga-se logo! Mas que mensagens tolas, com palavras ou expressões mais\nque gastas, ou, ao contrário, meio solenes, com a pretensão, talvez, de darem ao texto certo sabor\nliterário. Estas mensagens pouco variavam. Pudera!, eram impessoais. Onde o autor?\nSempre considerei que a vida, asseguradas certas igualdades, está na diferença. Uma palavra\ndiferente pode nos proporcionar uma esperança nova. Indaguei a um funcionário da papelaria se\nnão havia cartão, desses duplos, sem mensagem, e que a ilustração, caso existente, fosse sóbria\n(empreguei outra palavra, mais corrente, na ocasião). Não tinha, me respondeu. Coube, então, ao\natendente me perguntar: Por que quer escrever a mensagem? Que trabalho! Já estão prontas em\ntodos estes cartões daquil\nCapitulei. A sociedade, de modo geral, quer mesmo textos prontos e quase iguais. Reflexo mais\nevidente de gente que não está habituada a pensar, que acha que não pode ser autora nem de\numa frasezinha (para que se expor assim à avaliação de um professor por ai?). Pego um destes\ncartões: “os primeiros raios de sol”, “iluminem seu coração”, “fazer seus pensamentos brilharem\"...\nPositivamente não imagino uma criança ou um jovem como autor destas expressões. Para um\nadulto ser o destinatário, iriam pensar, iriam sim!, que ele as copiou justamente de um cartão\ndestes, que já gozam de certa tradição, não se pode enganar!\nNo fundo mesmo, continuidade de uma rotina escolar antiga, em que o estudante, raramente, se\nsente autor do que escreve. Ouvi ou li outro dia o comentário pertinente que na escola se faz\nmuita redação, mas se escreve pouco. Diria, que, sobretudo, quando se espera que, no texto, se\ncrie um clima afetivo, com reticências, exclamações, interrogações. A escola se apresenta como a\nescola do ponto, fundamentalmente. Afinal, quase sempre, o interlocutor do aluno, - um\ninterlocutor potente!\n-, é o professor. Todo cuidado é pouco... não é? Por isso, muitas vezes, a presença, em textos\nescolares, de palavras com paletó e gravata, ainda que empregadas inadequadamente.\nO Manoel de Barros tem razão: Língua solene é coisa de políticos e advogados. É preciso ir ao\nencriançamento das palavras, palavras-brinquedo, palavras bolhas-de-sabão... Em certas\nsituações, naturalmente. Com crianças então! Para festejar o aniversário de uma amiga, por que,\nnum cartão, não começar a ser autor com um singelo, mas carinhoso \"Gosto de você\" ou num\ntorpedo com um sempre bem recebido “Um beijo, minha amiga”. Garantia assegurada de autoria\ntextual! E de afetividade...\nFonte: UCHOA, Garlos Eduardo Falcão. A vida e o tempo em tom de conversa: crônicas de um\nprofessor de linguagem. 1º ed. Rio de Janeiro: Odisseia, 2013, p. 141-145. {Texto adaptado)\nLeia o trecho abaixo.\n\"[...] o conhecimento do real, a ordenação das <u>ideias,</u> o domínio do gênero textual, a intenção\ncomunicativa...\" (\n\n6°§)"
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q18",
@@ -3560,27 +3560,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“mas mantêm a mente aberta a novas experiências e aprendizados.”",
+        "text": "“mas <u>mantêm</u> a mente aberta a novas experiências e aprendizados.”",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“Porém, a geração Z aperfeiçoou muito o legado das gerações anteriores e incorporou diferentes aprendizados.”",
+        "text": "<u>“Porém,</u> a geração Z aperfeiçoou muito o legado das gerações anteriores e incorporou diferentes aprendizados.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Esse universo está se tornando cada vez mais ilimitado, pois a cada dia surgem novas figurinhas em aplicativos como o WhatsApp.”",
+        "text": "“Esse universo <u>está</u> se tornando cada vez mais ilimitado, pois a cada dia surgem novas figurinhas em aplicativos como o WhatsApp.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Nesse sentido, tais indivíduos são pragmáticos, metódicos e focados em metas voltadas para a satisfação de suas necessidades financeiras.”",
+        "text": "“Nesse sentido, tais <u>indivíduos</u> são pragmáticos, metódicos e focados em metas voltadas para a satisfação de suas necessidades financeiras.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Nesse contexto, por meio das possibilidades tecnológicas, as fronteiras que impediam o diálogo foram rompidas.”",
+        "text": "“Nesse contexto, por meio das possibilidades <u>tecnológicas,</u> as fronteiras que impediam o diálogo foram rompidas.”",
         "correct": false
       }
     ],
@@ -3788,7 +3788,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 24,
-    "statement": "Assinale a alternativa cuja palavra é acentuada por apresentar a mesma tonicidade que a palavra\nem destaque em: “Afinal, o que há de mais belo na vida — na vida e na morte — é o mistério”.",
+    "statement": "Assinale a alternativa cuja palavra é acentuada por apresentar a mesma tonicidade que a palavra\nem destaque em: “Afinal, o que há de mais belo na vida — na vida e na morte — é o <u>mistério”.</u>",
     "options": [
       {
         "letter": "A",
@@ -3812,7 +3812,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "os olhos deslumbrados para a manhã tão fina",
+        "text": "os olhos deslumbrados para a <u>manhã</u> tão fina ",
         "correct": false
       }
     ],
@@ -3831,27 +3831,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Ele segurou o corrimão para não cair.",
+        "text": "Ele segurou o <u>corrimão</u> para não cair.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "O passeio com o filho foi muito proveitoso.",
+        "text": "O <u>passeio</u> com o filho foi muito proveitoso.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Estava muito quente naquela manhã.",
+        "text": "Estava muito <u>quente</u> naquela manhã.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Havia uma sombra em seus olhos.",
+        "text": "Havia uma <u>sombra</u> em seus olhos.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "Vinho tinto costuma ser uma bebida boa.",
+        "text": "<u>Vinho</u> tinto costuma ser uma bebida boa. ",
         "correct": false
       }
     ],
@@ -3983,27 +3983,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "A cela do cavalo era muito bonita.",
+        "text": "A <u>cela</u> do cavalo era muito bonita.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Os animais foram mantidos presos na baia.",
+        "text": "Os animais foram mantidos presos na <u>baia.</u>",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Uma colher de chá de açúcar é suficiente.",
+        "text": "Uma <u>colher</u> de chá de açúcar é suficiente.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "A mulher sentia ânsia ao comer aquilo.",
+        "text": "A mulher sentia <u>ânsia</u> ao comer aquilo.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Ele próprio ligou para a polícia.",
+        "text": "Ele <u>próprio</u> ligou para a polícia. ",
         "correct": false
       }
     ],
@@ -4017,7 +4017,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 30,
-    "statement": "Assinale a alternativa que apresenta palavras acentuadas pelo mesmo motivo que o termo em\ndestaque em: “O marinheiro usava a bússola para navegar”.",
+    "statement": "Assinale a alternativa que apresenta palavras acentuadas pelo mesmo motivo que o termo em\ndestaque em: “O marinheiro usava a <u>bússola</u> para navegar”.",
     "options": [
       {
         "letter": "A",
@@ -4055,7 +4055,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 31,
-    "statement": "Assinale a alternativa que apresenta palavras acentuada pelas mesmas razões que as destacadas\nem: “Fórum define temas prioritários para qualificar carreiras de servidores e servidoras”",
+    "statement": "Assinale a alternativa que apresenta palavras acentuada pelas mesmas razões que as destacadas\nem: <u>“Fórum</u> define temas <u>prioritários</u> para qualificar carreiras de servidores e servidoras”",
     "options": [
       {
         "letter": "A",
@@ -4097,27 +4097,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Ela já estava sentindo enjôos.",
+        "text": "Ela já estava sentindo <u>enjôos.</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "A menina ficara órfã muito cedo.",
+        "text": "A menina ficara <u>órfã</u> muito cedo.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Havia um ítem faltando na caixa.",
+        "text": "Havia um <u>ítem</u> faltando na caixa.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Eles lêem bons livros frequentemente.",
+        "text": "Eles <u>lêem</u> bons livros frequentemente.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Ela ganhou uma jóia de presente.",
+        "text": "Ela ganhou uma <u>jóia</u> de presente. ",
         "correct": false
       }
     ],
@@ -4284,7 +4284,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 37,
-    "statement": "Após a leitura atenta do texto apresentado a seguir, responda à questão proposta.\nAssinale a opção que apresenta o vocábulo acentuado graficamente pelo mesmo motivo que a\npalavra destacada em “A fala está aí”:",
+    "statement": "Após a leitura atenta do texto apresentado a seguir, responda à questão proposta.\nAssinale a opção que apresenta o vocábulo acentuado graficamente pelo mesmo motivo que a\npalavra destacada em “A fala está <u>aí”:</u>",
     "options": [
       {
         "letter": "A",
@@ -4353,7 +4353,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Texto I\nEscassez dos reservatórios pode afetar tarifação do consumo de energia e água\n“Diante da perspectiva de agravamento da situação dos reservatórios, não descartaria alguma\nmedida restritiva até o final do ano”, diz o professor Pedro Luiz Côrtes\nEspecialistas consideram a possibilidade de implementação de algum tipo de restrição ao\nconsumo de energia elétrica devido ao avanço do período de estiagem e à situação dos\nreservatórios no Brasil. Há sinalizações, por parte do governo federal, para um novo aumento do\nvalor da bandeira vermelha patamar dois ou algum outro tipo de aumento no custo da energia\nelétrica, como forma de conter o consumo. Em relação ao abastecimento de água, principalmente\nna Região Metropolitana de São Paulo, também há uma grande preocupação.\n“Diante da perspectiva de agravamento da situação dos reservatórios, não descartaria alguma\nmedida restritiva até o final do ano”, disse, em entrevista ao Jornal da USP no Ar 1ª Edição, Pedro\nLuiz Côrtes, professor da Escola de Comunicações e Artes (ECA) e do programa de Pós-\nGraduação em Ciência Ambiental do Instituto de Energia e Ambiente (IEE). De acordo com\nCôrtes, das medidas que estão em curso, a mais imediata é o aumento do valor da bandeira\nvermelha patamar dois ou a criação de uma nova bandeira na tarifa de energia elétrica. Ele coloca\nque o sistema de bandeiras é mais vantajoso por se tratar de uma tarifa variável de acordo com a\nsituação da crise hídrica, aumentando ou reduzindo o custo da energia elétrica. Outra medida que\no professor considera é uma possível negociação entre o governo e o setor industrial para que\neste último remaneje sua produção para o período da madrugada. Para as indústrias, o custo da\nenergia elétrica varia de acordo com o horário. Essa medida faria com que as indústrias reduzissem\nseu consumo do horário de pico para um período com maior oferta de energia e menor custo.\nEm relação à oferta de água, Côrtes diz que os reservatórios que abastecem a Região\nMetropolitana de São Paulo são suficientes para o segundo semestre com razoável tranquilidade.\nNo entanto, o mesmo não pode ser dito sobre 2022. Segundo o prognóstico feito pelo professor,\na previsão é que a primavera e o verão sejam mais secos, não tendo chuvas o suficiente para\nreposição de água no montante necessário para o abastecimento. “A situação dos reservatórios\ntende a se agravar e acredito que algum tipo de medida restritiva também deverá ser implantada\nainda este ano ou no ano que vem”, complementa Côrtes. Entre as possíveis políticas de redução\nde consumo, o retorno da política de bônus, em que as pessoas que consumirem abaixo da média\nterão um preço reduzido pelo m³ e quem consumir acima da média pagará muito mais. Esse tipo\nde medida foi adotada durante a última crise hídrica.\nPara o professor, ainda há expectativas de que a Sabesp reveja os contratos de demanda firme,\nque obriga os grandes consumidores a terem um consumo muito elevado e, a partir disso,\nfornecer uma tarifa mais baixa para eles. Esses contratos, durante a última crise hídrica, foram\nsuspensos, uma vez que eles não são incentivo à redução do uso de água dos grandes\nconsumidores. “Então, algumas medidas estão no horizonte, basta saber quais delas serão\nadotadas e em que tempo” conclui o professor.\nDisponível em <https://jornal.usp.br/atualidades/escassez-dos-reservatorios-pode-afetar-tarifacao-do-consumo-de-energia-e-agua/> Acesso em 21 junho. 2021."
+    "readingText": "Texto I\nEscassez dos reservatórios pode afetar tarifação do consumo de energia e água\n“Diante da perspectiva de agravamento da situação dos reservatórios, não descartaria alguma\nmedida restritiva até o final do ano”, diz o professor Pedro Luiz Côrtes\nEspecialistas consideram a possibilidade de implementação de algum tipo de restrição ao\nconsumo de energia elétrica devido ao avanço do período de estiagem e à situação dos\nreservatórios no Brasil. Há sinalizações, por parte do governo federal, para um novo aumento do\nvalor da bandeira vermelha patamar dois ou algum outro tipo de aumento no custo da energia\nelétrica, como forma de conter o consumo. Em relação ao abastecimento de água, principalmente\nna Região Metropolitana de São Paulo, também há uma grande preocupação.\n“Diante da perspectiva de agravamento da situação dos reservatórios, não descartaria alguma\nmedida restritiva até o final do ano”, disse, em entrevista ao <u>Jornal da USP no Ar 1ª Edição,</u> Pedro\nLuiz Côrtes, professor da Escola de Comunicações e Artes (ECA) e do programa de Pós-\nGraduação em Ciência Ambiental do Instituto de Energia e Ambiente (IEE). De acordo com\nCôrtes, das medidas que estão em curso, a mais imediata é o aumento do valor da bandeira\nvermelha patamar dois ou a criação de uma nova bandeira na tarifa de energia elétrica. Ele coloca\nque o sistema de bandeiras é mais vantajoso por se tratar de uma tarifa variável de acordo com a\nsituação da crise hídrica, aumentando ou reduzindo o custo da energia elétrica. Outra medida que\no professor considera é uma possível negociação entre o governo e o setor industrial para que\neste último remaneje sua produção para o período da madrugada. Para as indústrias, o custo da\nenergia elétrica varia de acordo com o horário. Essa medida faria com que as indústrias reduzissem\nseu consumo do horário de pico para um período com maior oferta de energia e menor custo.\nEm relação à oferta de água, Côrtes diz que os reservatórios que abastecem a Região\nMetropolitana de São Paulo são suficientes para o segundo semestre com razoável tranquilidade.\nNo entanto, o mesmo não pode ser dito sobre 2022. Segundo o prognóstico feito pelo professor,\na previsão é que a primavera e o verão sejam mais secos, não tendo chuvas o suficiente para\nreposição de água no montante necessário para o abastecimento. “A situação dos reservatórios\ntende a se agravar e acredito que algum tipo de medida restritiva também deverá ser implantada\nainda este ano ou no ano que vem”, complementa Côrtes. Entre as possíveis políticas de redução\nde consumo, o retorno da política de bônus, em que as pessoas que consumirem abaixo da média\nterão um preço reduzido pelo m³ e quem consumir acima da média pagará muito mais. Esse tipo\nde medida foi adotada durante a última crise hídrica.\nPara o professor, ainda há expectativas de que a Sabesp reveja os contratos de demanda firme,\nque obriga os grandes consumidores a terem um consumo muito elevado e, a partir disso,\nfornecer uma tarifa mais baixa para eles. Esses contratos, durante a última crise hídrica, foram\nsuspensos, uma vez que eles não são incentivo à redução do uso de água dos grandes\nconsumidores. “Então, algumas medidas estão no horizonte, basta saber quais delas serão\nadotadas e em que tempo” conclui o professor.\nDisponível em <https://jornal.usp.br/atualidades/escassez-dos-reservatorios-pode-afetar-tarifacao-do-consumo-de-energia-e-agua/> Acesso em 21 junho. 2021."
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q39",
@@ -4362,7 +4362,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 39,
-    "statement": "No período “A segurança alimentar é definida pela Organização para a Alimentação e Agricultura\n(FAO) como uma ''situação na qual todas as pessoas, em todos os momentos, têm acesso físico,\nsocial e econômico a recursos suficientes…”, o verbo destacado está com o acento indicador de\nplural, pois se refere ao(s) núcleo(s) do sujeito:",
+    "statement": "No período “A segurança alimentar é definida pela Organização para a Alimentação e Agricultura\n(FAO) como uma ''situação na qual todas as pessoas, em todos os momentos, <u>têm</u> acesso físico,\nsocial e econômico a recursos suficientes…”, o verbo destacado está com o acento indicador de\nplural, pois se refere ao(s) núcleo(s) do sujeito:",
     "options": [
       {
         "letter": "A",
@@ -4438,7 +4438,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 41,
-    "statement": "Considere as afirmativas acerca da canção de Lenine, texto I\nV.\nI. Os vocábulos em destaque em “Que Deus criou a diferença” e “Que irá nos aproximar”\npertencem à mesma classe morfológica.\nII. A segunda estrofe é construída a partir de uma série de antíteses e perguntas subentendidas.\nIII. Em “Tudo é raro, nada é comum” há o aparecimento duas orações coordenadas, ambas com\nsujeito simples.\nIV. A palavra “irá” é acentuada de acordo com a mesma regra que “só”.\nEstão corretas",
+    "statement": "Considere as afirmativas acerca da canção de Lenine, texto I\nV.\nI. Os vocábulos em destaque em “**Que** Deus criou a diferença” e “**Que** irá nos aproximar”\npertencem à mesma classe morfológica.\nII. A segunda estrofe é construída a partir de uma série de antíteses e perguntas subentendidas.\nIII. Em “Tudo é raro, nada é comum” há o aparecimento duas orações coordenadas, ambas com\nsujeito simples.\nIV. A palavra “irá” é acentuada de acordo com a mesma regra que “só”.\nEstão corretas",
     "options": [
       {
         "letter": "A",
@@ -4463,7 +4463,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "TEXTO I\nV\nFoi pra diferenciar\nQue Deus criou a diferença\nQue irá nos aproximar\nIntuir o que ele pensa\nSe cada ser é só um\nE cada um com sua crença\nTudo é raro, nada é comum\nDiversidade é a sentença\nQue seria do adeus\nSem o retorno\nQue seria do nu\nSem o adorno\nQue seria do sim\nSem o talvez e o não\nQue seria de mim\nSem a compreensão\nQue a vida é repleta\nE o olhar do poeta\nPercebe na sua presença\nO toque de Deus\nA vela no breu\nA chama da diferença\n(Trecho de Diversidade, Lenine. Disponível em: <https://www.letras.mus.br/lenine/diversidade/>\nAcesso em 7 mai. 2021)"
+    "readingText": "TEXTO IV\nFoi pra diferenciar\nQue Deus criou a diferença\nQue irá nos aproximar\nIntuir o que ele pensa\nSe cada ser é só um\nE cada um com sua crença\nTudo é raro, nada é comum\nDiversidade é a sentença\nQue seria do adeus\nSem o retorno\nQue seria do nu\nSem o adorno\nQue seria do sim\nSem o talvez e o não\nQue seria de mim\nSem a compreensão\nQue a vida é repleta\nE o olhar do poeta\nPercebe na sua presença\nO toque de Deus\nA vela no breu\nA chama da diferença\n(Trecho de Diversidade, Lenine. Disponível em: <https://www.letras.mus.br/lenine/diversidade/>\nAcesso em 7 mai. 2021)"
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q42",
@@ -4511,7 +4511,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 43,
-    "statement": "Assinale a alternativa que apresenta palavras acentuadas pela mesma regra que as palavras em\ndestaque abaixo respectivamente:\n“A única coisa que minha mãe nos disse sobre ele foi que sua família era muito pobre.”",
+    "statement": "Assinale a alternativa que apresenta palavras acentuadas pela mesma regra que as palavras em\ndestaque abaixo respectivamente:\n“A <u>única</u> coisa que minha <u>mãe</u> nos disse sobre ele foi que sua <u>família</u> era muito pobre.”",
     "options": [
       {
         "letter": "A",
@@ -4550,31 +4550,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 44,
-    "statement": "Assinale a alternativa cuja palavra em destaque foi acentuada a partir da mesma regra que as\ndestacadas em: “Solícito e trêmulo foi-me mostrando os pequenos tesouros da sua igreja” (3º\nparágrafo)",
+    "statement": "Assinale a alternativa cuja palavra em destaque foi acentuada a partir da mesma regra que as\ndestacadas em: <u>“Solícito</u> e <u>trêmulo</u> foi-me mostrando os pequenos tesouros da sua igreja” (3º\nparágrafo)",
     "options": [
       {
         "letter": "A",
-        "text": "“tão velhas e tão gastas quanto ele próprio”",
+        "text": "“tão velhas e tão gastas quanto ele <u>próprio”</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“E descerrando os lábios murchos num sorriso amável”",
+        "text": "“E descerrando os <u>lábios</u> murchos num sorriso amável”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“um mural de cores remotas e tênues como as de um pobre véu esgarçado na distância”",
+        "text": "“um mural de cores remotas e <u>tênues</u> como as de um pobre véu esgarçado na distância”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“que encontrei por lá, perdida na última rua do último bairro.”",
+        "text": "“que encontrei por lá, perdida na <u>última</u> rua do último bairro.”",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "“esculpidos por Aleijadinho, pois dele tinham a inconfundível marca”",
+        "text": "“esculpidos por Aleijadinho, pois dele tinham a <u>inconfundível</u> marca” ",
         "correct": false
       }
     ],
@@ -4823,7 +4823,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 51,
-    "statement": "Os termos temporário, horário e público são acentuados de acordo com as seguintes regras:",
+    "statement": "Os termos <u>temporário,</u> <u>horário</u> e <u>público</u> são acentuados de acordo com as seguintes regras:",
     "options": [
       {
         "letter": "A",
@@ -4862,7 +4862,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 52,
-    "statement": "Os termos imagináveis e barbárie são acentuados, pois:",
+    "statement": "Os termos <u>imagináveis</u> e <u>barbárie</u> são acentuados, pois:",
     "options": [
       {
         "letter": "A",
@@ -4901,7 +4901,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 53,
-    "statement": "Após a leitura atenta do texto apresentado a seguir, responda à questão proposta.\nOs termos “excluídos” e “trágico” são acentuados de acordo com a seguinte justificativa:",
+    "statement": "Após a leitura atenta do texto apresentado a seguir, responda à questão proposta.\nOs termos <u>“excluídos”</u> e <u>“trágico”</u> são acentuados de acordo com a seguinte justificativa:",
     "options": [
       {
         "letter": "A",
@@ -5120,13 +5120,13 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "o brasileiro tenta manter a saúde mental",
+        "text": "o brasileiro tenta manter a saúde mental ",
         "correct": false
       }
     ],
     "correctLetter": "D",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "O normal mascarado\nPouco mais de 200 dias depois da primeira morte por covid-19 ocorrer no Brasil, o país atinge\nagora 150 mil óbitos pela doença. Nesse período, estados e municípios decretaram quarentena, e\nalguns optaram pelo fechamento completo para conter o avanço do vírus. Ainda assim, o país\nsomou números altos: mais de 5 milhões de infectados e o segundo país em mortes no mundo.\nSe há sete meses a mensagem era \": que em casa\" e São Paulo tentava alcançar 60% de\nisolamento social, hoje estados avançam rumo a aberturas de comércio, espaços de lazer e\nescolas. Nesse período, mais de 8 milhões de pessoas aderiram ao trabalho remoto, enquanto mais\nde 10 milhões foram afastadas do trabalho. O trabalho informal e o desemprego aumentaram.\nCom as flexibilizações, as praias já lotam, São Paulo tem trânsito em vésperas de feriado e, aos\npoucos, o brasileiro volta a frequentar bares e restaurantes de forma \"segura\". Mas há quem ainda\ntenha medo de se infectar e contaminar seus entes queridos e, por isso, segue em isolamento.\nOutros, porém, não tiveram a opção de se isolar.\n\"As pessoas se acomodaram. A vida tem que seguir, mas com todo o cuidado. Eu estou na rua por\nnecessidade, para levar o pão e o leite pra casa. E me cuido. Até a minha 'magrela' [bicicleta] eu\nhigienizo\", conta o entregador de aplicativo Humberto Luiz, de 41 anos.\n\"Sou uma das pessoas que, se não fosse o trabalho, o sustento da família, não sairia de casa. Tenho\numa mãe com 68 anos, o medo de levar a doença pra dentro de casa é enorme. Tô me cuidando\ncomo posso\", diz o vendedor de doces Daniel Silva, de 42 anos, que trabalha no Brás, região de\ncomércio popular, e vê o movimento por lá aumentar.\nCom tanto tempo de isolamento, o brasileiro tenta manter a saúde mental e busca maneiras de ver\nos amigos novamente, tomar um sol no parque ou só caminhar na rua. \"Ouvi críticas duras quando\nfoi o momento de cuidar da saúde mental e desci para a praia. Todavia, de sujeitos que passaram\n'a quarentena' trabalhando em indústrias lotadas, pegando transporte lotado\", conta Aelon Santos.\nEm 19 de maio, o Brasil registrou pela primeira vez mais de mil mortes confirmadas em um\nintervalo de 24 horas. Com pequenas oscilações para mais ou para menos, manteve-se nesse\npatamar até o início de setembro. Desde 15 de setembro, o país não registra mais de mil mortes\nconfirmadas em um dia, segundo dados do Ministério da Saúde.\nSegundo os dados da OMS (Organização Mundial da Saúde), o Brasil é até o momento o país que\napresentou um dos platôs mais altos e por mais tempo no mundo. Além do país, somente Estados\nUnidos e Índia estabilizaram em mil mortes diárias. Enquanto EUA tiveram 55 dias de platô acima\nde mil, Índia tem até o momento 36 dias. O Brasil manteve essa média de mortes por cerca de 106\ndias.\nApós um prolongado período de quarentena, os cenários das cidades e o comportamento das\npessoas mudam e tentam se adaptar a uma fase de aprendizado de convívio com uma doença\npara a qual ainda não há cura ou tratamento.\n(Disponível em <https://noticias.uol.com.br/reportagens-especiais/o-normal-mascarado/> Acesso\nem 14 out. 2020)\nCom tanto tempo de isolamento, estados e municípios decretaram quarentena"
+    "readingText": "O normal mascarado\nPouco mais de 200 dias depois da primeira morte por covid-19 ocorrer no Brasil, o país atinge\nagora 150 mil óbitos pela doença. Nesse período, estados e municípios decretaram quarentena, e\nalguns optaram pelo fechamento completo para conter o avanço do vírus. Ainda assim, o país\nsomou números altos: mais de 5 milhões de infectados e o segundo país em mortes no mundo.\nSe há sete meses a mensagem era \": que em casa\" e São Paulo tentava alcançar 60% de\nisolamento social, hoje estados avançam rumo a aberturas de comércio, espaços de lazer e\nescolas. Nesse período, mais de 8 milhões de pessoas aderiram ao trabalho remoto, enquanto mais\nde 10 milhões foram afastadas do trabalho. O trabalho informal e o desemprego aumentaram.\nCom as flexibilizações, as praias já lotam, São Paulo tem trânsito em vésperas de feriado e, aos\npoucos, o brasileiro volta a frequentar bares e restaurantes de forma \"segura\". Mas há quem ainda\ntenha medo de se infectar e contaminar seus entes queridos e, por isso, segue em isolamento.\nOutros, porém, não tiveram a opção de se isolar.\n\"As pessoas se acomodaram. A vida tem que seguir, mas com todo o cuidado. Eu estou na rua por\nnecessidade, para levar o pão e o leite pra casa. E me cuido. Até a minha 'magrela' [bicicleta] eu\nhigienizo\", conta o entregador de aplicativo Humberto Luiz, de 41 anos.\n\"Sou uma das pessoas que, se não fosse o trabalho, o sustento da família, não sairia de casa. Tenho\numa mãe com 68 anos, o medo de levar a doença pra dentro de casa é enorme. Tô me cuidando\ncomo posso\", diz o vendedor de doces Daniel Silva, de 42 anos, que trabalha no Brás, região de\ncomércio popular, e vê o movimento por lá aumentar.\nCom tanto tempo de isolamento, o brasileiro tenta manter a saúde mental e busca maneiras de ver\nos amigos novamente, tomar um sol no parque ou só caminhar na rua. \"Ouvi críticas duras quando\nfoi o momento de cuidar da saúde mental e desci para a praia. Todavia, de sujeitos que passaram\n'a quarentena' trabalhando em indústrias lotadas, pegando transporte lotado\", conta Aelon Santos.\nEm 19 de maio, o Brasil registrou pela primeira vez mais de mil mortes confirmadas em um\nintervalo de 24 horas. Com pequenas oscilações para mais ou para menos, manteve-se nesse\npatamar até o início de setembro. Desde 15 de setembro, o país não registra mais de mil mortes\nconfirmadas em um dia, segundo dados do Ministério da Saúde.\nSegundo os dados da OMS (Organização Mundial da Saúde), o Brasil é até o momento o país que\napresentou um dos platôs mais altos e por mais tempo no mundo. Além do país, somente Estados\nUnidos e Índia estabilizaram em mil mortes diárias. Enquanto EUA tiveram 55 dias de platô acima\nde mil, Índia tem até o momento 36 dias. O Brasil manteve essa média de mortes por cerca de 106\ndias.\nApós um prolongado período de quarentena, os cenários das cidades e o comportamento das\npessoas mudam e tentam se adaptar a uma fase de aprendizado de convívio com uma doença\npara a qual ainda não há cura ou tratamento.\n(Disponível em <https://noticias.uol.com.br/reportagens-especiais/o-normal-mascarado/> Acesso\nem 14 out. 2020)\nCom tanto tempo de isolamento, estados e <u>municípios</u> decretaram quarentena"
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q59",
@@ -5159,13 +5159,13 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "o vírus já tinha aprendido a lidar com uma série de sistemas imunológicos",
+        "text": "o vírus já tinha aprendido a lidar com uma série de sistemas imunológicos ",
         "correct": true
       }
     ],
     "correctLetter": "E",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Texto\nA vacina é um daqueles heróis com um passado obscuro. Por ano, ela previne 3 milhões de mortes\nao redor do mundo, segundo a OMS, e oferece proteção para mais de 30 doenças. Poucos\ninvestimentos trouxeram um custo-benefício tão bom ao longo da história da humanidade:\ncontrole de epidemias, redução da mortalidade infantil, e uma economia brutal para os serviços de\nsaúde.\nAcima de tudo, porém, a ciência da vacina chama a atenção pela elegância. Se há uma novidade\nna microbiologia, existe alguém pensando em como usá-la para criar uma vacina melhor – seja\npara doenças novas, inéditas na carteira de vacinação, ou para aquelas cuja imunização poderia ser\nmais eficiente. Por essas, a vacina costuma ser o creme de là creme das ciências da saúde. Mas\nnem sempre foi assim.\nA ideia de vacina existe há mais de mil anos. Mas, nos seus primórdios, a vacinação era\nindubitavelmente bruta. E arriscada. Eram meios desesperados para situações desesperadas. A\nhistória da vacina começa com a varíola, uma doença viral (hoje, erradicada) cujas epidemias\naterrorizaram gerações. As primeiras tentativas de provocar, de propósito, versões mais brandas\nda doença para proteger indivíduos saudáveis teria ocorrido ainda no século 10, na Índia e na\nChina. Já os métodos que eles utilizavam… Bem, eram engenhosos por um lado, e bizarros por\noutro.\nA varíola forma pústulas vermelhas na pele. Quando as pústulas de um doente estavam quase\nsecas, a casquinha do machucado era retirada, macerada até virar um pó a ser inalado pela pessoa\nque queria se proteger. Outro método era cortar a mão ou braço do indivíduo saudável, e colocar\nali um emplastro embebido em secreção da pústula. Se tudo desse certo, essa nojeira toda\ncausava uma forma branda da doença, garantindo a criação de anticorpos capazes de enfrentar a\nversão pesada da varíola.\nEsse último método ficou conhecido como variolação ou inoculação – e foi usado no mundo todo\naté o final do século 18. Era mais perigoso que as vacinas atuais, já que causava infecções fatais em\ntrês em cada cem pessoas. Mas era bem mais seguro que a varíola, que matava dois a cada dez\ncontaminados.\nUm dos primeiros governantes a apoiar publicamente a variolação foi o imperador chinês K’ang\nHsi, que reinou até 1722. Ele subiu ao trono criança – o pai morrera de varíola. Também\ncontaminado, o imperador sobreviveu, cheio de cicatrizes das pústulas no rosto. Quando adulto,\nnão teve dúvida: mandou variolar todos os filhos e parentes próximos.\nA essa altura, a variolação já era feita por curandeiras na Turquia. Quem achou o negócio\ninteressante foi a aristocrata Lady Mary Montagu, mulher do embaixador inglês. Ela levou a\nvariolação para o Reino Unido – e começou sua “campanha” inoculando a própria filha de 2 anos.\nOutros apoiadores célebres incluem a Rainha Catarina II da Rússia – cuja variolação rolou em\nsegredo, com o médico sobreavisado de que, caso ela morresse, ele teria que fugir do país\nimediatamente – e o político americano Benjamin Franklin.\nNessa época, o medo da inoculação já era bem estabelecido – e as fake news “antivaxxers” já\ncorriam soltas. Em 1736, Benjamin Franklin perdeu um filho de 4 anos. O rumor que se espalhou\nera de que a causa da morte teria sido variolação.\nFranklin precisou ir a público para desmentir o boato. Explicou que o filho morreu de varíola\nmesmo – porque o próprio Franklin sentiu medo de vaciná-lo. Dali em diante, Benjamin seria um\ndos maiores apoiadores da imunização como política pública de saúde: “Faço isso em nome de\noutros pais, que evitam a inoculação por supor que nunca perdoariam a si mesmos se um filho\nmorresse no processo. Meu exemplo mostra que o arrependimento é o mesmo [ao se perder um\nfilho para a doença]”.\nÉ quase na virada do século 19 que a vacina tradicional – e a própria palavra “vacina” – veio à tona,\ncom o trabalho do médico inglês Edward Jenner. Ele verificou que uma doença que afligia vacas\npodia ser transmitida a humanos: pústulas nas tetas dos bovinos doentes acabavam provocando\nferidas nas mãos das pessoas responsáveis pela ordenha. O mais incrível, porém, é que a tal\ndoença da vaca tornava os ordenhadores imunes à varíola. Hoje, sabemos que a enfermidade da\nvaca – a varíola bovina – pertence à mesma família do vírus humano. Jenner não sabia, mas\npercebeu que injetar a secreção das pústulas bovinas em humanos era mais seguro e mais\neficiente que a variolação. Nascia assim a primeira vaccina (do latim vaccinus, “que vem da vaca”).\nEle seguia o seguinte processo: retirar a secreção de varíola bovina do bicho, inseri-la em um ser\nhumano, esperar a reação, e aí usar a secreção dessa pessoa – um vírus “humanizado” – para\ninocular a próxima pessoa. E outra, e outra. As primeiras vacinas, portanto, eram passadas de\nbraço em braço. Nos anos seguintes, porém, cientistas perceberam que depois de passar por\ntanta gente, a vacina ia perdendo a potência (provavelmente, porque àquela altura o vírus já tinha\naprendido a lidar com uma série de sistemas imunológicos diferentes). As secreções paravam de\ncausar reações, e também de fornecer proteção antivaríola. E aí eles precisavam retornar à fonte\nanimal. A transmissão de braço em braço tinha ainda um outro defeito: acabava transmitindo\noutras doenças, como sífilis e hanseníase. Na Itália, o médico Gennaro Galbiati descobriu que era\npossível reinfectar a vaca com a secreção de pústulas humanas, e aí manter o vírus humanizado\nem circulação sem precisar ser repassado de pessoa em pessoa. Com essa descoberta, os\nprodutores de vacinas passaram a criar animais com o único propósito de servir como incubadores\nde vírus.\n(autores, Vários. Revista Superinteressante - Outubro 2019 (Página 60 a 62). Edição do Kindle)\nEsse último método ficou conhecido como variolação ou inoculação – e foi usado no mundo todo\naté o final do século 18"
+    "readingText": "Texto\nA vacina é um daqueles heróis com um passado obscuro. Por ano, ela previne 3 milhões de mortes\nao redor do mundo, segundo a OMS, e oferece proteção para mais de 30 doenças. Poucos\ninvestimentos trouxeram um custo-benefício tão bom ao longo da história da humanidade:\ncontrole de epidemias, redução da mortalidade infantil, e uma economia brutal para os serviços de\nsaúde.\nAcima de tudo, porém, a ciência da vacina chama a atenção pela elegância. Se há uma novidade\nna microbiologia, existe alguém pensando em como usá-la para criar uma vacina melhor – seja\npara doenças novas, inéditas na carteira de vacinação, ou para aquelas cuja imunização poderia ser\nmais eficiente. Por essas, a vacina costuma ser o creme de là creme das ciências da saúde. Mas\nnem sempre foi assim.\nA ideia de vacina existe há mais de mil anos. Mas, nos seus primórdios, a vacinação era\nindubitavelmente bruta. E arriscada. Eram meios desesperados para situações desesperadas. A\nhistória da vacina começa com a varíola, uma doença viral (hoje, erradicada) cujas epidemias\naterrorizaram gerações. As primeiras tentativas de provocar, de propósito, versões mais brandas\nda doença para proteger indivíduos saudáveis teria ocorrido ainda no século 10, na Índia e na\nChina. Já os <u>método</u>s que eles utilizavam… Bem, eram engenhosos por um lado, e bizarros por\noutro.\nA varíola forma pústulas vermelhas na pele. Quando as pústulas de um doente estavam quase\nsecas, a casquinha do machucado era retirada, macerada até virar um pó a ser inalado pela pessoa\nque queria se proteger. Outro <u>método</u> era cortar a mão ou braço do indivíduo saudável, e colocar\nali um emplastro embebido em secreção da pústula. Se tudo desse certo, essa nojeira toda\ncausava uma forma branda da doença, garantindo a criação de anticorpos capazes de enfrentar a\nversão pesada da varíola.\nEsse último <u>método</u> ficou conhecido como variolação ou inoculação – e foi usado no mundo todo\naté o final do século 18. Era mais perigoso que as vacinas atuais, já que causava infecções fatais em\ntrês em cada cem pessoas. Mas era bem mais seguro que a varíola, que matava dois a cada dez\ncontaminados.\nUm dos primeiros governantes a apoiar publicamente a variolação foi o imperador chinês K’ang\nHsi, que reinou até 1722. Ele subiu ao trono criança – o pai morrera de varíola. Também\ncontaminado, o imperador sobreviveu, cheio de cicatrizes das pústulas no rosto. Quando adulto,\nnão teve dúvida: mandou variolar todos os filhos e parentes próximos.\nA essa altura, a variolação já era feita por curandeiras na Turquia. Quem achou o negócio\ninteressante foi a aristocrata Lady Mary Montagu, mulher do embaixador inglês. Ela levou a\nvariolação para o Reino Unido – e começou sua “campanha” inoculando a própria filha de 2 anos.\nOutros apoiadores célebres incluem a Rainha Catarina II da Rússia – cuja variolação rolou em\nsegredo, com o médico sobreavisado de que, caso ela morresse, ele teria que fugir do país\nimediatamente – e o político americano Benjamin Franklin.\nNessa época, o medo da inoculação já era bem estabelecido – e as fake news “antivaxxers” já\ncorriam soltas. Em 1736, Benjamin Franklin perdeu um filho de 4 anos. O rumor que se espalhou\nera de que a causa da morte teria sido variolação.\nFranklin precisou ir a público para desmentir o boato. Explicou que o filho morreu de varíola\nmesmo – porque o próprio Franklin sentiu medo de vaciná-lo. Dali em diante, Benjamin seria um\ndos maiores apoiadores da imunização como política pública de saúde: “Faço isso em nome de\noutros pais, que evitam a inoculação por supor que nunca perdoariam a si mesmos se um filho\nmorresse no processo. Meu exemplo mostra que o arrependimento é o mesmo [ao se perder um\nfilho para a doença]”.\nÉ quase na virada do século 19 que a vacina tradicional – e a própria palavra “vacina” – veio à tona,\ncom o trabalho do médico inglês Edward Jenner. Ele verificou que uma doença que afligia vacas\npodia ser transmitida a humanos: pústulas nas tetas dos bovinos doentes acabavam provocando\nferidas nas mãos das pessoas responsáveis pela ordenha. O mais incrível, porém, é que a tal\ndoença da vaca tornava os ordenhadores imunes à varíola. Hoje, sabemos que a enfermidade da\nvaca – a varíola bovina – pertence à mesma família do vírus humano. Jenner não sabia, mas\npercebeu que injetar a secreção das pústulas bovinas em humanos era mais seguro e mais\neficiente que a variolação. Nascia assim a primeira vaccina (do latim vaccinus, “que vem da vaca”).\nEle seguia o seguinte processo: retirar a secreção de varíola bovina do bicho, inseri-la em um ser\nhumano, esperar a reação, e aí usar a secreção dessa pessoa – um vírus “humanizado” – para\ninocular a próxima pessoa. E outra, e outra. As primeiras vacinas, portanto, eram passadas de\nbraço em braço. Nos anos seguintes, porém, cientistas perceberam que depois de passar por\ntanta gente, a vacina ia perdendo a potência (provavelmente, porque àquela altura o vírus já tinha\naprendido a lidar com uma série de sistemas imunológicos diferentes). As secreções paravam de\ncausar reações, e também de fornecer proteção antivaríola. E aí eles precisavam retornar à fonte\nanimal. A transmissão de braço em braço tinha ainda um outro defeito: acabava transmitindo\noutras doenças, como sífilis e hanseníase. Na Itália, o médico Gennaro Galbiati descobriu que era\npossível reinfectar a vaca com a secreção de pústulas humanas, e aí manter o vírus humanizado\nem circulação sem precisar ser repassado de pessoa em pessoa. Com essa descoberta, os\nprodutores de vacinas passaram a criar animais com o único propósito de servir como incubadores\nde vírus.\n(autores, Vários. Revista Superinteressante - Outubro 2019 (Página 60 a 62). Edição do Kindle)\nEsse último <u>método</u> ficou conhecido como variolação ou inoculação – e foi usado no mundo todo\naté o final do século 18"
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q60",
@@ -5178,27 +5178,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "O menino tem em sua mochila um despertador.",
+        "text": "O menino <u>tem</u> em sua mochila um despertador.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "Encontro nesse senhor uma nobreza jamais vista em toda história.",
+        "text": "<u>Encontro</u> nesse senhor uma nobreza jamais vista em toda história.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Se ele estivesse cumprindo seu trabalho, não precisaria sair daquela maneira.",
+        "text": "Se ele <u>estivesse</u> cumprindo seu trabalho, não precisaria sair daquela maneira.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Acompanho o seu esforço solitário nesse projeto.",
+        "text": "<u>Acompanho</u> o seu esforço solitário nesse projeto.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Estou ansiosa para que ele atinja o seu objetivo nesse trabalho.",
+        "text": "Estou ansiosa para que ele <u>atinja</u> o seu objetivo nesse trabalho.",
         "correct": false
       }
     ],
@@ -5212,7 +5212,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 61,
-    "statement": "Assinale a opção que apresenta palavras que devem ser acentuadas seguindo as mesmas regras,\nrespectivamente, das palavras destacadas no trecho \"Ao analisar a situação, percebe-se que o\ngaroto **está** realmente por perto, todos os dias, eé **sensível** aos nossos estados de **ânimo**,\ntornando-se íntimo a seu modo.”",
+    "statement": "Assinale a opção que apresenta palavras que devem ser acentuadas seguindo as mesmas regras,\nrespectivamente, das palavras destacadas no trecho \"Ao analisar a situação, percebe-se que o\ngaroto <u>está</u> realmente por perto, todos os dias, eé <u>sensível</u> aos nossos estados de <u>ânimo,</u>\ntornando-se íntimo a seu modo.”",
     "options": [
       {
         "letter": "A",
@@ -5319,7 +5319,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "E",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Leia atentamente o trecho destacado e assinale a afirmativa que apresenta apenas afirmação(ões)\ncorreta(s)\nEu sou um contumaz crítico das redes sociais. Não preciso da validação alheia para apoiar as\ncoisas que faço em meu dia a dia. Também não aprecio a pirâmide de “ostentação, mentira e\nconsumo” que elas nos trazem. Mas eu sou minoria nesse mundo de aparências. Optei por tentar\nviver a realidade do jeito como ela é. Se estou certo ou errado? O futuro dirá. Só posso afirmar que\nestou adorando fazer isso.\nGIUDOTTI, G. B. O mundo mágico dos influenciadores digitais, Observatório de Imprensa,\n29/01/2019, edição 1022.\nDisponível em: <http://observatoriodaimprensa.com.br/dilemas-contemporaneos/o-mundo-magico-dos-influenciadores-digitais/> Acesso em ago.2020."
+    "readingText": "Leia atentamente o trecho a seguir e assinale a afirmativa que apresenta apenas afirmação(ões)\ncorreta(s)\nEu sou um contumaz crítico das redes sociais. Não preciso da validação alheia para apoiar as\ncoisas que faço em meu dia a dia. Também não aprecio a pirâmide de “ostentação, mentira e\nconsumo” que elas nos trazem. Mas eu sou minoria nesse mundo de aparências. Optei por tentar\nviver a realidade do jeito como ela é. Se estou certo ou errado? O futuro dirá. Só posso afirmar que\nestou adorando fazer isso.\nGIUDOTTI, G. B. O mundo mágico dos influenciadores digitais, Observatório de Imprensa,\n29/01/2019, edição 1022.\nDisponível em: <http://observatoriodaimprensa.com.br/dilemas-contemporaneos/o-mundo-magico-dos-influenciadores-digitais/> Acesso em ago.2020."
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q64",
@@ -5352,13 +5352,13 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "Os casos aumentam muito mais rápido",
+        "text": "Os casos aumentam muito mais rápido ",
         "correct": false
       }
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Coronavírus: as lições da segunda onda de covid-19 na Europa para os países que ainda não\nsaíram da primeira\n23 novembro 2020\nPara os especialistas da Organização Pan-americana de Saúde (Opas), a principal lição da segunda\nonda de casos de covid-19 na Europa é mais do que óbvia.\n\"Não devemos baixar a guarda\", afirma à BBC News Mundo (serviço em espanhol da BBC) o\ndiretor do departamento de doenças transmissíveis da entidade, Marcos Espinal.\n\"Na Europa, com a chegada do verão e a queda do número de casos, as medidas de combate\nforam relaxadas\", o que explica em sua avaliação o avanço brutal do coronavírus que se sucedeu\nno continente europeu.\nAgora, com as taxas de infecção em patamares mais baixos na Argentina e em diversos países da\nAmérica do Sul e a aproximação das festas de fim de ano e do verão, não deve ser subestimado o\nrisco da região refletir a trajetória europeia.\nE o principal agravante é que os países sul-americanos ainda não superaram a primeira onda da\npandemia, que já matou mais de 310 mil pessoas na região (pouco mais da metade no Brasil).\n\"Essa menção a ondas se refere à curva epidêmica de uma doença\", disse o médico brasileiro\nJarbas Barbosa, diretor da Opas, que é o braço da Organização das Nações Unidas (ONU) para\nAmérica Latina e Caribe.\n\"E na Europa houve nitidamente uma primeira onda porque o número de casos cresceu\nrapidamente, em seguida foram adotadas medidas de contenção que levaram a uma diminuição\ndas infecções. Durante alguns meses quase não houve casos. Mas logo a economia se reabriu, o\nverão chegou, viagens etc., voltou a crescer o contágio e por isso se fala em segunda onda\",\nexplicou.\nMas na América Latina a situação é diferente.\nAinda que o número de casos tenha caído bastante em diversas localidades da região, incluindo o\nBrasil, Barbosa avalia que nenhuma delas conseguiu em algum momento controlar de fato a\ntransmissão do coronavírus como alguns países europeus.\n\"Quando olhamos para a média dos países, é como se estivessem em uma primeira onda bem\nextensa que nunca acabou.\"\nSem tempo a perder\nPara Barbosa, porém, uma lição aprendida é que \"em qualquer parte do mundo onde o vírus esteja\npresente, se as condições facilitarem a transmissão, ela aumentará e teremos mais casos e mais\nmortes\".\nE por isso, uma das recomendações da Opas é não olhar apenas para as médias nacionais de\ncasos, \"mas para o que está acontecendo em cada Estado, província ou município\", atuar\nrapidamente em nível local quando estiver claro que o vírus está crescendo ali, algo com o qual o\nprofessor Paul Hunter, especialista britânico em coronavírus, concorda.\n\"Se olharmos os dados disponíveis, fica claro que o mais eficaz e menos prejudicial provavelmente\nseria um sistema de restrições territoriais diferenciadas\", disse Hunter, da Universidade de East\nAnglia, à BBC News Mundo.\nEmbora para ele uma lição muito mais óbvia da segunda onda europeia seja a de que não é preciso\nesperar até a água bater no pescoço para tomar qualquer medida.\n\"Os casos aumentam muito mais rápido do que diminuem depois que as medidas são tomadas.\nPor exemplo, se considerarmos as taxas de internações (no Reino Unido), elas basicamente se\nmultiplicaram por seis a cada duas semanas até o início de abril e depois levaram cinquenta dias\npara voltarem ao patamar inicial\", explica Hunter.\n\"Então, se você disser 'Acho que vou esperar uma semana antes de implementar algo', o resultado\né que as pessoas terão que ficar confinadas por mais quatro semanas para compensar esse\natraso.\"\n(Disponível em <https://www.bbc.com/portuguese/internacional-55044731> Acesso em 14 dez.\n2020)\nMas logo a economia se reabriu, o verão chegou, viagens etc., voltou a crescer o contágio e por\nisso se fala em segunda onda\", explicou."
+    "readingText": "Coronavírus: as lições da segunda onda de covid-19 na Europa para os países que ainda não\nsaíram da primeira\n23 novembro 2020\nPara os especialistas da Organização Pan-americana de Saúde (Opas), a principal lição da segunda\nonda de casos de covid-19 na Europa é mais do que óbvia.\n\"Não devemos baixar a guarda\", afirma à BBC News Mundo (serviço em espanhol da BBC) o\ndiretor do departamento de doenças transmissíveis da entidade, Marcos Espinal.\n\"Na Europa, com a chegada do verão e a queda do número de casos, as medidas de combate\nforam relaxadas\", o que explica em sua avaliação o avanço brutal do coronavírus que se sucedeu\nno continente europeu.\nAgora, com as taxas de infecção em patamares mais baixos na Argentina e em diversos países da\nAmérica do Sul e a aproximação das festas de fim de ano e do verão, não deve ser subestimado o\nrisco da região refletir a trajetória europeia.\nE o principal agravante é que os países sul-americanos ainda não superaram a primeira onda da\npandemia, que já matou mais de 310 mil pessoas na região (pouco mais da metade no Brasil).\n\"Essa menção a ondas se refere à curva epidêmica de uma doença\", disse o médico brasileiro\nJarbas Barbosa, diretor da Opas, que é o braço da Organização das Nações Unidas (ONU) para\nAmérica Latina e Caribe.\n\"E na Europa houve nitidamente uma primeira onda porque o número de casos cresceu\nrapidamente, em seguida foram adotadas medidas de contenção que levaram a uma diminuição\ndas infecções. Durante alguns meses quase não houve casos. Mas logo a economia se reabriu, o\nverão chegou, viagens etc., voltou a crescer o contágio e por isso se fala em segunda onda\",\nexplicou.\nMas na América Latina a situação é diferente.\nAinda que o número de casos tenha caído bastante em diversas localidades da região, incluindo o\nBrasil, Barbosa avalia que nenhuma delas conseguiu em algum momento controlar de fato a\ntransmissão do coronavírus como alguns países europeus.\n\"Quando olhamos para a média dos países, é como se estivessem em uma primeira onda bem\nextensa que nunca acabou.\"\nSem tempo a perder\nPara Barbosa, porém, uma lição aprendida é que \"em qualquer parte do mundo onde o vírus esteja\npresente, se as condições facilitarem a transmissão, ela aumentará e teremos mais casos e mais\nmortes\".\nE por isso, uma das recomendações da Opas é não olhar apenas para as médias nacionais de\ncasos, \"mas para o que está acontecendo em cada Estado, província ou município\", atuar\nrapidamente em nível local quando estiver claro que o vírus está crescendo ali, algo com o qual o\nprofessor Paul Hunter, especialista britânico em coronavírus, concorda.\n\"Se olharmos os dados disponíveis, fica claro que o mais eficaz e menos prejudicial provavelmente\nseria um sistema de restrições territoriais diferenciadas\", disse Hunter, da Universidade de East\nAnglia, à BBC News Mundo.\nEmbora para ele uma lição muito mais óbvia da segunda onda europeia seja a de que não é preciso\nesperar até a água bater no pescoço para tomar qualquer medida.\n\"Os casos aumentam muito mais rápido do que diminuem depois que as medidas são tomadas.\nPor exemplo, se considerarmos as taxas de internações (no Reino Unido), elas basicamente se\nmultiplicaram por seis a cada duas semanas até o início de abril e depois levaram cinquenta dias\npara voltarem ao patamar inicial\", explica Hunter.\n\"Então, se você disser 'Acho que vou esperar uma semana antes de implementar algo', o resultado\né que as pessoas terão que ficar confinadas por mais quatro semanas para compensar esse\natraso.\"\n(Disponível em <https://www.bbc.com/portuguese/internacional-55044731> Acesso em 14 dez.\n2020)\nMas logo a economia se reabriu, o verão chegou, viagens etc., voltou a crescer o <u>contágio</u> e por\nisso se fala em segunda onda\", explicou."
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q65",
@@ -5449,27 +5449,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Veio, finalmente, a primeira vitória de sua carreira.",
+        "text": "Veio, finalmente, <u>a</u> primeira vitória de sua carreira.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Conheceram-se numa biblioteca: foi amor a primeira vista.",
+        "text": "Conhecer<u>a</u>m-se numa biblioteca: foi amor a primeira vista.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Não será a primeira e nem a segunda leitura que o convencerá.",
+        "text": "Não será <u>a</u> primeira e nem a segunda leitura que o convencerá.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Foi a primeira vez que viajei a Portugal, e já quero retornar.",
+        "text": "Foi <u>a</u> primeira vez que viajei a Portugal, e já quero retornar.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Não peça informações a qualquer primeira pessoa que encontrar.",
+        "text": "Não peç<u>a</u> informações a qualquer primeira pessoa que encontrar.",
         "correct": false
       }
     ],
@@ -5556,37 +5556,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 70,
-    "statement": "Assinale a opção em que a acentuação da palavra sublinhada se justifica por uma regra\nDIFERENTE das demais.",
+    "statement": "OBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico.\nAssinale a opção em que a acentuação da palavra sublinhada se justifica por uma regra\nDIFERENTE das demais.",
     "options": [
       {
         "letter": "A",
-        "text": "Abro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça (...)",
+        "text": "Abro as venezianas na alegria do sol desta manhã e <u>só</u> não ponho a mão na cabeça (...)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "(...) porque, afinal das contas, o correr dos anos nos dá uma certa filosofia.",
+        "text": "(...) porque, afinal das contas, o correr dos anos nos <u>dá</u> uma certa filosofia.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Essa rapaziada parece que é mesmo toda assim.",
+        "text": "Essa rapaziada parece que <u>é</u> mesmo toda assim.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "(...) provido de cabides, que não têm outro destino senão abrigar as suas calças?",
+        "text": "(...) provido de cabides, que não <u>têm</u> outro destino senão abrigar as suas calças?",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "(...) ele já pôs o Billy Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas!",
+        "text": "(...) ele já <u>pôs</u> o Billy Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas!",
         "correct": false
       }
     ],
     "correctLetter": "D",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "UM QUARTO DE RAPAZ\nElsie Lessa\nAbro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça porque, afinal\ndas contas, o correr dos anos nos dá uma certa filosofia. Essa rapaziada parece que é mesmo toda\nassim.\nQuem sai para uma prova de matemática não há mesmo de ter deixado a cama feita, tanto mais\nquando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este Poesia até\nagora, rubro de vergonha de ter sido largado no chão junto a este cinzeiro transbordante e às\nmeias azuis de náilon. E dizer que desde que esse menino nasceu tento provar-lhe que já não\nestamos – hélas! – no tempo da escravidão e que somos nós mesmos, brancos, pretos ou\namarelos, intelectuais ou estudantes em provas, que devemos encaminhar ao destino conveniente\nas roupas da véspera. Qual, ele não se convence. Também uma manta escocesa, de suaves lãs\nmacias, que a mãe da gente trouxe embaixo do braço da Inglaterra até aqui, para que nos aqueça\nnas noites de inverno, não devia ser largada no chão, nem mesmo na companhia de um livro de\nversos. E quem é que está ligando para tudo isso?\nÓ mocidade inquieta, só mesmo o que está em ordem dentro deste quarto são os montes de\ndiscos. E estes livros, meu Deus? Como é que gente que gosta de ler pode deixar os próprios\nlivros numa bagunça dessas? Coitado do Pablo Neruda, olha onde foi parar! E o Dom Quixote de la\nMancha, Virgem Santíssima! Há três gerações que os antepassados desse menino não fazem\noutra coisa senão escrever livros, e ele os trata assim!\n− Livro é pra ler! Não é para enfeitar estante!\n− Está certo! Que não enfeite, mas também não precisam ser empurrados desse jeito, lá para o\nfundo, com esse monte de revistas de jazz em cima! E custava, criatura, custava você pendurar\nessas calças nesse guarda-roupa que é para você, sozinho, que é provido de cabides, que não têm\noutro destino senão abrigar as suas calças?\n− Mania de ordem é complexo de culpa, já te avisei! Meu quarto está ótimo, está formidável. E não\ngosto que mexa, hein, senão depois não acho as minhas coisas!\nE pensar que esse menino um dia casa e vai levar essas noções de arrumação para a infeliz da\nesposa, e que juízo, que juízo vai fazer essa moça de mim, meu Deus do céu! Há bem uns quinze\nanos que esse problema me atormenta, tenho trocado confidências com amigas e há várias\nopiniões a respeito. Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses\nmoleques e passam a pendurar a roupa, tirar pó de livro, desamarrar o sapato antes de tirar do pé.\nPode ser. Deus permita! Mas que agonia, enquanto isso não acontece.\ndizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe, que o\nrodeassem em todas as suas horas, que lhe infundissem o gosto das coisas belas. Qual! Pendurei a\nbalada do “If”¹ em cima de todos esses discos de jazz, e sobre a vitrola, já nem sei por quê, esse\nbelo retrato de Napoleão, em esmalte, vindo das margens do Sena! E ele está se importando? O\nviolão está sem cordas, e em cima do meu retrato, radioso retrato da minha juventude, ele já pôs o\nBilly Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas! E não\ntira um, antes de colocar o outro! Vai empurrando por cima e já a moldura estoura com essa\nvariedade de predileções! São Sebastião, na sua peanha dourada, está de olhos erguidos para o\nalto e, felizmente, não vê a desordem que anda cá por baixo.\nVejo eu, olho em roda para saber por onde começar. Custava ele despejar esses cinzeiros? Onde\njá se viu fumar na cama e fazer furos nos meus lençóis? E, em tempos de provas, é hora de ficar\nfolheando livros de versos, até tarde da noite, desse jeito? O caderno de física está assim de\npoesias e letras de fox e caricaturas de colegas, não sei também se de algum professor! E para que\nseis caixas de fósforo em cima dessa vitrola? E onde já se viu misturar na mesma mesa esse nunca\nassaz manuseado Manuel Bandeira, e El son entero, de Nicolás Guillén, e os poemas de Mário de\nAndrade, e os Pássaros Perdidos de Tagore, e Fernando Pessoa, e esse pocket book policial? Quer\nler Graham Greene, e fazer versos, e fumar feito um desesperado, e não perder praia no Arpoador,\nnem broto na vizinhança, nem filme na semana e passar nas provas. E em que mundo isso é\npossível?\nGuardo os chinelos, que ficam sempre emborcados. Já lhe disse que isso é atraso de vida. E ele\nmorre de rir. E ponho as cobertas em cima da cama. E abro as janelas, para sair esse cheiro de\nfumo. E deixo só uma caixa de fósforos. Mas não faço mais nada, porque abri um caderno, de letra\nmuito ruim, até a metade com os seus versos.\n¹ Poema célebre do escritor indiano Rudyard Kipling (1865-1936), Prêmio Nobel de Literatura de\n1907.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico."
+    "readingText": "UM QUARTO DE RAPAZ\nElsie Lessa\nAbro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça porque, afinal\ndas contas, o correr dos anos nos dá uma certa filosofia. Essa rapaziada parece que é mesmo toda\nassim.\nQuem sai para uma prova de matemática não há mesmo de ter deixado a cama feita, tanto mais\nquando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este Poesia até\nagora, rubro de vergonha de ter sido largado no chão junto a este cinzeiro transbordante e às\nmeias azuis de náilon. E dizer que desde que esse menino nasceu tento provar-lhe que já não\nestamos – hélas! – no tempo da escravidão e que somos nós mesmos, brancos, pretos ou\namarelos, intelectuais ou estudantes em provas, que devemos encaminhar ao destino conveniente\nas roupas da véspera. Qual, ele não se convence. Também uma manta escocesa, de suaves lãs\nmacias, que a mãe da gente trouxe embaixo do braço da Inglaterra até aqui, para que nos aqueça\nnas noites de inverno, não devia ser largada no chão, nem mesmo na companhia de um livro de\nversos. E quem é que está ligando para tudo isso?\nÓ mocidade inquieta, só mesmo o que está em ordem dentro deste quarto são os montes de\ndiscos. E estes livros, meu Deus? Como é que gente que gosta de ler pode deixar os próprios\nlivros numa bagunça dessas? Coitado do Pablo Neruda, olha onde foi parar! E o Dom Quixote de la\nMancha, Virgem Santíssima! Há três gerações que os antepassados desse menino não fazem\noutra coisa senão escrever livros, e ele os trata assim!\n− Livro é pra ler! Não é para enfeitar estante!\n− Está certo! Que não enfeite, mas também não precisam ser empurrados desse jeito, lá para o\nfundo, com esse monte de revistas de jazz em cima! E custava, criatura, custava você pendurar\nessas calças nesse guarda-roupa que é para você, sozinho, que é provido de cabides, que não têm\noutro destino senão abrigar as suas calças?\n− Mania de ordem é complexo de culpa, já te avisei! Meu quarto está ótimo, está formidável. E não\ngosto que mexa, hein, senão depois não acho as minhas coisas!\nE pensar que esse menino um dia casa e vai levar essas noções de arrumação para a infeliz da\nesposa, e que juízo, que juízo vai fazer essa moça de mim, meu Deus do céu! Há bem uns quinze\nanos que esse problema me atormenta, tenho trocado confidências com amigas e há várias\nopiniões a respeito. Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses\nmoleques e passam a pendurar a roupa, tirar pó de livro, desamarrar o sapato antes de tirar do pé.\nPode ser. Deus permita! Mas que agonia, enquanto isso não acontece.\ndizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe, que o\nrodeassem em todas as suas horas, que lhe infundissem o gosto das coisas belas. Qual! Pendurei a\nbalada do “If”¹ em cima de todos esses discos de jazz, e sobre a vitrola, já nem sei por quê, esse\nbelo retrato de Napoleão, em esmalte, vindo das margens do Sena! E ele está se importando? O\nviolão está sem cordas, e em cima do meu retrato, radioso retrato da minha juventude, ele já pôs o\nBilly Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas! E não\ntira um, antes de colocar o outro! Vai empurrando por cima e já a moldura estoura com essa\nvariedade de predileções! São Sebastião, na sua peanha dourada, está de olhos erguidos para o\nalto e, felizmente, não vê a desordem que anda cá por baixo.\nVejo eu, olho em roda para saber por onde começar. Custava ele despejar esses cinzeiros? Onde\njá se viu fumar na cama e fazer furos nos meus lençóis? E, em tempos de provas, é hora de ficar\nfolheando livros de versos, até tarde da noite, desse jeito? O caderno de física está assim de\npoesias e letras de fox e caricaturas de colegas, não sei também se de algum professor! E para que\nseis caixas de fósforo em cima dessa vitrola? E onde já se viu misturar na mesma mesa esse nunca\nassaz manuseado Manuel Bandeira, e El son entero, de Nicolás Guillén, e os poemas de Mário de\nAndrade, e os Pássaros Perdidos de Tagore, e Fernando Pessoa, e esse pocket book policial? Quer\nler Graham Greene, e fazer versos, e fumar feito um desesperado, e não perder praia no Arpoador,\nnem broto na vizinhança, nem filme na semana e passar nas provas. E em que mundo isso é\npossível?\nGuardo os chinelos, que ficam sempre emborcados. Já lhe disse que isso é atraso de vida. E ele\nmorre de rir. E ponho as cobertas em cima da cama. E abro as janelas, para sair esse cheiro de\nfumo. E deixo só uma caixa de fósforos. Mas não faço mais nada, porque abri um caderno, de letra\nmuito ruim, até a metade com os seus versos.\n¹ Poema célebre do escritor indiano Rudyard Kipling (1865-1936), Prêmio Nobel de Literatura de\n1907."
   },
   {
     "id": "acentuacao-pdf_2_acentuacao-q71",
@@ -5595,31 +5595,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_2_acentuacao",
     "listTitle": "Acentuação Gráfica (Regras Gerais & Especiais)",
     "questionNumber": 71,
-    "statement": "Com base no texto, responda à questão.\nAssinale a alternativa em que a palavra sublinhada se acentua por uma regra que se DISTINGUE\ndas demais.",
+    "statement": "Com base no texto, responda à questão.\nAssinale a alternativa em que a palavra sublinhada se acentua por uma regra que se <u>DISTINGUE</u>\ndas demais.",
     "options": [
       {
         "letter": "A",
-        "text": "(...) mas era menino e sem condições de avaliar-te, ou vieras em código, e eu (...).",
+        "text": "(...) mas era menino e sem condições de avaliar-te, ou vieras em <u>código,</u> e eu (...).",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "As dádivas que devias trazer-me, quais seriam?",
+        "text": "As <u>dádivas</u> que devias trazer-me, quais seriam?",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Era o equívoco mais consolador, afinal não se perderia a mensagem.",
+        "text": "Era o <u>equívoco</u> mais consolador, afinal não se perderia a mensagem.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "(...) sem possuir a chave, me quedava mirando-te e remirando-te como à estrela intocável.",
+        "text": "(...) sem possuir a chave, me quedava mirando-te e remirando-te como à estrela <u>intocável.</u>",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "Estavas entre inúmeras companheiras, jogadas em sacos espessos (...).",
+        "text": "Estavas entre <u>inúmeras</u> companheiras, jogadas em sacos espessos (...).",
         "correct": false
       }
     ],
@@ -5638,27 +5638,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "O famoso pediatra, com um esgar colérico, recusa a formidável droga.",
+        "text": "O famoso pediatra, com um esgar <u>colérico,</u> recusa a formidável droga.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "O copo é levado com energia aos seus lábios (...).",
+        "text": "O copo é levado com energia aos seus <u>lábios</u> (...).",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "A mãe recolhe o copo vazio com a alegria da vitória (...).",
+        "text": "A mãe recolhe o copo vazio com a alegria da <u>vitória</u> (...).",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "A terrível mistura é sorvida com dificuldade e repugnância (...).",
+        "text": "A <u>terrível</u> mistura é sorvida com dificuldade e repugnância (...).",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "(...) e desfaz com uma espadeirada todo o consultório (...).",
+        "text": "(...) e desfaz com uma espadeirada todo o <u>consultório</u> (...).",
         "correct": false
       }
     ],
@@ -5677,27 +5677,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“(...) curvo a cabeça e tomo meu café (...)“.",
+        "text": "“(...) curvo a cabeça e tomo meu <u>café</u> (...)“.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Vejo, porém, que se preparam para algo (...) “.",
+        "text": "“Vejo, <u>porém,</u> que se preparam para algo (...) “.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“(...) e depois se afasta para atendê-lo”..,",
+        "text": "“(...) e depois se afasta para <u>atendê-lo”.</u>.,",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“A mãe limita-se a ficar imóvel (...)”.",
+        "text": "“A mãe limita-se a ficar <u>imóvel</u> (...)”.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "“O homem atrás do balcão (...)”.",
+        "text": "“O homem <u>atrás</u> do balcão (...)”.",
         "correct": false
       }
     ],
@@ -5716,27 +5716,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "\"Também com certeza nunca lhe explicaram (...)\". (2° parágrafo)",
+        "text": "<u>\"Também</u> com certeza nunca lhe explicaram (...)\". (2° parágrafo)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "\"Tu és um homem, Bruno Lichtenstein (...)\". (7° parágrafo)",
+        "text": "\"Tu <u>és</u> um homem, Bruno Lichtenstein (...)\". (7° parágrafo)",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "\"Não pagará a licença de seu amigo\". (2° parágrafo)",
+        "text": "\"Não <u>pagará</u> a licença de seu amigo\". (2° parágrafo)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "\"Andando pelas salas desertas, foi até onde estava o seu amigo\". (3° parágrafo)",
+        "text": "\"Andando pelas salas desertas, foi <u>até</u> onde estava o seu amigo\". (3° parágrafo)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\"( ••• ) lhe haviam carregado o cachorro e que iam matá-lo\". (2° parágrafo)",
+        "text": "\"( ••• ) lhe haviam carregado o cachorro e que iam <u>matá-</u>lo\". (2° parágrafo)",
         "correct": false
       }
     ],
@@ -5819,7 +5819,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "O Capitalismo e a Sociedade de Consumo\nA sociedade de consumo situa-se em uma perspectiva econômica que vem apresentando sinais\nde esgotamento, o que avoluma o número de críticas.\nA sociedade atual encontra-se em um estágio altamente consumista\nA sociedade de consumo é um termo bastante utilizado para representar os avanços de\nprodução do sistema capitalista, que se intensificaram ao longo do século XX notadamente nos\nEstados Unidos e que, posteriormente, espalharam-se – e ainda vem se espalhando – pelo mundo.\nNesse sentido, o desenvolvimento econômico e social é pautado pelo aumento do consumo, que\nresulta em lucro ao comércio e às grandes empresas, gerando mais empregos, aumentando a\nrenda, o que acarreta ainda mais consumo. Uma ruptura nesse modelo representaria uma crise,\npois a renda diminuiria, o desemprego elevar-se-ia e o acesso a elementos básicos seria mais\ndificultado.\nUma das grandes críticas ao sistema capitalista é a emergência desse modelo. Suas raízes estão\nvinculadas ao processo de Revolução Industrial, mas foi a emergência do American Way Of Life\n(jeito americano de viver) em 1910, nos Estados Unidos, que intensificou essa problemática. A\nconsequência foi uma crise de superprodução das fábricas, que ficaram com grandes estoques de\nprodutos sem um mercado consumidor capaz de absorvê-los, gerando a crise de 1929. Na época,\npara combater os efeitos da crise, o governo desenvolveu formas de intervir na economia e\nprovocar o seu aquecimento em um plano chamado New Deal (Novo Acordo).\nConsequentemente, para que as fábricas continuassem produzindo em massa e os produtos\ndifundissem-se, foram estabelecidos modelos de desenvolvimento pautados na melhoria de renda\ne no crédito facilitado com o objetivo de ampliar ainda mais o consumo. Com isso, a crise\neconômica do século XX teve fim, mas uma problemática ainda maior se estabeleceu, pois o\nconsumo pelo consumo é uma maneira contraditória e ineficaz de manter o desenvolvimento das\nsociedades. Tal dinâmica não se modificou mesmo com a retomada do modelo neoliberal a partir\nda década de 1970 em todo o mundo.\nAs críticas sobre a sociedade de consumo direcionam-se não apenas pela perspectiva econômica,\nmas também pelo viés ambiental. Afinal, um dos efeitos do consumismo é a ampliação da\nexploração dos recursos naturais para a geração de matérias-primas voltadas à fabricação de mais\ne mais mercadorias. Estimativas apontam que seriam necessários quatro planetas e meio para\ngarantir os recursos naturais para a humanidade caso todos os países mantivessem o mesmo nível\nde consumo dos EUA.\nCom isso, há a devastação das florestas e o esgotamento até mesmo dos recursos renováveis, tais\ncomo a água própria para o consumo, as florestas e o solo. Além disso, os recursos não renováveis\nvão contando os dias para a escassez completa, tais como as reservas de petróleo e de diversos\nminérios utilizados para a fabricação dos mais diferentes produtos utilizados pela sociedade.\nUm dos aspectos mais criticados no que se refere à sociedade de consumo é a obsolescência\nprogramada – ou obsolescência planejada –, que consiste na produção de mercadorias\npreviamente elaboradas para serem rapidamente descartadas, fazendo com que o consumidor\ncompre um novo produto em breve. Assim, aumenta-se o consumo, mas também aumenta a\ndemanda por recursos naturais e maximiza a produção de lixo, elevando ainda mais a problemática\nambiental decorrente desse processo.\nA intensiva geração de lixo é um dos principais problemas da sociedade de consumo atual.\nCom isso, além da adoção de políticas sociais de controle ao consumismo exagerado, é preciso\nencontrar meios econômicos alternativos ao desenvolvimento pautado no consumo. Não\nobstante, faz-se necessária também a promoção de políticas de reciclagem, além da reutilização\nou reaproveitamento dos produtos não mais utilizados, contendo, assim, a geração de lixo e a\ndemanda desenfreada por matérias-primas.\nAcesso em 09/2022. Disponível em https://mundoeducacao.uol.com.br/geografia/o-capitalismo-\nsociedade-consumo.htm"
+    "readingText": "O Capitalismo e a Sociedade de Consumo\nA sociedade de consumo situa-se em uma perspectiva econômica que vem apresentando sinais\nde esgotamento, o que avoluma o número de críticas.\nA sociedade atual encontra-se em um estágio altamente consumista\nA sociedade de consumo é um termo bastante utilizado para representar os avanços de\nprodução do sistema capitalista, que se intensificaram ao longo do século XX notadamente nos\nEstados Unidos e que, posteriormente, espalharam-se – e ainda vem se espalhando – pelo mundo.\nNesse sentido, o desenvolvimento econômico e social é pautado pelo aumento do consumo, que\nresulta em lucro ao comércio e às grandes empresas, gerando mais empregos, aumentando a\nrenda, o que acarreta ainda mais consumo. Uma ruptura nesse modelo representaria uma crise,\npois a renda diminuiria, o desemprego elevar-se-ia e o acesso a elementos básicos seria mais\ndificultado.\nUma das grandes críticas ao sistema capitalista é a emergência desse modelo. Suas raízes estão\nvinculadas ao processo de Revolução Industrial, mas foi a emergência do American Way Of Life\n(jeito americano de viver) em 1910, nos Estados Unidos, que intensificou essa problemática. A\nconsequência foi uma crise de superprodução das fábricas, que ficaram com grandes estoques de\nprodutos sem um mercado consumidor capaz de absorvê-los, gerando a <u>crise de 1929.</u> Na época,\npara combater os efeitos da crise, o governo desenvolveu formas de intervir na economia e\nprovocar o seu aquecimento em um plano chamado New Deal (Novo Acordo).\nConsequentemente, para que as fábricas continuassem produzindo em massa e os produtos\ndifundissem-se, foram estabelecidos modelos de desenvolvimento pautados na melhoria de renda\ne no crédito facilitado com o objetivo de ampliar ainda mais o consumo. Com isso, a crise\neconômica do século XX teve fim, mas uma problemática ainda maior se estabeleceu, pois o\nconsumo pelo consumo é uma maneira contraditória e ineficaz de manter o desenvolvimento das\nsociedades. Tal dinâmica não se modificou mesmo com a retomada do modelo neoliberal a partir\nda década de 1970 em todo o mundo.\nAs críticas sobre a sociedade de consumo direcionam-se não apenas pela perspectiva econômica,\nmas também pelo viés ambiental. Afinal, um dos efeitos do consumismo é a ampliação da\nexploração dos recursos naturais para a geração de matérias-primas voltadas à fabricação de mais\ne mais mercadorias. Estimativas apontam que seriam necessários quatro planetas e meio para\ngarantir os recursos naturais para a humanidade caso todos os países mantivessem o mesmo nível\nde consumo dos EUA.\nCom isso, há a devastação das florestas e o esgotamento até mesmo dos recursos renováveis, tais\ncomo a água própria para o consumo, as florestas e o solo. Além disso, os recursos não renováveis\nvão contando os dias para a escassez completa, tais como as reservas de petróleo e de diversos\nminérios utilizados para a fabricação dos mais diferentes produtos utilizados pela sociedade.\nUm dos aspectos mais criticados no que se refere à sociedade de consumo é a obsolescência\nprogramada – ou obsolescência planejada –, que consiste na produção de mercadorias\npreviamente elaboradas para serem rapidamente descartadas, fazendo com que o consumidor\ncompre um novo produto em breve. Assim, aumenta-se o consumo, mas também aumenta a\ndemanda por recursos naturais e maximiza a produção de lixo, elevando ainda mais a problemática\nambiental decorrente desse processo.\nA intensiva geração de lixo é um dos principais problemas da sociedade de consumo atual.\nCom isso, além da adoção de políticas sociais de controle ao consumismo exagerado, é preciso\nencontrar meios econômicos alternativos ao desenvolvimento pautado no consumo. Não\nobstante, faz-se necessária também a promoção de políticas de reciclagem, além da reutilização\nou reaproveitamento dos produtos não mais utilizados, contendo, assim, a geração de lixo e a\ndemanda desenfreada por matérias-primas.\nAcesso em 09/2022. Disponível em https://mundoeducacao.uol.com.br/geografia/o-capitalismo-\nsociedade-consumo.htm"
   },
   {
     "id": "formacao-pdf_3_formacao-q3",
@@ -5832,27 +5832,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“(...) a legislação ineficaz acaba levando a uma sensação disseminada de impunidade e a altas taxas de reincidência entre os traficantes de fauna silvestre.” – Prefixação e sufixação",
+        "text": "“(...) a legislação ineficaz acaba levando a uma sensação disseminada de <u>impunidade</u> e a altas taxas de reincidência entre os traficantes de fauna silvestre.” – Prefixação e sufixação",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“(...) pouco fazem para coibir o tráfico de substâncias ilícitas.” – Prefixação",
+        "text": "“(...) pouco fazem para coibir o tráfico de substâncias <u>ilícitas.”</u> – Prefixação",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“(...) na ausência de agravantes, considera o tráfico de animais silvestres (...)” – Regressiva",
+        "text": "“(...) na ausência de agravantes, considera o <u>tráfico</u> de animais silvestres (...)” – Regressiva",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“A lei brasileira que busca tipificar o conjunto de condutas que compõem o tráfico de fauna silvestre é a Lei Federal de Crimes Ambientais (...)” – Sufixação",
+        "text": "“A lei brasileira que busca <u>tipificar</u> o conjunto de condutas que compõem o tráfico de fauna silvestre é a Lei Federal de Crimes Ambientais (...)” – Sufixação",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Neste momento, é possível traçar um paralelo com o funcionamento do tráfico de drogas (...)” – Sufixação",
+        "text": "“Neste momento, é possível traçar um paralelo com o <u>funcionamento</u> do tráfico de drogas (...)” – Sufixação ",
         "correct": false
       }
     ],
@@ -5938,7 +5938,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 6,
-    "statement": "Assinale, a seguir, a alternativa em que há palavra que passou pelo mesmo processo de formação\ndo apresentado pela palavra em destaque em “A professora da Escola de Nutrição da UFBA\ndestacou que, diante da instabilidade do ambiente econômico e ausência de perspectivas de\nmudança no curto prazo, dois conceitos são fundamentais: solidariedade e responsabilidade do\nEstado.”",
+    "statement": "Assinale, a seguir, a alternativa em que há palavra que passou pelo mesmo processo de formação\ndo apresentado pela palavra em destaque em “A professora da Escola de Nutrição da UFBA\ndestacou que, diante da **instabilidade** do ambiente econômico e ausência de perspectivas de\nmudança no curto prazo, dois conceitos são fundamentais: solidariedade e responsabilidade do\nEstado.”",
     "options": [
       {
         "letter": "A",
@@ -5963,7 +5963,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "“Nunca passamos por situação tão séria”, diz especialista sobre a fome no Brasil\nÚltimos dados da Rede Penssan apontaram para 19 milhões de brasileiros passando fome; 55%\ndas famílias estão em insegurança alimentar\nLeonardo Lopes\nDados divulgados recentemente pela Rede Brasileira de Pesquisa em Soberania e Segurança\nAlimentar e Nutricional (Rede Penssan) apontaram que o Brasil tem pelo menos 19 milhões de\npessoas passando fome, e 55% das famílias estão em insegurança alimentar – sem acesso regular\ne permanente a alimentos.\nA professora da Escola de Nutrição da UFBA destacou que, diante da instabilidade do ambiente\neconômico e ausência de perspectivas de mudança no curto prazo, dois conceitos são\nfundamentais: solidariedade e responsabilidade do Estado.\n“A solidariedade tem sido fundamental para garantir a sobrevivência desses milhões de brasileiros\nque passam fome. Temos 119 milhões de brasileiros com alguma privação alimentar, e 19 milhões\npassando fome, sem saber quando voltará a se alimentar. A solidariedade é fundamental, mas\ninsuficiente”, disse.\nPor ser insuficiente, Sandra Chaves afirma que há uma necessidade do Estado ter responsabilidade\ne garantir programas de transferência de renda dignos. Ela pontua que o valor da cesta básica de\nalimentos cresceu mais de 30% nos últimos 12 meses, chegando a preços acima de 700 reais em\nalguns estados.\nA pesquisadora explica que os dados desse levantamento divulgado pela Rede Penssan foram\ncolhidos em dezembro de 2020. “Estava vigente o auxílio de 300 reais para um número\nrelativamente grande de pessoas e famílias. Depois disso, ficamos três meses sem nenhum auxílio,\ndepois ele retornou num valor muito baixo. Agora, estamos nesse vazio até ser retomado no valor\nque está previsto de 400 reais”, declarou Sandra.\nAlém da solidariedade da sociedade, e da responsabilidade estatal em programas de transferência\nde renda, a vice-coordenadora da Rede Penssan afirma que são necessárias medidas ativas do\ngoverno na regulamentação de preços, para garantir o acesso da população aos alimentos, além\nde programas de emprego e renda.\n“Ter um botijão do gás a R$ 120 é muito grave. O quilo do feijão e arroz a R$ 9 em algumas\ncapitais. O preço absurdo do quilo da carne. Em 1974, foi feito o primeiro estudo nacional de\ndespesa familiar. Lá, foi demonstrado uma situação de fome desse nível que estamos vendo agora.\nFamílias faziam sopa de papelão pelo país. Nós estamos vendo isso agora. Nunca passamos por\numa situação tão seria”, afirmou Sandra Chaves.\n(Disponível em <https://www.cnnbrasil.com.br/saude/nunca-passamos-por-situacao-tao-seria-diz-especialista-sobre-a-fome-no-brasil/> Acesso em 06 jan. 2021)"
+    "readingText": "**“Nunca passamos por situação tão séria”, diz especialista sobre a fome no Brasil**\nÚltimos dados da Rede Penssan apontaram para 19 milhões de brasileiros passando fome; 55%\ndas famílias estão em insegurança alimentar\nLeonardo Lopes\nDados divulgados recentemente pela Rede Brasileira de Pesquisa em Soberania e Segurança\nAlimentar e Nutricional (Rede Penssan) apontaram que o Brasil tem pelo menos 19 milhões de\npessoas passando fome, e 55% das famílias estão em insegurança alimentar – sem acesso regular\ne permanente a alimentos.\nA professora da Escola de Nutrição da UFBA destacou que, diante da instabilidade do ambiente\neconômico e ausência de perspectivas de mudança no curto prazo, dois conceitos são\nfundamentais: solidariedade e responsabilidade do Estado.\n“A solidariedade tem sido fundamental para garantir a sobrevivência desses milhões de brasileiros\nque passam fome. Temos 119 milhões de brasileiros com alguma privação alimentar, e 19 milhões\npassando fome, sem saber quando voltará a se alimentar. A solidariedade é fundamental, mas\ninsuficiente”, disse.\nPor ser insuficiente, Sandra Chaves afirma que há uma necessidade do Estado ter responsabilidade\ne garantir programas de transferência de renda dignos. Ela pontua que o valor da cesta básica de\nalimentos cresceu mais de 30% nos últimos 12 meses, chegando a preços acima de 700 reais em\nalguns estados.\nA pesquisadora explica que os dados desse levantamento divulgado pela Rede Penssan foram\ncolhidos em dezembro de 2020. “Estava vigente o auxílio de 300 reais para um número\nrelativamente grande de pessoas e famílias. Depois disso, ficamos três meses sem nenhum auxílio,\ndepois ele retornou num valor muito baixo. Agora, estamos nesse vazio até ser retomado no valor\nque está previsto de 400 reais”, declarou Sandra.\nAlém da solidariedade da sociedade, e da responsabilidade estatal em programas de transferência\nde renda, a vice-coordenadora da Rede Penssan afirma que são necessárias medidas ativas do\ngoverno na regulamentação de preços, para garantir o acesso da população aos alimentos, além\nde programas de emprego e renda.\n“Ter um botijão do gás a R$ 120 é muito grave. O quilo do feijão e arroz a R$ 9 em algumas\ncapitais. O preço absurdo do quilo da carne. Em 1974, foi feito o primeiro estudo nacional de\ndespesa familiar. Lá, foi demonstrado uma situação de fome desse nível que estamos vendo agora.\nFamílias faziam sopa de papelão pelo país. Nós estamos vendo isso agora. Nunca passamos por\numa situação tão seria”, afirmou Sandra Chaves.\n(Disponível em <https://www.cnnbrasil.com.br/saude/nunca-passamos-por-situacao-tao-seria-diz-especialista-sobre-a-fome-no-brasil/> Acesso em 06 jan. 2021)"
   },
   {
     "id": "formacao-pdf_3_formacao-q7",
@@ -5972,7 +5972,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 7,
-    "statement": "Na frase “Ele estuda bastante para garantir sua aprovação”, sobre a forma verbal destacada é\ncorreto fazer a seguinte observação:",
+    "statement": "Na frase “Ele <u>estuda</u> bastante para garantir sua aprovação”, sobre a forma verbal destacada é\ncorreto fazer a seguinte observação:",
     "options": [
       {
         "letter": "A",
@@ -6271,7 +6271,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "O homem cordial e a ‘cultura do cancelamento’\nRafael do Nascimento\n10 de Abril de 2021\nO ato de cancelar alguém nos recoloca a velha roupa colorida da cordialidade e nos relembra que\ntoda diferença é uma relação tensa, uma discussão esperando ser retomada\nNão faz tempo, a prática conhecida por “cancelamento” instaurou-se em nosso cotidiano sob a\nface dupla de um sintoma referente à extrema politização das mídias sociais e de um prazer\nsecreto, um guilty pleasure, privado e autoindulgente. Mal ela apareceu, tanto o aspecto\npreocupante quanto o recompensador desta prática – que, talvez por falta de uma palavra melhor,\nresolvemos chamar de “cultura” – foram destacados por especialistas (ou não) do comportamento\nhumano. Ao colecionarmos casos diários de “cancelados” e “canceladas”, com toda a carga\ndramática que costuma acompanhá-los, fomos compreendendo o fenômeno como a expressão\ncombinada de inúmeras dificuldades enfrentadas no presente.\nUma delas tem a ver com a capacidade cada vez mais rarefeita de diálogo, em que a\nincomunicabilidade dos contrários reforça menos as verdades parciais de cada lado que a total\ninverdade do lado oposto. Outra dificuldade pode estar relacionada ao advento de um tempo\n“líquido” de interações mais fugazes, certezas menos consistentes e a necessidade urgente de\nsatisfazer desejos via consumo, seja dos outros ou de si mesmo/a. São ponderações razoáveis,\nsem dúvida. Mas o exercício da imaginação histórica e sociológica por vezes tende a criar\nressalvas quanto ao presentismo de tudo o que acontece à nossa volta. Com a “cultura do\ncancelamento” não é diferente, e embora ela seja alardeada e praticada como uma novidade, um\nrápido exame de seu funcionamento pode nos levar a reconhecer certos traços de personalidade\nque andam conosco há muito tempo.\nEm 1936, o historiador Sérgio Buarque de Holanda escreveu sobre o homem cordial em Raízes do\nBrasil, um dos ensaios mais famosos sobre nossa formação social. Entendida como a nossa\n“contribuição” ao conjunto das civilizações humanas, a cordialidade seria aquela marca de\nnascença da brasilidade manifestada na fala repleta de “inhos” e “inhas”, no sorriso dado de bom\ngrado (e muitas vezes cobrado) ao término da prestação de qualquer serviço e até no gestual\nafetuoso do rapaz que acha estranho cumprimentar mulheres com um aperto de mão. Éo que nos\ndeu a pecha internacional de povo amável e gentil “pela própria natureza”. No entanto, se isso nos\nparece simplesmente o cultivo de boas maneiras, Sérgio Buarque o vê com olhos bem menos\ninocentes. Para ele, essa forma de convívio seria “justamente o contrário da polidez”, atestando\numa repulsa generalizada pela formalidade e pela impessoalidade que, conforme diz o jargão,\nregem uma vida social justa e transparente.\nPara existir em sociedade, o homem cordial precisa fazer do público uma extensão do privado e\nestender a quem não conhece nem faz questão de conhecer uma “ética de fundo emotivo”. Ele\nprecisa, em uma palavra, tornar tudo pessoal, caso contrário não conseguirá assegurar um falso\ncontrole sobre si mesmo e os outros. A cordialidade, tal como a concebe Sérgio Buarque, não vem\ndo nada. Ela é fruto de nossa história de colônia, em que a família patriarcal atuava como unidade\npolítica e econômica, além de moral, e os interesses do senhor de engenho passavam a “interesse\ngeral” sem maiores constrangimentos. Neste cenário onde o Estado nada mais é que a ampliação\nda família, tudo se resolve em casa e à revelia de instâncias mediadoras impessoais. As relações de\ntrabalho se assentam na propriedade privada, no caso das pessoas escravizadas, ou no favor, no\ncaso das livres; o estupro de mulheres negras é deturpado em nossa tendência “natural” à mistura,\ne o de mulheres brancas é salvaguardado pela santidade do casamento; e o racismo, a ferida\nnarcísica de quem ainda se gaba de democracia racial, foi recalcado a ponto de ter virado uma\nneurose, como afirma Lélia Gonzalez, outra grande intérprete do Brasil.\nO mais importante a se destacar aqui é que, no regime da cordialidade, os conflitos nunca\ntransparecem tampouco desaparecem: eles são domesticados. Vivendo sob o mesmo teto, as\ndiferenças se amasiam, aprendendo a falar a mesma língua sem que seja necessário, ou mesmo\npermitido, conversar. Até porque assumir o conflito seria abrir caminho para dissidências e,\nconsequentemente, pôr em risco o controle patriarcal. Submetendo as diferenças ao silêncio, o\nhomem cordial teria sido o primeiro “cancelador”, eé bem provável que ele deva seu modo\npeculiar de agir à dinâmica habitacional da casa-grande e da senzala mais do que a qualquer outra\ndimensão da vida social brasileira.\nMas o que isso nos diz sobre a “cultura do cancelamento”? Se é possível afirmar que boa parte\ndessa sociedade não existe mais, o pavor em relação ao conflito e à diferença se mantém vivo a\ndespeito dos elogios à “diversidade” vistos por aí. É por isso que o ato de cancelar alguém tem um\nsabor ambíguo, ao mesmo tempo abominável e familiar: ele nos recoloca a velha roupa colorida da\ncordialidade, da qual não conseguimos nos despir completamente, e nos relembra que toda\ndiferença é uma relação tensa, uma discussão esperando ser retomada. Quem rompe o silêncio e\nperturba em nós o sentimento de controle sobre a diferença e de soberania face o social, essa\nentidade cuja força pode nos dobrar à triste condição de ser “mais um/a”, não merece sentar-se à\nmesa conosco. A unidade familiar não admite fissuras.\nO “cancelamento” é um problema doméstico. Não por acaso os mais célebres deles envolvem as\ncontrovérsias da cantora Karol Conká na “casa mais vigiada do Brasil” ou a antropóloga Lilia\nSchwarcz se referindo à sala de jantar de Beyoncé. O espaço da intimidade, incongruente com a\ncidadania formal e com a igualdade, é projetado sob a forma de um desejo impertinente de manter\nas coisas como estão, mesmo que o ponto em questão seja a sua transformação.\n(Disponível em <https://www.nexojornal.com.br/ensaio/2021/O-homem-cordial-e-a-%E2%80%98cultura-do-cancelamento%E2%80%99> Acesso em 26 abr. 2021)"
+    "readingText": "O homem cordial e a ‘cultura do cancelamento’\nRafael do Nascimento\n10 de Abril de 2021\nO ato de cancelar alguém nos recoloca a velha roupa colorida da cordialidade e nos relembra que\ntoda diferença é uma relação tensa, uma discussão esperando ser retomada\nNão faz tempo, a prática conhecida por “cancelamento” instaurou-se em nosso cotidiano sob a\nface dupla de um sintoma referente à extrema politização das mídias sociais e de um prazer\nsecreto, um guilty pleasure, privado e autoindulgente. Mal ela apareceu, tanto o aspecto\npreocupante quanto o recompensador desta prática – que, talvez por falta de uma palavra melhor,\nresolvemos chamar de “cultura” – foram destacados por especialistas (ou não) do comportamento\nhumano. Ao colecionarmos casos diários de “cancelados” e “canceladas”, com toda a carga\ndramática que costuma acompanhá-los, fomos compreendendo o fenômeno como a expressão\ncombinada de inúmeras dificuldades enfrentadas no presente.\nUma delas tem a ver com a capacidade cada vez mais rarefeita de diálogo, em que a\nincomunicabilidade dos contrários reforça menos as verdades parciais de cada lado que a total\ninverdade do lado oposto. Outra dificuldade pode estar relacionada ao advento de um tempo\n“líquido” de interações mais fugazes, certezas menos consistentes e a necessidade urgente de\nsatisfazer desejos via consumo, seja dos outros ou de si mesmo/a. São ponderações razoáveis,\nsem dúvida. Mas o exercício da imaginação histórica e sociológica por vezes tende a criar\nressalvas quanto ao presentismo de tudo o que acontece à nossa volta. Com a “cultura do\ncancelamento” não é diferente, e embora ela seja alardeada e praticada como uma novidade, um\nrápido exame de seu funcionamento pode nos levar a reconhecer certos traços de personalidade\nque andam conosco há muito tempo.\nEm 1936, o historiador Sérgio Buarque de Holanda escreveu sobre o homem cordial em Raízes do\nBrasil, um dos ensaios mais famosos sobre nossa formação social. Entendida como a nossa\n“contribuição” ao conjunto das civilizações humanas, a cordialidade seria aquela marca de\nnascença da brasilidade manifestada na fala repleta de “inhos” e “inhas”, no sorriso dado de bom\ngrado (e muitas vezes cobrado) ao término da prestação de qualquer serviço e até no gestual\nafetuoso do rapaz que acha estranho cumprimentar mulheres com um aperto de mão. Éo que nos\ndeu a pecha internacional de povo amável e gentil “pela própria natureza”. No entanto, se isso nos\nparece simplesmente o cultivo de boas maneiras, Sérgio Buarque o vê com olhos bem menos\ninocentes. Para ele, essa forma de convívio seria “justamente o contrário da polidez”, atestando\numa repulsa generalizada pela formalidade e pela impessoalidade que, conforme diz o jargão,\nregem uma vida social justa e transparente.\nPara existir em sociedade, o homem cordial precisa fazer do público uma extensão do privado e\nestender a quem não conhece nem faz questão de conhecer uma “ética de fundo emotivo”. Ele\nprecisa, em uma palavra, tornar tudo pessoal, caso contrário não conseguirá assegurar um falso\ncontrole sobre si mesmo e os outros. A cordialidade, tal como a concebe Sérgio Buarque, não vem\ndo nada. Ela é fruto de nossa história de colônia, em que a família patriarcal atuava como unidade\npolítica e econômica, além de moral, e os interesses do senhor de engenho passavam a “interesse\ngeral” sem maiores constrangimentos. Neste cenário onde o Estado nada mais é que a ampliação\nda família, tudo se resolve em casa e à revelia de instâncias mediadoras impessoais. As relações de\ntrabalho se assentam na propriedade privada, no caso das pessoas escravizadas, ou no favor, no\ncaso das livres; o estupro de mulheres negras é deturpado em nossa tendência “natural” à mistura,\ne o de mulheres brancas é salvaguardado pela santidade do casamento; e o racismo, a ferida\nnarcísica de quem ainda se gaba de democracia racial, foi recalcado a ponto de ter virado uma\nneurose, como afirma Lélia Gonzalez, outra grande intérprete do Brasil.\nO mais importante a se destacar aqui é que, no regime da cordialidade, os conflitos nunca\ntransparecem tampouco desaparecem: eles são domesticados. Vivendo sob o mesmo teto, as\ndiferenças se amasiam, aprendendo a falar a mesma língua sem que seja necessário, ou mesmo\npermitido, conversar. Até porque assumir o conflito seria abrir caminho para dissidências e,\nconsequentemente, pôr em risco o controle patriarcal. Submetendo as diferenças ao silêncio, o\nhomem cordial teria sido o primeiro “cancelador”, eé bem provável que ele deva seu modo\npeculiar de agir à dinâmica habitacional da casa-grande e da senzala mais do que a qualquer outra\ndimensão da vida social brasileira.\nMas o que isso nos diz sobre a “cultura do cancelamento”? Se é possível afirmar que boa parte\ndessa sociedade não existe mais, o pavor em relação ao conflito e à diferença se mantém vivo a\ndespeito dos elogios à “diversidade” vistos por aí. É por isso que o ato de cancelar alguém tem um\nsabor ambíguo, ao mesmo tempo abominável e familiar: ele nos recoloca a velha roupa colorida da\ncordialidade, da qual não conseguimos nos despir completamente, e nos relembra que toda\ndiferença é uma relação tensa, uma discussão esperando ser retomada. Quem rompe o silêncio e\nperturba em nós o sentimento de controle sobre a diferença e de soberania face o social, essa\nentidade cuja força pode nos dobrar à triste condição de ser “mais um/a”, não merece sentar-se à\nmesa conosco. A unidade familiar não admite fissuras.\nO “cancelamento” é um problema doméstico. Não por acaso os mais célebres deles envolvem as\ncontrovérsias da cantora Karol Conká na “casa mais vigiada do Brasil” ou a antropóloga Lilia\nSchwarcz se referindo à sala de jantar de Beyoncé. O espaço da intimidade, incongruente com a\ncidadania formal e com a igualdade, é projetado sob a forma de um desejo impertinente de manter\nas coisas como estão, mesmo que o ponto em questão seja a sua transformação.\n(Disponível em <https://www.nexojornal.com.br/ensaio/2021/O-homem-cordial-e-a-\n%E2%80%98cultura-do-cancelamentofiE2%80%99> Acesso em 26 abr. 2021)"
   },
   {
     "id": "formacao-pdf_3_formacao-q15",
@@ -6358,7 +6358,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 17,
-    "statement": "Em “Mas a faísca que incendiou de vez os debates de boteco sobre aquecimento global foi a\nestrondosa divulgação do quarto relatório (AR4) do Painel Intergovernamental sobre Mudanças\nClimáticas”, as palavras sublinhadas são formadas, respectivamente, por",
+    "statement": "Em “Mas a faísca que incendiou de vez os debates de boteco sobre aquecimento global foi a\nestrondosa divulgação do quarto relatório (AR4) do Painel Intergovernamental sobre Mudanças\n<u>Climáticas”,</u> as palavras sublinhadas são formadas, respectivamente, por",
     "options": [
       {
         "letter": "A",
@@ -6534,7 +6534,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Carta para as futuras gerações\nIlya Prigogine\nEscrevo esta carta na mais completa humildade. Meu trabalho é no domínio da ciência. Não me dá\nqualquer qualificação especial para falar sobre o futuro da humanidade. As moléculas obedecem a\n\"leis\". As decisões humanas dependem das lembranças do passado e das expectativas para o\nfuturo. A perspectiva sob a qual vejo o problema da transição da cultura da guerra para uma\ncultura de paz - para usar a expressão de Federico Mayor - se obscureceu nos últimos anos, mas\ncontinuo otimista.\nDe qualquer forma, como poderia um homem da minha geração - nasci em 1917 - não ser otimista?\nNão vimos o fim de monstros como Hitler e Stálin? Não testemunhamos a miraculosa vitória das\ndemocracias na Segunda Guerra Mundial? No final da guerra, todos nós acreditávamos que a\nHistória recomeçaria do zero, e os acontecimentos justificaram esse otimismo.\nOs marcos da era incluem a fundação da Organização das Nações Unidas e da Unesco, a\nproclamação dos direitos do homem e a descolonização. Em termos mais gerais, houve o\nreconhecimento das culturas não europeias, do qual derivou uma queda do eurocentrismo e da\nsuposta desigualdade entre os povos \"civilizados\" e os \"não-civilizados\". Houve também uma\nredução na distância entre as classes sociais, pelo menos nos países ocidentais.\nEsse progresso foi conquistado sob a ameaça da Guerra Fria. No momento da queda do Muro de\nBerlim, começamos a acreditar que enfim seria realizada a transição da cultura da guerra para a\ncultura da paz. No entanto a década que se seguiu não tomou esse rumo. Testemunhamos a\npersistência, e até mesmo a ampliação, dos conflitos locais, quer sejam na África, quer nos Bálcãs.\nIsso pode ser considerado, ainda, como um resultado da sobrevivência do passado no presente.\nNo entanto, além da ameaça nuclear sempre presente, novas sombras apareceram: o progresso\ntecnológico agora torna possível guerras travadas premindo botões, semelhantes de alguma forma\na um jogo eletrônico.\nSou uma das pessoas que ajudaram a formular as políticas científicas da União Europeia. A ciência\nune os povos. Criou uma linguagem universal. Muitas outras disciplinas, como a economia e a\necologia, também requerem cooperação internacional. Fico, por isso, ainda mais atônito quando\npercebo que os governos estão tentando criar um exército europeu como expressão da unidade\nda Europa. Um exército contra quem? Onde está o inimigo? Por que esse crescimento constante\nnos orçamentos militares, quer na Europa, quer nos Estados Unidos? Cabe às futuras gerações\ntomar uma posição sobre isso. Na nossa era, e isso será cada vez mais verdade no futuro, as coisas\nestão mudando a uma velocidade jamais vista. Vou usar um exemplo científico.\nQuarenta anos atrás, o número de cientistas interessados na física de estado sólido e na tecnologia\nda informação não passava de umas poucas centenas. Era uma \"flutuação\", quando comparado às\nciências como um todo. Hoje, essas disciplinas se tornaram tão importantes que têm\nconsequências decisivas para a história da humanidade.\nCabe às futuras gerações construir uma nova coerência que incorpore tanto os valores humanos\nquanto a ciência, algo que ponha fim às profecias quanto ao \"fim da ciência\", \"fim da história\" ou\naté quanto ao advento da \"pós-humanidade\"\nCrescimento exponencial foi registrado no número de pesquisadores envolvidos nesse setor da\nciência. É um fenômeno de proporção sem precedentes, que deixou muito para trás o crescimento\ndo budismo e do cristianismo. Em minha mensagem às futuras gerações, gostaria de propor\nargumentos com o objetivo de lutar contra os sentimentos de resignação ou impotência. As\nrecentes ciências da complexidade negam o determinismo; insistem na criatividade em todos os\nníveis da natureza. O futuro não é dado. O grande historiador francês Fernand Braudel escreveu:\n\"Eventos são poeira\". Isso é verdade?\nO que é um evento? Uma analogia com \"bifurcações\", estudadas na física do não-equilíbrio, surge\nimediatamente. Essas bifurcações aparecem em pontos especiais nos quais a trajetória seguida\npor um sistema se subdivide em \"ramos\". Todos os ramos são possíveis, mas só um deles será\nseguido. No geral não se vê apenas uma bifurcação. Elas tendem a surgir em sucessão. Isso\nsignifica que até mesmo nas ciências fundamentais há um elemento temporal, narrativo, e isso\nconstitui o \"fim da certeza\", o título do meu último livro. O mundo está em construção, e todos\npodemos participar dela.\nDisponível em <https://www1.folha.uol.com.br/fsp/mais/fs3001200004.htm> Acesso em 11 set.\n2020.\nCabe às futuras gerações construir uma nova coerência que incorpore tanto os valores humanos\nquanto a ciência, algo que ponha fim às profecias quanto ao \"fim da ciência\", \"fim da história\" ou até quanto ao advento da \"pós-humanidade\""
+    "readingText": "Carta para as futuras gerações\nIlya Prigogine\nEscrevo esta carta na mais completa humildade. Meu trabalho é no domínio da ciência. Não me dá\nqualquer qualificação especial para falar sobre o futuro da humanidade. As moléculas obedecem a\n\"leis\". As decisões humanas dependem das lembranças do passado e das expectativas para o\nfuturo. A perspectiva sob a qual vejo o problema da transição da cultura da guerra para uma\ncultura de paz - para usar a expressão de Federico Mayor - se obscureceu nos últimos anos, mas\ncontinuo otimista.\nDe qualquer forma, como poderia um homem da minha geração - nasci em 1917 - não ser otimista?\nNão vimos o fim de monstros como Hitler e Stálin? Não testemunhamos a miraculosa vitória das\ndemocracias na Segunda Guerra Mundial? No final da guerra, todos nós acreditávamos que a\nHistória recomeçaria do zero, e os acontecimentos justificaram esse otimismo.\nOs marcos da era incluem a fundação da Organização das Nações Unidas e da Unesco, a\nproclamação dos direitos do homem e a descolonização. Em termos mais gerais, houve o\nreconhecimento das culturas não europeias, do qual derivou uma queda do eurocentrismo e da\nsuposta desigualdade entre os povos \"civilizados\" e os \"não-civilizados\". Houve também uma\nredução na distância entre as classes sociais, pelo menos nos países ocidentais.\nEsse progresso foi conquistado sob a ameaça da Guerra Fria. No momento da queda do Muro de\nBerlim, começamos a acreditar que enfim seria realizada a transição da cultura da guerra para a\ncultura da paz. No entanto a década que se seguiu não tomou esse rumo. Testemunhamos a\npersistência, e até mesmo a ampliação, dos conflitos locais, quer sejam na África, quer nos Bálcãs.\nIsso pode ser considerado, ainda, como um resultado da sobrevivência do passado no presente.\nNo entanto, além da ameaça nuclear sempre presente, novas sombras apareceram: o progresso\ntecnológico agora torna possível guerras travadas premindo botões, semelhantes de alguma forma\na um jogo eletrônico.\nSou uma das pessoas que ajudaram a formular as políticas científicas da União Europeia. A ciência\nune os povos. Criou uma linguagem universal. Muitas outras disciplinas, como a economia e a\necologia, também requerem cooperação internacional. Fico, por isso, ainda mais atônito quando\npercebo que os governos estão tentando criar um exército europeu como expressão da unidade\nda Europa. Um exército contra quem? Onde está o inimigo? Por que esse crescimento constante\nnos orçamentos militares, quer na Europa, quer nos Estados Unidos? Cabe às futuras gerações\ntomar uma posição sobre isso. Na nossa era, e isso será cada vez mais verdade no futuro, as coisas\nestão mudando a uma velocidade jamais vista. Vou usar um exemplo científico.\nQuarenta anos atrás, o número de cientistas interessados na física de estado sólido e na tecnologia\nda informação não passava de umas poucas centenas. Era uma \"flutuação\", quando comparado às\nciências como um todo. Hoje, essas disciplinas se tornaram tão importantes que têm\nconsequências decisivas para a história da humanidade.\nCabe às futuras gerações construir uma nova coerência que incorpore tanto os valores humanos\nquanto a ciência, algo que ponha fim às profecias quanto ao \"fim da ciência\", \"fim da história\" ou\naté quanto ao advento da <u>\"pós-humanidade\"</u>\nCrescimento exponencial foi registrado no número de pesquisadores envolvidos nesse setor da\nciência. É um fenômeno de proporção sem precedentes, que deixou muito para trás o crescimento\ndo budismo e do cristianismo. Em minha mensagem às futuras gerações, gostaria de propor\nargumentos com o objetivo de lutar contra os sentimentos de resignação ou impotência. As\nrecentes ciências da complexidade negam o determinismo; insistem na criatividade em todos os\nníveis da natureza. O futuro não é dado. O grande historiador francês Fernand Braudel escreveu:\n\"Eventos são poeira\". Isso é verdade?\nO que é um evento? Uma analogia com \"bifurcações\", estudadas na física do não-equilíbrio, surge\nimediatamente. Essas bifurcações aparecem em pontos especiais nos quais a trajetória seguida\npor um sistema se subdivide em \"ramos\". Todos os ramos são possíveis, mas só um deles será\nseguido. No geral não se vê apenas uma bifurcação. Elas tendem a surgir em sucessão. Isso\nsignifica que até mesmo nas ciências fundamentais há um elemento temporal, narrativo, e isso\nconstitui o \"fim da certeza\", o título do meu último livro. O mundo está em construção, e todos\npodemos participar dela.\nDisponível em <https://www1.folha.uol.com.br/fsp/mais/fs3001200004.htm> Acesso em 11 set.\n2020.\nCabe às futuras gerações construir uma nova coerência que incorpore tanto os valores humanos\nquanto a ciência, algo que ponha fim às profecias quanto ao \"fim da ciência\", \"fim da história\" ou até quanto ao advento da \"pós-humanidade\""
   },
   {
     "id": "formacao-pdf_3_formacao-q22",
@@ -6699,22 +6699,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Os termos indissociável e intransigente são formadas somente pelo processo de derivação prefixal.",
+        "text": "Os termos <u>indissociável</u> e <u>intransigente</u> são formadas somente pelo processo de derivação prefixal.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "As palavras ímpar e saída seguem a regra de acentuação gráfica das vogais i e u tônicas dos hiatos.",
+        "text": "As palavras <u>ímpar</u> e <u>saída</u> seguem a regra de acentuação gráfica das vogais i e u tônicas dos hiatos.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Na frase, “...tinham...personalidades radicalmente distintas.” (l. 16 e 17), o termo distintas é sinônimo de notáveis.",
+        "text": "Na frase, “...tinham...personalidades radicalmente distintas.” (l. 16 e 17), o termo <u>distintas</u> é sinônimo de <u>notáveis.</u>",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Nas palavras destacadas em“...Gates ficou fascinado por Jobs e com uma ligeira inveja de seu efeito hipnótico...” (l. 37 e 38), há, respectivamente, dígrafo, dígrafo e encontro consonantal.",
+        "text": "Nas palavras destacadas em“...Gates ficou <u>fascinado</u> por Jobs e com uma ligeira <u>inveja</u> de seu efeito <u>hipnótico...”</u> (l. 37 e 38), há, respectivamente, dígrafo, dígrafo e encontro consonantal.",
         "correct": true
       }
     ],
@@ -6771,27 +6771,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Perfeição e percurso são palavras cognatas.",
+        "text": "<u>Perfeição</u> e <u>percurso</u> são palavras cognatas.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Em combatente, ocorre derivação parassintética.",
+        "text": "Em <u>combatente,</u> ocorre derivação parassintética.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "A palavra pontiagudo é formada por justaposição.",
+        "text": "A palavra <u>pontiagudo</u> é formada por justaposição.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Em exportar e êxodo, os prefixos têm sentido correspondente.",
+        "text": "Em <u>exportar</u> e <u>êxodo,</u> os prefixos têm sentido correspondente.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "Em hipótese, o prefixo indica “antes, anterioridade”.",
+        "text": "Em <u>hipótese,</u> o prefixo indica “antes, anterioridade”.",
         "correct": false
       }
     ],
@@ -6809,27 +6809,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“O vento é nordeste, e vai tangendo, aqui e ali, no belo azul das águas [...]” (1º §) - composição",
+        "text": "“O vento é nordeste, e vai tangendo, aqui e ali, no belo <u>azul</u> das águas [...]” (1º §) - composição",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Ele nada a uma certa distância da praia, em braçadas pausadas e fortes [...]” (2º §) - derivação prefixal",
+        "text": "“Ele nada a uma certa distância da praia, em <u>braçadas</u> pausadas e fortes [...]” (2º §) - derivação prefixal",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Certamente não suspeita que um desconhecido o vê e o admira [...]” (3º §) - derivação parassintética",
+        "text": "“Certamente não suspeita que um <u>desconhecido</u> o vê e o admira [...]” (3º §) - derivação parassintética",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Agora não sou mais responsável por ele; cumpri o meu dever, e ele cumpriu o seu.” (5º §) - derivação imprópria",
+        "text": "“Agora não sou mais responsável por ele; cumpri o meu <u>dever,</u> e ele cumpriu o seu.” (5º §) - derivação imprópria",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "“Não desço para ir esperá-lo na praia e lhe apertar mão; mas dou meu silencioso apoio […]” (6º §) - derivação sufixal",
+        "text": "“Não desço para ir esperá-lo na praia e lhe apertar mão; mas dou meu silencioso <u>apoio</u> […]” (6º §) - derivação sufixal",
         "correct": false
       }
     ],
@@ -7105,7 +7105,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "O Instituto Junguiano, em homenagem à dra. Nise da Silveira, promoveu uma série de debates, no\nRio, sobre a sua obra generosa e inovadora no campo da psiquiatria. Tive nisso uma participação\nmínima porque o chofer encarregado de levar-me até o local do evento desconhecia as ruas de\nBotafogo e, por essa razão, rodou comigo quase uma hora sem encontrar o endereço. Terminei\nchegando lá, com a ajuda de um casal que, vendo-me perdido, prontificou-se a me ajudar.\nTudo bem, lá cheguei, pedi desculpas e falei um pouco sobre Nise, de quem fui amigo nos idos dos\nanos 1950. Conheci-a graças a Mário Pedrosa, nosso grande crítico de arte, cuja casa eu\nfrequentava junto com outros escritores e artistas.\nA dra. Nise, recém-formada em psiquiatria, foi trabalhar no Centro Psiquiátrico Nacional, que\nficava no Engenho de Dentro, subúrbio do Rio. Como não se adaptou ao tipo de tratamento\npsiquiátrico da época (choques elétricos, por exemplo), o diretor do hospital, para não demiti-la,\nencarregou-a da ocupação terapêutica dos internados, ou seja, orientá-los na limpeza dos\nbanheiros, dos quartos e estimular as brincadeiras durante o recreio.\nSucede que ali trabalhava um jovem pintor —que se tornaria conhecido anos depois— chamado\nAlmir Mavignier, que sugeriu a inclusão, na ocupação terapêutica, do trabalho artístico: pintura,\ndesenho, cerâmica. Ela topou com entusiasmo e, em breve, naquele ateliê surgiram artistas de\nsurpreendente capacidade criativa.\nNise mostrou essas obras a Mário Pedrosa, que se empolgou com o talento de alguns daqueles\npacientes e escreveu sobre a extraordinária experiência que ali se realizava. Os demais críticos de\narte reagiram: doido não faz arte. Eu, que começava a escrever sobre arte, também me empolguei\ne passei a visitar o ateliê do Engenho de Dentro.\nMas eis que um dia, próximo do Natal, a dra. Nise pergunta aos seus pacientes o que queriam de\npresente. Emygdio de Barros, um dos gênios da turma, respondeu: \"Quero um guarda-chuva\". Ela\nse surpreendeu e se perguntou: \"Por que ele quer um guarda-chuva se vive aqui dentro, onde não\nchove?\" E concluiu: \"Já sei, ele quer ir embora do hospital\".\nPerguntou a ele, que confirmou: queria ir para casa. Pedrosa, ao saber disso, ficou preocupado,\npois Emygdio iria parar de pintar. Disse isso à dra. Nise e inventou de fazer uma exposição dos\nquadros dele para vendê-los. Com o dinheiro apurado, compraria telas, pincéis e tintas para ele\nlevar consigo. A exposição foi feita, mas ninguém comprou nada. Mário, então, comprou cinco\ntelas e, com esse dinheiro, adquiriu o material de pintura que Emygdio levou para casa. Mais tarde,\nno dia meu aniversário, Mário me deu de presente uma das telas de Emygdio, que tenho comigo\naté hoje.\nPassaram-se uns dois anos quando alguém bateu à porta do consultório da dra. Nise, no Centro\nPsiquiátrico Nacional. Ela abriu a porta e quem apareceu à sua frente foi Emygdio, de paletó,\nchapéu e uma maleta na mão.\n—O que aconteceu, Emygdio? —perguntou ela, surpresa.\n—Estou voltando para o hospital. Em minha casa não consigo pintar.\nE assim voltou ele a trabalhar no ateliê onde se inventara pintor para a alegria de todos nós. Ao\ncompletar 80 anos, tempo limite para permanecer internado, Nise conseguiu para ele um lugar\nnum asilo de idosos, onde foi viver os últimos anos de sua vida.\nDra. Nise se apaixonou pelas obras daqueles artistas que hoje integram o acervo do Museu de\nImagens do Inconsciente, fundado por ela em 1952 para preservar não apenas aquelas criações\nartísticas, mas também o que significavam para ela como expressão do que há de insondável na\nmente humana.\nCostumo dizer que não é a loucura que gera o artista; pelo contrário, o artista é artista apesar da\nloucura. Tanto isso é verdade que, dentre dezenas de pacientes que trabalharam naquele ateliê,\nsó alguns criaram verdadeiras obras de arte.\n(Disponível em: https://www1.folha.uol.com.br/colunas/ferreiragullar/2016/10/1827725-o-artista-\nsurge-nao-da-loucura-mas-apesar-dela.shtml)\nLeia: “— chamado Almir Mavignier, que sugeriu a inclusão, na ocupação terapêutica, do trabalho\nartístico: pintura, desenho, cerâmica.”"
+    "readingText": "O Instituto Junguiano, em homenagem à dra. Nise da Silveira, promoveu uma série de debates, no\nRio, sobre a sua obra generosa e inovadora no campo da psiquiatria. Tive nisso uma participação\nmínima porque o chofer encarregado de levar-me até o local do evento desconhecia as ruas de\nBotafogo e, por essa razão, rodou comigo quase uma hora sem encontrar o endereço. Terminei\nchegando lá, com a ajuda de um casal que, vendo-me perdido, prontificou-se a me ajudar.\nTudo bem, lá cheguei, pedi desculpas e falei um pouco sobre Nise, de quem fui amigo nos idos dos\nanos 1950. Conheci-a graças a Mário Pedrosa, nosso grande crítico de arte, cuja casa eu\nfrequentava junto com outros escritores e artistas.\nA dra. Nise, recém-formada em psiquiatria, foi trabalhar no Centro Psiquiátrico Nacional, que\nficava no Engenho de Dentro, subúrbio do Rio. Como não se adaptou ao tipo de tratamento\npsiquiátrico da época (choques elétricos, por exemplo), o diretor do hospital, para não demiti-la,\nencarregou-a da ocupação terapêutica dos internados, ou seja, orientá-los na limpeza dos\nbanheiros, dos quartos e estimular as brincadeiras durante o recreio.\nSucede que ali trabalhava um jovem pintor —que se tornaria conhecido anos depois— chamado\nAlmir Mavignier, que sugeriu a inclusão, na ocupação terapêutica, do trabalho artístico: pintura,\ndesenho, cerâmica. Ela topou com entusiasmo e, em breve, naquele ateliê surgiram artistas de\nsurpreendente capacidade criativa.\nNise mostrou essas obras a Mário Pedrosa, que se empolgou com o talento de alguns daqueles\npacientes e escreveu sobre a extraordinária experiência que ali se realizava. Os demais críticos de\narte reagiram: doido não faz arte. Eu, que começava a escrever sobre arte, também me empolguei\ne passei a visitar o ateliê do Engenho de Dentro.\nMas eis que um dia, próximo do Natal, a dra. Nise pergunta aos seus pacientes o que queriam de\npresente. Emygdio de Barros, um dos gênios da turma, respondeu: \"Quero um guarda-chuva\". Ela\nse surpreendeu e se perguntou: \"Por que ele quer um guarda-chuva se vive aqui dentro, onde não\nchove?\" E concluiu: \"Já sei, ele quer ir embora do hospital\".\nPerguntou a ele, que confirmou: queria ir para casa. Pedrosa, ao saber disso, ficou preocupado,\npois Emygdio iria parar de pintar. Disse isso à dra. Nise e inventou de fazer uma exposição dos\nquadros dele para vendê-los. Com o dinheiro apurado, compraria telas, pincéis e tintas para ele\nlevar consigo. A exposição foi feita, mas ninguém comprou nada. Mário, então, comprou cinco\ntelas e, com esse dinheiro, adquiriu o material de pintura que Emygdio levou para casa. Mais tarde,\nno dia meu aniversário, Mário me deu de presente uma das telas de Emygdio, que tenho comigo\naté hoje.\nPassaram-se uns dois anos quando alguém bateu à porta do consultório da dra. Nise, no Centro\nPsiquiátrico Nacional. Ela abriu a porta e quem apareceu à sua frente foi Emygdio, de paletó,\nchapéu e uma maleta na mão.\n—O que aconteceu, Emygdio? —perguntou ela, surpresa.\n—Estou voltando para o hospital. Em minha casa não consigo pintar.\nE assim voltou ele a trabalhar no ateliê onde se inventara pintor para a alegria de todos nós. Ao\ncompletar 80 anos, tempo limite para permanecer internado, Nise conseguiu para ele um lugar\nnum asilo de idosos, onde foi viver os últimos anos de sua vida.\nDra. Nise se apaixonou pelas obras daqueles artistas que hoje integram o acervo do Museu de\nImagens do Inconsciente, fundado por ela em 1952 para preservar não apenas aquelas criações\nartísticas, mas também o que significavam para ela como expressão do que há de insondável na\nmente humana.\nCostumo dizer que não é a loucura que gera o artista; pelo contrário, o artista é artista apesar da\nloucura. Tanto isso é verdade que, dentre dezenas de pacientes que trabalharam naquele ateliê,\nsó alguns criaram verdadeiras obras de arte.\n(Disponível em: https://www1.folha.uol.com.br/colunas/ferreiragullar/2016/10/1827725-o-artista-\nsurge-nao-da-loucura-mas-apesar-dela.shtml)\nLeia: “— chamado Almir Mavignier, que sugeriu a inclusão, na ocupação <u>terapêutica,</u> do trabalho\n<u>artístico:</u> pintura, <u>desenho,</u> cerâmica.”"
   },
   {
     "id": "formacao-pdf_3_formacao-q37",
@@ -7230,7 +7230,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 40,
-    "statement": "Em “Depois de celebrar a partida, os navegadores se afastaram da costa africana, contrariando a\ntradicional rota de circum-navegação daquele continente.”, a palavra destacada foi formada pelo\nprocesso de formação conhecido como:",
+    "statement": "Em “Depois de celebrar a partida, os navegadores se afastaram da costa africana, contrariando a\ntradicional rota de <u>circum-navegação</u> daquele continente.”, a palavra destacada foi formada pelo\nprocesso de formação conhecido como:",
     "options": [
       {
         "letter": "A",
@@ -7338,7 +7338,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "E",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "SER AUTOR\nEscrever é difícil? Parece que sim, a julgar pelo que ouço de pessoas muito diversas, até mesmo\nde escritores. Imagine para os pobres mortais! E, sobretudo, acrescentaria, numa sociedade que se\njulga eé julgada por não saber, em geral, escrever. Até mestrandos e doutorandos, vejam só,\nrecorrem a colegas, selecionados da área de Letras, que supõem “saber português”, para uma boa\nrevisto do que rascunharam em seus trabalhos acadêmicos.\nNo meu tempo de docência universitária, ouvia, frequentemente, alunos comentarem que\nconcluiriam o curso sem saberem escrever, que o português era difícil, com muitas regras e\nexceções! Tomava fôlego, quando este comentário era feito em sala de aula e, como quem não\nquer nada, indagava informalmente a um aluno: Por que você acha que não sabe português e que\nnossa(!) língua é difícil? Resposta invariável: Não domino bem estas classificações gramaticais e\ntenho também meus vacilos quanto ao uso da norma culta! Veja a gramática do inglês! Bem mais\nsimples, não? Então, você escreve bem textos em inglês? É, mais ou menos…\nRespiro fundo. Me lembro Iogo do Mário Quintana em situação semelhante: “Um dia de espantos,\nhoje. Conversando com uma rapariga em flor, estudante, queixa-se ela da dificuldade da língua\nportuguesa, espanto-me: Mas como pode ser difícil uma língua em que você está falando comigo\nhá dez minutos com toda a facilidade? Ela ficou espantada.”\nMeus espantos eram frequentes... Ainda são! A escola, embora queiram alguns tampar o sol com a\npeneira, estimula a cultura do erro, contribuindo muito, e desde cedo, para perpetuar esta\navaliação de que a língua é difícil, de que escrever “um texto correto” então nem se fala! Basta\numa concordância, uma regência, “as sintaxes de exceção”...\nPassava para os meus alunos testemunhos de alguns escritores, valorizados como tais, o de Rachel\nde Queiroz, por exemplo: Se eu dependesse, afirmava, para escrever, do domínio dos nomes tão\ncomplicados presentes no ensino da língua (ela se divertia), eu não poderia ser escritora. Como é\nmesmo? Oração reduzida de gerúndio? Sujeito inexistente? Substantivo epiceno?, caçoava. E ela,\nacrescento, mesmo pela fala da narradora, nem sempre se vale da língua bem comportada.\nEscrever, na verdade, ainda que adotado certinho o português que é ensinado, exige bem mais da\ngente: o conhecimento do real, a ordenação das ideias, o domínio do gênero textual, a intenção\ncomunicativa... Muitos outros conhecimentos, enfim! A vivência dos bancos escolares prossegue\natuante pela vida afora, qual uma corrente. Nos tornamos adultos, com curso superior, e carentes\nainda de um professor, por perto, para nos corrigir! Não dá para entender, dá? Só os escritores (e,\natualmente, nem todos, nem todos...) e os que se arvoram em conhecedores da língua escapam de\numa avaliação severa. Eta língua é difícil! Eta sociedade que fica então a afrontar o uso da língua\nlegitimado pelas autor(idades)!\nComo ficar seguro de se assumir como autor, na escola e na vida, com tanto isto não pode, isto\ndeve ser evitado, isto afronta as leis da língua, isto é de emprego não referendado pelos escritores\n(quais, na verdade?), isto, tenham paciência, é lá português? Perguntinha tola que me fica\nincomodando (gosto de me complicar - neurose? - com indagações perturbadoras): que língua\nfalam todos os brasileiros (e são tantos!) sem escolaridade?\nFui a uma boa papelaria comprar um cartão para escrever a uma amiga, que aniversariava. Em\nminha procura, fui me dando conta de que eu só selecionava cartões com ilustrações de gosto\nduvidoso para mim: em geral, multicoloridas, florezinhas que estressavam o cartão, com variedade\nnas partes externa e interna deles, borboletas estilizadas então, em quase todos... E as mensagens?\nSem erros gramaticais, diga-se logo! Mas que mensagens tolas, com palavras ou expressões mais\nque gastas, ou, ao contrário, meio solenes, com a pretensão, talvez, de darem ao texto certo sabor\nliterário. Estas mensagens pouco variavam. Pudera!, eram impessoais. Onde o autor?\nSempre considerei que a vida, asseguradas certas igualdades, está na diferença. Uma palavra\ndiferente pode nos proporcionar uma esperança nova. Indaguei a um funcionário da papelaria se\nnão havia cartão, desses duplos, sem mensagem, e que a ilustração, caso existente, fosse sóbria\n(empreguei outra palavra, mais corrente, na ocasião). Não tinha, me respondeu. Coube, então, ao\natendente me perguntar: Por que quer escrever a mensagem? Que trabalho! Já estão prontas em\ntodos estes cartões daqui!\nCapitulei. A sociedade, de modo geral, quer mesmo textos prontos e quase iguais. reflexo mais\nevidente de gente que não está habituada a pensar, que acha que não pode ser autora nem de\numa frasezinha (para que se expor assim à avaliação de um professor por ai?). Pego um destes\ncartões: “os primeiros raios de sol”, “iluminem seu coração”, “fazer seus pensamentos brilharem\"...\nPositivamente não imagino uma criança ou um jovem como autor destas expressões. Para um\nadulto ser o destinatário, iriam pensar, iriam sim!, que ele as copiou justamente de um cartão\ndestes, que já gozam de certa tradição, não se pode enganar!\nNo fundo mesmo, continuidade de uma rotina escolar antiga, em que o estudante, raramente, se\nsente autor do que escreve. Ouvi ou li outro dia o comentário pertinente que na escola se faz\nmuita redação, mas se escreve pouco. Diria, que, sobretudo, quando se espera que, no texto, se\ncrie um clima afetivo, com reticências, exclamações, interrogações. A escola se apresenta como a\nescola do ponto, fundamentalmente. Afinal, quase sempre, o interlocutor do aluno, - um\ninterlocutor potente!\n-, é o professor. Todo cuidado é pouco... não é? Por isso, muitas vezes, a presença, em textos\nescolares, de palavras com paletó e gravata, ainda que empregadas inadequadamente.\nO Manoel de Barros tem razão: Língua solene é coisa de políticos e advogados. É preciso ir ao\nencriançamento das palavras, palavras-brinquedo, palavras bolhas-de-sabão... Em certas\nsituações, naturalmente. Com crianças então! Para festejar o aniversário de uma amiga, por que,\nnum cartão, não começar a ser autor com um singelo, mas carinhoso \"Gosto de você\" ou num\ntorpedo com um sempre bem recebido “Um beijo, minha amiga”. Garantia assegurada de autoria\ntextual! E de afetividade...\nFonte: UCHOA, Garlos Eduardo Falcão. A vida e o tempo em tom de conversa: crônicas de um\nprofessor de linguagem. 1º ed. Rio de Janeiro: Odisseia, 2013, p. 141-145. {Texto adaptado)\nLeia o trecho abaixo.\n“O Manoel de Barros tem razão: Língua solene é coisa de políticos e advogados. É preciso ir ao\nencriançamento das palavras, palavras-brinquedo, palavras bolhas-de-sabão...\" (\n\n12°§)"
+    "readingText": "SER AUTOR\nEscrever é difícil? Parece que sim, a julgar pelo que ouço de pessoas muito diversas, até mesmo\nde escritores. Imagine para os pobres mortais! E, sobretudo, acrescentaria, numa sociedade que se\njulga eé julgada por não saber, em geral, escrever. Até mestrandos e doutorandos, vejam só,\nrecorrem a colegas, selecionados da área de Letras, que supõem “saber português”, para uma boa\nrevisto do que rascunharam em seus trabalhos acadêmicos.\nNo meu tempo de docência universitária, ouvia, frequentemente, alunos comentarem que\nconcluiriam o curso sem saberem escrever, que o português era difícil, com muitas regras e\nexceções! Tomava fôlego, quando este comentário era feito em sala de aula e, como quem não\nquer nada, indagava informalmente a um aluno: Por que você acha que não sabe português e que\nnossa(!) língua é difícil? Resposta invariável: Não domino bem estas classificações gramaticais e\ntenho também meus vacilos quanto ao uso da norma culta! Veja a gramática do inglês! Bem mais\nsimples, não? Então, você escreve bem textos em inglês? É, mais ou menos…\nRespiro fundo. Me lembro Iogo do Mário Quintana em situação semelhante: “Um dia de espantos,\nhoje. Conversando com uma rapariga em flor, estudante, queixa-se ela da dificuldade da língua\nportuguesa, espanto-me: Mas como pode ser difícil uma língua em que você está falando comigo\nhá dez minutos com toda a facilidade? Ela ficou espantada.”\nMeus espantos eram frequentes... Ainda são! A escola, embora queiram alguns tampar o sol com a\npeneira, estimula a cultura do erro, contribuindo muito, e desde cedo, para perpetuar esta\navaliação de que a língua é difícil, de que escrever “um texto correto” então nem se fala! Basta\numa concordância, uma regência, “as sintaxes de exceção”...\nPassava para os meus alunos testemunhos de alguns escritores, valorizados como tais, o de Rachel\nde Queiroz, por exemplo: Se eu dependesse, afirmava, para escrever, do domínio dos nomes tão\ncomplicados presentes no ensino da língua (ela se divertia), eu não poderia ser escritora. Como é\nmesmo? Oração reduzida de gerúndio? Sujeito inexistente? Substantivo epiceno?, caçoava. E ela,\nacrescento, mesmo pela fala da narradora, nem sempre se vale da língua bem comportada.\nEscrever, na verdade, ainda que adotado certinho o português que é ensinado, exige bem mais da\ngente: o conhecimento do real, a ordenação das ideias, o domínio do gênero textual, a intenção\ncomunicativa... Muitos outros conhecimentos, enfim! A vivência dos bancos escolares prossegue\natuante pela vida afora, qual uma corrente. Nos tornamos adultos, com curso superior, e carentes\nainda de um professor, por perto, para nos corrigir! Não dá para entender, dá? Só os escritores (e,\natualmente, nem todos, nem todos...) e os que se arvoram em conhecedores da língua escapam de\numa avaliação severa. Eta língua é difícil! Eta sociedade que fica então a afrontar o uso da língua\nlegitimado pelas autor(idades)!\nComo ficar seguro de se assumir como autor, na escola e na vida, com tanto isto não pode, isto\ndeve ser evitado, isto afronta as leis da língua, isto é de emprego não referendado pelos escritores\n(quais, na verdade?), isto, tenham paciência, é lá português? Perguntinha tola que me fica\nincomodando (gosto de me complicar - neurose? - com indagações perturbadoras): que língua\nfalam todos os brasileiros (e são tantos!) sem escolaridade?\nFui a uma boa papelaria comprar um cartão para escrever a uma amiga, que aniversariava. Em\nminha procura, fui me dando conta de que eu só selecionava cartões com ilustrações de gosto\nduvidoso para mim: em geral, multicoloridas, florezinhas que estressavam o cartão, com variedade\nnas partes externa e interna deles, borboletas estilizadas então, em quase todos... E as mensagens?\nSem erros gramaticais, diga-se logo! Mas que mensagens tolas, com palavras ou expressões mais\nque gastas, ou, ao contrário, meio solenes, com a pretensão, talvez, de darem ao texto certo sabor\nliterário. Estas mensagens pouco variavam. Pudera!, eram impessoais. Onde o autor?\nSempre considerei que a vida, asseguradas certas igualdades, está na diferença. Uma palavra\ndiferente pode nos proporcionar uma esperança nova. Indaguei a um funcionário da papelaria se\nnão havia cartão, desses duplos, sem mensagem, e que a ilustração, caso existente, fosse sóbria\n(empreguei outra palavra, mais corrente, na ocasião). Não tinha, me respondeu. Coube, então, ao\natendente me perguntar: Por que quer escrever a mensagem? Que trabalho! Já estão prontas em\ntodos estes cartões daqui!\nCapitulei. A sociedade, de modo geral, quer mesmo textos prontos e quase iguais. reflexo mais\nevidente de gente que não está habituada a pensar, que acha que não pode ser autora nem de\numa frasezinha (para que se expor assim à avaliação de um professor por ai?). Pego um destes\ncartões: “os primeiros raios de sol”, “iluminem seu coração”, “fazer seus pensamentos brilharem\"...\nPositivamente não imagino uma criança ou um jovem como autor destas expressões. Para um\nadulto ser o destinatário, iriam pensar, iriam sim!, que ele as copiou justamente de um cartão\ndestes, que já gozam de certa tradição, não se pode enganar!\nNo fundo mesmo, continuidade de uma rotina escolar antiga, em que o estudante, raramente, se\nsente autor do que escreve. Ouvi ou li outro dia o comentário pertinente que na escola se faz\nmuita redação, mas se escreve pouco. Diria, que, sobretudo, quando se espera que, no texto, se\ncrie um clima afetivo, com reticências, exclamações, interrogações. A escola se apresenta como a\nescola do ponto, fundamentalmente. Afinal, quase sempre, o interlocutor do aluno, - um\ninterlocutor potente!\n-, é o professor. Todo cuidado é pouco... não é? Por isso, muitas vezes, a presença, em textos\nescolares, de palavras com paletó e gravata, ainda que empregadas inadequadamente.\nO Manoel de Barros tem razão: Língua solene é coisa de políticos e advogados. É preciso ir ao\n<u>encriançamento</u> das palavras, <u>palavras-brinquedo,</u> palavras bolhas-de-sabão... Em certas\nsituações, naturalmente. Com crianças então! Para festejar o aniversário de uma amiga, por que,\nnum cartão, não começar a ser autor com um singelo, mas carinhoso \"Gosto de você\" ou num\ntorpedo com um sempre bem recebido “Um beijo, minha amiga”. Garantia assegurada de autoria\ntextual! E de afetividade...\nFonte: UCHOA, Garlos Eduardo Falcão. A vida e o tempo em tom de conversa: crônicas de um\nprofessor de linguagem. 1º ed. Rio de Janeiro: Odisseia, 2013, p. 141-145. {Texto adaptado)\nLeia o trecho abaixo.\n“O Manoel de <u>Barros</u> tem razão: Língua solene é coisa de políticos e advogados. É preciso ir ao\n<u>encriançamento</u> das palavras, <u>palavras-brinquedo,</u> palavras bolhas-de-sabão...\" (\n\n12°§)"
   },
   {
     "id": "formacao-pdf_3_formacao-q43",
@@ -7502,7 +7502,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 47,
-    "statement": "A palavra em destaque no trecho “em cujos primeiros triunfos os seus condiscípulos já\nadivinhavam grandes horizontes de glória, vastas perspectivas de luminosa celebridade” é formada\npelo processo de",
+    "statement": "A palavra em destaque no trecho “em cujos primeiros triunfos os seus <u>condiscípulos</u> já\nadivinhavam grandes horizontes de glória, vastas perspectivas de luminosa celebridade” é formada\npelo processo de",
     "options": [
       {
         "letter": "A",
@@ -7541,7 +7541,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 48,
-    "statement": "A palavra destacada em “Não se confunde o cafajestismo com a subliteratura” é formada pelo\nmesmo processo do encontrado na formação de qual outro vocábulo?",
+    "statement": "A palavra destacada em “Não se confunde o <u>cafajestismo</u> com a subliteratura” é formada pelo\nmesmo processo do encontrado na formação de qual outro vocábulo?",
     "options": [
       {
         "letter": "A",
@@ -7648,7 +7648,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "‘A morte’\nUm conto inédito de Lygia Fagundes Telles\nVou lhe contar meu sonho, um sonho tão bonito e que me fez tanto bem que não resisto ao\nimpulso de passá-lo adiante, na esperança de que traga a alguém a metade — ao menos a\nmetade! — da paz que me trouxe. Mas antes você vai me prometer que não procurará realizar\naqui suas altas interpretações freudianas, não, nada disso, eu lhe peço, nada de complicar com\nsimbolismos o que foi tão claro, tão nítido. Afinal, o que há de mais belo na vida — na vida e na\nmorte — é o mistério. Desgosta-me essa preocupação constante de se racionalizar realidade e\nsonho, deixemos de lado as lúcidas análises, quando eu digo nuvem, é nuvem mesmo. Quando eu\ndigo montanha, é montanha mesmo e não outra coisa. Fiquemos apenas na interpretação primária,\ndo entendimento até das criancinhas.\nEra noite e eu estava num campo que podia ser também um mar. VI. então que uma névoa fria foi\nsubindo do chão ou da água, subindo rápida até meus joelhos, subiu mais e atingiu minha cintura,\nsubiu ainda densa como uma onda e atingiu meu peito, mais um pouco e ei-la na altura do meu\npescoço... Fui tomada de pânico, é a morte. Essa névoa é a morte, pensei erguendo\nangustiosamente a cabeça para fugir daquele denso vapor que eu sabia que ia me sufocar. A\nangústia foi rapidíssima porque logo a névoa atingiu minha boca, ultrapassou-a, foi além dos\nolhos... Então respirei tomada de uma infinita sensação de alívio como nunca senti igual. Passou,\npronto, morri. Morri! Pensei na maior perplexidade. Mas como era fácil a morte! Como era fácil\nmorrer!... E abri então os olhos deslumbrados para a manhã tão fina e tão leve como nunca tinha\nvisto outra assim. Então era isso?... Tive vontade de rir de alegria, tão feliz me senti, mais leve ainda\ndo que a manhã que me trespassava com sua luz como se eu fosse de vidro. A ansiedade, o medo,\na aflição cederam lugar a uma calma tão absoluta que não entendi como pudera ter me afligido\ntanto antes.\nDeitei-me de bruços no alto de uma montanha e fiquei vendo lá embaixo os densos rios que\nrolavam mansamente. Alguns cruzavam-se com outros e as águas avolumadas subiam então\nondulantes contornando a base da montanha e formando em redor dela um imenso anel. Inclinei-me para ver melhor, não, não eram rios de água, eram rios de gente, infinitos rios humanos rolando\ntranquilos pela eternidade. São os mortos, pensei. São os mortos.\nNesse instante, de um daqueles rios, destacou-se uma pessoa que veio subindo a montanha na\ndireção onde eu me encontrava. Esperei-a. Ela veio vindo, veio vindo e na metade do caminho VI.\nque era uma mulher. Vestia trajes egípcios. Aproximou-se de mim e já a uns dez passos apenas de\ndistância, parou e ficou me olhando em silêncio. Havia em sua expressão qualquer coisa que me\npareceu familiar. Sorriu e de repente VI. que aquele sorriso era o meu. VI. que o sorriso era meu e\nmeu aquele rosto me encarava como se eu encarasse um espelho. Anime-me: eu fui você!\nExclamei. Um dia, num outro tempo, eu fui você.\nEla concordou, movendo afirmativamente a cabeça. Senti-me então segura, confiante, afinal, tudo\nnão passava de um transformar contínuo, ah! como era simples morrer! E agora? lembrei-me de\nperguntar-lhe. O que vou ser agora?\nEla teve um sorriso velado, reticente. No fundo do sorriso, uma remota ponta de malícia que me\nfez sorrir também. Você vai ser, respondeu-me afastando-se lentamente. Espera aí, você vai ver...\nNão me dirá nunca, pensei acenando-lhe. Mas não tinha importância, fascinava-me agora o\nmistério da nova aventura. Vi-a descer a montanha como subira. Quando integrou-se ao rio e nele\ndesapareceu, fiquei assim como uma criança na expectativa. Vou esperar, pensei e esse\npensamento foi tão repousante que fechei os olhos e dormi.\n(Disponível em <https://www.quatrocincoum.com.br/br/artigos/literatura/a-morte> Acesso em 01\njul. 2022)\n“Alguns cruzavam-se com outros e as águas avolumadas subiam então ondulantes contornando\na base da montanha e formando em redor dela um imenso anel.”"
+    "readingText": "‘A morte’\nUm conto inédito de Lygia Fagundes Telles\nVou lhe contar meu sonho, um sonho tão bonito e que me fez tanto bem que não resisto ao\nimpulso de passá-lo adiante, na esperança de que traga a alguém a metade — ao menos a\nmetade! — da paz que me trouxe. Mas antes você vai me prometer que não procurará realizar\naqui suas altas interpretações freudianas, não, nada disso, eu lhe peço, nada de complicar com\nsimbolismos o que foi tão claro, tão nítido. Afinal, o que há de mais belo na vida — na vida e na\nmorte — é o mistério. Desgosta-me essa preocupação constante de se racionalizar realidade e\nsonho, deixemos de lado as lúcidas análises, quando eu digo nuvem, é nuvem mesmo. Quando eu\ndigo montanha, é montanha mesmo e não outra coisa. Fiquemos apenas na interpretação primária,\ndo entendimento até das criancinhas.\nEra noite e eu estava num campo que podia ser também um mar. VI. então que uma névoa fria foi\nsubindo do chão ou da água, subindo rápida até meus joelhos, subiu mais e atingiu minha cintura,\nsubiu ainda densa como uma onda e atingiu meu peito, mais um pouco e ei-la na altura do meu\npescoço... Fui tomada de pânico, é a morte. Essa névoa é a morte, pensei erguendo\nangustiosamente a cabeça para fugir daquele denso vapor que eu sabia que ia me sufocar. A\nangústia foi rapidíssima porque logo a névoa atingiu minha boca, ultrapassou-a, foi além dos\nolhos... Então respirei tomada de uma infinita sensação de alívio como nunca senti igual. Passou,\npronto, morri. Morri! Pensei na maior perplexidade. Mas como era fácil a morte! Como era fácil\nmorrer!... E abri então os olhos deslumbrados para a manhã tão fina e tão leve como nunca tinha\nvisto outra assim. Então era isso?... Tive vontade de rir de alegria, tão feliz me senti, mais leve ainda\ndo que a manhã que me trespassava com sua luz como se eu fosse de vidro. A ansiedade, o medo,\na aflição cederam lugar a uma calma tão absoluta que não entendi como pudera ter me afligido\ntanto antes.\nDeitei-me de bruços no alto de uma montanha e fiquei vendo lá embaixo os densos rios que\nrolavam mansamente. Alguns cruzavam-se com outros e as águas avolumadas subiam então\nondulantes contornando a base da montanha e formando em redor dela um imenso anel. Inclinei-me para ver melhor, não, não eram rios de água, eram rios de gente, infinitos rios humanos rolando\ntranquilos pela eternidade. São os mortos, pensei. São os mortos.\nNesse instante, de um daqueles rios, destacou-se uma pessoa que veio subindo a montanha na\ndireção onde eu me encontrava. Esperei-a. Ela veio vindo, veio vindo e na metade do caminho VI.\nque era uma mulher. Vestia trajes egípcios. Aproximou-se de mim e já a uns dez passos apenas de\ndistância, parou e ficou me olhando em silêncio. Havia em sua expressão qualquer coisa que me\npareceu familiar. Sorriu e de repente VI. que aquele sorriso era o meu. VI. que o sorriso era meu e\nmeu aquele rosto me encarava como se eu encarasse um espelho. Anime-me: eu fui você!\nExclamei. Um dia, num outro tempo, eu fui você.\nEla concordou, movendo afirmativamente a cabeça. Senti-me então segura, confiante, afinal, tudo\nnão passava de um transformar contínuo, ah! como era simples morrer! E agora? lembrei-me de\nperguntar-lhe. O que vou ser agora?\nEla teve um sorriso velado, reticente. No fundo do sorriso, uma remota ponta de malícia que me\nfez sorrir também. Você vai ser, respondeu-me afastando-se lentamente. Espera aí, você vai ver...\nNão me dirá nunca, pensei acenando-lhe. Mas não tinha importância, fascinava-me agora o\nmistério da nova aventura. Vi-a descer a montanha como subira. Quando integrou-se ao rio e nele\ndesapareceu, fiquei assim como uma criança na expectativa. Vou esperar, pensei e esse\npensamento foi tão repousante que fechei os olhos e dormi.\n(Disponível em <https://www.quatrocincoum.com.br/br/artigos/literatura/a-morte> Acesso em 01\njul. 2022)\n“Alguns cruzavam-se com outros e as águas <u>avolumadas</u> subiam então <u>ondulantes</u> contornando\na base da montanha e formando em redor dela um imenso anel.”"
   },
   {
     "id": "formacao-pdf_3_formacao-q51",
@@ -7657,7 +7657,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 51,
-    "statement": "A palavra destacada em “Valdênio, ajoelhado, termina de espetar no solo avermelhado uma\npequena cruz feita com dois gravetos” apresenta, como processo de formação, o mesmo\nencontrado em",
+    "statement": "A palavra destacada em “Valdênio, ajoelhado, termina de espetar no solo <u>avermelhado</u> uma\npequena cruz feita com dois gravetos” apresenta, como processo de formação, o mesmo\nencontrado em",
     "options": [
       {
         "letter": "A",
@@ -7720,7 +7720,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "mulher aranha – derivação imprópria",
+        "text": "mulher <u>aranha</u> – derivação imprópria",
         "correct": false
       }
     ],
@@ -7848,7 +7848,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 56,
-    "statement": "No trecho “Na busca pelo aprendizado, o amanhecer de cada dia era um novo sonho que\nnascia”. As palavras em destaque dentro do contexto são formadas, respectivamente, por:",
+    "statement": "No trecho “Na busca pelo <u>aprendizado,</u> o <u>amanhecer</u> de cada dia era um novo sonho que\nnascia”. As palavras em destaque dentro do contexto são formadas, respectivamente, por:",
     "options": [
       {
         "letter": "A",
@@ -7886,7 +7886,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 57,
-    "statement": "Assinale a alternativa em que se apresenta a palavra com o prefixo de mesmo valor semântico do\nque o destacado no vocábulo “circunvagar”:",
+    "statement": "Assinale a alternativa em que se apresenta a palavra com o prefixo de mesmo valor semântico do\nque o destacado no vocábulo <u>“circunvagar”:</u>",
     "options": [
       {
         "letter": "A",
@@ -7954,7 +7954,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "E a indústria de alimentos na pandemia?\nO editorial da edição de 10 de junho do British Medical Journal, assinado por professores da\nQueen Mary University of London, na Inglaterra, propõe uma reflexão tão interessante que vale\nprovocá-la entre nós, aqui também: a pandemia de Covid-19 deveria tornar ainda mais urgente o\ncombate à outra pandemia, a de obesidade.\nO excesso de peso, por si só, já é um fator de risco importante para o agravamento da infecção\npelo Sars-CoV 2, como lembram os autores. A probabilidade de uma pessoa com obesidade\nsevera morrer de Covid-19 chega a ser 27% maior do que a de indivíduos com obesidade grau 1,\nisto é, com um índice de massa corporal entre 30 e 34,9 quilos por metro quadrado, de acordo\ncom a plataforma de registros OpenSAFELY.\nO editorial cita uma série de outros dados e possíveis razões para a associação entre a má\nevolução de certos casos de Covid-19 e a obesidade. No entanto, o que mais destaca é o\nambiente obesogênico que o novo coronavírus encontrou no planeta.\nNos Estados Unidos e no Reino Unido, para citar dois exemplos, entre 65% e 70% da população\napresentam um peso maior do que o recomendado para o bem da saúde. E, assim, os autores\napontam o dedo para a indústria de alimentos que, em sua opinião, em todo o globo não parou de\npromover produtos ultraprocessados, com muito açúcar, uma quantidade excessiva de sódio e\ngorduras além da conta.\nA crítica do editorial é mesmo cortante: “Fica claro que a indústria de alimentos divide a culpa não\napenas pela pandemia de obesidade como pelos casos mais graves de Covid-19 e suas\nconsequências devastadoras”, está escrito.\nE os autores cobram medidas, lembrando que o confinamento exigido pela Covid-19\naparentemente piorou o estado nutricional das pessoas, em parte pela falta de acesso a alimentos\nfrescos, em outra parte porque o pânico fez muita gente estocar itens ultraprocessados em casa,\njá que esses costumam ter maior vida de prateleira, inclusive na despensa.\nMas o que deixou os autores realmente desconfortáveis foram as ações de marketing de algumas\nmarcas nesses tempos desafiadores. Todas, claro, querendo demonstrar o seu envolvimento com\niniciativas de responsabilidade social, mas dando tiros que, para olhos mais atentos, decididamente\nsaíram pela culatra. Por exemplo, quando uma indústria bem popular na Inglaterra distribuiu nada\nmenos do que meio milhão de calóricos donuts para profissionais na linha de frente do National\nHealth Service britânico.\nA impressão é de que as indústrias de alimentos verdadeiramente preocupadas com a população,\ncada vez mais acometida pela obesidade, deveriam aproveitar a crise atual para botar a mão na\nconsciência, parar de promover itens pouco saudáveis e reformular boa parte do seu portfólio. As\nmortes por Covid-19 dão a pista de que essa é a maior causa que elas poderiam abraçar no\nmomento.\nFonte: Adaptado de https://abeso.org.br/e-a-industria-de-alimentos-na-pandemia. Publicado em\n30 de junho de 2020. Acessado em 09 Mar 21.\nGLOSSÁRIO: O termo “ambiente obesogênico” foi criado pelo professor de Bioengenharia da\nUniversidade da Califórnia, nos EUA, Bruce Blumberg. Segundo ele, são os Obesogênicos os\nresponsáveis por contribuir no ganho de peso sem que o indivíduo tenha consciência de que está\nengordando."
+    "readingText": "Ea indústria de alimentos na pandemia?\nO editorial da edição de 10 de junho do British Medical Journal, assinado por professores da\nQueen Mary University of London, na Inglaterra, propõe uma reflexão tão interessante que vale\nprovocá-la entre nós, aqui também: a pandemia de Covid-19 deveria tornar ainda mais urgente o\ncombate à outra pandemia, a de obesidade.\nO excesso de peso, por si só, já é um fator de risco importante para o agravamento da infecção\npelo Sars-CoV 2, como lembram os autores. A probabilidade de uma pessoa com obesidade\nsevera morrer de Covid-19 chega a ser 27% maior do que a de indivíduos com obesidade grau 1,\nisto é, com um índice de massa corporal entre 30 e 34,9 quilos por metro quadrado, de acordo\ncom a plataforma de registros OpenSAFELY.\nO editorial cita uma série de outros dados e possíveis razões para a associação entre a má\nevolução de certos casos de Covid-19 e a obesidade. No entanto, o que mais destaca é o\nambiente obesogênico que o novo coronavírus encontrou no planeta.\nNos Estados Unidos e no Reino Unido, para citar dois exemplos, entre 65% e 70% da população\napresentam um peso maior do que o recomendado para o bem da saúde. E, assim, os autores\napontam o dedo para a indústria de alimentos que, em sua opinião, em todo o globo não parou de\npromover produtos ultraprocessados, com muito açúcar, uma quantidade excessiva de sódio e\ngorduras além da conta.\nA crítica do editorial é mesmo cortante: “Fica claro que a indústria de alimentos divide a culpa não\napenas pela pandemia de obesidade como pelos casos mais graves de Covid-19 e suas\nconsequências devastadoras”, está escrito.\nE os autores cobram medidas, lembrando que o confinamento exigido pela Covid-19\naparentemente piorou o estado nutricional das pessoas, em parte pela falta de acesso a alimentos\nfrescos, em outra parte porque o pânico fez muita gente estocar itens ultraprocessados em casa,\njá que esses costumam ter maior vida de prateleira, inclusive na despensa.\nMas o que deixou os autores realmente desconfortáveis foram as ações de marketing de algumas\nmarcas nesses tempos desafiadores. Todas, claro, querendo demonstrar o seu envolvimento com\niniciativas de responsabilidade social, mas dando tiros que, para olhos mais atentos, decididamente\nsaíram pela culatra. Por exemplo, quando uma indústria bem popular na Inglaterra distribuiu nada\nmenos do que meio milhão de calóricos donuts para profissionais na linha de frente do National\nHealth Service britânico.\nA impressão é de que as indústrias de alimentos verdadeiramente preocupadas com a população,\ncada vez mais acometida pela obesidade, deveriam aproveitar a crise atual para botar a mão na\nconsciência, parar de promover itens pouco saudáveis e reformular boa parte do seu portfólio. As\nmortes por Covid-19 dão a pista de que essa é a maior causa que elas poderiam abraçar no\nmomento.\nFonte: Adaptado de https://abeso.org.br/e-a-industria-de-alimentos-na-pandemia. Publicado em\n30 de junho de 2020. Acessado em 09 Mar 21.\nGLOSSÁRIO: O termo “ambiente obesogênico” foi criado pelo professor de Bioengenharia da\nUniversidade da Califórnia, nos EUA, Bruce Blumberg. Segundo ele, são os Obesogênicos os\nresponsáveis por contribuir no ganho de peso sem que o indivíduo tenha consciência de que está\nengordando."
   },
   {
     "id": "formacao-pdf_3_formacao-q59",
@@ -7963,7 +7963,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 59,
-    "statement": "Em “O cansaço extremo, por sua vez, na visão do filósofo, favorece o surgimento de patologias\nque afetam a saúde física e mental, como a hiperatividade, o déficit de atenção, o transtorno de\npersonalidade borderline...”, as palavras sublinhadas são formadas, respectivamente, por",
+    "statement": "Em “O cansaço extremo, por sua vez, na visão do filósofo, favorece o <u>surgimento</u> de patologias\nque afetam a saúde física e mental, como a <u>hiperatividade</u>, o déficit de atenção, o transtorno de\npersonalidade borderline...”, as palavras sublinhadas são formadas, respectivamente, por",
     "options": [
       {
         "letter": "A",
@@ -7993,7 +7993,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "A sociedade do cansaço é cada vez mais realidade; como se blindar?\nA vida moderna naturalizou a cobrança excessiva por produtividade e positividade; com tanta\npressão por perfeição, saúde física e mental pedem a conta\n“Já amanheci cansada.” O meme, que circula pela internet eé ilustrado por um desenho infantil,\nprovavelmente, foi criado por uma criança, mas faz sucesso nas redes sociais ao resumir uma\nsensação que domina boa parte da sociedade adulta: o de que nem boas noites de sono são\nsuficientes para restaurar o vigor e a disposição, por isso, não raramente amanhecemos cansados.\nO que pouca gente sabe é que essa sensação permanente de exaustão tem explicação na filosofia:\nde acordo com o filósofo sul-coreano Byung-Chul Han, vivemos na sociedade do cansaço, que\nnaturalizou a cobrança excessiva por produtividade, pela alta performance e pelos resultados, tudo\nisso sob o pano da positividade. Com tanta pressão, saúde física e mental pedem a conta.\nTer um olhar crítico sobre esforços e objetivos, reconhecer-se imperfeito e buscar por tempo de\nqualidade longe de telas e de trabalho são algumas das alternativas para se blindar dessa patologia\nda sociedade moderna.\nEntenda a sociedade do cansaço\nPare e reflita: quantas vezes você já se cobrou e se frustrou por não ter a produtividade que\nesperava em um determinado dia ou período de tempo? E quantas vezes você já se deparou com\no perfil de um colega de faculdade no LinkedIn, observou a empresa onde ele trabalha ou a atual\nsituação profissional dele, comparou com sua situação e se sentiu deprimido ou fracassado?\nQuestionamentos e sentimentos como estes, que têm como pano de fundo a busca excessiva por\nprodutividade, alta performance, desempenho e resultado são decorrentes da sociedade do\ncansaço, um termo cunhado por Byung-Chul Han, que se dedicou a entender como o modelo de\nprodução da última fase do capitalismo tem interferido na vida das pessoas. Os resultados foram\nreunidos no livro Sociedade do Cansaço.\n“Esse filósofo defende que a sociedade atual valoriza o desempenho, a alta performance, o\nresultado, a máxima produtividade. O problema é quando essas coisas não acontecem. As pessoas\ntendem a se sentir frustradas, deprimidas e fracassadas”, explica a psicóloga e psicoterapeuta Ana\nGabriela Andriani, doutora em educação pela Universidade de Campinas (Unicamp).\nO cansaço extremo, por sua vez, na visão do filósofo, favorece o surgimento de patologias que\nafetam a saúde física e mental, como a hiperatividade, o déficit de atenção, o transtorno de\npersonalidade borderline, a ansiedade, a melancolia, a depressão e a síndrome de burnout.\nOutra característica marcante da sociedade do cansaço levantada pelo filósofo sul-coreano é a\nindividualização e o isolamento. “As pessoas vivem cercadas por outras, mas estão isoladas dentro\nde si”, explica a psicoterapeuta.\nA cobrança em excesso, somada ao surgimento de patologias e à individualização resulta ainda\nem um outro problema: o uso excessivo de medicamentos. “Para poder desempenhar bem seus\npapéis, as pessoas vêm se utilizando de artifícios químicos e medicamentos para que oscilações\nemocionais não aconteçam. Elas não podem ficar tristes nem desmotivadas; precisam garantir a\nestabilidade de humor e a alta produtividade sempre”, explica Ana Gabriela Andriani.\nPara o psicanalista clínico Diego Felipe Silva Cavalcante, da clínica Kaizen, excesso de estímulos e\nde informações, a globalização e o avanço tecnológico, a obsessão em querer atender às\nexpectativas geradas pela sociedade e o esforço do indivíduo em ser produtivo, autêntico e\ninovador são alguns dos fatores que mais contribuem com a sociedade do cansaço.\nA violência da positividade\n“Não desista”, “Tudo dá certo no fim. Se não deu certo é porque ainda não chegou o final”,\n“Busque a felicidade a todo momento. Sempre”. Frases como essas são facilmente encontradas\nem perfis de redes sociais e têm como intenção servir de motivação para que as pessoas persistam\nna busca por seus objetivos.\nO problema é quando elas mascaram a realidade, fazendo parecer que não existem objetivos\nimpossíveis de serem alcançados, colaborando com as cobranças em excesso.\n“O ritmo de vida cobrado por nossa sociedade faz com que tudo pareça ser possível de ser\nalcançado, o que gera em nós uma autocobrança muito grande e a expectativa de ser sempre\npossível alcançar os melhores resultados. Em outras palavras, é o excesso do trabalho munido do\nsentimento de liberdade, o que gera a chamada ‘violência da positividade’”, explica Diego Felipe\nSilva Cavalcante.\nNeste sentido, é justo atribuir às redes sociais uma parcela da responsabilidade pelas patologias\ndecorrentes da sociedade do cansaço. “A necessidade de se expor e se mostrar feliz o tempo\ntodo, bem-sucedido e realizado em troca da aprovação social – que vem por meio de curtida e\nlikes – é outro fator que contribui para nos levar à exaustão, ao esgotamento mental, uma vez que\nnunca ficamos plenamente satisfeitos com nossos resultados”, avalia.\nAna Gabriela Andriani concorda com o pensamento do colega e reforça: “As redes sociais reúnem\nmomentos de felicidade, de conquista e de perfeição: são corpos esculturais, profissões de alto\ndesempenho, relações perfeitas… Tudo isso contribui para que as pessoas se sintam exigidas a\nserem assim também, a buscarem a perfeição, a estarem em um alto nível de rendimento e\nprodutividade e a serem sempre felizes, mobilizadas, motivadas e superinformadas”, acrescenta a\ndoutora.\nComo se blindar dos efeitos da sociedade do cansaço\nBusque o sentido das coisas\nEntender os motivos pelos quais você faz determinadas coisas ou toma algumas atitudes é o\nprimeiro passo para não cair nas armadilhas da sociedade do cansaço.\n“É preciso questionar o sentido das coisas que fazemos, de nossa atividade profissional, das\natividades com as quais nos envolvemos, das nossas relações e do uso das redes sociais. Esse\nolhar crítico é fundamental para que possamos identificar o quanto nossas atitudes são pautadas\nem coisas que são, de fato, significativas pra gente ou o quanto estamos fazendo isso porque\noutras pessoas fazem ou porque estamos em um piloto automático”, orienta Ana Gabriela\nAndriani.\n“A ideia é parar para refletir sobre como está conduzindo sua vida, e, mais que isso, permitir-se\nsentir o desconforto e o tédio. Aliás, não tente desesperadamente fugir do tédio”, orienta o\npsicanalista clínico Diego Felipe Silva Cavalcante.\nAprenda a lidar com suas imperfeições\nReconhecer-se como um ser humano, com falhas, é o segundo passo para quem deseja se blindar\ndos efeitos da sociedade do cansaço. “É preciso aprender a lidar com nossas faltas e imperfeições.\nÉ preciso entender que a gente não dá conta de estar em um alto nível de performance,\nrendimento e entrega no trabalho o tempo todo; que não existem relações perfeitas nem corpos\nperfeitos, e que não é possível estar sempre estável emocionalmente”, explica a psicóloga.\nAlém disso, Ana Gabriela Andriani destaca a instabilidade com que se desenrolam as situações\nexistenciais. “A vida não acontece em uma curva de ascensão. Saber disso é importante para que a\ngente possa se conhecer mais e se aproximar de nós mesmos”, pontua.\nBusque por momentos com qualidade de vida\nPor fim, a terceira orientação dada pelos especialistas é buscar por momentos que proporcionem\nrelaxamento e qualidade de vida, além de usar as redes sociais com moderação.\n“Aprenda a contemplar a vida, a viver o momento. Preste atenção em cada detalhe do seu dia, leia\nmais livros, medite. Além disso, procure deixar o celular um pouco de lado e use as redes sociais e\noutras interações digitais com moderação. Quando você tirar férias, tire férias de fato e desligue-se de seus afazeres”, ensina o psicanalista da clínica Kaizen.\nDisponível em: https://www.consumidormoderno.com.br/2021/06/03/sociedade-cansaco-\nblindar/"
+    "readingText": "<u>A sociedade do cansaço é cada vez mais realidade; como se blindar?</u>\nA vida moderna naturalizou a cobrança excessiva por produtividade e positividade; com tanta\npressão por perfeição, saúde física e mental pedem a conta\n“Já amanheci cansada.” O meme, que circula pela internet eé ilustrado por um desenho infantil,\nprovavelmente, foi criado por uma criança, mas faz sucesso nas redes sociais ao resumir uma\nsensação que domina boa parte da sociedade adulta: o de que nem boas noites de sono são\nsuficientes para restaurar o vigor e a disposição, por isso, não raramente amanhecemos cansados.\nO que pouca gente sabe é que essa sensação permanente de exaustão tem explicação na filosofia:\nde acordo com o filósofo sul-coreano Byung-Chul Han, vivemos na sociedade do cansaço, que\nnaturalizou a cobrança excessiva por produtividade, pela alta performance e pelos resultados, tudo\nisso sob o pano da positividade. Com tanta pressão, saúde física e mental pedem a conta.\nTer um olhar crítico sobre esforços e objetivos, reconhecer-se imperfeito e buscar por tempo de\nqualidade longe de telas e de trabalho são algumas das alternativas para se blindar dessa patologia\nda sociedade moderna.\nEntenda a sociedade do cansaço\nPare e reflita: quantas vezes você já se cobrou e se frustrou por não ter a produtividade que\nesperava em um determinado dia ou período de tempo? E quantas vezes você já se deparou com\no perfil de um colega de faculdade no LinkedIn, observou a empresa onde ele trabalha ou a atual\nsituação profissional dele, comparou com sua situação e se sentiu deprimido ou fracassado?\nQuestionamentos e sentimentos como estes, que têm como pano de fundo a busca excessiva por\nprodutividade, alta performance, desempenho e resultado são decorrentes da sociedade do\ncansaço, um termo cunhado por Byung-Chul Han, que se dedicou a entender como o modelo de\nprodução da última fase do capitalismo tem interferido na vida das pessoas. Os resultados foram\nreunidos no livro Sociedade do Cansaço.\n“Esse filósofo defende que a sociedade atual valoriza o desempenho, a alta performance, o\nresultado, a máxima produtividade. O problema é quando essas coisas não acontecem. As pessoas\ntendem a se sentir frustradas, deprimidas e fracassadas”, explica a psicóloga e psicoterapeuta Ana\nGabriela Andriani, doutora em educação pela Universidade de Campinas (Unicamp).\nO cansaço extremo, por sua vez, na visão do filósofo, favorece o surgimento de patologias que\nafetam a saúde física e mental, como a hiperatividade, o déficit de atenção, o transtorno de\npersonalidade borderline, a ansiedade, a melancolia, a depressão e a síndrome de burnout.\nOutra característica marcante da sociedade do cansaço levantada pelo filósofo sul-coreano é a\nindividualização e o isolamento. “As pessoas vivem cercadas por outras, mas estão isoladas dentro\nde si”, explica a psicoterapeuta.\nA cobrança em excesso, somada ao surgimento de patologias e à individualização resulta ainda\nem um outro problema: o uso excessivo de medicamentos. “Para poder desempenhar bem seus\npapéis, as pessoas vêm se utilizando de artifícios químicos e medicamentos para que oscilações\nemocionais não aconteçam. Elas não podem ficar tristes nem desmotivadas; precisam garantir a\nestabilidade de humor e a alta produtividade sempre”, explica Ana Gabriela Andriani.\nPara o psicanalista clínico Diego Felipe Silva Cavalcante, da clínica Kaizen, excesso de estímulos e\nde informações, a globalização e o avanço tecnológico, a obsessão em querer atender às\nexpectativas geradas pela sociedade e o esforço do indivíduo em ser produtivo, autêntico e\ninovador são alguns dos fatores que mais contribuem com a sociedade do cansaço.\nA violência da positividade\n“Não desista”, “Tudo dá certo no fim. Se não deu certo é porque ainda não chegou o final”,\n“Busque a felicidade a todo momento. Sempre”. Frases como essas são facilmente encontradas\nem perfis de redes sociais e têm como intenção servir de motivação para que as pessoas persistam\nna busca por seus objetivos.\nO problema é quando elas mascaram a realidade, fazendo parecer que não existem objetivos\nimpossíveis de serem alcançados, colaborando com as cobranças em excesso.\n“O ritmo de vida cobrado por nossa sociedade faz com que tudo pareça ser possível de ser\nalcançado, o que gera em nós uma autocobrança muito grande e a expectativa de ser sempre\npossível alcançar os melhores resultados. Em outras palavras, é o excesso do trabalho munido do\nsentimento de liberdade, o que gera a chamada ‘violência da positividade’”, explica Diego Felipe\nSilva Cavalcante.\nNeste sentido, é justo atribuir às redes sociais uma parcela da responsabilidade pelas patologias\ndecorrentes da sociedade do cansaço. “A necessidade de se expor e se mostrar feliz o tempo\ntodo, bem-sucedido e realizado em troca da aprovação social – que vem por meio de curtida e\nlikes – é outro fator que contribui para nos levar à exaustão, ao esgotamento mental, uma vez que\nnunca ficamos plenamente satisfeitos com nossos resultados”, avalia.\nAna Gabriela Andriani concorda com o pensamento do colega e reforça: “As redes sociais reúnem\nmomentos de felicidade, de conquista e de perfeição: são corpos esculturais, profissões de alto\ndesempenho, relações perfeitas… Tudo isso contribui para que as pessoas se sintam exigidas a\nserem assim também, a buscarem a perfeição, a estarem em um alto nível de rendimento e\nprodutividade e a serem sempre felizes, mobilizadas, motivadas e superinformadas”, acrescenta a\ndoutora.\nComo se blindar dos efeitos da sociedade do cansaço\nBusque o sentido das coisas\nEntender os motivos pelos quais você faz determinadas coisas ou toma algumas atitudes é o\nprimeiro passo para não cair nas armadilhas da sociedade do cansaço.\n“É preciso questionar o sentido das coisas que fazemos, de nossa atividade profissional, das\natividades com as quais nos envolvemos, das nossas relações e do uso das redes sociais. Esse\nolhar crítico é fundamental para que possamos identificar o quanto nossas atitudes são pautadas\nem coisas que são, de fato, significativas pra gente ou o quanto estamos fazendo isso porque\noutras pessoas fazem ou porque estamos em um piloto automático”, orienta Ana Gabriela\nAndriani.\n“A ideia é parar para refletir sobre como está conduzindo sua vida, e, mais que isso, permitir-se\nsentir o desconforto e o tédio. Aliás, não tente desesperadamente fugir do tédio”, orienta o\npsicanalista clínico Diego Felipe Silva Cavalcante.\nAprenda a lidar com suas imperfeições\nReconhecer-se como um ser humano, com falhas, é o segundo passo para quem deseja se blindar\ndos efeitos da sociedade do cansaço. “É preciso aprender a lidar com nossas faltas e imperfeições.\nÉ preciso entender que a gente não dá conta de estar em um alto nível de performance,\nrendimento e entrega no trabalho o tempo todo; que não existem relações perfeitas nem corpos\nperfeitos, e que não é possível estar sempre estável emocionalmente”, explica a psicóloga.\nAlém disso, Ana Gabriela Andriani destaca a instabilidade com que se desenrolam as situações\nexistenciais. “A vida não acontece em uma curva de ascensão. Saber disso é importante para que a\ngente possa se conhecer mais e se aproximar de nós mesmos”, pontua.\nBusque por momentos com qualidade de vida\nPor fim, a terceira orientação dada pelos especialistas é buscar por momentos que proporcionem\nrelaxamento e qualidade de vida, além de usar as redes sociais com moderação.\n“Aprenda a contemplar a vida, a viver o momento. Preste atenção em cada detalhe do seu dia, leia\nmais livros, medite. Além disso, procure deixar o celular um pouco de lado e use as redes sociais e\noutras interações digitais com moderação. Quando você tirar férias, tire férias de fato e desligue-se de seus afazeres”, ensina o psicanalista da clínica Kaizen.\nDisponível em: https://www.consumidormoderno.com.br/2021/06/03/sociedade-cansaco-\nblindar/"
   },
   {
     "id": "formacao-pdf_3_formacao-q60",
@@ -8041,7 +8041,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 61,
-    "statement": "A palavra destacada em “Segundo o prognóstico feito pelo professor (...)” é formada por um\nprefixo que possui o mesmo valor semântico que o prefixo presente na palavra:",
+    "statement": "A palavra destacada em “Segundo o <u>prognóstico</u> feito pelo professor (...)” é formada por um\nprefixo que possui o mesmo valor semântico que o prefixo presente na palavra:",
     "options": [
       {
         "letter": "A",
@@ -8071,7 +8071,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Texto I\nEscassez dos reservatórios pode afetar tarifação do consumo de energia e água\n“Diante da perspectiva de agravamento da situação dos reservatórios, não descartaria alguma\nmedida restritiva até o final do ano”, diz o professor Pedro Luiz Côrtes\nEspecialistas consideram a possibilidade de implementação de algum tipo de restrição ao\nconsumo de energia elétrica devido ao avanço do período de estiagem e à situação dos\nreservatórios no Brasil. Há sinalizações, por parte do governo federal, para um novo aumento do\nvalor da bandeira vermelha patamar dois ou algum outro tipo de aumento no custo da energia\nelétrica, como forma de conter o consumo. Em relação ao abastecimento de água, principalmente\nna Região Metropolitana de São Paulo, também há uma grande preocupação.\n“Diante da perspectiva de agravamento da situação dos reservatórios, não descartaria alguma\nmedida restritiva até o final do ano”, disse, em entrevista ao Jornal da USP no Ar 1ª Edição, Pedro\nLuiz Côrtes, professor da Escola de Comunicações e Artes (ECA) e do programa de Pós-\nGraduação em Ciência Ambiental do Instituto de Energia e Ambiente (IEE). De acordo com\nCôrtes, das medidas que estão em curso, a mais imediata é o aumento do valor da bandeira\nvermelha patamar dois ou a criação de uma nova bandeira na tarifa de energia elétrica. Ele coloca\nque o sistema de bandeiras é mais vantajoso por se tratar de uma tarifa variável de acordo com a\nsituação da crise hídrica, aumentando ou reduzindo o custo da energia elétrica. Outra medida que\no professor considera é uma possível negociação entre o governo e o setor industrial para que\neste último remaneje sua produção para o período da madrugada. Para as indústrias, o custo da\nenergia elétrica varia de acordo com o horário. Essa medida faria com que as indústrias reduzissem\nseu consumo do horário de pico para um período com maior oferta de energia e menor custo.\nEm relação à oferta de água, Côrtes diz que os reservatórios que abastecem a Região\nMetropolitana de São Paulo são suficientes para o segundo semestre com razoável tranquilidade.\nNo entanto, o mesmo não pode ser dito sobre 2022. Segundo o prognóstico feito pelo professor,\na previsão é que a primavera e o verão sejam mais secos, não tendo chuvas o suficiente para\nreposição de água no montante necessário para o abastecimento. “A situação dos reservatórios\ntende a se agravar e acredito que algum tipo de medida restritiva também deverá ser implantada\nainda este ano ou no ano que vem”, complementa Côrtes. Entre as possíveis políticas de redução\nde consumo, o retorno da política de bônus, em que as pessoas que consumirem abaixo da média\nterão um preço reduzido pelo m³ e quem consumir acima da média pagará muito mais. Esse tipo\nde medida foi adotada durante a última crise hídrica.\nPara o professor, ainda há expectativas de que a Sabesp reveja os contratos de demanda firme,\nque obriga os grandes consumidores a terem um consumo muito elevado e, a partir disso,\nfornecer uma tarifa mais baixa para eles. Esses contratos, durante a última crise hídrica, foram\nsuspensos, uma vez que eles não são incentivo à redução do uso de água dos grandes\nconsumidores. “Então, algumas medidas estão no horizonte, basta saber quais delas serão\nadotadas e em que tempo” conclui o professor.\nDisponível em <https://jornal.usp.br/atualidades/escassez-dos-reservatorios-pode-afetar-tarifacao-do-consumo-de-energia-e-agua/> Acesso em 21 junho. 2021."
+    "readingText": "Texto I\nEscassez dos reservatórios pode afetar tarifação do consumo de energia e água\n“Diante da perspectiva de agravamento da situação dos reservatórios, não descartaria alguma\nmedida restritiva até o final do ano”, diz o professor Pedro Luiz Côrtes\nEspecialistas consideram a possibilidade de implementação de algum tipo de restrição ao\nconsumo de energia elétrica devido ao avanço do período de estiagem e à situação dos\nreservatórios no Brasil. Há sinalizações, por parte do governo federal, para um novo aumento do\nvalor da bandeira vermelha patamar dois ou algum outro tipo de aumento no custo da energia\nelétrica, como forma de conter o consumo. Em relação ao abastecimento de água, principalmente\nna Região Metropolitana de São Paulo, também há uma grande preocupação.\n“Diante da perspectiva de agravamento da situação dos reservatórios, não descartaria alguma\nmedida restritiva até o final do ano”, disse, em entrevista ao <u>Jornal da USP no Ar 1ª Edição,</u> Pedro\nLuiz Côrtes, professor da Escola de Comunicações e Artes (ECA) e do programa de Pós-\nGraduação em Ciência Ambiental do Instituto de Energia e Ambiente (IEE). De acordo com\nCôrtes, das medidas que estão em curso, a mais imediata é o aumento do valor da bandeira\nvermelha patamar dois ou a criação de uma nova bandeira na tarifa de energia elétrica. Ele coloca\nque o sistema de bandeiras é mais vantajoso por se tratar de uma tarifa variável de acordo com a\nsituação da crise hídrica, aumentando ou reduzindo o custo da energia elétrica. Outra medida que\no professor considera é uma possível negociação entre o governo e o setor industrial para que\neste último remaneje sua produção para o período da madrugada. Para as indústrias, o custo da\nenergia elétrica varia de acordo com o horário. Essa medida faria com que as indústrias reduzissem\nseu consumo do horário de pico para um período com maior oferta de energia e menor custo.\nEm relação à oferta de água, Côrtes diz que os reservatórios que abastecem a Região\nMetropolitana de São Paulo são suficientes para o segundo semestre com razoável tranquilidade.\nNo entanto, o mesmo não pode ser dito sobre 2022. Segundo o prognóstico feito pelo professor,\na previsão é que a primavera e o verão sejam mais secos, não tendo chuvas o suficiente para\nreposição de água no montante necessário para o abastecimento. “A situação dos reservatórios\ntende a se agravar e acredito que algum tipo de medida restritiva também deverá ser implantada\nainda este ano ou no ano que vem”, complementa Côrtes. Entre as possíveis políticas de redução\nde consumo, o retorno da política de bônus, em que as pessoas que consumirem abaixo da média\nterão um preço reduzido pelo m³ e quem consumir acima da média pagará muito mais. Esse tipo\nde medida foi adotada durante a última crise hídrica.\nPara o professor, ainda há expectativas de que a Sabesp reveja os contratos de demanda firme,\nque obriga os grandes consumidores a terem um consumo muito elevado e, a partir disso,\nfornecer uma tarifa mais baixa para eles. Esses contratos, durante a última crise hídrica, foram\nsuspensos, uma vez que eles não são incentivo à redução do uso de água dos grandes\nconsumidores. “Então, algumas medidas estão no horizonte, basta saber quais delas serão\nadotadas e em que tempo” conclui o professor.\nDisponível em <https://jornal.usp.br/atualidades/escassez-dos-reservatorios-pode-afetar-tarifacao-do-consumo-de-energia-e-agua/> Acesso em 21 junho. 2021."
   },
   {
     "id": "formacao-pdf_3_formacao-q62",
@@ -8080,7 +8080,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 62,
-    "statement": "2013. (Texto adaptado)\nEm \"Desconfiado das classes superiores, o caboclo inventou a preceito: \"Cada macaco no seu\ngalho [...]\" (9°§), o termo sublinhado tem qual processo de formação de palavra?",
+    "statement": "2013. (Texto adaptado)\nEm <u>\"Desconfiado</u> das classes superiores, o caboclo inventou a preceito: \"Cada macaco no seu\ngalho [...]\" (9°§), o termo sublinhado tem qual processo de formação de palavra?",
     "options": [
       {
         "letter": "A",
@@ -8123,33 +8123,33 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Leio num jornal de Porto Alegre a comunicação da morte de uma pessoa da colônia alemã.",
+        "text": "Leio num jornal <u>de</u> Porto Alegre a comunicação da morte <u>de</u> uma pessoa da colônia alemã.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“triste notícia de que aprouve a Deus Nosso Senhor chamar à vida melhor fulano”",
+        "text": "“triste notíci<u>a</u> <u>de</u> que aprouve a Deus Nosso Senhor chamar à vida melhor fulano”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "A comunicação, segundo dizem, é coisa banal.",
+        "text": "A comunicação, <u>segundo</u> dizem, é coisa banal.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "A morte desperta em nós uma espécie de pudor.",
+        "text": "A morte desperta <u>em</u> nós uma espécie de pudor.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "No cemitério, defuntos com defuntos não fazem grande diferença, mesmo em túmulos diversos.",
+        "text": "No cemitério, defuntos <u>com defuntos não fazem grande diferença, mesmo em túmulos diversos.</u> ",
         "correct": false
       }
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Defuntos\nRUBEM BRAGA\n18 de outubro de 1939\nLeio num jornal de Porto Alegre a comunicação da morte de uma pessoa da colônia alemã. A\ncomunicação, que é também um agradecimento, ocupa um quadro em negrito, duas colunas. Não\nconhecia esse costume curioso. A idade do defunto é dada em anos,\nmeses e dias. Diz depois onde ele nasceu e quando. Faz depois uma lista dos lugares onde morou,\nconta seu casamento, diz o número de filhos. Depois dessa biografia vem a história da morte. A\ndoença é narrada com todas as minúcias e complicações, e aí entra o\nagradecimento ao médico. Vem então a hora exata da morte e o número das pessoas enlutadas. O\nagradecimento se estende a todas as pessoas que prestaram algum auxílio durante a enfermidade,\nà orquestra que executou peças fúnebres e aos coros que se fizeram\nouvir. O sacerdote também merece agradecimentos, assim como todos os que acompanharam o\nenterro, os que mandaram flores e, por fim, os coveiros. A longa comunicação abre-se com a\n“triste notícia de que aprouve a Deus Nosso Senhor chamar à vida melhor fulano” eé assinada\npelos “sobreviventes enlutados”. Essa palavra “sobreviventes” me parece aí excelentemente\nempregada. Dá a ideia justa de que a morte do parente foi uma catástrofe da qual se salvaram os\noutros; dá uma piedosa ideia de desastre.\nA comunicação, segundo dizem, é coisa banal. Os jornaizinhos da colônia alemã sempre trazem\ncoisas semelhantes. E uma pessoa do jornal de Porto Alegre disse que na tradução foi suprimida\numa passagem referente ao tratamento empregado no doente, passagem que\npara o público do jornal brasileiro poderia parecer de mau gosto e mesmo, de certo modo, ridícula.\nOra, essa atitude dos parentes diante da morte me parece uma rica lição de psicologia de um\npovo. Não vou extrair essa lição, que de psicologia não entendo. Os brasileiros quando noticiam a\nmorte de alguém preferem, quase sempre, omitir certos detalhes, especialmente sobre a doença.\nO brasileiro muitas vezes se acanha em perguntar a uma pessoa de que morreu o seu parente, ou\nsó o faz quando tem alguma intimidade. Os detalhes da doença ficam, em geral, para rodas\nestritamente íntimas **―** quase sempre de mulheres **―** e só no caso de se tratar de uma\npersonalidade extremamente importante são divulgados pelos jornais **―** assim mesmo de maneira\nmais ou menos vaga. A morte desperta em nós uma espécie de pudor. Muitas vezes agradecemos\nao médico, mas jamais agradecemos ao coveiro. Possivelmente um médico brasileiro ficaria um\npouco aborrecido vendo que os parentes do defunto agradecem ao mesmo tempo a ele e ao\ncoveiro...\nOutra coisa que me parece notável na comunicação alemã é a ausência de adjetivos\ntranscendentais. Ali não se fala em saudade eterna, nem em dores inconsoláveis, nem em golpe\nprofundo, nem em inexprimível gratidão. O estilo é, via de regra, mais objetivo; conta muito e\ncomenta pouco. Nós costumamos atulhar nossos defuntos de adjetivos **―** algumas vezes bastante\nexagerados e convencionais **―** embora piedosos.\nEnfim eu creio que o defunto alemão fica mais solidamente enterrado. Depois que se lê uma\ncomunicação dessas não há mais o que perguntar; nem o que pensar, nem mesmo o que sentir. A\npessoa viveu assim assim, ficou doente assim assim, morreu assim assim e foi\nenterrada assim assado.\nO defunto brasileiro é enterrado numa terra fofa de adjetivos, coberta de pudores e vaguidões. É\nmais transcendental e ao mesmo tempo mais difuso. A morte para nós é algo mais subjetivo: o\ndefunto morre mais dentro de nós que em si mesmo. Nossa dor, sincera ou fingida, é posta em\nprimeiro plano **―** e o defunto recua para um fundo vago, entre flores. Só no caso de uma\ntuberculose, por exemplo, falamos em “pertinaz enfermidade” **―** é o suficiente para que o público\nsaiba que afinal de contas a gente já sabia que a pessoa ia morrer e o golpe não foi muito grande.\nEnfim cada povo enterra defuntos a seu jeito. No cemitério, defuntos com defuntos não fazem\ngrande diferença, mesmo em túmulos diversos. Todos são defuntos, e apodrecem, e viram pó.\nQuanto às almas **―** se há almas **―** têm elas seu destino de acordo com certas\nnormas. Almas não têm sangue, e ninguém lhes examina o sangue para saber se é puro ou não.\nCorpos e almas são todos iguais perante a Lei. Eu, tu, ele, nós, vós, eles e os outros, todos ficamos\niguais **―** e isso faz pensar que é um pouco ridículo que antes da morte a gente\nqueira se fazer tão diferente.\n(Disponível em <https://cronicabrasileira.org.br/cronicas/14038/defuntos> Acesso em 16 abr.\n2021)"
+    "readingText": "<u>Defuntos</u>\nRUBEM BRAGA\n18 de outubro de 1939\nLeio num jornal de Porto Alegre a comunicação da morte de uma pessoa da colônia alemã. A\ncomunicação, que é também um agradecimento, ocupa um quadro em negrito, duas colunas. Não\nconhecia esse costume curioso. A idade do defunto é dada em anos,\nmeses e dias. Diz depois onde ele nasceu e quando. Faz depois uma lista dos lugares onde morou,\nconta seu casamento, diz o número de filhos. Depois dessa biografia vem a história da morte. A\ndoença é narrada com todas as minúcias e complicações, e aí entra o\nagradecimento ao médico. Vem então a hora exata da morte e o número das pessoas enlutadas. O\nagradecimento se estende a todas as pessoas que prestaram algum auxílio durante a enfermidade,\nà orquestra que executou peças fúnebres e aos coros que se fizeram\nouvir. O sacerdote também merece agradecimentos, assim como todos os que acompanharam o\nenterro, os que mandaram flores e, por fim, os coveiros. A longa comunicação abre-se com a\n“triste notícia de que aprouve a Deus Nosso Senhor chamar à vida melhor fulano” eé assinada\npelos “sobreviventes enlutados”. Essa palavra “sobreviventes” me parece aí excelentemente\nempregada. Dá a ideia justa de que a morte do parente foi uma catástrofe da qual se salvaram os\noutros; dá uma piedosa ideia de desastre.\nA comunicação, segundo dizem, é coisa banal. Os jornaizinhos da colônia alemã sempre trazem\ncoisas semelhantes. E uma pessoa do jornal de Porto Alegre disse que na tradução foi suprimida\numa passagem referente ao tratamento empregado no doente, passagem que\npara o público do jornal brasileiro poderia parecer de mau gosto e mesmo, de certo modo, ridícula.\nOra, essa atitude dos parentes diante da morte me parece uma rica lição de psicologia de um\npovo. Não vou extrair essa lição, que de psicologia não entendo. Os brasileiros quando noticiam a\nmorte de alguém preferem, quase sempre, omitir certos detalhes, especialmente sobre a doença.\nO brasileiro muitas vezes se acanha em perguntar a uma pessoa de que morreu o seu parente, ou\nsó o faz quando tem alguma intimidade. Os detalhes da doença ficam, em geral, para rodas\nestritamente íntimas ― quase sempre de mulheres ― e só no caso de se tratar de uma\npersonalidade extremamente importante são divulgados pelos jornais ― assim mesmo de maneira\nmais ou menos vaga. A morte desperta em nós uma espécie de pudor. Muitas vezes agradecemos\nao médico, mas jamais agradecemos ao coveiro. Possivelmente um médico brasileiro ficaria um\npouco aborrecido vendo que os parentes do defunto agradecem ao mesmo tempo a ele e ao\ncoveiro...\nOutra coisa que me parece notável na comunicação alemã é a ausência de adjetivos\ntranscendentais. Ali não se fala em saudade eterna, nem em dores inconsoláveis, nem em golpe\nprofundo, nem em inexprimível gratidão. O estilo é, via de regra, mais objetivo; conta muito e\ncomenta pouco. Nós costumamos atulhar nossos defuntos de adjetivos ― algumas vezes bastante\nexagerados e convencionais ― embora piedosos.\nEnfim eu creio que o defunto alemão fica mais solidamente enterrado. Depois que se lê uma\ncomunicação dessas não há mais o que perguntar; nem o que pensar, nem mesmo o que sentir. A\npessoa viveu assim assim, ficou doente assim assim, morreu assim assim e foi\nenterrada assim assado.\nO defunto brasileiro é enterrado numa terra fofa de adjetivos, coberta de pudores e vaguidões. É\nmais transcendental e ao mesmo tempo mais difuso. A morte para nós é algo mais subjetivo: o\ndefunto morre mais dentro de nós que em si mesmo. Nossa dor, sincera ou fingida, é posta em\nprimeiro plano ― e o defunto recua para um fundo vago, entre flores. Só no caso de uma\ntuberculose, por exemplo, falamos em “pertinaz enfermidade” ― é o suficiente para que o público\nsaiba que afinal de contas a gente já sabia que a pessoa ia morrer e o golpe não foi muito grande.\nEnfim cada povo enterra defuntos a seu jeito. No cemitério, defuntos com defuntos não fazem\ngrande diferença, mesmo em túmulos diversos. Todos são defuntos, e apodrecem, e viram pó.\nQuanto às almas ― se há almas ― têm elas seu destino de acordo com certas\nnormas. Almas não têm sangue, e ninguém lhes examina o sangue para saber se é puro ou não.\nCorpos e almas são todos iguais perante a Lei. Eu, tu, ele, nós, vós, eles e os outros, todos ficamos\niguais ― e isso faz pensar que é um pouco ridículo que antes da morte a gente\nqueira se fazer tão diferente.\n(Disponível em <https://cronicabrasileira.org.br/cronicas/14038/defuntos> Acesso em 16 abr.\n2021)"
   },
   {
     "id": "formacao-pdf_3_formacao-q64",
@@ -8188,7 +8188,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "E",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Texto V\nAcordada ainda no escuro, como se houvesse o sol chegado atrás das beiradas da noite. E logo\nsentava-se no tear. Linha clara, para começar o dia. Delicado traço cor da luz, que ela ia passando\nentre os fios estendidos, enquanto lá fora a claridade da manhã desenhava o horizonte.\nDepois lãs mais vivas, quentes lãs iam tecendo hora a hora, em longo tapete que nunca acabava.\nSe era forte demais o sol, e no jardim pendiam as pétalas, a moça colocava na lançadeira grossos\nfios cinzentos do algodão mais felpudo. Em breve, na penumbra trazida pelas nuvens, escolhia um\nfio de prata, que em pontos longos rebordava sobre o tecido. Leve, a chuva vinha cumprimentá-la\nà janela.\nMas se durante muitos dias o vento e o frio brigavam com as folhas e espantavam os pássaros,\nbastava a moça tecer com seus belos fios dourados, para que o sol voltasse a acalmar a natureza.\nAssim, jogando a lançadeira de um lado para o outro e batendo os grandes pentes do tear para\nfrente e para trás, a moça passava seus dias.\nNada lhe faltava. Na hora da fome tecia um lindo peixe, com cuidados de escamas. E eis que o\npeixe estava na mesa, pronto para ser comido. Se sede vinha, suave era a lã de leite que\nentremeava o tapete. e à noite, depois de lançar seu fio de escuridão, dormia tranquila.\nTecer era tudo o que fazia. Tecer era tudo o que queria fazer.\nMas tecendo e tecendo, ela própria trouxe o tempo em que se sentiu sozinha, e pela primeira vez\npensou como seria bom ter um marido ao lado.\nNão esperou o dia seguinte. Com capricho de quem tenta uma coisa nunca conhecida, começou a\nentremear no tapete as lãs e as cores que lhe dariam companhia. E aos poucos seu desejo foi\naparecendo, chapéu emplumado, rosto barbeado, corpo emprumado, sapato engraxado. Estava\njustamente acabando de entremear o último fio da ponta dos sapatos, quando bateram à porta.\nNem precisou abrir. O moço meteu a mão na maçaneta, tirou o chapéu de pluma, e foi entrando\nna sua vida.\nAquela noite, deitada contra o ombro dele, a moça pensou nos lindos filhos que teceria para\naumentar ainda mais a sua felicidade.\nE feliz foi, por algum tempo. Mas se o homem tinha pensado em filhos, logo os esqueceu. Porque,\ndescoberto o poder do tear, em nada mais pensou a não ser nas coisas todas que ele poderia lhe\ndar.\n– Uma casa melhor é necessária – disse para a mulher. E parecia justo, agora que eram dois. Exigiu\nque escolhesse as mais belas lãs cor de tijolo, fios verdes para os batentes, e pressa para a casa\nacontecer.\nMas pronta a casa, já não lhe pareceu suficiente. -Por que ter casa, se podemos ter palácio?\nPerguntou. Sem querer resposta, imediatamente ordenou que fosse de pedra com arremates de\nprata.\nDias e dias, semanas e meses trabalhou a moça tecendo tetos e portas, pátios e escadas, e salas e\npoços. A neve caía lá fora, e ela não tinha tempo para chamar o sol. A noite chegava, e ela não\ntinha tempo para arrematar o dia. Tecia e entristecia, enquanto sem parar batiam os pentes\nacompanhando o ritmo da lançadeira.\nAfinal, o palácio ficou pronto. E entre tantos cômodos, o marido escolheu para ela e seu tear o\nmais alto quarto da mais alta torre.\n– É para que ninguém saiba do tapete – disse. E antes de trancar a porta a chave advertiu: –\nFaltam as estrebarias. E não se esqueça dos cavalos!\nSem descanso tecia a mulher os caprichos do marido, enchendo o palácio de luxos, os cofres de\nmoedas, as salas de criados. Tecer era tudo o que queria fazer.\nE tecendo, ela própria trouxe o tempo em que sua tristeza lhe pareceu maior que o palácio com\ntodos os seus tesouros. E pela primeira vez pensou como seria bom estar sozinha de novo.\nSó esperou anoitecer. Levantou-se enquanto o marido dormia sonhando com novas exigências. E\ndescalça para não fazer barulho, subiu a longa escada da torre, sentou-se ao tear.\nDesta vez não precisou escolher linha nenhuma. Segurou a lançadeira ao contrário, e, jogando-a\nveloz de um lado para o outro, começou a desfazer seu tecido. Desteceu os cavalos, as\ncarruagens, as estrebarias, os jardins. Depois desteceu os criados e o palácio e todas as maravilhas\nque continha. E novamente se viu na sua casa pequena e sorriu para o jardim além da janela.\nA noite acabava quando o marido, estranhando a cama dura, acordou, e espantado olhou em\nvolta. Não teve tempo de se levantar. Ela já desfazia o desenho escuro dos sapatos, e ele viu seus\npés desparecendo, sumindo as pernas. Rápido, o nada subiu-lhe o corpo, tomou o peito\naprumado, o emplumado chapéu.\nEntão, como se ouvisse a chegada do sol, a moça escolheu uma linha clara. E foi passando-a\ndevagar entre os fios, delicado traço de luz, que a manhã refletiu na linha do horizonte.\nCOLASANTI, Marina. In: Contos brasileiros contemporâneos. São Paulo: Moderna,1991\nLeia o trecho:\n“Rápido, o nada subiu-lhe o corpo”"
+    "readingText": "Texto V\nAcordada ainda no escuro, como se houvesse o sol chegado atrás das beiradas da noite. E logo\nsentava-se no tear. Linha clara, para começar o dia. Delicado traço cor da luz, que ela ia passando\nentre os fios estendidos, enquanto lá fora a claridade da manhã desenhava o horizonte.\nDepois lãs mais vivas, quentes lãs iam tecendo hora a hora, em longo tapete que nunca acabava.\nSe era forte demais o sol, e no jardim pendiam as pétalas, a moça colocava na lançadeira grossos\nfios cinzentos do algodão mais felpudo. Em breve, na penumbra trazida pelas nuvens, escolhia um\nfio de prata, que em pontos longos rebordava sobre o tecido. Leve, a chuva vinha cumprimentá-la\nà janela.\nMas se durante muitos dias o vento e o frio brigavam com as folhas e espantavam os pássaros,\nbastava a moça tecer com seus belos fios dourados, para que o sol voltasse a acalmar a natureza.\nAssim, jogando a lançadeira de um lado para o outro e batendo os grandes pentes do tear para\nfrente e para trás, a moça passava seus dias.\nNada lhe faltava. Na hora da fome tecia um lindo peixe, com cuidados de escamas. E eis que o\npeixe estava na mesa, pronto para ser comido. Se sede vinha, suave era a lã de leite que\nentremeava o tapete. e à noite, depois de lançar seu fio de escuridão, dormia tranquila.\nTecer era tudo o que fazia. Tecer era tudo o que queria fazer.\nMas tecendo e tecendo, ela própria trouxe o tempo em que se sentiu sozinha, e pela primeira vez\npensou como seria bom ter um marido ao lado.\nNão esperou o dia seguinte. Com capricho de quem tenta uma coisa nunca conhecida, começou a\nentremear no tapete as lãs e as cores que lhe dariam companhia. E aos poucos seu desejo foi\naparecendo, chapéu emplumado, rosto barbeado, corpo emprumado, sapato engraxado. Estava\njustamente acabando de entremear o último fio da ponta dos sapatos, quando bateram à porta.\nNem precisou abrir. O moço meteu a mão na maçaneta, tirou o chapéu de pluma, e foi entrando\nna sua vida.\nAquela noite, deitada contra o ombro dele, a moça pensou nos lindos filhos que teceria para\naumentar ainda mais a sua felicidade.\nE feliz foi, por algum tempo. Mas se o homem tinha pensado em filhos, logo os esqueceu. Porque,\ndescoberto o poder do tear, em nada mais pensou a não ser nas coisas todas que ele poderia lhe\ndar.\n– Uma casa melhor é necessária – disse para a mulher. E parecia justo, agora que eram dois. Exigiu\nque escolhesse as mais belas lãs cor de tijolo, fios verdes para os batentes, e pressa para a casa\nacontecer.\nMas pronta a casa, já não lhe pareceu suficiente. -Por que ter casa, se podemos ter palácio?\nPerguntou. Sem querer resposta, imediatamente ordenou que fosse de pedra com arremates de\nprata.\nDias e dias, semanas e meses trabalhou a moça tecendo tetos e portas, pátios e escadas, e salas e\npoços. A neve caía lá fora, e ela não tinha tempo para chamar o sol. A noite chegava, e ela não\ntinha tempo para arrematar o dia. Tecia e entristecia, enquanto sem parar batiam os pentes\nacompanhando o ritmo da lançadeira.\nAfinal, o palácio ficou pronto. E entre tantos cômodos, o marido escolheu para ela e seu tear o\nmais alto quarto da mais alta torre.\n– É para que ninguém saiba do tapete – disse. E antes de trancar a porta a chave advertiu: –\nFaltam as estrebarias. E não se esqueça dos cavalos!\nSem descanso tecia a mulher os caprichos do marido, enchendo o palácio de luxos, os cofres de\nmoedas, as salas de criados. Tecer era tudo o que queria fazer.\nE tecendo, ela própria trouxe o tempo em que sua tristeza lhe pareceu maior que o palácio com\ntodos os seus tesouros. E pela primeira vez pensou como seria bom estar sozinha de novo.\nSó esperou anoitecer. Levantou-se enquanto o marido dormia sonhando com novas exigências. E\ndescalça para não fazer barulho, subiu a longa escada da torre, sentou-se ao tear.\nDesta vez não precisou escolher linha nenhuma. Segurou a lançadeira ao contrário, e, jogando-a\nveloz de um lado para o outro, começou a desfazer seu tecido. Desteceu os cavalos, as\ncarruagens, as estrebarias, os jardins. Depois desteceu os criados e o palácio e todas as maravilhas\nque continha. E novamente se viu na sua casa pequena e sorriu para o jardim além da janela.\nA noite acabava quando o marido, estranhando a cama dura, acordou, e espantado olhou em\nvolta. Não teve tempo de se levantar. Ela já desfazia o desenho escuro dos sapatos, e ele viu seus\npés desparecendo, sumindo as pernas. Rápido, o nada subiu-lhe o corpo, tomou o peito\naprumado, o emplumado chapéu.\nEntão, como se ouvisse a chegada do sol, a moça escolheu uma linha clara. E foi passando-a\ndevagar entre os fios, delicado traço de luz, que a manhã refletiu na linha do horizonte.\nCOLASANTI, Marina. In: Contos brasileiros contemporâneos. São Paulo: Moderna,1991\nLeia o trecho:\n“Rápido, o <u>nada</u> subiu-lhe o corpo”"
   },
   {
     "id": "formacao-pdf_3_formacao-q65",
@@ -8201,27 +8201,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“mas há muito mistério nesta nossa triste vida terrena”",
+        "text": "“mas há muito mistério nesta nossa triste vida <u>terrena”</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“devido a seu profundo sono, perfeitamente explicável”",
+        "text": "“devido a seu profundo sono, perfeitamente <u>explicável”</u>",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Começou-se a falar que iam empastelar a folha”",
+        "text": "“Começou-se a falar que iam <u>empastelar</u> a folha”",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“Morram os sebastianistas!”",
+        "text": "“Morram os <u>sebastianistas!”</u>",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Os assaltantes foram entrando”",
+        "text": "“Os <u>assaltantes</u> foram entrando”",
         "correct": false
       }
     ],
@@ -8304,7 +8304,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "TEXTO I\nDez minutos de idade\nFERNANDO SABINO\nA enfermeira surgida de uma porta me impôs silêncio com o dedo junto aos lábios e mandou-me\nentrar. Estava nascendo! Era um menino.\nNem bonito nem feio; tem boca, orelhas, sexo e nariz no seu devido lugar, cinco dedos em cada\nmão e em cada pé. Realizou a grande temeridade de nascer, e saiu-se bem da empreitada. Já\nenfrentou dez minutos de vida. Ainda traz consigo, nos olhinhos esgazeados, um resto de\neternidade.\nPortanto, alegremo-nos. A vida também não é bonita nem feia. Tem bocas que murmuram preces,\norelhas sábias no escutar, sexos que se contentam, perfumes vários para o nariz, mãos que se\napertam, dedos que acariciam, múltiplos caminhos para os pés. É verdade que algumas palavras,\nmelhor fora nunca dizê-las, outras nunca escutá-las. Olhos há que procuram ver o que não podem,\nalguns narizes se metem onde não devem. Há muito prazer insatisfeito, muito desejo vão. Mãos\nque se fecham. Pés que se atropelam. Mas o simples ato de nascer já pressupõe tudo isso, o\nprimeiro ar que se respira já contém as impurezas do mundo. O primeiro vagido é um desafio. A\nvida aceitou um novo corpo e o batismo vai traçar-lhe um destino. A luta se inicia: mais um que\nserá salvo. Portanto, alegremo-nos.\nMenino sem nome ainda, não te prometo nada. Não sei se terás infância: brinquedos, quintal,\nmonte de areia, fruta verde, casca de árvore, passarinho, porão de fantasmas, formigas em fila,\nbeira de rio, galinha no choco, caco de vidro, pé machucado. O mundo de hoje, tal como o estou\nvendo da janela do meu apartamento, desconfio que te reserva para a infância um miraculoso\naparelho eletrocosmogônico de brincar. Ou apenas uma eterna garrafa de Coca-Cola e um\ndelicioso Chicabon.\nAceita, menino, esses inofensivos divertimentos. Leva-os a sério, com toda aquela seriedade grave\nda infância, chupa o Chicabon, bebe a Coca-Cola, desmonta e torna a montar a miraculosa\nmáquina de brincar de nosso século que a imaginação de teu pai jamais poderia sequer conceber.\nImpõe a essas coisas e a essa vida que te oferecerão como infância a sofreguidão da tua boca, a\nousadia de teus olhos e a força de tuas mãos. Imprime a tudo que tocares a alegria que me deste\npor nasceres. Qualquer que seja a tua infância, conquista-a, que te abençoo. Dela te nascerá uma\nconvicção. Conquista-a também **―** e vá viver, em meu nome.\nNada te posso dar senão um nome. Nada te posso dar. No teu primeiro instante de vida minha\nestrela não se apagou. Partiu-se em duas e lá no alto uma delas te espera, será tua. Nada te posso\ndar senão um nome e esta estrela. Se acreditares em estrela, vai buscá-la.\n(Disponível em <https://cronicabrasileira.org.br/cronicas/13156/dez-minutos-de-idade> Acesso\nem 18 mai. 2021)"
+    "readingText": "TEXTO I\nDez minutos de idade\nFERNANDO SABINO\nA enfermeira surgida de uma porta me impôs silêncio com o dedo junto aos lábios e mandou-me\nentrar. Estava nascendo! Era um menino.\nNem bonito nem feio; tem boca, orelhas, sexo e nariz no seu devido lugar, cinco dedos em cada\nmão e em cada pé. Realizou a grande temeridade de nascer, e saiu-se bem da empreitada. Já\nenfrentou dez minutos de vida. Ainda traz consigo, nos olhinhos esgazeados, um resto de\neternidade.\nPortanto, alegremo-nos. A vida também não é bonita nem feia. Tem bocas que murmuram preces,\norelhas sábias no escutar, sexos que se contentam, perfumes vários para o nariz, mãos que se\napertam, dedos que acariciam, múltiplos caminhos para os pés. É verdade que algumas palavras,\nmelhor fora nunca dizê-las, outras nunca escutá-las. Olhos há que procuram ver o que não podem,\nalguns narizes se metem onde não devem. Há muito prazer insatisfeito, muito desejo vão. Mãos\nque se fecham. Pés que se atropelam. Mas o simples ato de nascer já pressupõe tudo isso, o\nprimeiro ar que se respira já contém as impurezas do mundo. O primeiro vagido é um desafio. A\nvida aceitou um novo corpo e o batismo vai traçar-lhe um destino. A luta se inicia: mais um que\nserá salvo. Portanto, alegremo-nos.\nMenino sem nome ainda, não te prometo nada. Não sei se terás infância: brinquedos, quintal,\nmonte de areia, fruta verde, casca de árvore, passarinho, porão de fantasmas, formigas em fila,\nbeira de rio, galinha no choco, caco de vidro, pé machucado. O mundo de hoje, tal como o estou\nvendo da janela do meu apartamento, desconfio que te reserva para a infância um miraculoso\naparelho eletrocosmogônico de brincar. Ou apenas uma eterna garrafa de Coca-Cola e um\ndelicioso Chicabon.\nAceita, menino, esses inofensivos divertimentos. Leva-os a sério, com toda aquela seriedade grave\nda infância, chupa o Chicabon, bebe a Coca-Cola, desmonta e torna a montar a miraculosa\nmáquina de brincar de nosso século que a imaginação de teu pai jamais poderia sequer conceber.\nImpõe a essas coisas e a essa vida que te oferecerão como infância a sofreguidão da tua boca, a\nousadia de teus olhos e a força de tuas mãos. Imprime a tudo que tocares a alegria que me deste\npor nasceres. Qualquer que seja a tua infância, conquista-a, que te abençoo. Dela te nascerá uma\nconvicção. Conquista-a também ― e vá viver, em meu nome.\nNada te posso dar senão um nome. Nada te posso dar. No teu primeiro instante de vida minha\nestrela não se apagou. Partiu-se em duas e lá no alto uma delas te espera, será tua. Nada te posso\ndar senão um nome e esta estrela. Se acreditares em estrela, vai buscá-la.\n(Disponível em <https://cronicabrasileira.org.br/cronicas/13156/dez-minutos-de-idade> Acesso\nem 18 mai. 2021)"
   },
   {
     "id": "formacao-pdf_3_formacao-q68",
@@ -8512,7 +8512,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "B",
-        "text": "Com as grandes produções de Hollywood, as novelas ou até mesmo um bom jogo de futebol na quarta-feira (...);",
+        "text": "Com as grandes produções de Hollywood, as novelas ou até mesmo um bom jogo de futebol na <u>quarta-feira</u> (...);",
         "correct": false
       },
       {
@@ -8527,7 +8527,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "superando o número de assinantes da TV paga no país",
+        "text": "superando o número de assinantes da TV paga no país ",
         "correct": false
       }
     ],
@@ -8542,7 +8542,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 74,
-    "statement": "Em “...acaba realizando uma espécie de linchamento virtual dos indivíduos que agem ou dão\ndeclarações politicamente incorretas.”, as palavras sublinhadas são formadas, respectivamente,\npor",
+    "statement": "Em “...acaba realizando uma espécie de <u>linchamento</u> virtual dos indivíduos que agem ou dão\ndeclarações <u>politicamente incorretas.”,</u> as palavras sublinhadas são formadas, respectivamente,\npor",
     "options": [
       {
         "letter": "A",
@@ -8581,7 +8581,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 75,
-    "statement": "Assinale, a seguir, a alternativa que contém palavra destacada que não é formada pelo processo\nde derivação por sufixação.",
+    "statement": "Assinale, a seguir, a alternativa que contém palavra destacada que <u>não</u> é formada pelo processo\nde derivação por sufixação.",
     "options": [
       {
         "letter": "A",
@@ -8605,7 +8605,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "Golfinhos aparecem nas orlas, brincam. O planeta respira, desocupamos seus poros.",
+        "text": "Golfinhos aparecem nas orlas, brincam. O planeta respira, desocupamos seus poros. ",
         "correct": false
       }
     ],
@@ -8663,27 +8663,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“O Menino vislumbrava. Respirava muito.” (5°§) - O termo em destaque é formado por um processo de composição por justaposição.",
+        "text": "“O Menino <u>vislumbrava.</u> Respirava muito.” (5°§) - O termo em destaque é formado por um processo de composição por justaposição.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“O Menino riu, com todo o coração. Mas só bis-viu. Já o chamavam, para passeio.” (6°§) - o termo em destaque é um neologismo.",
+        "text": "“O Menino riu, com todo o coração. Mas só <u>bis-viu.</u> Já o chamavam, para passeio.” (6°§) - o termo em destaque é um neologismo.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“Talvez não devesse, não fosse direito ter por causa dele aquele doer, que põe e punge, de dó, desgosto e desengano.” (10°§) - o termo em destaque é formado por derivação imprópria.",
+        "text": "“Talvez não devesse, não fosse direito ter por causa dele aquele doer, que põe e <u>punge,</u> de dó, desgosto e desengano.” (10°§) - o termo em destaque é formado por derivação imprópria.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“[...] E que entre o contentamento e a desilusão, na balança fidelíssima, quase nada medeia.” (10°§) - O termo em destaque encontra-se no grau superlativo absoluto analítico.",
+        "text": "“[...] E que entre o contentamento e a desilusão, na balança <u>fidelíssima,</u> quase nada medeia.” (10°§) - O termo em destaque encontra-se no grau superlativo absoluto analítico.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Seu pensamentozinho estava ainda na fase hieroglífica.\" (11°§) - o termo em destaque encontra-se no diminutivo e tem valor pejorativo.",
+        "text": "“Seu <u>pensamentozinho</u> estava ainda na fase hieroglífica.\" (11°§) - o termo em destaque encontra-se no diminutivo e tem valor pejorativo.",
         "correct": false
       }
     ],
@@ -8728,7 +8728,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Carta para as futuras gerações\nIlya Prigogine\nEscrevo esta carta na mais completa humildade. Meu trabalho é no domínio da ciência. Não me dá\nqualquer qualificação especial para falar sobre o futuro da humanidade. As moléculas obedecem a\n\"leis\". As decisões humanas dependem das lembranças do passado e das expectativas para o\nfuturo. A perspectiva sob a qual vejo o problema da transição da cultura da guerra para uma\ncultura de paz - para usar a expressão de Federico Mayor - se obscureceu nos últimos anos, mas\ncontinuo otimista.\nDe qualquer forma, como poderia um homem da minha geração - nasci em 1917 - não ser otimista?\nNão vimos o fim de monstros como Hitler e Stálin? Não testemunhamos a miraculosa vitória das\ndemocracias na Segunda Guerra Mundial? No final da guerra, todos nós acreditávamos que a\nHistória recomeçaria do zero, e os acontecimentos justificaram esse otimismo.\nOs marcos da era incluem a fundação da Organização das Nações Unidas e da Unesco, a\nproclamação dos direitos do homem e a descolonização. Em termos mais gerais, houve o\nreconhecimento das culturas não europeias, do qual derivou uma queda do eurocentrismo e da\nsuposta desigualdade entre os povos \"civilizados\" e os \"não-civilizados\". Houve também uma\nredução na distância entre as classes sociais, pelo menos nos países ocidentais.\nEsse progresso foi conquistado sob a ameaça da Guerra Fria. No momento da queda do Muro de\nBerlim, começamos a acreditar que enfim seria realizada a transição da cultura da guerra para a\ncultura da paz. No entanto a década que se seguiu não tomou esse rumo. Testemunhamos a\npersistência, e até mesmo a ampliação, dos conflitos locais, quer sejam na África, quer nos Bálcãs.\nIsso pode ser considerado, ainda, como um resultado da sobrevivência do passado no presente.\nNo entanto, além da ameaça nuclear sempre presente, novas sombras apareceram: o progresso\ntecnológico agora torna possível guerras travadas premindo botões, semelhantes de alguma forma\na um jogo eletrônico.\nSou uma das pessoas que ajudaram a formular as políticas científicas da União Europeia. A ciência\nune os povos. Criou uma linguagem universal. Muitas outras disciplinas, como a economia e a\necologia, também requerem cooperação internacional. Fico, por isso, ainda mais atônito quando\npercebo que os governos estão tentando criar um exército europeu como expressão da unidade\nda Europa. Um exército contra quem? Onde está o inimigo? Por que esse crescimento constante\nnos orçamentos militares, quer na Europa, quer nos Estados Unidos? Cabe às futuras gerações\ntomar uma posição sobre isso. Na nossa era, e isso será cada vez mais verdade no futuro, as coisas\nestão mudando a uma velocidade jamais vista. Vou usar um exemplo científico.\nQuarenta anos atrás, o número de cientistas interessados na física de estado sólido e na tecnologia\nda informação não passava de umas poucas centenas. Era uma \"flutuação\", quando comparado às\nciências como um todo. Hoje, essas disciplinas se tornaram tão importantes que têm\nconsequências decisivas para a história da humanidade.\nCabe às futuras gerações construir uma nova coerência que incorpore tanto os valores humanos\nquanto a ciência, algo que ponha fim às profecias quanto ao \"fim da ciência\", \"fim da história\" ou\naté quanto ao advento da \"pós-humanidade\"\nCrescimento exponencial foi registrado no número de pesquisadores envolvidos nesse setor da\nciência. É um fenômeno de proporção sem precedentes, que deixou muito para trás o crescimento\ndo budismo e do cristianismo. Em minha mensagem às futuras gerações, gostaria de propor\nargumentos com o objetivo de lutar contra os sentimentos de resignação ou impotência. As\nrecentes ciências da complexidade negam o determinismo; insistem na criatividade em todos os\nníveis da natureza. O futuro não é dado. O grande historiador francês Fernand Braudel escreveu:\n\"Eventos são poeira\". Isso é verdade?\nO que é um evento? Uma analogia com \"bifurcações\", estudadas na física do não-equilíbrio, surge\nimediatamente. Essas bifurcações aparecem em pontos especiais nos quais a trajetória seguida\npor um sistema se subdivide em \"ramos\". Todos os ramos são possíveis, mas só um deles será\nseguido. No geral não se vê apenas uma bifurcação. Elas tendem a surgir em sucessão. Isso\nsignifica que até mesmo nas ciências fundamentais há um elemento temporal, narrativo, e isso\nconstitui o \"fim da certeza\", o título do meu último livro. O mundo está em construção, e todos\npodemos participar dela.\nDisponível em <https://www1.folha.uol.com.br/fsp/mais/fs3001200004.htm> Acesso em 11 set.\n2020.\nEm termos mais gerais, houve o reconhecimento das culturas não europeias, do qual derivou uma\nqueda do eurocentrismo eda suposta desigualdade entre os povos \"civilizados\" e os \"não-civilizados\"."
+    "readingText": "Carta para as futuras gerações\nIlya Prigogine\nEscrevo esta carta na mais completa humildade. Meu trabalho é no domínio da ciência. Não me dá\nqualquer qualificação especial para falar sobre o futuro da humanidade. As moléculas obedecem a\n\"leis\". As decisões humanas dependem das lembranças do passado e das expectativas para o\nfuturo. A perspectiva sob a qual vejo o problema da transição da cultura da guerra para uma\ncultura de paz - para usar a expressão de Federico Mayor - se obscureceu nos últimos anos, mas\ncontinuo otimista.\nDe qualquer forma, como poderia um homem da minha geração - nasci em 1917 - não ser otimista?\nNão vimos o fim de monstros como Hitler e Stálin? Não testemunhamos a miraculosa vitória das\ndemocracias na Segunda Guerra Mundial? No final da guerra, todos nós acreditávamos que a\nHistória recomeçaria do zero, e os acontecimentos justificaram esse otimismo.\nOs marcos da era incluem a fundação da Organização das Nações Unidas e da Unesco, a\nproclamação dos direitos do homem e a descolonização. Em termos mais gerais, houve o\nreconhecimento das culturas não europeias, do qual derivou uma queda do <u>eurocentrismo</u> e da\nsuposta desigualdade entre os povos \"civilizados\" e os \"não-civilizados\". Houve também uma\nredução na distância entre as classes sociais, pelo menos nos países ocidentais.\nEsse progresso foi conquistado sob a ameaça da Guerra Fria. No momento da queda do Muro de\nBerlim, começamos a acreditar que enfim seria realizada a transição da cultura da guerra para a\ncultura da paz. No entanto a década que se seguiu não tomou esse rumo. Testemunhamos a\npersistência, e até mesmo a ampliação, dos conflitos locais, quer sejam na África, quer nos Bálcãs.\nIsso pode ser considerado, ainda, como um resultado da sobrevivência do passado no presente.\nNo entanto, além da ameaça nuclear sempre presente, novas sombras apareceram: o progresso\ntecnológico agora torna possível guerras travadas premindo botões, semelhantes de alguma forma\na um jogo eletrônico.\nSou uma das pessoas que ajudaram a formular as políticas científicas da União Europeia. A ciência\nune os povos. Criou uma linguagem universal. Muitas outras disciplinas, como a economia e a\necologia, também requerem cooperação internacional. Fico, por isso, ainda mais atônito quando\npercebo que os governos estão tentando criar um exército europeu como expressão da unidade\nda Europa. Um exército contra quem? Onde está o inimigo? Por que esse crescimento constante\nnos orçamentos militares, quer na Europa, quer nos Estados Unidos? Cabe às futuras gerações\ntomar uma posição sobre isso. Na nossa era, e isso será cada vez mais verdade no futuro, as coisas\nestão mudando a uma velocidade jamais vista. Vou usar um exemplo científico.\nQuarenta anos atrás, o número de cientistas interessados na física de estado sólido e na tecnologia\nda informação não passava de umas poucas centenas. Era uma \"flutuação\", quando comparado às\nciências como um todo. Hoje, essas disciplinas se tornaram tão importantes que têm\nconsequências decisivas para a história da humanidade.\nCabe às futuras gerações construir uma nova coerência que incorpore tanto os valores humanos\nquanto a ciência, algo que ponha fim às profecias quanto ao \"fim da ciência\", \"fim da história\" ou\naté quanto ao advento da \"pós-humanidade\"\nCrescimento exponencial foi registrado no número de pesquisadores envolvidos nesse setor da\nciência. É um fenômeno de proporção sem precedentes, que deixou muito para trás o crescimento\ndo budismo e do cristianismo. Em minha mensagem às futuras gerações, gostaria de propor\nargumentos com o objetivo de lutar contra os sentimentos de resignação ou impotência. As\nrecentes ciências da complexidade negam o determinismo; insistem na criatividade em todos os\nníveis da natureza. O futuro não é dado. O grande historiador francês Fernand Braudel escreveu:\n\"Eventos são poeira\". Isso é verdade?\nO que é um evento? Uma analogia com \"bifurcações\", estudadas na física do não-equilíbrio, surge\nimediatamente. Essas bifurcações aparecem em pontos especiais nos quais a trajetória seguida\npor um sistema se subdivide em \"ramos\". Todos os ramos são possíveis, mas só um deles será\nseguido. No geral não se vê apenas uma bifurcação. Elas tendem a surgir em sucessão. Isso\nsignifica que até mesmo nas ciências fundamentais há um elemento temporal, narrativo, e isso\nconstitui o \"fim da certeza\", o título do meu último livro. O mundo está em construção, e todos\npodemos participar dela.\nDisponível em <https://www1.folha.uol.com.br/fsp/mais/fs3001200004.htm> Acesso em 11 set.\n2020.\nEm termos mais gerais, houve o reconhecimento das culturas não europeias, do qual derivou uma\nqueda do <u>eurocentrismo</u> eda suposta desigualdade entre os povos \"civilizados\" e os \"não-civilizados\"."
   },
   {
     "id": "formacao-pdf_3_formacao-q79",
@@ -8741,27 +8741,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "A perspectiva sob a qual vejo o problema da transição da cultura da guerra para uma cultura de paz - para usar a expressão de Federico Mayor - se obscureceu nos últimos anos, mas continuo otimista. (porém)",
+        "text": "A perspectiva sob a qual vejo o problema da transição da cultura da guerra para uma cultura de paz - para usar a expressão de Federico Mayor - se obscureceu nos últimos anos, <u>mas</u> continuo otimista. (porém)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Não testemunhamos a miraculosa vitória das democracias na Segunda Guerra Mundial? (extraordinária)",
+        "text": "Não testemunhamos a <u>miraculosa</u> vitória das democracias na Segunda Guerra Mundial? (extraordinária)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "No entanto a década que se seguiu não tomou esse rumo. (Não obstante)",
+        "text": "<u>No entanto</u> a década que se seguiu não tomou esse rumo. (Não obstante)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Por que esse crescimento constante nos orçamentos militares, quer na Europa, quer nos Estados Unidos? (contínuo)",
+        "text": "Por que esse crescimento <u>constante</u> nos orçamentos militares, quer na Europa, quer nos Estados Unidos? (contínuo)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "É um fenômeno de proporção sem precedentes, que deixou muito para trás o crescimento do budismo e do cristianismo. (pretexto)",
+        "text": "É um fenômeno de proporção sem <u>precedentes,</u> que deixou muito para trás o crescimento do budismo e do cristianismo. (pretexto)",
         "correct": true
       }
     ],
@@ -8806,7 +8806,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "\"Como recomeçar a vida novamente?”\n“Felizmente, eu brinco com elas como se fossem crianças.\"\nNa língua existem basicamente dois processos de formação de palavras: a derivação e a\ncomposição. Nas palavras destacadas acima, há respectivamente uma derivação prefixal e uma\nderivação sufixal. As palavras desalmado, compra e risonho são, respectivamente, exemplos de\nderivação:"
+    "readingText": "\"Como <u>recomeçar</u> a vida novamente?”\n<u>“Felizmente,</u> eu brinco com elas como se fossem crianças.\"\nNa língua existem basicamente dois processos de formação de palavras: a derivação e a\ncomposição. Nas palavras destacadas acima, há respectivamente uma derivação prefixal e uma\nderivação sufixal. As palavras desalmado, compra e risonho são, respectivamente, exemplos de\nderivação:"
   },
   {
     "id": "formacao-pdf_3_formacao-q81",
@@ -8845,7 +8845,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "No fim do quarteirão, um cinema menor exibia cartazes com cenas de caçadores num safári.\nInteressou-se pela foto da loura sendo atacada por um crocodilo enquanto o caçador (mas que\nhomem lindo) era pisoteado por um javali.\n(Conto Senhor diretor, em Seminário dos Ratos, Lygia Fagundes Telles)"
+    "readingText": "No fim do quarteirão, um cinema menor exibia cartazes com cenas de <u>caçadores</u> num safári.\nInteressou-se pela foto da loura sendo atacada por um crocodilo enquanto o caçador (mas que\nhomem lindo) era pisoteado por um javali.\n(Conto Senhor diretor, em Seminário dos Ratos, Lygia Fagundes Telles)"
   },
   {
     "id": "formacao-pdf_3_formacao-q82",
@@ -8884,7 +8884,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Texto 4\nExiste hoje uma globalização crescente dos problemas ligados ao meio ambiente. O domínio do\nhomem sobre a natureza aumentou consideravelmente a industrialização, que em conjunto com a\nprodução agrícola e a urbanização acelerada produziram um impacto negativo sobre o meio\nambiente.\nA atmosfera, os oceanos, os rios, os lagos, os lençóis de água, as florestas, a fauna, os lençóis de\nágua, as florestas, a fauna e a flora estão cada vez mais ameaçadas. Dentre os problemas é de se\ndestacar a contaminação da água nos países em desenvolvimento: 170 milhões de pessoas nas\ncidades e 885 milhões no campo não tem água para beber ou cozinhar.\nEstudos mostram que não é proporcional o número de habitantes de um país com seu grau de\npoluição. Os EUA, com 258 milhões de pessoas, poluem muito mais o meio ambiente do que a\nChina, com 1,2 bilhão de habitantes. A poluição é consequência do modo de produção e vida da\npopulação, mais do que seu número.\nOs países ricos do Norte e os pobres do Sul têm posições diferentes sobre a proteção ambiental.\nO Norte ressalta os perigos que ameaçam o meio ambiente do planeta e a responsabilidade\ncomum de enfrentá-los. O Sul dá prioridade ao desenvolvimento e não quer a imposição, em\nnome do meio ambiente, de novos encargos a países endividados e pobres.\nNão se trata de escolher entre o meio ambiente e o desenvolvimento, mas sim entre diferentes\nformas de desenvolvimento, algumas das quais se preocupam com o meio ambiente, enquanto\noutras não.\nDestaca-se como medidas pro meio ambiente a Conferência das Nações Unidas sobre Meio\nambiente em Estocolmo, que se preocupou basicamente com a preservação de amostras\nsignificativas dos ecossistemas e também contra a poluição, em especial a poluição industrial da\nágua e ar. Em 1980 a questão ambiental deixa de ser percebida como apenas local ou nacional,\numa vez que surgiram problemas ambientais de escala planetária.\nAlém de ser uma questão local e nacional, o meio ambiente é um problema global.\nAs teorias de desenvolvimento do século XX, baseadas na ideia de que somente o crescimento\neconômico poderia promover o progresso social, melhorar a qualidade de vida e reduzir as\ndesigualdades, não foram confirmadas pela história. Ao contrário, o crescimento econômico\ntrouxe consigo o aumento da pobreza e da desigualdade social.\nO fracasso histórico do desenvolvimento, o reconhecimento da impossibilidade ecológica e\neconômica de os países subdesenvolvidos seguirem o caminho trilhado pelos países\nindustrializados do hemisfério norte, abala a credibilidade das políticas neoliberais, reabrindo a\ndiscussão do papel do Estado, do mercado e da sociedade civil.\nExiste hoje uma consciência crescente de que é necessário substituir o atual padrão de\ndesenvolvimento por outro que possa reduzir o desperdício, reciclar materiais, empregar recursos\ne energias renováveis, assegurando uma produtividade sustentada de longo prazo e promovendo a\nseleção de objetivos sociais de crescimento, sem prejuízo de uma modernização tecnológica e de\numa inserção autônoma no processo de globalização econômica e política.\nA proposta de sustentabilidade é herdeira da noção de ecodesenvolvimento, que teve um curto\nperíodo de vida útil. Baseava-se nas ideias de justiça social, eficiência econômica, consciência\necológica e respeito à diversidade cultural.\nNão resta dúvida de que o conceito de desenvolvimentos sustentável pode ser usado como\ninstrumento para denunciar e tentar resolver os conflitos entre crescimento econômico,\ndesigualdade social e conservação ambiental. Inegavelmente, porém, ele possui um lado ingênuo,\nao ignorar a correlação de forças no plano internacional em favor dos países industrializados, as\nrelações desiguais no comércio internacional, o poder das multinacionais etc.\nO conceito de sociedades sustentáveis seria mais adequado, pois possibilita a cada sociedade\ndefinir seus padrões de produção e consumo, bem como seu nível de vida, a partir de sua cultura,\nde seu desenvolvimento histórico e de seu ambiente natural. Abandona-se o modelo insustentável\ndas sociedades industrializadas em favor da possibilidade de existência de uma diversidade de\nsociedades sustentáveis, baseadas no princípio da sustentabilidade ecológica, econômica, social e\npolítica.\nAdaptado de FILHO, Jaime Gonçalves. Mercado e Meio Ambiente: a função das empresas em\nprol do desenvolvimento sustentável. Trecho disponível em:\n<https://conteudojuridico.com.br/consulta/Artigos/29275/mercado-e-meio-ambiente-a-funcao-das-empresas-em-prol-do-desenvolvimento-sustentavel> Acesso em: setembro 2019.\nA proposta de sustentabilidade é herdeira da noção de ecodesenvolvimento, que teve um curto\nperíodo de vida útil."
+    "readingText": "Texto 4\nExiste hoje uma globalização crescente dos problemas ligados ao meio ambiente. O domínio do\nhomem sobre a natureza aumentou consideravelmente a industrialização, que em conjunto com a\nprodução agrícola e a urbanização acelerada produziram um impacto negativo sobre o meio\nambiente.\nA atmosfera, os oceanos, os rios, os lagos, os lençóis de água, as florestas, a fauna, os lençóis de\nágua, as florestas, a fauna e a flora estão cada vez mais ameaçadas. Dentre os problemas é de se\ndestacar a contaminação da água nos países em desenvolvimento: 170 milhões de pessoas nas\ncidades e 885 milhões no campo não tem água para beber ou cozinhar.\nEstudos mostram que não é proporcional o número de habitantes de um país com seu grau de\npoluição. Os EUA, com 258 milhões de pessoas, poluem muito mais o meio ambiente do que a\nChina, com 1,2 bilhão de habitantes. A poluição é consequência do modo de produção e vida da\npopulação, mais do que seu número.\nOs países ricos do Norte e os pobres do Sul têm posições diferentes sobre a proteção ambiental.\nO Norte ressalta os perigos que ameaçam o meio ambiente do planeta e a responsabilidade\ncomum de enfrentá-los. O Sul dá prioridade ao desenvolvimento e não quer a imposição, em\nnome do meio ambiente, de novos encargos a países endividados e pobres.\nNão se trata de escolher entre o meio ambiente e o desenvolvimento, mas sim entre diferentes\nformas de desenvolvimento, algumas das quais se preocupam com o meio ambiente, enquanto\noutras não.\nDestaca-se como medidas pro meio ambiente a Conferência das Nações Unidas sobre Meio\nambiente em Estocolmo, que se preocupou basicamente com a preservação de amostras\nsignificativas dos ecossistemas e também contra a poluição, em especial a poluição industrial da\nágua e ar. Em 1980 a questão ambiental deixa de ser percebida como apenas local ou nacional,\numa vez que surgiram problemas ambientais de escala planetária.\nAlém de ser uma questão local e nacional, o meio ambiente é um problema global.\nAs teorias de desenvolvimento do século XX, baseadas na ideia de que somente o crescimento\neconômico poderia promover o progresso social, melhorar a qualidade de vida e reduzir as\ndesigualdades, não foram confirmadas pela história. Ao contrário, o crescimento econômico\ntrouxe consigo o aumento da pobreza e da desigualdade social.\nO fracasso histórico do desenvolvimento, o reconhecimento da impossibilidade ecológica e\neconômica de os países subdesenvolvidos seguirem o caminho trilhado pelos países\nindustrializados do hemisfério norte, abala a credibilidade das políticas neoliberais, reabrindo a\ndiscussão do papel do Estado, do mercado e da sociedade civil.\nExiste hoje uma consciência crescente de que é necessário substituir o atual padrão de\ndesenvolvimento por outro que possa reduzir o desperdício, reciclar materiais, empregar recursos\ne energias renováveis, assegurando uma produtividade sustentada de longo prazo e promovendo a\nseleção de objetivos sociais de crescimento, sem prejuízo de uma modernização tecnológica e de\numa inserção autônoma no processo de globalização econômica e política.\nA proposta de sustentabilidade é herdeira da noção de <u>ecodesenvolvimento,</u> que teve um curto\nperíodo de vida útil. Baseava-se nas ideias de justiça social, eficiência econômica, consciência\necológica e respeito à diversidade cultural.\nNão resta dúvida de que o conceito de desenvolvimentos sustentável pode ser usado como\ninstrumento para denunciar e tentar resolver os conflitos entre crescimento econômico,\ndesigualdade social e conservação ambiental. Inegavelmente, porém, ele possui um lado ingênuo,\nao ignorar a correlação de forças no plano internacional em favor dos países industrializados, as\nrelações desiguais no comércio internacional, o poder das multinacionais etc.\nO conceito de sociedades sustentáveis seria mais adequado, pois possibilita a cada sociedade\ndefinir seus padrões de produção e consumo, bem como seu nível de vida, a partir de sua cultura,\nde seu desenvolvimento histórico e de seu ambiente natural. Abandona-se o modelo insustentável\ndas sociedades industrializadas em favor da possibilidade de existência de uma diversidade de\nsociedades sustentáveis, baseadas no princípio da sustentabilidade ecológica, econômica, social e\npolítica.\nAdaptado de FILHO, Jaime Gonçalves. Mercado e Meio Ambiente: a função das empresas em\nprol do desenvolvimento sustentável. Trecho disponível em:\n<https://conteudojuridico.com.br/consulta/Artigos/29275/mercado-e-meio-ambiente-a-funcao-das-empresas-em-prol-do-desenvolvimento-sustentavel> Acesso em: setembro 2019.\nA proposta de sustentabilidade é herdeira da noção de ecodesenvolvimento, que teve um curto\nperíodo de vida útil."
   },
   {
     "id": "formacao-pdf_3_formacao-q83",
@@ -8962,7 +8962,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "E",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Leia atentamente o trecho destacado e assinale a afirmativa que apresenta apenas afirmação(ões)\ncorreta(s)\nEu sou um contumaz crítico das redes sociais. Não preciso da validação alheia para apoiar as\ncoisas que faço em meu dia a dia. Também não aprecio a pirâmide de “ostentação, mentira e\nconsumo” que elas nos trazem. Mas eu sou minoria nesse mundo de aparências. Optei por tentar\nviver a realidade do jeito como ela é. Se estou certo ou errado? O futuro dirá. Só posso afirmar que\nestou adorando fazer isso.\nGIUDOTTI, G. B. O mundo mágico dos influenciadores digitais, Observatório de Imprensa,\n29/01/2019, edição 1022.\nDisponível em: <http://observatoriodaimprensa.com.br/dilemas-contemporaneos/o-mundo-magico-dos-influenciadores-digitais/> Acesso em ago.2020."
+    "readingText": "Leia atentamente o trecho a seguir e assinale a afirmativa que apresenta apenas afirmação(ões)\ncorreta(s)\nEu sou um contumaz crítico das redes sociais. Não preciso da validação alheia para apoiar as\ncoisas que faço em meu dia a dia. Também não aprecio a pirâmide de “ostentação, mentira e\nconsumo” que elas nos trazem. Mas eu sou minoria nesse mundo de aparências. Optei por tentar\nviver a realidade do jeito como ela é. Se estou certo ou errado? O futuro dirá. Só posso afirmar que\nestou adorando fazer isso.\nGIUDOTTI, G. B. O mundo mágico dos influenciadores digitais, Observatório de Imprensa,\n29/01/2019, edição 1022.\nDisponível em: <http://observatoriodaimprensa.com.br/dilemas-contemporaneos/o-mundo-magico-dos-influenciadores-digitais/> Acesso em ago.2020."
   },
   {
     "id": "formacao-pdf_3_formacao-q85",
@@ -8971,7 +8971,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 85,
-    "statement": "Em “um item insignificante utilizado brevemente antes de ser descartado”, as palavras sublinhadas\nsão formadas, respectivamente, por",
+    "statement": "Em “um item <u>insignificante</u> utilizado <u>brevemente</u> antes de ser descartado”, as palavras sublinhadas\nsão formadas, respectivamente, por",
     "options": [
       {
         "letter": "A",
@@ -9010,31 +9010,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 86,
-    "statement": "Com base no texto, responda à questão.\nAssinale a opção na qual a palavra sublinhada se formou por um processo diferente das demais.",
+    "statement": "Assinale a opção na qual a palavra sublinhada se formou por um processo diferente das demais.",
     "options": [
       {
         "letter": "A",
-        "text": "Estaremos debaixo da goiabeira; eu cortarei uma forquilha com o canivete.",
+        "text": "Estaremos debaixo da <u>goiabeira;</u> eu cortarei uma forquilha com o canivete.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Mas eu a levarei para a beira do ribeirão, na sombra fria do bambual (...).",
+        "text": "Mas eu a levarei para a beira do ribeirão, na sombra fria do <u>bambual</u> (...).",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Tinha uma que era para mim uma adoração.",
+        "text": "Tinha uma que era para mim uma <u>adoração.</u>",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Ardente da mais pura paixão de beleza é a adoração da infância.",
+        "text": "Ardente da mais pura paixão de <u>beleza</u> é a adoração da infância.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Preciso de um sossego de beira de rio, com remanso, com cigarras.",
+        "text": "Preciso de um <u>sossego</u> de beira de rio, com remanso, com cigarras.",
         "correct": true
       }
     ],
@@ -9127,31 +9127,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 89,
-    "statement": "Com base no texto, responda à questão.\nQuanto ao processo de formação de palavras, o de conversão NÀO está presente na palavra\nsublinhada na alternativa",
+    "statement": "Quanto ao processo de formação de palavras, o de conversão <u>NÀO</u> está presente na palavra\nsublinhada na alternativa",
     "options": [
       {
         "letter": "A",
-        "text": "Disse certo o poeta: ‘Navegar é preciso ’, a ciência da navegação é saber preciso (...)",
+        "text": "Disse certo o poeta: ‘Navegar é preciso ’, a ciência da navegação é <u>saber</u> preciso (...)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "O ritmo das remadas acelera. Sabem tudo sobre a ciência do remar.",
+        "text": "O ritmo das remadas acelera. Sabem tudo sobre a ciência do <u>remar.</u>",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "(...) multiplicam-se os meios técnicos e científicos ao nosso dispor, que fazem com que as mudanças sejam cada vez mais rápidas (...)",
+        "text": "(...) multiplicam-se os meios técnicos e científicos ao nosso <u>dispor,</u> que fazem com que as mudanças sejam cada vez mais rápidas (...)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Em relação à vida da sociedade, ela contém a busca de uma utopia.",
+        "text": "Em relação à vida da sociedade, ela contém a <u>busca</u> de uma utopia.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "A nau navega veloz e sem rumo. Nas universidades, essa doença (...)",
+        "text": "A nau navega <u>veloz</u> e sem rumo. Nas universidades, essa doença (...)",
         "correct": false
       }
     ],
@@ -9166,7 +9166,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_3_formacao",
     "listTitle": "Estrutura e Processos de Formação de Palavras",
     "questionNumber": 90,
-    "statement": "Com base no texto, responda à questão.\nNo que tange ao processo de formação de palavras, o termo destacado que se enquadra como\nformação regressiva aparece na opção",
+    "statement": "Com base no texto, responda à questão.\nNo que tange ao processo de formação de palavras, o termo destacado que se enquadra como\n**formação regressiva** aparece na opção",
     "options": [
       {
         "letter": "A",
@@ -9196,7 +9196,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "A PIPOCA\nRubem Alves\nDisponível em http://www.releituras.com/rubemalves_pipoca.asp. Acessado em 31 de mai. 2016.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico."
+    "readingText": "**A PIPOCA**\nRubem Alves\nDisponível em http://www.releituras.com/rubemalves_pipoca.asp. Acessado em 31 de mai. 2016.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico."
   },
   {
     "id": "formacao-pdf_3_formacao-q91",
@@ -9209,27 +9209,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Mas possuía o que qualquer criança devoradora de histórias gostaria de ter: um pai dono de livraria.",
+        "text": "Mas possuía o que qualquer criança devoradora de histórias gostaria de ter: um pai dono de <u>livraria.</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Até queveio para ela o magno dia de começar a exercer sobre mim uma tortura chinesa.",
+        "text": "Até queveio para ela o magno dia de começar a exercer sobre mim uma <u>tortura</u> chinesa.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Mas que talento tinha para a crueldade.",
+        "text": "Mas que talento tinha para a <u>crueldade.</u>",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Comigo exerceu com calma ferocidade o seu sadismo.",
+        "text": "Comigo exerceu com calma <u>ferocidade</u> o seu sadismo.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Como casualmente, informou-me que possuía ‘As reinações de Narizinho’, de Monteiro Lobato.",
+        "text": "Como <u>casualmente,</u> informou-me que possuía ‘As reinações de Narizinho’, de Monteiro Lobato.",
         "correct": false
       }
     ],
@@ -9274,7 +9274,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EFOMM / EEAr / EsPCEx",
-    "readingText": "Ao se alistar, não imaginava que o combate pudesse se realizar em tão curto prazo, embora o\nribombar dos canhões já se fizesse ouvir ao longe."
+    "readingText": "Ao se <u>alistar,</u> não imaginava que o <u>combate</u> pudesse se <u>realizar</u> em tão curto prazo, <u>embora</u> o\n<u>ribombar</u> dos canhões já se fizesse ouvir ao longe."
   },
   {
     "id": "formacao-pdf_3_formacao-q93",
@@ -9287,22 +9287,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "em Zé Ninguém, há uma derivação imprópria, já que foi utilizado um pronome indefinido como substantivo próprio.",
+        "text": "em <u>Zé</u> <u>Ninguém,</u> há uma derivação imprópria, já que foi utilizado um pronome indefinido como substantivo próprio.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "em “A fonte da felicidade pública se transforma no pára-raios do rancor público”, (l. 35 e 36), a expressão grifada é predicativo do sujeito.",
+        "text": "em “A fonte da felicidade pública se transforma no <u>pára-raios do rancor público”,</u> (l. 35 e 36), a expressão grifada é predicativo do sujeito.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "o substantivo destacado em “...esses golaços de calcanhar ou de bicicleta...” foi formado a partir de sufixação.",
+        "text": "o substantivo destacado em “...esses <u>golaços</u> de calcanhar ou de bicicleta...” foi formado a partir de sufixação.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Caso antes da locução “... podem sentir-se alguém...”, houvesse uma palavra negativa, o pronome se teria que, obrigatoriamente, vir antes do verbo poder.",
+        "text": "Caso antes da locução “... podem sentir-se alguém...”, houvesse uma palavra negativa, o pronome <u>se</u> teria que, obrigatoriamente, vir antes do verbo <u>poder.</u>",
         "correct": true
       }
     ],
@@ -9356,7 +9356,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 1,
-    "statement": "Assinale a opção em que a palavra QUE pertence a uma classe gramatical diferente das demais.",
+    "statement": "Assinale a opção em que a palavra <u>QUE</u> pertence a uma classe gramatical diferente das demais.",
     "options": [
       {
         "letter": "A",
@@ -9409,7 +9409,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "C",
-        "text": "facultativo, pois a palavra à direita do a destacado no fragmento é um pronome possessivo.",
+        "text": "facultativo, pois a palavra à direita do <u>a</u> destacado no fragmento é um pronome possessivo.",
         "correct": false
       },
       {
@@ -9420,7 +9420,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "TEXTO II\nA seguir, você lerá um trecho do livro Viagens de Gulliver, um clássico da literatura universal,\nescrito por Jonathan Swift, publicado em 1726. O trecho foi extraído da Parte III do Capítulo 5 do\nlivro.\nLeia o trecho a seguir, extraído do texto II.\n“Pediu então para que trinta e seis dos garotos lessem vagarosamente as diversas linhas, à medida\nque elas apareciam no painel...” (ℓ. 34-36)"
+    "readingText": "TEXTO II\nA seguir, você lerá um trecho do livro Viagens de Gulliver, um clássico da literatura universal,\nescrito por Jonathan Swift, publicado em 1726. O trecho foi extraído da Parte III do Capítulo 5 do\nlivro.\nLeia o trecho a seguir, extraído do texto II.\n“Pediu então para que trinta e seis dos garotos lessem vagarosamente as diversas linhas, <u>à</u> medida\nque elas apareciam no painel...” (. 34-36)"
   },
   {
     "id": "classes_var-pdf_4_classes_var-q3",
@@ -9467,27 +9467,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Vou para a cozinha, corto as cebolas. / Vou para a cozinha, corto-lhes.",
+        "text": "Vou para a cozinha, corto <u>as cebolas.</u> / Vou para a cozinha, corto-lhes.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Não basta abrir a janela para ver os campos e os rios... / Não basta abrir a janela para vê-los.",
+        "text": "Não basta abrir a janela para ver <u>os campos e os rios...</u> / Não basta abrir a janela para vê-los.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Drummond viu uma pedra e não viu uma pedra. / Drummond viu uma pedra e não viu-a.",
+        "text": "Drummond viu uma pedra e não viu <u>uma pedra.</u> / Drummond viu uma pedra e não viu-a.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Seus olhos não viam a beleza. / Seus olhos não viam-na.",
+        "text": "Seus olhos não viam <u>a beleza.</u> / Seus olhos não viam-na.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Só viam o lixo. / Só viam-lhe.",
+        "text": "Só viam <u>o lixo.</u> / Só viam-lhe.",
         "correct": false
       }
     ],
@@ -9506,27 +9506,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Eu passava pela rua depressa, emaranhada nos meus pensamentos, como às vezes acontece.”",
+        "text": "“Eu passava pela rua depressa, emaranhada nos meus pensamentos, <u>como</u> às vezes acontece.”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Mas, como se costuma dizer, o Sol parecia brilhar com mais força.”",
+        "text": "“Mas, <u>como</u> se costuma dizer, o Sol parecia brilhar com mais força.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Olhe só como ele está gostando da senhora...”",
+        "text": "“Olhe só <u>como</u> ele está gostando da senhora...”",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“ Sabia de tudo, só que tinha de agir como se não soubesse [...]”",
+        "text": "“ Sabia de tudo, só que tinha de agir <u>como</u> se não soubesse [...]”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Perturbada, olhei-a de través: velha e suja, como se dizem das coisas.”",
+        "text": "“Perturbada, olhei-a de través: velha e suja, <u>como</u> se dizem das coisas.”",
         "correct": false
       }
     ],
@@ -9545,27 +9545,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Eu também sorri.” (palavra denotativa de inclusão)",
+        "text": "“Eu <u>também</u> sorri.” (palavra denotativa de inclusão)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Mas de repente fiquei fria [...]” (locução adverbial)",
+        "text": "“Mas <u>de repente</u> fiquei fria [...]” (locução adverbial)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“[...] pareceram inúmeras saias [...)” (adjetivo)",
+        "text": "“[...] pareceram <u>inúmeras</u> saias [...)” (adjetivo)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Só que não nos falávamos mais.” (pronome oblíquo reflexivo recíproco)",
+        "text": "“Só que não <u>nos</u> falávamos mais.” (pronome oblíquo reflexivo recíproco)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Olhe só como ele está gostando da senhora...” (substantivo)",
+        "text": "“Olhe só como ele está gostando da <u>senhora...”</u> (substantivo)",
         "correct": true
       }
     ],
@@ -9618,27 +9618,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "\"{...] gostava mais do vazio, do que do cheio.\" (5ª estrofe)",
+        "text": "\"{...] gostava mais do vazio, do que do <u>cheio.\"</u> (5ª estrofe)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Falava que vazios são maiores e até infinitos.” (5ª estrofe)",
+        "text": "“Falava que vazios são maiores e até <u>infinitos.”</u> (5ª estrofe)",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“No escrever o menino viu [...]\" (8ª estrofe)",
+        "text": "“No <u>escrever</u> o menino viu [...]\" (8ª estrofe)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Foi capaz de modificar a tarde botando uma chuva nela.” (10ª estrofe)",
+        "text": "“Foi capaz de modificar a <u>tarde</u> botando uma chuva nela.” (10ª estrofe)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Você vai encher os vazios [...]” (12ª estrofe)",
+        "text": "“Você vai encher os <u>vazios</u> [...]” (12ª estrofe)",
         "correct": false
       }
     ],
@@ -9683,7 +9683,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "O MENINO QUE CARREGAVA ÁGUA NA PENEIRA\nTenho um livro sobre águas e meninos.\nGostei mais de um menino\nque carregava água na peneira.\nA mãe disse que carregar água na peneira\nera o mesmo que roubar um vento e\nsair correndo com ele para mostrar aos irmãos.\nA mãe disse que era o mesmo\nque catar espinhos na água.\nO mesmo que criar peixes no bolso.\nO menino era ligado em despropósitos.\nQuis montar os alicerces\nde uma casa sobre orvalhos.\nA mãe reparou que o menino\ngostava mais do vazio, do que do cheio.\nFalava que vazios são maiores e até infinitos.\nCom o tempo aquele menino\nque era cismado e esquisito,\nporque gostava de carregar água na peneira.\nCom o tempo descobriu que\nescrever seria o mesmo\nque carregar água na peneira.\nNo escrever o menino viu\nque era capaz de ser noviça,\nmonge ou mendigo ao mesmo tempo.\nO menino aprendeu a usar as palavras.\nViu que podia fazer peraltagens com as palavras.\nE começou a fazer peraltagens.\nFoi capaz de modificar a tarde botando uma chuva nela.\nO menino fazia prodígios.\nAté fez uma pedra dar flor.\nA mãe reparava o menino com ternura.\nA mãe falou: Meu filho você vai ser poeta!\nVocê vai carregar água na peneira a vida toda.\nVocê vai encher os vazios\ncom as suas peraltagens,\ne algumas pessoas vão te amar por seus despropósitos!\nFonte: BARROS, Manoel de. Poesia Completa. São Paulo: Leya,\n2011. (Texto adaptado)\nObserve o trecho:\n“A mãe falou: Meu filho você vai ser poeta!” (11^ estrofe)"
+    "readingText": "O MENINO QUE CARREGAVA ÁGUA NA PENEIRA\nTenho um livro sobre águas e meninos.\nGostei mais de um menino\nque carregava água na peneira.\nA mãe disse que carregar água na peneira\nera o mesmo que roubar um vento e\nsair correndo com ele para mostrar aos irmãos.\nA mãe disse que era o mesmo\nque catar espinhos na água.\nO mesmo que criar peixes no bolso.\nO menino era ligado em despropósitos.\nQuis montar os alicerces\nde uma casa sobre orvalhos.\nA mãe reparou que o menino\ngostava mais do vazio, do que do cheio.\nFalava que vazios são maiores e até infinitos.\nCom o tempo aquele menino\nque era cismado e esquisito,\nporque gostava de carregar água na peneira.\nCom o tempo descobriu que\nescrever seria o mesmo\nque carregar água na peneira.\nNo escrever o menino viu\nque era capaz de ser noviça,\nmonge ou mendigo ao mesmo tempo.\nO menino aprendeu a usar as palavras.\nViu que podia fazer peraltagens com as palavras.\nE começou a fazer peraltagens.\nFoi capaz de modificar a tarde botando uma chuva nela.\nO menino fazia prodígios.\nAté fez uma pedra dar flor.\nA mãe reparava o menino com ternura.\nA mãe falou: Meu filho você vai ser poeta!\nVocê vai carregar água na peneira a vida toda.\nVocê vai encher os vazios\ncom as suas peraltagens,\ne algumas pessoas vão te amar por seus despropósitos!\nFonte: BARROS, Manoel de. Poesia Completa. São Paulo: Leya,\n2011. (Texto adaptado)\nObserve o trecho:\n“A mãe falou: Meu filho você vai ser <u>poeta!”</u> (11^ estrofe)"
   },
   {
     "id": "classes_var-pdf_4_classes_var-q10",
@@ -9692,7 +9692,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 10,
-    "statement": "IV - \"A sociedade, de modo geral, quer mesmo textos prontos e quase iguais.” (10°§);\nV - ”Me lembro logo do Mário Quintana em situação semelhante [...]” (3°§).\nNestes trechos, são demonstrativos os termos destacados em:",
+    "statement": "IV - \"A sociedade, de modo geral, quer <u>mesmo</u> textos prontos e quase iguais.” (10°§);\nV - ”Me lembro logo do Mário Quintana em situação <u>semelhante</u> [...]” (3°§).\nNestes trechos, são demonstrativos os termos destacados em:",
     "options": [
       {
         "letter": "A",
@@ -9722,7 +9722,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "SER AUTOR\nEscrever é difícil? Parece que sim, a julgar pelo que ouço de pessoas muito diversas, até mesmo\nde escritores. Imagine para os pobres mortais! E, sobretudo, acrescentaria, numa sociedade que se\njulga eé julgada por não saber, em geral, escrever. Até mestrandos e doutorandos, vejam só,\nrecorrem a colegas, selecionados da área de Letras, que supõem “saber português”, para uma boa\nrevisto do que rascunharam em seus trabalhos acadêmicos.\nNo meu tempo de docência universitária, ouvia, frequentemente, alunos comentarem que\nconcluiriam o curso sem saberem escrever, que o português era difícil, com muitas regras e\nexceções! Tomava fôlego, quando este comentário era feito em sala de aula e, como quem não\nquer nada, indagava informalmente a um aluno: Por que você acha que não sabe português e que\nnossa(!) língua é difícil? Resposta invariável: Não domino bem estas classificações gramaticais e\ntenho também meus vacilos quanto ao uso da norma culta! Veja a gramática do inglês! Bem mais\nsimples, não? Então, você escreve bem textos em inglês? É, mais ou menos…\nRespiro fundo. Me lembro Iogo do Mário Quintana em situação semelhante: “Um dia de espantos,\nhoje. Conversando com uma rapariga em flor, estudante, queixa-se ela da dificuldade da língua\nportuguesa, espanto-me: Mas como pode ser difícil uma língua em que você está falando comigo\nhá dez minutos com toda a facilidade? Ela ficou espantada.”\nMeus espantos eram frequentes... Ainda são! A escola, embora queiram alguns tampar o sol com a\npeneira, estimula a cultura do erro, contribuindo muito, e desde cedo, para perpetuar esta\navaliação de que a língua é difícil, de que escrever “um texto correto” então nem se fala! Basta\numa concordância, uma regência, “as sintaxes de exceção”...\nPassava para os meus alunos testemunhos de alguns escritores, valorizados como tais, o de Rachel\nde Queiroz, por exemplo: Se eu dependesse, afirmava, para escrever, do domínio dos nomes tão\ncomplicados presentes no ensino da língua (ela se divertia), eu não poderia ser escritora. Como é\nmesmo? Oração reduzida de gerúndio? Sujeito inexistente? Substantivo epiceno?, caçoava. E ela,\nacrescento, mesmo pela fala da narradora, nem sempre se vale da língua bem comportada.\nEscrever, na verdade, ainda que adotado certinho o português que é ensinado, exige bem mais da\ngente: o conhecimento do real, a ordenação das ideias, o domínio do gênero textual, a intenção\ncomunicativa... Muitos outros conhecimentos, enfim! A vivência dos bancos escolares prossegue\natuante pela vida afora, qual uma corrente. Nos tornamos adultos, com curso superior, e carentes\nainda de um professor, por perto, para nos corrigir! Não dá para entender, dá? Só os escritores (e,\natualmente, nem todos, nem todos...) e os que se arvoram em conhecedores da língua escapam de\numa avaliação severa. Eta língua é difícil! Eta sociedade que fica então a afrontar o uso da língua\nlegitimado pelas autor(idades)!\nComo ficar seguro de se assumir como autor, na escola e na vida, com tanto isto não pode, isto\ndeve ser evitado, isto afronta as leis da língua, isto é de emprego não referendado pelos escritores\n(quais, na verdade?), isto, tenham paciência, é lá português? Perguntinha tola que me fica\nincomodando (gosto de me complicar - neurose? - com indagações perturbadoras): que língua\nfalam todos os brasileiros (e são tantos!) sem escolaridade?\nFui a uma boa papelaria comprar um cartão para escrever a uma amiga, que aniversariava. Em\nminha procura, fui me dando conta de que eu só selecionava cartões com ilustrações de gosto\nduvidoso para mim: em geral, multicoloridas, florezinhas que estressavam o cartão, com variedade\nnas partes externa e interna deles, borboletas estilizadas então, em quase todos... E as mensagens?\nSem erros gramaticais, diga-se logo! Mas que mensagens tolas, com palavras ou expressões mais\nque gastas, ou, ao contrário, meio solenes, com a pretensão, talvez, de darem ao texto certo sabor\nliterário. Estas mensagens pouco variavam. Pudera!, eram impessoais. Onde o autor?\nSempre considerei que a vida, asseguradas certas igualdades, está na diferença. Uma palavra\ndiferente pode nos proporcionar uma esperança nova. Indaguei a um funcionário da papelaria se\nnão havia cartão, desses duplos, sem mensagem, e que a ilustração, caso existente, fosse sóbria\n(empreguei outra palavra, mais corrente, na ocasião). Não tinha, me respondeu. Coube, então, ao\natendente me perguntar: Por que quer escrever a mensagem? Que trabalho! Já estão prontas em\ntodos estes cartões daqui!\nCapitulei. A sociedade, de modo geral, quer mesmo textos prontos e quase iguais. Reflexo mais\nevidente de gente que não está habituada a pensar, que acha que não pode ser autora nem de\numa frasezinha (para que se expor assim à avaliação de um professor por ai?). Pego um destes\ncartões: “os primeiros raios de sol”, “iluminem seu coração”, “fazer seus pensamentos brilharem\"...\nPositivamente não imagino uma criança ou um jovem como autor destas expressões. Para um\nadulto ser o destinatário, iriam pensar, iriam sim!, que ele as copiou justamente de um cartão\ndestes, que já gozam de certa tradição, não se pode enganar!\nNo fundo mesmo, continuidade de uma rotina escolar antiga, em que o estudante, raramente, se\nsente autor do que escreve. Ouvi ou li outro dia o comentário pertinente que na escola se faz\nmuita redação, mas se escreve pouco. Diria, que, sobretudo, quando se espera que, no texto, se\ncrie um clima afetivo, com reticências, exclamações, interrogações. A escola se apresenta como a\nescola do ponto, fundamentalmente. Afinal, quase sempre, o interlocutor do aluno, - um\ninterlocutor potente!\n-, é o professor. Todo cuidado é pouco... não é? Por isso, muitas vezes, a presença, em textos\nescolares, de palavras com paletó e gravata, ainda que empregadas inadequadamente.\nO Manoel de Barros tem razão: Língua solene é coisa de políticos e advogados. É preciso ir ao\nencriançamento das palavras, palavras-brinquedo, palavras bolhas-de-sabão... Em certas\nsituações, naturalmente. Com crianças então! Para festejar o aniversário de uma amiga, por que,\nnum cartão, não começar a ser autor com um singelo, mas carinhoso \"Gosto de você\" ou num\ntorpedo com um sempre bem recebido “Um beijo, minha amiga”. Garantia assegurada de autoria\ntextual! E de afetividade...\nFonte: UCHOA, Garlos Eduardo Falcão. A vida e o tempo em tom de conversa: crônicas de um\nprofessor de linguagem. 1º ed. Rio de Janeiro: Odisseia, 2013, p. 141-145. {Texto adaptado)\nObserve os trechos abaixo:\nI - “Passava para os meus alunos testemunhos de alguns escritores, valorizados como tais [...]\"\n(\n\n5°§);\nll - “[...] o de Rachel de Queiroz, por exemplo: [...]” (\n\n5°§)\nIII - “Já estão prontas em todos estes cartões daqui!\" (\n\n9°§);"
+    "readingText": "SER AUTOR\nEscrever é difícil? Parece que sim, a julgar pelo que ouço de pessoas muito diversas, até mesmo\nde escritores. Imagine para os pobres mortais! E, sobretudo, acrescentaria, numa sociedade que se\njulga eé julgada por não saber, em geral, escrever. Até mestrandos e doutorandos, vejam só,\nrecorrem a colegas, selecionados da área de Letras, que supõem “saber português”, para uma boa\nrevisto do que rascunharam em seus trabalhos acadêmicos.\nNo meu tempo de docência universitária, ouvia, frequentemente, alunos comentarem que\nconcluiriam o curso sem saberem escrever, que o português era difícil, com muitas regras e\nexceções! Tomava fôlego, quando este comentário era feito em sala de aula e, como quem não\nquer nada, indagava informalmente a um aluno: Por que você acha que não sabe português e que\nnossa(!) língua é difícil? Resposta invariável: Não domino bem estas classificações gramaticais e\ntenho também meus vacilos quanto ao uso da norma culta! Veja a gramática do inglês! Bem mais\nsimples, não? Então, você escreve bem textos em inglês? É, mais ou menos…\nRespiro fundo. Me lembro Iogo do Mário Quintana em situação semelhante: “Um dia de espantos,\nhoje. Conversando com uma rapariga em flor, estudante, queixa-se ela da dificuldade da língua\nportuguesa, espanto-me: Mas como pode ser difícil uma língua em que você está falando comigo\nhá dez minutos com toda a facilidade? Ela ficou espantada.”\nMeus espantos eram frequentes... Ainda são! A escola, embora queiram alguns tampar o sol com a\npeneira, estimula a cultura do erro, contribuindo muito, e desde cedo, para perpetuar esta\navaliação de que a língua é difícil, de que escrever “um texto correto” então nem se fala! Basta\numa concordância, uma regência, “as sintaxes de exceção”...\nPassava para os meus alunos testemunhos de alguns escritores, valorizados como tais, o de Rachel\nde Queiroz, por exemplo: Se eu dependesse, afirmava, para escrever, do domínio dos nomes tão\ncomplicados presentes no ensino da língua (ela se divertia), eu não poderia ser escritora. Como é\nmesmo? Oração reduzida de gerúndio? Sujeito inexistente? Substantivo epiceno?, caçoava. E ela,\nacrescento, mesmo pela fala da narradora, nem sempre se vale da língua bem comportada.\nEscrever, na verdade, ainda que adotado certinho o português que é ensinado, exige bem mais da\ngente: o conhecimento do real, a ordenação das ideias, o domínio do gênero textual, a intenção\ncomunicativa... Muitos outros conhecimentos, enfim! A vivência dos bancos escolares prossegue\natuante pela vida afora, qual uma corrente. Nos tornamos adultos, com curso superior, e carentes\nainda de um professor, por perto, para nos corrigir! Não dá para entender, dá? Só os escritores (e,\natualmente, nem todos, nem todos...) e os que se arvoram em conhecedores da língua escapam de\numa avaliação severa. Eta língua é difícil! Eta sociedade que fica então a afrontar o uso da língua\nlegitimado pelas autor(idades)!\nComo ficar seguro de se assumir como autor, na escola e na vida, com tanto isto não pode, isto\ndeve ser evitado, isto afronta as leis da língua, isto é de emprego não referendado pelos escritores\n(quais, na verdade?), isto, tenham paciência, é lá português? Perguntinha tola que me fica\nincomodando (gosto de me complicar - neurose? - com indagações perturbadoras): que língua\nfalam todos os brasileiros (e são tantos!) sem escolaridade?\nFui a uma boa papelaria comprar um cartão para escrever a uma amiga, que aniversariava. Em\nminha procura, fui me dando conta de que eu só selecionava cartões com ilustrações de gosto\nduvidoso para mim: em geral, multicoloridas, florezinhas que estressavam o cartão, com variedade\nnas partes externa e interna deles, borboletas estilizadas então, em quase todos... E as mensagens?\nSem erros gramaticais, diga-se logo! Mas que mensagens tolas, com palavras ou expressões mais\nque gastas, ou, ao contrário, meio solenes, com a pretensão, talvez, de darem ao texto certo sabor\nliterário. Estas mensagens pouco variavam. Pudera!, eram impessoais. Onde o autor?\nSempre considerei que a vida, asseguradas certas igualdades, está na diferença. Uma palavra\ndiferente pode nos proporcionar uma esperança nova. Indaguei a um funcionário da papelaria se\nnão havia cartão, desses duplos, sem mensagem, e que a ilustração, caso existente, fosse sóbria\n(empreguei outra palavra, mais corrente, na ocasião). Não tinha, me respondeu. Coube, então, ao\natendente me perguntar: Por que quer escrever a mensagem? Que trabalho! Já estão prontas em\ntodos estes cartões daqui!\nCapitulei. A sociedade, de modo geral, quer mesmo textos prontos e quase iguais. Reflexo mais\nevidente de gente que não está habituada a pensar, que acha que não pode ser autora nem de\numa frasezinha (para que se expor assim à avaliação de um professor por ai?). Pego um destes\ncartões: “os primeiros raios de sol”, “iluminem seu coração”, “fazer seus pensamentos brilharem\"...\nPositivamente não imagino uma criança ou um jovem como autor destas expressões. Para um\nadulto ser o destinatário, iriam pensar, iriam sim!, que ele as copiou justamente de um cartão\ndestes, que já gozam de certa tradição, não se pode enganar!\nNo fundo mesmo, continuidade de uma rotina escolar antiga, em que o estudante, raramente, se\nsente autor do que escreve. Ouvi ou li outro dia o comentário pertinente que na escola se faz\nmuita redação, mas se escreve pouco. Diria, que, sobretudo, quando se espera que, no texto, se\ncrie um clima afetivo, com reticências, exclamações, interrogações. A escola se apresenta como a\nescola do ponto, fundamentalmente. Afinal, quase sempre, o interlocutor do aluno, - um\ninterlocutor potente!\n-, é o professor. Todo cuidado é pouco... não é? Por isso, muitas vezes, a presença, em textos\nescolares, de palavras com paletó e gravata, ainda que empregadas inadequadamente.\nO Manoel de Barros tem razão: Língua solene é coisa de políticos e advogados. É preciso ir ao\nencriançamento das palavras, palavras-brinquedo, palavras bolhas-de-sabão... Em certas\nsituações, naturalmente. Com crianças então! Para festejar o aniversário de uma amiga, por que,\nnum cartão, não começar a ser autor com um singelo, mas carinhoso \"Gosto de você\" ou num\ntorpedo com um sempre bem recebido “Um beijo, minha amiga”. Garantia assegurada de autoria\ntextual! E de afetividade...\nFonte: UCHOA, Garlos Eduardo Falcão. A vida e o tempo em tom de conversa: crônicas de um\nprofessor de linguagem. 1º ed. Rio de Janeiro: Odisseia, 2013, p. 141-145. {Texto adaptado)\nObserve os trechos abaixo:\nI - “Passava para os meus alunos testemunhos de alguns escritores, valorizados como <u>tais</u> [...]\"\n(\n\n5°§);\nll - “[...] o de Rachel de Queiroz, por exemplo: [...]” (\n\n5°§)\nIII - “Já estão prontas em todos estes cartões daqui!\" (\n\n9°§);"
   },
   {
     "id": "classes_var-pdf_4_classes_var-q11",
@@ -9735,27 +9735,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Garantia assegurada de autoria textual!” (12°§)",
+        "text": "“Garantia assegurada de <u>autoria</u> textual!” (12°§)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Até mestrandos e doutorandos, vejam só, recorrem a colegas, selecionados da área de Letras, que supõem ’saber português' [...]” (1°§)",
+        "text": "“Até <u>mestrandos</u> e doutorandos, vejam só, recorrem a colegas, selecionados da área de Letras, que supõem ’saber português' [...]” (1°§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“A vivência dos bancos escolares prossegue atuante pela vida afora, qual uma corrente.” (6°§)",
+        "text": "“A <u>vivência</u> dos bancos escolares prossegue atuante pela vida afora, qual uma corrente.” (6°§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“[...] em geral, multicoloridas, florezinhas que estressavam o cartâo, com variedade nas partes externa e interna deles, borboletas estilizadas entáo, em quase todos...“ (8°§)",
+        "text": "“[...] em geral, multicoloridas, florezinhas que estressavam o cartâo, com variedade nas partes externa e interna deles, <u>borboletas</u> estilizadas entáo, em quase todos...“ (8°§)",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "“No meu tempo de docência universitária, ouvia, frequentemente, alunos comentarem que concluiriam o curso sem saberem escrever [...]” (2°§)",
+        "text": "“No meu tempo de <u>docência</u> universitária, ouvia, frequentemente, alunos comentarem que concluiriam o curso sem saberem escrever [...]” (2°§)",
         "correct": false
       }
     ],
@@ -9774,27 +9774,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Foi quando ela, a dois palmos de mim, piscou um olho e franziu lascivamente os lábios numa careta, como um simulacro de beijo.”",
+        "text": "“Foi quando ela, a dois palmos de mim, piscou um olho e franziu lascivamente <u>os</u> lábios numa careta, como um simulacro de beijo.”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Eu a olhava também, fascinado: mas o que era aquilo?”",
+        "text": "“Eu a olhava também, fascinado: mas <u>o</u> que era aquilo?”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Ao chegar, fui direto para o quarto no segundo andar, disposto a espantar de mim a lembrança daquela visão.”",
+        "text": "“Ao chegar, fui direto para o quarto no segundo andar, disposto a espantar de mim <u>a</u> lembrança daquela visão.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Eu morava numa rua meio remota, ao norte de Londres, e à noite o lúgubre caminho para a minha casa passava até por um velho cemitério no pátio de uma igreja.”",
+        "text": "“Eu morava numa rua meio remota, <u>ao</u> norte de Londres, e à noite o lúgubre caminho para a minha casa passava até por um velho cemitério no pátio de uma igreja.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Os movimentos se fazem em câmera lenta, como o dos peixes no mundo das águas.”",
+        "text": "“Os movimentos se fazem em câmera lenta, como o dos peixes no mundo das águas.” ",
         "correct": true
       }
     ],
@@ -9877,7 +9877,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Veja o trecho a seguir:\nE com semelhantes raciocínios foram perturbar a vida da pobre gente que vivia a sua medíocre\nvida aí por fora, para satisfazer obsoletas concepções sociais, tolas competições patrióticas,\ntransformando-lhes os horizontes e dando-lhes inexequíveis esperanças"
+    "readingText": "Veja o trecho a seguir:\nE <u>com semelhantes raciocínios</u> foram perturbar a vida da pobre gente <u>que</u> vivia a sua medíocre\nvida aí por fora, para satisfazer obsoletas concepções sociais, tolas competições patrióticas,\ntransformando-lhes os horizontes e dando-lhes <u>inexequíveis</u> esperanças"
   },
   {
     "id": "classes_var-pdf_4_classes_var-q15",
@@ -9890,7 +9890,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Sem o consentimento da rua não passam os sábios, e os charlatães, que a lisonjeiam lhe resumem a banalidade (...)”",
+        "text": "“Sem o consentimento da rua não passam <u>os</u> sábios, e os charlatães, que a lisonjeiam lhe resumem a banalidade (...)”",
         "correct": false
       },
       {
@@ -9900,7 +9900,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "C",
-        "text": "“A rua nasce, como o homem, do soluço, do espasmo. Há suor humano na argamassa do seu calçamento.”",
+        "text": "<u>“A</u> rua nasce, como o homem, do soluço, do espasmo. Há suor humano na argamassa do seu calçamento.”",
         "correct": false
       },
       {
@@ -9910,7 +9910,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "“Essas qualidades nós as conhecemos vagamente.”",
+        "text": "“Essas qualidades nós <u>as</u> conhecemos vagamente.” ",
         "correct": true
       }
     ],
@@ -9928,27 +9928,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "[...] que discorria perante várias pessoas a respeito de uma deformação congênita que ela, moça, tem no coração.",
+        "text": "[...] que discorria perante várias pessoas a respeito de uma deformação <u>congênita</u> que ela, moça, tem no coração.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "De um tísico, por exemplo, se dizia que estava “fraco do peito”[... ].",
+        "text": "De um <u>tísico,</u> por exemplo, se dizia que estava “fraco do peito”[... ].",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "[...] explicando que não enxerga coisíssima nenhuma por um daqueles límpidos olhos, e permitirá mesmo que os circunstantes curiosos lhe examinem [... ].",
+        "text": "[...] explicando que não enxerga coisíssima nenhuma por um daqueles límpidos olhos, e permitirá mesmo que os circunstantes <u>curiosos</u> lhe examinem [... ].",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "[... ] lhe examinem o olho cego e constatem de perto que realmente não se nota diferença nenhuma como olho são.",
+        "text": "[... ] lhe examinem o olho cego e constatem de perto que realmente não se nota diferença nenhuma como olho <u>são.</u>",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "[...] uma diz abertamente que já não tem um ovário, outra, que o médico lhe diagnosticou um útero infantil.",
+        "text": "[...] uma diz abertamente que já não tem um ovário, outra, que o médico lhe diagnosticou um útero <u>infantil.</u>",
         "correct": false
       }
     ],
@@ -10078,7 +10078,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 20,
-    "statement": "No decorrer do texto há algumas palavras com o sufixo -inho presente em sua estrutura, como em\n“Quem permite ser chamado de “exemplo” porque respira direitinho”, mas sem a função de\ndiminutivo geralmente comum. Aponte a alternativa em que esse fenômeno não ocorre.",
+    "statement": "No decorrer do texto há algumas palavras com o sufixo -inho presente em sua estrutura, como em\n“Quem permite ser chamado de “exemplo” porque respira <u>direitinho”,</u> mas sem a função de\ndiminutivo geralmente comum. Aponte a alternativa em que esse fenômeno não ocorre.",
     "options": [
       {
         "letter": "A",
@@ -10159,12 +10159,12 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "B",
-        "text": "Em “Esse processo tem seus desgastes para ambos os lados.”, o termo em destaque é um adjetivo dentro do contexto.",
+        "text": "Em “Esse processo tem seus desgastes para <u>ambos</u> os lados.”, o termo em destaque é um adjetivo dentro do contexto.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "No trecho “As crianças e os jovens também não estavam acostumados a rotinas mais pesadas (...)”, os termos em destaque pertencem a classes morfológicas distintas.",
+        "text": "No trecho <u>“As</u> crianças e os jovens também não estavam acostumados <u>a</u> rotinas mais pesadas (...)”, os termos em destaque pertencem a classes morfológicas distintas.",
         "correct": false
       },
       {
@@ -10174,7 +10174,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "No trecho “causando um déficit de aprendizagem ainda maior do que já temos”, o elemento em destaque é uma locução adjetiva.",
+        "text": "No trecho “causando um déficit <u>de aprendizagem</u> ainda maior do que já temos”, o elemento em destaque é uma locução adjetiva. ",
         "correct": false
       }
     ],
@@ -10189,7 +10189,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 23,
-    "statement": "A autora apresenta a palavra “vitórias-régias” que, como se sabe, é a designação de uma planta\nmuito comum no Brasil. Qual dos substantivos a seguir fazem plural da mesma forma que a palavra\nem destaque.",
+    "statement": "A autora apresenta a palavra “<u>vitórias-régias</u>” que, como se sabe, é a designação de uma planta\nmuito comum no Brasil. Qual dos substantivos a seguir fazem plural da mesma forma que a palavra\nem destaque.",
     "options": [
       {
         "letter": "A",
@@ -10252,7 +10252,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "Em meio a uma queda significativa no número de leitores, especialistas e coordenadores da Pesquisa Retratos da Leitura no Brasil avaliam um crescente desinteresse em relação aos autores brasileiros e à narrativa longa.",
+        "text": "Em meio a uma queda significativa no número de leitores, especialistas e coordenadores da Pesquisa Retratos da Leitura no Brasil avaliam um crescente desinteresse em relação aos autores brasileiros e à narrativa longa. ",
         "correct": false
       }
     ],
@@ -10267,7 +10267,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 25,
-    "statement": "No trecho “Pressa, não a tiveste, pois o animal desapareceu a 6 de outubro, e só a 19 de novembro\nrecorreste à Cidade de Itabira”, os elementos em destaque são classificados, morfológica e\nrespectivamente, como",
+    "statement": "No trecho “Pressa, não <u>a</u> tiveste, pois o animal desapareceu a 6 de outubro, e só a 19 de novembro\nrecorreste à Cidade de Itabira”, os elementos em destaque são classificados, morfológica e\nrespectivamente, como",
     "options": [
       {
         "letter": "A",
@@ -10310,27 +10310,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Diga-se a verdade; não o fez - ao menos enquanto ali estive, que foram poucos minutos.”",
+        "text": "“Diga-se a verdade; não <u>o</u> fez - ao menos enquanto ali estive, que foram poucos minutos.”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“O que me pareceu, é que o burro fazia exame de consciência.”",
+        "text": "<u>“O</u> que me pareceu, é que o burro fazia exame de consciência.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“[...] o pensamento não é a causa da morte, a morte é que o torna necessário.”",
+        "text": "“[...] <u>o</u> pensamento não é a causa da morte, a morte é que o torna necessário.”",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“O pau é a minha instituição um pouco temperada pela teima que é, em resumo, o meu único defeito.”",
+        "text": "<u>“O</u> pau é a minha instituiçã<u>o</u> um pouco temperada pela teima que é, em resumo, o meu único defeito.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“[...] fez-me ver que os que ficavam, não seriam menos exemplares do que esse.”",
+        "text": "“[...] fez-me ver que <u>os</u> que ficavam, não seriam menos exemplares do que esse.”",
         "correct": false
       }
     ],
@@ -10349,27 +10349,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Os ossos furavam-lhe a pele, os olhos meio mortos fechavam-se de quando em quando.”",
+        "text": "“Os ossos furavam-lhe a pele, os olhos meio <u>mortos</u> fechavam-se de quando em quando.”",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“Indiferente aos curiosos, como ao capim e à água, tinha no olhar a expressão dos meditativos.”",
+        "text": "“Indiferente aos curiosos, como ao capim e à água, tinha no <u>olhar</u> a expressão dos meditativos.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Nunca perguntei por sóis nem chuvas; bastava sentir o freguês no tílburi ou o apito do bonde, para sair logo.”",
+        "text": "“Nunca perguntei por <u>sóis</u> nem chuvas; bastava sentir o freguês no tílburi ou o apito do bonde, para sair logo.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“[...] não podia furtar-me à tristeza de ver que um burro tão bom pensador ia morrer.”",
+        "text": "“[...] não podia furtar-me à tristeza de ver que um burro tão bom <u>pensador</u> ia morrer.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Por que não sucederá o mesmo ao burro, que é maior?”",
+        "text": "“Por que não sucederá o <u>mesmo</u> ao burro, que é maior?”",
         "correct": false
       }
     ],
@@ -10393,17 +10393,17 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "B",
-        "text": "Em “As boas versões cinematográficas trazem a mesma visão crítica sobre a vida”, os elementos em destaque devem ser classificados como núcleo do sujeito.",
+        "text": "Em “As boas <u>versões cinematográficas</u> trazem a mesma visão crítica sobre a vida”, os elementos em destaque devem ser classificados como núcleo do sujeito.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "No trecho “O romance de Shelley contém elementos fantásticos e de horror”, o elemento destacado é um substantivo comum que funciona como adjunto adnominal.",
+        "text": "No trecho “O romance de <u>Shelley</u> contém elementos fantásticos e de horror”, o elemento destacado é um substantivo comum que funciona como adjunto adnominal.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Em “Ele nos fascina porque fala da relação entre vida e morte”, o pronome ele apresenta uma relação anafórica com elemento que se realiza anteriormente.",
+        "text": "Em “Ele nos fascina porque fala da relação entre vida e morte”, o pronome ele apresenta uma relação anafórica com elemento que se realiza anteriormente. ",
         "correct": true
       }
     ],
@@ -10558,27 +10558,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Em “Por que está você com esse ar” (1°§), o elemento em destaque é um pronome interrogativo.",
+        "text": "Em <u>“Por que</u> está você com esse ar” (1°§), o elemento em destaque é um pronome interrogativo.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Em “para fingir que vale alguma coisa neste mundo?” (1°§), o elemento em destaque é uma conjunção integrante.",
+        "text": "Em “para fingir <u>que</u> vale alguma coisa neste mundo?” (1°§), o elemento em destaque é uma conjunção integrante.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Em “Que a deixe? Que a deixe, por quê?” (3°§), o elemento em destaque é um artigo definido feminino.",
+        "text": "Em “Que <u>a</u> deixe? Que a deixe, por quê?” (3°§), o elemento em destaque é um artigo definido feminino.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Em “Cada qual tem o ar que Deus lhe deu.” (4°§), o elemento destacado é um pronome relativo.",
+        "text": "Em “Cada qual tem o ar <u>que</u> Deus lhe deu.” (4°§), o elemento destacado é um pronome relativo.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Em “Decerto que sou.” (7°§), o elemento em destaque é um adverbial de certeza.",
+        "text": "Em <u>“Decerto</u> que sou.” (7°§), o elemento em destaque é um adverbial de certeza. ",
         "correct": false
       }
     ],
@@ -10675,27 +10675,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Na frieza inorgânica da terra! O vocábulo destacado, numa análise morfológica, equivale a um adjetivo.",
+        "text": "Na <u>frieza</u> inorgânica da terra! O vocábulo destacado, numa análise morfológica, equivale a um adjetivo.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Em “direitinho” e “certinho” a terminação -inho é um sufixo diminutivo que possui valor adverbial de intensidade.",
+        "text": "Em <u>“direitinho”</u> e <u>“certinho”</u> a terminação -inho é um sufixo diminutivo que possui valor adverbial de intensidade.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Um homem que põe a verdade à prova o tempo todo. O vocábulo “que”, nesse caso, é uma conjunção integrante, uma vez que complementa o sentido do termo homem.",
+        "text": "Um homem <u>que</u> põe a verdade à prova o tempo todo. O vocábulo “que”, nesse caso, é uma conjunção integrante, uma vez que complementa o sentido do termo <u>homem.</u>",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "O jornalismo se aproveita desses temas que estão na mídia para recriá-os a partir de um jogo de sedução com a linguagem. A expressão grifada tem valor adverbial de circunstância.",
+        "text": "O jornalismo se aproveita desses temas que estão <u>na mídia</u> para recriá-os a partir de um jogo de sedução com a linguagem. A expressão grifada tem valor adverbial de circunstância.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Tudo depende da situação. A expressão \"da situação\" destacada na oração funciona como complemento nominal.",
+        "text": "Tudo depende <u>da situação</u>. A expressão \"<u>da situação</u>\" destacada na oração funciona como complemento nominal.",
         "correct": false
       }
     ],
@@ -10713,27 +10713,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "O menino tem em sua mochila um despertador.",
+        "text": "O menino <u>tem</u> em sua mochila um despertador.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "Encontro nesse senhor uma nobreza jamais vista em toda história.",
+        "text": "<u>Encontro</u> nesse senhor uma nobreza jamais vista em toda história.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Se ele estivesse cumprindo seu trabalho, não precisaria sair daquela maneira.",
+        "text": "Se ele <u>estivesse</u> cumprindo seu trabalho, não precisaria sair daquela maneira.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Acompanho o seu esforço solitário nesse projeto.",
+        "text": "<u>Acompanho</u> o seu esforço solitário nesse projeto.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Estou ansiosa para que ele atinja o seu objetivo nesse trabalho.",
+        "text": "Estou ansiosa para que ele <u>atinja</u> o seu objetivo nesse trabalho.",
         "correct": false
       }
     ],
@@ -10747,7 +10747,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 38,
-    "statement": "A palavra celebérrimo é adjetivo derivado do termo célebre. Tal forma se encontra flexionada no\ngrau superlativo",
+    "statement": "A palavra <u>celebérrimo</u> é adjetivo derivado do termo <u>célebre.</u> Tal forma se encontra flexionada no\ngrau superlativo",
     "options": [
       {
         "letter": "A",
@@ -10819,31 +10819,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 40,
-    "statement": "Com base no texto, responda à questão.\nAssinale a opção em que a expressão sublinhada NÃO tem valor de um adjetivo.",
+    "statement": "Assinale a opção em que a expressão sublinhada NÃO tem valor de um adjetivo.",
     "options": [
       {
         "letter": "A",
-        "text": "Talvez você fosse como aquela menina rica, de fora, que achou horrível nosso pobre doce de abóbora e coco.",
+        "text": "Talvez você fosse como aquela menina rica, de <u>fora,</u> que achou horrível nosso pobre doce de abóbora e coco.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Lembro-me que vi o ladrão morrer afogado com os soldados de canoa dando tiros (...).",
+        "text": "Lembro-me que vi o ladrão morrer afogado com os soldados <u>de canoa</u> dando tiros (...).",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "O menino da roça que pela primeira vez vê as algas do mar se balançando sob a onda clara, junto da pedra.",
+        "text": "O menino da roça que pela primeira vez vê as algas <u>do mar</u> se balançando sob a onda clara, junto da pedra.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Mas o que sei lhe ensino; são pequenas coisas do mato (...).",
+        "text": "Mas o que sei lhe ensino; são pequenas coisas <u>do mato</u> (...).",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Inutilmente tento convertê-la em menina de pernas magras, o joelho ralado, um pouco de lama seca do brejo no meio dos dedos dos pés.",
+        "text": "Inutilmente tento convertê-la em menina de pernas magras, o joelho ralado, um pouco de lama seca <u>do brejo</u> no meio dos dedos dos pés.",
         "correct": false
       }
     ],
@@ -10862,12 +10862,12 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "(...) os sanhaços estão bicando os cajus maduros.",
+        "text": "(...) os sanhaços estão bicando os <u>cajus maduros.</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Converta-se, bela mulher estranha, numa simples menina de pernas magras (...).",
+        "text": "Converta-se, bela mulher estranha, numa <u>simples menina</u> de pernas magras (...).",
         "correct": true
       },
       {
@@ -10877,12 +10877,12 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "D",
-        "text": "Mas eu a levarei para a beira do ribeirão, na sombra fria do bambual (...).",
+        "text": "Mas eu a levarei para a beira do ribeirão, na <u>sombra fria</u> do bambual (...).",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "(...) são humildes coisas, e você é tão bela e estranha!",
+        "text": "(...) são <u>humildes</u> <u>coisas,</u> e você é tão bela e estranha!",
         "correct": false
       }
     ],
@@ -10897,31 +10897,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 42,
-    "statement": "Com base no texto, responda à questão.\nChegou então o momento da grande decisão - para onde navegar. Um sugeria as geleiras do sul\ndo Chile, outro os canais dos fiordes (...). Todas as palavras pertencem à classe gramatical da\npalavra sublinhada na passagem acima, EXCETO a da alternativa",
+    "statement": "Com base no texto, responda à questão.\nChegou então o momento da grande decisão - para onde navegar. Um sugeria as geleiras do sul\ndo Chile, outro os canais dos fiordes (...). Todas as palavras pertencem à classe gramatical da\npalavra sublinhada na passagem acima, <u>EXCETO</u> a da alternativa",
     "options": [
       {
         "letter": "A",
-        "text": "São muitos os saberes necessários para se navegar.",
+        "text": "São <u>muitos</u> os saberes necessários para se navegar.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "(...) a galera navega em direção ao progresso, a uma velocidade cada vez maior, e ninguém questiona a direção.",
+        "text": "(...) a galera navega em direção ao progresso, a uma velocidade cada vez maior, e <u>ninguém</u> questiona a direção.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "E conclui: ‘E em todas essas perguntas sentimos o eco otimista: não preciso de me preocupar com o todo, ele tomará conta de si mesmo ’",
+        "text": "E conclui: ‘E em todas essas perguntas sentimos o eco otimista: não preciso de me preocupar com o <u>todo,</u> ele tomará conta de si mesmo ’",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "O ritmo das remadas aceleram. Sabem tudo sobre a ciência do remar",
+        "text": "O ritmo das remadas aceleram. Sabem <u>tudo</u> sobre a ciência do remar",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "E foi então que compreenderam que, quando o assunto era a escolha do destino, as ciências que conheciam para nada serviam.",
+        "text": "E foi então que compreenderam que, quando o assunto era a escolha do destino, as ciências que conheciam para <u>nada</u> serviam.",
         "correct": false
       }
     ],
@@ -10936,7 +10936,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 43,
-    "statement": "Com base no texto, responda à questão.\nMas o coração humano, lugar dos sonhos, ao contrário da ciência, é coisa imprecisa.\nNa passagem acima, a expressão sublinhada cumpre determinada função sintática que aparece\nnas opções abaixo, EXCETO em",
+    "statement": "Com base no texto, responda à questão.\nMas o coração humano, <u>lugar dos sonhos,</u> ao contrário da ciência, é coisa imprecisa.\nNa passagem acima, a expressão sublinhada cumpre determinada função sintática que aparece\nnas opções abaixo, <u>EXCETO</u> em",
     "options": [
       {
         "letter": "A",
@@ -10979,27 +10979,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Viviam como todos nós: moscas presas na enorme teia de aranha que é a vida da cidade. Todos os dias a aranha lhes arrancava um pedaço.",
+        "text": "Viviam como todos nós: moscas presas na enorme teia de aranha que é a vida da cidade. Todos os dias a aranha <u>lhes</u> arrancava um pedaço.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "Os computadores não têm preferências - falta-lhes essa sutil capacidade de ‘gostar’, que é a essência da vida humana.",
+        "text": "Os computadores não têm preferências - <u>falta-lhes</u> essa sutil capacidade de ‘gostar’, que é a essência da vida humana.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Perguntados sobre o porto de sua escolha, disseram que não entendiam a pergunta, que não lhes importava para onde se estava indo.",
+        "text": "Perguntados sobre o porto de sua escolha, disseram que não entendiam a pergunta, que não <u>lhes</u> importava para onde se estava indo.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Quando se lhes pergunta: ‘Para onde seu barco está navegando? \\ eles respondem'. Isso não é científico’.",
+        "text": "Quando se <u>lhes</u> pergunta: ‘Para onde seu barco está navegando? \\ eles respondem'. Isso não é científico’.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "E assim ficam os homens comuns abandonados por aqueles que, por conhecerem mares e estreleis, lhes poderiam mostrar o rumo.",
+        "text": "E assim ficam os homens comuns abandonados por aqueles que, por conhecerem mares e estreleis, <u>lhes</u> poderiam mostrar o rumo.",
         "correct": false
       }
     ],
@@ -11014,7 +11014,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 45,
-    "statement": "Com base no texto, responda à questão.\nEm nossas escolas é isso que se ensina: a precisa ciência da navegação, sem que os estudantes\nsejam levados a sonhar com as estrelas.\nObservando o período acima, nota-se que a partícula sublinhada cumpre uma função específica,\nque aparece nas outras alternativas, EXCETO em",
+    "statement": "Observando o período acima, nota-se que a partícula sublinhada cumpre uma função específica,\nque aparece nas outras alternativas, <u>EXCETO</u> em",
     "options": [
       {
         "letter": "A",
@@ -11044,7 +11044,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "O homem deve reencontrar o Paraíso...\nRubem Alves\nEra uma família grande, todos amigos. Viviam como todos nós: moscas presas na enorme teia de\naranha que é a vida da cidade. Todos os dias a aranha lhes arrancava um pedaço. Ficaram\ncansados. Resolveram mudar de vida: um sonho louco: navegar! Um barco, o mar, o céu, as\nestrelas, os horizontes sem fim: liberdade. Venderam o que tinham, compraram um barco capaz de\natravessar mares e sobreviver tempestades.\nMas para navegar não basta sonhar. É preciso saber. São muitos os saberes necessários para se\nnavegar. Puseram-se então a estudar cada um aquilo que teria de fazer no barco: manutenção do\ncasco, instrumentos de navegação, astronomia, meteorologia, as velas, as cordas, as polias e\nroldanas, os mastros, o leme, os parafusos, o motor, o radar, o rádio, as ligações elétricas, os\nmares, os mapas... Disse certo o poeta: Navegar é preciso, a ciência da navegação é saber preciso,\nexige aparelhos, números e medições. Barcos se fazem com precisão, astronomia se aprende com\no rigor da geometria, velas se fazem com saberes exatos sobre tecidos, cordas e ventos,\ninstrumentos de navegação não informam mais ou menos. Assim, eles se tomaram cientistas,\nespecialistas, cada um na sua - juntos para navegar.\nChegou então o momento da grande decisão - para onde navegar. Um sugeria as geleiras do sul\ndo Chile, outro os canais dos fiordes da Noruega, um outro queria conhecer os exóticos mares e\npraias das ilhas do Pacífico, e houve mesmo quem quisesse navegar nas rotas de Colombo. E foi\nentão que compreenderam que, quando o assunto era a escolha do destino, as ciências que\nconheciam para nada serviam.\nDe nada valiam números, tabelas, gráficos, estatísticas. Os computadores, coitados, chamados a\ndar o seu palpite, ficaram em silêncio. Os computadores não têm preferências - falta-lhes essa sutil\ncapacidade de gostar, que é a essência da vida humana. Perguntados sobre o porto de sua\nescolha, disseram que não entendiam a pergunta, que não lhes importava para onde se estava\nindo.\nSe os barcos se fazem com ciência, a navegação faz-se com os sonhos. Infelizmente a ciência,\nutilíssima, especialista em saber como as coisas funcionam, tudo ignora sobre o coração humano.\nE preciso sonhar para se decidir sobre o destino da navegação. Mas o coração humano, lugar dos\nsonhos, ao contrário da ciência, é coisa imprecisa. Disse certo o poeta: Viver não é preciso.\nPrimeiro vem o impreciso desejo. Primeiro vem o impreciso desejo de navegar. Só depois vem a\nprecisa ciência de navegar.\nNaus e navegação têm sido uma das mais poderosas imagens na mente dos poetas. Ezra Pound\ninicia seus Cânticos dizendo: E pois com a nau no mar/assestamos a quilha contra as vagas...\nCecília Meireles: Foi, desde sempre, o mar! A solidez da terra, monótona/parece-nos fraca ilusão!\nQueremos a ilusão do grande mar/multiplicada em suas malhas de perigo. E Nietzsche: Amareis a\nterra de vossos (lhos, terra não descoberta, no mar mais distante. Que as vossas velas não se\ncansem de procurar esta terra! O nosso leme nos conduz para a terra dos nossos (lhos... Viver é\nnavegar no grande mar!\nNão só os poetas: C. Wright Mills, um sociólogo sábio, comparou a nossa civilização a uma galera\nque navega pelos mares. Nos porões estão os remadores. Remam com precisão cada vez maior. A\ncada novo dia recebem remos novos, mais perfeitos. O ritmo das remadas acelera. Sabem tudo\nsobre a ciência do remar. A galera navega cada vez mais rápido. Mas, perguntados sobre o porto\ndo destino, respondem os remadores: O porto não nos importa. O que importa é a velocidade com\nque navegamos.\nC. Wright Mills usou esta metáfora para descrever a nossa civilização por meio duma imagem\nplástica: multiplicam-se os meios técnicos e científicos ao nosso dispor, que fazem com que as\nmudanças sejam cada vez mais rápidas; mas não temos ideia alguma de para onde navegamos.\nPara onde? Somente um navegador louco ou perdido navegaria sem ter ideia do para onde. Em\nrelação à vida da sociedade, ela contém a busca de uma utopia. Utopia, na linguagem comum, é\nusada como sonho impossível de ser realizado. Mas não é isso. Utopia é um ponto inatingível que\nindica uma direção.\nMário Quintana explicou a utopia com um verso: Se as coisas são inatingíveis... ora!/Não é motivo\npara não querê-las... Que tristes os caminhos, se não fora/ A mágica presença das estrelas! Karl\nMannheim, outro sociólogo sábio que poucos leem, já na década de 1920 diagnosticava a doença\nda nossa civilização: Não temos consciência de direções, não escolhemos direções. Faltam-nos\nestrelas que nos indiquem o destino.\nHoje, ele dizia, as únicas perguntas que são feitas, determinadas pelo pragmatismo da tecnologia\n(o importante é produzir o objeto) e pelo objetivismo da ciência (o importante é saber como\nfunciona), são: Como posso fazer tal coisa? Como posso resolver este problema concreto\nparticular? E conclui: E em todas essas perguntas sentimos o eco otimista: não preciso de me\npreocupar com o todo, ele tomará conta de si mesmo.\nEm nossas escolas é isso que se ensina: a precisa ciência da navegação, sem que os estudantes\nsejam levados a sonhar com as estrelas. A nau navega veloz e sem rumo. Nas universidades, essa\ndoença assume a forma de peste epidêmica: cada especialista se dedica, com paixão e\ncompetência, a fazer pesquisas sobre o seu parafuso, sua polia, sua vela, seu mastro.\nDizem que seu dever é produzir conhecimento. Se forem bem-sucedidas, suas pesquisas serão\npublicadas em revistas internacionais. Quando se lhes pergunta: Para onde seu barco está\nnavegando?, eles respondem: Isso não é cientí(co. Os sonhos não são objetos de conhecimento\ncientífico...\nE assim ficam os homens comuns abandonados por aqueles que, por conhecerem mares e\nestrelas, lhes poderiam mostrar o rumo. Não posso pensar a missão das escolas, começando com\nas crianças e continuando com os cientistas, como outra que não a da realização do dito do poeta:\nNavegar é preciso. Viver não é preciso.\nÉ necessário ensinar os precisos saberes da navegação enquanto ciência. Mas é necessário\napontar com imprecisos sinais para os destinos da navegação: A terra dos filhos dos meus filhos, no\nmar distante... Na verdade, a ordem verdadeira é a inversa. Primeiro, os homens sonham com\nnavegar. Depois aprendem a ciência da navegação. E inútil ensinar a ciência da navegação a quem\nmora nas montanhas...\nO meu sonho para a educação foi dito por Bachelard: O universo tem um destino de felicidade. O\nhomem deve reencontrar o Paraíso. O paraíso é jardim, lugar de felicidade, prazeres e alegrias para\nos homens e mulheres. Mas há um pesadelo que me atormenta: o deserto. Houve um momento\nem que se viu, por entre as estrelas, um brilho chamado progresso. Está na bandeira nacional... E,\nquilha contra as vagas, a galera navega em direção ao progresso, a uma velocidade cada vez\nmaior, e ninguém questiona a direção. E assim que as florestas são destruídas, os rios se\ntransformam em esgotos de fezes e veneno, o ar se enche de gases, os campos se cobrem de lixo\n- e tudo ficou feio e triste.\nSugiro aos educadores que pensem menos nas tecnologias do ensino - psicologias e quinquilharias\n- e tratem de sonhar, com os seus alunos, sonhos de um Paraíso.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico."
+    "readingText": "O homem deve reencontrar o Paraíso...\nRubem Alves\nEra uma família grande, todos amigos. Viviam como todos nós: moscas presas na enorme teia de\naranha que é a vida da cidade. Todos os dias a aranha lhes arrancava um pedaço. Ficaram\ncansados. Resolveram mudar de vida: um sonho louco: navegar! Um barco, o mar, o céu, as\nestrelas, os horizontes sem fim: liberdade. Venderam o que tinham, compraram um barco capaz de\natravessar mares e sobreviver tempestades.\nMas para navegar não basta sonhar. É preciso saber. São muitos os saberes necessários para se\nnavegar. Puseram-se então a estudar cada um aquilo que teria de fazer no barco: manutenção do\ncasco, instrumentos de navegação, astronomia, meteorologia, as velas, as cordas, as polias e\nroldanas, os mastros, o leme, os parafusos, o motor, o radar, o rádio, as ligações elétricas, os\nmares, os mapas... Disse certo o poeta: Navegar é preciso, a ciência da navegação é saber preciso,\nexige aparelhos, números e medições. Barcos se fazem com precisão, astronomia se aprende com\no rigor da geometria, velas se fazem com saberes exatos sobre tecidos, cordas e ventos,\ninstrumentos de navegação não informam mais ou menos. Assim, eles se tomaram cientistas,\nespecialistas, cada um na sua - juntos para navegar.\nChegou então o momento da grande decisão - para onde navegar. Um sugeria as geleiras do sul\ndo Chile, outro os canais dos fiordes da Noruega, um outro queria conhecer os exóticos mares e\npraias das ilhas do Pacífico, e houve mesmo quem quisesse navegar nas rotas de Colombo. E foi\nentão que compreenderam que, quando o assunto era a escolha do destino, as ciências que\nconheciam para nada serviam.\nDe nada valiam números, tabelas, gráficos, estatísticas. Os computadores, coitados, chamados a\ndar o seu palpite, ficaram em silêncio. Os computadores não têm preferências - falta-lhes essa sutil\ncapacidade de gostar, que é a essência da vida humana. Perguntados sobre o porto de sua\nescolha, disseram que não entendiam a pergunta, que não lhes importava para onde se estava\nindo.\nSe os barcos se fazem com ciência, a navegação faz-se com os sonhos. Infelizmente a ciência,\nutilíssima, especialista em saber como as coisas funcionam, tudo ignora sobre o coração humano.\nE preciso sonhar para se decidir sobre o destino da navegação. Mas o coração humano, lugar dos\nsonhos, ao contrário da ciência, é coisa imprecisa. Disse certo o poeta: Viver não é preciso.\nPrimeiro vem o impreciso desejo. Primeiro vem o impreciso desejo de navegar. Só depois vem a\nprecisa ciência de navegar.\nNaus e navegação têm sido uma das mais poderosas imagens na mente dos poetas. Ezra Pound\ninicia seus Cânticos dizendo: E pois com a nau no mar/assestamos a quilha contra as vagas...\nCecília Meireles: Foi, desde sempre, o mar! A solidez da terra, monótona/parece-nos fraca ilusão!\nQueremos a ilusão do grande mar/multiplicada em suas malhas de perigo. E Nietzsche: Amareis a\nterra de vossos (lhos, terra não descoberta, no mar mais distante. Que as vossas velas não se\ncansem de procurar esta terra! O nosso leme nos conduz para a terra dos nossos (lhos... Viver é\nnavegar no grande mar!\nNão só os poetas: C. Wright Mills, um sociólogo sábio, comparou a nossa civilização a uma galera\nque navega pelos mares. Nos porões estão os remadores. Remam com precisão cada vez maior. A\ncada novo dia recebem remos novos, mais perfeitos. O ritmo das remadas acelera. Sabem tudo\nsobre a ciência do remar. A galera navega cada vez mais rápido. Mas, perguntados sobre o porto\ndo destino, respondem os remadores: O porto não nos importa. O que importa é a velocidade com\nque navegamos.\nC. Wright Mills usou esta metáfora para descrever a nossa civilização por meio duma imagem\nplástica: multiplicam-se os meios técnicos e científicos ao nosso dispor, que fazem com que as\nmudanças sejam cada vez mais rápidas; mas não temos ideia alguma de para onde navegamos.\nPara onde? Somente um navegador louco ou perdido navegaria sem ter ideia do para onde. Em\nrelação à vida da sociedade, ela contém a busca de uma utopia. Utopia, na linguagem comum, é\nusada como sonho impossível de ser realizado. Mas não é isso. Utopia é um ponto inatingível que\nindica uma direção.\nMário Quintana explicou a utopia com um verso: Se as coisas são inatingíveis... ora!/Não é motivo\npara não querê-las... Que tristes os caminhos, se não fora/ A mágica presença das estrelas! Karl\nMannheim, outro sociólogo sábio que poucos leem, já na década de 1920 diagnosticava a doença\nda nossa civilização: Não temos consciência de direções, não escolhemos direções. Faltam-nos\nestrelas que nos indiquem o destino.\nHoje, ele dizia, as únicas perguntas que são feitas, determinadas pelo pragmatismo da tecnologia\n(o importante é produzir o objeto) e pelo objetivismo da ciência (o importante é saber como\nfunciona), são: Como posso fazer tal coisa? Como posso resolver este problema concreto\nparticular? E conclui: E em todas essas perguntas sentimos o eco otimista: não preciso de me\npreocupar com o todo, ele tomará conta de si mesmo.\nEm nossas escolas é isso que <u>se</u> ensina: a precisa ciência da navegação, sem que os estudantes\nsejam levados a sonhar com as estrelas. A nau navega veloz e sem rumo. Nas universidades, essa\ndoença assume a forma de peste epidêmica: cada especialista se dedica, com paixão e\ncompetência, a fazer pesquisas sobre o seu parafuso, sua polia, sua vela, seu mastro.\nDizem que seu dever é produzir conhecimento. Se forem bem-sucedidas, suas pesquisas serão\npublicadas em revistas internacionais. Quando se lhes pergunta: Para onde seu barco está\nnavegando?, eles respondem: Isso não é cientí(co. Os sonhos não são objetos de conhecimento\ncientífico...\nE assim ficam os homens comuns abandonados por aqueles que, por conhecerem mares e\nestrelas, lhes poderiam mostrar o rumo. Não posso pensar a missão das escolas, começando com\nas crianças e continuando com os cientistas, como outra que não a da realização do dito do poeta:\nNavegar é preciso. Viver não é preciso.\nÉ necessário ensinar os precisos saberes da navegação enquanto ciência. Mas é necessário\napontar com imprecisos sinais para os destinos da navegação: A terra dos filhos dos meus filhos, no\nmar distante... Na verdade, a ordem verdadeira é a inversa. Primeiro, os homens sonham com\nnavegar. Depois aprendem a ciência da navegação. E inútil ensinar a ciência da navegação a quem\nmora nas montanhas...\nO meu sonho para a educação foi dito por Bachelard: O universo tem um destino de felicidade. O\nhomem deve reencontrar o Paraíso. O paraíso é jardim, lugar de felicidade, prazeres e alegrias para\nos homens e mulheres. Mas há um pesadelo que me atormenta: o deserto. Houve um momento\nem que se viu, por entre as estrelas, um brilho chamado progresso. Está na bandeira nacional... E,\nquilha contra as vagas, a galera navega em direção ao progresso, a uma velocidade cada vez\nmaior, e ninguém questiona a direção. E assim que as florestas são destruídas, os rios se\ntransformam em esgotos de fezes e veneno, o ar se enche de gases, os campos se cobrem de lixo\n- e tudo ficou feio e triste.\nSugiro aos educadores que pensem menos nas tecnologias do ensino - psicologias e quinquilharias\n- e tratem de sonhar, com os seus alunos, sonhos de um Paraíso.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico.\nCom base no texto, responda à questão.\nEm nossas escolas é isso que se ensina: a precisa ciência da navegação, sem que os estudantes\nsejam levados a sonhar com as estrelas."
   },
   {
     "id": "classes_var-pdf_4_classes_var-q46",
@@ -11053,31 +11053,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 46,
-    "statement": "Com base no texto, responda à questão.\nAs expressões sublinhadas estabelecem uma noção de tempo, EXCETO a que aparece na opção",
+    "statement": "As expressões sublinhadas estabelecem uma noção de tempo, <u>EXCETO</u> a que aparece na opção",
     "options": [
       {
         "letter": "A",
-        "text": "De vez em quando eu até me até atrevo a cozinhar.",
+        "text": "<u>De</u> <u>vez</u> <u>em</u> <u>quando</u> eu até me até atrevo a cozinhar.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Entretanto, dias atrás, conversando com uma paciente, ela mencionou a pipoca.",
+        "text": "Entretanto, <u>dias</u> <u>atrás,</u> conversando com uma paciente, ela mencionou a pipoca.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Lembrei-me, então, de lição que aprendi com a Mãe Stella, sábia poderosa do candomblé (...)",
+        "text": "Lembrei-me, <u>então,</u> de lição que aprendi com a Mãe Stella, sábia poderosa do candomblé (...)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Aí, sem aviso prévio, pelo poder do fogo, a grande transformação acontece: pum!",
+        "text": "<u>Aí,</u> sem aviso prévio, pelo poder do fogo, a grande transformação acontece: pum!",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Repentinamente os grãos começaram a estourar, saltavam da panela com uma enorme barulheira.",
+        "text": "<u>Repentinamente</u> os grãos começaram a estourar, saltavam da panela com uma enorme barulheira.",
         "correct": true
       }
     ],
@@ -11131,7 +11131,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 48,
-    "statement": "Assinale a opção em que aparece no período uma locução expletiva.",
+    "statement": "1907.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico.\nAssinale a opção em que aparece no período uma locução expletiva.",
     "options": [
       {
         "letter": "A",
@@ -11161,7 +11161,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "UM QUARTO DE RAPAZ\nElsie Lessa\nAbro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça porque, afinal\ndas contas, o correr dos anos nos dá uma certa filosofia. Essa rapaziada parece que é mesmo toda\nassim.\nQuem sai para uma prova de matemática não há mesmo de ter deixado a cama feita, tanto mais\nquando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este Poesia até\nagora, rubro de vergonha de ter sido largado no chão junto a este cinzeiro transbordante e às\nmeias azuis de náilon. E dizer que desde que esse menino nasceu tento provar-lhe que já não\nestamos – hélas! – no tempo da escravidão e que somos nós mesmos, brancos, pretos ou\namarelos, intelectuais ou estudantes em provas, que devemos encaminhar ao destino conveniente\nas roupas da véspera. Qual, ele não se convence. Também uma manta escocesa, de suaves lãs\nmacias, que a mãe da gente trouxe embaixo do braço da Inglaterra até aqui, para que nos aqueça\nnas noites de inverno, não devia ser largada no chão, nem mesmo na companhia de um livro de\nversos. E quem é que está ligando para tudo isso?\nÓ mocidade inquieta, só mesmo o que está em ordem dentro deste quarto são os montes de\ndiscos. E estes livros, meu Deus? Como é que gente que gosta de ler pode deixar os próprios\nlivros numa bagunça dessas? Coitado do Pablo Neruda, olha onde foi parar! E o Dom Quixote de la\nMancha, Virgem Santíssima! Há três gerações que os antepassados desse menino não fazem\noutra coisa senão escrever livros, e ele os trata assim!\n− Livro é pra ler! Não é para enfeitar estante!\n− Está certo! Que não enfeite, mas também não precisam ser empurrados desse jeito, lá para o\nfundo, com esse monte de revistas de jazz em cima! E custava, criatura, custava você pendurar\nessas calças nesse guarda-roupa que é para você, sozinho, que é provido de cabides, que não têm\noutro destino senão abrigar as suas calças?\n− Mania de ordem é complexo de culpa, já te avisei! Meu quarto está ótimo, está formidável. E não\ngosto que mexa, hein, senão depois não acho as minhas coisas!\nE pensar que esse menino um dia casa e vai levar essas noções de arrumação para a infeliz da\nesposa, e que juízo, que juízo vai fazer essa moça de mim, meu Deus do céu! Há bem uns quinze\nanos que esse problema me atormenta, tenho trocado confidências com amigas e há várias\nopiniões a respeito. Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses\nmoleques e passam a pendurar a roupa, tirar pó de livro, desamarrar o sapato antes de tirar do pé.\nPode ser. Deus permita! Mas que agonia, enquanto isso não acontece.\ndizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe, que o\nrodeassem em todas as suas horas, que lhe infundissem o gosto das coisas belas. Qual! Pendurei a\nbalada do “If”¹ em cima de todos esses discos de jazz, e sobre a vitrola, já nem sei por quê, esse\nbelo retrato de Napoleão, em esmalte, vindo das margens do Sena! E ele está se importando? O\nviolão está sem cordas, e em cima do meu retrato, radioso retrato da minha juventude, ele já pôs o\nBilly Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas! E não\ntira um, antes de colocar o outro! Vai empurrando por cima e já a moldura estoura com essa\nvariedade de predileções! São Sebastião, na sua peanha dourada, está de olhos erguidos para o\nalto e, felizmente, não vê a desordem que anda cá por baixo.\nVejo eu, olho em roda para saber por onde começar. Custava ele despejar esses cinzeiros? Onde\njá se viu fumar na cama e fazer furos nos meus lençóis? E, em tempos de provas, é hora de ficar\nfolheando livros de versos, até tarde da noite, desse jeito? O caderno de física está assim de\npoesias e letras de fox e caricaturas de colegas, não sei também se de algum professor! E para que\nseis caixas de fósforo em cima dessa vitrola? E onde já se viu misturar na mesma mesa esse nunca\nassaz manuseado Manuel Bandeira, e El son entero, de Nicolás Guillén, e os poemas de Mário de\nAndrade, e os Pássaros Perdidos de Tagore, e Fernando Pessoa, e esse pocket book policial? Quer\nler Graham Greene, e fazer versos, e fumar feito um desesperado, e não perder praia no Arpoador,\nnem broto na vizinhança, nem filme na semana e passar nas provas. E em que mundo isso é\npossível?\nGuardo os chinelos, que ficam sempre emborcados. Já lhe disse que isso é atraso de vida. E ele\nmorre de rir. E ponho as cobertas em cima da cama. E abro as janelas, para sair esse cheiro de\nfumo. E deixo só uma caixa de fósforos. Mas não faço mais nada, porque abri um caderno, de letra\nmuito ruim, até a metade com os seus versos.\n¹ Poema célebre do escritor indiano Rudyard Kipling (1865-1936), Prêmio Nobel de Literatura de\n1907.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico."
+    "readingText": "UM QUARTO DE RAPAZ\nElsie Lessa\nAbro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça porque, afinal\ndas contas, o correr dos anos nos dá uma certa filosofia. Essa rapaziada parece que é mesmo toda\nassim.\nQuem sai para uma prova de matemática não há mesmo de ter deixado a cama feita, tanto mais\nquando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este Poesia até\nagora, rubro de vergonha de ter sido largado no chão junto a este cinzeiro transbordante e às\nmeias azuis de náilon. E dizer que desde que esse menino nasceu tento provar-lhe que já não\nestamos – hélas! – no tempo da escravidão e que somos nós mesmos, brancos, pretos ou\namarelos, intelectuais ou estudantes em provas, que devemos encaminhar ao destino conveniente\nas roupas da véspera. Qual, ele não se convence. Também uma manta escocesa, de suaves lãs\nmacias, que a mãe da gente trouxe embaixo do braço da Inglaterra até aqui, para que nos aqueça\nnas noites de inverno, não devia ser largada no chão, nem mesmo na companhia de um livro de\nversos. E quem é que está ligando para tudo isso?\nÓ mocidade inquieta, só mesmo o que está em ordem dentro deste quarto são os montes de\ndiscos. E estes livros, meu Deus? Como é que gente que gosta de ler pode deixar os próprios\nlivros numa bagunça dessas? Coitado do Pablo Neruda, olha onde foi parar! E o Dom Quixote de la\nMancha, Virgem Santíssima! Há três gerações que os antepassados desse menino não fazem\noutra coisa senão escrever livros, e ele os trata assim!\n− Livro é pra ler! Não é para enfeitar estante!\n− Está certo! Que não enfeite, mas também não precisam ser empurrados desse jeito, lá para o\nfundo, com esse monte de revistas de jazz em cima! E custava, criatura, custava você pendurar\nessas calças nesse guarda-roupa que é para você, sozinho, que é provido de cabides, que não têm\noutro destino senão abrigar as suas calças?\n− Mania de ordem é complexo de culpa, já te avisei! Meu quarto está ótimo, está formidável. E não\ngosto que mexa, hein, senão depois não acho as minhas coisas!\nE pensar que esse menino um dia casa e vai levar essas noções de arrumação para a infeliz da\nesposa, e que juízo, que juízo vai fazer essa moça de mim, meu Deus do céu! Há bem uns quinze\nanos que esse problema me atormenta, tenho trocado confidências com amigas e há várias\nopiniões a respeito. Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses\nmoleques e passam a pendurar a roupa, tirar pó de livro, desamarrar o sapato antes de tirar do pé.\nPode ser. Deus permita! Mas que agonia, enquanto isso não acontece.\ndizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe, que o\nrodeassem em todas as suas horas, que lhe infundissem o gosto das coisas belas. Qual! Pendurei a\nbalada do “If”¹ em cima de todos esses discos de jazz, e sobre a vitrola, já nem sei por quê, esse\nbelo retrato de Napoleão, em esmalte, vindo das margens do Sena! E ele está se importando? O\nviolão está sem cordas, e em cima do meu retrato, radioso retrato da minha juventude, ele já pôs o\nBilly Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas! E não\ntira um, antes de colocar o outro! Vai empurrando por cima e já a moldura estoura com essa\nvariedade de predileções! São Sebastião, na sua peanha dourada, está de olhos erguidos para o\nalto e, felizmente, não vê a desordem que anda cá por baixo.\nVejo eu, olho em roda para saber por onde começar. Custava ele despejar esses cinzeiros? Onde\njá se viu fumar na cama e fazer furos nos meus lençóis? E, em tempos de provas, é hora de ficar\nfolheando livros de versos, até tarde da noite, desse jeito? O caderno de física está assim de\npoesias e letras de fox e caricaturas de colegas, não sei também se de algum professor! E para que\nseis caixas de fósforo em cima dessa vitrola? E onde já se viu misturar na mesma mesa esse nunca\nassaz manuseado Manuel Bandeira, e El son entero, de Nicolás Guillén, e os poemas de Mário de\nAndrade, e os Pássaros Perdidos de Tagore, e Fernando Pessoa, e esse pocket book policial? Quer\nler Graham Greene, e fazer versos, e fumar feito um desesperado, e não perder praia no Arpoador,\nnem broto na vizinhança, nem filme na semana e passar nas provas. E em que mundo isso é\npossível?\nGuardo os chinelos, que ficam sempre emborcados. Já lhe disse que isso é atraso de vida. E ele\nmorre de rir. E ponho as cobertas em cima da cama. E abro as janelas, para sair esse cheiro de\nfumo. E deixo só uma caixa de fósforos. Mas não faço mais nada, porque abri um caderno, de letra\nmuito ruim, até a metade com os seus versos.\n¹ Poema célebre do escritor indiano Rudyard Kipling (1865-1936), Prêmio Nobel de Literatura de"
   },
   {
     "id": "classes_var-pdf_4_classes_var-q49",
@@ -11170,7 +11170,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 49,
-    "statement": "Assinale a opção em que NÃO aparece uma oração adjetiva.",
+    "statement": "1907.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico.\nAssinale a opção em que NÃO aparece uma oração adjetiva.",
     "options": [
       {
         "letter": "A",
@@ -11200,7 +11200,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "UM QUARTO DE RAPAZ\nElsie Lessa\nAbro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça porque, afinal\ndas contas, o correr dos anos nos dá uma certa filosofia. Essa rapaziada parece que é mesmo toda\nassim.\nQuem sai para uma prova de matemática não há mesmo de ter deixado a cama feita, tanto mais\nquando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este Poesia até\nagora, rubro de vergonha de ter sido largado no chão junto a este cinzeiro transbordante e às\nmeias azuis de náilon. E dizer que desde que esse menino nasceu tento provar-lhe que já não\nestamos – hélas! – no tempo da escravidão e que somos nós mesmos, brancos, pretos ou\namarelos, intelectuais ou estudantes em provas, que devemos encaminhar ao destino conveniente\nas roupas da véspera. Qual, ele não se convence. Também uma manta escocesa, de suaves lãs\nmacias, que a mãe da gente trouxe embaixo do braço da Inglaterra até aqui, para que nos aqueça\nnas noites de inverno, não devia ser largada no chão, nem mesmo na companhia de um livro de\nversos. E quem é que está ligando para tudo isso?\nÓ mocidade inquieta, só mesmo o que está em ordem dentro deste quarto são os montes de\ndiscos. E estes livros, meu Deus? Como é que gente que gosta de ler pode deixar os próprios\nlivros numa bagunça dessas? Coitado do Pablo Neruda, olha onde foi parar! E o Dom Quixote de la\nMancha, Virgem Santíssima! Há três gerações que os antepassados desse menino não fazem\noutra coisa senão escrever livros, e ele os trata assim!\n− Livro é pra ler! Não é para enfeitar estante!\n− Está certo! Que não enfeite, mas também não precisam ser empurrados desse jeito, lá para o\nfundo, com esse monte de revistas de jazz em cima! E custava, criatura, custava você pendurar\nessas calças nesse guarda-roupa que é para você, sozinho, que é provido de cabides, que não têm\noutro destino senão abrigar as suas calças?\n− Mania de ordem é complexo de culpa, já te avisei! Meu quarto está ótimo, está formidável. E não\ngosto que mexa, hein, senão depois não acho as minhas coisas!\nE pensar que esse menino um dia casa e vai levar essas noções de arrumação para a infeliz da\nesposa, e que juízo, que juízo vai fazer essa moça de mim, meu Deus do céu! Há bem uns quinze\nanos que esse problema me atormenta, tenho trocado confidências com amigas e há várias\nopiniões a respeito. Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses\nmoleques e passam a pendurar a roupa, tirar pó de livro, desamarrar o sapato antes de tirar do pé.\nPode ser. Deus permita! Mas que agonia, enquanto isso não acontece.\ndizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe, que o\nrodeassem em todas as suas horas, que lhe infundissem o gosto das coisas belas. Qual! Pendurei a\nbalada do “If”¹ em cima de todos esses discos de jazz, e sobre a vitrola, já nem sei por quê, esse\nbelo retrato de Napoleão, em esmalte, vindo das margens do Sena! E ele está se importando? O\nviolão está sem cordas, e em cima do meu retrato, radioso retrato da minha juventude, ele já pôs o\nBilly Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas! E não\ntira um, antes de colocar o outro! Vai empurrando por cima e já a moldura estoura com essa\nvariedade de predileções! São Sebastião, na sua peanha dourada, está de olhos erguidos para o\nalto e, felizmente, não vê a desordem que anda cá por baixo.\nVejo eu, olho em roda para saber por onde começar. Custava ele despejar esses cinzeiros? Onde\njá se viu fumar na cama e fazer furos nos meus lençóis? E, em tempos de provas, é hora de ficar\nfolheando livros de versos, até tarde da noite, desse jeito? O caderno de física está assim de\npoesias e letras de fox e caricaturas de colegas, não sei também se de algum professor! E para que\nseis caixas de fósforo em cima dessa vitrola? E onde já se viu misturar na mesma mesa esse nunca\nassaz manuseado Manuel Bandeira, e El son entero, de Nicolás Guillén, e os poemas de Mário de\nAndrade, e os Pássaros Perdidos de Tagore, e Fernando Pessoa, e esse pocket book policial? Quer\nler Graham Greene, e fazer versos, e fumar feito um desesperado, e não perder praia no Arpoador,\nnem broto na vizinhança, nem filme na semana e passar nas provas. E em que mundo isso é\npossível?\nGuardo os chinelos, que ficam sempre emborcados. Já lhe disse que isso é atraso de vida. E ele\nmorre de rir. E ponho as cobertas em cima da cama. E abro as janelas, para sair esse cheiro de\nfumo. E deixo só uma caixa de fósforos. Mas não faço mais nada, porque abri um caderno, de letra\nmuito ruim, até a metade com os seus versos.\n¹ Poema célebre do escritor indiano Rudyard Kipling (1865-1936), Prêmio Nobel de Literatura de\n1907.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico."
+    "readingText": "UM QUARTO DE RAPAZ\nElsie Lessa\nAbro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça porque, afinal\ndas contas, o correr dos anos nos dá uma certa filosofia. Essa rapaziada parece que é mesmo toda\nassim.\nQuem sai para uma prova de matemática não há mesmo de ter deixado a cama feita, tanto mais\nquando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este Poesia até\nagora, rubro de vergonha de ter sido largado no chão junto a este cinzeiro transbordante e às\nmeias azuis de náilon. E dizer que desde que esse menino nasceu tento provar-lhe que já não\nestamos – hélas! – no tempo da escravidão e que somos nós mesmos, brancos, pretos ou\namarelos, intelectuais ou estudantes em provas, que devemos encaminhar ao destino conveniente\nas roupas da véspera. Qual, ele não se convence. Também uma manta escocesa, de suaves lãs\nmacias, que a mãe da gente trouxe embaixo do braço da Inglaterra até aqui, para que nos aqueça\nnas noites de inverno, não devia ser largada no chão, nem mesmo na companhia de um livro de\nversos. E quem é que está ligando para tudo isso?\nÓ mocidade inquieta, só mesmo o que está em ordem dentro deste quarto são os montes de\ndiscos. E estes livros, meu Deus? Como é que gente que gosta de ler pode deixar os próprios\nlivros numa bagunça dessas? Coitado do Pablo Neruda, olha onde foi parar! E o Dom Quixote de la\nMancha, Virgem Santíssima! Há três gerações que os antepassados desse menino não fazem\noutra coisa senão escrever livros, e ele os trata assim!\n− Livro é pra ler! Não é para enfeitar estante!\n− Está certo! Que não enfeite, mas também não precisam ser empurrados desse jeito, lá para o\nfundo, com esse monte de revistas de jazz em cima! E custava, criatura, custava você pendurar\nessas calças nesse guarda-roupa que é para você, sozinho, que é provido de cabides, que não têm\noutro destino senão abrigar as suas calças?\n− Mania de ordem é complexo de culpa, já te avisei! Meu quarto está ótimo, está formidável. E não\ngosto que mexa, hein, senão depois não acho as minhas coisas!\nE pensar que esse menino um dia casa e vai levar essas noções de arrumação para a infeliz da\nesposa, e que juízo, que juízo vai fazer essa moça de mim, meu Deus do céu! Há bem uns quinze\nanos que esse problema me atormenta, tenho trocado confidências com amigas e há várias\nopiniões a respeito. Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses\nmoleques e passam a pendurar a roupa, tirar pó de livro, desamarrar o sapato antes de tirar do pé.\nPode ser. Deus permita! Mas que agonia, enquanto isso não acontece.\ndizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe, que o\nrodeassem em todas as suas horas, que lhe infundissem o gosto das coisas belas. Qual! Pendurei a\nbalada do “If”¹ em cima de todos esses discos de jazz, e sobre a vitrola, já nem sei por quê, esse\nbelo retrato de Napoleão, em esmalte, vindo das margens do Sena! E ele está se importando? O\nviolão está sem cordas, e em cima do meu retrato, radioso retrato da minha juventude, ele já pôs o\nBilly Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas! E não\ntira um, antes de colocar o outro! Vai empurrando por cima e já a moldura estoura com essa\nvariedade de predileções! São Sebastião, na sua peanha dourada, está de olhos erguidos para o\nalto e, felizmente, não vê a desordem que anda cá por baixo.\nVejo eu, olho em roda para saber por onde começar. Custava ele despejar esses cinzeiros? Onde\njá se viu fumar na cama e fazer furos nos meus lençóis? E, em tempos de provas, é hora de ficar\nfolheando livros de versos, até tarde da noite, desse jeito? O caderno de física está assim de\npoesias e letras de fox e caricaturas de colegas, não sei também se de algum professor! E para que\nseis caixas de fósforo em cima dessa vitrola? E onde já se viu misturar na mesma mesa esse nunca\nassaz manuseado Manuel Bandeira, e El son entero, de Nicolás Guillén, e os poemas de Mário de\nAndrade, e os Pássaros Perdidos de Tagore, e Fernando Pessoa, e esse pocket book policial? Quer\nler Graham Greene, e fazer versos, e fumar feito um desesperado, e não perder praia no Arpoador,\nnem broto na vizinhança, nem filme na semana e passar nas provas. E em que mundo isso é\npossível?\nGuardo os chinelos, que ficam sempre emborcados. Já lhe disse que isso é atraso de vida. E ele\nmorre de rir. E ponho as cobertas em cima da cama. E abro as janelas, para sair esse cheiro de\nfumo. E deixo só uma caixa de fósforos. Mas não faço mais nada, porque abri um caderno, de letra\nmuito ruim, até a metade com os seus versos.\n¹ Poema célebre do escritor indiano Rudyard Kipling (1865-1936), Prêmio Nobel de Literatura de"
   },
   {
     "id": "classes_var-pdf_4_classes_var-q50",
@@ -11209,37 +11209,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 50,
-    "statement": "Assinale a opção em que se e analisou ERRONEAMENTE a classe gramatical da palavra\nsublinhada.",
+    "statement": "OBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico.\nAssinale a opção em que se e analisou ERRONEAMENTE a classe gramatical da palavra\nsublinhada.",
     "options": [
       {
         "letter": "A",
-        "text": "(...) e só não ponho a mão na cabeça porque, afinal das contas, o correr dos anos nos dá uma certa filosofia. – substantivo.",
+        "text": "(...) e só não ponho a mão na cabeça porque, afinal das contas, o <u>correr</u> dos anos nos dá uma certa filosofia. – substantivo.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "(...) quando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este “Poesia até agora” (...) – conjunção subordinativa conformativa.",
+        "text": "(...) quando ficou lendo Carlos Drummond de Andrade até às tantas, <u>como</u> prova este “Poesia até agora” (...) – conjunção subordinativa conformativa.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "(...) o correr dos anos nos dá uma certa filosofia. – pronome indefinido.",
+        "text": "(...) o correr dos anos nos dá uma <u>certa</u> filosofia. – pronome indefinido.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses moleques (...) – artigo indefinido.",
+        "text": "<u>Umas</u> acham que um dia dá um estalo de Padre Vieira na cabeça desses moleques (...) – artigo indefinido.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "dizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe (...) – adjetivo.",
+        "text": "dizer que peregrinei por antiquários para descobrir <u>nobres</u> jacarandás, de boa estirpe (...) – adjetivo.",
         "correct": false
       }
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "UM QUARTO DE RAPAZ\nElsie Lessa\nAbro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça porque, afinal\ndas contas, o correr dos anos nos dá uma certa filosofia. Essa rapaziada parece que é mesmo toda\nassim.\nQuem sai para uma prova de matemática não há mesmo de ter deixado a cama feita, tanto mais\nquando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este Poesia até\nagora, rubro de vergonha de ter sido largado no chão junto a este cinzeiro transbordante e às\nmeias azuis de náilon. E dizer que desde que esse menino nasceu tento provar-lhe que já não\nestamos – hélas! – no tempo da escravidão e que somos nós mesmos, brancos, pretos ou\namarelos, intelectuais ou estudantes em provas, que devemos encaminhar ao destino conveniente\nas roupas da véspera. Qual, ele não se convence. Também uma manta escocesa, de suaves lãs\nmacias, que a mãe da gente trouxe embaixo do braço da Inglaterra até aqui, para que nos aqueça\nnas noites de inverno, não devia ser largada no chão, nem mesmo na companhia de um livro de\nversos. E quem é que está ligando para tudo isso?\nÓ mocidade inquieta, só mesmo o que está em ordem dentro deste quarto são os montes de\ndiscos. E estes livros, meu Deus? Como é que gente que gosta de ler pode deixar os próprios\nlivros numa bagunça dessas? Coitado do Pablo Neruda, olha onde foi parar! E o Dom Quixote de la\nMancha, Virgem Santíssima! Há três gerações que os antepassados desse menino não fazem\noutra coisa senão escrever livros, e ele os trata assim!\n− Livro é pra ler! Não é para enfeitar estante!\n− Está certo! Que não enfeite, mas também não precisam ser empurrados desse jeito, lá para o\nfundo, com esse monte de revistas de jazz em cima! E custava, criatura, custava você pendurar\nessas calças nesse guarda-roupa que é para você, sozinho, que é provido de cabides, que não têm\noutro destino senão abrigar as suas calças?\n− Mania de ordem é complexo de culpa, já te avisei! Meu quarto está ótimo, está formidável. E não\ngosto que mexa, hein, senão depois não acho as minhas coisas!\nE pensar que esse menino um dia casa e vai levar essas noções de arrumação para a infeliz da\nesposa, e que juízo, que juízo vai fazer essa moça de mim, meu Deus do céu! Há bem uns quinze\nanos que esse problema me atormenta, tenho trocado confidências com amigas e há várias\nopiniões a respeito. Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses\nmoleques e passam a pendurar a roupa, tirar pó de livro, desamarrar o sapato antes de tirar do pé.\nPode ser. Deus permita! Mas que agonia, enquanto isso não acontece.\ndizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe, que o\nrodeassem em todas as suas horas, que lhe infundissem o gosto das coisas belas. Qual! Pendurei a\nbalada do “If”¹ em cima de todos esses discos de jazz, e sobre a vitrola, já nem sei por quê, esse\nbelo retrato de Napoleão, em esmalte, vindo das margens do Sena! E ele está se importando? O\nviolão está sem cordas, e em cima do meu retrato, radioso retrato da minha juventude, ele já pôs o\nBilly Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas! E não\ntira um, antes de colocar o outro! Vai empurrando por cima e já a moldura estoura com essa\nvariedade de predileções! São Sebastião, na sua peanha dourada, está de olhos erguidos para o\nalto e, felizmente, não vê a desordem que anda cá por baixo.\nVejo eu, olho em roda para saber por onde começar. Custava ele despejar esses cinzeiros? Onde\njá se viu fumar na cama e fazer furos nos meus lençóis? E, em tempos de provas, é hora de ficar\nfolheando livros de versos, até tarde da noite, desse jeito? O caderno de física está assim de\npoesias e letras de fox e caricaturas de colegas, não sei também se de algum professor! E para que\nseis caixas de fósforo em cima dessa vitrola? E onde já se viu misturar na mesma mesa esse nunca\nassaz manuseado Manuel Bandeira, e El son entero, de Nicolás Guillén, e os poemas de Mário de\nAndrade, e os Pássaros Perdidos de Tagore, e Fernando Pessoa, e esse pocket book policial? Quer\nler Graham Greene, e fazer versos, e fumar feito um desesperado, e não perder praia no Arpoador,\nnem broto na vizinhança, nem filme na semana e passar nas provas. E em que mundo isso é\npossível?\nGuardo os chinelos, que ficam sempre emborcados. Já lhe disse que isso é atraso de vida. E ele\nmorre de rir. E ponho as cobertas em cima da cama. E abro as janelas, para sair esse cheiro de\nfumo. E deixo só uma caixa de fósforos. Mas não faço mais nada, porque abri um caderno, de letra\nmuito ruim, até a metade com os seus versos.\n¹ Poema célebre do escritor indiano Rudyard Kipling (1865-1936), Prêmio Nobel de Literatura de\n1907.\nOBS.: O texto foi adaptado às regras do Novo Acordo Ortográfico."
+    "readingText": "UM QUARTO DE RAPAZ\nElsie Lessa\nAbro as venezianas na alegria do sol desta manhã e só não ponho a mão na cabeça porque, afinal\ndas contas, o correr dos anos nos dá uma certa filosofia. Essa rapaziada parece que é mesmo toda\nassim.\nQuem sai para uma prova de matemática não há mesmo de ter deixado a cama feita, tanto mais\nquando ficou lendo Carlos Drummond de Andrade até às tantas, como prova este Poesia até\nagora, rubro de vergonha de ter sido largado no chão junto a este cinzeiro transbordante e às\nmeias azuis de náilon. E dizer que desde que esse menino nasceu tento provar-lhe que já não\nestamos – hélas! – no tempo da escravidão e que somos nós mesmos, brancos, pretos ou\namarelos, intelectuais ou estudantes em provas, que devemos encaminhar ao destino conveniente\nas roupas da véspera. Qual, ele não se convence. Também uma manta escocesa, de suaves lãs\nmacias, que a mãe da gente trouxe embaixo do braço da Inglaterra até aqui, para que nos aqueça\nnas noites de inverno, não devia ser largada no chão, nem mesmo na companhia de um livro de\nversos. E quem é que está ligando para tudo isso?\nÓ mocidade inquieta, só mesmo o que está em ordem dentro deste quarto são os montes de\ndiscos. E estes livros, meu Deus? Como é que gente que gosta de ler pode deixar os próprios\nlivros numa bagunça dessas? Coitado do Pablo Neruda, olha onde foi parar! E o Dom Quixote de la\nMancha, Virgem Santíssima! Há três gerações que os antepassados desse menino não fazem\noutra coisa senão escrever livros, e ele os trata assim!\n− Livro é pra ler! Não é para enfeitar estante!\n− Está certo! Que não enfeite, mas também não precisam ser empurrados desse jeito, lá para o\nfundo, com esse monte de revistas de jazz em cima! E custava, criatura, custava você pendurar\nessas calças nesse guarda-roupa que é para você, sozinho, que é provido de cabides, que não têm\noutro destino senão abrigar as suas calças?\n− Mania de ordem é complexo de culpa, já te avisei! Meu quarto está ótimo, está formidável. E não\ngosto que mexa, hein, senão depois não acho as minhas coisas!\nE pensar que esse menino um dia casa e vai levar essas noções de arrumação para a infeliz da\nesposa, e que juízo, que juízo vai fazer essa moça de mim, meu Deus do céu! Há bem uns quinze\nanos que esse problema me atormenta, tenho trocado confidências com amigas e há várias\nopiniões a respeito. Umas acham que um dia dá um estalo de Padre Vieira na cabeça desses\nmoleques e passam a pendurar a roupa, tirar pó de livro, desamarrar o sapato antes de tirar do pé.\nPode ser. Deus permita! Mas que agonia, enquanto isso não acontece.\ndizer que peregrinei por antiquários para descobrir nobres jacarandás, de boa estirpe, que o\nrodeassem em todas as suas horas, que lhe infundissem o gosto das coisas belas. Qual! Pendurei a\nbalada do “If”¹ em cima de todos esses discos de jazz, e sobre a vitrola, já nem sei por quê, esse\nbelo retrato de Napoleão, em esmalte, vindo das margens do Sena! E ele está se importando? O\nviolão está sem cordas, e em cima do meu retrato, radioso retrato da minha juventude, ele já pôs o\nBilly Eckstine, a Sarah Vaughan, a Ava Gardner de biquíni e duas namoradas ora descartadas! E não\ntira um, antes de colocar o outro! Vai empurrando por cima e já a moldura estoura com essa\nvariedade de predileções! São Sebastião, na sua peanha dourada, está de olhos erguidos para o\nalto e, felizmente, não vê a desordem que anda cá por baixo.\nVejo eu, olho em roda para saber por onde começar. Custava ele despejar esses cinzeiros? Onde\njá se viu fumar na cama e fazer furos nos meus lençóis? E, em tempos de provas, é hora de ficar\nfolheando livros de versos, até tarde da noite, desse jeito? O caderno de física está assim de\npoesias e letras de fox e caricaturas de colegas, não sei também se de algum professor! E para que\nseis caixas de fósforo em cima dessa vitrola? E onde já se viu misturar na mesma mesa esse nunca\nassaz manuseado Manuel Bandeira, e El son entero, de Nicolás Guillén, e os poemas de Mário de\nAndrade, e os Pássaros Perdidos de Tagore, e Fernando Pessoa, e esse pocket book policial? Quer\nler Graham Greene, e fazer versos, e fumar feito um desesperado, e não perder praia no Arpoador,\nnem broto na vizinhança, nem filme na semana e passar nas provas. E em que mundo isso é\npossível?\nGuardo os chinelos, que ficam sempre emborcados. Já lhe disse que isso é atraso de vida. E ele\nmorre de rir. E ponho as cobertas em cima da cama. E abro as janelas, para sair esse cheiro de\nfumo. E deixo só uma caixa de fósforos. Mas não faço mais nada, porque abri um caderno, de letra\nmuito ruim, até a metade com os seus versos.\n¹ Poema célebre do escritor indiano Rudyard Kipling (1865-1936), Prêmio Nobel de Literatura de\n1907."
   },
   {
     "id": "classes_var-pdf_4_classes_var-q51",
@@ -11330,27 +11330,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Mãe.",
+        "text": "<u>Mãe</u>.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "Filhos.",
+        "text": "<u>Filhos</u>.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Mulher.",
+        "text": "<u>Mulher</u>.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Marinheiros.",
+        "text": "<u>Marinheiros</u>.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Parentes.",
+        "text": "<u>Parentes</u>.",
         "correct": false
       }
     ],
@@ -11365,31 +11365,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 54,
-    "statement": "Com base no texto, responda à questão.\nAssinale a opção em que se analisou CORRETAMENTE a classe gramatical do termo sublinhado.",
+    "statement": "Com base no texto, responda à questão.\nAssinale a opção em que se analisou <u>CORRETAMENTE</u> a classe gramatical do termo sublinhado.",
     "options": [
       {
         "letter": "A",
-        "text": "O resto do dia era neutro. Restava amanhã. E outro amanhã. – substantivo.",
+        "text": "O resto do dia era neutro. Restava amanhã. E outro <u>amanhã.</u> – substantivo.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "Muitas recebi durante esse prazo. – advérbio de intensidade.",
+        "text": "<u>Muitas</u> recebi durante esse prazo. – advérbio de intensidade.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "(...) todos os dias passei por tuas proximidades, até mesmo em cima de ti (...) – locução adverbial.",
+        "text": "(...) todos os dias passei por tuas proximidades, até mesmo <u>em</u> <u>cima</u> <u>de</u> <u>ti</u> (...) – locução adverbial.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Nunca imaginei ao certo o que de grande me reservavas. – advérbio de negação.",
+        "text": "<u>Nunca</u> imaginei ao certo o que de grande me reservavas. – advérbio de negação.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Quem sabe se a riqueza, de que eu tinha medo, mas revestida de doçura e imaginação (...) – conjunção condicional.",
+        "text": "Quem sabe <u>se</u> a riqueza, de que eu tinha medo, mas revestida de doçura e imaginação (...) – conjunção condicional.",
         "correct": false
       }
     ],
@@ -11408,27 +11408,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Como combinamos, a reunião começou cedo.",
+        "text": "<u>Como</u> combinamos, a reunião começou cedo.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "A menina era inteligente como o pai.",
+        "text": "A menina era inteligente <u>como</u> o pai.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Como passou mal, não foi à festa do colégio.",
+        "text": "<u>Como</u> passou mal, não foi à festa do colégio.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Sei como o menino se sentiu após a repreensão.",
+        "text": "Sei <u>como</u> o menino se sentiu após a repreensão.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "O adolescente e a mãe fizeram isso como?",
+        "text": "O adolescente e a mãe fizeram isso <u>como?</u>",
         "correct": false
       }
     ],
@@ -11442,16 +11442,16 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 56,
-    "statement": "Leia o período abaixo.\n“Cada qual se achava mais inteligente do que o outro, mas Steve em geral tratava Bill como\nalguém levemente inferior, sobretudo em questões de gosto e estilo”, diz Andy Hertzfeld.” (l. 32 a\n35).\nAnalisando morfologicamente as palavras destacadas acima, pode-se afirmar que a expressão",
+    "statement": "Leia o período abaixo.\n<u>“Cada qual</u> se achava <u>mais</u> inteligente <u>do que</u> o outro, mas Steve em geral tratava Bill <u>como</u>\nalguém levemente inferior, <u>sobretudo</u> em questões de gosto e estilo”, diz Andy Hertzfeld.” (l. 32 a\n35).\nAnalisando morfologicamente as palavras destacadas acima, pode-se afirmar que a expressão",
     "options": [
       {
         "letter": "A",
-        "text": "cada qual corresponde a um artigo definido.",
+        "text": "<u>cada qual</u> corresponde a um artigo definido.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "mais...do que é uma construção própria do grau superlativo absoluto.",
+        "text": "<u>mais...do</u> <u>que</u> é uma construção própria do grau superlativo absoluto.",
         "correct": false
       },
       {
@@ -11461,7 +11461,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "D",
-        "text": "sobretudo é um advérbio que equivale à palavra principalmente.",
+        "text": "sobretudo é um advérbio que equivale à palavra <u>principalmente.</u>",
         "correct": true
       }
     ],
@@ -11480,22 +11480,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Nos segmentos \"[...] que lhe davam más notícias.\" e \"[...] o Rei ouvia sorrindo tais novas.\", os vocábulos sublinhados têm a mesma classe gramatical.",
+        "text": "Nos segmentos \"[...] que lhe davam <u>más</u> notícias.\" e \"[...] o Rei ouvia sorrindo tais <u>novas.\",</u> os vocábulos sublinhados têm a mesma classe gramatical.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Nos segmentos \"[...] surpreso consigo mesmo, [...].\" e \"Tão satisfeito ficou com o mensageiro [...].\" os termos sublinhados exercem funções sintáticas distintas.",
+        "text": "Nos segmentos \"[...] surpreso <u>consigo</u> <u>mesmo,</u> [...].\" e \"Tão satisfeito ficou <u>com o</u> <u>mensageiro</u> [...].\" os termos sublinhados exercem funções sintáticas distintas.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "0 vocábulo \"que\" exerce a mesma função nos seguintes períodos: \"O Rei mandava cortar a cabeça dos mensageiros que lhe davam más notícias.\" e \"Tratava-se, como é fácil de imaginar, de um homem que dominava espantosamente bem a arte de dar más notícias.\".",
+        "text": "0 vocábulo \"que\" exerce a mesma função nos seguintes períodos: \"O Rei mandava cortar a cabeça dos mensageiros <u>que</u> lhe davam más notícias.\" e \"Tratava-se, como é fácil de imaginar, de um homem que dominava espantosamente bem a arte de dar más notícias.\".",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Na oração \"[...] que o nomeou seu porta-voz oficial.\", o termo sublinhado exerce a mesma função exercida na seguinte frase: O Rei considerou culpado seu porta-voz oficial.",
+        "text": "Na oração \"[...] que o nomeou <u>seu porta-voz oficial.\",</u> o termo sublinhado exerce a mesma função exercida na seguinte frase: O Rei considerou culpado seu porta-voz oficial.",
         "correct": false
       },
       {
@@ -11515,7 +11515,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 58,
-    "statement": "( ) Em “Esse corpo está com mais remendos X” (l. 31 e 32), a substituição do pronome grifado por\naquele acarretaria alteração de sentido no trecho.\nA seqüência correta é:",
+    "statement": "( ) Em <u>“Esse</u> corpo está com mais remendos X” (l. 31 e 32), a substituição do pronome grifado por\n<u>aquele</u> acarretaria alteração de sentido no trecho.\nA seqüência correta é:",
     "options": [
       {
         "letter": "A",
@@ -11540,7 +11540,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "(Eduardo Galeano. Futebol, ao sol e à sombra.)\nJulgue cada item a seguir, como V (verdadeiro) ou F (falso), considerando o que se afirma sobre o\nemprego dos pronomes no texto II.\n( ) Em “A bola o procura, o reconhece, precisa dele.” (l. 12) e “/.../ que não estão vendo o que\nacontece.” (l. 26 e 27), todos os termos assinalados são pronomes pessoais oblíquos átonos.\n( ) No trecho “por obra e graça desses passes devolvidos num toque, essas fintas que desenham\nos zês na grama, esses golaços de calcanhar ou de bicicleta...” (l. 17 a 20), os pronomes grifados\npoderiam contrair-se com a preposição de sem prejuízo da correção gramatical.\n( ) No trecho “No peito de seu pé, ela descansa e se embala. Ele lhe dá brilho e a faz falar...” (l. 12\na 14), todos os pronomes grifados têm o mesmo referente."
+    "readingText": "(Eduardo Galeano. Futebol, ao sol e à sombra.)\nJulgue cada item a seguir, como V (verdadeiro) ou F (falso), considerando o que se afirma sobre o\nemprego dos pronomes no texto II.\n( ) Em “A bola o procura, o reconhece, precisa dele.” (l. 12) e “/.../ que não estão vendo <u>o</u> que\nacontece.” (l. 26 e 27), todos os termos assinalados são pronomes pessoais oblíquos átonos.\n( ) No trecho “por obra e graça desses passes devolvidos num toque, <u>essas</u> fintas que desenham\nos zês na grama, <u>esses</u> golaços de calcanhar ou de bicicleta...” (l. 17 a 20), os pronomes grifados\npoderiam contrair-se com a preposição de sem prejuízo da correção gramatical.\n( ) No trecho “No peito de <u>seu</u> pé, ela descansa e se embala. Ele <u>lhe</u> dá brilho e <u>a</u> faz falar...” (l. 12\na 14), todos os pronomes grifados têm o mesmo referente."
   },
   {
     "id": "classes_var-pdf_4_classes_var-q59",
@@ -11563,7 +11563,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "C",
-        "text": "“A bola ri, radiante, no ar” (l. 23) – radiante é uma característica adverbial de modo.",
+        "text": "“A bola ri, radiante, no ar” (l. 23) – <u>radiante</u> é uma característica adverbial de modo.",
         "correct": false
       },
       {
@@ -11587,28 +11587,28 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Não suporto mais ver tantas tragédias, crimes, violências...” (l. 07 e 08)",
+        "text": "“Não suporto mais ver <u>tantas</u> tragédias, crimes, violências...” (l. 07 e 08)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Fala-se muito, mesmo com a bola rolando.” (l. 21 e 22)",
+        "text": "Fala-se <u>muito,</u> mesmo com a bola rolando.” (l. 21 e 22)",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“Outra discussão chata, durante e após as partidas...” (l. 34 e 35)",
+        "text": "“Outra discussão <u>chata,</u> durante e após as partidas...” (l. 34 e 35)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Muitas parecem iguais, mas não são.” (l. 49)",
+        "text": "Muitas parecem <u>iguais,</u> mas não são.” (l. 49)",
         "correct": false
       }
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "TEXTO I\nO silêncio incomoda\n\nComo trabalho em casa, assisto a um grande número de jogos e programas esportivos, alguns porque gosto e outros para me manter atualizado. Vejo ainda muitos noticiários gerais, filmes, programas culturais e também, por curiosidade, muitas coisas ruins. Estou viciado em televisão.\n\nNão suporto mais ver tantas tragédias, crimes, violências, falcatruas e tantas politicagens para a realização da Copa de 2014.\n\nEstou sem paciência para assistir a tantas partidas tumultuadas no Brasil, consequência do estilo de jogar, da tolerância com a violência e do ambiente bélico em que se transformou o futebol, dentro e fora do campo.\n\nNa transmissão das partidas, fala-se e grita-se demais. Não há um único instante de silêncio, nenhuma pausa. O barulho é cada dia maior no futebol, nas ruas, nos bares, nos restaurantes e em quase todos os ambientes. O silêncio incomoda as pessoas.\n\nÉ óbvio que informações e estatísticas são importantíssimas. Mas exageram. Fala-se muito, mesmo com a bola rolando. Impressiona-me como se formam conceitos, dão opiniões, baseados em estatísticas que têm pouca ou nenhuma importância.\n\nNa partida entre Escócia e Brasil, um repórter da TV Globo deu a grande notícia de que Neymar foi o primeiro jogador brasileiro a marcar dois gols contra a Escócia em uma mesma partida.\n\nParece haver uma disputa para saber quem dá mais informações e estatísticas, e outra, entre os narradores, para saber quem grita gol mais alto e prolongado. Se dizem que a imagem vale mais que mil palavras, por que se fala e se grita tanto?\n\nOutra discussão chata, durante e após as partidas, é se um jogador teve a intenção de colocar a mão na bola e de fazer pênalti, e se outro teve a intenção de atingir o adversário. Com raríssimas exceções, ninguém é louco para fazer pênalti nem tão canalha para querer quebrar o outro jogador.\n\nO que ocorre, com frequência, é o jogador, no impulso, sem pensar, soltar o braço na cara do outro. O impulso está à frente da consciência. Não sou também tão ingênuo para achar que todas as faltas violentas são involuntárias.\n\nNão dá para o árbitro saber se a falta foi intencional ou não. Ele precisa julgar o fato, e não a intenção. Eles precisam ter também bom senso, o que é raro no ser humano, para saber a gravidade das faltas. Muitas parecem iguais, mas não são. Ter critério não é unificar as diferenças.\n\n(Tostão, Folha de S.Paulo, caderno D, esporte, p. 11, 10/04/2011.)"
+    "readingText": "TEXTO I\nO silêncio incomoda\n\nComo trabalho em casa, assisto a um grande número de jogos e programas esportivos, alguns porque gosto e outros para me manter atualizado. Vejo ainda muitos noticiários gerais, filmes, programas culturais e também, por curiosidade, muitas coisas ruins. Estou viciado em televisão.\n\nNão suporto mais ver tantas tragédias, crimes, violências, falcatruas e tantas politicagens para a realização da Copa de 2014.\n\nEstou sem paciência para assistir a tantas partidas tumultuadas no Brasil, consequência do estilo de jogar, da tolerância com a violência e do ambiente bélico em que se transformou o futebol, dentro e fora do campo.\n\nNa transmissão das partidas, fala-se e grita-se demais. Não há um único instante de silêncio, nenhuma pausa. O barulho é cada dia maior no futebol, nas ruas, nos bares, nos restaurantes e em quase todos os ambientes. O silêncio incomoda as pessoas.\n\nÉ óbvio que informações e estatísticas são importantíssimas. Mas exageram. Fala-se muito, mesmo com a bola rolando. Impressiona-me como se formam conceitos, dão opiniões, baseados em estatísticas que têm pouca ou nenhuma importância.\n\nNa partida entre Escócia e Brasil, um repórter da TV Globo deu a grande notícia de que Neymar foi o primeiro jogador brasileiro a marcar dois gols contra a Escócia em uma mesma partida.\n\nParece haver uma disputa para saber quem dá mais informações e estatísticas, e outra, entre os narradores, para saber quem grita gol mais <u>alto</u> e prolongado. Se dizem que a imagem vale mais que mil palavras, por que se fala e se grita tanto?\n\nOutra discussão chata, durante e após as partidas, é se um jogador teve a intenção de colocar a mão na bola e de fazer pênalti, e se outro teve a intenção de atingir o adversário. Com raríssimas exceções, ninguém é louco para fazer pênalti nem tão canalha para querer quebrar o outro jogador.\n\nO que ocorre, com frequência, é o jogador, no impulso, sem pensar, soltar o braço na cara do outro. O impulso está à frente da consciência. Não sou também tão ingênuo para achar que todas as faltas violentas são involuntárias.\n\nNão dá para o árbitro saber se a falta foi intencional ou não. Ele precisa julgar o fato, e não a intenção. Eles precisam ter também bom senso, o que é raro no ser humano, para saber a gravidade das faltas. Muitas parecem iguais, mas não são. Ter critério não é unificar as diferenças.\n\n(Tostão, Folha de S.Paulo, caderno D, esporte, p. 11, 10/04/2011.)"
   },
   {
     "id": "classes_var-pdf_4_classes_var-q61",
@@ -11617,7 +11617,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 61,
-    "statement": "Sobre o fragmento do texto “O que ocorre, com frequência, é o jogador, no impulso, sem pensar,\nsoltar o braço na cara do outro.” (l. 40 e 41), é correto afirmar que",
+    "statement": "TEXTO I\nSobre o fragmento do texto “O que ocorre, com frequência, é o jogador, no impulso, sem pensar,\nsoltar o braço na cara do outro.” (l. 40 e 41), é correto afirmar que",
     "options": [
       {
         "letter": "A",
@@ -11689,27 +11689,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "[...] pauzinhos de comer[...].”(3°§) - o sufixo de diminutivo denota intensidade.",
+        "text": "[...] <u>pauzinhos</u> de comer[...].”(3°§) - o sufixo de diminutivo denota intensidade.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "\"[...] guerra fratricida[...].”(3°§) - O adjetivo, por extensão de sentido, pode significar “CIVIL”.",
+        "text": "\"[...] guerra <u>fratricida[...].”(3°§)</u> - O adjetivo, por extensão de sentido, pode significar “CIVIL”.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "\"[...] o povo francês[...].%(2°§) - O adjetivo, na flexão de número, tem o acréscimo de um “S”.",
+        "text": "\"[...] o povo <u>francês[...].%(2°§)</u> - O adjetivo, na flexão de número, tem o acréscimo de um “S”.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "’[...] não fez sendo retroceder[...].”(3°§) - o verbo tem um prefixo “RE-”.",
+        "text": "’[...] não fez sendo <u>retroceder[...].”(3°§)</u> - o verbo tem um prefixo “RE-”.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\"[...] países latino-americanos[...].”(3°§) - o adjetivo admite também a flexão “LATINOS-AMERICANOS”.",
+        "text": "\"[...] países <u>latino-americanos[...].”(3°§)</u> - o adjetivo admite também a flexão “LATINOS-AMERICANOS”.",
         "correct": false
       }
     ],
@@ -11724,7 +11724,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 64,
-    "statement": "Leia atentamente o seguinte texto:\nAssinale, dentre as alternativas abaixo, os termos desse mesmo trecho a que se referem,\nrespectivamente, os elementos coesivos em destaque.",
+    "statement": "Assinale, dentre as alternativas abaixo, os termos desse mesmo trecho a que se referem,\nrespectivamente, os elementos coesivos em destaque.",
     "options": [
       {
         "letter": "A",
@@ -11754,7 +11754,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "São Bernardo (Graciliano Ramos)\nConheci que Madalena era boa em demasia, mas não conheci tudo de uma vez. Ela se revelou\npouco a pouco, e nunca se revelou inteiramente. A culpa foi minha, ou antes, a culpa foi desta vida\nagreste, que me deu uma alma agreste.\nE, falando assim, compreendo que perco o tempo. Com efeito, se me escapa o retrato moral de\nminha mulher, para que serve esta narrativa? Para nada, mas sou forçado a escrever.\nQuando os grilos cantam, sento-me aqui à mesa da sala de jantar, bebo café, acendo o cachimbo.\nÀs vezes as idéias não vêm, ou vêm muito numerosas – e a folha permanece meio escrita, como\nestava na véspera. Releio algumas linhas, que me desagradam. Não vale a pena tentar corrigi-las.\nAfasto o papel.\nEmoções indefiníveis me agitam – inquietação terrível, desejo doido de voltar, tagarelar\nnovamente com Madalena, como fazíamos todos os dias, a esta hora. Saudade? Não, não é isto: é\ndesespero, raiva, um peso enorme no coração.\nProcuro recordar o que dizíamos. Impossível. As minhas palavras eram apenas palavras,\nreprodução imperfeita de fatos exteriores, e as dela tinham alguma coisa que não consigo exprimir.\nPara senti-las melhor, eu apagava as luzes, deixava que a sombra nos envolvesse até ficarmos dois\nvultos indistintos na escuridão.\nLá fora os sapos arengavam, o vento gemia, as árvores do pomar tornavam-se massas negras.\n– Casimiro!\nCasimiro Lopes estava no jardim, acocorado ao pé da janela, vigiando.\n– Casimiro!\nA figura de Casimiro Lopes aparece à janela, os sapos gritam, o vento sacode as árvores, apenas\nvisíveis na treva. Maria das Dores entra e vai abrir o comutador. Detenho-a: não quero luz.\nO tique-taque do relógio diminui, os grilos começam a cantar. E Madalena surge no lado de lá da\nmesa. Digo baixinho:\n– Madalena!\nA voz dela me chega aos ouvidos. Não, não é aos ouvidos. Também já não a vejo com os olhos.\nEstou encostado à mesa, as mãos cruzadas. Os objetos fundiram-se, e não enxergo sequer a\ntoalha branca.\n– Madalena...\nA voz de Madalena continua a acariciar-me. Que diz ela? Pede-me naturalmente que mande\nalgum dinheiro a mestre Caetano. Isto me irrita, mas a irritação é diferente das outras, é uma\nirritação antiga, que me deixa inteiramente calmo. Loucura estar uma pessoa ao mesmo tempo\nzangada e tranqüila. Mas estou assim. Irritado contra quem? Contra mestre Caetano. Não obstante\nele ter morrido, acho bom que vá trabalhar. Mandrião!\nA toalha reaparece, mas não sei se é esta toalha sobre que tenho as mãos cruzadas ou a que\nestava aqui há cinco anos.\nRumor do vento, dos sapos, dos grilos. A porta do escritório abre-se de manso, os passos de seu\nRibeiro afastam-se. Uma coruja pia na torre da igreja. Terá realmente piado a coruja? Será a\nmesma que piava há dois anos? Talvez seja até o mesmo pio daquele tempo.\nAgora seu Ribeiro está conversando com d. Glória no salão. Esqueço que eles me deixaram e que\nesta casa está quase deserta.\n– Casimiro!\nPenso que chamei Casimiro Lopes. A cabeça dele, com o chapéu de couro de sertanejo, assoma\nde quando em quando à janela, mas ignoro se a visão que me dá é atual ou remota.\nAgitam-se em mim sentimentos inconciliáveis: encolerizo-me e enterneço-me; bato na mesa e\ntenho vontade de chorar.\nSão Bernardo, Rio de Janeiro, Record, 1983.\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta.\n“As minhas palavras eram apenas palavras, reprodução imperfeita de fatos exteriores, e as dela\ntinham alguma coisa que não consigo exprimir. Para senti-las melhor, eu apagava as luzes...”."
+    "readingText": "Leia atentamente o seguinte texto:\nSão Bernardo (Graciliano Ramos)\nConheci que Madalena era boa em demasia, mas não conheci tudo de uma vez. Ela se revelou\npouco a pouco, e nunca se revelou inteiramente. A culpa foi minha, ou antes, a culpa foi desta vida\nagreste, que me deu uma alma agreste.\nE, falando assim, compreendo que perco o tempo. Com efeito, se me escapa o retrato moral de\nminha mulher, para que serve esta narrativa? Para nada, mas sou forçado a escrever.\nQuando os grilos cantam, sento-me aqui à mesa da sala de jantar, bebo café, acendo o cachimbo.\nÀs vezes as idéias não vêm, ou vêm muito numerosas – e a folha permanece meio escrita, como\nestava na véspera. Releio algumas linhas, que me desagradam. Não vale a pena tentar corrigi-las.\nAfasto o papel.\nEmoções indefiníveis me agitam – inquietação terrível, desejo doido de voltar, tagarelar\nnovamente com Madalena, como fazíamos todos os dias, a esta hora. Saudade? Não, não é isto: é\ndesespero, raiva, um peso enorme no coração.\nProcuro recordar o que dizíamos. Impossível. As minhas palavras eram apenas palavras,\nreprodução imperfeita de fatos exteriores, e as dela tinham alguma coisa que não consigo exprimir.\nPara senti-las melhor, eu apagava as luzes, deixava que a sombra nos envolvesse até ficarmos dois\nvultos indistintos na escuridão.\nLá fora os sapos arengavam, o vento gemia, as árvores do pomar tornavam-se massas negras.\n– Casimiro!\nCasimiro Lopes estava no jardim, acocorado ao pé da janela, vigiando.\n– Casimiro!\nA figura de Casimiro Lopes aparece à janela, os sapos gritam, o vento sacode as árvores, apenas\nvisíveis na treva. Maria das Dores entra e vai abrir o comutador. Detenho-a: não quero luz.\nO tique-taque do relógio diminui, os grilos começam a cantar. E Madalena surge no lado de lá da\nmesa. Digo baixinho:\n– Madalena!\nA voz dela me chega aos ouvidos. Não, não é aos ouvidos. Também já não a vejo com os olhos.\nEstou encostado à mesa, as mãos cruzadas. Os objetos fundiram-se, e não enxergo sequer a\ntoalha branca.\n– Madalena...\nA voz de Madalena continua a acariciar-me. Que diz ela? Pede-me naturalmente que mande\nalgum dinheiro a mestre Caetano. Isto me irrita, mas a irritação é diferente das outras, é uma\nirritação antiga, que me deixa inteiramente calmo. Loucura estar uma pessoa ao mesmo tempo\nzangada e tranqüila. Mas estou assim. Irritado contra quem? Contra mestre Caetano. Não obstante\nele ter morrido, acho bom que vá trabalhar. Mandrião!\nA toalha reaparece, mas não sei se é esta toalha sobre que tenho as mãos cruzadas ou a que\nestava aqui há cinco anos.\nRumor do vento, dos sapos, dos grilos. A porta do escritório abre-se de manso, os passos de seu\nRibeiro afastam-se. Uma coruja pia na torre da igreja. Terá realmente piado a coruja? Será a\nmesma que piava há dois anos? Talvez seja até o mesmo pio daquele tempo.\nAgora seu Ribeiro está conversando com d. Glória no salão. Esqueço que eles me deixaram e que\nesta casa está quase deserta.\n– Casimiro!\nPenso que chamei Casimiro Lopes. A cabeça dele, com o chapéu de couro de sertanejo, assoma\nde quando em quando à janela, mas ignoro se a visão que me dá é atual ou remota.\nAgitam-se em mim sentimentos inconciliáveis: encolerizo-me e enterneço-me; bato na mesa e\ntenho vontade de chorar.\nSão Bernardo, Rio de Janeiro, Record, 1983.\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta.\n“As minhas palavras eram apenas palavras, reprodução imperfeita de fatos exteriores, e <u>as</u> dela\ntinham alguma coisa <u>que</u> não consigo exprimir. Para <u>senti-las</u> melhor, eu apagava as luzes...”."
   },
   {
     "id": "classes_var-pdf_4_classes_var-q65",
@@ -11763,37 +11763,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 65,
-    "statement": "Leia atentamente o seguinte texto:\nNos períodos seguintes, as expressões sublinhadas se classificam como numerais. A EXCEÇÃO\nencontra-se na alternativa:",
+    "statement": "Nos períodos seguintes, as expressões sublinhadas se classificam como numerais. A EXCEÇÃO\nencontra-se na alternativa:",
     "options": [
       {
         "letter": "A",
-        "text": "“Faz mais de trinta anos escrevi uma história de cabra morta por retirante...”",
+        "text": "“Faz mais de <u>trinta</u> anos escrevi uma história de cabra morta por retirante...”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Eram uns doze - foram aparecendo pelo oitão da casa...”",
+        "text": "“Eram uns <u>doze</u> - foram aparecendo pelo oitão da casa...”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Os dois cabras se aproximaram sem que ele pressentisse...”",
+        "text": "“Os <u>dois</u> cabras se aproximaram sem que ele pressentisse...”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“O loureba é que virava a cara de um lado para o outro...”",
+        "text": "“O loureba é que virava a cara de <u>um</u> lado para o outro...”",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "“Daqui a uma hora quero o pé de juazeiro limpo...”",
+        "text": "“Daqui a <u>uma</u> hora quero o pé de juazeiro limpo...”",
         "correct": false
       }
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Seca\nEra hora do almoço dos trabalhadores. Enquanto os homens comiam lá dentro, o fazendeiro velho\nsentava-se na rede do alpendre, à frente de casa espiando o sol no céu, que tinia como vidro;\nprocurando desviar os olhos da água do açude, lá além, que dentro de mais um mês estaria virada\nde lama.\nOs dois cabras se aproximaram sem que ele pressentisse. Era um alto e um baixo; o baixo grosso e\nescuro, vestido numa camisa de algodãozinho encardido. O alto era alourado e não se podia dizer\nque estivesse vestido de coisa nenhuma, porque era farrapo só. O grosso na mão trazia um couro\nde cabra, ainda pingando sangue, esfolado que fora fazia pouco. E nem tirou o caco de chapéu da\ncabeça, nem salvou ao menos.\nO velho até se assustou e bruscamente se pôs a cavalo na rede, a escutar a voz grossa e áspera,\ntal e qual quem falava:\n− Cidadão, vim lhe vender este couro de bode. Aquele “cidadão”, assim desabrido, já dizia tudo.\nNinguém chega de boa atenção em terreno alheio sem dar bom-dia. E tratando o dono da casa de\ncidadão. Assim, o fazendeiro achou melhor fingir que não ouvira ¾ e foi-se pondo de pé.\n− O quê? Que é que você quer?\nO homem escuro botou o couro em cima do parapeito e o sangue escorreu num -o pelo cal da\nparede:\n− Estou arranchado com minha família debaixo daquele juazeiro grande, ali. Essa cabra passou\nperto − não sei de quem era. Matei, e a mulher está cozinhando a carne para comer. Agora, o\ncouro − o senhor ou me dá dinheiro por ele, ou me dá farinha.\n− E de quem é essa cabra? É minha? Quem lhe deu ordem para matar?\nO velho estava tão furioso que o dedo dele, espetado no ar, tremia. E o loureba esfarrapado\nchegou perto e deu a sua risadinha:\n− Ninguém perguntou a ela o nome do dono...\nMas o outro, sempre sério, olhou o velho na cara:\n− Matei com ordem da fome. O senhor quer ordem melhor?\nNesse meio, os homens que almoçavam lá dentro escutaram as vozes alteradas e vieram ver o que\nhavia. Eram uns doze – foram aparecendo pelo oitão da casa, de um em um, e se abriram em\nredor dos estranhos no terreiro.\nAí o velho se vendo garantido, começou a gritar:\n− Na minha terra só eu dou ordem! Vocês são muito é atrevidos – me matarem o bicho e ainda me\ntrazerem o couro pra vender, por desaforo! Chico Luís, veja aí de quem é o sinal dessa criação.\nO feitor largou a foice no chão, puxou as orelhas do couro, e virou-se achando graça para um dos\ncompanheiros: era a sua cabrinha, não era mesmo, compadre Augusto? Está aqui o sinal...\nO Augusto veio olhar também e ficou danado:\n− Seus perversos, a cabra era da minha menina beber leite, estava cheia de cabrito novo!\nMas o olho do homem escuro era feio e, se ele se assustara vendo-se cercado pelos cabras da\nfazenda, não deu parecença. O loureba é que virava a cara de um lado para outro, procurando\nsaída; ainda levou a mão ao quadril, tateou o cabo da faca – mas cada um dos homens tinha uma\nfoice, um terçado, um ferro na mão.\nNesse pé o fazendeiro, para acabar com a história, resolveu mostrar bom coração; e gritou para o\ncorredor:\n− Menina! Manda aí uma cuia com um bocado de farinha!\nDepois, retornando ao homem:\n− Eu podia mandar prender vocês, para aprenderem a não matar bicho alheio! Mas têm crianças,\nnão é? Tenho pena das crianças! Leve essa farinha, comam e tratem de ir embora. Daqui a uma\nhora quero o pé de juazeiro limpo e vocês na estrada. Podem ir!\nO homem recebeu a cuia, não disse nada, saiu sem olhar para trás. O outro acompanhou, meio\ntemeroso, tirou ainda o chapéu em despedida, e pegou no passo do companheiro. O velho\nreclamava em voz alta – cabra desgraçado, além de fazer o malfeito, recebe o favor e nem sequer\nabana o rabo.\nOs trabalhadores, calados, acompanhavam com os olhos os dois estranhos que marchavam um\natrás do outro, na direção do juazeiro, do qual só se avistava a copa alta ali no terreiro. Ninguém\nsabe o que pensavam; o dono da cabra deu de mão no couro e foi com ele para trás da casa.\nAí a sineta bateu e os homens saíram para o serviço. Passando pelo juazeiro, lá viram a família ao\nredor do fogo, os meninos procurando pescar pedaços da carne que fervia numa lata. Mas o\nhomem escuro, encostado ao tronco, via-os passar, de braços cruzados, sem baixar os olhos.\nAinda foi o dono da cabra que baixou os seus; explicou depois que não gostava de briga.\nMORALIDADE: Este caso aconteceu mesmo. Faz mais de trinta anos escrevi uma história de cabra\nmorta por retirante, mas era diferente. Então, o homem sentia dor de consciência, e até se\nhumilhou quando o dono do bicho morto o chamou de ladrão. Agora não é mais assim. Agora eles\nsabem que a fome dá um direito que passa por cima de qualquer direito dos outros. A moralidade\nda história é mesmo esta: tudo mudou, mudou muito.\nQUEIROZ, Rachel de. Cenas brasileiras. São Paulo:\nÁtica, 1997, p. 14-17. (Para gostar de ler).\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta."
+    "readingText": "Leia atentamente o seguinte texto:\nSeca\nEra hora do almoço dos trabalhadores. Enquanto os homens comiam lá dentro, o fazendeiro velho\nsentava-se na rede do alpendre, à frente de casa espiando o sol no céu, que tinia como vidro;\nprocurando desviar os olhos da água do açude, lá além, que dentro de mais um mês estaria virada\nde lama.\nOs dois cabras se aproximaram sem que ele pressentisse. Era um alto e um baixo; o baixo grosso e\nescuro, vestido numa camisa de algodãozinho encardido. O alto era alourado e não se podia dizer\nque estivesse vestido de coisa nenhuma, porque era farrapo só. O grosso na mão trazia um couro\nde cabra, ainda pingando sangue, esfolado que fora fazia pouco. E nem tirou o caco de chapéu da\ncabeça, nem salvou ao menos.\nO velho até se assustou e bruscamente se pôs a cavalo na rede, a escutar a voz grossa e áspera,\ntal e qual quem falava:\n− Cidadão, vim lhe vender este couro de bode. Aquele “cidadão”, assim desabrido, já dizia tudo.\nNinguém chega de boa atenção em terreno alheio sem dar bom-dia. E tratando o dono da casa de\ncidadão. Assim, o fazendeiro achou melhor fingir que não ouvira ¾ e foi-se pondo de pé.\n− O quê? Que é que você quer?\nO homem escuro botou o couro em cima do parapeito e o sangue escorreu num -o pelo cal da\nparede:\n− Estou arranchado com minha família debaixo daquele juazeiro grande, ali. Essa cabra passou\nperto − não sei de quem era. Matei, e a mulher está cozinhando a carne para comer. Agora, o\ncouro − o senhor ou me dá dinheiro por ele, ou me dá farinha.\n− E de quem é essa cabra? É minha? Quem lhe deu ordem para matar?\nO velho estava tão furioso que o dedo dele, espetado no ar, tremia. E o loureba esfarrapado\nchegou perto e deu a sua risadinha:\n− Ninguém perguntou a ela o nome do dono...\nMas o outro, sempre sério, olhou o velho na cara:\n− Matei com ordem da fome. O senhor quer ordem melhor?\nNesse meio, os homens que almoçavam lá dentro escutaram as vozes alteradas e vieram ver o que\nhavia. Eram uns doze – foram aparecendo pelo oitão da casa, de um em um, e se abriram em\nredor dos estranhos no terreiro.\nAí o velho se vendo garantido, começou a gritar:\n− Na minha terra só eu dou ordem! Vocês são muito é atrevidos – me matarem o bicho e ainda me\ntrazerem o couro pra vender, por desaforo! Chico Luís, veja aí de quem é o sinal dessa criação.\nO feitor largou a foice no chão, puxou as orelhas do couro, e virou-se achando graça para um dos\ncompanheiros: era a sua cabrinha, não era mesmo, compadre Augusto? Está aqui o sinal...\nO Augusto veio olhar também e ficou danado:\n− Seus perversos, a cabra era da minha menina beber leite, estava cheia de cabrito novo!\nMas o olho do homem escuro era feio e, se ele se assustara vendo-se cercado pelos cabras da\nfazenda, não deu parecença. O loureba é que virava a cara de um lado para outro, procurando\nsaída; ainda levou a mão ao quadril, tateou o cabo da faca – mas cada um dos homens tinha uma\nfoice, um terçado, um ferro na mão.\nNesse pé o fazendeiro, para acabar com a história, resolveu mostrar bom coração; e gritou para o\ncorredor:\n− Menina! Manda aí uma cuia com um bocado de farinha!\nDepois, retornando ao homem:\n− Eu podia mandar prender vocês, para aprenderem a não matar bicho alheio! Mas têm crianças,\nnão é? Tenho pena das crianças! Leve essa farinha, comam e tratem de ir embora. Daqui a uma\nhora quero o pé de juazeiro limpo e vocês na estrada. Podem ir!\nO homem recebeu a cuia, não disse nada, saiu sem olhar para trás. O outro acompanhou, meio\ntemeroso, tirou ainda o chapéu em despedida, e pegou no passo do companheiro. O velho\nreclamava em voz alta – cabra desgraçado, além de fazer o malfeito, recebe o favor e nem sequer\nabana o rabo.\nOs trabalhadores, calados, acompanhavam com os olhos os dois estranhos que marchavam um\natrás do outro, na direção do juazeiro, do qual só se avistava a copa alta ali no terreiro. Ninguém\nsabe o que pensavam; o dono da cabra deu de mão no couro e foi com ele para trás da casa.\nAí a sineta bateu e os homens saíram para o serviço. Passando pelo juazeiro, lá viram a família ao\nredor do fogo, os meninos procurando pescar pedaços da carne que fervia numa lata. Mas o\nhomem escuro, encostado ao tronco, via-os passar, de braços cruzados, sem baixar os olhos.\nAinda foi o dono da cabra que baixou os seus; explicou depois que não gostava de briga.\nMORALIDADE: Este caso aconteceu mesmo. Faz mais de trinta anos escrevi uma história de cabra\nmorta por retirante, mas era diferente. Então, o homem sentia dor de consciência, e até se\nhumilhou quando o dono do bicho morto o chamou de ladrão. Agora não é mais assim. Agora eles\nsabem que a fome dá um direito que passa por cima de qualquer direito dos outros. A moralidade\nda história é mesmo esta: tudo mudou, mudou muito.\nQUEIROZ, Rachel de. Cenas brasileiras. São Paulo:\nÁtica, 1997, p. 14-17. (Para gostar de ler).\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta."
   },
   {
     "id": "classes_var-pdf_4_classes_var-q66",
@@ -11802,37 +11802,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 66,
-    "statement": "Leia atentamente o seguinte texto:\nNos períodos seguintes as palavras sublinhadas classificam-se como numerais, à EXCEÇÃO de",
+    "statement": "Nos períodos seguintes as palavras sublinhadas classificam-se como numerais, à EXCEÇÃO de",
     "options": [
       {
         "letter": "A",
-        "text": "“Fez cinqüenta há pouco tempo, a senhora não leu nos jornais a comemoração?”",
+        "text": "“Fez <u>cinqüenta</u> há pouco tempo, a senhora não leu nos jornais a comemoração?”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Há quatro anos ando à procura de Emílio Moura”.",
+        "text": "“Há <u>quatro</u> anos ando à procura de Emílio Moura”.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Escreveu-me de lá duas vezes, e da segunda anunciava que seguiria para o Canadá”.",
+        "text": "“Escreveu-me de lá duas vezes, e da <u>segunda</u> anunciava que seguiria para o Canadá”.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“O que eu conheço tem trinta e dois anos e nunca morou em Minas”.",
+        "text": "“O que eu conheço tem <u>trinta e dois</u> anos e nunca morou em Minas”.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“A mesma doçura, uma sensação de fim de tarde, meio triste, o senhor não imagine...”",
+        "text": "“A mesma doçura, <u>uma</u> sensação de fim de tarde, meio triste, o senhor não imagine...”",
         "correct": true
       }
     ],
     "correctLetter": "E",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "O Outro\nNa redação, o secretário fazia sua cozinha, quando a senhora, não primaveril, mas ainda não\ninvernosa, dele se aproximou timidamente. E sacando da bolsa um recorte de jornal, perguntou-lhe se sabia o endereço de Emílio Moura, autor dos versos ali estampados.\nO secretário explicou-lhe que o assunto era de competência do Silva, encarregado do suplemento\nliterário. O Silva não ia demorar, estava na hora dele. Não queria sentar-se, esperar?\nEla recolheu cuidadosamente o fragmento e dispôs-se a aguardar o Silva, que, como acontece\nnessas ocasiões, tardou um pouquinho. Mas que tardasse dois anos, não fazia diferença, a julgar\npelo semblante da senhora, de paciente determinação.\nDiante do Silva, exibiu novamente o papelzinho e fez-lhe a pergunta.\n— Endereço do Emílio Moura? Pois não, minha senhora. Com licença, deixe ver aqui no\ncaderninho: rua tal, número tantos, em Belo Horizonte...\nO rosto da senhora se transfigurou:\n— Belo Horizonte? O senhor tem certeza de que ele está em Belo Horizonte?\n— Se está, no momento, não sei, minha senhora. Mas sempre morou lá, isso eu posso lhe garantir.\nNova mutação se operou na fisionomia da visitante, onde o desaponto parecia querer instalar-se,\nmas era combatido pela dúvida:\n— O senhor... o senhor conhece pessoalmente Emílio Moura?\n— Conheço, sim. Há muitos anos.\n— Muitos? Que idade tem ele, mais ou menos?\n— Fez cinqüenta há pouco tempo, a senhora não leu nos jornais a comemoração?\n— Tem certeza de que não está enganado? Perdoe a insistência, mas podia me fazer o retrato\nfísico de Emílio Moura?\n— Perfeitamente. Trata-se de um senhor alto, magro, cabelos ainda pretos, pequena costeleta,\nbigodinho, usa piteira e fuma cigarro de palha. Que mais? Meio calado, extremamente simpático,\nmuito querido por todos. Completo a ficha: professor da Universidade, casado, com filhos.\nA senhora olhava para o papel, dobrava-o, esboçava o gesto de jogá-lo fora, depois o desdobrava\ne alisava com carinho. E, na ponta de longo silêncio:\n— Senhor Silva, este pedacinho de jornal me trouxe uma grande esperança e agora uma profunda\ndecepção. Muito obrigada. Desculpe.\nIa retirar-se, sem que o Silva compreendesse níquel, mas voltou-se, e rapidamente desfolhou esta\nconfidência:\n— Há quatro anos ando à procura de Emílio Moura. Éramos muito amigos, ele fazia versos lindos,\nque eu, na qualidade de sua melhor amiga, lia em primeira mão. Um dia, contou-me que ia viajar\npara Montevidéu, onde ficaria algum tempo. Escreveu-me de lá duas vezes, e da segunda\nanunciava que seguiria para o Canadá. Nunca mais recebi a menor notícia. Ninguém sabe informar\nnada. Quando li no jornal esta poesia com o nome dele, fiquei cheia de esperança, mas agora não\nsei o que pensar. O senhor me diz que Emílio Moura tem cinqüenta anos eé professor em Belo\nHorizonte. O que eu conheço tem trinta e dois anos e nunca morou em Minas, que eu saiba, mas\ncomo os versos dele são parecidos com estes que o seu jornal publicou! A mesma doçura, uma\nsensação de fim de tarde, meio triste, o senhor não imagine... Enganei-me. Desculpe mais uma\nvez, e passe bem, Sr. Silva.\nSaiu, levando nas mãos o papelzinho, como uma flor.\nCarlos Drummond de Andrade\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta em\ncada questão."
+    "readingText": "Leia atentamente o seguinte texto:\nO Outro\nNa redação, o secretário fazia sua cozinha, quando a senhora, não primaveril, mas ainda não\ninvernosa, dele se aproximou timidamente. E sacando da bolsa um recorte de jornal, perguntou-lhe se sabia o endereço de Emílio Moura, autor dos versos ali estampados.\nO secretário explicou-lhe que o assunto era de competência do Silva, encarregado do suplemento\nliterário. O Silva não ia demorar, estava na hora dele. Não queria sentar-se, esperar?\nEla recolheu cuidadosamente o fragmento e dispôs-se a aguardar o Silva, que, como acontece\nnessas ocasiões, tardou um pouquinho. Mas que tardasse dois anos, não fazia diferença, a julgar\npelo semblante da senhora, de paciente determinação.\nDiante do Silva, exibiu novamente o papelzinho e fez-lhe a pergunta.\n— Endereço do Emílio Moura? Pois não, minha senhora. Com licença, deixe ver aqui no\ncaderninho: rua tal, número tantos, em Belo Horizonte...\nO rosto da senhora se transfigurou:\n— Belo Horizonte? O senhor tem certeza de que ele está em Belo Horizonte?\n— Se está, no momento, não sei, minha senhora. Mas sempre morou lá, isso eu posso lhe garantir.\nNova mutação se operou na fisionomia da visitante, onde o desaponto parecia querer instalar-se,\nmas era combatido pela dúvida:\n— O senhor... o senhor conhece pessoalmente Emílio Moura?\n— Conheço, sim. Há muitos anos.\n— Muitos? Que idade tem ele, mais ou menos?\n— Fez cinqüenta há pouco tempo, a senhora não leu nos jornais a comemoração?\n— Tem certeza de que não está enganado? Perdoe a insistência, mas podia me fazer o retrato\nfísico de Emílio Moura?\n— Perfeitamente. Trata-se de um senhor alto, magro, cabelos ainda pretos, pequena costeleta,\nbigodinho, usa piteira e fuma cigarro de palha. Que mais? Meio calado, extremamente simpático,\nmuito querido por todos. Completo a ficha: professor da Universidade, casado, com filhos.\nA senhora olhava para o papel, dobrava-o, esboçava o gesto de jogá-lo fora, depois o desdobrava\ne alisava com carinho. E, na ponta de longo silêncio:\n— Senhor Silva, este pedacinho de jornal me trouxe uma grande esperança e agora uma profunda\ndecepção. Muito obrigada. Desculpe.\nIa retirar-se, sem que o Silva compreendesse níquel, mas voltou-se, e rapidamente desfolhou esta\nconfidência:\n— Há quatro anos ando à procura de Emílio Moura. Éramos muito amigos, ele fazia versos lindos,\nque eu, na qualidade de sua melhor amiga, lia em primeira mão. Um dia, contou-me que ia viajar\npara Montevidéu, onde ficaria algum tempo. Escreveu-me de lá duas vezes, e da segunda\nanunciava que seguiria para o Canadá. Nunca mais recebi a menor notícia. Ninguém sabe informar\nnada. Quando li no jornal esta poesia com o nome dele, fiquei cheia de esperança, mas agora não\nsei o que pensar. O senhor me diz que Emílio Moura tem cinqüenta anos eé professor em Belo\nHorizonte. O que eu conheço tem trinta e dois anos e nunca morou em Minas, que eu saiba, mas\ncomo os versos dele são parecidos com estes que o seu jornal publicou! A mesma doçura, uma\nsensação de fim de tarde, meio triste, o senhor não imagine... Enganei-me. Desculpe mais uma\nvez, e passe bem, Sr. Silva.\nSaiu, levando nas mãos o papelzinho, como uma flor.\nCarlos Drummond de Andrade\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta em\ncada questão."
   },
   {
     "id": "classes_var-pdf_4_classes_var-q67",
@@ -11841,7 +11841,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 67,
-    "statement": "Leia atentamente o seguinte texto:\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta em\ncada questão.\n“Nunca mais recebi a menor notícia. Ninguém sabe informar nada”. Quanto à classe gramatical a\nque pertencem, as palavras sublinhadas são, respectivamente,",
+    "statement": "Lido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta em\ncada questão.\n<u>“Nunca</u> mais recebi a menor notícia. <u>Ninguém</u> sabe informar nada”. Quanto à classe gramatical a\nque pertencem, as palavras sublinhadas são, respectivamente,",
     "options": [
       {
         "letter": "A",
@@ -11871,7 +11871,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "O Outro\nNa redação, o secretário fazia sua cozinha, quando a senhora, não primaveril, mas ainda não\ninvernosa, dele se aproximou timidamente. E sacando da bolsa um recorte de jornal, perguntou-lhe se sabia o endereço de Emílio Moura, autor dos versos ali estampados.\nO secretário explicou-lhe que o assunto era de competência do Silva, encarregado do suplemento\nliterário. O Silva não ia demorar, estava na hora dele. Não queria sentar-se, esperar?\nEla recolheu cuidadosamente o fragmento e dispôs-se a aguardar o Silva, que, como acontece\nnessas ocasiões, tardou um pouquinho. Mas que tardasse dois anos, não fazia diferença, a julgar\npelo semblante da senhora, de paciente determinação.\nDiante do Silva, exibiu novamente o papelzinho e fez-lhe a pergunta.\n— Endereço do Emílio Moura? Pois não, minha senhora. Com licença, deixe ver aqui no\ncaderninho: rua tal, número tantos, em Belo Horizonte...\nO rosto da senhora se transfigurou:\n— Belo Horizonte? O senhor tem certeza de que ele está em Belo Horizonte?\n— Se está, no momento, não sei, minha senhora. Mas sempre morou lá, isso eu posso lhe garantir.\nNova mutação se operou na fisionomia da visitante, onde o desaponto parecia querer instalar-se,\nmas era combatido pela dúvida:\n— O senhor... o senhor conhece pessoalmente Emílio Moura?\n— Conheço, sim. Há muitos anos.\n— Muitos? Que idade tem ele, mais ou menos?\n— Fez cinqüenta há pouco tempo, a senhora não leu nos jornais a comemoração?\n— Tem certeza de que não está enganado? Perdoe a insistência, mas podia me fazer o retrato\nfísico de Emílio Moura?\n— Perfeitamente. Trata-se de um senhor alto, magro, cabelos ainda pretos, pequena costeleta,\nbigodinho, usa piteira e fuma cigarro de palha. Que mais? Meio calado, extremamente simpático,\nmuito querido por todos. Completo a ficha: professor da Universidade, casado, com filhos.\nA senhora olhava para o papel, dobrava-o, esboçava o gesto de jogá-lo fora, depois o desdobrava\ne alisava com carinho. E, na ponta de longo silêncio:\n— Senhor Silva, este pedacinho de jornal me trouxe uma grande esperança e agora uma profunda\ndecepção. Muito obrigada. Desculpe.\nIa retirar-se, sem que o Silva compreendesse níquel, mas voltou-se, e rapidamente desfolhou esta\nconfidência:\n— Há quatro anos ando à procura de Emílio Moura. Éramos muito amigos, ele fazia versos lindos,\nque eu, na qualidade de sua melhor amiga, lia em primeira mão. Um dia, contou-me que ia viajar\npara Montevidéu, onde ficaria algum tempo. Escreveu-me de lá duas vezes, e da segunda\nanunciava que seguiria para o Canadá. Nunca mais recebi a menor notícia. Ninguém sabe informar\nnada. Quando li no jornal esta poesia com o nome dele, fiquei cheia de esperança, mas agora não\nsei o que pensar. O senhor me diz que Emílio Moura tem cinqüenta anos eé professor em Belo\nHorizonte. O que eu conheço tem trinta e dois anos e nunca morou em Minas, que eu saiba, mas\ncomo os versos dele são parecidos com estes que o seu jornal publicou! A mesma doçura, uma\nsensação de fim de tarde, meio triste, o senhor não imagine... Enganei-me. Desculpe mais uma\nvez, e passe bem, Sr. Silva.\nSaiu, levando nas mãos o papelzinho, como uma flor.\nCarlos Drummond de Andrade"
+    "readingText": "Leia atentamente o seguinte texto:\nO Outro\nNa redação, o secretário fazia sua cozinha, quando a senhora, não primaveril, mas ainda não\ninvernosa, dele se aproximou timidamente. E sacando da bolsa um recorte de jornal, perguntou-lhe se sabia o endereço de Emílio Moura, autor dos versos ali estampados.\nO secretário explicou-lhe que o assunto era de competência do Silva, encarregado do suplemento\nliterário. O Silva não ia demorar, estava na hora dele. Não queria sentar-se, esperar?\nEla recolheu cuidadosamente o fragmento e dispôs-se a aguardar o Silva, que, como acontece\nnessas ocasiões, tardou um pouquinho. Mas que tardasse dois anos, não fazia diferença, a julgar\npelo semblante da senhora, de paciente determinação.\nDiante do Silva, exibiu novamente o papelzinho e fez-lhe a pergunta.\n— Endereço do Emílio Moura? Pois não, minha senhora. Com licença, deixe ver aqui no\ncaderninho: rua tal, número tantos, em Belo Horizonte...\nO rosto da senhora se transfigurou:\n— Belo Horizonte? O senhor tem certeza de que ele está em Belo Horizonte?\n— Se está, no momento, não sei, minha senhora. Mas sempre morou lá, isso eu posso lhe garantir.\nNova mutação se operou na fisionomia da visitante, onde o desaponto parecia querer instalar-se,\nmas era combatido pela dúvida:\n— O senhor... o senhor conhece pessoalmente Emílio Moura?\n— Conheço, sim. Há muitos anos.\n— Muitos? Que idade tem ele, mais ou menos?\n— Fez cinqüenta há pouco tempo, a senhora não leu nos jornais a comemoração?\n— Tem certeza de que não está enganado? Perdoe a insistência, mas podia me fazer o retrato\nfísico de Emílio Moura?\n— Perfeitamente. Trata-se de um senhor alto, magro, cabelos ainda pretos, pequena costeleta,\nbigodinho, usa piteira e fuma cigarro de palha. Que mais? Meio calado, extremamente simpático,\nmuito querido por todos. Completo a ficha: professor da Universidade, casado, com filhos.\nA senhora olhava para o papel, dobrava-o, esboçava o gesto de jogá-lo fora, depois o desdobrava\ne alisava com carinho. E, na ponta de longo silêncio:\n— Senhor Silva, este pedacinho de jornal me trouxe uma grande esperança e agora uma profunda\ndecepção. Muito obrigada. Desculpe.\nIa retirar-se, sem que o Silva compreendesse níquel, mas voltou-se, e rapidamente desfolhou esta\nconfidência:\n— Há quatro anos ando à procura de Emílio Moura. Éramos muito amigos, ele fazia versos lindos,\nque eu, na qualidade de sua melhor amiga, lia em primeira mão. Um dia, contou-me que ia viajar\npara Montevidéu, onde ficaria algum tempo. Escreveu-me de lá duas vezes, e da segunda\nanunciava que seguiria para o Canadá. Nunca mais recebi a menor notícia. Ninguém sabe informar\nnada. Quando li no jornal esta poesia com o nome dele, fiquei cheia de esperança, mas agora não\nsei o que pensar. O senhor me diz que Emílio Moura tem cinqüenta anos eé professor em Belo\nHorizonte. O que eu conheço tem trinta e dois anos e nunca morou em Minas, que eu saiba, mas\ncomo os versos dele são parecidos com estes que o seu jornal publicou! A mesma doçura, uma\nsensação de fim de tarde, meio triste, o senhor não imagine... Enganei-me. Desculpe mais uma\nvez, e passe bem, Sr. Silva.\nSaiu, levando nas mãos o papelzinho, como uma flor.\nCarlos Drummond de Andrade"
   },
   {
     "id": "classes_var-pdf_4_classes_var-q68",
@@ -11880,7 +11880,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_4_classes_var",
     "listTitle": "Classes Variáveis (Substantivos, Adjetivos, Artigos, Numerais)",
     "questionNumber": 68,
-    "statement": "Às crianças aqui de casa tocaram um bicudo e um canário. O primeiro não aguentou a crise da\npuberdade, morrendo logo uns dias depois.” Nesta passagem o autor trabalha a coesão\nreferencial, utilizando-se da expressão sublinhada a fim de evitar a repetição de um termo anterior.\nUma palavra que poderia substituir adequadamente o termo sublinhado seria:",
+    "statement": "Às crianças aqui de casa tocaram um bicudo e um canário. <u>O primeiro</u> não aguentou a crise da\npuberdade, morrendo logo uns dias depois.” Nesta passagem o autor trabalha a coesão\nreferencial, utilizando-se da expressão sublinhada a fim de evitar a repetição de um termo anterior.\nUma palavra que poderia substituir adequadamente o termo sublinhado seria:",
     "options": [
       {
         "letter": "A",
@@ -11960,27 +11960,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Imediatamente põe-se a bater palmas\"",
+        "text": "“Imediatamente põe-se <u>a</u> bater palmas\"",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "\"muito compenetrada, cantando num balbucio, a que os pais se juntam, discretos”",
+        "text": "\"muito compenetr<u>a</u>da, cantando num balbucio, a que os pais se juntam, discretos”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Depois a mãe recolhe as velas, torna a guardá-las na bolsa.”",
+        "text": "“Depois <u>a</u> mãe recolhe as velas, torna a guardá-las na bolsa.”",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "\"A negrinha agarra finalmente o bolo com as duas mãos sôfregas e põe-se a comê-lo.”",
+        "text": "\"A negrinh<u>a</u> agarra finalmente o bolo com as duas mãos sôfregas e põe-se a comê-lo.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\"Dá comigo de súbito, a observá-lo, nossos olhos se encontram...”",
+        "text": "\"Dá comigo de súbito, <u>a</u> observá-lo, nossos olhos se encontram...” ",
         "correct": false
       }
     ],
@@ -11995,7 +11995,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 2,
-    "statement": "No período \"Como realidade material - organização de sons, palavras, frases - a linguagem é\nrelativamente autónoma; como expressão de emoções, ideias, propósitos, no entanto, ela é\norientada pela visão de mundo, pelas injunções da realidade social, histórica e cultural de seu\nfalante.\", as palavras destacadas são consideradas:",
+    "statement": "No período <u>\"Como</u> realidade material - organização de sons, palavras, frases - a linguagem é\nrelativamente autónoma; como expressão de emoções, ideias, propósitos, no entanto, ela é\norientada pela visão de mundo, pelas injunções da realidade social, histórica e cultural de seu\nfalante.\", as palavras destacadas são consideradas:",
     "options": [
       {
         "letter": "A",
@@ -12064,7 +12064,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Texto I\nA complicada arte de ver\n\n1§ Ela entrou, deitou-se no divã e disse: “Acho que estou ficando louca”. Eu fiquei em silêncio\naguardando que ela me revelasse os sinais da sua loucura. “Um dos meus prazeres é cozinhar. Vou\npara a cozinha, corto as cebolas, os tomates, os pimentões – é uma alegria.\n\n2§ Entretanto, faz uns dias, eu fui para a cozinha para fazer aquilo que já fizera centenas de vezes:\ncortar cebolas. Ato banal sem surpresas. Mas, cortada a cebola, eu olhei para ela e tive um susto.\nPercebi que nunca havia visto uma cebola. Aqueles anéis perfeitamente ajustados, a luz se\nrefletindo neles: tive a impressão de estar vendo a rosácea de um vitral de catedral gótica.\n\n3§ De repente, a cebola, de objeto a ser comido, se transformou em obra de arte para ser vista! E o\npior é que o mesmo aconteceu quando cortei os tomates, os pimentões… agora, tudo o que vejo\nme causa espanto.” Ela se calou, esperando o meu diagnóstico. Eu me levantei, fui à estante de\nlivros e de lá retirei as “Odes Elementales”, de Pablo Neruda. Procurei a “Ode à Cebola” e lhe\ndisse: “Essa perturbação ocular que a acometeu é comum entre os poetas. Veja o que Neruda\ndisse de uma cebola igual àquela que lhe causou assombro: ‘Rosa de água com escamas de\ncristal’. Não, você não está louca. Você ganhou olhos de poeta…Os poetas ensinam a ver”.\n\n4§ Ver é muito complicado. Isso é estranho porque os olhos, de todos os órgãos dos sentidos, são\nos de mais fácil compreensão científica. A sua física é idêntica à física óptica de uma máquina\nfotográfica: o objeto do lado de fora aparece refletido do lado de dentro. Mas existe algo na visão\nque não pertence à física. William Blake sabia disso e afirmou: “A árvore que o sábio vê não é a\nmesma árvore que o tolo vê”. Sei disso por experiência própria. Quando vejo os ipês floridos,\nsinto-me como Moisés diante da sarça ardente: ali está uma epifania do sagrado. Mas uma mulher\nque vivia perto da minha casa decretou a morte de um ipê que florescia à frente de sua casa\nporque ele sujava o chão, dava muito trabalho para a sua vassoura. Seus olhos não viam a beleza.\nSó viam o lixo. Adélia Prado disse: “Deus de vez em quando me tira a poesia. Olho para uma pedra\ne vejo uma pedra”.\n\n5§ Drummond viu uma pedra e não viu uma pedra. A pedra que ele viu virou poema. Há muitas\npessoas de visão perfeita que nada veem.\n\n6§“Não é bastante não ser cego para ver as árvores e as flores. Não basta abrir a janela para ver os\ncampos e os rios”, escreveu Alberto Caeiro, heterônimo de Fernando Pessoa. O ato de ver não é\ncoisa natural. Precisa ser aprendido.\n\n7§ Nietzsche sabia disso e afirmou que a primeira tarefa da educação é ensinar a ver. O zen-budismo concorda, e toda a sua espiritualidade é uma busca da experiência chamada “satori”, a\nabertura do “terceiro olho”. Não sei se Cummings se inspirava no zen-budismo, mas o fato é que\nescreveu: “Agora os ouvidos dos meus ouvidos acordaram e agora os olhos dos meus olhos se\nabriram”.\n\n8§ Há um poema no Novo Testamento que relata a caminhada de dois discípulos na companhia de\nJesus ressuscitado. Mas eles não o reconheciam. Reconheceram-no subitamente: ao partir do\npão, “seus olhos se abriram”.\n\n9§ Vinicius de Moraes adota o mesmo mote em “Operário em Construção”: “De forma que, certo\ndia, à mesa ao cortar o pão, o operário foi tomado de uma súbita emoção, ao constatar\nassombrado que tudo naquela mesa – garrafa, prato, facão – era ele quem fazia. Ele, um humilde\noperário, um operário em construção”.\n\n10§ A diferença se encontra no lugar onde os olhos são guardados. (...) Os olhos que moram na\ncaixa de ferramentas são os olhos dos adultos. Os olhos que moram na caixa dos brinquedos, das\ncrianças. Para ter olhos brincalhões, é preciso ter as crianças por nossas mestras.\nRubem Alves Texto Adaptado (originalmente publicado no caderno “Sinapse” - “Folha de S.\nPaulo”, em 26/10/2004)\nLeia o excerto a seguir:\n\"Entretanto, faz uns dias, eu fui para a cozinha para fazer aquilo que já fizera centenas de vezes:\ncortar cebolas.\""
+    "readingText": "Texto I\nA complicada arte de ver\n\n1§ Ela entrou, deitou-se no divã e disse: “Acho que estou ficando louca”. Eu fiquei em silêncio\naguardando que ela me revelasse os sinais da sua loucura. “Um dos meus prazeres é cozinhar. Vou\n<u>para</u> a cozinha, corto as cebolas, os tomates, os pimentões – é uma alegria.\n\n2§ Entretanto, faz uns dias, eu fui <u>para</u> a cozinha <u>para</u> fazer aquilo que já fizera centenas de vezes:\ncortar cebolas. Ato banal sem surpresas. Mas, cortada a cebola, eu olhei <u>para</u> ela e tive um susto.\nPercebi que nunca havia visto uma cebola. Aqueles anéis perfeitamente ajustados, a luz se\nrefletindo neles: tive a impressão de estar vendo a rosácea de um vitral de catedral gótica.\n\n3§ De repente, a cebola, de objeto a ser comido, se transformou em obra de arte <u>para</u> ser vista! E o\npior é que o mesmo aconteceu quando cortei os tomates, os pimentões… agora, tudo o que vejo\nme causa espanto.” Ela se calou, esperando o meu diagnóstico. Eu me levantei, fui à estante de\nlivros e de lá retirei as “Odes Elementales”, de Pablo Neruda. Procurei a “Ode à Cebola” e lhe\ndisse: “Essa perturbação ocular que a acometeu é comum entre os poetas. Veja o que Neruda\ndisse de uma cebola igual àquela que lhe causou assombro: ‘Rosa de água com escamas de\ncristal’. Não, você não está louca. Você ganhou olhos de poeta…Os poetas ensinam a ver”.\n\n4§ Ver é muito complicado. Isso é estranho porque os olhos, de todos os órgãos dos sentidos, são\nos de mais fácil compreensão científica. A sua física é idêntica à física óptica de uma máquina\nfotográfica: o objeto do lado de fora aparece refletido do lado de dentro. Mas existe algo na visão\nque não pertence à física. William Blake sabia disso e afirmou: “A árvore que o sábio vê não é a\nmesma árvore que o tolo vê”. Sei disso por experiência própria. Quando vejo os ipês floridos,\nsinto-me como Moisés diante da sarça ardente: ali está uma epifania do sagrado. Mas uma mulher\nque vivia perto da minha casa decretou a morte de um ipê que florescia à frente de sua casa\nporque ele sujava o chão, dava muito trabalho <u>para</u> a sua vassoura. Seus olhos não viam a beleza.\nSó viam o lixo. Adélia Prado disse: “Deus de vez em quando me tira a poesia. Olho <u>para</u> uma pedra\ne vejo uma pedra”.\n\n5§ Drummond viu uma pedra e não viu uma pedra. A pedra que ele viu virou poema. Há muitas\npessoas de visão perfeita que nada veem.\n\n6§“Não é bastante não ser cego <u>para</u> ver as árvores e as flores. Não basta abrir a janela <u>para</u> ver os\ncampos e os rios”, escreveu Alberto Caeiro, heterônimo de Fernando Pessoa. O ato de ver não é\ncoisa natural. Precisa ser aprendido.\n\n7§ Nietzsche sabia disso e afirmou que a primeira tarefa da educação é ensinar a ver. O zen-budismo concorda, e toda a sua espiritualidade é uma busca da experiência chamada “satori”, a\nabertura do “terceiro olho”. Não sei se Cummings se inspirava no zen-budismo, mas o fato é que\nescreveu: “Agora os ouvidos dos meus ouvidos acordaram e agora os olhos dos meus olhos se\nabriram”.\n\n8§ Há um poema no Novo Testamento que relata a caminhada de dois discípulos na companhia de\nJesus ressuscitado. Mas eles não o reconheciam. Reconheceram-no subitamente: ao partir do\npão, “seus olhos se abriram”.\n\n9§ Vinicius de Moraes adota o mesmo mote em “Operário em Construção”: “De forma que, certo\ndia, à mesa ao cortar o pão, o operário foi tomado de uma súbita emoção, ao constatar\nassombrado que tudo naquela mesa – garrafa, prato, facão – era ele quem fazia. Ele, um humilde\noperário, um operário em construção”.\n\n10§ A diferença se encontra no lugar onde os olhos são guardados. (...) Os olhos que moram na\ncaixa de ferramentas são os olhos dos adultos. Os olhos que moram na caixa dos brinquedos, das\ncrianças. Para ter olhos brincalhões, é preciso ter as crianças por nossas mestras.\nRubem Alves Texto Adaptado (originalmente publicado no caderno “Sinapse” - “Folha de S.\nPaulo”, em 26/10/2004)\nLeia o excerto a seguir:\n\"Entretanto, faz uns dias, eu fui <u>para</u> a cozinha <u>para</u> fazer aquilo que já fizera centenas de vezes:\ncortar cebolas.\""
   },
   {
     "id": "classes_invar-pdf_5_classes_invar-q4",
@@ -12169,7 +12169,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "Em meio a uma queda significativa no número de leitores, especialistas e coordenadores da Pesquisa Retratos da Leitura no Brasil avaliam um crescente desinteresse em relação aos autores brasileiros e à narrativa longa.",
+        "text": "Em meio a uma queda significativa no número de leitores, especialistas e coordenadores da Pesquisa Retratos da Leitura no Brasil avaliam um crescente desinteresse em relação aos autores brasileiros e à narrativa longa. ",
         "correct": false
       }
     ],
@@ -12184,7 +12184,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 7,
-    "statement": "No trecho “Pressa, não a tiveste, pois o animal desapareceu a 6 de outubro, e só a 19 de novembro\nrecorreste à Cidade de Itabira”, os elementos em destaque são classificados, morfológica e\nrespectivamente, como",
+    "statement": "No trecho “Pressa, não <u>a</u> tiveste, pois o animal desapareceu a 6 de outubro, e só a 19 de novembro\nrecorreste à Cidade de Itabira”, os elementos em destaque são classificados, morfológica e\nrespectivamente, como",
     "options": [
       {
         "letter": "A",
@@ -12227,27 +12227,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Diga-se a verdade; não o fez - ao menos enquanto ali estive, que foram poucos minutos.”",
+        "text": "“Diga-se a verdade; não <u>o</u> fez - ao menos enquanto ali estive, que foram poucos minutos.”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“O que me pareceu, é que o burro fazia exame de consciência.”",
+        "text": "<u>“O</u> que me pareceu, é que o burro fazia exame de consciência.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“[...] o pensamento não é a causa da morte, a morte é que o torna necessário.”",
+        "text": "“[...] <u>o</u> pensamento não é a causa da morte, a morte é que o torna necessário.”",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“O pau é a minha instituição um pouco temperada pela teima que é, em resumo, o meu único defeito.”",
+        "text": "<u>“O</u> pau é a minha instituiçã<u>o</u> um pouco temperada pela teima que é, em resumo, o meu único defeito.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“[...] fez-me ver que os que ficavam, não seriam menos exemplares do que esse.”",
+        "text": "“[...] fez-me ver que <u>os</u> que ficavam, não seriam menos exemplares do que esse.”",
         "correct": false
       }
     ],
@@ -12266,27 +12266,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Os ossos furavam-lhe a pele, os olhos meio mortos fechavam-se de quando em quando.”",
+        "text": "“Os ossos furavam-lhe a pele, os olhos meio <u>mortos</u> fechavam-se de quando em quando.”",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“Indiferente aos curiosos, como ao capim e à água, tinha no olhar a expressão dos meditativos.”",
+        "text": "“Indiferente aos curiosos, como ao capim e à água, tinha no <u>olhar</u> a expressão dos meditativos.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Nunca perguntei por sóis nem chuvas; bastava sentir o freguês no tílburi ou o apito do bonde, para sair logo.”",
+        "text": "“Nunca perguntei por <u>sóis</u> nem chuvas; bastava sentir o freguês no tílburi ou o apito do bonde, para sair logo.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“[...] não podia furtar-me à tristeza de ver que um burro tão bom pensador ia morrer.”",
+        "text": "“[...] não podia furtar-me à tristeza de ver que um burro tão bom <u>pensador</u> ia morrer.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Por que não sucederá o mesmo ao burro, que é maior?”",
+        "text": "“Por que não sucederá o <u>mesmo</u> ao burro, que é maior?”",
         "correct": false
       }
     ],
@@ -12310,17 +12310,17 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "B",
-        "text": "Em “As boas versões cinematográficas trazem a mesma visão crítica sobre a vida”, os elementos em destaque devem ser classificados como núcleo do sujeito.",
+        "text": "Em “As boas <u>versões cinematográficas</u> trazem a mesma visão crítica sobre a vida”, os elementos em destaque devem ser classificados como núcleo do sujeito.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "No trecho “O romance de Shelley contém elementos fantásticos e de horror”, o elemento destacado é um substantivo comum que funciona como adjunto adnominal.",
+        "text": "No trecho “O romance de <u>Shelley</u> contém elementos fantásticos e de horror”, o elemento destacado é um substantivo comum que funciona como adjunto adnominal.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Em “Ele nos fascina porque fala da relação entre vida e morte”, o pronome ele apresenta uma relação anafórica com elemento que se realiza anteriormente.",
+        "text": "Em “Ele nos fascina porque fala da relação entre vida e morte”, o pronome ele apresenta uma relação anafórica com elemento que se realiza anteriormente. ",
         "correct": true
       }
     ],
@@ -12471,7 +12471,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 15,
-    "statement": "Em “ Mas cuidados têm que ser tomados.”, a palavra destacada pode ser classificada\nmorfologicamente como:",
+    "statement": "Em “ Mas cuidados têm <u>que</u> ser tomados.”, a palavra destacada pode ser classificada\nmorfologicamente como:",
     "options": [
       {
         "letter": "A",
@@ -12514,27 +12514,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Em “Por que está você com esse ar” (1°§), o elemento em destaque é um pronome interrogativo.",
+        "text": "Em <u>“Por que</u> está você com esse ar” (1°§), o elemento em destaque é um pronome interrogativo.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Em “para fingir que vale alguma coisa neste mundo?” (1°§), o elemento em destaque é uma conjunção integrante.",
+        "text": "Em “para fingir <u>que</u> vale alguma coisa neste mundo?” (1°§), o elemento em destaque é uma conjunção integrante.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Em “Que a deixe? Que a deixe, por quê?” (3°§), o elemento em destaque é um artigo definido feminino.",
+        "text": "Em “Que <u>a</u> deixe? Que a deixe, por quê?” (3°§), o elemento em destaque é um artigo definido feminino.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Em “Cada qual tem o ar que Deus lhe deu.” (4°§), o elemento destacado é um pronome relativo.",
+        "text": "Em “Cada qual tem o ar <u>que</u> Deus lhe deu.” (4°§), o elemento destacado é um pronome relativo.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Em “Decerto que sou.” (7°§), o elemento em destaque é um adverbial de certeza.",
+        "text": "Em <u>“Decerto</u> que sou.” (7°§), o elemento em destaque é um adverbial de certeza. ",
         "correct": false
       }
     ],
@@ -12553,27 +12553,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“vendo também cair a tarde”",
+        "text": "“vendo também cair <u>a</u> tarde”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“já ela estava em Lisboa”",
+        "text": "“já ela estava <u>em</u> Lisboa”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“e falando-lhe com um riso de ouro”",
+        "text": "“e falando-lhe com um riso <u>de</u> ouro”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“E, pouco a pouco, foi-lhe surgindo na alma um romance”",
+        "text": "“E, pouco <u>a</u> pouco, foi-lhe surgindo na alma um romance”",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "“com uma ou outra janela acesa em brasa”",
+        "text": "“com um<u>a</u> ou outra janela acesa <u>em</u> brasa” ",
         "correct": false
       }
     ],
@@ -12588,37 +12588,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 18,
-    "statement": "Com base no texto, responda à questão.\nNa minha adolescência você seria uma tortura. (8º parágrafo)\nAssinale a opção que apresenta uma circunstância sublinhada diferente daquela presente no\nfragmento acima.",
+    "statement": "Assinale a opção que apresenta uma circunstância sublinhada diferente daquela presente no\nfragmento acima.",
     "options": [
       {
         "letter": "A",
-        "text": "Mas eu a levarei para a beira do ribeirão, na sombra fria do bambual (...).",
+        "text": "Mas eu a levarei para a beira do ribeirão, <u>na sombra fria do bambual</u> (...).",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "Uma vez vi uma urutu junto de um tronco queimado (...).",
+        "text": "<u>Uma</u> <u>vez</u> vi uma urutu junto de um tronco queimado (...).",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "O menino da roça que pela primeira vez vê as algas do mar se balançando sob a onda clara, junto da pedra.",
+        "text": "O menino da roça que <u>pela primeira</u> <u>vez</u> vê as algas do mar se balançando sob a onda clara, junto da pedra.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "(...) um cardume de peixes dourados avançando, saltando ao sol, na piracema: um bambual com sombra fria, onde ouvi silvo de cobra (...).",
+        "text": "(...) um cardume de peixes dourados avançando, saltando ao sol, <u>na piracema:</u> um bambual com sombra fria, onde ouvi silvo de cobra (...).",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Mas você é como se houvesse demasiadas cigarras cantando numa pobre tarde de homem.",
+        "text": "Mas você é como se houvesse demasiadas cigarras cantando <u>numa pobre tarde de</u> <u>homem.</u>",
         "correct": false
       }
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Passeio à Infância\nPrimeiro vamos lá embaixo no córrego; pegaremos dois pequenos carás dourados. E como faz\ncalor, veja, os lagostins saem da toca. Quer ir de batelão, na ilha, comer ingás? Ou vamos ficar\nbestando nessa areia onde o sol dourado atravessa a água rasa? Não catemos pedrinhas redondas\npara atiradeira, porque é urgente subir no morro; os sanhaços estão bicando os cajus maduros. É\njaneiro, grande mês de janeiro!\nPodemos cortar folhas de pita, ir para o outro lado do morro e descer escorregando no capim até a\nbeira do açude. Com dois paus de pita, faremos uma balsa, e, como o carnaval é no mês que vem,\nvamos apanhar tabatinga para fazer formas de máscaras. Ou então vamos jogar bola-preta: do\noutro lado do jardim tem um pé de saboneteira.\nSe quiser, vamos. Converta-se, bela mulher estranha, numa simples menina de pernas magras e\nvamos passear nessa infância de uma terra longe. É verdade que jamais comeu angu de fundo de\npanela?\nBem pouca coisa eu sei: mas tudo que sei lhe ensino. Estaremos debaixo da goiabeira; eu cortarei\numa forquilha com o canivete. Mas não consigo imaginá-la assim; talvez se na praia ainda houver\npitangueiras... Havia pitangueiras na praia? Tenho uma ideia vaga de pitangueiras junto à praia.\nIremos catar conchas cor-de-rosa e búzios crespos, ou armar o alçapão junto do brejo para pegar\npapa-capim. Quer? Agora devem ser três horas da tarde, as galinhas lá fora estão cacarejando de\nsono, você gosta de fruta-pão assada com manteiga? Eu lhe dou aipim ainda quente com melado.\nTalvez você fosse como aquela menina rica, de fora, que achou horrível nosso pobre doce de\nabóbora e coco.\nMas eu a levarei para a beira do ribeirão, na sombra fria do bambual; ali pescarei piaus. Há rolinhas.\nOu então ir descendo o rio numa canoa bem devagar e de repente dar um galope na correnteza,\npassando rente às pedras, como se a canoa fosse um cavalo solto. Ou nadar mar afora até não\npoder mais e depois virar e ficar olhando as nuvens brancas. Bem pouca coisa eu sei; os outros\nmeninos riram de mim porque cortei uma iba de assa-peixe. Lembro-me que vi o ladrão morrer\nafogado com os soldados de canoa dando tiros, e havia uma mulher do outro lado do rio gritando.\nMas como eu podería, mulher estranha, convertê-la em menina para subir comigo pela capoeira?\nUma vez vi uma urutu junto de um tronco queimado; e me lembro de muitas meninas. Tinha uma\nque era para mim uma adoração. Ah, paixão da infância, paixão que não amarga. Assim eu queria\ngostar de você, mulher estranha que ora venho conhecer, homem maduro. Homem maduro, ido e\nvivido; mas quando a olhei, você estava distraída, meus olhos eram outra vez os encantados olhos\ndaquele menino feio do segundo ano primário que quase não tinha coragem de olhar a menina um\npouco mais alta da ponta direita do banco.\nAdoração de infância. Ao menos você conhece um passarinho chamado saíra? E um passarinho\nmiúdo: imagine uma saíra grande que de súbito aparecesse a um menino que só tivesse visto\ncoleiros e curiós, ou pobres cambaxirras. Imagine um arco-íris visto na mais remota infância, sobre\nos morros e o rio. O menino da roça que pela primeira vez vê as algas do mar se balançando sob a\nonda clara, junto da pedra.\nArdente da mais pura paixão de beleza é a adoração da infância. Na minha adolescência você\nseria uma tortura. Quero levá-la para a meninice. Bem pouca coisa eu sei; uma vez na fazenda\nriram: ele não sabe nem passar um barbicacho! Mas o que sei lhe ensino; são pequenas coisas do\nmato e da água, são humildes coisas, e você é tão bela e estranha! Inutilmente tento convertê-la\nem menina de pernas magras, o joelho ralado, um pouco de lama seca do brejo no meio dos\ndedos dos pés.\nLinda como a areia que a onda ondeou. Saíra grande! Na adolescência me torturaria; mas sou um\nhomem maduro. Ainda assim às vezes é como um bando de sanhaços bicando os cajus de meu\ncajueiro, um cardume de peixes dourados avançando, saltando ao sol, na piracema; um bambual\ncom sombra fria, onde ouvi silvo de cobra, e eu quisera tanto dormir. Tanto dormir! Preciso de um\nsossego de beira de rio, com remanso, com cigarras. Mas você é como se houvesse demasiadas\ncigarras cantando numa pobre tarde de homem.\nJulho, 1945 - Crônica extraída do livro “200 crônicas escolhidas”, de Rubem Braga.\nTexto adaptado à nova ortografia."
+    "readingText": "Passeio à Infância\nPrimeiro vamos lá embaixo no córrego; pegaremos dois pequenos carás dourados. E como faz\ncalor, veja, os lagostins saem da toca. Quer ir de batelão, na ilha, comer ingás? Ou vamos ficar\nbestando nessa areia onde o sol dourado atravessa a água rasa? Não catemos pedrinhas redondas\npara atiradeira, porque é urgente subir no morro; os sanhaços estão bicando os cajus maduros. É\njaneiro, grande mês de janeiro!\nPodemos cortar folhas de pita, ir para o outro lado do morro e descer escorregando no capim até a\nbeira do açude. Com dois paus de pita, faremos uma balsa, e, como o carnaval é no mês que vem,\nvamos apanhar tabatinga para fazer formas de máscaras. Ou então vamos jogar bola-preta: do\noutro lado do jardim tem um pé de saboneteira.\nSe quiser, vamos. Converta-se, bela mulher estranha, numa simples menina de pernas magras e\nvamos passear nessa infância de uma terra longe. É verdade que jamais comeu angu de fundo de\npanela?\nBem pouca coisa eu sei: mas tudo que sei lhe ensino. Estaremos debaixo da goiabeira; eu cortarei\numa forquilha com o canivete. Mas não consigo imaginá-la assim; talvez se na praia ainda houver\npitangueiras... Havia pitangueiras na praia? Tenho uma ideia vaga de pitangueiras junto à praia.\nIremos catar conchas cor-de-rosa e búzios crespos, ou armar o alçapão junto do brejo para pegar\npapa-capim. Quer? Agora devem ser três horas da tarde, as galinhas lá fora estão cacarejando de\nsono, você gosta de fruta-pão assada com manteiga? Eu lhe dou aipim ainda quente com melado.\nTalvez você fosse como aquela menina rica, de fora, que achou horrível nosso pobre doce de\nabóbora e coco.\nMas eu a levarei para a beira do ribeirão, na sombra fria do bambual; ali pescarei piaus. Há rolinhas.\nOu então ir descendo o rio numa canoa bem devagar e de repente dar um galope na correnteza,\npassando rente às pedras, como se a canoa fosse um cavalo solto. Ou nadar mar afora até não\npoder mais e depois virar e ficar olhando as nuvens brancas. Bem pouca coisa eu sei; os outros\nmeninos riram de mim porque cortei uma iba de assa-peixe. Lembro-me que vi o ladrão morrer\nafogado com os soldados de canoa dando tiros, e havia uma mulher do outro lado do rio gritando.\nMas como eu podería, mulher estranha, convertê-la em menina para subir comigo pela capoeira?\nUma vez vi uma urutu junto de um tronco queimado; e me lembro de muitas meninas. Tinha uma\nque era para mim uma adoração. Ah, paixão da infância, paixão que não amarga. Assim eu queria\ngostar de você, mulher estranha que ora venho conhecer, homem maduro. Homem maduro, ido e\nvivido; mas quando a olhei, você estava distraída, meus olhos eram outra vez os encantados olhos\ndaquele menino feio do segundo ano primário que quase não tinha coragem de olhar a menina um\npouco mais alta da ponta direita do banco.\nAdoração de infância. Ao menos você conhece um passarinho chamado saíra? E um passarinho\nmiúdo: imagine uma saíra grande que de súbito aparecesse a um menino que só tivesse visto\ncoleiros e curiós, ou pobres cambaxirras. Imagine um arco-íris visto na mais remota infância, sobre\nos morros e o rio. O menino da roça que pela primeira vez vê as algas do mar se balançando sob a\nonda clara, junto da pedra.\nArdente da mais pura paixão de beleza é a adoração da infância. Na minha adolescência você\nseria uma tortura. Quero levá-la para a meninice. Bem pouca coisa eu sei; uma vez na fazenda\nriram: ele não sabe nem passar um barbicacho! Mas o que sei lhe ensino; são pequenas coisas do\nmato e da água, são humildes coisas, e você é tão bela e estranha! Inutilmente tento convertê-la\nem menina de pernas magras, o joelho ralado, um pouco de lama seca do brejo no meio dos\ndedos dos pés.\nLinda como a areia que a onda ondeou. Saíra grande! Na adolescência me torturaria; mas sou um\nhomem maduro. Ainda assim às vezes é como um bando de sanhaços bicando os cajus de meu\ncajueiro, um cardume de peixes dourados avançando, saltando ao sol, na piracema; um bambual\ncom sombra fria, onde ouvi silvo de cobra, e eu quisera tanto dormir. Tanto dormir! Preciso de um\nsossego de beira de rio, com remanso, com cigarras. Mas você é como se houvesse demasiadas\ncigarras cantando numa pobre tarde de homem.\nJulho, 1945 - Crônica extraída do livro “200 crônicas escolhidas”, de Rubem Braga.\nTexto adaptado à nova ortografia.\nCom base no texto, responda à questão.\n<u>Na</u> <u>minha</u> <u>adolescência</u> você seria uma tortura. (8º parágrafo)"
   },
   {
     "id": "classes_invar-pdf_5_classes_invar-q19",
@@ -12631,22 +12631,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“...um espetáculo de caráter exemplar, revestido de sentido religioso e de dominação, cuja função era o reforço(...) das relações de poder.\" (l. 37 a 40) – Conecta oração, estabelecendo uma relação de posse.",
+        "text": "“...um espetáculo de caráter exemplar, revestido de sentido religioso e de dominação, <u>cuja</u> função era o reforço(...) das relações de poder.\" (l. 37 a 40) – Conecta oração, estabelecendo uma relação de posse.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“...a violência se insere, sob diversos vieses, nas relações de poder...” (l. 13 a 15) – Acrescenta aspecto locativo.",
+        "text": "“...a violência se insere, <u>sob</u> diversos vieses, nas relações de poder...” (l. 13 a 15) – Acrescenta aspecto locativo.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Ou seja, sua vida passava a ser consagrada aos deuses.” (l. 34 e 35) - Introduz sentido de alternância.",
+        "text": "<u>Ou</u> seja, sua vida passava a ser consagrada aos deuses.” (l. 34 e 35) - Introduz sentido de alternância.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Como nem tudo se limita às questões políticas e às guerras, o livro ainda analisa as formas que a violência assume...” (l. 62 a 64) – Estabelece conexão temporal.",
+        "text": "“Como nem tudo se limita às questões políticas e às guerras, o livro <u>ainda</u> analisa as formas que a violência assume...” (l. 62 a 64) – Estabelece conexão temporal.",
         "correct": false
       }
     ],
@@ -12661,31 +12661,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 20,
-    "statement": "Com base no texto, responda à questão.\nQuanto às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira (...). O termo sublinhado nessa passagem está substituído\nERRONEAMENTE na opção:",
+    "statement": "Quanto às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira (...). O termo sublinhado nessa passagem está substituído\n<u>ERRONEAMENTE</u> na opção:",
     "options": [
       {
         "letter": "A",
-        "text": "No que respeita às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
+        "text": "<u>No que respeita às</u> pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Com relação às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
+        "text": "<u>Com</u> <u>relação</u> <u>às</u> pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Mediante às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
+        "text": "<u>Mediante</u> às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Relativamente às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
+        "text": "<u>Relativamente</u> às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "No tocante às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
+        "text": "<u>No</u> <u>tocante</u> às pipocas que estouraram, são adultos que voltaram a ser crianças e que sabem que a vida é uma grande brincadeira...",
         "correct": false
       }
     ],
@@ -12730,7 +12730,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "TEXTO 1\nOs celulares\nResolvi optar pela forma de plural, pois vejo tanta gente agora com, pelo menos, dois. O que me\npergunto é como se comportaria a maioria das pessoas sem celular, como viver hoje sem ele?\nUma epidemia neurótica grave atacaria a população? Certamente! Quem não tem seu celular hoje\nem dia? Crianças, cada vez mais crianças, lidam, e bem, com ele. Apenas uns poucos retrógrados,\navessos ao progresso tecnológico. A força consumista do aparelho foi crescendo com a\npossibilidade de suas crescentes utilizações. Me poupem de enumerá-las, pois só sei de algumas.\nDe fato, ele faz hoje em dia de um tudo. Diria mesmo que o celular veio a modificar as relações do\nser humano com a vida e com as outras pessoas.\nAté que não custei tanto assim a aderir a este telefoninho! Nem posso deixar de reconhecer que\nele tem me quebrado uns galhos importantes no corre-corre da vida. Mas me utilizo dele pouco e\napenas para receber e efetuar ligações. Nem lembro que ele marca as horas, possui calendário. É\nverdade, recebi uns torpedos e, com dificuldade, enviei outros, bem raros. Imagine tirar fotos,\nconectá-lo à internet, ao Facebook! Não quero passar por um desajustado à vida moderna. Isto\nnão! No computador, por exemplo, além dos e-mails, participo de rede social, digito (mal), é\nverdade, meus textos, faço lá algumas compras e pesquisas... Fora dele, tenho meus cartões de\ncrédito, efetuo pagamentos nas máquinas bancárias e, muito importante, sei de cabeça todas as\nminhas senhas, que vão se multiplicando. Haja memória!\nMas, no caso dos celulares, o que me chama mesmo a atenção é que as pessoas parecem não se\ndesgrudar dele, em qualquer situação, ou ligando para alguém, ou entrando em contato com a\ninternet, acompanhando o movimento das postagens do face, ou mesmo brincando com seus\njoguinhos, como procedem alguns taxistas, naqueles instantes em que param nos sinais ou em que\no trânsito está emperrado.\nNão há como negar, contudo, que esta utilização constante do aparelhinho tem causado\ndesconfortos sociais. Comenta a Danuza Leão: \"Outro dia fui a um jantar com mais seis pessoas e\ntodas elas seguravam um celular. Pior, duas delas, descobri depois, trocavam torpedos entre elas.\"\nMe sinto muito constrangido quando, num grupo, em torno de uma mesa, tem alguém, do meu\nlado, falando, sem parar, pelo celular. Pior, bem pior, quando estou só com alguém, e esta pessoa\nfica atendendo ligações contínuas, algumas delas com aquela voz abafada, sussurrante... Pode? É\nfrequente um casal se sentar a uma mesa colada à minha, em um restaurante e, depois, feitos os\npedidos aos garçons, a mulher e o homem tomam, de imediato, os seus respectivos celulares. E\nficam neles conversando quase o tempo todo, mesmo após o início da refeição. Se é um casal de\ncerta idade, podem me argumentar, não devia ter mais nada para conversar. Afinal, casados há\ntanto tempo! Porém, vejo também casais bem mais jovens, com a mesma atitude, consultando,\nlogo ao se sentarem, os celulares para ver o movimento nas redes sociais, ou enviando torpedos, a\nmaior parte do tempo. Clima de namoro, de sedução, é que não brotava dali. Talvez, alguém\nparece ter murmurado em meu ouvido, assim os casais encontraram uma maneira eficiente de não\ndiscutirem. Falando com pessoas não presentes ali. A tecnologia a serviço do bom entendimento,\nde uma refeição em paz.\nMas vivencio sempre outras situações em que o uso do celular me prende a atenção. Entrei em\num consultório médico, uma senhora aguardava sua vez na sala de espera. Deu para perceber que\nela acabava de desligar seu aparelho. Mas, de imediato, fez outra chamada. Estava sentado\npróximo a ela, que falava bem alto. A ligação era para uma amiga bem íntima, estava claro pela\nconversa desenrolada, desenrolada mesmo. Em breves minutos, não é por nada não, fiquei\nsabendo de alguns \"probleminhas\" da vida desta senhora. Não, não vou aqui devassar a vida dela,\nnem a própria me deu autorização para tal... Afinal, sou uma pessoa discreta. Não pude foi evitar\nescutar o que minha companheira de sala de espera... berrava. Para não dizer, no entanto, que não\ncontei nada, também é discrição demais, só um pequeno detalhe, sem maior surpresa: ela estava a\nponto de estrangular o marido. O homem, não posso afiançar, aprontava as suas. Do outro lado, a\namigona parecia estimular bem a infortunada senhora. De repente, me impedindo de saber mais\nfatos, a atendente chama a senhora, chegara a sua hora de adentrar ao consultório do médico.\nNão sei como ela, bastante exasperada, iria enfrentar um exame, na verdade, delicado. Não deu\npara vê-la sair pela outra porta. É os celulares criaram estas situações, propiciando já a formação\ndo que poderá vir a ser chamado de auditeurismo,. que ficará, assim, ao lado do antigo\nvoyeurismo.\n(UCHÔA, Carlos Eduardo Falcão. Os celulares. In:. A vida e o tempo em tom de conversa. 1ª ed.\nRio de Janeiro: Odisseia, 2013. p. 150-153.)\nTEXTO 2\nO reinado do celular\nDe alto a baixo da pirâmide social, quase todas as pessoas que eu conheço possuem celular. É\nrealmente um grande quebra-galho. Quando estamos na rua e precisamos dar um recado, é só\nsacar o aparelhinho da bolsa e resolver a questão, caso não dê pra esperar chegar em casa. Pra\nisso - e só pra isso - serve o telefone móvel, na minha inocente opinião.\nAo contrário da maioria das mulheres, nunca fui faná tica por telefone, incluindo o fixo. Uso com\nmuito comedimento para resolver assuntos de trabalho, combinar encontros, cumprimentar\nalguém, essas coisas relativamente rápidas. Fazer visita por telefone é algo para o qual não tenho a\nmenor paciência. Por celular, muito menos. Considero-o um excelente resolvedor de pendências e\nnada mais.\nLogo, você pode imaginar meu espanto ao constatar como essa engenhoca se transformou no\nsímbolo da neurose urbana. Outro dia fui assistir a um show. Minutos antes de começar, o lobby\ndo teatro estava repleto de pessoas falando ao celular. \"Vou ter que desligar, o espetáculo vai\ncomeçar agora\". Era como se todos estivessem se despedindo antes de embarcar para a lua. Ao\ntérmino do show, as luzes do teatro mal tinham acendido quando todos voltaram a ligar seus\ncelulares e instantaneamente se puseram a discar.• Para quem? Para quê? Para contar sobre o\nshow para os amigos, para saber o saldo no banco, para o tele-horóscopo?? Nunca vi tamanha\nurgência em se comunicar à distância. Conversar entre si, com o sujeito ao lado, quase ninguém\nconversava.\nO celular deixou de ser uma necessidade para virar uma ansiedade. E toda ânsia nos mantém\nreféns. Quando vejo alguém checando suas mensagens a todo minuto e fazendo ligações triviais\nem público, não imagino estar diante de uma pessoa ocupada e poderosa, e sim de uma pessoa\nrendida: alguém que não possui mais controle sobre seu tempo, alguém que não consegue mais\nficar em silêncio e em privacidade. E deixar celular em cima de mesa de restaurante, só perdoo se\no cara estiver com a mãe no leito de morte e for ligeira mente surdo.\nIsso tudo me ocorreu enquanto lia o livro infantil O menino que queria ser celular, de Marcelo\nPires, com ilustrações de Roberto Lautert. Conta a história de um garotinho que não suporta mais a\nfalta de comunicação com o pai e a mãe, já que ambos não conseguem desligar o celular nem por\num instante, nem no fim de semana - levam o celular até para o banheiro. O menino não tem vez.\nAi a ideia: se ele fosse um celular, receberia muito mais atenção.\nNão é história da carochinha, isso rola pra valer. Adultos e adolescentes estão virando\ndependentes de um aparelho telefônico e desenvolvendo uma nova fobia: medo de ser esquecido.\nE dá-lhe falar a toda hora, por qualquer motivo, numa esquizofrenia considerada, ora, ora,\nmoderna.\nOs celulares estão cada dia menores e mais fininhos. Mas são eles que estão botando muita gente\nna palma da mão.\n(MEDEIROS, Martha. Russa; Coisas da 2013. p. 369-370.) O reinado do celular. In:. Montanha\nvida; Feliz por nada. Porto Alegre, RS: L&PM\nLeia os trechos abaixo:\nI) \"Até que não custei tanto assim a aderir [...].\" (TEXTO 1,\n\n2°§)\nII) \"[...] levam o celular até para o banheiro.\" (TEXTO 2,\n\n5º§)"
+    "readingText": "TEXTO 1\nOs celulares\nResolvi optar pela forma de plural, pois vejo tanta gente agora com, pelo menos, dois. O que me\npergunto é como se comportaria a maioria das pessoas sem celular, como viver hoje sem ele?\nUma epidemia neurótica grave atacaria a população? Certamente! Quem não tem seu celular hoje\nem dia? Crianças, cada vez mais crianças, lidam, e bem, com ele. Apenas uns poucos retrógrados,\navessos ao progresso tecnológico. A força consumista do aparelho foi crescendo com a\npossibilidade de suas crescentes utilizações. Me poupem de enumerá-las, pois só sei de algumas.\nDe fato, ele faz hoje em dia de um tudo. Diria mesmo que o celular veio a modificar as relações do\nser humano com a vida e com as outras pessoas.\nAté que não custei tanto assim a aderir a este telefoninho! Nem posso deixar de reconhecer que\nele tem me quebrado uns galhos importantes no corre-corre da vida. Mas me utilizo dele pouco e\napenas para receber e efetuar ligações. Nem lembro que ele marca as horas, possui calendário. É\nverdade, recebi uns torpedos e, com dificuldade, enviei outros, bem raros. Imagine tirar fotos,\nconectá-lo à internet, ao Facebook! Não quero passar por um desajustado à vida moderna. Isto\nnão! No computador, por exemplo, além dos e-mails, participo de rede social, digito (mal), é\nverdade, meus textos, faço lá algumas compras e pesquisas... Fora dele, tenho meus cartões de\ncrédito, efetuo pagamentos nas máquinas bancárias e, muito importante, sei de cabeça todas as\nminhas senhas, que vão se multiplicando. Haja memória!\nMas, no caso dos celulares, o que me chama mesmo a atenção é que as pessoas parecem não se\ndesgrudar dele, em qualquer situação, ou ligando para alguém, ou entrando em contato com a\ninternet, acompanhando o movimento das postagens do face, ou mesmo brincando com seus\njoguinhos, como procedem alguns taxistas, naqueles instantes em que param nos sinais ou em que\no trânsito está emperrado.\nNão há como negar, contudo, que esta utilização constante do aparelhinho tem causado\ndesconfortos sociais. Comenta a Danuza Leão: \"Outro dia fui a um jantar com mais seis pessoas e\ntodas elas seguravam um celular. Pior, duas delas, descobri depois, trocavam torpedos entre elas.\"\nMe sinto muito constrangido quando, num grupo, em torno de uma mesa, tem alguém, do meu\nlado, falando, sem parar, pelo celular. Pior, bem pior, quando estou só com alguém, e esta pessoa\nfica atendendo ligações contínuas, algumas delas com aquela voz abafada, sussurrante... Pode? É\nfrequente um casal se sentar a uma mesa colada à minha, em um restaurante e, depois, feitos os\npedidos aos garçons, a mulher e o homem tomam, de imediato, os seus respectivos celulares. E\nficam neles conversando quase o tempo todo, mesmo após o início da refeição. Se é um casal de\ncerta idade, podem me argumentar, não devia ter mais nada para conversar. Afinal, casados há\ntanto tempo! Porém, vejo também casais bem mais jovens, com a mesma atitude, consultando,\nlogo ao se sentarem, os celulares para ver o movimento nas redes sociais, ou enviando torpedos, a\nmaior parte do tempo. Clima de namoro, de sedução, é que não brotava dali. Talvez, alguém\nparece ter murmurado em meu ouvido, assim os casais encontraram uma maneira eficiente de não\ndiscutirem. Falando com pessoas não presentes ali. A tecnologia a serviço do bom entendimento,\nde uma refeição em paz.\nMas vivencio sempre outras situações em que o uso do celular me prende a atenção. Entrei em\num consultório médico, uma senhora aguardava sua vez na sala de espera. Deu para perceber que\nela acabava de desligar seu aparelho. Mas, de imediato, fez outra chamada. Estava sentado\npróximo a ela, que falava bem alto. A ligação era para uma amiga bem íntima, estava claro pela\nconversa desenrolada, desenrolada mesmo. Em breves minutos, não é por nada não, fiquei\nsabendo de alguns \"probleminhas\" da vida desta senhora. Não, não vou aqui devassar a vida dela,\nnem a própria me deu autorização para tal... Afinal, sou uma pessoa discreta. Não pude foi evitar\nescutar o que minha companheira de sala de espera... berrava. Para não dizer, no entanto, que não\ncontei nada, também é discrição demais, só um pequeno detalhe, sem maior surpresa: ela estava a\nponto de estrangular o marido. O homem, não posso afiançar, aprontava as suas. Do outro lado, a\namigona parecia estimular bem a infortunada senhora. De repente, me impedindo de saber mais\nfatos, a atendente chama a senhora, chegara a sua hora de adentrar ao consultório do médico.\nNão sei como ela, bastante exasperada, iria enfrentar um exame, na verdade, delicado. Não deu\npara vê-la sair pela outra porta. É os celulares criaram estas situações, propiciando já a formação\ndo que poderá vir a ser chamado de auditeurismo,. que ficará, assim, ao lado do antigo\nvoyeurismo.\n(UCHÔA, Carlos Eduardo Falcão. Os celulares. In:. A vida e o tempo em tom de conversa. 1ª ed.\nRio de Janeiro: Odisseia, 2013. p. 150-153.)\nTEXTO 2\nO reinado do celular\nDe alto a baixo da pirâmide social, quase todas as pessoas que eu conheço possuem celular. É\nrealmente um grande quebra-galho. Quando estamos na rua e precisamos dar um recado, é só\nsacar o aparelhinho da bolsa e resolver a questão, caso não dê pra esperar chegar em casa. Pra\nisso - e só pra isso - serve o telefone móvel, na minha inocente opinião.\nAo contrário da maioria das mulheres, nunca fui faná tica por telefone, incluindo o fixo. Uso com\nmuito comedimento para resolver assuntos de trabalho, combinar encontros, cumprimentar\nalguém, essas coisas relativamente rápidas. Fazer visita por telefone é algo para o qual não tenho a\nmenor paciência. Por celular, muito menos. Considero-o um excelente resolvedor de pendências e\nnada mais.\nLogo, você pode imaginar meu espanto ao constatar como essa engenhoca se transformou no\nsímbolo da neurose urbana. Outro dia fui assistir a um show. Minutos antes de começar, o lobby\ndo teatro estava repleto de pessoas falando ao celular. \"Vou ter que desligar, o espetáculo vai\ncomeçar agora\". Era como se todos estivessem se despedindo antes de embarcar para a lua. Ao\ntérmino do show, as luzes do teatro mal tinham acendido quando todos voltaram a ligar seus\ncelulares e instantaneamente se puseram a discar.• Para quem? Para quê? Para contar sobre o\nshow para os amigos, para saber o saldo no banco, para o tele-horóscopo?? Nunca vi tamanha\nurgência em se comunicar à distância. Conversar entre si, com o sujeito ao lado, quase ninguém\nconversava.\nO celular deixou de ser uma necessidade para virar uma ansiedade. E toda ânsia nos mantém\nreféns. Quando vejo alguém checando suas mensagens a todo minuto e fazendo ligações triviais\nem público, não imagino estar diante de uma pessoa ocupada e poderosa, e sim de uma pessoa\nrendida: alguém que não possui mais controle sobre seu tempo, alguém que não consegue mais\nficar em silêncio e em privacidade. E deixar celular em cima de mesa de restaurante, só perdoo se\no cara estiver com a mãe no leito de morte e for ligeira mente surdo.\nIsso tudo me ocorreu enquanto lia o livro infantil O menino que queria ser celular, de Marcelo\nPires, com ilustrações de Roberto Lautert. Conta a história de um garotinho que não suporta mais a\nfalta de comunicação com o pai e a mãe, já que ambos não conseguem desligar o celular nem por\num instante, nem no fim de semana - levam o celular até para o banheiro. O menino não tem vez.\nAi a ideia: se ele fosse um celular, receberia muito mais atenção.\nNão é história da carochinha, isso rola pra valer. Adultos e adolescentes estão virando\ndependentes de um aparelho telefônico e desenvolvendo uma nova fobia: medo de ser esquecido.\nE dá-lhe falar a toda hora, por qualquer motivo, numa esquizofrenia considerada, ora, ora,\nmoderna.\nOs celulares estão cada dia menores e mais fininhos. Mas são eles que estão botando muita gente\nna palma da mão.\n(MEDEIROS, Martha. Russa; Coisas da 2013. p. 369-370.) O reinado do celular. In:. Montanha\nvida; Feliz por nada. Porto Alegre, RS: L&PM\nLeia os trechos abaixo:\nI) <u>\"Até que</u> não custei tanto assim a aderir [...].\" (TEXTO 1,\n\n2°§)\nII) \"[...] levam o celular até para o banheiro.\" (TEXTO 2,\n\n5º§)"
   },
   {
     "id": "classes_invar-pdf_5_classes_invar-q22",
@@ -12739,16 +12739,16 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 22,
-    "statement": "Leia o período abaixo.\n“Cada qual se achava mais inteligente do que o outro, mas Steve em geral tratava Bill como\nalguém levemente inferior, sobretudo em questões de gosto e estilo”, diz Andy Hertzfeld.” (l. 32 a\n35).\nAnalisando morfologicamente as palavras destacadas acima, pode-se afirmar que a expressão",
+    "statement": "Leia o período abaixo.\n<u>“Cada qual</u> se achava <u>mais</u> inteligente <u>do que</u> o outro, mas Steve em geral tratava Bill <u>como</u>\nalguém levemente inferior, <u>sobretudo</u> em questões de gosto e estilo”, diz Andy Hertzfeld.” (l. 32 a\n35).\nAnalisando morfologicamente as palavras destacadas acima, pode-se afirmar que a expressão",
     "options": [
       {
         "letter": "A",
-        "text": "cada qual corresponde a um artigo definido.",
+        "text": "<u>cada qual</u> corresponde a um artigo definido.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "mais...do que é uma construção própria do grau superlativo absoluto.",
+        "text": "<u>mais...do</u> <u>que</u> é uma construção própria do grau superlativo absoluto.",
         "correct": false
       },
       {
@@ -12758,7 +12758,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "D",
-        "text": "sobretudo é um advérbio que equivale à palavra principalmente.",
+        "text": "sobretudo é um advérbio que equivale à palavra <u>principalmente.</u>",
         "correct": true
       }
     ],
@@ -12773,7 +12773,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 23,
-    "statement": "( ) Em “Esse corpo está com mais remendos X” (l. 31 e 32), a substituição do pronome grifado por\naquele acarretaria alteração de sentido no trecho.\nA seqüência correta é:",
+    "statement": "( ) Em <u>“Esse</u> corpo está com mais remendos X” (l. 31 e 32), a substituição do pronome grifado por\n<u>aquele</u> acarretaria alteração de sentido no trecho.\nA seqüência correta é:",
     "options": [
       {
         "letter": "A",
@@ -12798,7 +12798,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "(Eduardo Galeano. Futebol, ao sol e à sombra.)\nJulgue cada item a seguir, como V (verdadeiro) ou F (falso), considerando o que se afirma sobre o\nemprego dos pronomes no texto II.\n( ) Em “A bola o procura, o reconhece, precisa dele.” (l. 12) e “/.../ que não estão vendo o que\nacontece.” (l. 26 e 27), todos os termos assinalados são pronomes pessoais oblíquos átonos.\n( ) No trecho “por obra e graça desses passes devolvidos num toque, essas fintas que desenham\nos zês na grama, esses golaços de calcanhar ou de bicicleta...” (l. 17 a 20), os pronomes grifados\npoderiam contrair-se com a preposição de sem prejuízo da correção gramatical.\n( ) No trecho “No peito de seu pé, ela descansa e se embala. Ele lhe dá brilho e a faz falar...” (l. 12\na 14), todos os pronomes grifados têm o mesmo referente."
+    "readingText": "(Eduardo Galeano. Futebol, ao sol e à sombra.)\nJulgue cada item a seguir, como V (verdadeiro) ou F (falso), considerando o que se afirma sobre o\nemprego dos pronomes no texto II.\n( ) Em “A bola o procura, o reconhece, precisa dele.” (l. 12) e “/.../ que não estão vendo <u>o</u> que\nacontece.” (l. 26 e 27), todos os termos assinalados são pronomes pessoais oblíquos átonos.\n( ) No trecho “por obra e graça desses passes devolvidos num toque, <u>essas</u> fintas que desenham\nos zês na grama, <u>esses</u> golaços de calcanhar ou de bicicleta...” (l. 17 a 20), os pronomes grifados\npoderiam contrair-se com a preposição de sem prejuízo da correção gramatical.\n( ) No trecho “No peito de <u>seu</u> pé, ela descansa e se embala. Ele <u>lhe</u> dá brilho e <u>a</u> faz falar...” (l. 12\na 14), todos os pronomes grifados têm o mesmo referente."
   },
   {
     "id": "classes_invar-pdf_5_classes_invar-q24",
@@ -12811,28 +12811,28 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Não suporto mais ver tantas tragédias, crimes, violências...” (l. 07 e 08)",
+        "text": "“Não suporto mais ver <u>tantas</u> tragédias, crimes, violências...” (l. 07 e 08)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Fala-se muito, mesmo com a bola rolando.” (l. 21 e 22)",
+        "text": "Fala-se <u>muito,</u> mesmo com a bola rolando.” (l. 21 e 22)",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“Outra discussão chata, durante e após as partidas...” (l. 34 e 35)",
+        "text": "“Outra discussão <u>chata,</u> durante e após as partidas...” (l. 34 e 35)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Muitas parecem iguais, mas não são.” (l. 49)",
+        "text": "Muitas parecem <u>iguais,</u> mas não são.” (l. 49)",
         "correct": false
       }
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "TEXTO I\nO silêncio incomoda\n\nComo trabalho em casa, assisto a um grande número de jogos e programas esportivos, alguns porque gosto e outros para me manter atualizado. Vejo ainda muitos noticiários gerais, filmes, programas culturais e também, por curiosidade, muitas coisas ruins. Estou viciado em televisão.\n\nNão suporto mais ver tantas tragédias, crimes, violências, falcatruas e tantas politicagens para a realização da Copa de 2014.\n\nEstou sem paciência para assistir a tantas partidas tumultuadas no Brasil, consequência do estilo de jogar, da tolerância com a violência e do ambiente bélico em que se transformou o futebol, dentro e fora do campo.\n\nNa transmissão das partidas, fala-se e grita-se demais. Não há um único instante de silêncio, nenhuma pausa. O barulho é cada dia maior no futebol, nas ruas, nos bares, nos restaurantes e em quase todos os ambientes. O silêncio incomoda as pessoas.\n\nÉ óbvio que informações e estatísticas são importantíssimas. Mas exageram. Fala-se muito, mesmo com a bola rolando. Impressiona-me como se formam conceitos, dão opiniões, baseados em estatísticas que têm pouca ou nenhuma importância.\n\nNa partida entre Escócia e Brasil, um repórter da TV Globo deu a grande notícia de que Neymar foi o primeiro jogador brasileiro a marcar dois gols contra a Escócia em uma mesma partida.\n\nParece haver uma disputa para saber quem dá mais informações e estatísticas, e outra, entre os narradores, para saber quem grita gol mais alto e prolongado. Se dizem que a imagem vale mais que mil palavras, por que se fala e se grita tanto?\n\nOutra discussão chata, durante e após as partidas, é se um jogador teve a intenção de colocar a mão na bola e de fazer pênalti, e se outro teve a intenção de atingir o adversário. Com raríssimas exceções, ninguém é louco para fazer pênalti nem tão canalha para querer quebrar o outro jogador.\n\nO que ocorre, com frequência, é o jogador, no impulso, sem pensar, soltar o braço na cara do outro. O impulso está à frente da consciência. Não sou também tão ingênuo para achar que todas as faltas violentas são involuntárias.\n\nNão dá para o árbitro saber se a falta foi intencional ou não. Ele precisa julgar o fato, e não a intenção. Eles precisam ter também bom senso, o que é raro no ser humano, para saber a gravidade das faltas. Muitas parecem iguais, mas não são. Ter critério não é unificar as diferenças.\n\n(Tostão, Folha de S.Paulo, caderno D, esporte, p. 11, 10/04/2011.)"
+    "readingText": "TEXTO I\nO silêncio incomoda\n\nComo trabalho em casa, assisto a um grande número de jogos e programas esportivos, alguns porque gosto e outros para me manter atualizado. Vejo ainda muitos noticiários gerais, filmes, programas culturais e também, por curiosidade, muitas coisas ruins. Estou viciado em televisão.\n\nNão suporto mais ver tantas tragédias, crimes, violências, falcatruas e tantas politicagens para a realização da Copa de 2014.\n\nEstou sem paciência para assistir a tantas partidas tumultuadas no Brasil, consequência do estilo de jogar, da tolerância com a violência e do ambiente bélico em que se transformou o futebol, dentro e fora do campo.\n\nNa transmissão das partidas, fala-se e grita-se demais. Não há um único instante de silêncio, nenhuma pausa. O barulho é cada dia maior no futebol, nas ruas, nos bares, nos restaurantes e em quase todos os ambientes. O silêncio incomoda as pessoas.\n\nÉ óbvio que informações e estatísticas são importantíssimas. Mas exageram. Fala-se muito, mesmo com a bola rolando. Impressiona-me como se formam conceitos, dão opiniões, baseados em estatísticas que têm pouca ou nenhuma importância.\n\nNa partida entre Escócia e Brasil, um repórter da TV Globo deu a grande notícia de que Neymar foi o primeiro jogador brasileiro a marcar dois gols contra a Escócia em uma mesma partida.\n\nParece haver uma disputa para saber quem dá mais informações e estatísticas, e outra, entre os narradores, para saber quem grita gol mais <u>alto</u> e prolongado. Se dizem que a imagem vale mais que mil palavras, por que se fala e se grita tanto?\n\nOutra discussão chata, durante e após as partidas, é se um jogador teve a intenção de colocar a mão na bola e de fazer pênalti, e se outro teve a intenção de atingir o adversário. Com raríssimas exceções, ninguém é louco para fazer pênalti nem tão canalha para querer quebrar o outro jogador.\n\nO que ocorre, com frequência, é o jogador, no impulso, sem pensar, soltar o braço na cara do outro. O impulso está à frente da consciência. Não sou também tão ingênuo para achar que todas as faltas violentas são involuntárias.\n\nNão dá para o árbitro saber se a falta foi intencional ou não. Ele precisa julgar o fato, e não a intenção. Eles precisam ter também bom senso, o que é raro no ser humano, para saber a gravidade das faltas. Muitas parecem iguais, mas não são. Ter critério não é unificar as diferenças.\n\n(Tostão, Folha de S.Paulo, caderno D, esporte, p. 11, 10/04/2011.)"
   },
   {
     "id": "classes_invar-pdf_5_classes_invar-q25",
@@ -12841,26 +12841,26 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 25,
-    "statement": "As palavras abaixo destacadas foram utilizadas para introduzir orações subordinadas substantivas.\nPorém, em somente uma opção, essa relação sintática foi estabelecida por uma conjunção\nintegrante própria. Assinale-a.",
+    "statement": "TEXTO I\nAs palavras abaixo destacadas foram utilizadas para introduzir orações subordinadas substantivas.\nPorém, em somente uma opção, essa relação sintática foi estabelecida por uma conjunção\nintegrante própria. Assinale-a.",
     "options": [
       {
         "letter": "A",
-        "text": "“Impressiona-me como se formam conceitos, dão opiniões, baseados em estatísticas...” (l. 22 e 23)",
+        "text": "“Impressiona-me <u>como</u> se formam conceitos, dão opiniões, baseados em estatísticas...” (l. 22 e 23)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Parece haver uma disputa para saber quem dá mais informações e estatísticas...” (l. 29 e 30)",
+        "text": "Parece haver uma disputa para saber <u>quem</u> dá mais informações e estatísticas...” (l. 29 e 30)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Estou sem paciência para assistir a tantas partidas tumultuadas no Brasil.” (l. 10 e 11)",
+        "text": "Estou sem paciência <u>para</u> assistir a tantas partidas tumultuadas no Brasil.” (l. 10 e 11)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Na partida entre Escócia e Brasil, um repórter da TV Globo deu a “grande notícia”, que Neymar...” (l. 25 e 26)",
+        "text": "Na partida entre Escócia e Brasil, um repórter da TV Globo deu a “grande notícia”, <u>que</u> Neymar...” (l. 25 e 26)",
         "correct": true
       }
     ],
@@ -12908,37 +12908,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 27,
-    "statement": "Leia atentamente o seguinte texto:\nAssinale a alternativa em que se e analisou INCORRETAMENTE a classe gramatical do termo\nsublinhado.",
+    "statement": "Assinale a alternativa em que se e analisou INCORRETAMENTE a classe gramatical do termo\nsublinhado.",
     "options": [
       {
         "letter": "A",
-        "text": "“... a folha permanece meio escrita, como estava na véspera.” (advérbio de intensidade)",
+        "text": "“... a folha permanece <u>meio</u> escrita, como estava na véspera.” (advérbio de intensidade)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Procuro recordar o que dizíamos.” (pronome demonstrativo)",
+        "text": "“Procuro recordar <u>o</u> que dizíamos.” (pronome demonstrativo)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Ela se revelou pouco a pouco, e nunca se revelou inteiramente.” (advérbio de tempo)",
+        "text": "“Ela se revelou pouco a pouco, e <u>nunca</u> se revelou inteiramente.” (advérbio de tempo)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Talvez seja até o mesmo pio daquele tempo. (palavra denotativa de inclusão)",
+        "text": "“Talvez seja <u>até</u> o mesmo pio daquele tempo. (palavra denotativa de inclusão)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“A porta do escritório abre-se de manso, os passos de seu Ribeiro afastam-se.” (pronome possessivo)",
+        "text": "“A porta do escritório abre-se de manso, os passos de <u>seu</u> Ribeiro afastam-se.” (pronome possessivo)",
         "correct": true
       }
     ],
     "correctLetter": "E",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "**São Bernardo** (Graciliano Ramos)\nConheci que Madalena era boa em demasia, mas não conheci tudo de uma vez. Ela se revelou\npouco a pouco, e nunca se revelou inteiramente. A culpa foi minha, ou antes, a culpa foi desta vida\nagreste, que me deu uma alma agreste.\nE, falando assim, compreendo que perco o tempo. Com efeito, se me escapa o retrato moral de\nminha mulher, para que serve esta narrativa? Para nada, mas sou forçado a escrever.\nQuando os grilos cantam, sento-me aqui à mesa da sala de jantar, bebo café, acendo o cachimbo.\nÀs vezes as idéias não vêm, ou vêm muito numerosas – e a folha permanece meio escrita, como\nestava na véspera. Releio algumas linhas, que me desagradam. Não vale a pena tentar corrigi-las.\nAfasto o papel.\nEmoções indefiníveis me agitam – inquietação terrível, desejo doido de voltar, tagarelar\nnovamente com Madalena, como fazíamos todos os dias, a esta hora. Saudade? Não, não é isto: é\ndesespero, raiva, um peso enorme no coração.\nProcuro recordar o que dizíamos. Impossível. As minhas palavras eram apenas palavras,\nreprodução imperfeita de fatos exteriores, e as dela tinham alguma coisa que não consigo exprimir.\nPara senti-las melhor, eu apagava as luzes, deixava que a sombra nos envolvesse até ficarmos dois\nvultos indistintos na escuridão.\nLá fora os sapos arengavam, o vento gemia, as árvores do pomar tornavam-se massas negras.\n– Casimiro!\nCasimiro Lopes estava no jardim, acocorado ao pé da janela, vigiando.\n– Casimiro!\nA figura de Casimiro Lopes aparece à janela, os sapos gritam, o vento sacode as árvores, apenas\nvisíveis na treva. Maria das Dores entra e vai abrir o comutador. Detenho-a: não quero luz.\nO tique-taque do relógio diminui, os grilos começam a cantar. E Madalena surge no lado de lá da\nmesa. Digo baixinho:\n– Madalena!\nA voz dela me chega aos ouvidos. Não, não é aos ouvidos. Também já não a vejo com os olhos.\nEstou encostado à mesa, as mãos cruzadas. Os objetos fundiram-se, e não enxergo sequer a\ntoalha branca.\n– Madalena...\nA voz de Madalena continua a acariciar-me. Que diz ela? Pede-me naturalmente que mande\nalgum dinheiro a mestre Caetano. Isto me irrita, mas a irritação é diferente das outras, é uma\nirritação antiga, que me deixa inteiramente calmo. Loucura estar uma pessoa ao mesmo tempo\nzangada e tranqüila. Mas estou assim. Irritado contra quem? Contra mestre Caetano. Não obstante\nele ter morrido, acho bom que vá trabalhar. Mandrião!\nA toalha reaparece, mas não sei se é esta toalha sobre que tenho as mãos cruzadas ou a que\nestava aqui há cinco anos.\nRumor do vento, dos sapos, dos grilos. A porta do escritório abre-se de manso, os passos de seu\nRibeiro afastam-se. Uma coruja pia na torre da igreja. Terá realmente piado a coruja? Será a\nmesma que piava há dois anos? Talvez seja até o mesmo pio daquele tempo.\nAgora seu Ribeiro está conversando com d. Glória no salão. Esqueço que eles me deixaram e que\nesta casa está quase deserta.\n– Casimiro!\nPenso que chamei Casimiro Lopes. A cabeça dele, com o chapéu de couro de sertanejo, assoma\nde quando em quando à janela, mas ignoro se a visão que me dá é atual ou remota.\nAgitam-se em mim sentimentos inconciliáveis: encolerizo-me e enterneço-me; bato na mesa e\ntenho vontade de chorar.\nSão Bernardo, Rio de Janeiro, Record, 1983.\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta."
+    "readingText": "Leia atentamente o seguinte texto:\nSão Bernardo (Graciliano Ramos)\nConheci que Madalena era boa em demasia, mas não conheci tudo de uma vez. Ela se revelou\npouco a pouco, e nunca se revelou inteiramente. A culpa foi minha, ou antes, a culpa foi desta vida\nagreste, que me deu uma alma agreste.\nE, falando assim, compreendo que perco o tempo. Com efeito, se me escapa o retrato moral de\nminha mulher, para que serve esta narrativa? Para nada, mas sou forçado a escrever.\nQuando os grilos cantam, sento-me aqui à mesa da sala de jantar, bebo café, acendo o cachimbo.\nÀs vezes as idéias não vêm, ou vêm muito numerosas – e a folha permanece meio escrita, como\nestava na véspera. Releio algumas linhas, que me desagradam. Não vale a pena tentar corrigi-las.\nAfasto o papel.\nEmoções indefiníveis me agitam – inquietação terrível, desejo doido de voltar, tagarelar\nnovamente com Madalena, como fazíamos todos os dias, a esta hora. Saudade? Não, não é isto: é\ndesespero, raiva, um peso enorme no coração.\nProcuro recordar o que dizíamos. Impossível. As minhas palavras eram apenas palavras,\nreprodução imperfeita de fatos exteriores, e as dela tinham alguma coisa que não consigo exprimir.\nPara senti-las melhor, eu apagava as luzes, deixava que a sombra nos envolvesse até ficarmos dois\nvultos indistintos na escuridão.\nLá fora os sapos arengavam, o vento gemia, as árvores do pomar tornavam-se massas negras.\n– Casimiro!\nCasimiro Lopes estava no jardim, acocorado ao pé da janela, vigiando.\n– Casimiro!\nA figura de Casimiro Lopes aparece à janela, os sapos gritam, o vento sacode as árvores, apenas\nvisíveis na treva. Maria das Dores entra e vai abrir o comutador. Detenho-a: não quero luz.\nO tique-taque do relógio diminui, os grilos começam a cantar. E Madalena surge no lado de lá da\nmesa. Digo baixinho:\n– Madalena!\nA voz dela me chega aos ouvidos. Não, não é aos ouvidos. Também já não a vejo com os olhos.\nEstou encostado à mesa, as mãos cruzadas. Os objetos fundiram-se, e não enxergo sequer a\ntoalha branca.\n– Madalena...\nA voz de Madalena continua a acariciar-me. Que diz ela? Pede-me naturalmente que mande\nalgum dinheiro a mestre Caetano. Isto me irrita, mas a irritação é diferente das outras, é uma\nirritação antiga, que me deixa inteiramente calmo. Loucura estar uma pessoa ao mesmo tempo\nzangada e tranqüila. Mas estou assim. Irritado contra quem? Contra mestre Caetano. Não obstante\nele ter morrido, acho bom que vá trabalhar. Mandrião!\nA toalha reaparece, mas não sei se é esta toalha sobre que tenho as mãos cruzadas ou a que\nestava aqui há cinco anos.\nRumor do vento, dos sapos, dos grilos. A porta do escritório abre-se de manso, os passos de seu\nRibeiro afastam-se. Uma coruja pia na torre da igreja. Terá realmente piado a coruja? Será a\nmesma que piava há dois anos? Talvez seja até o mesmo pio daquele tempo.\nAgora seu Ribeiro está conversando com d. Glória no salão. Esqueço que eles me deixaram e que\nesta casa está quase deserta.\n– Casimiro!\nPenso que chamei Casimiro Lopes. A cabeça dele, com o chapéu de couro de sertanejo, assoma\nde quando em quando à janela, mas ignoro se a visão que me dá é atual ou remota.\nAgitam-se em mim sentimentos inconciliáveis: encolerizo-me e enterneço-me; bato na mesa e\ntenho vontade de chorar.\nSão Bernardo, Rio de Janeiro, Record, 1983.\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta."
   },
   {
     "id": "classes_invar-pdf_5_classes_invar-q28",
@@ -12947,37 +12947,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_5_classes_invar",
     "listTitle": "Classes Invariáveis (Advérbios, Preposições, Conjunções, Interjeições)",
     "questionNumber": 28,
-    "statement": "Leia atentamente o seguinte texto:\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta.\nTodas as expressões sublinhadas se classificam com o preposição ou locução prepositiva,\nEXCETO:",
+    "statement": "Lido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta.\nTodas as expressões sublinhadas se classificam com o preposição ou locução prepositiva,\nEXCETO:",
     "options": [
       {
         "letter": "A",
-        "text": "“O velho até se assustou e bruscamente...”",
+        "text": "“O velho <u>até</u> se assustou e bruscamente...”",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“... o fazendeiro velho sentava-se na rede do alpendre, à frente de casa...”",
+        "text": "“... o fazendeiro velho sentava-se na rede do alpendre, <u>à frente de</u> casa...”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“...e a mulher está cozinhando a carne para comer...”",
+        "text": "“...e a mulher está cozinhando a carne <u>para</u> comer...”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“... recebeu a cuia, não disse nada, saiu sem olhar para trás...”",
+        "text": "“... recebeu a cuia, não disse nada, saiu <u>sem</u> olhar para trás...”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Agora eles sabem que a fome dá um direito que passa por cima de qualquer direito dos outros.”",
+        "text": "“Agora eles sabem que a fome dá um direito que passa <u>por cima de</u> qualquer direito dos outros.”",
         "correct": false
       }
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Seca\nEra hora do almoço dos trabalhadores. Enquanto os homens comiam lá dentro, o fazendeiro velho\nsentava-se na rede do alpendre, à frente de casa espiando o sol no céu, que tinia como vidro;\nprocurando desviar os olhos da água do açude, lá além, que dentro de mais um mês estaria virada\nde lama.\nOs dois cabras se aproximaram sem que ele pressentisse. Era um alto e um baixo; o baixo grosso e\nescuro, vestido numa camisa de algodãozinho encardido. O alto era alourado e não se podia dizer\nque estivesse vestido de coisa nenhuma, porque era farrapo só. O grosso na mão trazia um couro\nde cabra, ainda pingando sangue, esfolado que fora fazia pouco. E nem tirou o caco de chapéu da\ncabeça, nem salvou ao menos.\nO velho até se assustou e bruscamente se pôs a cavalo na rede, a escutar a voz grossa e áspera,\ntal e qual quem falava:\n− Cidadão, vim lhe vender este couro de bode. Aquele “cidadão”, assim desabrido, já dizia tudo.\nNinguém chega de boa atenção em terreno alheio sem dar bom-dia. E tratando o dono da casa de\ncidadão. Assim, o fazendeiro achou melhor fingir que não ouvira ¾ e foi-se pondo de pé.\n− O quê? Que é que você quer?\nO homem escuro botou o couro em cima do parapeito e o sangue escorreu num fio pelo cal da\nparede:\n− Estou arranchado com minha família debaixo daquele juazeiro grande, ali. Essa cabra passou\nperto − não sei de quem era. Matei, e a mulher está cozinhando a carne para comer. Agora, o\ncouro − o senhor ou me dá dinheiro por ele, ou me dá farinha.\n− E de quem é essa cabra? É minha? Quem lhe deu ordem para matar?\nO velho estava tão furioso que o dedo dele, espetado no ar, tremia. E o loureba esfarrapado\nchegou perto e deu a sua risadinha:\n− Ninguém perguntou a ela o nome do dono...\nMas o outro, sempre sério, olhou o velho na cara:\n− Matei com ordem da fome. O senhor quer ordem melhor?\nNesse meio, os homens que almoçavam lá dentro escutaram as vozes alteradas e vieram ver o que\nhavia. Eram uns doze – foram aparecendo pelo oitão da casa, de um em um, e se abriram em\nredor dos estranhos no terreiro.\nAí o velho se vendo garantido, começou a gritar:\n− Na minha terra só eu dou ordem! Vocês são muito é atrevidos – me matarem o bicho e ainda me\ntrazerem o couro pra vender, por desaforo! Chico Luís, veja aí de quem é o sinal dessa criação.\nO feitor largou a foice no chão, puxou as orelhas do couro, e virou-se achando graça para um dos\ncompanheiros: era a sua cabrinha, não era mesmo, compadre Augusto? Está aqui o sinal...\nO Augusto veio olhar também e ficou danado:\n− Seus perversos, a cabra era da minha menina beber leite, estava cheia de cabrito novo!\nMas o olho do homem escuro era feio e, se ele se assustara vendo-se cercado pelos cabras da\nfazenda, não deu parecença. O loureba é que virava a cara de um lado para outro, procurando\nsaída; ainda levou a mão ao quadril, tateou o cabo da faca – mas cada um dos homens tinha uma\nfoice, um terçado, um ferro na mão.\nNesse pé o fazendeiro, para acabar com a história, resolveu mostrar bom coração; e gritou para o\ncorredor:\n− Menina! Manda aí uma cuia com um bocado de farinha!\nDepois, retornando ao homem:\n− Eu podia mandar prender vocês, para aprenderem a não matar bicho alheio! Mas têm crianças,\nnão é? Tenho pena das crianças! Leve essa farinha, comam e tratem de ir embora. Daqui a uma\nhora quero o pé de juazeiro limpo e vocês na estrada. Podem ir!\nO homem recebeu a cuia, não disse nada, saiu sem olhar para trás. O outro acompanhou, meio\ntemeroso, tirou ainda o chapéu em despedida, e pegou no passo do companheiro. O velho\nreclamava em voz alta – cabra desgraçado, além de fazer o malfeito, recebe o favor e nem sequer\nabana o rabo.\nOs trabalhadores, calados, acompanhavam com os olhos os dois estranhos que marchavam um\natrás do outro, na direção do juazeiro, do qual só se avistava a copa alta ali no terreiro. Ninguém\nsabe o que pensavam; o dono da cabra deu de mão no couro e foi com ele para trás da casa.\nAí a sineta bateu e os homens saíram para o serviço. Passando pelo juazeiro, lá viram a família ao\nredor do fogo, os meninos procurando pescar pedaços da carne que fervia numa lata. Mas o\nhomem escuro, encostado ao tronco, via-os passar, de braços cruzados, sem baixar os olhos.\nAinda foi o dono da cabra que baixou os seus; explicou depois que não gostava de briga.\nMORALIDADE: Este caso aconteceu mesmo. Faz mais de trinta anos escrevi uma história de cabra\nmorta por retirante, mas era diferente. Então, o homem sentia dor de consciência, e até se\nhumilhou quando o dono do bicho morto o chamou de ladrão. Agora não é mais assim. Agora eles\nsabem que a fome dá um direito que passa por cima de qualquer direito dos outros. A moralidade\nda história é mesmo esta: tudo mudou, mudou muito.\nQUEIROZ, Rachel de. Cenas brasileiras. São Paulo:\nÁtica, 1997, p. 14-17. (Para gostar de ler)."
+    "readingText": "Leia atentamente o seguinte texto:\nSeca\nEra hora do almoço dos trabalhadores. Enquanto os homens comiam lá dentro, o fazendeiro velho\nsentava-se na rede do alpendre, à frente de casa espiando o sol no céu, que tinia como vidro;\nprocurando desviar os olhos da água do açude, lá além, que dentro de mais um mês estaria virada\nde lama.\nOs dois cabras se aproximaram sem que ele pressentisse. Era um alto e um baixo; o baixo grosso e\nescuro, vestido numa camisa de algodãozinho encardido. O alto era alourado e não se podia dizer\nque estivesse vestido de coisa nenhuma, porque era farrapo só. O grosso na mão trazia um couro\nde cabra, ainda pingando sangue, esfolado que fora fazia pouco. E nem tirou o caco de chapéu da\ncabeça, nem salvou ao menos.\nO velho até se assustou e bruscamente se pôs a cavalo na rede, a escutar a voz grossa e áspera,\ntal e qual quem falava:\n− Cidadão, vim lhe vender este couro de bode. Aquele “cidadão”, assim desabrido, já dizia tudo.\nNinguém chega de boa atenção em terreno alheio sem dar bom-dia. E tratando o dono da casa de\ncidadão. Assim, o fazendeiro achou melhor fingir que não ouvira ¾ e foi-se pondo de pé.\n− O quê? Que é que você quer?\nO homem escuro botou o couro em cima do parapeito e o sangue escorreu num fio pelo cal da\nparede:\n− Estou arranchado com minha família debaixo daquele juazeiro grande, ali. Essa cabra passou\nperto − não sei de quem era. Matei, e a mulher está cozinhando a carne para comer. Agora, o\ncouro − o senhor ou me dá dinheiro por ele, ou me dá farinha.\n− E de quem é essa cabra? É minha? Quem lhe deu ordem para matar?\nO velho estava tão furioso que o dedo dele, espetado no ar, tremia. E o loureba esfarrapado\nchegou perto e deu a sua risadinha:\n− Ninguém perguntou a ela o nome do dono...\nMas o outro, sempre sério, olhou o velho na cara:\n− Matei com ordem da fome. O senhor quer ordem melhor?\nNesse meio, os homens que almoçavam lá dentro escutaram as vozes alteradas e vieram ver o que\nhavia. Eram uns doze – foram aparecendo pelo oitão da casa, de um em um, e se abriram em\nredor dos estranhos no terreiro.\nAí o velho se vendo garantido, começou a gritar:\n− Na minha terra só eu dou ordem! Vocês são muito é atrevidos – me matarem o bicho e ainda me\ntrazerem o couro pra vender, por desaforo! Chico Luís, veja aí de quem é o sinal dessa criação.\nO feitor largou a foice no chão, puxou as orelhas do couro, e virou-se achando graça para um dos\ncompanheiros: era a sua cabrinha, não era mesmo, compadre Augusto? Está aqui o sinal...\nO Augusto veio olhar também e ficou danado:\n− Seus perversos, a cabra era da minha menina beber leite, estava cheia de cabrito novo!\nMas o olho do homem escuro era feio e, se ele se assustara vendo-se cercado pelos cabras da\nfazenda, não deu parecença. O loureba é que virava a cara de um lado para outro, procurando\nsaída; ainda levou a mão ao quadril, tateou o cabo da faca – mas cada um dos homens tinha uma\nfoice, um terçado, um ferro na mão.\nNesse pé o fazendeiro, para acabar com a história, resolveu mostrar bom coração; e gritou para o\ncorredor:\n− Menina! Manda aí uma cuia com um bocado de farinha!\nDepois, retornando ao homem:\n− Eu podia mandar prender vocês, para aprenderem a não matar bicho alheio! Mas têm crianças,\nnão é? Tenho pena das crianças! Leve essa farinha, comam e tratem de ir embora. Daqui a uma\nhora quero o pé de juazeiro limpo e vocês na estrada. Podem ir!\nO homem recebeu a cuia, não disse nada, saiu sem olhar para trás. O outro acompanhou, meio\ntemeroso, tirou ainda o chapéu em despedida, e pegou no passo do companheiro. O velho\nreclamava em voz alta – cabra desgraçado, além de fazer o malfeito, recebe o favor e nem sequer\nabana o rabo.\nOs trabalhadores, calados, acompanhavam com os olhos os dois estranhos que marchavam um\natrás do outro, na direção do juazeiro, do qual só se avistava a copa alta ali no terreiro. Ninguém\nsabe o que pensavam; o dono da cabra deu de mão no couro e foi com ele para trás da casa.\nAí a sineta bateu e os homens saíram para o serviço. Passando pelo juazeiro, lá viram a família ao\nredor do fogo, os meninos procurando pescar pedaços da carne que fervia numa lata. Mas o\nhomem escuro, encostado ao tronco, via-os passar, de braços cruzados, sem baixar os olhos.\nAinda foi o dono da cabra que baixou os seus; explicou depois que não gostava de briga.\nMORALIDADE: Este caso aconteceu mesmo. Faz mais de trinta anos escrevi uma história de cabra\nmorta por retirante, mas era diferente. Então, o homem sentia dor de consciência, e até se\nhumilhou quando o dono do bicho morto o chamou de ladrão. Agora não é mais assim. Agora eles\nsabem que a fome dá um direito que passa por cima de qualquer direito dos outros. A moralidade\nda história é mesmo esta: tudo mudou, mudou muito.\nQUEIROZ, Rachel de. Cenas brasileiras. São Paulo:\nÁtica, 1997, p. 14-17. (Para gostar de ler)."
   },
   {
     "id": "pronomes-pdf_6_pronomes-q1",
@@ -12990,27 +12990,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Mais uns cinquenta metros, e o perderei de vista, pois um telhado o esconderá” (3º§) – pronome oblíquo átono de valor substantivo, referente ao numeral “cinquenta”, na expressão “cinquenta metros”.",
+        "text": "“Mais uns cinquenta metros, e <u>o</u> perderei de vista, pois um telhado o esconderá” (3º§) – pronome oblíquo átono de valor substantivo, referente ao numeral “cinquenta”, na expressão “cinquenta metros”.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Mas percebo um movimento em um ponto do mar; é um homem andando. Ele nada a uma certa distância da praia, em braçadas pausadas e fortes” (2º§) – pronome pessoal do caso reto de valor substantivo, usado como elemento de referência a “homem”.",
+        "text": "“Mas percebo um movimento em um ponto do mar; é um homem andando. <u>Ele</u> nada a uma certa distância da praia, em braçadas pausadas e fortes” (2º§) – pronome pessoal do caso reto de valor substantivo, usado como elemento de referência a “homem”.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“Não desço para ir esperá-lo [...]” (6º§) – variação do pronome oblíquo átono “o”, que tem valor substantivo e substitui o termo “alguém”, mencionado no fim do parágrafo anterior.",
+        "text": "“Nã<u>o</u> desço para ir esperá-lo [...]” (6º§) – variação do pronome oblíquo átono “o”, que tem valor substantivo e substitui o termo “alguém”, mencionado no fim do parágrafo anterior.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Justo: espumas são leves, não são feitas de nada, toda sua substância é água e vento e luz, e o homem tem sua carne, seus ossos, seu coração […]” (2º§) – ambas as ocorrências do pronome possessivo “sua” remetem ao termo “espumas”, em respeito ao paralelismo sintático.",
+        "text": "“Justo: espumas são leves, não são feitas de nada, toda <u>sua</u> substância é água e vento e luz, e o homem tem sua carne, seus ossos, seu coração […]” (2º§) – ambas as ocorrências do pronome possessivo “sua” remetem ao termo “espumas”, em respeito ao paralelismo sintático.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Não desço para ir esperá-lo na praia e lhe apertar mão [...]” (6º§) – pronome oblíquo átono de valor substantivo, que exerce função de complemento do verbo “apertar”.",
+        "text": "“Não desço para ir esperá-lo na praia e <u>lhe</u> apertar mão [...]” (6º§) – pronome oblíquo átono de valor substantivo, que exerce função de complemento do verbo “apertar”.",
         "correct": false
       }
     ],
@@ -13055,7 +13055,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "A Última Crônica\nFernando Sabino\nA caminho de casa, entro num botequim da Gávea para tomar um café junto ao balcão. Na\nrealidade estou adiando o momento de escrever. A perspectiva me assusta. Gostaria de estar\ninspirado, de coroar com êxito mais um ano nesta busca do pitoresco ou do irrisório no cotidiano\nde cada um. Eu pretendia apenas recolher da vida diária algo de seu disperso conteúdo humano,\nfruto da convivência, que a faz mais digna de ser vivida. Visava ao circunstancial, ao episódico.\nNesta perseguição do acidental, quer num flagrante de esquina, quer nas palavras de uma criança\nou num acidente doméstico, torno-me simples espectador e perco a noção do essencial. Sem\nmais nada para contar, curvo a cabeça e tomo meu café, enquanto o verso do poeta se reflete na\nlembrança: “assim eu quereria o meu último poema”. Não sou poeta e estou sem assunto. Lanço\nentão um último olhar fora de mim, onde vivem os assuntos que merecem uma crônica.\nAo fundo do botequim um casal de pretos acaba de sentar-se, numa das últimas mesas de\nmármore ao longo da parede de espelhos. A compostura da humildade, na contenção de gestos e\npalavras, deixa-se acrescentar pela presença de uma negrinha de seus três anos, laço na cabeça,\ntoda arrumadinha no vestido pobre, que se instalou também à mesa: mal ousa balançar as\nperninhas curtas ou correr os olhos grandes de curiosidade ao redor. Três seres esquivos que\ncompõem em torno à mesa a instituição tradicional da família, célula da sociedade. Vejo, porém,\nque se preparam para algo mais que matar a fome.\nPasso a observá-los. O pai, depois de contar o dinheiro que discretamente retirou do bolso,\naborda o garçom, inclinando-se para trás na cadeira, e aponta no balcão um pedaço de bolo sob a\nredoma. A mãe limita-se a ficar olhando imóvel, vagamente ansiosa, como se aguardasse a\naprovação do garçom. Este ouve, concentrado, o pedido do homem e depois se afasta para\natendê-lo. A mulher suspira, olhando para os lados, a reassegurar-se da naturalidade de sua\npresença ali. A meu lado o garçom encaminha a ordem do freguês. O homem atrás do balcão\napanha a porção do bolo com a mão, larga-o no pratinho – um bolo simples, amarelo-escuro,\napenas uma pequena fatia triangular.\nA negrinha, contida na sua expectativa, olha a garrafa de Coca-Cola e o pratinho que o\ngarçom deixou à sua frente. Por que não começa a comer? Vejo que os três, pai, mãe e filha,\nobedecem em torno à mesa um discreto ritual. A mãe remexe na bolsa de plástico preto e\nbrilhante, retira qualquer coisa. O pai se mune de uma caixa de fósforos, e espera. A filha aguarda\ntambém, atenta como um animalzinho. Ninguém mais os observa além de mim.\nSão três velinhas brancas, minúsculas, que a mãe espeta caprichosamente na fatia do bolo. E\nenquanto ela serve a Coca-Cola, o pai risca o fósforo e acende as velas. Como a um gesto\nensaiado, a menininha repousa o queixo no mármore e sopra com força, apagando as chamas.\nImediatamente põe-se a bater palmas, muito compenetrada, cantando num balbucio, a que os pais\nse juntam, discretos: “Parabéns pra você, parabéns pra você…”\nDepois a mãe recolhe as velas, torna a guardá-las na bolsa. A negrinha agarra finalmente o\nbolo com as duas mãos sôfregas e põe-se a comê-lo. A mulher está olhando para ela com ternura\n– ajeita-lhe a fitinha no cabelo crespo, limpa o farelo de bolo que lhe cai ao colo. O pai corre os\nolhos pelo botequim, satisfeito, como a se convencer intimamente do sucesso da celebração. Dá\ncomigo de súbito, a observá-lo, nossos olhos se encontram, ele se perturba, constrangido – vacila,\nameaça abaixar a cabeça, mas acaba sustentando o olhar e enfim se abre num sorriso.\nNo 3º parágrafo “Este ouve, concentrado, o pedido do homem e depois se afasta para atendê-lo.”"
+    "readingText": "A Última Crônica\nFernando Sabino\nA caminho de casa, entro num botequim da Gávea para tomar um café junto ao balcão. Na\nrealidade estou adiando o momento de escrever. A perspectiva me assusta. Gostaria de estar\ninspirado, de coroar com êxito mais um ano nesta busca do pitoresco ou do irrisório no cotidiano\nde cada um. Eu pretendia apenas recolher da vida diária algo de seu disperso conteúdo humano,\nfruto da convivência, que a faz mais digna de ser vivida. Visava ao circunstancial, ao episódico.\nNesta perseguição do acidental, quer num flagrante de esquina, quer nas palavras de uma criança\nou num acidente doméstico, torno-me simples espectador e perco a noção do essencial. Sem\nmais nada para contar, curvo a cabeça e tomo meu café, enquanto o verso do poeta se reflete na\nlembrança: “assim eu quereria o meu último poema”. Não sou poeta e estou sem assunto. Lanço\nentão um último olhar fora de mim, onde vivem os assuntos que merecem uma crônica.\nAo fundo do botequim um casal de pretos acaba de sentar-se, numa das últimas mesas de\nmármore ao longo da parede de espelhos. A compostura da humildade, na contenção de gestos e\npalavras, deixa-se acrescentar pela presença de uma negrinha de seus três anos, laço na cabeça,\ntoda arrumadinha no vestido pobre, que se instalou também à mesa: mal ousa balançar as\nperninhas curtas ou correr os olhos grandes de curiosidade ao redor. Três seres esquivos que\ncompõem em torno à mesa a instituição tradicional da família, célula da sociedade. Vejo, porém,\nque se preparam para algo mais que matar a fome.\nPasso a observá-los. O pai, depois de contar o dinheiro que discretamente retirou do bolso,\naborda o garçom, inclinando-se para trás na cadeira, e aponta no balcão um pedaço de bolo sob a\nredoma. A mãe limita-se a ficar olhando imóvel, vagamente ansiosa, como se aguardasse a\naprovação do garçom. Este ouve, concentrado, o pedido do homem e depois se afasta para\natendê-lo. A mulher suspira, olhando para os lados, a reassegurar-se da naturalidade de sua\npresença ali. A meu lado o garçom encaminha a ordem do freguês. O homem atrás do balcão\napanha a porção do bolo com a mão, larga-o no pratinho – um bolo simples, amarelo-escuro,\napenas uma pequena fatia triangular.\nA negrinha, contida na sua expectativa, olha a garrafa de Coca-Cola e o pratinho que o\ngarçom deixou à sua frente. Por que não começa a comer? Vejo que os três, pai, mãe e filha,\nobedecem em torno à mesa um discreto ritual. A mãe remexe na bolsa de plástico preto e\nbrilhante, retira qualquer coisa. O pai se mune de uma caixa de fósforos, e espera. A filha aguarda\ntambém, atenta como um animalzinho. Ninguém mais os observa além de mim.\nSão três velinhas brancas, minúsculas, que a mãe espeta caprichosamente na fatia do bolo. E\nenquanto ela serve a Coca-Cola, o pai risca o fósforo e acende as velas. Como a um gesto\nensaiado, a menininha repousa o queixo no mármore e sopra com força, apagando as chamas.\nImediatamente põe-se a bater palmas, muito compenetrada, cantando num balbucio, a que os pais\nse juntam, discretos: “Parabéns pra você, parabéns pra você…”\nDepois a mãe recolhe as velas, torna a guardá-las na bolsa. A negrinha agarra finalmente o\nbolo com as duas mãos sôfregas e põe-se a comê-lo. A mulher está olhando para ela com ternura\n– ajeita-lhe a fitinha no cabelo crespo, limpa o farelo de bolo que lhe cai ao colo. O pai corre os\nolhos pelo botequim, satisfeito, como a se convencer intimamente do sucesso da celebração. Dá\ncomigo de súbito, a observá-lo, nossos olhos se encontram, ele se perturba, constrangido – vacila,\nameaça abaixar a cabeça, mas acaba sustentando o olhar e enfim se abre num sorriso.\nNo 3º parágrafo <u>“Este</u> ouve, concentrado, o pedido do homem e depois se afasta para atendê-lo.”"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q3",
@@ -13064,7 +13064,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 3,
-    "statement": "No fragmento do texto “Lanço então um último olhar fora de mim, onde vivem os assuntos que\nmerecem uma crônica.”, o pronome relativo exerce a mesma função sintática que o destacado em:",
+    "statement": "No fragmento do texto “Lanço então um último olhar fora de mim, onde vivem os assuntos <u>que</u>\nmerecem uma crônica.”, o pronome relativo exerce a mesma função sintática que o destacado em:",
     "options": [
       {
         "letter": "A",
@@ -13088,7 +13088,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "\"São três velinhas brancas, minúsculas, que a mãe espeta caprichosamente na fatia do bolo.”",
+        "text": "\"São três velinhas brancas, minúsculas, que a mãe espeta caprichosamente na fatia do bolo.” ",
         "correct": false
       }
     ],
@@ -13180,27 +13180,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Eu só poderia amá-la.\"",
+        "text": "“Eu só p<u>o</u>deria amá-la.\"",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Todas as palavras que digo – é por esconderem outras palavras.\"",
+        "text": "“Todas as palavras <u>que</u> digo – é por esconderem outras palavras.\"",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Parece-me que todo o resto não é proibido.\"",
+        "text": "“Parece-me <u>que</u> t<u>o</u>do o resto não é proibido.\"",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“Sempre quis atingir através da palavra alguma coisa que fosse ao mesmo tempo sem moeda e que fosse e transmitisse tranquilidade ou simplesmente a verdade mais profunda existente no ser humano e nas coisas.\"",
+        "text": "“Sempre quis atingir através da palavra alguma c<u>o</u>isa <u>que</u> fosse ao mesmo tempo sem moeda e que fosse e transmitisse tranquilidade ou simplesmente a verdade mais profunda existente no ser humano e nas coisas.\"",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\"Todo homem tem sina obscura de pensamento que pode ser o de um crepúsculo e pode ser uma aurora.\"",
+        "text": "\"Todo homem tem sina obscura de pensamento que pode ser <u>o</u> de um crepúsculo e pode ser uma aurora.\" ",
         "correct": false
       }
     ],
@@ -13219,27 +13219,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Percebi que nunca havia visto uma cebola..” (2º§)",
+        "text": "“Percebi <u>que</u> nunca havia visto uma cebola..” (2º§)",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“Veja o que Neruda disse de uma cebola igual àquela que lhe causou assombro...\" (3º§)",
+        "text": "“Veja o <u>que</u> Neruda disse de uma cebola igual àquela que lhe causou assombro...\" (3º§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“uma cebola igual àquela que lhe causou assombro...\" (3º§)",
+        "text": "“uma cebola igual à<u>que</u>la que lhe causou assombro...\" (3º§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Essa perturbação ocular que a acometeu é comum entre os poetas.” (3º§)",
+        "text": "“Essa perturbação ocular <u>que</u> a acometeu é comum entre os poetas.” (3º§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\" Mas existe algo na visão que não pertence à física.\" (4º§)",
+        "text": "\" Mas existe algo na visão <u>que</u> não pertence à física.\" (4º§) ",
         "correct": false
       }
     ],
@@ -13258,22 +13258,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“...como convém a uma receita que se quer apurada...”",
+        "text": "“...como convém a uma receita <u>que</u> se quer apurada...”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Nasci numa família em que a gastronomia foi sempre...”",
+        "text": "“Nasci numa família em <u>que</u> a gastronomia foi sempre...”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Impunha-se encontrar uma fórmula original, que glorificasse igualmente as duas artes...”",
+        "text": "“Impunha-se encontrar uma fórmula original, <u>que</u> glorificasse igualmente as duas artes...”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“E o que pode haver de mais poético do que as memórias de um tempo...”",
+        "text": "“E o <u>que</u> pode haver de mais poético do que as memórias de um tempo...” ",
         "correct": true
       }
     ],
@@ -13288,31 +13288,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 9,
-    "statement": "Em qual das alternativas a seguir o pronome em destaque desempenha a mesma função sintática\nda desempenhada pelo termo destacado em\n“Extravagante foi a sensação que me veio então: a de que a morte existia, não apenas como o fim\npara todos nós, sem exceção, mas como alguma coisa concreta, visível, corporificada em alguém\ncom quem eu poderia esbarrar a qualquer momento.”",
+    "statement": "Em qual das alternativas a seguir o pronome em destaque desempenha a mesma função sintática\nda desempenhada pelo termo destacado em\n“Extravagante foi a sensação que me veio então: a de que a morte existia, não apenas como o fim\npara todos nós, sem exceção, mas como alguma coisa concreta, visível, corporificada em alguém\ncom <u>quem</u> eu poderia esbarrar a qualquer momento.”",
     "options": [
       {
         "letter": "A",
-        "text": "“É o sentimento a que os ingleses chamam de spleen (...)”",
+        "text": "“É o sentimento a <u>que</u> os ingleses chamam de spleen (...)”",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“Eu vinha de uma reunião em que tivera a notícia da morte de um amigo no Rio.”",
+        "text": "“Eu vinha de uma reunião em <u>que</u> tivera a notícia da morte de um amigo no Rio.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Uma noite escura, chuvosa, permeada de neblina — dessas noites londrinas que impregnam nossa alma de tédio e abatimento.”",
+        "text": "“Uma noite escura, chuvosa, permeada de neblina — dessas noites londrinas <u>que</u> impregnam nossa alma de tédio e abatimento.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“O que me chamou a atenção foi um táxi que acabara de se emparelhar a meu carro, um pouco à frente, deixando-me lado a lado com o passageiro.”",
+        "text": "“O <u>que</u> me chamou a atenção foi um táxi que acabara de se emparelhar a meu carro, um pouco à frente, deixando-me lado a lado com o passageiro.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Extravagante foi a sensação que me veio então: a de que a morte existia, não apenas como o fim para todos nós, sem exceção (...)”",
+        "text": "“Extravagante foi a sensação <u>que</u> me veio então: a de que a morte existia, não apenas como o fim para todos nós, sem exceção (...)” ",
         "correct": false
       }
     ],
@@ -13365,7 +13365,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 11,
-    "statement": "Assinale a opção em que o pronome sublinhado tem valor relativo\nI. E a rua descia para o córrego, onde os meninos costumavam banhar-se.\nII. Onde estava o fiscal, que não mandava capiná-la?\nIII. Sabia-se confusamente que a doida tinha sido moça igual às outras no seu tempo remoto...",
+    "statement": "Assinale a opção em que o pronome sublinhado tem valor relativo\nI. E a rua descia para o córrego, <u>onde</u> os meninos costumavam banhar-se.\nII. Onde estava o fiscal, <u>que</u> não mandava capiná-la?\nIII. Sabia-se confusamente que a doida tinha sido moça igual às outras no seu tempo remoto...",
     "options": [
       {
         "letter": "A",
@@ -13408,27 +13408,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "De pequena a mãe lhe ensinara a ocultar “aquela marca de fogo[...]",
+        "text": "De pequena a mãe <u>lhe</u> ensinara a ocultar “aquela marca de fogo[...]",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "[...] e creio que logo se arrependeu, pois me obrigou a jurar que jamais refletiria a alguém o seu segredo.",
+        "text": "[...] e creio que logo <u>se</u> arrependeu, pois <u>me</u> obrigou a jurar que jamais refletiria a alguém o seu segredo.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Alguém com os dois olhos límpidos pode gostar de épater uma roda de conversa, explicando que não enxerga coisíssima nenhuma por um daqueles límpidos olhos, e permitirá mesmo que os circunstantes curiosos lhe examinem o olho cego e constatem de perto [... ].",
+        "text": "Alguém com os dois olhos límpidos pode gostar de épater uma roda de conversa, explicando que não enxerga coisíssima nenhuma por um daqueles límpidos olhos, e permitirá <u>me</u>smo que os circunstantes curiosos <u>lhe</u> examinem o olho cego e constatem de perto [... ].",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "[...]e creio que logo se arrependeu, pois me obrigou a jurar que jamais refletiria a alguém o seu segredo.",
+        "text": "[...]e creio que logo <u>se</u> arrependeu, pois <u>me</u> obrigou a jurar que jamais refletiria a alguém o seu segredo.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Mulheres discutem com prazer seus casos ginecológicos; uma diz abertamente que já não tem um ovário, outra, que o médico lhe diagnosticou um útero infantil",
+        "text": "Mu<u>lhe</u>res discutem com prazer <u>se</u>us casos ginecológicos; uma diz aberta<u>me</u>nte que já não tem um ovário, outra, que o médico lhe diagnosticou um útero infantil",
         "correct": false
       }
     ],
@@ -13523,22 +13523,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“...a VW tinha introduzido o teto solar baseado no fato do Brasil ser um país quente e ensolarado, perfeito para aquele opcional.” (. 41 a 43) => teto solar",
+        "text": "“...a VW tinha introduzido o teto solar baseado no fato do Brasil ser um país quente e ensolarado, perfeito para <u>aquele</u> opcional.” (. 41 a 43) => teto solar",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“A VASP teve que cancelar a linha por falta de passageiros.” (. 39 e 40) => voo",
+        "text": "“A VASP teve <u>que</u> cancelar a <u>linha</u> por falta de passageiros.” (. 39 e 40) => voo",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Mas acho muito improvável que o Gérson real seja um oportunista sanguinário como ficou sendo a sua imagem.” (. 23 a 25) => oportunista sanguinário",
+        "text": "“Mas acho muito improvável que o Gérson real seja um oportunista sanguinário como ficou sendo a <u>sua</u> imagem.” (. 23 a 25) => oportunista sanguinário",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“O voo corujão era perfeito, especialmente na época em que não havia a Piaçaguera...” (. 46 e 47) => época",
+        "text": "“O voo corujão era perfeito, especialmente na época <u>em</u> <u>que</u> não havia a Piaçaguera...” (. 46 e 47) => época",
         "correct": false
       }
     ],
@@ -13557,22 +13557,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“...neste estado de atraso econômico e cultural em que vivemos.” (. 9 e 10) => neste estado de atraso econômico e cultural onde vivemos.",
+        "text": "“...neste estado de atraso econômico e cultural em <u>que</u> vivemos.” (. 9 e 10) => neste estado de atraso econômico e cultural onde vivemos.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“...percebe-se que há quase duzentos anos atrás essa lei já era cumprida” (. 14 e 15) => percebe-se que, há quase duzentos anos, tal lei já era cumprida.",
+        "text": "“...percebe-se que há quase duzentos anos atrás <u>essa</u> lei já era cumprida” (. 14 e 15) => percebe-se que, há quase duzentos anos, tal lei já era cumprida.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“...para atender aos executivos que deixavam suas famílias no balneáreo...” (. 34 e 35) => para atender aos executivos que deixavam as famílias deles no balneário.",
+        "text": "“...para atender aos executivos que deixavam <u>suas</u> famílias no balneáreo...” (. 34 e 35) => para atender aos executivos que deixavam as famílias deles no balneário.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Com o comercial do Gérson foi a mesma coisa.” (. 52) => Com o comercial do Gérson foi idêntico.",
+        "text": "“Com o comercial do Gérson foi a <u>mesma</u> coisa.” (. 52) => Com o comercial do Gérson foi idêntico.",
         "correct": false
       }
     ],
@@ -13625,7 +13625,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 18,
-    "statement": "Na introdução do 8º§, é afirmado: “Esse é apenas um modelo, que pressupõe uma série de\nconceitos e extrapolações para fazer sentido: espaço, tempo, energia, leis naturais.”. Sobre o\ntermo destacado é correto afirmar que serve para retomar",
+    "statement": "Na introdução do 8º§, é afirmado: <u>“Esse</u> é apenas um modelo, que pressupõe uma série de\nconceitos e extrapolações para fazer sentido: espaço, tempo, energia, leis naturais.”. Sobre o\ntermo destacado é correto afirmar que serve para retomar",
     "options": [
       {
         "letter": "A",
@@ -13664,7 +13664,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 19,
-    "statement": "Assinale, a seguir, a alternativa que não contém um pronome relativo.",
+    "statement": "Assinale, a seguir, a alternativa que não contém um <u>pronome relativo.</u>",
     "options": [
       {
         "letter": "A",
@@ -13742,7 +13742,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 21,
-    "statement": "Os pronomes destacados em “Quando você a lamenta, você está dizendo que gostaria de se livrar\ndela, que ela é um sofrimento, uma doença, uma inimiga...” (5°§) têm, respectivamente, como\nreferencial, a palavra",
+    "statement": "Os pronomes destacados em “Quando você <u>a</u> lamenta, você está dizendo que gostaria de se livrar\n<u>dela,</u> que <u>ela</u> é um sofrimento, uma doença, uma inimiga...” (5°§) têm, respectivamente, como\nreferencial, a palavra",
     "options": [
       {
         "letter": "A",
@@ -14233,27 +14233,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Tal gesto pode irritar profundamente aquele que escreveu, como se seu corpo sofresse uma agressão ou uma invasão indevida, da qual ele tem que se defender, sob o risco de se ver ferido por um olhar ou mão estranha.\" (1°§)",
+        "text": "<u>“Tal</u> gesto pode irritar profundamente aquele que escreveu, como se seu corpo sofresse uma agressão ou uma invasão indevida, da qual ele tem que se defender, sob o risco de se ver ferido por um olhar ou mão estranha.\" (1°§)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Por isso, aquele que escreve, a todo momento, talvez tente se explicar, se suturar, na tentativa de se preservar de um outro intrusivo, que fala de um lugar que nem sempre é o da cumplicidade especular, obrigando a um dizer outro que ele - o que escreve - recusa, desconhece ou simplesmente cala.” (1°§)",
+        "text": "“Por isso, <u>aquele</u> que escreve, a todo momento, talvez tente se explicar, se suturar, na tentativa de se preservar de um outro intrusivo, que fala de um lugar que nem sempre é o da cumplicidade especular, obrigando a um dizer outro que ele - o que escreve - recusa, desconhece ou simplesmente cala.” (1°§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Assim, o texto fala e fala mais do que o autor pretende, e não há como evitar essa rebeldia de palavras que fogem de um ilusório comando, mesmo quando se buscam recursos os mais variados [...]\" (3°§)",
+        "text": "“Assim, o texto fala e fala mais do que o autor pretende, e não há como evitar <u>essa</u> rebeldia de palavras que fogem de um ilusório comando, mesmo quando se buscam recursos os mais variados [...]\" (3°§)",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“A escrita não segura todos os riscos, todos os pontos finais, mas alguma coisa ela faz, quando se gastam todos os recursos do semblant, quando, de repente, ela começa a se dizer sozinha, avizinhando-nos do real, este insabido que fascina e nos deixa nus diante de todos os leitores.” (6°§)",
+        "text": "“A escrita não segura todos os riscos, todos os pontos finais, mas alguma coisa ela faz, quando se gastam todos os recursos do semblant, quando, de repente, ela começa a se dizer sozinha, avizinhando-nos do real, <u>este</u> insabido que fascina e nos deixa nus diante de todos os leitores.” (6°§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Tudo o que me diz ou nos diz na floresta de símbolos onde nos perdemos, onde perdemos o rumo e o prumo.” (10°§)",
+        "text": "“Tudo <u>o</u> que me diz ou nos diz na floresta de símbolos onde nos perdemos, onde perdemos o rumo e o prumo.” (10°§)",
         "correct": false
       }
     ],
@@ -14268,7 +14268,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 35,
-    "statement": "A respeito do trecho acima, analise as afirmativas a seguir:\nI. O termo **Atrasados** pode ser classificado como oração subordinada adverbial causal reduzida de\nparticípio.\nII. O termo **se** classifica-se como índice de indeterminação do sujeito.\nIII. Existe um pronome indefinido e um demonstrativo.\nAssinale",
+    "statement": "A respeito do trecho acima, analise as afirmativas a seguir:\nI. O termo Atrasados pode ser classificado como oração subordinada adverbial causal reduzida de\nparticípio.\nII. O termo <u>se</u> classifica-se como índice de indeterminação do sujeito.\nIII. Existe um pronome indefinido e um demonstrativo.\nAssinale",
     "options": [
       {
         "letter": "A",
@@ -14311,27 +14311,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Isso que aconteceu aqui já se tornou hábito **meu**, em meio a uma conversa.",
+        "text": "Isso que aconteceu aqui já se tornou hábito <u>meu,</u> em meio a uma conversa.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Gosto de indicar a figura tranquila e serena de **Seu** Bartolomeu, a quem costumamos chamar de padrinho.",
+        "text": "Gosto de indicar a figura tranquila e serena de <u>Seu</u> Bartolomeu, a quem costumamos chamar de padrinho.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "A garota sempre refletia uma atitude **sua** até mesmo quando não tinha a intenção.",
+        "text": "A garota sempre refletia uma atitude <u>sua</u> até mesmo quando não tinha a intenção.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Ele costumava ler um livro depois do jantar, sentado com **meu** pai no sofá.",
+        "text": "Ele costumava ler um livro depois do jantar, sentado com <u>meu</u> pai no sofá.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Durante muito tempo andou às voltas com o velho quadro que fora de **sua** mãe.",
+        "text": "Durante muito tempo andou às voltas com o velho quadro que fora de <u>sua</u> mãe.",
         "correct": false
       }
     ],
@@ -14384,7 +14384,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 38,
-    "statement": "Leia atentamente as afirmativas e assinale a afirmativa que apresenta apenas afirmação(ões)\ncorreta(s)\nI. Em “Janeiro é o momento em que muita gente decide tirar férias” a oração destacada tem valor\ntemporal.\nII. Em “Com eles, ficamos conectados à rede (e, assim, a outras pessoas) o tempo todo” o\npronome destacado é anafórico.\nIII. Em “Dessa forma, somos transformados em economistas do nosso próprio tempo” o termo\ndestacado tem valor conclusivo.",
+    "statement": "Leia atentamente as afirmativas e assinale a afirmativa que apresenta apenas afirmação(ões)\ncorreta(s)\nI. Em “Janeiro é o momento <u>em que muita gente decide tirar férias”</u> a oração destacada tem valor\ntemporal.\nII. Em “Com eles, ficamos conectados à rede (e, assim, a outras pessoas) o tempo todo” o\npronome destacado é anafórico.\nIII. Em <u>“Dessa forma,</u> somos transformados em economistas do nosso próprio tempo” o termo\ndestacado tem valor conclusivo.",
     "options": [
       {
         "letter": "A",
@@ -14427,27 +14427,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Gosto de evocar a figura mansa de Seu Domingos, a quem chamávamos paizinho [...].” (9°§)",
+        "text": "“Gosto de evocar a figura mansa de <u>Seu</u> Domingos, a quem chamávamos paizinho [...].” (9°§)",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“[...] refletindo uma atitude sua até mesmo esboçando um gesto seu.” (5°§)",
+        "text": "“[...] refletindo uma atitude <u>sua</u> até mesmo esboçando um gesto <u>seu</u>.” (5°§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Já se tomou hábito meu, em meio a uma conversa [...].” (1°§)",
+        "text": "“Já se tomou hábito <u>meu,</u> em meio a uma conversa [...].” (1°§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Durante algum tempo andou às voltas com o velho relógio de parede que fora de seu pai [...].” (10°§)",
+        "text": "“Durante algum tempo andou às voltas com o velho relógio de parede que fora de <u>seu</u> pai [...].” (10°§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Ou depois do jantar, sentado com minha mãe no sofá [...].” (9°§)",
+        "text": "“Ou depois do jantar, sentado com <u>minha</u> mãe no sofá [...].” (9°§)",
         "correct": false
       }
     ],
@@ -14466,27 +14466,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Isso significará talvez [...] que vou me tomando com o correr dos anos cada vez parecido com ele[...].” (4°§)",
+        "text": "“Isso significará talvez [...] que vou me tomando com o <u>correr</u> dos anos cada vez parecido com ele[...].” (4°§)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“[...] refletia literalmente o que ele costumava dizer, sempre concluindo com olhar travesso.” (7°§)",
+        "text": "“[...] refletia literalmente o que ele costumava dizer, sempre concluindo com <u>olhar</u> travesso.” (7°§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“[...] todos os dias, ao cair da tarde, egresso do escritório situado no porão.” (9°§)",
+        "text": "“[...] todos os dias, ao <u>cair</u> da tarde, egresso do escritório situado no porão.” (9°§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“ Ou depois do jantar, sentado com minha mãe no sofá de palhinha da varanda [...].” (9°§)",
+        "text": "“ Ou depois do <u>jantar,</u> sentado com minha mãe no sofá de palhinha da varanda [...].” (9°§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“[...] não devemos exigir das pessoas mais do que elas podem dar.” (16°§)",
+        "text": "“[...] não devemos <u>exigir</u> das pessoas mais do que elas podem dar.” (16°§)",
         "correct": true
       }
     ],
@@ -14544,17 +14544,17 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“...relações livres, iguais e fraternas, típicas do homem culto.” (l. 4 e 5) – resumir os elementos que foram listados anteriormente.",
+        "text": "“...relações livres, iguais e fraternas, <u>típicas do homem culto.”</u> (l. 4 e 5) – resumir os elementos que foram listados anteriormente.",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "...homo sacer. Ou seja, sua vida passava a ser consagrada aos deuses. (l. 34 e 35) – explicar o termo que o antecede.",
+        "text": "...homo sacer. <u>Ou</u> <u>seja,</u> <u>sua</u> <u>vida</u> <u>passava</u> <u>a</u> <u>ser consagrada aos deuses.</u> (l. 34 e 35) – explicar o termo que o antecede.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“...ocorrência de outros genocídios – Ruanda, Iugoslávia, Camboja, etc.” (l. 51 e 52) – exemplificar enumerando o termo antecedente ao qual se refere.",
+        "text": "“...ocorrência de outros genocídios – <u>Ruanda, Iugoslávia,</u> <u>Camboja,</u> <u>etc.”</u> (l. 51 e 52) – exemplificar enumerando o termo antecedente ao qual se refere.",
         "correct": false
       },
       {
@@ -14574,7 +14574,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 43,
-    "statement": "Leia os fragmentos abaixo:\n\"O autor é quem escreve, mas o livro é de quem lê, e isso de uma forma muito mais abrangente\n[...]\" (5°§)\n\"Dias atrás gravei um comercial de rádio em prol do Instituto Estadual do Livro em que falo aos\nleitores exatamente isso[...]\" (7°§)\n\"[... ] as coisas em seu devido lugar, mesmo que para isso tenha roubado o livro de uma garota sem\nperceber.\"\n(9º§) Quanto aos processos coesivos, as palavras destacadas possuem, de acordo com o contexto\nem que são empregados, respectivamente, valor:",
+    "statement": "Leia os fragmentos abaixo:\n\"O autor é quem escreve, mas o livro é de quem lê, e <u>isso</u> de uma forma muito mais abrangente\n[...]\" (5°§)\n\"Dias atrás gravei um comercial de rádio em prol do Instituto Estadual do Livro em que falo aos\nleitores exatamente <u>isso[...]\"</u> (7°§)\n\"[... ] as coisas em seu devido lugar, mesmo que para isso tenha roubado o livro de uma garota sem\nperceber.\"\n(9º§) Quanto aos processos coesivos, as palavras destacadas possuem, de acordo com o contexto\nem que são empregados, respectivamente, valor:",
     "options": [
       {
         "letter": "A",
@@ -14617,27 +14617,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "\"[...] pessoas que ainda não estejam familiarizadas com os livros [...]\" (4º§) - (entre)",
+        "text": "\"[...] pessoas que ainda não estejam familiarizadas <u>com</u> os livros [...]\" (4º§) - (entre)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "\"O livro é de quem tem acesso às suas páginas [...]\" (6°§) - (ante)",
+        "text": "\"O livro é de quem tem acesso <u>às</u> suas páginas [...]\" (6°§) - (ante)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "\"[... ] os cenários, a voz e o jeito com que se movimentam.\" (6°§) - (em)",
+        "text": "\"[... ] os cenários, a voz e o jeito <u>com</u> que se movimentam.\" (6°§) - (<u>em</u>)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "\"[... ] mas que reflete em quem lê de uma forma muito pessoal.\" (6°§) - (para)",
+        "text": "\"[... ] mas que reflete <u>em</u> quem lê de uma forma muito pessoal.\" (6°§) - (para)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\"(... ] na capa, como se isso sinalizasse o direito de posse.\" (8°§) - (a)",
+        "text": "\"(... ] na capa, como se isso sinalizasse o direito <u>de</u> posse.\" (8°§) - (a)",
         "correct": true
       }
     ],
@@ -14666,7 +14666,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "C",
-        "text": "Em “Tão simples, tão certa, tão fácil” (v.10), o advérbio em destaque foi empregado para atenuar as mudanças sofridas pelo eu lírico ao longo da vida.",
+        "text": "Em <u>“Tão</u> simples, <u>tão</u> certa, tão fácil” (v.10), o advérbio em destaque foi empregado para atenuar as mudanças sofridas pelo eu lírico ao longo da vida.",
         "correct": false
       },
       {
@@ -14677,7 +14677,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "TEXTO I\nRETRATO\nEu não tinha este rosto de hoje,\nAssim calmo, assim triste, assim magro,\nNem estes olhos tão vazios,\nNem o lábio amargo.\n\nEu não tinha estas mãos sem força,\nTão paradas e frias e mortas;\nEu não tinha este coração\nQue nem se mostra.\n\nEu não dei por esta mudança,\nTão simples, tão certa, tão fácil:\n— Em que espelho ficou perdida\nA minha face?\n\n(MEIRELES, Cecília. **Obra Poética de Cecília Meireles**. Rio de Janeiro: José Aguilar, 1958.)"
+    "readingText": "TEXTO I\nRETRATO\nEu não tinha este rosto de hoje,\nAssim calmo, assim triste, assim magro,\nNem estes olhos tão vazios,\nNem o lábio amargo.\n\nEu não tinha estas mãos sem força,\nTão paradas e frias e mortas;\nEu não tinha este coração\nQue nem se mostra.\n\nEu não dei por esta mudança,\nTão simples, tão certa, tão fácil:\n— Em que espelho ficou perdida\nA minha face?\n\n(MEIRELES, Cecília. Obra Poética de Cecília Meireles. Rio de Janeiro: José Aguilar, 1958.)"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q46",
@@ -14686,31 +14686,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 46,
-    "statement": "Em que opção o termo sublinhado exerce a mesma função que o pronome destacado em \"De alto\na baixo da pirâmide social, quase todas as pessoas que eu conheço possuem celular.\" (1º§)?",
+    "statement": "Em que opção o termo sublinhado exerce a mesma função que o pronome destacado em \"De alto\na baixo da pirâmide social, quase todas as pessoas <u>que</u> eu conheço possuem celular.\" (1º§)?",
     "options": [
       {
         "letter": "A",
-        "text": "\"Considero-o um excelente resolvedor de pendências e nada mais.• (2°§)",
+        "text": "\"Considero-<u>o</u> um excelente resolvedor de pendências e nada mais.• (2°§)",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "\"Logo, você pode imaginar meu espanto ao constatar como [...].\" (3º§)",
+        "text": "\"Logo, <u>você</u> pode imaginar meu espanto ao constatar como [...].\" (3º§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "\"Isso tudo me ocorreu enquanto lia o livro infantil [...].\" (5º§)",
+        "text": "\"Isso tudo <u>me</u> ocorreu enquanto lia o livro infantil [...].\" (5º§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "\"Aí a ideia: se ele fosse um celular, receberia muito mais atenção.\" ( 5 o§)",
+        "text": "\"Aí a ideia: se ele fosse <u>um celular,</u> receberia muito mais atenção.\" ( 5 o§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\"Mas são eles que estão botando muita gente na palma da mão.\" (7°§)",
+        "text": "\"Mas são <u>eles</u> que estão botando muita gente na palma da mão.\" (7°§)",
         "correct": false
       }
     ],
@@ -14725,7 +14725,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 47,
-    "statement": "Que opção pode substituir o pronome sublinhado no trecho “Certa vez, adolescente ainda nas\nmontanhas, li uma crónica onde um leitor de Goiás pedia A cronista que lhe explicasse, enfim, o\nque era o mar.” (5°§), de acordo com a norma padrão, sem alterar o sentido do enunciado?",
+    "statement": "Que opção pode substituir o pronome sublinhado no trecho “Certa vez, adolescente ainda nas\nmontanhas, li uma crónica <u>onde</u> um leitor de Goiás pedia A cronista que lhe explicasse, enfim, o\nque era o mar.” (5°§), de acordo com a norma padrão, sem alterar o sentido do enunciado?",
     "options": [
       {
         "letter": "A",
@@ -14764,7 +14764,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 48,
-    "statement": "Em qual opção o pronome relativo exerce a mesma função sintática que o termo sublinhado em\n“[...] desde que todos esses ‘sete’ o tivessem ratificado até então.\" (6°§)?",
+    "statement": "Em qual opção o pronome relativo exerce a mesma função sintática que o termo sublinhado em\n“[...] desde que todos esses ‘sete’ <u>o</u> tivessem ratificado até então.\" (6°§)?",
     "options": [
       {
         "letter": "A",
@@ -14803,31 +14803,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 49,
-    "statement": "Com base no texto, responda à questão.\nNo que diz respeito ao mecanismo de coesão utilizado, a palavra retomada NÃO está indicada\ncorretamente na opção:",
+    "statement": "Com base no texto, responda à questão.\nNo que diz respeito ao mecanismo de coesão utilizado, a palavra retomada <u>NÃO</u> está indicada\ncorretamente na opção:",
     "options": [
       {
         "letter": "A",
-        "text": "Minha avó, que nos visitava, condenou o procedimento da filha e esta afligiu-se. – a mãe da criança.",
+        "text": "Minha avó, que nos visitava, condenou o procedimento da filha e <u>esta</u> afligiu-se. – a mãe da criança.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Se não fosse ele, a flagelação me haveria causado menor estrago. – o ódio.",
+        "text": "Se não fosse <u>ele,</u> a flagelação me haveria causado menor estrago. – o ódio.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "O homem não me perguntava se eu tinha guardado a miserável correia (...). – o pai da criança.",
+        "text": "<u>O homem</u> não me perguntava se eu tinha guardado a miserável correia (...). – o pai da criança.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Responsabilizando qualquer deles, meu pai me esqueceria (...). – o moleque e os cachorros.",
+        "text": "Responsabilizando qualquer <u>deles,</u> meu pai me esqueceria (...). – o moleque e os cachorros.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Pareceu-me que a figura imponente minguava (...). – o pai da criança.",
+        "text": "Pareceu-me que <u>a</u> <u>figura</u> <u>imponente</u> minguava (...). – o pai da criança.",
         "correct": false
       }
     ],
@@ -14846,22 +14846,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Isso começou a mudar quando Steve Jobs...” (l. 10) – (fazia produtos inovadores)",
+        "text": "<u>“Isso</u> começou a mudar quando Steve Jobs...” (l. 10) – (fazia produtos inovadores)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“...e devolver o dinheiro a seus acionistas.” (l. 31 e 32) – (Steve Jobs)",
+        "text": "“...e devolver o dinheiro a <u>seus</u> acionistas.” (l. 31 e 32) – (Steve Jobs)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“...quando Steve Jobs, um de seus fundadores, que fora afastado nos anos 80,...” (l. 10 e 11) – (Steve Jobs)",
+        "text": "“...quando Steve Jobs, um de seus fundadores, <u>que</u> fora afastado nos anos 80,...” (l. 10 e 11) – (Steve Jobs)",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“A marca, para além da disputa pessoal entre os maiores gênios da economia, coroa a estratégia definida por Jobs.” (l. 26 a 28) – (Steve Jobs, Bill Gates, Michael Dell)",
+        "text": "“A marca, para além da disputa pessoal entre os <u>maiores gênios</u> <u>da</u> <u>economia,</u> coroa a estratégia definida por Jobs.” (l. 26 a 28) – (Steve Jobs, Bill Gates, Michael Dell)",
         "correct": false
       }
     ],
@@ -14876,7 +14876,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 51,
-    "statement": "( ) Em “Esse corpo está com mais remendos X” (l. 31 e 32), a substituição do pronome grifado por\naquele acarretaria alteração de sentido no trecho.\nA seqüência correta é:",
+    "statement": "( ) Em <u>“Esse</u> corpo está com mais remendos X” (l. 31 e 32), a substituição do pronome grifado por\n<u>aquele</u> acarretaria alteração de sentido no trecho.\nA seqüência correta é:",
     "options": [
       {
         "letter": "A",
@@ -14901,7 +14901,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "(Eduardo Galeano. Futebol, ao sol e à sombra.)\nJulgue cada item a seguir, como V (verdadeiro) ou F (falso), considerando o que se afirma sobre o\nemprego dos pronomes no texto II.\n( ) Em “A bola o procura, o reconhece, precisa dele.” (l. 12) e “/.../ que não estão vendo o que\nacontece.” (l. 26 e 27), todos os termos assinalados são pronomes pessoais oblíquos átonos.\n( ) No trecho “por obra e graça desses passes devolvidos num toque, essas fintas que desenham\nos zês na grama, esses golaços de calcanhar ou de bicicleta...” (l. 17 a 20), os pronomes grifados\npoderiam contrair-se com a preposição de sem prejuízo da correção gramatical.\n( ) No trecho “No peito de seu pé, ela descansa e se embala. Ele lhe dá brilho e a faz falar...” (l. 12\na 14), todos os pronomes grifados têm o mesmo referente."
+    "readingText": "(Eduardo Galeano. Futebol, ao sol e à sombra.)\nJulgue cada item a seguir, como V (verdadeiro) ou F (falso), considerando o que se afirma sobre o\nemprego dos pronomes no texto II.\n( ) Em “A bola o procura, o reconhece, precisa dele.” (l. 12) e “/.../ que não estão vendo <u>o</u> que\nacontece.” (l. 26 e 27), todos os termos assinalados são pronomes pessoais oblíquos átonos.\n( ) No trecho “por obra e graça desses passes devolvidos num toque, <u>essas</u> fintas que desenham\nos zês na grama, <u>esses</u> golaços de calcanhar ou de bicicleta...” (l. 17 a 20), os pronomes grifados\npoderiam contrair-se com a preposição de sem prejuízo da correção gramatical.\n( ) No trecho “No peito de <u>seu</u> pé, ela descansa e se embala. Ele <u>lhe</u> dá brilho e <u>a</u> faz falar...” (l. 12\na 14), todos os pronomes grifados têm o mesmo referente."
   },
   {
     "id": "pronomes-pdf_6_pronomes-q52",
@@ -14929,12 +14929,12 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "D",
-        "text": "“Ele se acha normal; nós é que ficamos anormais com a sua presença.\" (4°§)",
+        "text": "“Ele se acha <u>normal;</u> nós é que ficamos anormais com a sua presença.\" (4°§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\"Não há segunda-feira, colégio, happy hour.” (2°§)",
+        "text": "\"Não há <u>segunda-feira,</u> colégio, happy hour.” (2°§)",
         "correct": false
       }
     ],
@@ -14953,7 +14953,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "expressão “Todas as nossas melhores recordações\"(11°§) isolada por meio de vírgula não tornaria o trecho gramaticalmente incorreto.",
+        "text": "expressão <u>“Todas as nossas melhores recordações\"(11°§)</u> isolada por meio de vírgula não tornaria o trecho gramaticalmente incorreto.",
         "correct": false
       },
       {
@@ -14963,7 +14963,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "C",
-        "text": "A expressão ou seja, sublinhada em “Ou seja, ele assiste a um filme [...].” (3°§), introduz uma explicação para o fato de o menino de rua não pertencer ao mundo prestigiado.",
+        "text": "A expressão ou seja, sublinhada em <u>“Ou seja,</u> ele assiste a um filme [...].” (3°§), introduz uma explicação para o fato de o menino de rua não pertencer ao mundo prestigiado.",
         "correct": true
       },
       {
@@ -14973,7 +14973,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "No período “Antigamente não o víamos, mas ele sempre nos “ viu.”(5°§), o pronome “o” seria corretamente substituído pelo pronome “lhe”.",
+        "text": "No período “Antigamente não <u>o</u> víamos, mas ele sempre nos “ viu.”(5°§), o pronome “o” seria corretamente substituído pelo pronome “lhe”.",
         "correct": false
       }
     ],
@@ -14992,27 +14992,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Ele nos obriga ao raríssimo sentimento da solidariedade, que vai contra todos os hábitos de nossa vida egoísta de hoje.” (10°§)",
+        "text": "“Ele nos obriga ao raríssimo sentimento da solidariedade<u>,</u> que vai contra todos os hábitos de nossa vida egoísta de hoje.” (10°§)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“[...] para não despertar uma curiosidade infantil que poderia descer até as bases da sociedade - que os pais não conhecem, [...]” (7°§)",
+        "text": "“[...] para não despertar uma curiosidade infantil que poderia descer até as bases da sociedade <u>-</u> que os pais não conhecem, [...]” (7°§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“[...] fazendo um tristíssimo malabarismo com três bolinhas e sentimos culpa, pena, indignação.” (9°§)",
+        "text": "“[...] fazendo um tristíssimo malabarismo com três bolinhas e sentimos culpa<u>,</u> pena, indignação.” (9°§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Depois das campanhas da fome, surgiram olhares novos.” (11°§)",
+        "text": "“Depois das campanhas da fome<u>,</u> surgiram olhares novos.” (11°§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“O menino de rua denuncia o ridículo do pensamento 'genérico-crítico' - mostra-nos que uma crítica à injustiça tem de apontar soluções positivas.” (12°§)",
+        "text": "“O menino de rua denuncia o ridículo do pensamento 'genérico-crítico' <u>-</u> mostra-nos que uma crítica à injustiça tem de apontar soluções positivas.” (12°§)",
         "correct": true
       }
     ],
@@ -15031,27 +15031,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "\"Mas com toda a certeza o menino Bruno Lichtenstein jamais leu esses versos\". (2 ° parágrafo)",
+        "text": "\"Mas com toda a certeza o menino Bruno Lichtenstein jamais leu <u>esses versos\".</u> (2 ° parágrafo)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "\"Mas o cachorro era seu amigo - e estava lá, metido em um porão, esperando a hora de morrer\". (2° parágrafo)",
+        "text": "\"Mas o cachorro era seu amigo - e estava lá, metido em um porão, esperando <u>a hora de</u> <u>morrer\"</u>. (2° parágrafo)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "\"O dr. Loforte surpreendeu o menino\". (5° parágrafo)",
+        "text": "\"O dr. Loforte surpreendeu <u>o menino\".</u> (5° parágrafo)",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "\"Um menino pobre, que tremia, que havia arrombado a Faculdade\". (5° parágrafo)",
+        "text": "\"Um menino pobre, que tremia, que havia arrombado <u>a Faculdade\".</u> (5° parágrafo)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "\"Não pagará a licença de seu amigo\". (2° parágrafo)",
+        "text": "\"Não pagará <u>a licença de seu amigo\".</u> (2° parágrafo)",
         "correct": false
       }
     ],
@@ -15066,7 +15066,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 56,
-    "statement": "Leia atentamente o seguinte texto:\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta\n“Então, ELA ficara encaixotada num desvão da memória (...)” (2º§). O pronome pessoal de 3ª\npessoa, destacado na frase acima, refere-se ao termo, anteriormente citado,",
+    "statement": "Lido o texto, **observe atentamente** o quesito e assinale somente **UMA** alternativa correta\n“Então, ELA ficara encaixotada num desvão da memória (...)” (2º§). O pronome pessoal de 3ª\npessoa, destacado na frase acima, refere-se ao termo, anteriormente citado,",
     "options": [
       {
         "letter": "A",
@@ -15096,7 +15096,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "E",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "ENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade"
+    "readingText": "Leia atentamente o seguinte texto:\n**ENCONTRO NA PRAÇA**\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q57",
@@ -15144,7 +15144,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 58,
-    "statement": "Leia atentamente o seguinte texto:\nDentre as alternativas abaixo, assinale a que NÃO se pode deslocar o pronome átono.",
+    "statement": "Dentre as alternativas abaixo, assinale a que NÃO se pode deslocar o pronome átono.",
     "options": [
       {
         "letter": "A",
@@ -15174,7 +15174,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Seca\nEra hora do almoço dos trabalhadores. Enquanto os homens comiam lá dentro, o fazendeiro velho\nsentava-se na rede do alpendre, à frente de casa espiando o sol no céu, que tinia como vidro;\nprocurando desviar os olhos da água do açude, lá além, que dentro de mais um mês estaria virada\nde lama.\nOs dois cabras se aproximaram sem que ele pressentisse. Era um alto e um baixo; o baixo grosso e\nescuro, vestido numa camisa de algodãozinho encardido. O alto era alourado e não se podia dizer\nque estivesse vestido de coisa nenhuma, porque era farrapo só. O grosso na mão trazia um couro\nde cabra, ainda pingando sangue, esfolado que fora fazia pouco. E nem tirou o caco de chapéu da\ncabeça, nem salvou ao menos.\nO velho até se assustou e bruscamente se pôs a cavalo na rede, a escutar a voz grossa e áspera,\ntal e qual quem falava:\n− Cidadão, vim lhe vender este couro de bode. Aquele “cidadão”, assim desabrido, já dizia tudo.\nNinguém chega de boa atenção em terreno alheio sem dar bom-dia. E tratando o dono da casa de\ncidadão. Assim, o fazendeiro achou melhor fingir que não ouvira ¾ e foi-se pondo de pé.\n− O quê? Que é que você quer?\nO homem escuro botou o couro em cima do parapeito e o sangue escorreu num fio pelo cal da\nparede:\n− Estou arranchado com minha família debaixo daquele juazeiro grande, ali. Essa cabra passou\nperto − não sei de quem era. Matei, e a mulher está cozinhando a carne para comer. Agora, o\ncouro − o senhor ou me dá dinheiro por ele, ou me dá farinha.\n− E de quem é essa cabra? É minha? Quem lhe deu ordem para matar?\nO velho estava tão furioso que o dedo dele, espetado no ar, tremia. E o loureba esfarrapado\nchegou perto e deu a sua risadinha:\n− Ninguém perguntou a ela o nome do dono...\nMas o outro, sempre sério, olhou o velho na cara:\n− Matei com ordem da fome. O senhor quer ordem melhor?\nNesse meio, os homens que almoçavam lá dentro escutaram as vozes alteradas e vieram ver o que\nhavia. Eram uns doze – foram aparecendo pelo oitão da casa, de um em um, e se abriram em\nredor dos estranhos no terreiro.\nAí o velho se vendo garantido, começou a gritar:\n− Na minha terra só eu dou ordem! Vocês são muito é atrevidos – me matarem o bicho e ainda me\ntrazerem o couro pra vender, por desaforo! Chico Luís, veja aí de quem é o sinal dessa criação.\nO feitor largou a foice no chão, puxou as orelhas do couro, e virou-se achando graça para um dos\ncompanheiros: era a sua cabrinha, não era mesmo, compadre Augusto? Está aqui o sinal...\nO Augusto veio olhar também e ficou danado:\n− Seus perversos, a cabra era da minha menina beber leite, estava cheia de cabrito novo!\nMas o olho do homem escuro era feio e, se ele se assustara vendo-se cercado pelos cabras da\nfazenda, não deu parecença. O loureba é que virava a cara de um lado para outro, procurando\nsaída; ainda levou a mão ao quadril, tateou o cabo da faca – mas cada um dos homens tinha uma\nfoice, um terçado, um ferro na mão.\nNesse pé o fazendeiro, para acabar com a história, resolveu mostrar bom coração; e gritou para o\ncorredor:\n− Menina! Manda aí uma cuia com um bocado de farinha!\nDepois, retornando ao homem:\n− Eu podia mandar prender vocês, para aprenderem a não matar bicho alheio! Mas têm crianças,\nnão é? Tenho pena das crianças! Leve essa farinha, comam e tratem de ir embora. Daqui a uma\nhora quero o pé de juazeiro limpo e vocês na estrada. Podem ir!\nO homem recebeu a cuia, não disse nada, saiu sem olhar para trás. O outro acompanhou, meio\ntemeroso, tirou ainda o chapéu em despedida, e pegou no passo do companheiro. O velho\nreclamava em voz alta – cabra desgraçado, além de fazer o malfeito, recebe o favor e nem sequer\nabana o rabo.\nOs trabalhadores, calados, acompanhavam com os olhos os dois estranhos que marchavam um\natrás do outro, na direção do juazeiro, do qual só se avistava a copa alta ali no terreiro. Ninguém\nsabe o que pensavam; o dono da cabra deu de mão no couro e foi com ele para trás da casa.\nAí a sineta bateu e os homens saíram para o serviço. Passando pelo juazeiro, lá viram a família ao\nredor do fogo, os meninos procurando pescar pedaços da carne que fervia numa lata. Mas o\nhomem escuro, encostado ao tronco, via-os passar, de braços cruzados, sem baixar os olhos.\nAinda foi o dono da cabra que baixou os seus; explicou depois que não gostava de briga.\nMORALIDADE: Este caso aconteceu mesmo. Faz mais de trinta anos escrevi uma história de cabra\nmorta por retirante, mas era diferente. Então, o homem sentia dor de consciência, e até se\nhumilhou quando o dono do bicho morto o chamou de ladrão. Agora não é mais assim. Agora eles\nsabem que a fome dá um direito que passa por cima de qualquer direito dos outros. A moralidade\nda história é mesmo esta: tudo mudou, mudou muito.\nQUEIROZ, Rachel de. Cenas brasileiras. São Paulo:\nÁtica, 1997, p. 14-17. (Para gostar de ler).\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta."
+    "readingText": "Leia atentamente o seguinte texto:\nSeca\nEra hora do almoço dos trabalhadores. Enquanto os homens comiam lá dentro, o fazendeiro velho\nsentava-se na rede do alpendre, à frente de casa espiando o sol no céu, que tinia como vidro;\nprocurando desviar os olhos da água do açude, lá além, que dentro de mais um mês estaria virada\nde lama.\nOs dois cabras se aproximaram sem que ele pressentisse. Era um alto e um baixo; o baixo grosso e\nescuro, vestido numa camisa de algodãozinho encardido. O alto era alourado e não se podia dizer\nque estivesse vestido de coisa nenhuma, porque era farrapo só. O grosso na mão trazia um couro\nde cabra, ainda pingando sangue, esfolado que fora fazia pouco. E nem tirou o caco de chapéu da\ncabeça, nem salvou ao menos.\nO velho até se assustou e bruscamente se pôs a cavalo na rede, a escutar a voz grossa e áspera,\ntal e qual quem falava:\n− Cidadão, vim lhe vender este couro de bode. Aquele “cidadão”, assim desabrido, já dizia tudo.\nNinguém chega de boa atenção em terreno alheio sem dar bom-dia. E tratando o dono da casa de\ncidadão. Assim, o fazendeiro achou melhor fingir que não ouvira ¾ e foi-se pondo de pé.\n− O quê? Que é que você quer?\nO homem escuro botou o couro em cima do parapeito e o sangue escorreu num fio pelo cal da\nparede:\n− Estou arranchado com minha família debaixo daquele juazeiro grande, ali. Essa cabra passou\nperto − não sei de quem era. Matei, e a mulher está cozinhando a carne para comer. Agora, o\ncouro − o senhor ou me dá dinheiro por ele, ou me dá farinha.\n− E de quem é essa cabra? É minha? Quem lhe deu ordem para matar?\nO velho estava tão furioso que o dedo dele, espetado no ar, tremia. E o loureba esfarrapado\nchegou perto e deu a sua risadinha:\n− Ninguém perguntou a ela o nome do dono...\nMas o outro, sempre sério, olhou o velho na cara:\n− Matei com ordem da fome. O senhor quer ordem melhor?\nNesse meio, os homens que almoçavam lá dentro escutaram as vozes alteradas e vieram ver o que\nhavia. Eram uns doze – foram aparecendo pelo oitão da casa, de um em um, e se abriram em\nredor dos estranhos no terreiro.\nAí o velho se vendo garantido, começou a gritar:\n− Na minha terra só eu dou ordem! Vocês são muito é atrevidos – me matarem o bicho e ainda me\ntrazerem o couro pra vender, por desaforo! Chico Luís, veja aí de quem é o sinal dessa criação.\nO feitor largou a foice no chão, puxou as orelhas do couro, e virou-se achando graça para um dos\ncompanheiros: era a sua cabrinha, não era mesmo, compadre Augusto? Está aqui o sinal...\nO Augusto veio olhar também e ficou danado:\n− Seus perversos, a cabra era da minha menina beber leite, estava cheia de cabrito novo!\nMas o olho do homem escuro era feio e, se ele se assustara vendo-se cercado pelos cabras da\nfazenda, não deu parecença. O loureba é que virava a cara de um lado para outro, procurando\nsaída; ainda levou a mão ao quadril, tateou o cabo da faca – mas cada um dos homens tinha uma\nfoice, um terçado, um ferro na mão.\nNesse pé o fazendeiro, para acabar com a história, resolveu mostrar bom coração; e gritou para o\ncorredor:\n− Menina! Manda aí uma cuia com um bocado de farinha!\nDepois, retornando ao homem:\n− Eu podia mandar prender vocês, para aprenderem a não matar bicho alheio! Mas têm crianças,\nnão é? Tenho pena das crianças! Leve essa farinha, comam e tratem de ir embora. Daqui a uma\nhora quero o pé de juazeiro limpo e vocês na estrada. Podem ir!\nO homem recebeu a cuia, não disse nada, saiu sem olhar para trás. O outro acompanhou, meio\ntemeroso, tirou ainda o chapéu em despedida, e pegou no passo do companheiro. O velho\nreclamava em voz alta – cabra desgraçado, além de fazer o malfeito, recebe o favor e nem sequer\nabana o rabo.\nOs trabalhadores, calados, acompanhavam com os olhos os dois estranhos que marchavam um\natrás do outro, na direção do juazeiro, do qual só se avistava a copa alta ali no terreiro. Ninguém\nsabe o que pensavam; o dono da cabra deu de mão no couro e foi com ele para trás da casa.\nAí a sineta bateu e os homens saíram para o serviço. Passando pelo juazeiro, lá viram a família ao\nredor do fogo, os meninos procurando pescar pedaços da carne que fervia numa lata. Mas o\nhomem escuro, encostado ao tronco, via-os passar, de braços cruzados, sem baixar os olhos.\nAinda foi o dono da cabra que baixou os seus; explicou depois que não gostava de briga.\nMORALIDADE: Este caso aconteceu mesmo. Faz mais de trinta anos escrevi uma história de cabra\nmorta por retirante, mas era diferente. Então, o homem sentia dor de consciência, e até se\nhumilhou quando o dono do bicho morto o chamou de ladrão. Agora não é mais assim. Agora eles\nsabem que a fome dá um direito que passa por cima de qualquer direito dos outros. A moralidade\nda história é mesmo esta: tudo mudou, mudou muito.\nQUEIROZ, Rachel de. Cenas brasileiras. São Paulo:\nÁtica, 1997, p. 14-17. (Para gostar de ler).\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta."
   },
   {
     "id": "pronomes-pdf_6_pronomes-q59",
@@ -15183,37 +15183,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 59,
-    "statement": "Leia atentamente o seguinte texto:\nNos períodos abaixo, a palavra sublinhada que NÃO se classifica como pronome está na opção:",
+    "statement": "Nos períodos abaixo, a palavra sublinhada que NÃO se classifica como pronome está na opção:",
     "options": [
       {
         "letter": "A",
-        "text": "“Com a morte do meu velho, que me deixou o sítio...”",
+        "text": "“Com a morte do meu velho, <u>que</u> me deixou o sítio...”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Nos primeiros dias foi bonzinho, quem não gosta de uma cabeça de homem no travesseiro?”",
+        "text": "“Nos primeiros dias foi bonzinho, <u>quem</u> não gosta de uma cabeça de homem no travesseiro?”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Por mais que, de joelho e mão posta, negasse que havia outro homem...”",
+        "text": "“Por mais que, de joelho e mão posta, negasse que havia <u>outro</u> homem...”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Obrigou a rezar na hora da morte e pedir louvado. Que eu abrisse a boca, encostou o cano, fez que apertava o gatilho.”",
+        "text": "“Obrigou a rezar na hora da morte e pedir louvado. Que eu abrisse a boca, encostou o cano, fez <u>que</u> apertava o gatilho.”",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "“E agora sargento, que vai ser da minha vida, que é que eu faço?”",
+        "text": "“E agora sargento, <u>que</u> vai ser da minha vida, que é que eu faço?”",
         "correct": false
       }
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Texto 2\nMe responda, sargento\nDez anos, sargento, apartada do João. Uma tarde, sem se despedir, montou no cavalinho pampa,\nem dez anos de espera nunca deu notícia. Com a morte do meu velho, que me deixou o sítio,\nquinze dias atrás lá estava eu, bem quieta, cuidando da casa e da criação, ajudada pelo meu\nafilhado José, esse anjo de oito aninhos. Quem vai entrando sem bater palma nem pedir licença?\nChegou maltrapilho, chapéu na mão me rogou para fazer vida comigo. Mais de espanto que de\nsaudade aceitei, bom ou mau, eu disse, é o meu João.\nNos primeiros dias foi bonzinho, quem não gosta de uma cabeça de homem no travesseiro? Logo\ncomeçou a beber, não me valia em nada no sítio. Eu saía bem cedo com o menino a lidar na roça,\no bichão ficava dormindo. Bocejando de chinelo e desfrutando as regalias, não quer castigar o\ncorpinho, não joga um punhado de milho para as galinhas. Só então, sargento, burra de mim,\ndescobri o mistério: ele voltou por amor da herança. Na primeira semana vendeu o leitão mais\ngordo do chiqueiro, não me deu satisfação, o sargento viu algum dinheiro? Nem eu.\nOntem chegou bêbado e de óculos escuro, espantou o menino para o terreiro e, fechados no\nquarto, bradou que eu tinha um amante, o meu afilhado bem que era filho e, antes de contar até\ntrês, eu dissesse o nome do pai. Por mais que, de joelho e mão posta, negasse que havia outro\nhomem, por mim o testemunho dos vizinhos, ele me cobriu de palavrão, murro, pontapé. Pegou da\nespingarda, me bateu com a coronha na cabeça. Obrigou a rezar na hora da morte e pedir\nlouvado. Que eu abrisse a boca, encostou o cano, fez que apertava o gatilho. Não satisfeito, sacou\nda garrucha, apagou o lampião a bala. Disparou dois tiros na minha direção, só não acertou porque\nme desviei. Uma bala se enterrou na porta, a outra furou a cortina, em três pedaços a cabeça do\nSão Jorge.\nCansado de reinar, deitou-se vestido e de sapato, que a escrava servisse a janta na cama. Provou\numa garfada e atirou o prato, manchando de feijão toda a parede: “Quero outra, esta não prestou”.\nDeus me acudiu, ao voltar com a bandeja ele roncava espumando pelo dente de ouro. Agarrei meu\nfilho, chorando e rezando corri a noite inteira, ficasse lá no sítio era dona morta. E agora, sargento,\nque vai ser da minha vida, que é que eu faço?\nDalton Trevisan. O pássaro de cinco asas. Rio de Janeiro, Civilização Brasileira, 1975.\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta em\ncada questão."
+    "readingText": "Leia atentamente o seguinte texto:\nTexto 2\nMe responda, sargento\nDez anos, sargento, apartada do João. Uma tarde, sem se despedir, montou no cavalinho pampa,\nem dez anos de espera nunca deu notícia. Com a morte do meu velho, que me deixou o sítio,\nquinze dias atrás lá estava eu, bem quieta, cuidando da casa e da criação, ajudada pelo meu\nafilhado José, esse anjo de oito aninhos. Quem vai entrando sem bater palma nem pedir licença?\nChegou maltrapilho, chapéu na mão me rogou para fazer vida comigo. Mais de espanto que de\nsaudade aceitei, bom ou mau, eu disse, é o meu João.\nNos primeiros dias foi bonzinho, quem não gosta de uma cabeça de homem no travesseiro? Logo\ncomeçou a beber, não me valia em nada no sítio. Eu saía bem cedo com o menino a lidar na roça,\no bichão ficava dormindo. Bocejando de chinelo e desfrutando as regalias, não quer castigar o\ncorpinho, não joga um punhado de milho para as galinhas. Só então, sargento, burra de mim,\ndescobri o mistério: ele voltou por amor da herança. Na primeira semana vendeu o leitão mais\ngordo do chiqueiro, não me deu satisfação, o sargento viu algum dinheiro? Nem eu.\nOntem chegou bêbado e de óculos escuro, espantou o menino para o terreiro e, fechados no\nquarto, bradou que eu tinha um amante, o meu afilhado bem que era filho e, antes de contar até\ntrês, eu dissesse o nome do pai. Por mais que, de joelho e mão posta, negasse que havia outro\nhomem, por mim o testemunho dos vizinhos, ele me cobriu de palavrão, murro, pontapé. Pegou da\nespingarda, me bateu com a coronha na cabeça. Obrigou a rezar na hora da morte e pedir\nlouvado. Que eu abrisse a boca, encostou o cano, fez que apertava o gatilho. Não satisfeito, sacou\nda garrucha, apagou o lampião a bala. Disparou dois tiros na minha direção, só não acertou porque\nme desviei. Uma bala se enterrou na porta, a outra furou a cortina, em três pedaços a cabeça do\nSão Jorge.\nCansado de reinar, deitou-se vestido e de sapato, que a escrava servisse a janta na cama. Provou\numa garfada e atirou o prato, manchando de feijão toda a parede: “Quero outra, esta não prestou”.\nDeus me acudiu, ao voltar com a bandeja ele roncava espumando pelo dente de ouro. Agarrei meu\nfilho, chorando e rezando corri a noite inteira, ficasse lá no sítio era dona morta. E agora, sargento,\nque vai ser da minha vida, que é que eu faço?\nDalton Trevisan. O pássaro de cinco asas. Rio de Janeiro, Civilização Brasileira, 1975.\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta em\ncada questão."
   },
   {
     "id": "pronomes-pdf_6_pronomes-q60",
@@ -15222,7 +15222,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 60,
-    "statement": "Leia atentamente o seguinte texto:\nPode-se deslocar o pronome átono no período",
+    "statement": "Pode-se deslocar o pronome átono no período",
     "options": [
       {
         "letter": "A",
@@ -15252,7 +15252,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Texto 2\nMe responda, sargento\nDez anos, sargento, apartada do João. Uma tarde, sem se despedir, montou no cavalinho pampa,\nem dez anos de espera nunca deu notícia. Com a morte do meu velho, que me deixou o sítio,\nquinze dias atrás lá estava eu, bem quieta, cuidando da casa e da criação, ajudada pelo meu\nafilhado José, esse anjo de oito aninhos. Quem vai entrando sem bater palma nem pedir licença?\nChegou maltrapilho, chapéu na mão me rogou para fazer vida comigo. Mais de espanto que de\nsaudade aceitei, bom ou mau, eu disse, é o meu João.\nNos primeiros dias foi bonzinho, quem não gosta de uma cabeça de homem no travesseiro? Logo\ncomeçou a beber, não me valia em nada no sítio. Eu saía bem cedo com o menino a lidar na roça,\no bichão ficava dormindo. Bocejando de chinelo e desfrutando as regalias, não quer castigar o\ncorpinho, não joga um punhado de milho para as galinhas. Só então, sargento, burra de mim,\ndescobri o mistério: ele voltou por amor da herança. Na primeira semana vendeu o leitão mais\ngordo do chiqueiro, não me deu satisfação, o sargento viu algum dinheiro? Nem eu.\nOntem chegou bêbado e de óculos escuro, espantou o menino para o terreiro e, fechados no\nquarto, bradou que eu tinha um amante, o meu afilhado bem que era filho e, antes de contar até\ntrês, eu dissesse o nome do pai. Por mais que, de joelho e mão posta, negasse que havia outro\nhomem, por mim o testemunho dos vizinhos, ele me cobriu de palavrão, murro, pontapé. Pegou da\nespingarda, me bateu com a coronha na cabeça. Obrigou a rezar na hora da morte e pedir\nlouvado. Que eu abrisse a boca, encostou o cano, fez que apertava o gatilho. Não satisfeito, sacou\nda garrucha, apagou o lampião a bala. Disparou dois tiros na minha direção, só não acertou porque\nme desviei. Uma bala se enterrou na porta, a outra furou a cortina, em três pedaços a cabeça do\nSão Jorge.\nCansado de reinar, deitou-se vestido e de sapato, que a escrava servisse a janta na cama. Provou\numa garfada e atirou o prato, manchando de feijão toda a parede: “Quero outra, esta não prestou”.\nDeus me acudiu, ao voltar com a bandeja ele roncava espumando pelo dente de ouro. Agarrei meu\nfilho, chorando e rezando corri a noite inteira, ficasse lá no sítio era dona morta. E agora, sargento,\nque vai ser da minha vida, que é que eu faço?\nDalton Trevisan. O pássaro de cinco asas. Rio de Janeiro, Civilização Brasileira, 1975.\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta em\ncada questão."
+    "readingText": "Leia atentamente o seguinte texto:\nTexto 2\nMe responda, sargento\nDez anos, sargento, apartada do João. Uma tarde, sem se despedir, montou no cavalinho pampa,\nem dez anos de espera nunca deu notícia. Com a morte do meu velho, que me deixou o sítio,\nquinze dias atrás lá estava eu, bem quieta, cuidando da casa e da criação, ajudada pelo meu\nafilhado José, esse anjo de oito aninhos. Quem vai entrando sem bater palma nem pedir licença?\nChegou maltrapilho, chapéu na mão me rogou para fazer vida comigo. Mais de espanto que de\nsaudade aceitei, bom ou mau, eu disse, é o meu João.\nNos primeiros dias foi bonzinho, quem não gosta de uma cabeça de homem no travesseiro? Logo\ncomeçou a beber, não me valia em nada no sítio. Eu saía bem cedo com o menino a lidar na roça,\no bichão ficava dormindo. Bocejando de chinelo e desfrutando as regalias, não quer castigar o\ncorpinho, não joga um punhado de milho para as galinhas. Só então, sargento, burra de mim,\ndescobri o mistério: ele voltou por amor da herança. Na primeira semana vendeu o leitão mais\ngordo do chiqueiro, não me deu satisfação, o sargento viu algum dinheiro? Nem eu.\nOntem chegou bêbado e de óculos escuro, espantou o menino para o terreiro e, fechados no\nquarto, bradou que eu tinha um amante, o meu afilhado bem que era filho e, antes de contar até\ntrês, eu dissesse o nome do pai. Por mais que, de joelho e mão posta, negasse que havia outro\nhomem, por mim o testemunho dos vizinhos, ele me cobriu de palavrão, murro, pontapé. Pegou da\nespingarda, me bateu com a coronha na cabeça. Obrigou a rezar na hora da morte e pedir\nlouvado. Que eu abrisse a boca, encostou o cano, fez que apertava o gatilho. Não satisfeito, sacou\nda garrucha, apagou o lampião a bala. Disparou dois tiros na minha direção, só não acertou porque\nme desviei. Uma bala se enterrou na porta, a outra furou a cortina, em três pedaços a cabeça do\nSão Jorge.\nCansado de reinar, deitou-se vestido e de sapato, que a escrava servisse a janta na cama. Provou\numa garfada e atirou o prato, manchando de feijão toda a parede: “Quero outra, esta não prestou”.\nDeus me acudiu, ao voltar com a bandeja ele roncava espumando pelo dente de ouro. Agarrei meu\nfilho, chorando e rezando corri a noite inteira, ficasse lá no sítio era dona morta. E agora, sargento,\nque vai ser da minha vida, que é que eu faço?\nDalton Trevisan. O pássaro de cinco asas. Rio de Janeiro, Civilização Brasileira, 1975.\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta em\ncada questão."
   },
   {
     "id": "pronomes-pdf_6_pronomes-q61",
@@ -15285,7 +15285,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "Ninguém mostrou-se tão humilde quanto aquela senhora.",
+        "text": "Ninguém mostrou-se tão humilde quanto aquela senhora. ",
         "correct": false
       }
     ],
@@ -15343,27 +15343,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Vou para a cozinha, corto as cebolas. / Vou para a cozinha, corto-lhes.",
+        "text": "Vou para a cozinha, corto <u>as cebolas.</u> / Vou para a cozinha, corto-lhes.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Não basta abrir a janela para ver os campos e os rios... / Não basta abrir a janela para vê-los.",
+        "text": "Não basta abrir a janela para ver <u>os campos e os rios...</u> / Não basta abrir a janela para vê-los.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Drummond viu uma pedra e não viu uma pedra. / Drummond viu uma pedra e não viu-a.",
+        "text": "Drummond viu uma pedra e não viu <u>uma pedra.</u> / Drummond viu uma pedra e não viu-a.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Seus olhos não viam a beleza. / Seus olhos não viam-na.",
+        "text": "Seus olhos não viam <u>a beleza.</u> / Seus olhos não viam-na.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Só viam o lixo. / Só viam-lhe.",
+        "text": "Só viam <u>o lixo.</u> / Só viam-lhe.",
         "correct": false
       }
     ],
@@ -15460,27 +15460,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Foi quando meu vestido me reteve: alguma coisa se enganchara na minha saia.”",
+        "text": "“Foi quando meu vestido <u>me</u> reteve: alguma coisa se enganchara na minha saia.”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Ela era mais digna do que eu havia pensado: conseguido o dinheiro, nada mais quis me contar.”",
+        "text": "“Ela era mais digna do que eu havia pensado: conseguido o dinheiro, nada mais quis <u>me</u> contar.”",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“[...] interrompeu-se, olhou-me um instante e disse com delicadeza insuportável, mostrando os dentes: não precisa de outro não.”",
+        "text": "“[...] interrompeu-se, olhou-<u>me</u> um instante e disse com delicadeza insuportável, mostrando os dentes: não precisa de outro não.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“[...] temera que os outros me vissem ou que os outros não me vissem?”",
+        "text": "“[...] te<u>me</u>ra que os outros me vissem ou que os outros não me vissem?”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Seus olhos, mais do que suas palavras meio engolidas, informavam-me de sua paciente aflição.”",
+        "text": "“Seus olhos, mais do que suas palavras <u>me</u>io engolidas, informavam-me de sua paciente aflição.”",
         "correct": false
       }
     ],
@@ -15564,7 +15564,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "‘A morte’\nUm conto inédito de Lygia Fagundes Telles\nVou lhe contar meu sonho, um sonho tão bonito e que me fez tanto bem que não resisto ao\nimpulso de passá-lo adiante, na esperança de que traga a alguém a metade — ao menos a\nmetade! — da paz que me trouxe. Mas antes você vai me prometer que não procurará realizar\naqui suas altas interpretações freudianas, não, nada disso, eu lhe peço, nada de complicar com\nsimbolismos o que foi tão claro, tão nítido. Afinal, o que há de mais belo na vida — na vida e na\nmorte — é o mistério. Desgosta-me essa preocupação constante de se racionalizar realidade e\nsonho, deixemos de lado as lúcidas análises, quando eu digo nuvem, é nuvem mesmo. Quando eu\ndigo montanha, é montanha mesmo e não outra coisa. Fiquemos apenas na interpretação primária,\ndo entendimento até das criancinhas.\nEra noite e eu estava num campo que podia ser também um mar. VI. então que uma névoa fria foi\nsubindo do chão ou da água, subindo rápida até meus joelhos, subiu mais e atingiu minha cintura,\nsubiu ainda densa como uma onda e atingiu meu peito, mais um pouco e ei-la na altura do meu\npescoço... Fui tomada de pânico, é a morte. Essa névoa é a morte, pensei erguendo\nangustiosamente a cabeça para fugir daquele denso vapor que eu sabia que ia me sufocar. A\nangústia foi rapidíssima porque logo a névoa atingiu minha boca, ultrapassou-a, foi além dos\nolhos... Então respirei tomada de uma infinita sensação de alívio como nunca senti igual. Passou,\npronto, morri. Morri! Pensei na maior perplexidade. Mas como era fácil a morte! Como era fácil\nmorrer!... E abri então os olhos deslumbrados para a manhã tão fina e tão leve como nunca tinha\nvisto outra assim. Então era isso?... Tive vontade de rir de alegria, tão feliz me senti, mais leve ainda\ndo que a manhã que me trespassava com sua luz como se eu fosse de vidro. A ansiedade, o medo,\na aflição cederam lugar a uma calma tão absoluta que não entendi como pudera ter me afligido\ntanto antes.\nDeitei-me de bruços no alto de uma montanha e fiquei vendo lá embaixo os densos rios que\nrolavam mansamente. Alguns cruzavam-se com outros e as águas avolumadas subiam então\nondulantes contornando a base da montanha e formando em redor dela um imenso anel. Inclinei-me para ver melhor, não, não eram rios de água, eram rios de gente, infinitos rios humanos rolando\ntranquilos pela eternidade. São os mortos, pensei. São os mortos.\nNesse instante, de um daqueles rios, destacou-se uma pessoa que veio subindo a montanha na\ndireção onde eu me encontrava. Esperei-a. Ela veio vindo, veio vindo e na metade do caminho VI.\nque era uma mulher. Vestia trajes egípcios. Aproximou-se de mim e já a uns dez passos apenas de\ndistância, parou e ficou me olhando em silêncio. Havia em sua expressão qualquer coisa que me\npareceu familiar. Sorriu e de repente VI. que aquele sorriso era o meu. VI. que o sorriso era meu e\nmeu aquele rosto me encarava como se eu encarasse um espelho. Anime-me: eu fui você!\nExclamei. Um dia, num outro tempo, eu fui você.\nEla concordou, movendo afirmativamente a cabeça. Senti-me então segura, confiante, afinal, tudo\nnão passava de um transformar contínuo, ah! como era simples morrer! E agora? lembrei-me de\nperguntar-lhe. O que vou ser agora?\nEla teve um sorriso velado, reticente. No fundo do sorriso, uma remota ponta de malícia que me\nfez sorrir também. Você vai ser, respondeu-me afastando-se lentamente. Espera aí, você vai ver...\nNão me dirá nunca, pensei acenando-lhe. Mas não tinha importância, fascinava-me agora o\nmistério da nova aventura. Vi-a descer a montanha como subira. Quando integrou-se ao rio e nele\ndesapareceu, fiquei assim como uma criança na expectativa. Vou esperar, pensei e esse\npensamento foi tão repousante que fechei os olhos e dormi.\n(Disponível em <https://www.quatrocincoum.com.br/br/artigos/literatura/a-morte> Acesso em 01\njul. 2022)"
+    "readingText": "**‘A morte’**\nUm conto inédito de Lygia Fagundes Telles\nVou lhe contar meu sonho, um sonho tão bonito e que me fez tanto bem que não resisto ao\nimpulso de passá-lo adiante, na esperança de que traga a alguém a metade — ao menos a\nmetade! — da paz que me trouxe. Mas antes você vai me prometer que não procurará realizar\naqui suas altas interpretações freudianas, não, nada disso, eu lhe peço, nada de complicar com\nsimbolismos o que foi tão claro, tão nítido. Afinal, o que há de mais belo na vida — na vida e na\nmorte — é o mistério. Desgosta-me essa preocupação constante de se racionalizar realidade e\nsonho, deixemos de lado as lúcidas análises, quando eu digo nuvem, é nuvem mesmo. Quando eu\ndigo montanha, é montanha mesmo e não outra coisa. Fiquemos apenas na interpretação primária,\ndo entendimento até das criancinhas.\nEra noite e eu estava num campo que podia ser também um mar. VI. então que uma névoa fria foi\nsubindo do chão ou da água, subindo rápida até meus joelhos, subiu mais e atingiu minha cintura,\nsubiu ainda densa como uma onda e atingiu meu peito, mais um pouco e ei-la na altura do meu\npescoço... Fui tomada de pânico, é a morte. Essa névoa é a morte, pensei erguendo\nangustiosamente a cabeça para fugir daquele denso vapor que eu sabia que ia me sufocar. A\nangústia foi rapidíssima porque logo a névoa atingiu minha boca, ultrapassou-a, foi além dos\nolhos... Então respirei tomada de uma infinita sensação de alívio como nunca senti igual. Passou,\npronto, morri. Morri! Pensei na maior perplexidade. Mas como era fácil a morte! Como era fácil\nmorrer!... E abri então os olhos deslumbrados para a manhã tão fina e tão leve como nunca tinha\nvisto outra assim. Então era isso?... Tive vontade de rir de alegria, tão feliz me senti, mais leve ainda\ndo que a manhã que me trespassava com sua luz como se eu fosse de vidro. A ansiedade, o medo,\na aflição cederam lugar a uma calma tão absoluta que não entendi como pudera ter me afligido\ntanto antes.\nDeitei-me de bruços no alto de uma montanha e fiquei vendo lá embaixo os densos rios que\nrolavam mansamente. Alguns cruzavam-se com outros e as águas avolumadas subiam então\nondulantes contornando a base da montanha e formando em redor dela um imenso anel. Inclinei-me para ver melhor, não, não eram rios de água, eram rios de gente, infinitos rios humanos rolando\ntranquilos pela eternidade. São os mortos, pensei. São os mortos.\nNesse instante, de um daqueles rios, destacou-se uma pessoa que veio subindo a montanha na\ndireção onde eu me encontrava. Esperei-a. Ela veio vindo, veio vindo e na metade do caminho VI.\nque era uma mulher. Vestia trajes egípcios. Aproximou-se de mim e já a uns dez passos apenas de\ndistância, parou e ficou me olhando em silêncio. Havia em sua expressão qualquer coisa que me\npareceu familiar. Sorriu e de repente VI. que aquele sorriso era o meu. VI. que o sorriso era meu e\nmeu aquele rosto me encarava como se eu encarasse um espelho. Anime-me: eu fui você!\nExclamei. Um dia, num outro tempo, eu fui você.\nEla concordou, movendo afirmativamente a cabeça. Senti-me então segura, confiante, afinal, tudo\nnão passava de um transformar contínuo, ah! como era simples morrer! E agora? lembrei-me de\nperguntar-lhe. O que vou ser agora?\nEla teve um sorriso velado, reticente. No fundo do sorriso, uma remota ponta de malícia que me\nfez sorrir também. Você vai ser, respondeu-me afastando-se lentamente. Espera aí, você vai ver...\nNão me dirá nunca, pensei acenando-lhe. Mas não tinha importância, fascinava-me agora o\nmistério da nova aventura. Vi-a descer a montanha como subira. Quando integrou-se ao rio e nele\ndesapareceu, fiquei assim como uma criança na expectativa. Vou esperar, pensei e esse\npensamento foi tão repousante que fechei os olhos e dormi.\n(Disponível em <https://www.quatrocincoum.com.br/br/artigos/literatura/a-morte> Acesso em 01\njul. 2022)"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q69",
@@ -15616,27 +15616,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "\"[...] e pede que te reduza a cinzas! [...]\" (10°§)",
+        "text": "\"[...] e pede que <u>te</u> reduza a cinzas! [...]\" (10°§)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“[...] É mil vezes preferível a essa decadência em que te achas [...]\" (15°§)",
+        "text": "“[...] É mil vezes preferível <u>a</u> essa decadência em que <u>te</u> achas [...]\" (15°§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "\"[...] e por que a não pôs em pedaços um braço robusto empunhando um machado benfazejo?\" (14°§)",
+        "text": "\"[...] e por que <u>a</u> não pôs em pedaços um braço robusto empunhando um machado benfazejo?\" (14°§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“[...] aquele que recendia um perfume longínquo de roseira do Chiraz te conduza para alguma região ideal [...]\" (15°§)",
+        "text": "“[...] <u>a</u>quele que recendia um perfume longínquo de roseira do Chiraz <u>te</u> conduza para alguma região ideal [...]\" (15°§)",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "\"[...] não te davam outro serviço que não o de transportares, como esquife, cadáveres de anjinhos pobres ao cemitério [...]\" (10°§)",
+        "text": "\"[...] não <u>te</u> d<u>a</u>vam outro serviço que não o de transportares, como esquife, cadáveres de anjinhos pobres ao cemitério [...]\" (10°§)",
         "correct": false
       }
     ],
@@ -15719,7 +15719,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "E",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "O homem cordial e a ‘cultura do cancelamento’\nRafael do Nascimento\n10 de Abril de 2021\nO ato de cancelar alguém nos recoloca a velha roupa colorida da cordialidade e nos relembra que\ntoda diferença é uma relação tensa, uma discussão esperando ser retomada\nNão faz tempo, a prática conhecida por “cancelamento” instaurou-se em nosso cotidiano sob a\nface dupla de um sintoma referente à extrema politização das mídias sociais e de um prazer\nsecreto, um guilty pleasure, privado e autoindulgente. Mal ela apareceu, tanto o aspecto\npreocupante quanto o recompensador desta prática – que, talvez por falta de uma palavra melhor,\nresolvemos chamar de “cultura” – foram destacados por especialistas (ou não) do comportamento\nhumano. Ao colecionarmos casos diários de “cancelados” e “canceladas”, com toda a carga\ndramática que costuma acompanhá-los, fomos compreendendo o fenômeno como a expressão\ncombinada de inúmeras dificuldades enfrentadas no presente.\nUma delas tem a ver com a capacidade cada vez mais rarefeita de diálogo, em que a\nincomunicabilidade dos contrários reforça menos as verdades parciais de cada lado que a total\ninverdade do lado oposto. Outra dificuldade pode estar relacionada ao advento de um tempo\n“líquido” de interações mais fugazes, certezas menos consistentes e a necessidade urgente de\nsatisfazer desejos via consumo, seja dos outros ou de si mesmo/a. São ponderações razoáveis,\nsem dúvida. Mas o exercício da imaginação histórica e sociológica por vezes tende a criar\nressalvas quanto ao presentismo de tudo o que acontece à nossa volta. Com a “cultura do\ncancelamento” não é diferente, e embora ela seja alardeada e praticada como uma novidade, um\nrápido exame de seu funcionamento pode nos levar a reconhecer certos traços de personalidade\nque andam conosco há muito tempo.\nEm 1936, o historiador Sérgio Buarque de Holanda escreveu sobre o homem cordial em Raízes do\nBrasil, um dos ensaios mais famosos sobre nossa formação social. Entendida como a nossa\n“contribuição” ao conjunto das civilizações humanas, a cordialidade seria aquela marca de\nnascença da brasilidade manifestada na fala repleta de “inhos” e “inhas”, no sorriso dado de bom\ngrado (e muitas vezes cobrado) ao término da prestação de qualquer serviço e até no gestual\nafetuoso do rapaz que acha estranho cumprimentar mulheres com um aperto de mão. Éo que nos\ndeu a pecha internacional de povo amável e gentil “pela própria natureza”. No entanto, se isso nos\nparece simplesmente o cultivo de boas maneiras, Sérgio Buarque o vê com olhos bem menos\ninocentes. Para ele, essa forma de convívio seria “justamente o contrário da polidez”, atestando\numa repulsa generalizada pela formalidade e pela impessoalidade que, conforme diz o jargão,\nregem uma vida social justa e transparente.\nPara existir em sociedade, o homem cordial precisa fazer do público uma extensão do privado e\nestender a quem não conhece nem faz questão de conhecer uma “ética de fundo emotivo”. Ele\nprecisa, em uma palavra, tornar tudo pessoal, caso contrário não conseguirá assegurar um falso\ncontrole sobre si mesmo e os outros. A cordialidade, tal como a concebe Sérgio Buarque, não vem\ndo nada. Ela é fruto de nossa história de colônia, em que a família patriarcal atuava como unidade\npolítica e econômica, além de moral, e os interesses do senhor de engenho passavam a “interesse\ngeral” sem maiores constrangimentos. Neste cenário onde o Estado nada mais é que a ampliação\nda família, tudo se resolve em casa e à revelia de instâncias mediadoras impessoais. As relações de\ntrabalho se assentam na propriedade privada, no caso das pessoas escravizadas, ou no favor, no\ncaso das livres; o estupro de mulheres negras é deturpado em nossa tendência “natural” à mistura,\ne o de mulheres brancas é salvaguardado pela santidade do casamento; e o racismo, a ferida\nnarcísica de quem ainda se gaba de democracia racial, foi recalcado a ponto de ter virado uma\nneurose, como afirma Lélia Gonzalez, outra grande intérprete do Brasil.\nO mais importante a se destacar aqui é que, no regime da cordialidade, os conflitos nunca\ntransparecem tampouco desaparecem: eles são domesticados. Vivendo sob o mesmo teto, as\ndiferenças se amasiam, aprendendo a falar a mesma língua sem que seja necessário, ou mesmo\npermitido, conversar. Até porque assumir o conflito seria abrir caminho para dissidências e,\nconsequentemente, pôr em risco o controle patriarcal. Submetendo as diferenças ao silêncio, o\nhomem cordial teria sido o primeiro “cancelador”, eé bem provável que ele deva seu modo\npeculiar de agir à dinâmica habitacional da casa-grande e da senzala mais do que a qualquer outra\ndimensão da vida social brasileira.\nMas o que isso nos diz sobre a “cultura do cancelamento”? Se é possível afirmar que boa parte\ndessa sociedade não existe mais, o pavor em relação ao conflito e à diferença se mantém vivo a\ndespeito dos elogios à “diversidade” vistos por aí. É por isso que o ato de cancelar alguém tem um\nsabor ambíguo, ao mesmo tempo abominável e familiar: ele nos recoloca a velha roupa colorida da\ncordialidade, da qual não conseguimos nos despir completamente, e nos relembra que toda\ndiferença é uma relação tensa, uma discussão esperando ser retomada. Quem rompe o silêncio e\nperturba em nós o sentimento de controle sobre a diferença e de soberania face o social, essa\nentidade cuja força pode nos dobrar à triste condição de ser “mais um/a”, não merece sentar-se à\nmesa conosco. A unidade familiar não admite fissuras.\nO “cancelamento” é um problema doméstico. Não por acaso os mais célebres deles envolvem as\ncontrovérsias da cantora Karol Conká na “casa mais vigiada do Brasil” ou a antropóloga Lilia\nSchwarcz se referindo à sala de jantar de Beyoncé. O espaço da intimidade, incongruente com a\ncidadania formal e com a igualdade, é projetado sob a forma de um desejo impertinente de manter\nas coisas como estão, mesmo que o ponto em questão seja a sua transformação.\n(Disponível em <https://www.nexojornal.com.br/ensaio/2021/O-homem-cordial-e-a-%E2%80%98cultura-do-cancelamento%E2%80%99> Acesso em 26 abr. 2021)"
+    "readingText": "O homem cordial e a ‘cultura do cancelamento’\nRafael do Nascimento\n10 de Abril de 2021\nO ato de cancelar alguém nos recoloca a velha roupa colorida da cordialidade e nos relembra que\ntoda diferença é uma relação tensa, uma discussão esperando ser retomada\nNão faz tempo, a prática conhecida por “cancelamento” instaurou-se em nosso cotidiano sob a\nface dupla de um sintoma referente à extrema politização das mídias sociais e de um prazer\nsecreto, um guilty pleasure, privado e autoindulgente. Mal ela apareceu, tanto o aspecto\npreocupante quanto o recompensador desta prática – que, talvez por falta de uma palavra melhor,\nresolvemos chamar de “cultura” – foram destacados por especialistas (ou não) do comportamento\nhumano. Ao colecionarmos casos diários de “cancelados” e “canceladas”, com toda a carga\ndramática que costuma acompanhá-los, fomos compreendendo o fenômeno como a expressão\ncombinada de inúmeras dificuldades enfrentadas no presente.\nUma delas tem a ver com a capacidade cada vez mais rarefeita de diálogo, em que a\nincomunicabilidade dos contrários reforça menos as verdades parciais de cada lado que a total\ninverdade do lado oposto. Outra dificuldade pode estar relacionada ao advento de um tempo\n“líquido” de interações mais fugazes, certezas menos consistentes e a necessidade urgente de\nsatisfazer desejos via consumo, seja dos outros ou de si mesmo/a. São ponderações razoáveis,\nsem dúvida. Mas o exercício da imaginação histórica e sociológica por vezes tende a criar\nressalvas quanto ao presentismo de tudo o que acontece à nossa volta. Com a “cultura do\ncancelamento” não é diferente, e embora ela seja alardeada e praticada como uma novidade, um\nrápido exame de seu funcionamento pode nos levar a reconhecer certos traços de personalidade\nque andam conosco há muito tempo.\nEm 1936, o historiador Sérgio Buarque de Holanda escreveu sobre o homem cordial em Raízes do\nBrasil, um dos ensaios mais famosos sobre nossa formação social. Entendida como a nossa\n“contribuição” ao conjunto das civilizações humanas, a cordialidade seria aquela marca de\nnascença da brasilidade manifestada na fala repleta de “inhos” e “inhas”, no sorriso dado de bom\ngrado (e muitas vezes cobrado) ao término da prestação de qualquer serviço e até no gestual\nafetuoso do rapaz que acha estranho cumprimentar mulheres com um aperto de mão. Éo que nos\ndeu a pecha internacional de povo amável e gentil “pela própria natureza”. No entanto, se isso nos\nparece simplesmente o cultivo de boas maneiras, Sérgio Buarque o vê com olhos bem menos\ninocentes. Para ele, essa forma de convívio seria “justamente o contrário da polidez”, atestando\numa repulsa generalizada pela formalidade e pela impessoalidade que, conforme diz o jargão,\nregem uma vida social justa e transparente.\nPara existir em sociedade, o homem cordial precisa fazer do público uma extensão do privado e\nestender a quem não conhece nem faz questão de conhecer uma “ética de fundo emotivo”. Ele\nprecisa, em uma palavra, tornar tudo pessoal, caso contrário não conseguirá assegurar um falso\ncontrole sobre si mesmo e os outros. A cordialidade, tal como a concebe Sérgio Buarque, não vem\ndo nada. Ela é fruto de nossa história de colônia, em que a família patriarcal atuava como unidade\npolítica e econômica, além de moral, e os interesses do senhor de engenho passavam a “interesse\ngeral” sem maiores constrangimentos. Neste cenário onde o Estado nada mais é que a ampliação\nda família, tudo se resolve em casa e à revelia de instâncias mediadoras impessoais. As relações de\ntrabalho se assentam na propriedade privada, no caso das pessoas escravizadas, ou no favor, no\ncaso das livres; o estupro de mulheres negras é deturpado em nossa tendência “natural” à mistura,\ne o de mulheres brancas é salvaguardado pela santidade do casamento; e o racismo, a ferida\nnarcísica de quem ainda se gaba de democracia racial, foi recalcado a ponto de ter virado uma\nneurose, como afirma Lélia Gonzalez, outra grande intérprete do Brasil.\nO mais importante a se destacar aqui é que, no regime da cordialidade, os conflitos nunca\ntransparecem tampouco desaparecem: eles são domesticados. Vivendo sob o mesmo teto, as\ndiferenças se amasiam, aprendendo a falar a mesma língua sem que seja necessário, ou mesmo\npermitido, conversar. Até porque assumir o conflito seria abrir caminho para dissidências e,\nconsequentemente, pôr em risco o controle patriarcal. Submetendo as diferenças ao silêncio, o\nhomem cordial teria sido o primeiro “cancelador”, eé bem provável que ele deva seu modo\npeculiar de agir à dinâmica habitacional da casa-grande e da senzala mais do que a qualquer outra\ndimensão da vida social brasileira.\nMas o que isso nos diz sobre a “cultura do cancelamento”? Se é possível afirmar que boa parte\ndessa sociedade não existe mais, o pavor em relação ao conflito e à diferença se mantém vivo a\ndespeito dos elogios à “diversidade” vistos por aí. É por isso que o ato de cancelar alguém tem um\nsabor ambíguo, ao mesmo tempo abominável e familiar: ele nos recoloca a velha roupa colorida da\ncordialidade, da qual não conseguimos nos despir completamente, e nos relembra que toda\ndiferença é uma relação tensa, uma discussão esperando ser retomada. Quem rompe o silêncio e\nperturba em nós o sentimento de controle sobre a diferença e de soberania face o social, essa\nentidade cuja força pode nos dobrar à triste condição de ser “mais um/a”, não merece sentar-se à\nmesa conosco. A unidade familiar não admite fissuras.\nO “cancelamento” é um problema doméstico. Não por acaso os mais célebres deles envolvem as\ncontrovérsias da cantora Karol Conká na “casa mais vigiada do Brasil” ou a antropóloga Lilia\nSchwarcz se referindo à sala de jantar de Beyoncé. O espaço da intimidade, incongruente com a\ncidadania formal e com a igualdade, é projetado sob a forma de um desejo impertinente de manter\nas coisas como estão, mesmo que o ponto em questão seja a sua transformação.\n(Disponível em <https://www.nexojornal.com.br/ensaio/2021/O-homem-cordial-e-a-\n%E2%80%98cultura-do-cancelamentofiE2%80%99> Acesso em 26 abr. 2021)"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q73",
@@ -15737,7 +15737,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "B",
-        "text": "(...) pela impessoalidade que, conforme diz o jargão, regem uma vida social justa e transparente.",
+        "text": "(...) pela impessoalidade que, <u>conforme diz o jargão,</u> regem uma vida social justa e transparente.",
         "correct": false
       },
       {
@@ -15752,13 +15752,13 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "(...) é projetado sob a forma de um desejo impertinente de manter as coisas como estão, mesmo que o ponto em questão seja a sua transformação.",
+        "text": "(...) é projetado sob a forma de um desejo impertinente de manter as coisas como estão, mesmo que o ponto em questão seja a sua transformação. ",
         "correct": true
       }
     ],
     "correctLetter": "E",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "O homem cordial e a ‘cultura do cancelamento’\nRafael do Nascimento\n10 de Abril de 2021\nO ato de cancelar alguém nos recoloca a velha roupa colorida da cordialidade e nos relembra que\ntoda diferença é uma relação tensa, uma discussão esperando ser retomada\nNão faz tempo, a prática conhecida por “cancelamento” instaurou-se em nosso cotidiano sob a\nface dupla de um sintoma referente à extrema politização das mídias sociais e de um prazer\nsecreto, um guilty pleasure, privado e autoindulgente. Mal ela apareceu, tanto o aspecto\npreocupante quanto o recompensador desta prática – que, talvez por falta de uma palavra melhor,\nresolvemos chamar de “cultura” – foram destacados por especialistas (ou não) do comportamento\nhumano. Ao colecionarmos casos diários de “cancelados” e “canceladas”, com toda a carga\ndramática que costuma acompanhá-los, fomos compreendendo o fenômeno como a expressão\ncombinada de inúmeras dificuldades enfrentadas no presente.\nUma delas tem a ver com a capacidade cada vez mais rarefeita de diálogo, em que a\nincomunicabilidade dos contrários reforça menos as verdades parciais de cada lado que a total\ninverdade do lado oposto. Outra dificuldade pode estar relacionada ao advento de um tempo\n“líquido” de interações mais fugazes, certezas menos consistentes e a necessidade urgente de\nsatisfazer desejos via consumo, seja dos outros ou de si mesmo/a. São ponderações razoáveis,\nsem dúvida. Mas o exercício da imaginação histórica e sociológica por vezes tende a criar\nressalvas quanto ao presentismo de tudo o que acontece à nossa volta. Com a “cultura do\ncancelamento” não é diferente, e embora ela seja alardeada e praticada como uma novidade, um\nrápido exame de seu funcionamento pode nos levar a reconhecer certos traços de personalidade\nque andam conosco há muito tempo.\nEm 1936, o historiador Sérgio Buarque de Holanda escreveu sobre o homem cordial em Raízes do\nBrasil, um dos ensaios mais famosos sobre nossa formação social. Entendida como a nossa\n“contribuição” ao conjunto das civilizações humanas, a cordialidade seria aquela marca de\nnascença da brasilidade manifestada na fala repleta de “inhos” e “inhas”, no sorriso dado de bom\ngrado (e muitas vezes cobrado) ao término da prestação de qualquer serviço e até no gestual\nafetuoso do rapaz que acha estranho cumprimentar mulheres com um aperto de mão. Éo que nos\ndeu a pecha internacional de povo amável e gentil “pela própria natureza”. No entanto, se isso nos\nparece simplesmente o cultivo de boas maneiras, Sérgio Buarque o vê com olhos bem menos\ninocentes. Para ele, essa forma de convívio seria “justamente o contrário da polidez”, atestando\numa repulsa generalizada pela formalidade e pela impessoalidade que, conforme diz o jargão,\nregem uma vida social justa e transparente.\nPara existir em sociedade, o homem cordial precisa fazer do público uma extensão do privado e\nestender a quem não conhece nem faz questão de conhecer uma “ética de fundo emotivo”. Ele\nprecisa, em uma palavra, tornar tudo pessoal, caso contrário não conseguirá assegurar um falso\ncontrole sobre si mesmo e os outros. A cordialidade, tal como a concebe Sérgio Buarque, não vem\ndo nada. Ela é fruto de nossa história de colônia, em que a família patriarcal atuava como unidade\npolítica e econômica, além de moral, e os interesses do senhor de engenho passavam a “interesse\ngeral” sem maiores constrangimentos. Neste cenário onde o Estado nada mais é que a ampliação\nda família, tudo se resolve em casa e à revelia de instâncias mediadoras impessoais. As relações de\ntrabalho se assentam na propriedade privada, no caso das pessoas escravizadas, ou no favor, no\ncaso das livres; o estupro de mulheres negras é deturpado em nossa tendência “natural” à mistura,\ne o de mulheres brancas é salvaguardado pela santidade do casamento; e o racismo, a ferida\nnarcísica de quem ainda se gaba de democracia racial, foi recalcado a ponto de ter virado uma\nneurose, como afirma Lélia Gonzalez, outra grande intérprete do Brasil.\nO mais importante a se destacar aqui é que, no regime da cordialidade, os conflitos nunca\ntransparecem tampouco desaparecem: eles são domesticados. Vivendo sob o mesmo teto, as\ndiferenças se amasiam, aprendendo a falar a mesma língua sem que seja necessário, ou mesmo\npermitido, conversar. Até porque assumir o conflito seria abrir caminho para dissidências e,\nconsequentemente, pôr em risco o controle patriarcal. Submetendo as diferenças ao silêncio, o\nhomem cordial teria sido o primeiro “cancelador”, eé bem provável que ele deva seu modo\npeculiar de agir à dinâmica habitacional da casa-grande e da senzala mais do que a qualquer outra\ndimensão da vida social brasileira.\nMas o que isso nos diz sobre a “cultura do cancelamento”? Se é possível afirmar que boa parte\ndessa sociedade não existe mais, o pavor em relação ao conflito e à diferença se mantém vivo a\ndespeito dos elogios à “diversidade” vistos por aí. É por isso que o ato de cancelar alguém tem um\nsabor ambíguo, ao mesmo tempo abominável e familiar: ele nos recoloca a velha roupa colorida da\ncordialidade, da qual não conseguimos nos despir completamente, e nos relembra que toda\ndiferença é uma relação tensa, uma discussão esperando ser retomada. Quem rompe o silêncio e\nperturba em nós o sentimento de controle sobre a diferença e de soberania face o social, essa\nentidade cuja força pode nos dobrar à triste condição de ser “mais um/a”, não merece sentar-se à\nmesa conosco. A unidade familiar não admite fissuras.\nO “cancelamento” é um problema doméstico. Não por acaso os mais célebres deles envolvem as\ncontrovérsias da cantora Karol Conká na “casa mais vigiada do Brasil” ou a antropóloga Lilia\nSchwarcz se referindo à sala de jantar de Beyoncé. O espaço da intimidade, incongruente com a\ncidadania formal e com a igualdade, é projetado sob a forma de um desejo impertinente de manter\nas coisas como estão, mesmo que o ponto em questão seja a sua transformação.\n(Disponível em <https://www.nexojornal.com.br/ensaio/2021/O-homem-cordial-e-a-%E2%80%98cultura-do-cancelamento%E2%80%99> Acesso em 26 abr. 2021)"
+    "readingText": "O homem cordial e a ‘cultura do cancelamento’\nRafael do Nascimento\n10 de Abril de 2021\nO ato de cancelar alguém nos recoloca a velha roupa colorida da cordialidade e nos relembra que\ntoda diferença é uma relação tensa, uma discussão esperando ser retomada\nNão faz tempo, a prática conhecida por “cancelamento” instaurou-se em nosso cotidiano sob a\nface dupla de um sintoma referente à extrema politização das mídias sociais e de um prazer\nsecreto, um guilty pleasure, privado e autoindulgente. Mal ela apareceu, tanto o aspecto\npreocupante quanto o recompensador desta prática – que, talvez por falta de uma palavra melhor,\nresolvemos chamar de “cultura” – foram destacados por especialistas (ou não) do comportamento\nhumano. Ao colecionarmos casos diários de “cancelados” e “canceladas”, com toda a carga\ndramática que costuma acompanhá-los, fomos compreendendo o fenômeno como a expressão\ncombinada de inúmeras dificuldades enfrentadas no presente.\nUma delas tem a ver com a capacidade cada vez mais rarefeita de diálogo, em que a\nincomunicabilidade dos contrários reforça menos as verdades parciais de cada lado que a total\ninverdade do lado oposto. Outra dificuldade pode estar relacionada ao advento de um tempo\n“líquido” de interações mais fugazes, certezas menos consistentes e a necessidade urgente de\nsatisfazer desejos via consumo, seja dos outros ou de si mesmo/a. São ponderações razoáveis,\nsem dúvida. Mas o exercício da imaginação histórica e sociológica por vezes tende a criar\nressalvas quanto ao presentismo de tudo o que acontece à nossa volta. Com a “cultura do\ncancelamento” não é diferente, e embora ela seja alardeada e praticada como uma novidade, um\nrápido exame de seu funcionamento pode nos levar a reconhecer certos traços de personalidade\nque andam conosco há muito tempo.\nEm 1936, o historiador Sérgio Buarque de Holanda escreveu sobre o homem cordial em Raízes do\nBrasil, um dos ensaios mais famosos sobre nossa formação social. Entendida como a nossa\n“contribuição” ao conjunto das civilizações humanas, a cordialidade seria aquela marca de\nnascença da brasilidade manifestada na fala repleta de “inhos” e “inhas”, no sorriso dado de bom\ngrado (e muitas vezes cobrado) ao término da prestação de qualquer serviço e até no gestual\nafetuoso do rapaz que acha estranho cumprimentar mulheres com um aperto de mão. Éo que nos\ndeu a pecha internacional de povo amável e gentil “pela própria natureza”. No entanto, se isso nos\nparece simplesmente o cultivo de boas maneiras, Sérgio Buarque o vê com olhos bem menos\ninocentes. Para ele, essa forma de convívio seria “justamente o contrário da polidez”, atestando\numa repulsa generalizada pela formalidade e pela impessoalidade que, conforme diz o jargão,\nregem uma vida social justa e transparente.\nPara existir em sociedade, o homem cordial precisa fazer do público uma extensão do privado e\nestender a quem não conhece nem faz questão de conhecer uma “ética de fundo emotivo”. Ele\nprecisa, em uma palavra, tornar tudo pessoal, caso contrário não conseguirá assegurar um falso\ncontrole sobre si mesmo e os outros. A cordialidade, tal como a concebe Sérgio Buarque, não vem\ndo nada. Ela é fruto de nossa história de colônia, em que a família patriarcal atuava como unidade\npolítica e econômica, além de moral, e os interesses do senhor de engenho passavam a “interesse\ngeral” sem maiores constrangimentos. Neste cenário onde o Estado nada mais é que a ampliação\nda família, tudo se resolve em casa e à revelia de instâncias mediadoras impessoais. As relações de\ntrabalho se assentam na propriedade privada, no caso das pessoas escravizadas, ou no favor, no\ncaso das livres; o estupro de mulheres negras é deturpado em nossa tendência “natural” à mistura,\ne o de mulheres brancas é salvaguardado pela santidade do casamento; e o racismo, a ferida\nnarcísica de quem ainda se gaba de democracia racial, foi recalcado a ponto de ter virado uma\nneurose, como afirma Lélia Gonzalez, outra grande intérprete do Brasil.\nO mais importante a se destacar aqui é que, no regime da cordialidade, os conflitos nunca\ntransparecem tampouco desaparecem: eles são domesticados. Vivendo sob o mesmo teto, as\ndiferenças se amasiam, aprendendo a falar a mesma língua sem que seja necessário, ou mesmo\npermitido, conversar. Até porque assumir o conflito seria abrir caminho para dissidências e,\nconsequentemente, pôr em risco o controle patriarcal. Submetendo as diferenças ao silêncio, o\nhomem cordial teria sido o primeiro “cancelador”, eé bem provável que ele deva seu modo\npeculiar de agir à dinâmica habitacional da casa-grande e da senzala mais do que a qualquer outra\ndimensão da vida social brasileira.\nMas o que isso nos diz sobre a “cultura do cancelamento”? Se é possível afirmar que boa parte\ndessa sociedade não existe mais, o pavor em relação ao conflito e à diferença se mantém vivo a\ndespeito dos elogios à “diversidade” vistos por aí. É por isso que o ato de cancelar alguém tem um\nsabor ambíguo, ao mesmo tempo abominável e familiar: ele nos recoloca a velha roupa colorida da\ncordialidade, da qual não conseguimos nos despir completamente, e nos relembra que toda\ndiferença é uma relação tensa, uma discussão esperando ser retomada. Quem rompe o silêncio e\nperturba em nós o sentimento de controle sobre a diferença e de soberania face o social, essa\nentidade cuja força pode nos dobrar à triste condição de ser “mais um/a”, não merece sentar-se à\nmesa conosco. A unidade familiar não admite fissuras.\nO “cancelamento” é um problema doméstico. Não por acaso os mais célebres deles envolvem as\ncontrovérsias da cantora Karol Conká na “casa mais vigiada do Brasil” ou a antropóloga Lilia\nSchwarcz se referindo à sala de jantar de Beyoncé. O espaço da intimidade, incongruente com a\ncidadania formal e com a igualdade, é projetado sob a forma de um desejo impertinente de manter\nas coisas como estão, mesmo que o ponto em questão seja a sua transformação.\n(Disponível em <https://www.nexojornal.com.br/ensaio/2021/O-homem-cordial-e-a-\n%E2%80%98cultura-do-cancelamentofiE2%80%99> Acesso em 26 abr. 2021)"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q74",
@@ -15883,7 +15883,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 77,
-    "statement": "No trecho \"[...]um garoto humilde de 16 anos o esperava sentado no muro.\"(1°§), é também correta,\nde acordo com a norma-padrão brasileira, a colocação enclítica do pronome o. Assinale a opção\nem que também ocorre essa dupla possibilidade - próclise e ênclise - na colocação do pronome\ndestacado.",
+    "statement": "No trecho \"[...]um garoto humilde de 16 anos o esperava sentado no muro.\"(1°§), é também correta,\nde acordo com a norma-padrão brasileira, a colocação enclítica do pronome <u>o.</u> Assinale a opção\nem que também ocorre essa dupla possibilidade - próclise e ênclise - na colocação do pronome\ndestacado.",
     "options": [
       {
         "letter": "A",
@@ -15961,11 +15961,11 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 79,
-    "statement": "Com base no texto, responda às questão.\nNas passagens que se seguem o pronome oblíquo cumpre a mesma função sintática, EXCETO\nem:",
+    "statement": "Com base no texto, responda às questão.\nNas passagens que se seguem o pronome oblíquo cumpre a mesma função sintática, <u>EXCETO</u>\nem:",
     "options": [
       {
         "letter": "A",
-        "text": "(...) eu nem notava as humilhações a que ela me submetia (...)",
+        "text": "(...) eu nem notava as humilhações a que ela <u>me</u> submetia (...)",
         "correct": false
       },
       {
@@ -16082,27 +16082,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Me lembro dessa cena: um adolescente [...].” (1°§)",
+        "text": "“Me <u>lembro</u> dessa cena: um adolescente [...].” (1°§)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“[...], que se assentou no banco do calçadão, [...].” (2°§)",
+        "text": "“[...], que se <u>assentou</u> no banco do calçadão, [...].” (2°§)",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“[...], mas eu devo lhes revelar: [...].”% (6°§)",
+        "text": "“[...], mas eu devo lhes <u>revelar:</u> [...].”% (6°§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Ver o mar a primeira vez, lhes digo, [...].” (7°§)",
+        "text": "“Ver o mar a primeira vez, lhes <u>digo,</u> [...].” (7°§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Ele se desfolha em ondas e não para de brotar.” (8°§)",
+        "text": "“Ele se <u>desfolha</u> em ondas e não para de brotar.” (8°§)",
         "correct": false
       }
     ],
@@ -16117,31 +16117,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 83,
-    "statement": "Com base no texto, responda à questão.\nAssinale a opção em que a palavra sublinhada NÃO é um pronome demonstrativo.",
+    "statement": "Com base no texto, responda à questão.\nAssinale a opção em que a palavra sublinhada <u>NÃO</u> é um pronome demonstrativo.",
     "options": [
       {
         "letter": "A",
-        "text": "Batiam-me porque podiam bater-me, e isto era natural.",
+        "text": "Batiam-me porque podiam bater-me, e <u>isto</u> era natural.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Minha avó, que nos visitava, condenou o procedimento da filha e esta afligiu-se.",
+        "text": "Minha avó, que nos visitava, condenou o procedimento da filha e <u>esta</u> afligiu-se.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Os seus gritos me entravam na cabeça, nunca ninguém se esgoelou de semelhante maneira.",
+        "text": "Os seus gritos me entravam na cabeça, nunca ninguém se esgoelou de <u>semelhante</u> maneira.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Responsabilizando qualquer deles, meu pai me esqueceria (...).",
+        "text": "Responsabilizando <u>qualquer</u> deles, meu pai me esqueceria (...).",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "Foi esse o primeiro contato que tive com a justiça.",
+        "text": "Foi <u>esse</u> o primeiro contato que tive com a justiça.",
         "correct": false
       }
     ],
@@ -16160,27 +16160,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“[...] elas são frutos da sua época, os amigos se comunicam assim [...].” (5°§)",
+        "text": "“[...] elas são frutos da sua época, os amigos se <u>comunicam</u> assim [...].” (5°§)",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "\"[...] e que se vê hoje diante da escolha entre cortar seus passeios de bicicleta [...].” (1°§)",
+        "text": "\"[...] e que se <u>vê</u> hoje diante da escolha entre cortar seus passeios de bicicleta [...].” (1°§)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "\"Não me interessa que elas existam pra Tati, pra Rô, pro Caué.” (5°§)",
+        "text": "\"Não me <u>interessa</u> que elas existam pra Tati, pra Rô, pro Caué.” (5°§)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Já se fala em 'saturação social’, inspirado pelo recente depoimento[...].” (1°§)",
+        "text": "“Já se <u>fala</u> em 'saturação social’, inspirado pelo recente depoimento[...].” (1°§)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“São garotos e garotas que não se sentem com a existência comprovada [...].” (6°§)",
+        "text": "“São garotos e garotas que não se <u>sentem</u> com a existência comprovada [...].” (6°§)",
         "correct": false
       }
     ],
@@ -16234,7 +16234,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 86,
-    "statement": "Em que opção o acento grave, indicativo de crase, ocorre pelo mesmo motivo encontrado em: \"\n[...] a nos prevenir contra os riscos da estima e da ternura devotada às pessoas [...].\" (1°§)?",
+    "statement": "Em que opção o acento grave, indicativo de crase, ocorre pelo mesmo motivo encontrado em: \"\n[...] a nos prevenir contra os riscos da estima e da ternura devotada <u>às pessoas</u> [...].\" (1°§)?",
     "options": [
       {
         "letter": "A",
@@ -16277,22 +16277,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "em Zé Ninguém, há uma derivação imprópria, já que foi utilizado um pronome indefinido como substantivo próprio.",
+        "text": "em <u>Zé</u> <u>Ninguém,</u> há uma derivação imprópria, já que foi utilizado um pronome indefinido como substantivo próprio.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "em “A fonte da felicidade pública se transforma no pára-raios do rancor público”, (l. 35 e 36), a expressão grifada é predicativo do sujeito.",
+        "text": "em “A fonte da felicidade pública se transforma no <u>pára-raios do rancor público”,</u> (l. 35 e 36), a expressão grifada é predicativo do sujeito.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "o substantivo destacado em “...esses golaços de calcanhar ou de bicicleta...” foi formado a partir de sufixação.",
+        "text": "o substantivo destacado em “...esses <u>golaços</u> de calcanhar ou de bicicleta...” foi formado a partir de sufixação.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Caso antes da locução “... podem sentir-se alguém...”, houvesse uma palavra negativa, o pronome se teria que, obrigatoriamente, vir antes do verbo poder.",
+        "text": "Caso antes da locução “... podem sentir-se alguém...”, houvesse uma palavra negativa, o pronome <u>se</u> teria que, obrigatoriamente, vir antes do verbo <u>poder.</u>",
         "correct": true
       }
     ],
@@ -16337,7 +16337,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "A ÚLTIMA CRÔNICA\nA caminho de casa, entro num botequim da Gávea para tomar um café junto ao balcão. Na\nrealidade estou adiando o momento de escrever. A perspectiva me assusta. Gostaria de estar\ninspirado, de coroar com êxito mais um ano nesta busca pitoresco ou do irrisório no cotidiano de\ncada um. Eu pretendia apenas recolher da vida diária algo de seu disperso conteúdo humano, fruto\nda convivência, que a faz mais digna de ser vivida. Visava ao circunstancial, ao episódico. Nesta\nperseguição do acidental, quer num flagrante de esquina, quer nas palavras de uma criança ou\nnum acidente doméstico, torno-me simples espectador e perco a noção do essencial. Sem mais\nnada contar, curvo a cabeça e tomo meu café, enquanto o verso do poeta se reflete na\nlembrança: “assim eu quereria o meu último poema”. Não sou poeta e estou sem assunto. Lanço\nentão um último olhar fora de mim, onde vivem os assuntos que merecem uma crônica.\nAo fundo do botequim um casal de pretos acaba de sentar-se, numa das últimas mesas de\nmármore ao longo da parede de espelhos. A compostura da humildade, na contenção de gestos e\npalavras, deixa-se acentuar pela presença de uma negrinha de seus três anos, laço na cabeça, toda\narrumadinha no vestido pobre, que se instalou também à mesa: mal ousa balançar as perninhas\ncurtas ou correr os olhos grandes de curiosidade ao redor. Três seres esquivos que compõem em\ntorno à mesa a instituição tradicional da família, célula da sociedade. Vejo, porém, que se\npreparam para algo mais que matar a fome.\nPasso a observá-los. O pai, depois de contar o dinheiro que discretamente retirou do bolso, aborda\no garçom, inclinando-se para trás na cadeira, e aponta no balcão um pedaço de bolo sob a\nredoma. A mãe limita-se a ficar olhando imóvel, vagamente ansiosa, como se aguardasse a\naprovação do garçom. Este ouve, concentrado, o pedido do homem e depois se afasta para\natendê-lo. A mulher suspira, olhando para os lados, a reassegurar-se da naturalidade de sua\npresença ali. A meu lado o garçom encaminha a ordem do freguês. O homem atrás do balcão\napanha a porção do bolo com a mão, larga-o no pratinho — um bolo simples, amarelo-escuro,\napenas uma pequena fatia triangular.\nA negrinha, contida na sua expectativa, olha a garrafa de coca-cola e o pratinho que o garçom\ndeixou à sua frente. Por que não começa a comer? Vejo que os três, pai, mãe e filha, obedecem\nem torno à mesa a um discreto ritual. A mãe remexe na bolsa de plástico preto e brilhante, retira\nqualquer coisa. O pai se mune de uma caixa de fósforos, e espera. A filha aguarda também, atenta\ncomo um animalzinho. Ninguém mais os observa além de mim.\nSão três velinhas brancas, minúsculas, que a mãe espeta caprichosamente na fatia do bolo. E\nenquanto ela serve a coca-cola, o pai risca o fósforo e acende as velas. Como a um gesto\nensaiado, a menininha repousa o queixo no mármore e sopra com força, apagando as chamas.\nImediatamente põe-se a bater palmas, muito compenetrada, cantando num balbucio, a que os pais\nse juntam, discretos: “parabéns pra você, parabéns pra você...“ Depois a mãe recolhe as velas,\ntorna a guardá-las na bolsa. A negrinha agarra finalmente o bolo com as duas mãos sôfregas e\npõe-se a comê-lo. A mulher está olhando para ela com ternura — ajeita-lhe a fitinha no cabelo\ncrespo, limpa o farelo de bolo que lhe cai ao colo, O pai corre os olhos pelo botequim, satisfeito,\ncomo a se convencer intimamente do sucesso da celebração. De súbito, dá comigo a observá-lo,\nnossos olhos se encontram, ele se perturba, constrangido — vacila, ameaça abaixar a cabeça, mas\nacaba sustentando o olhar e enfim se abre num sorriso.\nAssim eu quereria a minha última crônica: que fosse pura como esse sorriso.\n(SABINO, Fernando. A companheira de viagem. Rio de Janeiro: Ed. Record, 1972)"
+    "readingText": "<u>A ÚLTIMA CRÔNICA</u>\nA caminho de casa, entro num botequim da Gávea para tomar um café junto ao balcão. Na\nrealidade estou adiando o momento de escrever. A perspectiva me assusta. Gostaria de estar\ninspirado, de coroar com êxito mais um ano nesta busca pitoresco ou do irrisório no cotidiano de\ncada um. Eu pretendia apenas recolher da vida diária algo de seu disperso conteúdo humano, fruto\nda convivência, que a faz mais digna de ser vivida. Visava ao circunstancial, ao episódico. Nesta\nperseguição do acidental, quer num flagrante de esquina, quer nas palavras de uma criança ou\nnum acidente doméstico, torno-me simples espectador e perco a noção do essencial. Sem mais\nnada contar, curvo a cabeça e tomo meu café, enquanto o verso do poeta se reflete na\nlembrança: “assim eu quereria o meu último poema”. Não sou poeta e estou sem assunto. Lanço\nentão um último olhar fora de mim, onde vivem os assuntos que merecem uma crônica.\nAo fundo do botequim um casal de pretos acaba de sentar-se, numa das últimas mesas de\nmármore ao longo da parede de espelhos. A compostura da humildade, na contenção de gestos e\npalavras, deixa-se acentuar pela presença de uma negrinha de seus três anos, laço na cabeça, toda\narrumadinha no vestido pobre, que se instalou também à mesa: mal ousa balançar as perninhas\ncurtas ou correr os olhos grandes de curiosidade ao redor. Três seres esquivos que compõem em\ntorno à mesa a instituição tradicional da família, célula da sociedade. Vejo, porém, que se\npreparam para algo mais que matar a fome.\nPasso a observá-los. O pai, depois de contar o dinheiro que discretamente retirou do bolso, aborda\no garçom, inclinando-se para trás na cadeira, e aponta no balcão um pedaço de bolo sob a\nredoma. A mãe limita-se a ficar olhando imóvel, vagamente ansiosa, como se aguardasse a\naprovação do garçom. Este ouve, concentrado, o pedido do homem e depois se afasta para\natendê-lo. A mulher suspira, olhando para os lados, a reassegurar-se da naturalidade de sua\npresença ali. A meu lado o garçom encaminha a ordem do freguês. O homem atrás do balcão\napanha a porção do bolo com a mão, larga-o no pratinho — um bolo simples, amarelo-escuro,\napenas uma pequena fatia triangular.\nA negrinha, contida na sua expectativa, olha a garrafa de coca-cola e o pratinho que o garçom\ndeixou à sua frente. Por que não começa a comer? Vejo que os três, pai, mãe e filha, obedecem\nem torno à mesa a um discreto ritual. A mãe remexe na bolsa de plástico preto e brilhante, retira\nqualquer coisa. O pai se mune de uma caixa de fósforos, e espera. A filha aguarda também, atenta\ncomo um animalzinho. Ninguém mais os observa além de mim.\nSão três velinhas brancas, minúsculas, que a mãe espeta caprichosamente na fatia do bolo. E\nenquanto ela serve a coca-cola, o pai risca o fósforo e acende as velas. Como a um gesto\nensaiado, a menininha repousa o queixo no mármore e sopra com força, apagando as chamas.\nImediatamente põe-se a bater palmas, muito compenetrada, cantando num balbucio, a que os pais\nse juntam, discretos: “parabéns pra você, parabéns pra você...“ Depois a mãe recolhe as velas,\ntorna a guardá-las na bolsa. A negrinha agarra finalmente o bolo com as duas mãos sôfregas e\npõe-se a comê-lo. A mulher está olhando para ela com ternura — ajeita-lhe a fitinha no cabelo\ncrespo, limpa o farelo de bolo que lhe cai ao colo, O pai corre os olhos pelo botequim, satisfeito,\ncomo a se convencer intimamente do sucesso da celebração. De súbito, dá comigo a observá-lo,\nnossos olhos se encontram, ele se perturba, constrangido — vacila, ameaça abaixar a cabeça, mas\nacaba sustentando o olhar e enfim se abre num sorriso.\nAssim eu quereria a minha última crônica: que fosse pura como esse sorriso.\n(SABINO, Fernando. A companheira de viagem. Rio de Janeiro: Ed. Record, 1972)"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q89",
@@ -16389,27 +16389,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Ao fundo do botequim, um casal de pretos acaba de sentar-se (...)“.",
+        "text": "“Ao fundo do botequim, um casal de pretos acaba de <u>se</u>ntar-se (...)“.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“(...) uma negrinha de seus três anos, laço na cabeça, toda arrumadinha no vestido pobre, que se instalou também à mesa (...)”.",
+        "text": "“(...) uma negrinha de seus três anos, laço na cabeça, toda arrumadinha no vestido pobre, que <u>se</u> instalou também à mesa (...)”.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“O pai, depois de contar o dinheiro que discretamente retirou do bolso, aborda o garçom, inclinando-se para trás (...)”.",
+        "text": "“O pai, depois de contar o dinheiro que discretamente retirou do bolso, aborda o garçom, inclinando-<u>se</u> para trás (...)”.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Este ouve, concentrado, o pedido do homem e depois se afasta para atendê-lo”.",
+        "text": "“Este ouve, concentrado, o pedido do homem e depois <u>se</u> afasta para atendê-lo”.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“De súbito, dá comigo a observá-lo, nossos olhos se Encontram (...)”.",
+        "text": "“De súbito, dá comigo a ob<u>se</u>rvá-lo, nossos olhos se Encontram (...)”. ",
         "correct": true
       }
     ],
@@ -16424,7 +16424,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 91,
-    "statement": "Leia atentamente o seguinte texto:\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta\nNo que respeita à colocação do pronome átono é possível, observando a norma culta, deslocá-lo\nno período. Tal ocorrência poderia se dar na opção:",
+    "statement": "Lido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta\nNo que respeita à colocação do pronome átono é possível, observando a norma culta, deslocá-lo\nno período. Tal ocorrência poderia se dar na opção:",
     "options": [
       {
         "letter": "A",
@@ -16454,7 +16454,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "ENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade"
+    "readingText": "Leia atentamente o seguinte texto:\nENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q92",
@@ -16463,37 +16463,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes (Emprego, Colocação Pronominal e Referenciação)",
     "questionNumber": 92,
-    "statement": "Leia atentamente o seguinte texto:\nPode-se dizer que NÃO se trata de um pronome pessoal aquele sublinhado na opção:",
+    "statement": "Pode-se dizer que NÃO se trata de um pronome pessoal aquele sublinhado na opção:",
     "options": [
       {
         "letter": "A",
-        "text": "“(...) o ser que ali encontrava parado em meio à multidão, ele o conhecera em menino (...)”",
+        "text": "“(...) o ser que ali encontrava parado em meio à multidão, ele <u>o</u> conhecera em menino (...)”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“E de tanto não o ver por assim dizer se esquecera dele.”",
+        "text": "“E de tant<u>o</u> não o ver por assim dizer se esquecera dele.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Então, ela ficara encaixotada num desvão da memória.”",
+        "text": "“Então, <u>ela</u> ficara encaixotada num desvão da memória.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“E em que servia a esperança ao povo que ia, quase correndo e não lhe dava a mínima confiança?”",
+        "text": "“E em que servia a esperança ao povo que ia, quase correndo e não <u>lhe</u> dava a mínima confiança?”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Só José Luíz era capaz de sabê-lo por ser o único a tomar (...)”",
+        "text": "“Só J<u>o</u>sé Luíz era capaz de sabê-lo por ser o único a tomar (...)”",
         "correct": true
       }
     ],
     "correctLetter": "E",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "ENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta"
+    "readingText": "Leia atentamente o seguinte texto:\nENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta"
   },
   {
     "id": "pronomes-pdf_6_pronomes-q93",
@@ -16540,31 +16540,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 1,
-    "statement": "Observe a conjugação do tempo composto sublinhado, no período a seguir, e indique qual forma\nverbal pertence ao mesmo tempo e modo.\n\"[...] Percebi que nunca havia visto uma cebola.[..]\"",
+    "statement": "Observe a conjugação do tempo composto sublinhado, no período a seguir, e indique qual forma\nverbal pertence ao mesmo tempo e modo.\n\"[...] Percebi que nunca <u>havia visto</u> uma cebola.[..]\"",
     "options": [
       {
         "letter": "A",
-        "text": "Ela entrou, deitou-se no divã e disse...",
+        "text": "Ela entrou, deitou-se no divã e <u>disse...</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Eu fiquei em silêncio aguardando...",
+        "text": "Eu <u>fiquei</u> em silêncio aguardando...",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Eu fiquei em silêncio aguardando que ela me revelasse os sinais da sua loucura.",
+        "text": "Eu fiquei em silêncio aguardando que ela me <u>revelasse</u> os sinais da sua loucura.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Entretanto, faz uns dias, eu fui para a cozinha...",
+        "text": "Entretanto, <u>faz</u> uns dias, eu fui para a cozinha...",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Para fazer aquilo que já fizera centenas de vezes: cortar cebolas.",
+        "text": "Para fazer aquilo que já <u>fizera</u> centenas de vezes: cortar cebolas. ",
         "correct": true
       }
     ],
@@ -16583,27 +16583,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Um pouco aturdida eu o olhava, ainda em dúvida se fora a mão da criança o que me ceifara os pensamentos.”",
+        "text": "“Um pouco aturdida eu o olhava, ainda em dúvida se <u>fora</u> a mão da criança o que me ceifara os pensamentos.”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Mas, como se costuma dizer, o Sol parecia brilhar com mais força. Eu tivera a oportunidade de",
+        "text": "“Mas, como se costuma dizer, o Sol parecia brilhar com mais força. Eu <u>tivera</u> a oportunidade de",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“O fato é que, quando atravessei a rua, o que teria sido piedade já se estrangulara sob outros sentimentos.”",
+        "text": "“O fato é que, quando atravessei a rua, o que <u>teria sido</u> piedade já se estrangulara sob outros sentimentos.”",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“Pois qualquer agrado seria agora de meu direito: eu o havia pago de antemão.”",
+        "text": "“Pois qualquer agrado seria agora de meu direito: eu o <u>havia pago</u> de antemão.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Ela era mais digna do que eu havia pensado: conseguido o dinheiro, nada mais quis me contar”",
+        "text": "“Ela era mais digna do que eu <u>havia pensado:</u> conseguido o dinheiro, nada mais quis me contar”",
         "correct": false
       }
     ],
@@ -16622,33 +16622,33 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Era preciso que as crianças se entretessem.",
+        "text": "Era preciso que as crianças se <u>entretessem.</u>",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Quando o senhor rever o relatório, entenderá.",
+        "text": "Quando o senhor <u>rever</u> o relatório, entenderá.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Ele gostava de palavras que proviessem do grego.",
+        "text": "Ele gostava de palavras que <u>proviessem</u> do grego.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Falaria com ele sobre o assunto assim que a revesse.",
+        "text": "Falaria com ele sobre o assunto assim que a <u>revesse.</u>",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Surpreendentemente, todos conviram com o chefe.",
+        "text": "Surpreendentemente, todos <u>conviram</u> com o chefe.",
         "correct": false
       }
     ],
     "correctLetter": "C",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "A CADEIRINHA\nNaquele fundo de sacristia, escondida ou arredada como se fora uma imagem quebrada cuja\nausência do altar o decoro do culto exige, encontrei a cadeirinha azul, forrada de damasco cor de\nouro velho. Na frente e no fundo, dois pequenos painéis pintados em madeira com traços finos e\nexpressivos. Representava cada qual uma dama do antigo regime. A da frente, vestida de seda\nbranca, contrastava a alvura do vestido e o tênue colorido da pele com o negrume dos cabelos\nrepuxados em trunfa alta e o vivo carmim dos lábios; tinha um ar desdenhoso e fatigado de fidalga\nelegante para quem os requintes da etiqueta e galanteios dos salões são já coisas velhas e\ncomezinhas. A outra, mais antiga ainda, trazia as melenas em cachos artísticos sobre as fontes e as\npequeninas orelhas; um leque de marfim semiaberto comprimia-lhe os lábios rebeldes que\nqueriam expandir-se num riso franco; os olhos grandes e negros tinham mais paixão e mais alma.\nEsta contemporânea de La Valliere, que o artista anônimo perpetuou na madeira da cadeirinha,\nnão se parecia muito com aquela meiga vítima da região concupiscência; ao contrário, um certo\narregaçado das narinas, uma ponta de ironia que lhe voejava na comissura da boca breve e\nenérgica — tudo isso mostrava estar ali naquele painel representada uma mulher meridional,\nardente e vivaz, pronta ao amor apaixonado ou a luta odienta. [...]\nSem querer acrescentar mais ao já dito sobre as damas, perguntava de mim para mim se o pintor\ndo século passado, ao tragar com tanta correção e finura os dois retratos de mulher, transmitindo-lhes em cada cabelo do pincel uma chama de vida, não estaria realmente diante de dois espécimes\nraros de filhas de Eva, de duas heroínas que por serem de comédia ou de ópera nem por isso\ndeixam de o ser da vida real?\n— Quem sabe se a Fontagens e a Montespan?\n— Qual! Impossível!\n— Impossível, não! Porque a cadeirinha podia perfeitamente ter sido pintada em França e era até\nmais natural crê-lo; porquanto a finura das tintas e a correção dos tragos pareciam indicar uns\nartistas das grandes cortes da época.\nE assim, em tais conjeturas, pus-me a examinar mais detidamente o velho e delicado veículo,\nrelíquia do século passado, sobrevivendo não sei por que na sacristia da igreja de um modesto\narraial mineiro, Os varais, conformes a moda bizarra do tempo, terminavam em cabeças de\ndragões com as faces abertas e sangrentas e os olhos com uma expressão de ferocidade estúpida,\nO forro de cima formava um pequeno dossel de torno senhorial; e o ouro velho do damasco que\nalcatifava também os dois assentos fronteiriços não tem igual nas casas de modas de agora.\nQual das matronas de Ouro Preto, ou das cidades que como esta alcançam mais de um século,\nnão tem vista, ou pelo menos ouvido falar com insistência, quando meninas, nas cadeirinhas\nconduzidas por lacaios de libré onde as moçoilas e as damas de outrora se faziam delicadamente\ntransportar?\nQuem não fará reviver na imaginação uma das cenas galantes da cortesia antiga em que, através\nda portinhola cortada de caprichosos lavores de talha, passava um rostozinho enrubescido e dois\nolhos de veludo a pousarem de leve sobre o cavalheiro de espadim com quem a misteriosa dama\ncruzava na passagem?\nTambém, ó pobre cadeirinha, lá terias o teu dia de caiporismo: havia de chegar a hora em que, em\nvez dos saltos vermelhos de um sapatinho de cetim calçando um pezinho delicado, teu fundo\nfosse calcado pela chanca esparramada de alguma cetácea obesa e tabaquista. [...]\nNem foram desses os teus piores dias, ó saudosa cadeirinha! Já pelos anos de tua velhice, quando,\ncoma agora, sobreviviam ao teu belo tempo passado, quando, perdidos teus antigos donos,\nalguém se lembrou de carregar-te para a sacristia da igreja, não te davam outro serviço que não o\nde transportares, como esquife, cadáveres de anjinhos pobres ao cemitério, ou semelhante às\nmacas das ambulâncias militares, o de conduzires ao hospital feridos ou enfermos desvalidos.\nQue cruel vingança não toma aquela época longínqua por lhe teres sobrevivido Coisa inteiramente\nfora da moda, o contraste Cagrante que formas com o mundo circundante é uma prova evidente\nde tua próxima eliminação, ó velha cadeirinha dos tempos mortos!\nMas é assim a vida: as espécies, como os indivíduos, vão desaparecendo ou se transformando em\noutras espécies e em outros indivíduos mais perfeitos, mais complicados, mais aptos para o meio\natual, porém muito menos grandiosos que os passados. Que figura faria o elefante de hoje, resto\nexótico da fauna terciária, ao lado do megatério? A de um filhote deste. E no entanto, bem cedo,\ntalvez nos nossos dias, desaparecerá o elefante, por já estar em desarmonia com a fauna atual, por\nconstituir já aquele doloroso contraste de que falamos acima e que é o primeiro sintoma da\npróxima eliminação do grande paquiderme. Parece que o progresso marcha para a dispersão, a\ndesagregação e o formigamento. Um grande organismo tomba e se decompõe e vai formar uma\ninumerável quantidade de seres ávidos de vida. A morte, essa grande ilusão humana, e o início\ndaquela dispersão, ou antes a fonte de muitas vidas. E que grande consoladora!\nLembra-me ter vista, há tempos, um octogenário de passo trôpego e cara rapada passeando em\ntrajes domingueiros a pedir uma carícia ao sol. Dirigi-lhe a palavra a detivemo-nos largo espaço a\nfalar dos costumes, das coisas e dos homens de outro tempo. Nisso surpreendeu-nos um magote\nde garotos que escaramuçou o velho a vaias. O pobre do ancião já ia seguindo seu caminho\nquando o abordou a meninada; não apressou o passo nem perdeu aquela serenidade de quem já\ntinha domado as férias das paixões com o vencer os anos. Vi-o ainda voltar-se com o rosto\nengelhado numa risada tristíssima, a comprida japona abanando ao vento e dizer, em torno de\nconvicção profunda: \"Ai dos velhos, se não fosse a morte!\" Parecia uma banalidade, mas não era\nsenão o apelo supremo, a prece fervente que esse exilado fazia a Deus para que pusesse termo ao\nseu exílio, onde ale estava fora dos seus amigos, dos seus costumes, de tudo quanto lhe podia falar\nao coração. [...].\nPor que, pois, a pobre cadeirinha, esse mimo de grata, esse traste casquilho, essa fiel companheira\nda vida de sociedade, da vida palaciana, da vida de carte com seus apuros e suas intrigas, suas\nvinganças pequeninas, seus amores, todavia sobrevive e por que a não pôs em pedaços um braço\nrobusto empunhando um machado benfazejo? Ao menos evitaria esse dolorosíssimo ridículo, essa\nexposição indecorosa de nudez de velha!\nJá tiveste dias de glória, cadeirinha de outros tempos! Pois bem: desaparece agora, vai ao fogo e\npede que te reduza a cinzas! E mil vezes preferível a essa decadência em que te achas e até\nmesmo a hipótese mais lisonjeira de te perpetuarem num museu. Deves preferir a paz do\naniquilamento a glória de figurares numa coleção de objetos antigos, exposta a curiosidade dos\npapalvos e as lorpas considerações dos burgueses, mofada e tristonha. Morre, desaparece, que\ntalvez para que não? — a tua dona mais gentil, aquela para quem tuas alcatifas tinham mais\ndelicada carícia ao receber-lhe o corpinho mimosa, aquela que recendia um perfume longínquo de\nroseira do Chiraz te conduza para alguma região ideal, dourada e fugidia, inacessível aos homens...\nARINOS, Affonso. Pelo Sertão. Minas Gerais: Itatiaia, 1981. (Texto adaptado)\nObserve a conjugação do verbo sublinhado no excerto a seguir.\n\"[...] a prece fervente que esse exilado fazia a Deus para que pusesse termo ao seu exílio [...]” (\n\n13°§)"
+    "readingText": "A CADEIRINHA\nNaquele fundo de sacristia, escondida ou arredada como se fora uma imagem quebrada cuja\nausência do altar o decoro do culto exige, encontrei a cadeirinha azul, forrada de damasco cor de\nouro velho. Na frente e no fundo, dois pequenos painéis pintados em madeira com traços finos e\nexpressivos. Representava cada qual uma dama do antigo regime. A da frente, vestida de seda\nbranca, contrastava a alvura do vestido e o tênue colorido da pele com o negrume dos cabelos\nrepuxados em trunfa alta e o vivo carmim dos lábios; tinha um ar desdenhoso e fatigado de fidalga\nelegante para quem os requintes da etiqueta e galanteios dos salões são já coisas velhas e\ncomezinhas. A outra, mais antiga ainda, trazia as melenas em cachos artísticos sobre as fontes e as\npequeninas orelhas; um leque de marfim semiaberto comprimia-lhe os lábios rebeldes que\nqueriam expandir-se num riso franco; os olhos grandes e negros tinham mais paixão e mais alma.\nEsta contemporânea de La Valliere, que o artista anônimo perpetuou na madeira da cadeirinha,\nnão se parecia muito com aquela meiga vítima da região concupiscência; ao contrário, um certo\narregaçado das narinas, uma ponta de ironia que lhe voejava na comissura da boca breve e\nenérgica — tudo isso mostrava estar ali naquele painel representada uma mulher meridional,\nardente e vivaz, pronta ao amor apaixonado ou a luta odienta. [...]\nSem querer acrescentar mais ao já dito sobre as damas, perguntava de mim para mim se o pintor\ndo século passado, ao tragar com tanta correção e finura os dois retratos de mulher, transmitindo-lhes em cada cabelo do pincel uma chama de vida, não estaria realmente diante de dois espécimes\nraros de filhas de Eva, de duas heroínas que por serem de comédia ou de ópera nem por isso\ndeixam de o ser da vida real?\n— Quem sabe se a Fontagens e a Montespan?\n— Qual! Impossível!\n— Impossível, não! Porque a cadeirinha podia perfeitamente ter sido pintada em França e era até\nmais natural crê-lo; porquanto a finura das tintas e a correção dos tragos pareciam indicar uns\nartistas das grandes cortes da época.\nE assim, em tais conjeturas, pus-me a examinar mais detidamente o velho e delicado veículo,\nrelíquia do século passado, sobrevivendo não sei por que na sacristia da igreja de um modesto\narraial mineiro, Os varais, conformes a moda bizarra do tempo, terminavam em cabeças de\ndragões com as faces abertas e sangrentas e os olhos com uma expressão de ferocidade estúpida,\nO forro de cima formava um pequeno dossel de torno senhorial; e o ouro velho do damasco que\nalcatifava também os dois assentos fronteiriços não tem igual nas casas de modas de agora.\nQual das matronas de Ouro Preto, ou das cidades que como esta alcançam mais de um século,\nnão tem vista, ou pelo menos ouvido falar com insistência, quando meninas, nas cadeirinhas\nconduzidas por lacaios de libré onde as moçoilas e as damas de outrora se faziam delicadamente\ntransportar?\nQuem não fará reviver na imaginação uma das cenas galantes da cortesia antiga em que, através\nda portinhola cortada de caprichosos lavores de talha, passava um rostozinho enrubescido e dois\nolhos de veludo a pousarem de leve sobre o cavalheiro de espadim com quem a misteriosa dama\ncruzava na passagem?\nTambém, ó pobre cadeirinha, lá terias o teu dia de caiporismo: havia de chegar a hora em que, em\nvez dos saltos vermelhos de um sapatinho de cetim calçando um pezinho delicado, teu fundo\nfosse calcado pela chanca esparramada de alguma cetácea obesa e tabaquista. [...]\nNem foram desses os teus piores dias, ó saudosa cadeirinha! Já pelos anos de tua velhice, quando,\ncoma agora, sobreviviam ao teu belo tempo passado, quando, perdidos teus antigos donos,\nalguém se lembrou de carregar-te para a sacristia da igreja, não te davam outro serviço que não o\nde transportares, como esquife, cadáveres de anjinhos pobres ao cemitério, ou semelhante às\nmacas das ambulâncias militares, o de conduzires ao hospital feridos ou enfermos desvalidos.\nQue cruel vingança não toma aquela época longínqua por lhe teres sobrevivido Coisa inteiramente\nfora da moda, o contraste Cagrante que formas com o mundo circundante é uma prova evidente\nde tua próxima eliminação, ó velha cadeirinha dos tempos mortos!\nMas é assim a vida: as espécies, como os indivíduos, vão desaparecendo ou se transformando em\noutras espécies e em outros indivíduos mais perfeitos, mais complicados, mais aptos para o meio\natual, porém muito menos grandiosos que os passados. Que figura faria o elefante de hoje, resto\nexótico da fauna terciária, ao lado do megatério? A de um filhote deste. E no entanto, bem cedo,\ntalvez nos nossos dias, desaparecerá o elefante, por já estar em desarmonia com a fauna atual, por\nconstituir já aquele doloroso contraste de que falamos acima e que é o primeiro sintoma da\npróxima eliminação do grande paquiderme. Parece que o progresso marcha para a dispersão, a\ndesagregação e o formigamento. Um grande organismo tomba e se decompõe e vai formar uma\ninumerável quantidade de seres ávidos de vida. A morte, essa grande ilusão humana, e o início\ndaquela dispersão, ou antes a fonte de muitas vidas. E que grande consoladora!\nLembra-me ter vista, há tempos, um octogenário de passo trôpego e cara rapada passeando em\ntrajes domingueiros a pedir uma carícia ao sol. Dirigi-lhe a palavra a detivemo-nos largo espaço a\nfalar dos costumes, das coisas e dos homens de outro tempo. Nisso surpreendeu-nos um magote\nde garotos que escaramuçou o velho a vaias. O pobre do ancião já ia seguindo seu caminho\nquando o abordou a meninada; não apressou o passo nem perdeu aquela serenidade de quem já\ntinha domado as férias das paixões com o vencer os anos. Vi-o ainda voltar-se com o rosto\nengelhado numa risada tristíssima, a comprida japona abanando ao vento e dizer, em torno de\nconvicção profunda: \"Ai dos velhos, se não fosse a morte!\" Parecia uma banalidade, mas não era\nsenão o apelo supremo, a prece fervente que esse exilado fazia a Deus para que <u>pusesse</u> termo ao\nseu exílio, onde ale estava fora dos seus amigos, dos seus costumes, de tudo quanto lhe podia falar\nao coração. [...].\nPor que, pois, a pobre cadeirinha, esse mimo de grata, esse traste casquilho, essa fiel companheira\nda vida de sociedade, da vida palaciana, da vida de carte com seus apuros e suas intrigas, suas\nvinganças pequeninas, seus amores, todavia sobrevive e por que a não pôs em pedaços um braço\nrobusto empunhando um machado benfazejo? Ao menos evitaria esse dolorosíssimo ridículo, essa\nexposição indecorosa de nudez de velha!\nJá tiveste dias de glória, cadeirinha de outros tempos! Pois bem: desaparece agora, vai ao fogo e\npede que te reduza a cinzas! E mil vezes preferível a essa decadência em que te achas e até\nmesmo a hipótese mais lisonjeira de te perpetuarem num museu. Deves preferir a paz do\naniquilamento a glória de figurares numa coleção de objetos antigos, exposta a curiosidade dos\npapalvos e as lorpas considerações dos burgueses, mofada e tristonha. Morre, desaparece, que\ntalvez para que não? — a tua dona mais gentil, aquela para quem tuas alcatifas tinham mais\ndelicada carícia ao receber-lhe o corpinho mimosa, aquela que recendia um perfume longínquo de\nroseira do Chiraz te conduza para alguma região ideal, dourada e fugidia, inacessível aos homens...\nARINOS, Affonso. Pelo Sertão. Minas Gerais: Itatiaia, 1981. (Texto adaptado)\nObserve a conjugação do verbo sublinhado no excerto a seguir.\n\"[...] a prece fervente que esse exilado fazia a Deus para que <u>pusesse</u> termo ao seu exílio [...]” (\n\n13°§)"
   },
   {
     "id": "verbos-pdf_7-q4",
@@ -16687,7 +16687,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Morte de uma baleia\nClarice Lispector\nEm minutos espalhara-se a notícia: uma baleia no Leme e outra no Leblon haviam surgido na\narrebentação de onde tinham tentado sair sem no entanto poder voltar. Eram descomunais apesar\nde apenas filhotes. Todos foram ver. Eu não fui: corria o boato de que ela agonizava já há oito\nhoras e que até atirar nela haviam atirado mas ela continuava agonizando e sem morrer.\nSenti um horror diante do que contavam e que talvez não fossem estritamente os fatos reais, mas\na lenda já estava formada em torno do extraordinário que enfim, enfim! Acontecia, pois por pura\nsede de vida melhor estamos sempre à espera do extraordinário que talvez nos salve de uma vida\ncontida. Se fosse um homem que estivesse agonizando na praia durante oito horas nós o\nsantificaríamos, tanto precisamos de crer no que é impossível.\nNão, não fui vê-la: detesto a morte. Deus, o que nos prometeis em troca de morrer? Pois o céu e o\ninferno nós já os conhecemos – cada um de nós em segredo quase de sonho já viveu um pouco\ndo próprio apocalipse. E a própria morte.\nFora das vezes em que quase morri para sempre, quantas vezes num silêncio humano – que é o\nmais grave de todos do reino animal –, quantas vezes num silêncio humano minha alma\nagonizando esperava por uma morte que não vinha. E como escárnio, por ser o contrário do\nmartírio em que minha alma sangrava, era quando o corpo mais florescia. Como se meu corpo\nprecisasse dar ao mundo uma prova contrária de minha morte interna para esta ser mais secreta\nainda. Morri de muitas mortes e mantê-las-ei em segredo até que a morte do corpo venha, e\nalguém, adivinhando, diga: esta, esta viveu.\nPorque aquele que mais experimenta o martírio é dele que se poderá dizer: este, sim, este viveu.\n(...)\nLembro-me agora de uma vez que ao olhar um pôr do sol interminável e escarlate também eu\nagonizei com ele lentamente e morri, e a noite veio para mim cobrindo-me de mistério, de insônia\nclarividente e, finalmente por cansaço, sucumbindo num sono que completava a minha morte. E\nquando acordei, surpreendi-me docemente. Nos primeiros ínfimos instantes de acordada pensei:\nentão quando se está morta se conserva a consciência? Até que o corpo habituado a mover-se\nautomaticamente me fez fazer um gesto muito meu: o de passar a mão pelos cabelos. Então num\nsusto percebi que meu corpo e minha alma tinham sobrevivido. Tudo isto – a certeza de estar\nmorta e a descoberta de que eu estava viva – tudo isto não durou, creio, mais que dois ínfimos\nsegundos ou talvez menos ainda. Mas que de hoje em diante todos saibam através de mim que\nnão estou mentindo: em menos de dois segundos podem-se viver uma vida e uma morte e uma\nvida de novo. Esses dois ínfimos segundos como forma de contar toscamente o tempo devem ser\na diferença entre o ser humano e o animal: assim como Deus talvez conte o tempo em frações de\nséculo dos séculos: cada século um instante. Quem sabe se Deus conta a nossa vida em termos de\ndois segundos: um para nascer e outro para morrer. E o intervalo, meu Deus, talvez seja a maior\ncriação do Homem: a vida, uma vida. Lembro-me de um amigo que há poucos dias citou o que\num dos apóstolos disse de nós: vós sois deuses.\nSim, juro que somos deuses. Porque eu também já morri de alegria muitas vezes na minha vida. E\nquando passava essa espécie de gloriosa e suave morte, eu me surpreendia de que o mundo\ncontinuasse ao meu redor, de que houvesse uma disciplina para cada coisa,\ne de que eu mesma, a começar por mim, tinha o meu nome e já entrara na rotina: pensara que o\ntempo tinha parado e os homens subitamente se tinham imobilizado no meio do gesto que\nestivessem executando – enquanto eu vivera a morte por alegria.\nNão fui ver a baleia que estava a bem dizer à porta de minha casa a morrer. Morte, eu te odeio.\nEnquanto isso as notícias misturadas com lendas corriam pela cidade do Leme. Uns diziam que a\nbaleia do Leblon ainda não morrera mas que sua carne retalhada em vida era vendida por quilos\npois carne de baleia era ótimo de se comer, e era barato, era isso que corria pela cidade do Leme.\nE eu pensei: maldito seja aquele que a comerá por curiosidade, só perdoarei quem tem fome,\naquela fome antiga dos pobres.\nOutros, no limiar do horror, contavam que também a baleia do Leme, embora ainda viva e arfante,\ntinha seus quilos cortados para serem vendidos. Como acreditar que não se espera nem a morte\npara um ser comer outro ser? Não quero acreditar que alguém desrespeite\ntanto a vida e a morte, nossa criação humana, e que coma vorazmente, só por ser uma iguaria,\naquilo que ainda agoniza, só porque é mais barato, só porque a fome humana é grande, só porque\nna verdade somos tão ferozes como um animal feroz, só porque queremos comer daquela\nmontanha de inocência que é uma baleia, assim como comemos a inocência cantante de um\npássaro. Eu ia dizer agora com horror: a viver desse modo, prefiro a morte.\nE exatamente não é verdade. Sou uma feroz entre os ferozes seres humanos – nós, os macacos de\nnós mesmos, nós, os macacos que idealizaram tornarem-se homens, e esta é também a nossa\ngrandeza. Nunca atingiremos em nós o ser humano: a busca e o esforço\nserão permanentes. E quem atinge o quase impossível estágio de Ser Humano, é justo que seja\nsantificado.\nPorque desistir de nossa animalidade é um sacrifício.\n(Disponível em <https://contobrasileiro.com.br/morte-de-uma-baleia-cronica-de-clarice-lispector/> Acesso em 16 abr. 2021)\n“(...) pensara que o tempo tinha parado e os homens subitamente se tinham imobilizado no meio\ndo gesto que estivessem executando – enquanto eu vivera a morte por alegria” (7º parágrafo)"
+    "readingText": "Morte de uma baleia\nClarice Lispector\nEm minutos espalhara-se a notícia: uma baleia no Leme e outra no Leblon haviam surgido na\narrebentação de onde tinham tentado sair sem no entanto poder voltar. Eram descomunais apesar\nde apenas filhotes. Todos foram ver. Eu não fui: corria o boato de que ela agonizava já há oito\nhoras e que até atirar nela haviam atirado mas ela continuava agonizando e sem morrer.\nSenti um horror diante do que contavam e que talvez não fossem estritamente os fatos reais, mas\na lenda já estava formada em torno do extraordinário que enfim, enfim! Acontecia, pois por pura\nsede de vida melhor estamos sempre à espera do extraordinário que talvez nos salve de uma vida\ncontida. Se fosse um homem que estivesse agonizando na praia durante oito horas nós o\nsantificaríamos, tanto precisamos de crer no que é impossível.\nNão, não fui vê-la: detesto a morte. Deus, o que nos prometeis em troca de morrer? Pois o céu e o\ninferno nós já os conhecemos – cada um de nós em segredo quase de sonho já viveu um pouco\ndo próprio apocalipse. E a própria morte.\nFora das vezes em que quase morri para sempre, quantas vezes num silêncio humano – que é o\nmais grave de todos do reino animal –, quantas vezes num silêncio humano minha alma\nagonizando esperava por uma morte que não vinha. E como escárnio, por ser o contrário do\nmartírio em que minha alma sangrava, era quando o corpo mais florescia. Como se meu corpo\nprecisasse dar ao mundo uma prova contrária de minha morte interna para esta ser mais secreta\nainda. Morri de muitas mortes e mantê-las-ei em segredo até que a morte do corpo venha, e\nalguém, adivinhando, diga: esta, esta viveu.\nPorque aquele que mais experimenta o martírio é dele que se poderá dizer: este, sim, este viveu.\n(...)\nLembro-me agora de uma vez que ao olhar um pôr do sol interminável e escarlate também eu\nagonizei com ele lentamente e morri, e a noite veio para mim cobrindo-me de mistério, de insônia\nclarividente e, finalmente por cansaço, sucumbindo num sono que completava a minha morte. E\nquando acordei, surpreendi-me docemente. Nos primeiros ínfimos instantes de acordada pensei:\nentão quando se está morta se conserva a consciência? Até que o corpo habituado a mover-se\nautomaticamente me fez fazer um gesto muito meu: o de passar a mão pelos cabelos. Então num\nsusto percebi que meu corpo e minha alma tinham sobrevivido. Tudo isto – a certeza de estar\nmorta e a descoberta de que eu estava viva – tudo isto não durou, creio, mais que dois ínfimos\nsegundos ou talvez menos ainda. Mas que de hoje em diante todos saibam através de mim que\nnão estou mentindo: em menos de dois segundos podem-se viver uma vida e uma morte e uma\nvida de novo. Esses dois ínfimos segundos como forma de contar toscamente o tempo devem ser\na diferença entre o ser humano e o animal: assim como Deus talvez conte o tempo em frações de\nséculo dos séculos: cada século um instante. Quem sabe se Deus conta a nossa vida em termos de\ndois segundos: um para nascer e outro para morrer. E o intervalo, meu Deus, talvez seja a maior\ncriação do Homem: a vida, uma vida. Lembro-me de um amigo que há poucos dias citou o que\num dos apóstolos disse de nós: vós sois deuses.\nSim, juro que somos deuses. Porque eu também já morri de alegria muitas vezes na minha vida. E\nquando passava essa espécie de gloriosa e suave morte, eu me surpreendia de que o mundo\ncontinuasse ao meu redor, de que houvesse uma disciplina para cada coisa,\ne de que eu mesma, a começar por mim, tinha o meu nome e já entrara na rotina: pensara que o\ntempo tinha parado e os homens subitamente se tinham imobilizado no meio do gesto que\nestivessem executando – enquanto eu vivera a morte por alegria.\nNão fui ver a baleia que estava a bem dizer à porta de minha casa a morrer. Morte, eu te odeio.\nEnquanto isso as notícias misturadas com lendas corriam pela cidade do Leme. Uns diziam que a\nbaleia do Leblon ainda não morrera mas que sua carne retalhada em vida era vendida por quilos\npois carne de baleia era ótimo de se comer, e era barato, era isso que corria pela cidade do Leme.\nE eu pensei: maldito seja aquele que a comerá por curiosidade, só perdoarei quem tem fome,\naquela fome antiga dos pobres.\nOutros, no limiar do horror, contavam que também a baleia do Leme, embora ainda viva e arfante,\ntinha seus quilos cortados para serem vendidos. Como acreditar que não se espera nem a morte\npara um ser comer outro ser? Não quero acreditar que alguém desrespeite\ntanto a vida e a morte, nossa criação humana, e que coma vorazmente, só por ser uma iguaria,\naquilo que ainda agoniza, só porque é mais barato, só porque a fome humana é grande, só porque\nna verdade somos tão ferozes como um animal feroz, só porque queremos comer daquela\nmontanha de inocência que é uma baleia, assim como comemos a inocência cantante de um\npássaro. Eu ia dizer agora com horror: a viver desse modo, prefiro a morte.\nE exatamente não é verdade. Sou uma feroz entre os ferozes seres humanos – nós, os macacos de\nnós mesmos, nós, os macacos que idealizaram tornarem-se homens, e esta é também a nossa\ngrandeza. Nunca atingiremos em nós o ser humano: a busca e o esforço\nserão permanentes. E quem atinge o quase impossível estágio de Ser Humano, é justo que seja\nsantificado.\nPorque desistir de nossa animalidade é um sacrifício.\n(Disponível em <https://contobrasileiro.com.br/morte-de-uma-baleia-cronica-de-clarice-lispector/> Acesso em 16 abr. 2021)\n“(...) pensara que o tempo tinha parado e os homens subitamente se tinham imobilizado no meio\ndo gesto que estivessem executando – enquanto eu <u>vivera</u> a morte por alegria” (7º parágrafo)"
   },
   {
     "id": "verbos-pdf_7-q5",
@@ -16705,12 +16705,12 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "B",
-        "text": "levando em consideração o contexto, é possível considerar o sentido da palavra “fustigadas” (v. 09) como castigadas.",
+        "text": "levando em consideração o contexto, é possível considerar o sentido da palavra “fustigadas” (v. 09) como <u>castigadas.</u>",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "em “vivem pros seus maridos” (v. 3), o termo sublinhado é classificado pela gramática normativa como adjunto adverbial.",
+        "text": "em “vivem <u>pros seus maridos”</u> (v. 3), o termo sublinhado é classificado pela gramática normativa como adjunto adverbial.",
         "correct": false
       },
       {
@@ -16769,7 +16769,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 7,
-    "statement": "Com base no texto, responda à questão.\nMario Quintana explicou a utopia com um verso (...) Analisando-se os fragmentos que se seguem,\na regência da forma verbal que difere do exemplo acima aparece na alternativa",
+    "statement": "Com base no texto, responda à questão.\nMario Quintana <u>explicou</u> a utopia com um verso (...) Analisando-se os fragmentos que se seguem,\na regência da forma verbal que difere do exemplo acima aparece na alternativa",
     "options": [
       {
         "letter": "A",
@@ -16783,7 +16783,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "C",
-        "text": "Mas para navegar não basta sonhar. E preciso saber.",
+        "text": "Mas para navegar não <u>basta</u> sonhar. E preciso saber.",
         "correct": true
       },
       {
@@ -16793,7 +16793,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "(...) e tratem de sonhar, com os seus alunos, sonhos de um Paraíso.",
+        "text": "(...) e tratem de <u>sonhar,</u> com os seus alunos, sonhos de um Paraíso.",
         "correct": false
       }
     ],
@@ -16886,31 +16886,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 10,
-    "statement": "Com base no texto, responda à questão.\nAssinale a opção em que a forma verbal sublinhada NÃO se encontra no pretérito mais-que-perfeito.",
+    "statement": "Com base no texto, responda à questão.\nAssinale a opção em que a forma verbal sublinhada <u>NÃO</u> se encontra no pretérito mais-que-perfeito.",
     "options": [
       {
         "letter": "A",
-        "text": "Certamente já me haviam feito representar esse papel (...).",
+        "text": "Certamente já me <u>haviam</u> <u>feito</u> representar esse papel (...).",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Irritada, ferira-me à toa, sem querer.",
+        "text": "Irritada, <u>ferira-me</u> à toa, sem querer.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Se não fosse ele, a flagelação me haveria causado menor estrago.",
+        "text": "Se não fosse ele, a flagelação me <u>haveria causado</u> menor estrago.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Ainda que tivesse escondido o infame objeto, emudeceria (...).",
+        "text": "Ainda que <u>tivesse</u> <u>escondido</u> o infame objeto, emudeceria (...).",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Estivera sem bulir, quase sem respirar.",
+        "text": "<u>Estivera</u> sem bulir, quase sem respirar.",
         "correct": false
       }
     ],
@@ -16925,7 +16925,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 11,
-    "statement": "“Sei que quando minha hora chegar, no último instante, verei, em velocidade desconhecida, o\nnavio [...].\" (15°§). Em que opção está corretamente justificado o emprego do tempo verbal\ndestacado nesse segmento?",
+    "statement": "“Sei que quando minha hora chegar, no último instante, <u>verei,</u> em velocidade desconhecida, o\nnavio [...].\" (15°§). Em que opção está corretamente justificado o emprego do tempo verbal\ndestacado nesse segmento?",
     "options": [
       {
         "letter": "A",
@@ -16964,7 +16964,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 12,
-    "statement": "Com base no texto, responda à questão.\n(...) mas era menino e sem condições de avaliar-te, ou vieras em código, e eu, sem possuir a chave,\nme quedava mirando-te e remirando-te (...). Nessa passagem, a forma verbal sublinhada tem o\nsentido de",
+    "statement": "Com base no texto, responda à questão.\n(...) mas era menino e sem condições de avaliar-te, ou vieras em código, e eu, sem possuir a chave,\n<u>me</u> <u>quedava</u> mirando-te e remirando-te (...). Nessa passagem, a forma verbal sublinhada tem o\nsentido de",
     "options": [
       {
         "letter": "A",
@@ -17003,7 +17003,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 13,
-    "statement": "Com base no texto, responda à questão.\nA forma verbal que pertence à segunda conjugação aparece na opção:",
+    "statement": "A forma verbal que pertence à <u>segunda</u> conjugação aparece na opção:",
     "options": [
       {
         "letter": "A",
@@ -17012,12 +17012,12 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "B",
-        "text": "Via-te aparecer em sonho, e (...).",
+        "text": "<u>Via-te</u> aparecer em sonho, e (...).",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "(...) mas era menino e sem condições de avaliar-te, ou vieras em código, (...).",
+        "text": "(...) mas era menino e sem condições de avaliar-te, ou <u>vieras</u> em código, (...).",
         "correct": false
       },
       {
@@ -17027,7 +17027,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "(...) até mesmo em cima de ti, sem discernir tua pulsação.",
+        "text": "(...) até mesmo em cima de ti, sem <u>discernir</u> tua pulsação.",
         "correct": false
       }
     ],
@@ -17123,27 +17123,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“[…] que resplende ao sol.” (1º §)",
+        "text": "“[…] que <u>resplende</u> ao sol.” (1º §)",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“Que ele nade bem [...]” (3º §)",
+        "text": "“Que ele <u>nade</u> bem [...]” (3º §)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“[…] que conserve a mesma batida [...]” (3º §)",
+        "text": "“[…] que <u>conserve</u> a mesma batida [...]” (3º §)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“[…] que ele esteja comigo.” (4º §)",
+        "text": "“[…] que ele <u>esteja</u> comigo.” (4º §)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“ Que ele atinja o telhado [...]” (4º §)",
+        "text": "“ Que ele <u>atinja</u> o telhado [...]” (4º §)",
         "correct": false
       }
     ],
@@ -17162,33 +17162,33 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Inventaram outro nome enrolado para dizer que você é garoto do batente.”",
+        "text": "<u>“Inventaram</u> outro nome enrolado para dizer que você é garoto do batente.”",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“Moleque valente que acorda cedo, engole café com pão [...]”",
+        "text": "“Moleque valente que <u>acorda</u> cedo, engole café com pão [...]”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“[...] e o garoto sai correndo de volta pra casa [...]\"",
+        "text": "“[...] e o garoto <u>sai correndo</u> de volta pra casa [...]\"",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“[...] quando você tiver de dar ordens de serviço a outros garotos da Cidade [...]”",
+        "text": "“[...] quando você tiver de <u>dar</u> ordens de serviço a outros garotos da Cidade [...]”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“A vida é participar do campeonato.”",
+        "text": "“A vida é <u>participar</u> do campeonato.”",
         "correct": false
       }
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Recado pro bolsinho da camisa\nLourenço Diaféria\nNão sei como você se chama, garoto, mas te vi um dia atravessando o viaduto de concreto.\nCaía chuvisco.\nTeus cabelos estavam ensopados e a camisa de brim grudada no teu corpo magro e ágil como\nflecha disparada pelo arco do trabalho.\nVocê corria saltando no reflexo do asfalto molhado, como bolinha de gude rolada na infância.\nNão deu tempo para perguntar teu nome. Tuas pernas finas tinham pressa. Você carregava a\nmaleta de mão com fecho cromado, e dentro dela havia o peso da responsabilidade de papéis\nsérios e urgentes, que deveriam chegar a um ponto qualquer da Cidade, antes que se fechassem\nos guichês e portarias.\nOutra vez te vi, garoto.\nFazia então um sol redondo e cheio pendurado no travessão do espaço.\nOutra vez, teus cabelos úmidos de suor, a camisa de brim manchada, as calças rústicas mostrando\na marca da barra que tua mãe soltou de noite, fio por fio, com um sorriso e um orgulho:\n— O moleque está crescendo!\nNão sei como você se chama, garoto.\nTe conheço de vista escalando os edifícios, alpinista de elevadores, abridor de picadas na\nmultidão, ponta de lança rompedor nesta briga de foice que são as ruas da Cidade.\nGaroto que cresce sob o sol e chuva carregando na maleta cheques, duplicatas, títulos, recibos,\ncartas, telegramas, tutu, bufunfa, grana e um retrato da menina que te espera na lanchonete.\nTeu nome é: — gente.\nInventaram outro nome enrolado para dizer que você é garoto do batente.\nOffice-boy.\nGuri que finta banco, escritório, repartição, fila, balcão, pedido de certidão, imposto a pagar, taxa\nde conservação, título no protesto e que mata no peito e baixa no terreno quando encontra os\nolhos da garota da caixa, que pergunta de modo muito legal:\n—Tem dois cruzeiros trocados?\nMoleque valente que acorda cedo, engole café com pão, fala tchau mesmo, vai pro ponto do\nônibus ou estação, se pendura na condução, se vira mais que pião, tem sua turma, conta\nvantagem, lê jornal na banca, esquenta a marmita, discute a seleção, e depois do almoço bebe um\nrefrigerante gelado e pede uma esfirra com limão.\nE depois toca de novo a zunir pela Cidade, conhecido em tudo que é esquina, oi daqui, oi dali, até\nque a tarde chega e o garoto sai correndo de volta pra casa, vestir o guarda-pó, apanhar a\nesferográfica, enfiar os cadernos na sacola e enfrentar a escola, o sono, a voz do professor, o\nquadro-negro, a equação de duas incógnitas, depois de ter passado o dia inteiro gastando sola.\nGuri, teu nome é: — gente.\nMenino de escritório, menino do batente, que agarra o trabalho com unhas e dentes, sem você a\nCidade amanheceria paralisada como bicho enorme ao qual houvessem cortado as pernas.\nPois bem: este recado não é para ser entregue a ninguém, a não ser a você mesmo.\nSe quiser, guarde-o no bolsinho da camisa.\nUm dia, quando você estiver completamente crescido, quando tiver bigodes, telefones, papéis\nimportantes para preencher, alguns cabelos brancos; e sua mãe não precisar (ou não puder mais)\ndesmanchar a barra de suas calças que ficaram curtas; quando você tiver de dar ordens de serviço\na outros garotos da Cidade, saberá que, para chegar a qualquer lugar, o segredo é não desistir no\nmeio do caminho.\nMas não se esqueça nunca de que as oportunidades não apenas se recebem ou se conquistam.\nAs oportunidades também devem ser oferecidas para que as pessoas pequenas saibam que seu\nnome é: — gente.\nNo futebol da vida, garoto, a parada é dura e a bola, dividida. Jogue o jogo mais limpo que você\ntiver. Jogue sério.\nNão afrouxe se o passe recebido parecer longo demais.\nOs mais bonitos gols da vida são marcados pelos que acreditam na força de seu pique.\nPonha esse recado no bolsinho da camisa, guri.\nUm dia você descobrirá que a vida nem sempre é a conquista da taça.\nA vida é participar do campeonato.\nVai nela, garotão!\n(Antologia da crônica brasileira — de Machado de Assis a Lourenço Diaféria. São Paulo: Moderna,\n2005. p. 196-9.)\nFonte: Livro- Português: Linguagem, 3/ William Roberto Cereja, Thereza Cochar Magalhães, 11.ed\n— São Paulo: Saraiva, 2016. p.35-7.\n“Se quiser, guarde-o no bolsinho da camisa.”"
+    "readingText": "Recado pro bolsinho da camisa\nLourenço Diaféria\nNão sei como você se chama, garoto, mas te vi um dia atravessando o viaduto de concreto.\nCaía chuvisco.\nTeus cabelos estavam ensopados e a camisa de brim grudada no teu corpo magro e ágil como\nflecha disparada pelo arco do trabalho.\nVocê corria saltando no reflexo do asfalto molhado, como bolinha de gude rolada na infância.\nNão deu tempo para perguntar teu nome. Tuas pernas finas tinham pressa. Você carregava a\nmaleta de mão com fecho cromado, e dentro dela havia o peso da responsabilidade de papéis\nsérios e urgentes, que deveriam chegar a um ponto qualquer da Cidade, antes que se fechassem\nos guichês e portarias.\nOutra vez te vi, garoto.\nFazia então um sol redondo e cheio pendurado no travessão do espaço.\nOutra vez, teus cabelos úmidos de suor, a camisa de brim manchada, as calças rústicas mostrando\na marca da barra que tua mãe soltou de noite, fio por fio, com um sorriso e um orgulho:\n— O moleque está crescendo!\nNão sei como você se chama, garoto.\nTe conheço de vista escalando os edifícios, alpinista de elevadores, abridor de picadas na\nmultidão, ponta de lança rompedor nesta briga de foice que são as ruas da Cidade.\nGaroto que cresce sob o sol e chuva carregando na maleta cheques, duplicatas, títulos, recibos,\ncartas, telegramas, tutu, bufunfa, grana e um retrato da menina que te espera na lanchonete.\nTeu nome é: — gente.\nInventaram outro nome enrolado para dizer que você é garoto do batente.\nOffice-boy.\nGuri que finta banco, escritório, repartição, fila, balcão, pedido de certidão, imposto a pagar, taxa\nde conservação, título no protesto e que mata no peito e baixa no terreno quando encontra os\nolhos da garota da caixa, que pergunta de modo muito legal:\n—Tem dois cruzeiros trocados?\nMoleque valente que acorda cedo, engole café com pão, fala tchau mesmo, vai pro ponto do\nônibus ou estação, se pendura na condução, se vira mais que pião, tem sua turma, conta\nvantagem, lê jornal na banca, esquenta a marmita, discute a seleção, e depois do almoço bebe um\nrefrigerante gelado e pede uma esfirra com limão.\nE depois toca de novo a zunir pela Cidade, conhecido em tudo que é esquina, oi daqui, oi dali, até\nque a tarde chega e o garoto sai correndo de volta pra casa, vestir o guarda-pó, apanhar a\nesferográfica, enfiar os cadernos na sacola e enfrentar a escola, o sono, a voz do professor, o\nquadro-negro, a equação de duas incógnitas, depois de ter passado o dia inteiro gastando sola.\nGuri, teu nome é: — gente.\nMenino de escritório, menino do batente, que agarra o trabalho com unhas e dentes, sem você a\nCidade amanheceria paralisada como bicho enorme ao qual houvessem cortado as pernas.\nPois bem: este recado não é para ser entregue a ninguém, a não ser a você mesmo.\nSe quiser, guarde-o no bolsinho da camisa.\nUm dia, quando você estiver completamente crescido, quando tiver bigodes, telefones, papéis\nimportantes para preencher, alguns cabelos brancos; e sua mãe não precisar (ou não puder mais)\ndesmanchar a barra de suas calças que ficaram curtas; quando você tiver de dar ordens de serviço\na outros garotos da Cidade, saberá que, para chegar a qualquer lugar, o segredo é não desistir no\nmeio do caminho.\nMas não se esqueça nunca de que as oportunidades não apenas se recebem ou se conquistam.\nAs oportunidades também devem ser oferecidas para que as pessoas pequenas saibam que seu\nnome é: — gente.\nNo futebol da vida, garoto, a parada é dura e a bola, dividida. Jogue o jogo mais limpo que você\ntiver. Jogue sério.\nNão afrouxe se o passe recebido parecer longo demais.\nOs mais bonitos gols da vida são marcados pelos que acreditam na força de seu pique.\nPonha esse recado no bolsinho da camisa, guri.\nUm dia você descobrirá que a vida nem sempre é a conquista da taça.\nA vida é participar do campeonato.\nVai nela, garotão!\n(Antologia da crônica brasileira — de Machado de Assis a Lourenço Diaféria. São Paulo: Moderna,\n2005. p. 196-9.)\nFonte: Livro- Português: Linguagem, 3/ William Roberto Cereja, Thereza Cochar Magalhães, 11.ed\n— São Paulo: Saraiva, 2016. p.35-7.\n“Se quiser, <u>guarde-o</u> no bolsinho da camisa.”"
   },
   {
     "id": "verbos-pdf_7-q18",
@@ -17201,27 +17201,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“[...] um retrato da menina que te espera na lanchonete.”",
+        "text": "“[...] um retrato da menina que te <u>espera</u> na lanchonete.”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Guri que finta banco, escritório, repartição, fila, balcão, pedido de certidão, imposto a pagar, [...]\"",
+        "text": "“Guri que finta banco, escritório, repartição, fila, balcão, <u>pedido</u> de certidão, imposto a pagar, [...]\"",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“[...] os olhos da garota da caixa, que pergunta de modo muito legal [...]”",
+        "text": "“[...] os olhos da garota da caixa, que <u>pergunta</u> de modo muito legal [...]”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Moleque valente que acorda cedo, engole café com pão [...]”",
+        "text": "“Moleque valente que acorda cedo, <u>engole</u> café com pão [...]”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“As oportunidades também devem ser oferecidas para que as pessoas pequenas saibam que seu nome é: — gente”",
+        "text": "“As oportunidades também devem ser <u>oferecidas</u> para que as pessoas pequenas saibam que seu nome é: — gente”",
         "correct": false
       }
     ],
@@ -17236,7 +17236,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 19,
-    "statement": "Analise os trechos a seguir:\nI- “Menino de escritório, menino do batente, que agarra o trabalho com unhas e dentes, sem você\na Cidade amanheceria paralisada como bicho enorme ao qual houvessem cortado as pernas.”\nII- “Um dia, quando você estiver completamente crescido, quando tiver bigodes, telefones,\npapéis importantes para preencher, alguns cabelos brancos [...]\"\nIII- “As oportunidades também devem ser oferecidas para que as pessoas pequenas saibam que\nseu nome é: — gente.”\nOs verbos ou locuções verbais em destaque nos trechos correspondem, respectivamente, a\nque tempos verbais do subjuntivo?",
+    "statement": "Analise os trechos a seguir:\nI- “Menino de escritório, menino do batente, que agarra o trabalho com unhas e dentes, sem você\na Cidade amanheceria paralisada como bicho enorme ao qual <u>houvessem cortado</u> as pernas.”\nII- “Um dia, quando você <u>estiver</u> completamente crescido, quando tiver bigodes, telefones,\npapéis importantes para preencher, alguns cabelos brancos [...]\"\nIII- “As oportunidades também devem ser oferecidas para que as pessoas pequenas <u>saibam</u> que\nseu nome é: — gente.”\nOs verbos ou locuções verbais em destaque nos trechos correspondem, respectivamente, a\nque tempos verbais do subjuntivo?",
     "options": [
       {
         "letter": "A",
@@ -17305,7 +17305,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Texto 2\nA LIBERDADE DE LER\nGabriel Perissé\nHá quem afirme a necessidade de lermos um livro de cada vez, de cabo a rabo, nunca, jamais\npulando páginas, e muito menos desistindo da leitura. Mais uma obrigatoriedade! Conheci\ninúmeros seguidores dessa lei que, empolgados marinheiros de primeira viagem, embarcaram num\nOs Buddenbrooks, de Thomas Mann, ou num A cidadela, de Saint-Exupéry, ou num Grande\nsertão: veredas, de Guimarães Rosa, ou num O jogo da amarelinha, de Júlio Cortázar, e trinta\npáginas depois já estavam encalhados para sempre, sem ânimo de ir em frente e sem coragem de\nabandonar o navio.\nNão é necessário levar uma leitura até o fim, embora se trate de clássico consagrado, ou até por\nisso mesmo, uma vez que os clássicos não são mero jornal (ler os clássicos é ler uma espécie de\njornal complexo e instigante), e mais vale ler e entender duas linhas de Dom Quixote a ler todas as\nnotícias de um ano sobre política ou economia. Também podemos pular as páginas do livro que\nfor, quantas quisermos, e ler o final do romance assim que se começar, enfim: liberdade.\nNinguém precisa ficar compromissado com um único livro. Podemos ler simultaneamente dois,\ntrês livros, com objetivos diferentes, em diferentes momentos do dia: ler uma biografia no ônibus,\npela manhã, prosseguir um pouco mais num livro de ensaios filosóficos após o almoço, e ir\ntraçando um romance em algum momento da noite.\nLer é uma arte, e, como toda arte, requer de seu artista sábia flexibilidade, capacidade de utilizar\nos meios de acordo com a finalidade primordial a ser alcançada. Leio para crescer, viver melhor,\nme ampliar, me expandir, me superar, me realizar.\nTal crescimento não exclui o esforço, constante, obstinado, até mesmo heroico, de concluir uma\nleitura exigente, para não dizer desagradável, mas que tenho consciência de ser basilar para minha\nformação, ou fundamental para realizar um trabalho acadêmico, realizar alguma tarefa, ou mesmo\nde participar de um concurso, de um vestibular com suas leituras obrigatórias. Ao contrário de um\nobstáculo paralisante, certos livros são desafio necessário para a continuidade de nosso\ndesenvolvimento como leitores, desafio do qual fugir seria realmente retroceder.\nAbrir mão de muitos livros (ou nem sequer conhecê-los...) faz parte de nossa vida de leitores, e ao\nmesmo tempo ter sempre à mão, trazer sempre para perto de nós um livro (ou mais de um) que de\nfato nos motive a pensar, a imaginar, a sentir, a desejar (a desejar utopias!), a pôr em ação nossa\ninterioridade. Um livro que nos acompanhe na sala de espera do dentista, na rodoviária, na estação\ndo metrô, no aeroporto... Livro que emprestaremos para alguém, livro que promoveremos como\npudermos, livro que fará parte de nossa biografia. O essencial é encontrá-lo e incorporá-lo à nossa\nvida.\nA arte de ler gera, com o tempo, uma segunda natureza, Ao nosso “eu” acrescentam-se e\nmesclam-se contribuições vivas de outras cabeças e outros corações. Assimilando e digerindo\nessas contribuições, estaremos nos autoeducando em vista de um aperfeiçoamento que, por sua\nvez, se refletirá em nossas ações, e, dentre elas, em tudo aquilo que dissermos e escrevermos.\nNa biblioteca particular de Guimarães Rosa, encontrou-se, conforme nos conta Suzi Frankl Sperber\nem seu livro Caos e cosmos, um exemplar de Devoirs, escrito pelo pensador francês Antoine D.\nSertillanges, com vários trechos sublinhados pelo escritor mineiro. Eis um deles: “O ser que\nrecebemos ao nascer não é definitivo; é embrionário, plástico”. Ora, lendo Grande sertão: veredas,\nvamos deparar com esta mesma ideia, ficcionalizada, retraduzida, reformulada: “Mire veja: o mais\nimportante e bonito, do mundo, é isto: que as pessoas não estão sempre iguais, ainda não foram\nterminadas - mas que elas vão sempre mudando. Afinam ou desafinam. Verdade maior.”\nA leitura daquele livro influenciou o autor mineiro de tal modo que uma das passagens que o\nimpressionou, e foi por ele grifada a fim de poder reencontrá-la e nela meditar, tornou-se conatural\nao escritor e aflorou espontaneamente (ou talvez nem tanto...) quando produzia seu próprio texto.\nO mesmo acontece conosco. Lendo, estamos apostando na construção de nós mesmos e, por\nconseguinte, também em nossa expressão verbal e escrita. Quem quiser melhorar seus textos\nprecisará humanizar-se, tornar mais lúcida sua visão de mundo, trabalhar a fonte daquilo que\nescreve - sua própria interioridade.\nPERISSE, Gabriel. Ler, pensar e escrever. São Paulo: Saraiva, 2011 (Texto adaptado)\nAnalise o trecho abaixo.\n“Ler é uma arte, e, como toda arte, requer de seu artista sabia flexibilidade, capacidade de utilizar\nos meios de acordo com a finalidade primordial a ser alcançada.” (\n\n4º§)"
+    "readingText": "Texto 2\n**A LIBERDADE DE LER**\nGabriel Perissé\nHá quem afirme a necessidade de lermos um livro de cada vez, de cabo a rabo, nunca, jamais\npulando páginas, e muito menos desistindo da leitura. Mais uma obrigatoriedade! Conheci\ninúmeros seguidores dessa lei que, empolgados marinheiros de primeira viagem, embarcaram num\nOs Buddenbrooks, de Thomas Mann, ou num A cidadela, de Saint-Exupéry, ou num Grande\nsertão: veredas, de Guimarães Rosa, ou num O jogo da amarelinha, de Júlio Cortázar, e trinta\npáginas depois já estavam encalhados para sempre, sem ânimo de ir em frente e sem coragem de\nabandonar o navio.\nNão é necessário levar uma leitura até o fim, embora se trate de clássico consagrado, ou até por\nisso mesmo, uma vez que os clássicos não são mero jornal (ler os clássicos é ler uma espécie de\njornal complexo e instigante), e mais vale ler e entender duas linhas de Dom Quixote a ler todas as\nnotícias de um ano sobre política ou economia. Também podemos pular as páginas do livro que\nfor, quantas quisermos, e ler o final do romance assim que se começar, enfim: liberdade.\nNinguém precisa ficar compromissado com um único livro. Podemos ler simultaneamente dois,\ntrês livros, com objetivos diferentes, em diferentes momentos do dia: ler uma biografia no ônibus,\npela manhã, prosseguir um pouco mais num livro de ensaios filosóficos após o almoço, e ir\ntraçando um romance em algum momento da noite.\nLer é uma arte, e, como toda arte, requer de seu artista sábia flexibilidade, capacidade de utilizar\nos meios de acordo com a finalidade primordial a ser alcançada. Leio para crescer, viver melhor,\nme ampliar, me expandir, me superar, me realizar.\nTal crescimento não exclui o esforço, constante, obstinado, até mesmo heroico, de concluir uma\nleitura exigente, para não dizer desagradável, mas que tenho consciência de ser basilar para minha\nformação, ou fundamental para realizar um trabalho acadêmico, realizar alguma tarefa, ou mesmo\nde participar de um concurso, de um vestibular com suas leituras obrigatórias. Ao contrário de um\nobstáculo paralisante, certos livros são desafio necessário para a continuidade de nosso\ndesenvolvimento como leitores, desafio do qual fugir seria realmente retroceder.\nAbrir mão de muitos livros (ou nem sequer conhecê-los...) faz parte de nossa vida de leitores, e ao\nmesmo tempo ter sempre à mão, trazer sempre para perto de nós um livro (ou mais de um) que de\nfato nos motive a pensar, a imaginar, a sentir, a desejar (a desejar utopias!), a pôr em ação nossa\ninterioridade. Um livro que nos acompanhe na sala de espera do dentista, na rodoviária, na estação\ndo metrô, no aeroporto... Livro que emprestaremos para alguém, livro que promoveremos como\npudermos, livro que fará parte de nossa biografia. O essencial é encontrá-lo e incorporá-lo à nossa\nvida.\nA arte de ler gera, com o tempo, uma segunda natureza, Ao nosso “eu” acrescentam-se e\nmesclam-se contribuições vivas de outras cabeças e outros corações. Assimilando e digerindo\nessas contribuições, estaremos nos autoeducando em vista de um aperfeiçoamento que, por sua\nvez, se refletirá em nossas ações, e, dentre elas, em tudo aquilo que dissermos e escrevermos.\nNa biblioteca particular de Guimarães Rosa, encontrou-se, conforme nos conta Suzi Frankl Sperber\nem seu livro Caos e cosmos, um exemplar de Devoirs, escrito pelo pensador francês Antoine D.\nSertillanges, com vários trechos sublinhados pelo escritor mineiro. Eis um deles: “O ser que\nrecebemos ao nascer não é definitivo; é embrionário, plástico”. Ora, lendo Grande sertão: veredas,\nvamos deparar com esta mesma ideia, ficcionalizada, retraduzida, reformulada: “Mire veja: o mais\nimportante e bonito, do mundo, é isto: que as pessoas não estão sempre iguais, ainda não foram\nterminadas - mas que elas vão sempre mudando. Afinam ou desafinam. Verdade maior.”\nA leitura daquele livro influenciou o autor mineiro de tal modo que uma das passagens que o\nimpressionou, e foi por ele grifada a fim de poder reencontrá-la e nela meditar, tornou-se conatural\nao escritor e aflorou espontaneamente (ou talvez nem tanto...) quando produzia seu próprio texto.\nO mesmo acontece conosco. Lendo, estamos apostando na construção de nós mesmos e, por\nconseguinte, também em nossa expressão verbal e escrita. Quem quiser melhorar seus textos\nprecisará humanizar-se, tornar mais lúcida sua visão de mundo, trabalhar a fonte daquilo que\nescreve - sua própria interioridade.\nPERISSE, Gabriel. Ler, pensar e escrever. São Paulo: Saraiva, 2011 (Texto adaptado)\nAnalise o trecho abaixo.\n“Ler é uma arte, e, como toda arte, requer de seu artista sabia flexibilidade, capacidade de utilizar\nos meios de acordo com a finalidade primordial a ser alcançada.” (\n\n4º§)"
   },
   {
     "id": "verbos-pdf_7-q21",
@@ -17353,7 +17353,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 22,
-    "statement": "No trecho \"O correr da vida embrulha tudo, a vida é assim: esquenta e esfria, aperta e daí afrouxa,\nsossega e depois desinquieta\", os verbos destacados indicam predominantemente uma ação:",
+    "statement": "No trecho \"O correr da vida embrulha tudo, a vida é assim: <u>esquenta</u> e <u>esfria,</u> <u>aperta</u> e daí <u>afrouxa,</u>\n<u>sossega</u> e depois <u>desinquieta\",</u> os verbos destacados indicam predominantemente uma ação:",
     "options": [
       {
         "letter": "A",
@@ -17503,33 +17503,33 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Então tirei da bolsa os dois mil cruzeiros e com horror de mim passei-os à mulher.”",
+        "text": "“Então tirei da bolsa os dois mil cruzeiros e com horror de mim <u>passei-os</u> à mulher.”",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“ Antes de terminar, o menino disse apontando depressa com o dedo [...]”",
+        "text": "“ Antes de terminar, o menino <u>disse</u> apontando depressa com o dedo [...]”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“— Precisa sim, cortei eu ofegante, empurrando-o para a frente.”",
+        "text": "“— Precisa sim, <u>cortei</u> eu ofegante, empurrando-o para a frente.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Uma tinha ido almoçar fora, a outra foi com a família para fora.”",
+        "text": "“Uma <u>tinha ido almoçar</u> fora, a outra foi com a família para fora.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“O que estivera eu pensando antes de encontrar o menino?”",
+        "text": "“O que estivera eu pensando antes de <u>encontrar</u> o menino?”",
         "correct": false
       }
     ],
     "correctLetter": "A",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "As caridades odiosas\nClarice Lispector\nFoi uma tarde de sensibilidade ou de suscetibilidade? Eu passava pela rua depressa, emaranhada\nnos meus pensamentos, como às vezes acontece. Foi quando meu vestido me reteve: alguma\ncoisa se enganchara na minha saia. Voltei-me e\nvi que se tratava de uma mão pequena e escura. Pertencia a um menino a que a sujeira e o\nsangue interno davam um tom quente de pele. O menino estava de pé no degrau da grande\nconfeitaria. Seus olhos, mais do que suas palavras meio engolidas, informavam-me de sua paciente\naflição. Paciente demais. Percebi vagamente um pedido, antes de compreender o seu sentido\nconcreto. Um pouco aturdida eu o olhava, ainda em dúvida se fora a mão da criança o que me\nceifara os pensamentos.\n— Um doce, moça, compre um doce para mim.\nAcordei finalmente. O que estivera eu pensando antes de encontrar o menino? O fato é que o\npedido deste pareceu cumular uma lacuna, dar uma resposta que podia servir para qualquer\npergunta, assim como uma grande chuva pode matar a sede de quem queria uns goles de água.\nSem olhar para os lados, por pudor talvez, sem querer espiar as mesas da confeitaria onde\npossivelmente algum conhecido tomava sorvete, entrei, fui ao balcão e disse com uma dureza que\nsó Deus sabe explicar: um doce para o menino.\nDe que tinha eu medo? Eu não olhava a criança, queria que a cena, humilhante para mim,\nterminasse logo. Perguntei-lhe: que doce você...\nAntes de terminar, o menino disse apontando depressa com o dedo: aquelezinho ali, com\nchocolate por cima. Por um instante perplexa, eu me recompus logo e ordenei, com aspereza, à\ncaixeira que o servisse.\n— Que outro doce você quer? perguntei ao menino escuro.\nEste, que mexendo as mãos e a boca ainda esperava com ansiedade pelo primeiro, interrompeu-se, olhou-me um instante e disse com delicadeza insuportável, mostrando os dentes: não precisa\nde outro não. Ele poupava a minha bondade.\n— Precisa sim, cortei eu ofegante, empurrando-o para a frente. O menino hesitou e disse: aquele\namarelo de ovo. Recebeu um doce em cada mão, levantando as duas acima da cabeça, com medo\ntalvez de apertá-los. Mesmo os doces estavam tão acima do menino escuro. E foi sem olhar para\nmim que ele, mais do que foi embora, fugiu. A caixeirinha olhava tudo:\n— Afinal uma alma caridosa apareceu. Esse menino estava nesta porta há mais de uma hora,\npuxando todas as pessoas que passavam, mas ninguém quis dar.\nFui embora, com o rosto corado de vergonha. De vergonha mesmo? Era inútil querer voltar aos\npensamentos anteriores. Eu estava cheia de um sentimento de amor, gratidão, revolta e vergonha.\nMas, como se costuma dizer, o Sol parecia brilhar com mais força. Eu tivera a oportunidade de... E\npara isso fora necessário um menino magro e escuro... E para isso fora necessário que outros não\nlhe tivessem dado um doce.\nE as pessoas que tomavam sorvete? Agora, o que eu queria saber com autocrueldade era o\nseguinte: temera que os outros me vissem ou que os outros não me vissem? O fato é que, quando\natravessei a rua, o que teria sido piedade já se estrangulara sob outros sentimentos. E, agora\nsozinha, meus pensamentos voltaram lentamente a ser os anteriores, só que inúteis. Em vez de\ntomar um táxi, tomei um ônibus. Sentei-me.\n— Os embrulhos estão incomodando?\nEra uma mulher com uma criança no colo e, aos pés, vários embrulhos de jornal. Ah não, disse-lhes\neu. “Dá-dádá”, disse a menina no colo estendendo a mão e agarrando a manga de meu vestido.\n“Ela gostou da senhora”, disse a mulher rindo. Eu também sorri.\n— Estou desde manhã na rua, informou a mulher. Fui procurar umas amizades que não estavam\nem casa. Uma tinha ido almoçar fora, a outra foi com a família para fora.\n— E a menina?\n— É menino, corrigiu ela, está com roupa dada de menina, mas é menino. O menino comeu por aí\nmesmo. Eu é que não almocei até agora.\n— E seu neto?\n— Filho, é filho, tenho mais três. Olhe só como ele está gostando da senhora... Brinca com a moça,\nmeu filho! Imagine a senhora que moramos numa passagem de corredor e pagamos uma fortuna\npor mês. O aluguel passado não pagamos ainda. E este mês está vencendo. Ele quer despejar.\nMas se Deus quiser, ainda arranjarei os dois mil cruzeiros que faltam. Já tenho o resto. Mas ele não\nquer aceitar. Ele pensa que se receber uma parte eu fico descansada dizendo: alguma coisa já\npaguei e não penso em pagar o resto.\nComo a mulher velha estava ciente dos caminhos da desconfiança. Sabia de tudo, só que tinha de\nagir como se não soubesse — raciocínio de grande banqueiro. Raciocinava como raciocinaria um\nsenhorio desconfiado, e não se irritava. Mas de repente fiquei fria: tinha entendido. A mulher\ncontinuava a falar. Então tirei da bolsa os dois mil cruzeiros e com horror de mim passei-os à\nmulher. Esta não hesitou um segundo, pegou-os, meteu-os num bolso invisível entre o que me\npareceram inúmeras saias, quase derrubando na sua rapidez o menino-menina.\n— Deus nosso Senhor lhe favoreça, disse de repente com o automatismo de uma mendiga.\nVermelha, continuei sentada de braços cruzados. A mulher também continuava ao lado.\nSó que não nos falávamos mais. Ela era mais digna do que eu havia pensado: conseguido o\ndinheiro, nada mais quis me contar. E nem eu pude mais fazer festas ao menino vestido de menina.\nPois qualquer agrado seria agora de meu direito: eu o havia pago de antemão.\nUm laço de mal-estar estabelecera-se agora entre nós duas, entre a mulher e eu, quero dizer.\n— Deixe a moça em paz, Zezinho, disse a mulher.\nEvitávamos encostar os cotovelos. Nada mais havia a dizer, e a viagem era longa. Perturbada,\nolhei-a de través: velha e suja, como se dizem das coisas. E a mulher sabia que eu a olhara.\nEntão uma ponta de raiva nasceu entre nós duas. Só o pequeno ser híbrido, radiante, enchia a\ntarde com o seu suave martelar: “dá dá dá”.\nLispector, Clarice. Clarice na cabeceira: crônicas. Rio de Janeiro: Rocco, 2010.\n“Seus olhos, mais do que suas palavras meio engolidas, informavam-me de sua paciente aflição.”"
+    "readingText": "As caridades odiosas\nClarice Lispector\nFoi uma tarde de sensibilidade ou de suscetibilidade? Eu passava pela rua depressa, emaranhada\nnos meus pensamentos, como às vezes acontece. Foi quando meu vestido me reteve: alguma\ncoisa se enganchara na minha saia. Voltei-me e\nvi que se tratava de uma mão pequena e escura. Pertencia a um menino a que a sujeira e o\nsangue interno davam um tom quente de pele. O menino estava de pé no degrau da grande\nconfeitaria. Seus olhos, mais do que suas palavras meio engolidas, informavam-me de sua paciente\naflição. Paciente demais. Percebi vagamente um pedido, antes de compreender o seu sentido\nconcreto. Um pouco aturdida eu o olhava, ainda em dúvida se fora a mão da criança o que me\nceifara os pensamentos.\n— Um doce, moça, compre um doce para mim.\nAcordei finalmente. O que estivera eu pensando antes de encontrar o menino? O fato é que o\npedido deste pareceu cumular uma lacuna, dar uma resposta que podia servir para qualquer\npergunta, assim como uma grande chuva pode matar a sede de quem queria uns goles de água.\nSem olhar para os lados, por pudor talvez, sem querer espiar as mesas da confeitaria onde\npossivelmente algum conhecido tomava sorvete, entrei, fui ao balcão e disse com uma dureza que\nsó Deus sabe explicar: um doce para o menino.\nDe que tinha eu medo? Eu não olhava a criança, queria que a cena, humilhante para mim,\nterminasse logo. Perguntei-lhe: que doce você...\nAntes de terminar, o menino disse apontando depressa com o dedo: aquelezinho ali, com\nchocolate por cima. Por um instante perplexa, eu me recompus logo e ordenei, com aspereza, à\ncaixeira que o servisse.\n— Que outro doce você quer? perguntei ao menino escuro.\nEste, que mexendo as mãos e a boca ainda esperava com ansiedade pelo primeiro, interrompeu-se, olhou-me um instante e disse com delicadeza insuportável, mostrando os dentes: não precisa\nde outro não. Ele poupava a minha bondade.\n— Precisa sim, cortei eu ofegante, empurrando-o para a frente. O menino hesitou e disse: aquele\namarelo de ovo. Recebeu um doce em cada mão, levantando as duas acima da cabeça, com medo\ntalvez de apertá-los. Mesmo os doces estavam tão acima do menino escuro. E foi sem olhar para\nmim que ele, mais do que foi embora, fugiu. A caixeirinha olhava tudo:\n— Afinal uma alma caridosa apareceu. Esse menino estava nesta porta há mais de uma hora,\npuxando todas as pessoas que passavam, mas ninguém quis dar.\nFui embora, com o rosto corado de vergonha. De vergonha mesmo? Era inútil querer voltar aos\npensamentos anteriores. Eu estava cheia de um sentimento de amor, gratidão, revolta e vergonha.\nMas, como se costuma dizer, o Sol parecia brilhar com mais força. Eu tivera a oportunidade de... E\npara isso fora necessário um menino magro e escuro... E para isso fora necessário que outros não\nlhe tivessem dado um doce.\nE as pessoas que tomavam sorvete? Agora, o que eu queria saber com autocrueldade era o\nseguinte: temera que os outros me vissem ou que os outros não me vissem? O fato é que, quando\natravessei a rua, o que teria sido piedade já se estrangulara sob outros sentimentos. E, agora\nsozinha, meus pensamentos voltaram lentamente a ser os anteriores, só que inúteis. Em vez de\ntomar um táxi, tomei um ônibus. Sentei-me.\n— Os embrulhos estão incomodando?\nEra uma mulher com uma criança no colo e, aos pés, vários embrulhos de jornal. Ah não, disse-lhes\neu. “Dá-dádá”, disse a menina no colo estendendo a mão e agarrando a manga de meu vestido.\n“Ela gostou da senhora”, disse a mulher rindo. Eu também sorri.\n— Estou desde manhã na rua, informou a mulher. Fui procurar umas amizades que não estavam\nem casa. Uma tinha ido almoçar fora, a outra foi com a família para fora.\n— E a menina?\n— É menino, corrigiu ela, está com roupa dada de menina, mas é menino. O menino comeu por aí\nmesmo. Eu é que não almocei até agora.\n— E seu neto?\n— Filho, é filho, tenho mais três. Olhe só como ele está gostando da senhora... Brinca com a moça,\nmeu filho! Imagine a senhora que moramos numa passagem de corredor e pagamos uma fortuna\npor mês. O aluguel passado não pagamos ainda. E este mês está vencendo. Ele quer despejar.\nMas se Deus quiser, ainda arranjarei os dois mil cruzeiros que faltam. Já tenho o resto. Mas ele não\nquer aceitar. Ele pensa que se receber uma parte eu fico descansada dizendo: alguma coisa já\npaguei e não penso em pagar o resto.\nComo a mulher velha estava ciente dos caminhos da desconfiança. Sabia de tudo, só que tinha de\nagir como se não soubesse — raciocínio de grande banqueiro. Raciocinava como raciocinaria um\nsenhorio desconfiado, e não se irritava. Mas de repente fiquei fria: tinha entendido. A mulher\ncontinuava a falar. Então tirei da bolsa os dois mil cruzeiros e com horror de mim passei-os à\nmulher. Esta não hesitou um segundo, pegou-os, meteu-os num bolso invisível entre o que me\npareceram inúmeras saias, quase derrubando na sua rapidez o menino-menina.\n— Deus nosso Senhor lhe favoreça, disse de repente com o automatismo de uma mendiga.\nVermelha, continuei sentada de braços cruzados. A mulher também continuava ao lado.\nSó que não nos falávamos mais. Ela era mais digna do que eu havia pensado: conseguido o\ndinheiro, nada mais quis me contar. E nem eu pude mais fazer festas ao menino vestido de menina.\nPois qualquer agrado seria agora de meu direito: eu o havia pago de antemão.\nUm laço de mal-estar estabelecera-se agora entre nós duas, entre a mulher e eu, quero dizer.\n— Deixe a moça em paz, Zezinho, disse a mulher.\nEvitávamos encostar os cotovelos. Nada mais havia a dizer, e a viagem era longa. Perturbada,\nolhei-a de través: velha e suja, como se dizem das coisas. E a mulher sabia que eu a olhara.\nEntão uma ponta de raiva nasceu entre nós duas. Só o pequeno ser híbrido, radiante, enchia a\ntarde com o seu suave martelar: “dá dá dá”.\nLispector, Clarice. Clarice na cabeceira: crônicas. Rio de Janeiro: Rocco, 2010.\n“Seus olhos, mais do que suas palavras meio engolidas, <u>informavam-me</u> de sua paciente aflição.”"
   },
   {
     "id": "verbos-pdf_7-q27",
@@ -17538,7 +17538,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 27,
-    "statement": "Em “Mas deixa que eu lhe diga: sua tristeza não vem da solidão.”, a forma verbal está no:",
+    "statement": "Em “Mas deixa que eu lhe <u>diga:</u> sua tristeza não vem da solidão.”, a forma verbal está no:",
     "options": [
       {
         "letter": "A",
@@ -17723,7 +17723,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 32,
-    "statement": "Em qual das alternativas a seguir há voz verbal igual à encontrada em “Mudam-se os planos\nhabituais do conhecimento como numa acrobacia aérea.”",
+    "statement": "Em qual das alternativas a seguir há voz verbal igual à encontrada em <u>“Mudam-se os planos</u>\nhabituais do conhecimento como numa acrobacia aérea.”",
     "options": [
       {
         "letter": "A",
@@ -17825,7 +17825,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "BONS DIAS!\nHão de reconhecer que sou bem-criado. Podia entrar aqui, chapéu à banda, e ir logo dizendo o\nque me parecesse; depois ia-me embora, para voltar na outra semana. Mas, não senhor; chego à\nporta, e o meu primeiro cuidado é dar-lhe os bons dias. Agora, se o leitor não me disser a mesma\ncousa, em resposta, é porque é um grande malcriado, um grosseirão de borla e capelo; ficando,\ntodavia, entendido que há leitor e leitor, e que eu, explicando-me com tão nobre franqueza, não\nme refiro ao leitor, que está agora com este papel na mão, mas ao seu vizinho. Ora bem!\nFeito esse cumprimento, que não é do estilo, mas é honesto declaro que não apresento programa.\nDepois de um recente discurso proferido no Beethoven, acho perigoso que uma pessoa diga\nclaramente o que é que vai fazer; o melhor é fazer calado. Nisto pareço-me com o príncipe\n(sempre é bom parecer-se a gente com príncipes, em alguma cousa, dá certa dignidade), e faz\nlembrar um sujeito muito alto e louro parecidíssimo com o imperador, que há cerca de trinta anos\nia a todas as festas da Capela Imperial, pour étonner de bourgeois; os fiéis levavam a olhar para um\ne para outro, e a compará-los, admirados, e ele teso, grave, movendo a cabeça à maneira de Sua\nMajestade. São gostos de Bismark. O príncipe de Bismark tem feito tudo sem programa público; a\núnica orelha que o ouviu, foi a do finado imperador, — e talvez só a direita, com ordem de o não\nrefletir à esquerda. O parlamento e o país viram só o resto\nDeus fez programa, é verdade (\"E Deus disse: Façamos o homem, à nossa imagem e semelhança,\npara que presida\" etc. Gênesis, I, 26): mas é preciso ler esse programa com muita cautela.\nRigorosamente, era um modo de persuadir ao homem a alta linhagem de seu nariz. Sem aquele\ntexto, nunca o homem atribuiria ao Criador, nem a sua gaforinha, nem a sua fraude. É certo que a\nfraude, e, a rigor, a gaforinha são obras do diabo, segundo as melhores interpretações; mas não é\nmenos certo que essa opinião é só dos homens bons; os maus creem-se filhos do céu — tudo por\ncausa do versículo da Escritura.\nPortanto, bico calado. No mais é o que se está vendo; cá virei uma vez por semana com o meu\nchapéu na mão, e os bons dias na boca. Se lhes disser desde já, que não tenho papas na língua,\nnão me tomem por homem despachado, que vem dizer coisas amargas aos outros. Não, senhor,\nnão tenho papas na língua, eé para vir a tê-las que escrevo. Se as tivesse, engolia-as e estava\nacabado. Mas aqui está o que é, eu sou um pobre relojoeiro, que, cansado de ver que os relógios\ndeste mundo não marcam a mesma hora, descri do ofício. A única explicação dos relógios era\nserem igualzinhos, sem discrepância: desde que discrepam, fica-se sem saber nada, porque tão\ncerto pode ser o meu relógio, como o do meu barbeiro.\nUm exemplo. O Partido, Liberal, segundo li, estava encasacado e pronto para sair com o relógio na\nmão, porque a hora pingava. Faltava-lhe só o chapéu, que seria o chapéu Dantas, ou o chapéu\nSaraiva (ambos da chapelaria Aristocrata): era só pô-lo na cabeça, e sair. Nisto passa o carro do\npaço com outra pessoa, e ele descobre que ou o seu relógio está adiantado, ou o de Sua Alteza é\nque se atrasara. Quem os porá de acordo?\nFoi por essas e outras que descri do ofício; e. na alternativa de ir à fava ou ser escritor, preferi o\nsegundo alvitre; é mais fácil e vexa menos. Aqui me terão, portanto, com certeza até à chegada do\nBendegó, mas provavelmente ate à escolha do Sr. Guaí, e talvez mais tarde. Não digo mais nada\npara os não aborrecer, e porque já me chamaram para o almoço.\nTalvez o que aí fica, saia muito curtinho depois de impresso. Como eu não tenho hábito de\nperiódicos, não posso calcular entre a letra de mão e a letra de forma. Se aqui estivesse o meu\namigo Fulano (não ponho o nome, para que cada um tome para si esta lembrança delicada), diria\nlogo que ele só pode calcular com letras de câmbio —trocadilho que fede como o diabo. Já falei\ntrês vezes no diabo em tão poucas linhas, e mais esta, quatro; é demais.\nBoas noites\nAtente-se para o trecho a seguir, com o verbo em destaque.\nHão de reconhecer que sou bem-criado. Podia entrar aqui, chapéu à banda, e ir logo dizendo o\nque me parecesse; depois ia-me embora, para voltar na outra semana."
+    "readingText": "BONS DIAS!\n<u>Hão de reconhecer</u> que sou bem-criado. Podia entrar aqui, chapéu à banda, e ir logo dizendo o\nque me parecesse; depois ia-me embora, para voltar na outra semana. Mas, não senhor; chego à\nporta, e o meu primeiro cuidado é dar-lhe os bons dias. Agora, se o leitor não me disser a mesma\ncousa, em resposta, é porque é um grande malcriado, um grosseirão de borla e capelo; ficando,\ntodavia, entendido que há leitor e leitor, e que eu, explicando-me com tão nobre franqueza, não\nme refiro ao leitor, que está agora com este papel na mão, mas ao seu vizinho. Ora bem!\nFeito esse cumprimento, que não é do estilo, mas é honesto declaro que não apresento programa.\nDepois de um recente discurso proferido no Beethoven, acho perigoso que uma pessoa diga\nclaramente o que é que vai fazer; o melhor é fazer calado. Nisto pareço-me com o príncipe\n(sempre é bom parecer-se a gente com príncipes, em alguma cousa, dá certa dignidade), e faz\nlembrar um sujeito muito alto e louro parecidíssimo com o imperador, que há cerca de trinta anos\nia a todas as festas da Capela Imperial, pour étonner de bourgeois; os fiéis levavam a olhar para um\ne para outro, e a compará-los, admirados, e ele teso, grave, movendo a cabeça à maneira de Sua\nMajestade. São gostos de Bismark. O príncipe de Bismark tem feito tudo sem programa público; a\núnica orelha que o ouviu, foi a do finado imperador, — e talvez só a direita, com ordem de o não\nrefletir à esquerda. O parlamento e o país viram só o resto\nDeus fez programa, é verdade (\"E Deus disse: Façamos o homem, à nossa imagem e semelhança,\npara que presida\" etc. Gênesis, I, 26): mas é preciso ler esse programa com muita cautela.\nRigorosamente, era um modo de persuadir ao homem a alta linhagem de seu nariz. Sem aquele\ntexto, nunca o homem atribuiria ao Criador, nem a sua gaforinha, nem a sua fraude. É certo que a\nfraude, e, a rigor, a gaforinha são obras do diabo, segundo as melhores interpretações; mas não é\nmenos certo que essa opinião é só dos homens bons; os maus creem-se filhos do céu — tudo por\ncausa do versículo da Escritura.\nPortanto, bico calado. No mais é o que se está vendo; cá virei uma vez por semana com o meu\nchapéu na mão, e os bons dias na boca. Se lhes disser desde já, que não tenho papas na língua,\nnão me tomem por homem despachado, que vem dizer coisas amargas aos outros. Não, senhor,\nnão tenho papas na língua, eé para vir a tê-las que escrevo. Se as tivesse, engolia-as e estava\nacabado. Mas aqui está o que é, eu sou um pobre relojoeiro, que, cansado de ver que os relógios\ndeste mundo não marcam a mesma hora, descri do ofício. A única explicação dos relógios era\nserem igualzinhos, sem discrepância: desde que discrepam, fica-se sem saber nada, porque tão\ncerto pode ser o meu relógio, como o do meu barbeiro.\nUm exemplo. O Partido, Liberal, segundo li, estava encasacado e pronto para sair com o relógio na\nmão, porque a hora pingava. Faltava-lhe só o chapéu, que seria o chapéu Dantas, ou o chapéu\nSaraiva (ambos da chapelaria Aristocrata): era só pô-lo na cabeça, e sair. Nisto passa o carro do\npaço com outra pessoa, e ele descobre que ou o seu relógio está adiantado, ou o de Sua Alteza é\nque se atrasara. Quem os porá de acordo?\nFoi por essas e outras que descri do ofício; e. na alternativa de ir à fava ou ser escritor, preferi o\nsegundo alvitre; é mais fácil e vexa menos. Aqui me terão, portanto, com certeza até à chegada do\nBendegó, mas provavelmente ate à escolha do Sr. Guaí, e talvez mais tarde. Não digo mais nada\npara os não aborrecer, e porque já me chamaram para o almoço.\nTalvez o que aí fica, saia muito curtinho depois de impresso. Como eu não tenho hábito de\nperiódicos, não posso calcular entre a letra de mão e a letra de forma. Se aqui estivesse o meu\namigo Fulano (não ponho o nome, para que cada um tome para si esta lembrança delicada), diria\nlogo que ele só pode calcular com letras de câmbio —trocadilho que fede como o diabo. Já falei\ntrês vezes no diabo em tão poucas linhas, e mais esta, quatro; é demais.\nBoas noites\nAtente-se para o trecho a seguir, com o verbo em destaque.\nHão de reconhecer que sou bem-criado. Podia entrar aqui, chapéu à banda, e ir logo dizendo o\nque me parecesse; depois ia-me embora, para voltar na outra semana."
   },
   {
     "id": "verbos-pdf_7-q35",
@@ -17898,7 +17898,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "E",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "[..] os circunstantes bem-educados se sentiriam na obrigação de desviar a vista e mudar de\nassunto."
+    "readingText": "[..] os circunstantes bem-educados se sentiriam na obrigação de desviar <u>a vista</u> e mudar de\nassunto."
   },
   {
     "id": "verbos-pdf_7-q37",
@@ -17987,27 +17987,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Os bichos parecem estar ali para nos lembrar que, se ao longo de milhares de anos, eles puderam viver sem os homens, nós (...)”",
+        "text": "“Os bichos <u>parecem estar</u> ali para nos lembrar que, se ao longo de milhares de anos, eles puderam viver sem os homens, nós (...)”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“Animal filosófico, tranquilo, independente, senhor de seus hábitos, pode tornar-se um amigo, nunca um escravo.”",
+        "text": "“Animal filosófico, tranquilo, independente, senhor de seus hábitos, <u>pode tornar-se</u> um amigo, nunca um escravo.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Brinca por saber que o felino permanece como uma espécie de ‘prisioneiro selvagem’.”",
+        "text": "<u>“Brinca por saber</u> que o felino permanece como uma espécie de ‘prisioneiro selvagem’.”",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "“(...) os americanos não podem circular sem estar munidos de sacos para recolher os dejetos do melhor amigo, cujas infrações, aliás, montam a US$ 100.”",
+        "text": "“(...) os americanos não podem circular sem <u>estar munidos</u> de sacos para recolher os dejetos do melhor amigo, cujas infrações, aliás, montam a US$ 100.”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Verdadeiros lembretes para a solidão, o abandono e a insegurança em que vivem alguns dos cidadãos das metrópoles, podiam usar sua simpática imagem (...)”",
+        "text": "“Verdadeiros lembretes para a solidão, o abandono e a insegurança em que vivem alguns dos cidadãos das metrópoles, <u>podiam usar</u> sua simpática imagem (...)” ",
         "correct": false
       }
     ],
@@ -18022,7 +18022,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 40,
-    "statement": "No trecho a seguir, a construção verbal em destaque deve ser classificada de que maneira, quanto\nao tempo?\nHão de me perguntar por que tomo conta do mundo: é que nasci assim, influmbida.",
+    "statement": "No trecho a seguir, a construção verbal em destaque deve ser classificada de que maneira, quanto\nao tempo?\n<u>Hão de me perguntar</u> por que tomo conta do mundo: é que nasci assim, influmbida.",
     "options": [
       {
         "letter": "A",
@@ -18215,31 +18215,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 45,
-    "statement": "Assinale a opção em que o verbo está flexionado nos mesmos tempo e modo do destacado em\n“[...]Lá, nos deparamos com um dilema: como surgiu a primeira entidade viva, se nada vivo **havia**\npara gerá-la?”",
+    "statement": "Assinale a opção em que o verbo está flexionado nos mesmos tempo e modo do destacado em\n“[...]Lá, nos deparamos com um dilema: como surgiu a primeira entidade viva, se nada vivo <u>havia</u>\npara gerá-la?”",
     "options": [
       {
         "letter": "A",
-        "text": "Ele antevira o desastre.",
+        "text": "Ele <u>antevira</u> o desastre.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Estavam muito perplexos com a situação de xenofobia.",
+        "text": "<u>Estavam</u> muito perplexos com a situação de xenofobia.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Gostaria de que o mundo fosse menos desigual.",
+        "text": "Gostaria de que o mundo <u>fosse</u> menos desigual.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Não podem simplesmente ignorar.",
+        "text": "Não <u>podem</u> simplesmente ignorar.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Ainda foram capazes de maltratá-lo.",
+        "text": "Ainda <u>foram</u> capazes de maltratá-lo.",
         "correct": false
       }
     ],
@@ -18360,7 +18360,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Texto II\nLIVROS-REFÚGIO: UM CONVITE A SER\nCarolina Walliter\nDas poucas lembranças nítidas que tenho da minha infância, uma delas é a estante de livros daqui\nde casa, repleta de lombadas coloridas que tentam se manter enfileiradas, até que um ou outro\ntítulo rebelde se desgarra, jogado em cima dos outros ou enfiado forçosamente entre um “tijolaço”\ne outro. Eu mal sabia ler e já me hipnotizava por essa visão, como se pudesse ouvir o burburinho\ndos títulos, me chamando para conhecer suas histórias.\nEssa recordação sempre aqueceu meu coração e me é definidora: eu sou uma pessoa de livros,\nsempre fui e serei. Pois vejo neles meu meio genuíno de me expressar para o mundo e conhecê-lo\nmelhor: a escrita. Não vou mentir, sempre achei essa coisa de “gostar de ler” um baita elogio e\nfonte de orgulho próprio, mas não somente pelos motivos que vocês estão pensando – pagar de\ninteligente (porque né, quem nunca?!) –, mas por outros, muito mais especiais. Porque, na boa,\nlivros são e vão muito além de um símbolo socialmente construído de intelecto.\nA primeira coisa que aprendi que livros podem ser é refúgio. Na adolescência, eu me envolvi\nmuito com os livros do Harry Potter: cresci com os personagens, frequentei as aulas de Hogwarts,\nvibrei com as partidas de quadribol (nível “pulando na cama enquanto lê e comemora”). Através da\nHermione Granger, eu construí minha identidade infanto-juvenil, aprendi a entender melhor minha\nrelação com meus melhores amigos e com meus nem tão amigos. Eu realmente encarava a leitura\nda série como usar um par de óculos mágico que me permitisse enxergar melhor a minha própria\nrealidade adolescente e ficar mais em paz, menos confusa, mais confiante. Pegar nos livros,\ncheirar as páginas me fazia sentir protegida, compreendida e no meu lugar.\nDo livro-refúgio, logo em seguida descobri que o livro é casa. É aquele cantinho aconchegante\nque a sua mente pode repousar e simplesmente ser do jeito que ela é, com todas as suas dúvidas,\nmedos e receios, sem travas e filtros. E por permitirem tamanho conforto, senti que os livros\ntambém são catarse: ler é concordar ou discordar agressivamente, refletir, ponderar, se\ntransformar, perceber que mudou de ideia, ficar insegura por ter mudado de ideia, mas se\nacostumar com essa\nnova linha de raciocínio conforme a história “assenta” em você.\nE nessa coisa de me revoltar em leituras silenciosas (ou barulhentas, já que eu sempre gostei de ler\nem voz alta), me dei conta de que os livros também são o buraco na fechadura, onde\nbisbilhotamos, curiosas, o que passa no mundo do autor, como ele enxerga a própria realidade,\nseja ela distante ou próxima a nossa. Mas eles também são espelhos, inteiros ou rachados,\ndepende de quem e quando os lê. Eles refletem e trazem à tona muito do que somos, do que\nqueremos ser e\ndo que negamos ser, consciente ou inconscientemente.\nEu fui me apercebendo dessas coisas todas que os livros são em uma onda de autoconhecimento,\nsabe? E talvez o que livros sejam, mais que tudo, é encontro. Seu consigo, teu com outros. É por\nisso tudo que nós acabamos cultivando relações íntimas com eles: algumas de nós os deixamos\nintocáveis, não queremos nem abri-los muito para não perderem o viço de novos. Porém, em um\nlampejo de mudança, decidimos usar e abusar daquelas páginas, rabiscando, desenhando,\ndestacando passagens, como se fossem recados ao nosso futuro eu, que daqui a alguns anos, se\nreencontrará naquelas páginas.\nEu gosto mesmo é do livro que deixa claro para o mundo que é rodado, sabe? Éo livro que mais\nencerra histórias, não apenas aquela impressa em suas páginas, mas aquelas de seus leitores,\nacumuladas em pontinhas de páginas dobradas, manchas de café, borrões de lágrimas. Éo livro\nque ultrapassou seu mero propósito de entreter e convidou o leitor a ser.\n(Disponível em <http://www.revistacapitolina.com.br/livros-refugio-um-convite-a-ser/> Acesso e\n24 abr. 2021)\nLeia: “Porém, em um lampejo de mudança, decidimos usar e abusar daquelas páginas, rabiscando,\ndesenhando, destacando passagens, como se fossem recados ao nosso futuro eu, que daqui a\nalguns anos, se reencontrará naquelas páginas”"
+    "readingText": "Texto II\nLIVROS-REFÚGIO: UM CONVITE A SER\nCarolina Walliter\nDas poucas lembranças nítidas que tenho da minha infância, uma delas é a estante de livros daqui\nde casa, repleta de lombadas coloridas que tentam se manter enfileiradas, até que um ou outro\ntítulo rebelde se desgarra, jogado em cima dos outros ou enfiado forçosamente entre um “tijolaço”\ne outro. Eu mal sabia ler e já me hipnotizava por essa visão, como se pudesse ouvir o burburinho\ndos títulos, me chamando para conhecer suas histórias.\nEssa recordação sempre aqueceu meu coração e me é definidora: eu sou uma pessoa de livros,\nsempre fui e serei. Pois vejo neles meu meio genuíno de me expressar para o mundo e conhecê-lo\nmelhor: a escrita. Não vou mentir, sempre achei essa coisa de “gostar de ler” um baita elogio e\nfonte de orgulho próprio, mas não somente pelos motivos que vocês estão pensando – pagar de\ninteligente (porque né, quem nunca?!) –, mas por outros, muito mais especiais. Porque, na boa,\nlivros são e vão muito além de um símbolo socialmente construído de intelecto.\nA primeira coisa que aprendi que livros podem ser é refúgio. Na adolescência, eu me envolvi\nmuito com os livros do Harry Potter: cresci com os personagens, frequentei as aulas de Hogwarts,\nvibrei com as partidas de quadribol (nível “pulando na cama enquanto lê e comemora”). Através da\nHermione Granger, eu construí minha identidade infanto-juvenil, aprendi a entender melhor minha\nrelação com meus melhores amigos e com meus nem tão amigos. Eu realmente encarava a leitura\nda série como usar um par de óculos mágico que me permitisse enxergar melhor a minha própria\nrealidade adolescente e ficar mais em paz, menos confusa, mais confiante. Pegar nos livros,\ncheirar as páginas me fazia sentir protegida, compreendida e no meu lugar.\nDo livro-refúgio, logo em seguida descobri que o livro é casa. É aquele cantinho aconchegante\nque a sua mente pode repousar e simplesmente ser do jeito que ela é, com todas as suas dúvidas,\nmedos e receios, sem travas e filtros. E por permitirem tamanho conforto, senti que os livros\ntambém são catarse: ler é concordar ou discordar agressivamente, refletir, ponderar, se\ntransformar, perceber que mudou de ideia, ficar insegura por ter mudado de ideia, mas se\nacostumar com essa\nnova linha de raciocínio conforme a história “assenta” em você.\nE nessa coisa de me revoltar em leituras silenciosas (ou barulhentas, já que eu sempre gostei de ler\nem voz alta), me dei conta de que os livros também são o buraco na fechadura, onde\nbisbilhotamos, curiosas, o que passa no mundo do autor, como ele enxerga a própria realidade,\nseja ela distante ou próxima a nossa. Mas eles também são espelhos, inteiros ou rachados,\ndepende de quem e quando os lê. Eles refletem e trazem à tona muito do que somos, do que\nqueremos ser e\ndo que negamos ser, consciente ou inconscientemente.\nEu fui me apercebendo dessas coisas todas que os livros são em uma onda de autoconhecimento,\nsabe? E talvez o que livros sejam, mais que tudo, é encontro. Seu consigo, teu com outros. É por\nisso tudo que nós acabamos cultivando relações íntimas com eles: algumas de nós os deixamos\nintocáveis, não queremos nem abri-los muito para não perderem o viço de novos. Porém, em um\nlampejo de mudança, decidimos usar e abusar daquelas páginas, rabiscando, desenhando,\ndestacando passagens, como se fossem recados ao nosso futuro eu, que daqui a alguns anos, se\nreencontrará naquelas páginas.\nEu gosto mesmo é do livro que deixa claro para o mundo que é rodado, sabe? Éo livro que mais\nencerra histórias, não apenas aquela impressa em suas páginas, mas aquelas de seus leitores,\nacumuladas em pontinhas de páginas dobradas, manchas de café, borrões de lágrimas. Éo livro\nque ultrapassou seu mero propósito de entreter e convidou o leitor a ser.\n(Disponível em <http://www.revistacapitolina.com.br/livros-refugio-um-convite-a-ser/> Acesso e\n24 abr. 2021)\nLeia: “Porém, em um lampejo de mudança, decidimos usar e abusar daquelas páginas, rabiscando,\ndesenhando, destacando passagens, como se fossem recados ao nosso futuro eu, que daqui a\nalguns anos, se <u>reencontrará</u> naquelas páginas”"
   },
   {
     "id": "verbos-pdf_7-q49",
@@ -18408,7 +18408,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 50,
-    "statement": "Leia: “E eu, que já escrevia pequenos contos, dos 13 aos 14 anos fui germinada por Herman Hesse\ne comecei a escrever um longo conto imitando-o: a viagem interior me fascinava.”\nA construção verbal em destaque, se escrita na voz ativa, poderia ser substituída por um sinônimo,\nprovocaria a seguinte reescrita:",
+    "statement": "Leia: “E eu, que já escrevia pequenos contos, dos 13 aos 14 anos <u>fui germinada</u> por Herman Hesse\ne comecei a escrever um longo conto imitando-o: a viagem interior me fascinava.”\nA construção verbal em destaque, se escrita na voz ativa, poderia ser substituída por um sinônimo,\nprovocaria a seguinte reescrita:",
     "options": [
       {
         "letter": "A",
@@ -18642,7 +18642,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 56,
-    "statement": "Assinale a opção a seguir em que a voz verbal seja a mesma da encontrada no trecho apresentado.\nNão há, sobretudo, esse amor à tarefa bem-feita, que se pode manifestar até mesmo num\nanúncio de besta sumida.",
+    "statement": "Assinale a opção a seguir em que a voz verbal seja a mesma da encontrada no trecho apresentado.\nNão há, sobretudo, esse amor à tarefa bem-feita, <u>que se pode manifestar até mesmo num</u>\nanúncio de besta sumida.",
     "options": [
       {
         "letter": "A",
@@ -18838,27 +18838,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Desde sábado encolhera-se num canto da cozinha",
+        "text": "Desde sábado encolhera-<u>se</u> num canto da cozinha",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "O dono da casa, lembrando-se da dupla necessidade de fazer esporadicamente algum esporte e de almoçar (...)",
+        "text": "O dono da casa, lembrando-<u>se</u> da dupla necessidade de fazer esporadicamente algum esporte e de almoçar (...)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "A perseguição tornou-se mais intensa.",
+        "text": "A perseguição tornou-<u>se</u> mais intensa.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Se você mandar matar esta galinha nunca mais comerei galinha na minha vida!",
+        "text": "<u>Se</u> você mandar matar esta galinha nunca mais comerei galinha na minha vida!",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Até que um dia mataram-na, comeram-na e passaram-se anos.",
+        "text": "Até que um dia mataram-na, comeram-na e passaram-<u>se</u> anos.",
         "correct": true
       }
     ],
@@ -18873,7 +18873,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 62,
-    "statement": "O trecho “Na obra original, o cientista Victor Frankenstein dá vida a uma criatura com nuances,\nsensível e curiosa” pode ser inteiramente reescrito, na voz passiva, em",
+    "statement": "O trecho “Na obra original, o cientista Victor Frankenstein dá vida a uma criatura com nuances,\nsensível e curiosa” pode ser inteiramente reescrito, na <u>voz passiva,</u> em",
     "options": [
       {
         "letter": "A",
@@ -19102,7 +19102,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 68,
-    "statement": "A respeito do verbo **precaver-se**, é correto afirmar que se trata de verbo",
+    "statement": "A respeito do verbo <u>precaver-se,</u> é correto afirmar que se trata de verbo",
     "options": [
       {
         "letter": "A",
@@ -19141,7 +19141,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 69,
-    "statement": "No período composto \"Da mesma maneira que não existem progressos sem esforços, não existe\nciência sem educação.\", o verbo **existir** está no presente do indicativo. Considere sua reescritura a\nseguir, bem como a substituição do tempo verbal pelo pretérito perfeito do indicativo e assinale,\nentão, a opção que completa as lacunas corretamente.\n\"Assim como nunca ________ progressos sem esforços, nunca _______ ciência sem educação.\"",
+    "statement": "No período composto \"Da mesma maneira que não existem progressos sem esforços, não existe\nciência sem educação.\", o verbo <u>existir</u> está no presente do indicativo. Considere sua reescritura a\nseguir, bem como a substituição do tempo verbal pelo pretérito perfeito do indicativo e assinale,\nentão, a opção que completa as lacunas corretamente.\n\"Assim como nunca ________ progressos sem esforços, nunca _______ ciência sem educação.\"",
     "options": [
       {
         "letter": "A",
@@ -19183,27 +19183,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "As informações transmitidas pelos grandes meios de comunicação não **são recebidas** de forma automática e da mesma maneira por todos os telespectadores.",
+        "text": "As informações transmitidas pelos grandes meios de comunicação não <u>são recebidas</u> de forma automática e da mesma maneira por todos os telespectadores.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "A síntese e as conclusões que um indivíduo vai realizar depois de assistir a uma novela não **podem ser antecipadas** por outros meios.",
+        "text": "A síntese e as conclusões que um indivíduo vai realizar depois de assistir a uma novela não <u>podem ser antecipadas</u> por outros meios.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Os diversos tipos de receptor **situam-se** numa complexa rede de telecomunicação.",
+        "text": "Os diversos tipos de receptor <u>situam-se</u> numa complexa rede de telecomunicação.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Diante da situação, **fomentou-se** a crença de que a televisão seria capaz de manipular de forma incondicionalmente uma audiência submissa, passiva e acrítica.",
+        "text": "Diante da situação, <u>fomentou-se</u> a crença de que a televisão seria capaz de manipular de forma incondicionalmente uma audiência submissa, passiva e acrítica.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "A mídia é definida no contexto atual como uma complexa rede de referências em que a comunicação interpessoal e a midiática **se completam** e transformam.",
+        "text": "A mídia é definida no contexto atual como uma complexa rede de referências em que a comunicação interpessoal e a midiática <u>se completam</u> e transformam.",
         "correct": false
       }
     ],
@@ -19217,7 +19217,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 71,
-    "statement": "Quando há falta de certa precisão quanto aos tempos, utilizam-se algumas locuções verbais que\ntraduzem mais adequadamente o aspecto verbal. Diante disso, a construção que expressa melhor\n**a noção de início de uma ação** aparece no fragmento da alternativa",
+    "statement": "Quando há falta de certa precisão quanto aos tempos, utilizam-se algumas locuções verbais que\ntraduzem mais adequadamente o aspecto verbal. Diante disso, a construção que expressa melhor\n<u>a noção de início de uma ação</u> aparece no fragmento da alternativa",
     "options": [
       {
         "letter": "A",
@@ -19255,31 +19255,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 72,
-    "statement": "Qual das alternativas abaixo apresenta a forma verbal destacada com o mesmo tempo e modo\nque a destacada no período:\n\"No entanto, não se exala o mesmo ar, mesmo que já se **possa** ver o outro.”",
+    "statement": "Qual das alternativas abaixo apresenta a forma verbal destacada com o mesmo tempo e modo\nque a destacada no período:\n\"No entanto, não se exala o mesmo ar, mesmo que já se <u>possa</u> ver o outro.”",
     "options": [
       {
         "letter": "A",
-        "text": "Naquele momento, pude presenciar, ao vivo, uma cena que já me **tinham descrito** sobre aquele rapaz.",
+        "text": "Naquele momento, pude presenciar, ao vivo, uma cena que já me <u>tinham descrito</u> sobre aquele rapaz.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Ao serem postos nessa situação, talvez **acabassem** por argumentar algo a respeito do assunto.",
+        "text": "Ao serem postos nessa situação, talvez <u>acabassem</u> por argumentar algo a respeito do assunto.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "O compartilhamento do mesmo espaço social, **diria**, é que nos proporciona a internet.",
+        "text": "O compartilhamento do mesmo espaço social, <u>diria,</u> é que nos proporciona a internet.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Aquele medo que lhe está tirando a tranquilidade talvez não **seja** fácil como os outros pensam.",
+        "text": "Aquele medo que lhe está tirando a tranquilidade talvez não <u>seja</u> fácil como os outros pensam.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "E, assim, terminou a reunião, uma vez que nos **tornamos** merecedores da confiança um do outro.",
+        "text": "E, assim, terminou a reunião, uma vez que nos <u>tornamos</u> merecedores da confiança um do outro.",
         "correct": false
       }
     ],
@@ -19297,27 +19297,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Os alfaiates **embanham** os ternos com rapidez.",
+        "text": "Os alfaiates <u>embanham</u> os ternos com rapidez.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Tendo em vista os riscos, eu **ópto** por não realizar a prova.",
+        "text": "Tendo em vista os riscos, eu <u>ópto</u> por não realizar a prova.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "As alunas **interviram** na discussão entre os diretores.",
+        "text": "As alunas <u>interviram</u> na discussão entre os diretores.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "As mulheres **aguam** as orquídeas diariamente pela manhã.",
+        "text": "As mulheres <u>aguam</u> as orquídeas diariamente pela manhã.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Eu **remedeio** minhas ansiedades com uma boa corrida matinal.",
+        "text": "Eu <u>remedeio</u> minhas ansiedades com uma boa corrida matinal.",
         "correct": true
       }
     ],
@@ -19409,7 +19409,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 76,
-    "statement": "A forma verbal fôsseis, destacada no trecho acima,",
+    "statement": "A forma verbal **fôsseis**, destacada no trecho acima,",
     "options": [
       {
         "letter": "A",
@@ -19439,7 +19439,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "Texto 1\nDISCURSO SOBRE A SERVIDÃO VOLUNTÁRIA\nQuero para já, se possível, esclarecer tão-somente o fato de tantos homens, tantas vilas, cidades e\nnações suportarem às vezes um tirano que não tem outro poder de prejudicá-los enquanto eles\nquiserem suportá-lo; que só lhes pode fazer mal enquanto eles preferem aguentá-lo a contrariá-lo.\nDigno de espanto, se bem que vulgaríssimo, e tão doloroso quanto impressionante, é ver milhões\nde homens a servir, miseravelmente curvados ao peso do jugo, esmagados não por uma força\nmuito grande, mas aparentemente dominados e encantados apenas pelo nome de um só homem\ncujo poder não deveria assustá-los, visto que é um só, e cujas qualidades não deveriam prezar\nporque os trata desumana e cruelmente.\nTal é a fraqueza humana: temos frequentemente de nos curvar perante a força, somos obrigados a\ncontemporizar, não podemos ser sempre os mais fortes.\nSe, portanto, uma nação é pela força da guerra obrigada a servir a um só, como a cidade de\nAtenas aos trinta tiranos, não nos espanta que ela se submeta; devemos antes lamentá-la; ou\nentão, não nos espantarmos nem lamentarmos mas sofrermos com paciência e esperarmos que o\nfuturo traga dias mais felizes.\nEstá na nossa natureza o deixarmos que os deveres da amizade ocupem boa parte da nossa vida.\nÉ justo amarmos a virtude, estimarmos as boas ações, ficarmos gratos aos que fazem o bem,\nrenunciarmos a certas comodidades para melhor honrarmos e favorecermos aqueles a quem\namamos e que o merecem. Assim também, quando os habitantes de um país encontram uma\npersonagem notável que dê provas de ter sido previdente a governá-los, arrojado a defendê-los e\ncuidadoso a guiá-los, passam a obedecer-lhe em tudo e a conceder-lhe certas prerrogativas; é\numa prática reprovável, porque vão acabar por afastá-lo da prática do bem e empurrá-lo para o\nmal. Mas em tais casos julga-se que poderá vir sempre bem e nunca mal de quem um dia nos fez\nbem.\n(...)\nMas parece que vos sentis felizes por serdes senhores apenas de metade dos vossos haveres, das\nvossas famílias e das vossas vidas; e todo esse estrago, essa desgraça, essa ruína provêm afinal\nnão dos seus inimigos, mas de um só inimigo, daquele mesmo cuja grandeza lhe é dada só por vós,\npor amor de quem marchais corajosamente para a guerra, por cuja grandeza não recusais entregar\nà morte as vossas próprias pessoas.\nEsse que tanto vos humilha tem só dois olhos e duas mãos, tem um só corpo e nada possui que o\nmais ínfimo entre os ínfimos habitantes das vossas cidades não possua também; uma só coisa ele\ntem mais do que vós e o poder de vos destruir, poder que vós lhe concedestes.\nOnde iria ele buscar os olhos com que vos espia se vós não lhos désseis?\nOnde teria ele mãos para vos bater se não tivesse as vossas?\nOs pés com que ele esmaga as vossas cidades de quem são se não vossos?\nQue poder tem ele sobre vós que de vós não venha?\nComo ousaria ele perseguir-vos sem a vossa própria conivência?\nQue poderia ele fazer se vós não fôsseis encobridores daquele que vos rouba, cúmplices do\nassassino que vos mata e traidores de vós mesmos?\nDE LA BOETIE, Etienne. Discurso sobre a servidão voluntária. São Paulo: Edipro, 2017.\nObserve o trecho do texto 1 abaixo destacado:\nQue poderia ele fazer se vós não fôsseis encobridores daquele que vos rouba, cúmplices do\nassassino que vos mata e traidores de vós mesmos? (linhas 36 e 37)"
+    "readingText": "Texto 1\n**DISCURSO SOBRE A SERVIDÃO VOLUNTÁRIA**\nQuero para já, se possível, esclarecer tão-somente o fato de tantos homens, tantas vilas, cidades e\nnações suportarem às vezes um tirano que não tem outro poder de prejudicá-los enquanto eles\nquiserem suportá-lo; que só lhes pode fazer mal enquanto eles preferem aguentá-lo a contrariá-lo.\nDigno de espanto, se bem que vulgaríssimo, e tão doloroso quanto impressionante, é ver milhões\nde homens a servir, miseravelmente curvados ao peso do jugo, esmagados não por uma força\nmuito grande, mas aparentemente dominados e encantados apenas pelo nome de um só homem\ncujo poder não deveria assustá-los, visto que é um só, e cujas qualidades não deveriam prezar\nporque os trata desumana e cruelmente.\nTal é a fraqueza humana: temos frequentemente de nos curvar perante a força, somos obrigados a\ncontemporizar, não podemos ser sempre os mais fortes.\nSe, portanto, uma nação é pela força da guerra obrigada a servir a um só, como a cidade de\nAtenas aos trinta tiranos, não nos espanta que ela se submeta; devemos antes lamentá-la; ou\nentão, não nos espantarmos nem lamentarmos mas sofrermos com paciência e esperarmos que o\nfuturo traga dias mais felizes.\nEstá na nossa natureza o deixarmos que os deveres da amizade ocupem boa parte da nossa vida.\nÉ justo amarmos a virtude, estimarmos as boas ações, ficarmos gratos aos que fazem o bem,\nrenunciarmos a certas comodidades para melhor honrarmos e favorecermos aqueles a quem\namamos e que o merecem. Assim também, quando os habitantes de um país encontram uma\npersonagem notável que dê provas de ter sido previdente a governá-los, arrojado a defendê-los e\ncuidadoso a guiá-los, passam a obedecer-lhe em tudo e a conceder-lhe certas prerrogativas; é\numa prática reprovável, porque vão acabar por afastá-lo da prática do bem e empurrá-lo para o\nmal. Mas em tais casos julga-se que poderá vir sempre bem e nunca mal de quem um dia nos fez\nbem.\n(...)\nMas parece que vos sentis felizes por serdes senhores apenas de metade dos vossos haveres, das\nvossas famílias e das vossas vidas; e todo esse estrago, essa desgraça, essa ruína provêm afinal\nnão dos seus inimigos, mas de um só inimigo, daquele mesmo cuja grandeza lhe é dada só por vós,\npor amor de quem marchais corajosamente para a guerra, por cuja grandeza não recusais entregar\nà morte as vossas próprias pessoas.\nEsse que tanto vos humilha tem só dois olhos e duas mãos, tem um só corpo e nada possui que o\nmais ínfimo entre os ínfimos habitantes das vossas cidades não possua também; uma só coisa ele\ntem mais do que vós e o poder de vos destruir, poder que vós lhe concedestes.\nOnde iria ele buscar os olhos com que vos espia se vós não lhos désseis?\nOnde teria ele mãos para vos bater se não tivesse as vossas?\nOs pés com que ele esmaga as vossas cidades de quem são se não vossos?\nQue poder tem ele sobre vós que de vós não venha?\nComo ousaria ele perseguir-vos sem a vossa própria conivência?\nQue poderia ele fazer se vós não **fôsseis** encobridores daquele que vos rouba, cúmplices do\nassassino que vos mata e traidores de vós mesmos?\nDE LA BOETIE, Etienne**. Discurso sobre a servidão voluntária.** São Paulo: Edipro, 2017.\nObserve o trecho do texto 1 abaixo destacado:\nQue poderia ele fazer se vós não **fôsseis** encobridores daquele que vos rouba, cúmplices do\nassassino que vos mata e traidores de vós mesmos? (linhas 36 e 37)"
   },
   {
     "id": "verbos-pdf_7-q77",
@@ -19448,7 +19448,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 77,
-    "statement": "Leia o trecho a seguir.\n“Olhando bem para meus olhos, disse-me que havia emprestado o livro a outra menina, e que eu\nvoltasse no dia seguinte para buscá-lo.\" (7°§)\nNa frase acima, a forma verbal sublinhada constitui um tempo verbal composto. Marque a opção\nque apresenta o mesmo tempo verbal, mas na forma simples.",
+    "statement": "Leia o trecho a seguir.\n“Olhando bem para meus olhos, disse-me que <u>havia emprestado</u> o livro a outra menina, e que eu\nvoltasse no dia seguinte para buscá-lo.\" (7°§)\nNa frase acima, a forma verbal sublinhada constitui um tempo verbal composto. Marque a opção\nque apresenta o mesmo tempo verbal, mas na forma simples.",
     "options": [
       {
         "letter": "A",
@@ -19491,27 +19491,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Todos os dias a aranha lhes arrancava um pedaço. Ficaram cansados.",
+        "text": "Todos os dias a aranha lhes arrancava um pedaço. <u>Ficaram</u> cansados.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Assim, eles se tornaram cientistas, especialistas, cada um na sua - juntos para navegar.",
+        "text": "Assim, eles <u>se tornaram</u> cientistas, especialistas, cada um na sua - juntos para navegar.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Os computadores, coitados, chamados a dar o seu palpite, ficaram em silêncio",
+        "text": "Os computadores, coitados, chamados a dar o seu palpite, <u>ficaram</u> em silêncio",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Nos porões estão os remadores. Remam com precisão cada vez maior.",
+        "text": "Nos porões <u>estão</u> os remadores. Remam com precisão cada vez maior.",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "(...) os rios se transformam em esgotos de fezes e veneno, o ar se enche de gases, os campos se cobrem de lixo - e tudo ficou feio e triste.",
+        "text": "(...) os rios se transformam em esgotos de fezes e veneno, o ar se enche de gases, os campos se cobrem de lixo - e tudo <u>ficou</u> feio e triste.",
         "correct": false
       }
     ],
@@ -19604,31 +19604,31 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 81,
-    "statement": "Com base no texto, responda à questão.\nNas opções que se seguem as formas verbais sublinhadas são locuções verbais, EXCETO:",
+    "statement": "Com base no texto, responda à questão.\nNas opções que se seguem as formas verbais sublinhadas são locuções verbais, <u>EXCETO:</u>",
     "options": [
       {
         "letter": "A",
-        "text": "Eu devia ter quatro ou cinco anos, por aí, e figurei na qualidade de réu.",
+        "text": "Eu <u>devia</u> <u>ter</u> quatro ou cinco anos, por aí, e figurei na qualidade de réu.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Batiam-me porque podiam bater-me, e isto era natural.",
+        "text": "Batiam-me porque <u>podiam</u> <u>bater-me,</u> e isto era natural.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Devo ter pensado nisso, imóvel, atrás dos caixões.",
+        "text": "<u>Devo</u> <u>ter</u> <u>pensado</u> nisso, imóvel, atrás dos caixões.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Antes de adormecer, cansado, vi meu pai dirigir-se à rede (...).",
+        "text": "Antes de adormecer, cansado, <u>vi meu pai dirigir-se</u> à rede (...).",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "Resmungou e entrou a passear agitado.",
+        "text": "Resmungou e <u>entrou a passear</u> agitado.",
         "correct": false
       }
     ],
@@ -19799,7 +19799,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 86,
-    "statement": "Lido o texto, observe atentamente o quesito e assinale somente UMA opção correta.\n\"Foi preso o menino Bruno Lichtenstein, que arrombou a Faculdade de Medicina.\" (1° parágrafo)\nA voz verbal que destoa da forma acima sublinhada se encontra na opção:",
+    "statement": "Lido o texto, observe atentamente o quesito e assinale somente UMA opção correta.\n<u>\"Foi preso</u> o menino Bruno Lichtenstein, que arrombou a Faculdade de Medicina.\" (1° parágrafo)\nA voz verbal que destoa da forma acima sublinhada se encontra na opção:",
     "options": [
       {
         "letter": "A",
@@ -19916,7 +19916,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 89,
-    "statement": "No que concerne às formas verbais destacadas em: “Na última década, reduziram-se em 40% as\nguerras. Houve também dramática redução das mortes violentas, que, no passado, ceifavam 25%\nda população masculina.” (1°§S), qual afirmação está correta?",
+    "statement": "No que concerne às formas verbais destacadas em: “Na última década, <u>reduziram-se</u> em 40% as\nguerras. Houve também dramática redução das mortes violentas, que, no passado, ceifavam 25%\nda população masculina.” (1°§S), qual afirmação está correta?",
     "options": [
       {
         "letter": "A",
@@ -19955,37 +19955,37 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 90,
-    "statement": "Leia atentamente o seguinte texto:\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta\nAs formas verbais sublinhadas apresentam-se no infinitivo, à exceção de uma, que aparece na\nopção:",
+    "statement": "Lido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta\nAs formas verbais sublinhadas apresentam-se no infinitivo, à exceção de uma, que aparece na\nopção:",
     "options": [
       {
         "letter": "A",
-        "text": "“Ia voltar de barca para Niterói e (...)”",
+        "text": "“Ia <u>voltar</u> de barca para Niterói e (...)”",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“As conversas, as leituras, as atividades de todo dia não costumam referir-se à existência dessa figura.”",
+        "text": "“As conversas, as leituras, as atividades de todo dia não costumam <u>referir-se</u> à existência dessa figura.”",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“E de tanto não o ver, por assim dizer, se esquecera dele.”",
+        "text": "“E de tanto não o <u>ver,</u> por assim dizer, se esquecera dele.”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Menino da cidade terá muita sorte se a encontrar no Alto da Boa Vista ou no Parque da Cidade.”",
+        "text": "“Menino da cidade terá muita sorte se a <u>encontrar</u> no Alto da Boa Vista ou no Parque da Cidade.”",
         "correct": true
       },
       {
         "letter": "E",
-        "text": "“Menino do interior pode ver um dia ou outro a esperança.”",
+        "text": "“Menino do interior pode <u>ver</u> um dia ou outro a esperança.”",
         "correct": false
       }
     ],
     "correctLetter": "D",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "ENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade"
+    "readingText": "Leia atentamente o seguinte texto:\nENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade"
   },
   {
     "id": "verbos-pdf_7-q91",
@@ -19994,7 +19994,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 91,
-    "statement": "Leia atentamente o seguinte texto:\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta\nNa transposição da voz ativa para a voz passiva ocorre uma INADEQUAÇÃO, que aparece na\nopção:",
+    "statement": "Lido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta\nNa transposição da voz ativa para a voz passiva ocorre uma INADEQUAÇÃO, que aparece na\nopção:",
     "options": [
       {
         "letter": "A",
@@ -20018,13 +20018,13 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "“E elegera o cocoruto da caixa da ECT como habitação provisória.” E o cocoruto da caixa da ECT fora elegido como habitação provisória.",
+        "text": "“E elegera o cocoruto da caixa da ECT como habitação provisória.” E o cocoruto da caixa da ECT fora elegido como habitação provisória. ",
         "correct": true
       }
     ],
     "correctLetter": "E",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "ENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade"
+    "readingText": "Leia atentamente o seguinte texto:\nENCONTRO NA PRAÇA\nJosé Luís da Cunha Fernandes, morador no Saco de São Francisco, uma tarde dessas, teve um\nencontro singular. Ia voltar de barca para Niterói e portava sua máquina fotográfica. Sua intenção\nera pegar o pôr-do-sol no Rio de dentro da barca. Mas ali na Praça 15 de Novembro, em frente à\nestação de embarque, deu-se o encontro de José Luís com uma rara personalidade.\nNinguém reparava nela, no insólito de sua presença, no inesperado de sua postura, em tudo que\nera de chamar atenção. Mas José Luís, que sabe ver, e não apenas olhar, maravilhou-se.\nMaravilhou-se e voltou imediatamente à infância, pois o ser que ali se encontrava parado em meio\nà multidão, ele o conhecera em menino, e desde então nunca mais o vira. Nunca. E de tanto não o\nver, por assim dizer se esquecera dele. As conversas, as leituras, as atividades de todo dia não\ncostumam referir-se à existência dessa figura de repente desaparecida. Então, ela ficara\nencaixotada num desvão da memória, mas tão escondido estava o caixote que era como se não\nexistisse. E assim se passaram anos.\nO que José Luís encontrou na Praça 15 foi uma esperança.\nE estava pousada no alto da caixa de correio. Estava pousada.\nQuantas crianças de hoje conhecem a esperança? Quantas ligam esse nome a um organismo vivo,\nque habita o folclore pela cor, que é promessa de felicidade? Menino do interior ainda pode ver,\num dia ou outro, a esperança. Menino da cidade, terá muita sorte se a encontrar no Alto da Boa\nVista ou no Parque da Cidade. Mas no cotidiano dos bairros superpovoados, nas ruas inteiramente\nplantadas de edifícios secos e agrestes, quem já viu esse bichinho? Quem sabe de sua esperteza\nem imitar folhas de arbusto, iludindo não só os outros insetos, que ele deseja papar, mas até a\ngente?\nPois em contrário a todas as possibilidades, a esperança postara-se naquele trecho febril do Rio de\nJaneiro, não ligando para o tumulto, a pressa, o barulho, a poeira, o fumo de descarga dos\nveículos. Ele elegera o cocuruto da caixa da ECT para a habitação provisória. Ali estava, quieta,\nverde, ortóptera, saltadora mas imóvel, mimética mas em sua cor natural, estridulante mas\nsilenciosa, guardando todas as potencialidades: simplesmente esperança, esperança para servi-los.\nE em que servia a esperança ao povo que ia quase correndo e não lhe dava a mínima confiança?\nSó José Luís era capaz de sabê-lo, por ser o único a tomar conhecimento do inseto em cima da\ncaixa. Percebeu logo que a esperança cumpria delicada tarefa.\nEm primeiro lugar, oferecia ou tentava oferecer boas notícias nas cartas colocadas no interior da\ncaixa. Palavras de carinho, promessas de emprego, reconciliações, doente que ficou bom, dívida\nque se conseguir pagar, beijos. Talvez as cartas dissessem o contrário disso, mas a esperança\nconcentrava seu princípio influente nas próximas correspondências, as definitivas. Bem que a ECT\npodia designar a esperança para seu logotipo. Inseto ágil, pulando como ele só: imagem de\nvelocidade, que se vem conseguindo implantar no tráfego postal.\nEm seguida, a esperança dirigia-se a todos, que voltavam a Niterói ou vinham de lá; e ainda aos\navulsos, que ficam por aqui mesmo, e transitam na Praça. “Ó vós todos que passais, aqui estou\n(dizia a esperança em seu falar tetigonídeo, que o vulgo infelizmente não capisca) para que\nrepareis o meu verde e o guardeis na rotina pelo que ele vale. Vale o melhor. Vale a capacidade de\ntransformar o real em transreal e usufruir as coisas deleitáveis que esse pode distribuir em forma\nde paz de espírito e coração sensível. Nem tudo é sujo na vida. Há claridades. Mas a claridade\ncomeça dentro de você, de vós mesmos... Depois é que ela se espalha pela cidade e pela vida dos\noutros. Eu, a esperança, à maneira dos reis antigos, vos envio saudar.”\nNinguém ouviu, ninguém traduziu. Só José Luís, que documentou a presença da esperança,\nfotografando-a. Ia fotografar o crepúsculo, mas antes teve a sorte de fotografar nada menos que\numa virtude teologal em minúscula forma vivente.\nCarlos Drummond de Andrade"
   },
   {
     "id": "verbos-pdf_7-q92",
@@ -20033,7 +20033,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_7",
     "listTitle": "PDF 7 • Verbos (G92)",
     "questionNumber": 92,
-    "statement": "Leia atentamente o seguinte texto:\nLido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta.\nEm uma das passagens abaixo, verifica-se a presença de um verbo intransitivo. Assinale a\nalternativa em que ele aparece.",
+    "statement": "Lido o texto, observe atentamente o quesito e assinale somente UMA alternativa correta.\nEm uma das passagens abaixo, verifica-se a presença de um verbo intransitivo. Assinale a\nalternativa em que ele aparece.",
     "options": [
       {
         "letter": "A",
@@ -20063,7 +20063,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "AFA / EN / EFOMM / Concursos Militares",
-    "readingText": "**São Bernardo** (Graciliano Ramos)\nConheci que Madalena era boa em demasia, mas não conheci tudo de uma vez. Ela se revelou\npouco a pouco, e nunca se revelou inteiramente. A culpa foi minha, ou antes, a culpa foi desta vida\nagreste, que me deu uma alma agreste.\nE, falando assim, compreendo que perco o tempo. Com efeito, se me escapa o retrato moral de\nminha mulher, para que serve esta narrativa? Para nada, mas sou forçado a escrever.\nQuando os grilos cantam, sento-me aqui à mesa da sala de jantar, bebo café, acendo o cachimbo.\nÀs vezes as idéias não vêm, ou vêm muito numerosas – e a folha permanece meio escrita, como\nestava na véspera. Releio algumas linhas, que me desagradam. Não vale a pena tentar corrigi-las.\nAfasto o papel.\nEmoções indefiníveis me agitam – inquietação terrível, desejo doido de voltar, tagarelar\nnovamente com Madalena, como fazíamos todos os dias, a esta hora. Saudade? Não, não é isto: é\ndesespero, raiva, um peso enorme no coração.\nProcuro recordar o que dizíamos. Impossível. As minhas palavras eram apenas palavras,\nreprodução imperfeita de fatos exteriores, e as dela tinham alguma coisa que não consigo exprimir.\nPara senti-las melhor, eu apagava as luzes, deixava que a sombra nos envolvesse até ficarmos dois\nvultos indistintos na escuridão.\nLá fora os sapos arengavam, o vento gemia, as árvores do pomar tornavam-se massas negras.\n– Casimiro!\nCasimiro Lopes estava no jardim, acocorado ao pé da janela, vigiando.\n– Casimiro!\nA figura de Casimiro Lopes aparece à janela, os sapos gritam, o vento sacode as árvores, apenas\nvisíveis na treva. Maria das Dores entra e vai abrir o comutador. Detenho-a: não quero luz.\nO tique-taque do relógio diminui, os grilos começam a cantar. E Madalena surge no lado de lá da\nmesa. Digo baixinho:\n– Madalena!\nA voz dela me chega aos ouvidos. Não, não é aos ouvidos. Também já não a vejo com os olhos.\nEstou encostado à mesa, as mãos cruzadas. Os objetos fundiram-se, e não enxergo sequer a\ntoalha branca.\n– Madalena...\nA voz de Madalena continua a acariciar-me. Que diz ela? Pede-me naturalmente que mande\nalgum dinheiro a mestre Caetano. Isto me irrita, mas a irritação é diferente das outras, é uma\nirritação antiga, que me deixa inteiramente calmo. Loucura estar uma pessoa ao mesmo tempo\nzangada e tranqüila. Mas estou assim. Irritado contra quem? Contra mestre Caetano. Não obstante\nele ter morrido, acho bom que vá trabalhar. Mandrião!\nA toalha reaparece, mas não sei se é esta toalha sobre que tenho as mãos cruzadas ou a que\nestava aqui há cinco anos.\nRumor do vento, dos sapos, dos grilos. A porta do escritório abre-se de manso, os passos de seu\nRibeiro afastam-se. Uma coruja pia na torre da igreja. Terá realmente piado a coruja? Será a\nmesma que piava há dois anos? Talvez seja até o mesmo pio daquele tempo.\nAgora seu Ribeiro está conversando com d. Glória no salão. Esqueço que eles me deixaram e que\nesta casa está quase deserta.\n– Casimiro!\nPenso que chamei Casimiro Lopes. A cabeça dele, com o chapéu de couro de sertanejo, assoma\nde quando em quando à janela, mas ignoro se a visão que me dá é atual ou remota.\nAgitam-se em mim sentimentos inconciliáveis: encolerizo-me e enterneço-me; bato na mesa e\ntenho vontade de chorar.\nSão Bernardo, Rio de Janeiro, Record, 1983."
+    "readingText": "Leia atentamente o seguinte texto:\nSão Bernardo (Graciliano Ramos)\nConheci que Madalena era boa em demasia, mas não conheci tudo de uma vez. Ela se revelou\npouco a pouco, e nunca se revelou inteiramente. A culpa foi minha, ou antes, a culpa foi desta vida\nagreste, que me deu uma alma agreste.\nE, falando assim, compreendo que perco o tempo. Com efeito, se me escapa o retrato moral de\nminha mulher, para que serve esta narrativa? Para nada, mas sou forçado a escrever.\nQuando os grilos cantam, sento-me aqui à mesa da sala de jantar, bebo café, acendo o cachimbo.\nÀs vezes as idéias não vêm, ou vêm muito numerosas – e a folha permanece meio escrita, como\nestava na véspera. Releio algumas linhas, que me desagradam. Não vale a pena tentar corrigi-las.\nAfasto o papel.\nEmoções indefiníveis me agitam – inquietação terrível, desejo doido de voltar, tagarelar\nnovamente com Madalena, como fazíamos todos os dias, a esta hora. Saudade? Não, não é isto: é\ndesespero, raiva, um peso enorme no coração.\nProcuro recordar o que dizíamos. Impossível. As minhas palavras eram apenas palavras,\nreprodução imperfeita de fatos exteriores, e as dela tinham alguma coisa que não consigo exprimir.\nPara senti-las melhor, eu apagava as luzes, deixava que a sombra nos envolvesse até ficarmos dois\nvultos indistintos na escuridão.\nLá fora os sapos arengavam, o vento gemia, as árvores do pomar tornavam-se massas negras.\n– Casimiro!\nCasimiro Lopes estava no jardim, acocorado ao pé da janela, vigiando.\n– Casimiro!\nA figura de Casimiro Lopes aparece à janela, os sapos gritam, o vento sacode as árvores, apenas\nvisíveis na treva. Maria das Dores entra e vai abrir o comutador. Detenho-a: não quero luz.\nO tique-taque do relógio diminui, os grilos começam a cantar. E Madalena surge no lado de lá da\nmesa. Digo baixinho:\n– Madalena!\nA voz dela me chega aos ouvidos. Não, não é aos ouvidos. Também já não a vejo com os olhos.\nEstou encostado à mesa, as mãos cruzadas. Os objetos fundiram-se, e não enxergo sequer a\ntoalha branca.\n– Madalena...\nA voz de Madalena continua a acariciar-me. Que diz ela? Pede-me naturalmente que mande\nalgum dinheiro a mestre Caetano. Isto me irrita, mas a irritação é diferente das outras, é uma\nirritação antiga, que me deixa inteiramente calmo. Loucura estar uma pessoa ao mesmo tempo\nzangada e tranqüila. Mas estou assim. Irritado contra quem? Contra mestre Caetano. Não obstante\nele ter morrido, acho bom que vá trabalhar. Mandrião!\nA toalha reaparece, mas não sei se é esta toalha sobre que tenho as mãos cruzadas ou a que\nestava aqui há cinco anos.\nRumor do vento, dos sapos, dos grilos. A porta do escritório abre-se de manso, os passos de seu\nRibeiro afastam-se. Uma coruja pia na torre da igreja. Terá realmente piado a coruja? Será a\nmesma que piava há dois anos? Talvez seja até o mesmo pio daquele tempo.\nAgora seu Ribeiro está conversando com d. Glória no salão. Esqueço que eles me deixaram e que\nesta casa está quase deserta.\n– Casimiro!\nPenso que chamei Casimiro Lopes. A cabeça dele, com o chapéu de couro de sertanejo, assoma\nde quando em quando à janela, mas ignoro se a visão que me dá é atual ou remota.\nAgitam-se em mim sentimentos inconciliáveis: encolerizo-me e enterneço-me; bato na mesa e\ntenho vontade de chorar.\nSão Bernardo, Rio de Janeiro, Record, 1983."
   },
   {
     "id": "verbos-pdf_16-q1",
@@ -20163,7 +20163,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "Tropa do Arcanjo / EEAr / EsPCEx",
-    "readingText": "E como ontem estivesse chovendo, tive a infeliz ideia, ao sair à rua, de calçar um\nvelho par de galochas. Já me desacostumara delas, e me sentia a carregar nos pés\nalgo pesado, viscoso e desagradável."
+    "readingText": "E como ontem **estivesse** chovendo, **tive** a infeliz ideia, ao sair à rua, de calçar um\nvelho par de galochas. Já me **desacostumara** delas, e me **sentia** a carregar nos pés\nalgo pesado, viscoso e desagradável."
   },
   {
     "id": "verbos-pdf_16-q4",
@@ -20277,22 +20277,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Abrace suas quedas e tire delas o conhecimento. Não se deixe abater.",
+        "text": "**Abrace** suas quedas e **tire** delas o conhecimento. Não se **deixe** abater.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "Abraçai suas quedas e tirai delas o conhecimento. Não se deixai abater.",
+        "text": "**Abraçai** suas quedas e **tirai** delas o conhecimento. Não se **deixai** abater.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Abraça suas quedas e tire delas o conhecimento. Não se deixa abater.",
+        "text": "**Abraça** suas quedas e **tire** delas o conhecimento. Não se **deixa** abater.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Abrace suas quedas e tira delas o conhecimento. Não se deixa abater.",
+        "text": "**Abrace** suas quedas e **tira** delas o conhecimento. Não se **deixa** abater.",
         "correct": false
       }
     ],
@@ -20472,7 +20472,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_16",
     "listTitle": "PDF 16 • Modos Verbais I (30T1)",
     "questionNumber": 13,
-    "statement": "Observe:\nOs policiais investigaram uma tentativa de sequestro e, antes que ocorresse o fato,\nnão se demoraram em questões burocráticas: anteciparam a prisão dos suspeitos.\nSubstituindo-se os verbos destacados, respectivamente, por supor, advir e deter, e\nmantendo o mesmo tempo e modo verbais, obtêm-se, corretamente,",
+    "statement": "Observe:\nOs policiais **investigaram** uma tentativa de sequestro e, antes que **ocorresse** o fato,\nnão se **demoraram** em questões burocráticas: anteciparam a prisão dos suspeitos.\nSubstituindo-se os verbos destacados, respectivamente, por **supor, advir e deter**, e\nmantendo o mesmo tempo e modo verbais, obtêm-se, corretamente,",
     "options": [
       {
         "letter": "A",
@@ -20524,13 +20524,13 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "D",
-        "text": "pretérito mais-que-perfeito do indicativo – pretérito imperfeito do subjuntivo – **futuro do pretérito do indicativo.**",
+        "text": "pretérito mais-que-perfeito do indicativo – pretérito imperfeito do subjuntivo – futuro do pretérito do indicativo.",
         "correct": true
       }
     ],
     "correctLetter": "D",
     "banca": "Tropa do Arcanjo / EEAr / EsPCEx",
-    "readingText": "“O tempo fora afastando aquelas amargas lembranças de minha memória. Se\nnão fosse assim, hoje estaria morto em vida.”"
+    "readingText": "“O tempo **fora** afastando aquelas amargas lembranças de minha memória. Se\nnão **fosse** assim, hoje **estaria** morto em vida.”"
   },
   {
     "id": "verbos-pdf_16-q15",
@@ -20564,7 +20564,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "B",
     "banca": "Tropa do Arcanjo / EEAr / EsPCEx",
-    "readingText": "Não seria incrível? Imaginem se, numa das viagens, vocês pudessem encontrar um\npersonagem importante da história, como Einstein, e ajudá-lo a elaborar suas teorias!\nJá pensaram nisso? As formas verbais destacadas no texto acima estão conjugadas,\nrespectivamente, no"
+    "readingText": "Não **seria** incrível? **Imaginem** se, numa das viagens, vocês **pudessem** encontrar um\npersonagem importante da história, como Einstein, e ajudá-lo a elaborar suas teorias!\nJá pensaram nisso? As formas verbais destacadas no texto acima estão conjugadas,\nrespectivamente, no"
   },
   {
     "id": "verbos-pdf_16-q16",
@@ -20577,22 +20577,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "O doutor Meneses vai galgar a soleira da porta com esforço.",
+        "text": "O doutor Meneses **vai galgar** a soleira da porta com esforço.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "O doutor Meneses tem galgado a soleira da porta com esforço.",
+        "text": "O doutor Meneses **tem galgado** a soleira da porta com esforço.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "O doutor Meneses começou a galgar a soleira da porta com esforço.",
+        "text": "O doutor Meneses **começou a galgar** a soleira da porta com esforço.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "A soleira da porta foi galgada com esforço pelo doutor Meneses.",
+        "text": "A soleira da porta **foi galgada** com esforço pelo doutor Meneses.",
         "correct": false
       }
     ],
@@ -20631,7 +20631,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "C",
     "banca": "Tropa do Arcanjo / EEAr / EsPCEx",
-    "readingText": "Considere as seguintes frases:\nI – Os policiais deteram o infrator em flagrante delito.\nII – Quando vocês comporem obras de grande valor literário, poderão divulgá-las.\nIII – Se eles se opusessem ao projeto, nada seria possível.\nIV – Se nós obtivermos êxito, dedicaremos tudo a você!"
+    "readingText": "Considere as seguintes frases:\nI – Os policiais **deteram** o infrator em flagrante delito.\nII – Quando vocês **comporem** obras de grande valor literário, poderão divulgá-las.\nIII – Se eles se **opusessem** ao projeto, nada seria possível.\nIV – Se nós **obtivermos** êxito, dedicaremos tudo a você!"
   },
   {
     "id": "verbos-pdf_16-q18",
@@ -20864,7 +20864,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "Tropa do Arcanjo / EEAr / EsPCEx",
-    "readingText": "“**Sentia-se** cansada. A barriga, as pernas, a cabeça, o corpo todo **era** um enorme peso que lhe **caía** irremediavelmente em cima. Esperava que a qualquer momento o coração lhe **perfurasse** o peito, lhe **rasgasse** a blusa. Como **seria** o coração?” (Dina Salústio)"
+    "readingText": "“**Sentia-se** cansada. A barriga, as pernas, a cabeça, o corpo todo **era** um enorme peso que lhe **caía** irremediavelmente em cima. Esp**era**va que a qualquer momento o coração lhe **perfurasse** o peito, lhe **rasgasse** a blusa. Como **seria** o coração?” (Dina Salústio)"
   },
   {
     "id": "verbos-pdf_16-q25",
@@ -21049,7 +21049,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_16",
     "listTitle": "PDF 16 • Modos Verbais I (30T1)",
     "questionNumber": 30,
-    "statement": "Assinale a alternativa em que não há erro na flexão do verbo.",
+    "statement": "Assinale a alternativa em que **não** há erro na flexão do verbo.",
     "options": [
       {
         "letter": "A",
@@ -21120,7 +21120,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_17",
     "listTitle": "PDF 17 • Modos Verbais II (30T2)",
     "questionNumber": 2,
-    "statement": "“Eu quis, com todas as minhas forças(...)”, ao mudar a pessoa verbal, houve falha\n**na conjugação em:**",
+    "statement": "“Eu quis, com todas as minhas forças(...)”, ao mudar a pessoa verbal, houve falha\nna conjugação em:",
     "options": [
       {
         "letter": "A",
@@ -21257,7 +21257,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_17",
     "listTitle": "PDF 17 • Modos Verbais II (30T2)",
     "questionNumber": 6,
-    "statement": "Leia o fragmento seguinte e responda à questão: “Ele **chegara** a afirmar, em outro episódio, que era uma ‘luta perdida’.”\n\nO verbo ‘chegara’ sinaliza uma ação no passado, anterior a outro fato ocorrido no passado. Logo, o tempo verbal empregado foi do:",
+    "statement": "Leia o fragmento seguinte e responda à questão: “Ele **chegara** a afirmar, em outro episódio, que era uma ‘luta perdida’.”\n\nO verbo ‘**chegara**’ sinaliza uma ação no passado, anterior a outro fato ocorrido no passado. Logo, o tempo verbal empregado foi do:",
     "options": [
       {
         "letter": "A",
@@ -21370,27 +21370,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Não permita...”;",
+        "text": "“Não <u>permita</u>...”;",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“...que eu morra”;",
+        "text": "“...que eu <u>morra</u>”;",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“Sem que eu volte...”;",
+        "text": "“Sem que eu <u>volte</u>...”;",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“ Sem que desfrute...;",
+        "text": "“ Sem que <u>desfrute</u>...;",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“Sem qu’inda aviste...”;",
+        "text": "“Sem qu’inda <u>aviste</u>...”;",
         "correct": false
       }
     ],
@@ -21546,22 +21546,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Se fosse necessário...” (pretérito imperfeito do subjuntivo)",
+        "text": "“Se **fosse** necessário...” (pretérito imperfeito do subjuntivo)",
         "correct": true
       },
       {
         "letter": "B",
-        "text": "“... os garotos teriam a resposta...” ( pretérito imperfeito do indicativo)",
+        "text": "“... os garotos **teriam** a resposta...” ( pretérito imperfeito do indicativo)",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "“... e saibam dosar o que é permitido ou não...” (futuro do subjuntivo)",
+        "text": "“... e **saibam** dosar o que é permitido ou não...” (futuro do subjuntivo)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Pelo menos um dos pais tirava férias no inverno. (pretérito perfeito do indicativo)",
+        "text": "Pelo menos um dos pais **tirava** férias no inverno. (pretérito perfeito do indicativo)",
         "correct": false
       }
     ],
@@ -21605,7 +21605,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     ],
     "correctLetter": "D",
     "banca": "Tropa do Arcanjo / EEAr / EsPCEx",
-    "readingText": "“Perderíamos muito com essa mudança.”"
+    "readingText": "“**Perderíamos** muito com essa mudança.”"
   },
   {
     "id": "verbos-pdf_17-q16",
@@ -21689,27 +21689,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Ao digitar as senhas em público, é necessário que confiremos se há pessoas estranhas nos observando para garantir a segurança virtual.",
+        "text": "Ao digitar as senhas em público, é necessário que **confiremos** se há pessoas estranhas nos observando para garantir a segurança virtual.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "As informações pessoais deveriam ser digitadas de forma condensada para que cabessem **todas no espaço próprio do questionário socioeconômico.**",
+        "text": "As informações pessoais deveriam ser digitadas de forma condensada para que **cabessem** todas no espaço próprio do questionário socioeconômico.",
         "correct": false
       },
       {
         "letter": "C",
-        "text": "Os meios eletrônicos contribuem para que os estudantes retenham a maior parte das informações necessárias ao bom desempenho escolar.",
+        "text": "Os meios eletrônicos contribuem para que os estudantes **retenham** a maior parte das informações necessárias ao bom desempenho escolar.",
         "correct": true
       },
       {
         "letter": "D",
-        "text": "Para evitar a espionagem virtual é preciso que nós não consintemos na utilização dos nossos dados pessoais ao instalar novos aplicativos no celular.",
+        "text": "Para evitar a espionagem virtual é preciso que nós não **consintemos** na utilização dos nossos dados pessoais ao instalar novos aplicativos no celular.",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Quando algum consumidor querer comprar o último modelo de smartphone, pode agredir outros componentes da fila para tomar seu lugar.",
+        "text": "Quando algum consumidor **querer** comprar o último modelo de smartphone, pode agredir outros componentes da fila para tomar seu lugar.",
         "correct": false
       }
     ],
@@ -21723,7 +21723,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_17",
     "listTitle": "PDF 17 • Modos Verbais II (30T2)",
     "questionNumber": 19,
-    "statement": "“... que **possa** garantir a vida na Terra.”\n\nO verbo empregado nos mesmos tempo e modo em que se encontra a forma grifada acima está na frase:",
+    "statement": "“... que <u>possa</u> garantir a vida na Terra.”\n\nO verbo empregado nos mesmos tempo e modo em que se encontra a forma grifada acima está na frase:",
     "options": [
       {
         "letter": "A",
@@ -21747,7 +21747,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": ".. que em 2050 tenhamos 9,3 bilhões de pessoas...",
+        "text": "... que em 2050 tenhamos 9,3 bilhões de pessoas...",
         "correct": true
       }
     ],
@@ -21803,22 +21803,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Os grevistas se manteram na entrada da fábrica durante todo o horário do expediente.",
+        "text": "Os grevistas se **manteram** na entrada da fábrica durante todo o horário do expediente.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "É bom que creiamos em todas as informações enviadas pelo médico de plantão.",
+        "text": "É bom que **creiamos** em todas as informações enviadas pelo médico de plantão.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Os professores interviram em defesa do aluno que foi punido injustamente.",
+        "text": "Os professores **interviram** em defesa do aluno que foi punido injustamente.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Quem se propor a fazer esse trabalho tem que ser muito competente.",
+        "text": "Quem se **propor** a fazer esse trabalho tem que ser muito competente.",
         "correct": false
       }
     ],
@@ -21978,27 +21978,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Um dia após o terremoto, o governo da Indonésia declarou estado de emergência. ( presente do indicativo)",
+        "text": "Um dia após o terremoto, o governo da Indonésia **declarou** estado de emergência. ( presente do indicativo)",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "A Copa da Cultura animará Berlim durante a copa do mundo. (futuro do presente do indicativo)",
+        "text": "A Copa da Cultura **animará** Berlim durante a copa do mundo. (futuro do presente do indicativo)",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "O governo federal anuncia R$ 10 bilhões para a agricultura familiar. (pretérito mais-que-perfeito do indicativo)",
+        "text": "O governo federal **anuncia** R$ 10 bilhões para a agricultura familiar. (pretérito mais-que-perfeito do indicativo)",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "As crianças que estavam descalças tremeram de frio. (pretérito perfeito do indicativo)",
+        "text": "As crianças que **estavam** descalças tremeram de frio. (pretérito perfeito do indicativo)",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "Machado de Assis escreveu contos imortais. (pretérito imperfeito do indicativo).",
+        "text": "Machado de Assis **escreveu** contos imortais. (pretérito imperfeito do indicativo).",
         "correct": false
       }
     ],
@@ -22054,27 +22054,27 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "“Isso facilita o seu aproveitamento industrial”.",
+        "text": "“Isso **facilita** o seu aproveitamento industrial”.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "“... não se soube explicar como os pinheiros...”",
+        "text": "“... não se **soube** explicar como os pinheiros...”",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "“Essa ave [...] alimenta-se de pinhões...”",
+        "text": "“Essa ave [...] **alimenta**-se de pinhões...”",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "“Essas sementes esquecidas germinam...”",
+        "text": "“Essas sementes esquecidas **germinam**...”",
         "correct": false
       },
       {
         "letter": "E",
-        "text": "“... a gralha azul enterra o pinhão com a extremidade mais fina...”",
+        "text": "“... a gralha azul **enterra** o pinhão com a extremidade mais fina...”",
         "correct": false
       }
     ],
@@ -22092,22 +22092,22 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "options": [
       {
         "letter": "A",
-        "text": "Tu foste feliz em uma época distante.",
+        "text": "Tu **foste** feliz em uma época distante.",
         "correct": false
       },
       {
         "letter": "B",
-        "text": "O diretor disse que renunciaria ao cargo ontem.",
+        "text": "O diretor disse que **renunciaria** ao cargo ontem.",
         "correct": true
       },
       {
         "letter": "C",
-        "text": "Ele estivera naquela região, lembro-me perfeitamente.",
+        "text": "Ele **estivera** naquela região, lembro-me perfeitamente.",
         "correct": false
       },
       {
         "letter": "D",
-        "text": "Amara tão intensamente que sua saúde ficou comprometida.",
+        "text": "**Amara** tão intensamente que sua saúde ficou comprometida.",
         "correct": false
       }
     ],
@@ -22145,7 +22145,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
       },
       {
         "letter": "E",
-        "text": "“O dicionário responde a todas as curiosidades,...\"",
+        "text": "“O dicionário responde a todas as curiosidades,...\" GABARITO – 2 – MODOS VERBAIS 1) C 2) A 3) A 4) B 5) A 6) A 7) A 8) D 9) A 10) D 11) B 12) D 13) C 14) A 15) D 16) C 17) C 18) C 19) E 20) A 21) B 22) C 23) D 24) C 25) B 26) B 27) B 28) B 29) B 30) B",
         "correct": false
       }
     ],

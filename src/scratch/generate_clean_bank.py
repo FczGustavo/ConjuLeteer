@@ -585,10 +585,14 @@ export const SUBJECTS_CONFIG: SubjectMetadata[] = [
 
 export const QUESTION_BANK: QuestionBankItem[] = """ + json.dumps(clean_export, ensure_ascii=False, indent=2) + ";\n"
 
-with open(r"c:\Users\gusta\Documents\ConjuLetter\src\data\questionBank.ts", "w", encoding="utf-8") as f:
+output_path = os.environ.get(
+    "QUESTION_BANK_OUTPUT",
+    r"c:\Users\gusta\Documents\ConjuLetter\src\data\questionBank.ts",
+)
+with open(output_path, "w", encoding="utf-8") as f:
     f.write(ts_output)
 
 print(f"\n==========================================")
 print(f"TOTAL CLEAN QUESTIONS GENERATED: {len(clean_export)}")
-print(f"Saved to src/data/questionBank.ts successfully!")
+print(f"Saved to {output_path} successfully!")
 print(f"==========================================")

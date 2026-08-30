@@ -360,6 +360,33 @@ Depois de cada rodada de mudancas:
 - Verificações: não há mais referências de confete nos quatro fluxos de questões; auditoria verbal aprovada (163 verbos/11 paradigmas); auditoria do banco aprovada (591 questões/9 PDFs); build aprovado; lint sem erros novos, mantendo apenas os três avisos históricos e o alerta de tamanho do chunk.
 - Teste no navegador: a guia Questões abriu e exibiu a geração de questões; a guia Banco de Questões abriu e exibiu a pré-visualização; console sem erros ou avisos.
 
+### 2026-08-30 - rodada 26: parágrafos dos textos de apoio e sublinhado da questão 1 de Verbos
+
+- `src/components/QuestionBankView.tsx`: a extração de título e fonte passou a preservar as linhas vazias originais do texto de apoio. Quebras simples continuam tratadas como envolvimento artificial do PDF, enquanto intervalos reais geram parágrafos separados.
+- Referências bibliográficas quebradas em mais de uma linha agora são recompostas com limite seguro de continuidade, impedindo que o fim da fonte apareça como parágrafo solto ou que uma fonte malformada absorva o corpo do texto.
+- `src/utils/textFormatter.tsx`: marcadores numerados como `1§`, `2§`, `3§` e equivalentes passaram a iniciar blocos próprios mesmo quando o PDF não deixou uma linha vazia entre eles.
+- `src/data/questionBank.ts` e `src/data/simuladoQuestions.ts`: restaurado o sublinhado de `<u>havia visto</u>` na questão que pede a identificação do tempo composto. `audit_question_bank.py` recebeu uma proteção de regressão específica para essa marcação.
+- Teste no navegador: os dez parágrafos de `A complicada arte de ver` foram renderizados como dez blocos distintos; a fonte de Rubem Alves apareceu completa no fim do mesmo bloco; `havia visto` foi renderizado uma única vez com decoração de sublinhado; console sem erros ou avisos.
+- Verificações: auditoria integral aprovada (591 questões/9 PDFs), build aprovado e lint sem erros novos, mantendo somente os três avisos históricos e o alerta de chunk grande.
+
+### 2026-08-30 - rodada 27: auditoria integral de marcações pedagógicas
+
+- Os 591 itens dos nove PDFs foram novamente processados, preservando os gabaritos oficiais e recuperando as marcações que dão sentido a comandos como “sublinhado”, “grifado”, “destacado” e “em negrito”.
+- A recuperação passou a combinar dois sinais do PDF: estilos tipográficos e linhas vetoriais. A transferência geométrica agora identifica a ocorrência contextual exata, evitando marcar todas as repetições de uma letra ou palavra dentro da alternativa.
+- Foram mantidas correções determinísticas para fontes que omitem visualmente o próprio destaque; entre elas, `havia visto`, `onde`, `fui germinada`, sinais de pontuação, formas pronominais e os seis casos finais de Fonética conferidos diretamente nas páginas renderizadas.
+- `audit_question_bank.py` agora bloqueia marcação vazia ou desbalanceada, referência visual sem alvo, comandos genéricos vazados ao texto de apoio e regressões em casos representativos. O comando permanente é `npm run audit:questions`.
+- Estado auditado: 591 questões, 294 com marcação pedagógica, 186 trechos em negrito e 770 sublinhados; as 531 questões atualmente expostas no banco foram carregadas simultaneamente no navegador, com 531 cartões e 764 sublinhados renderizados (as duas folhas de 30 verbos permanecem ocultas conforme decisão anterior).
+- Verificações: gabaritos e estrutura aprovados nos nove PDFs; auditoria verbal aprovada (163 verbos/11 paradigmas); build de produção aprovado; lint sem erros e apenas os três avisos históricos de efeitos; teste visual confirmou `havia visto`, `recorde` e o texto de apoio longo renderizados no conjunto integral.
+
+### 2026-08-30 - rodada 28: alternativas destacadas e paragrafacao semantica
+
+- A auditoria das alternativas foi ampliada para exigir cobertura completa quando o enunciado manda comparar formas destacadas, sublinhadas, grifadas ou em negrito. A varredura encontrou 49 itens com cobertura parcial e restaurou 116 marcacoes diretamente da geometria vetorial dos PDFs.
+- Os casos ambiguos foram comparados visualmente com as paginas oficiais. Foram restaurados alvos como `tudo`, os pronomes `o`, `que`, `aquele`, `essa`, `este`, `conserve`, alem de `revelasse` e `fizera` na questao de referencia. Uma regressao dedicada agora exige que as cinco alternativas desse item mantenham seus destaques.
+- `src/utils/textFormatter.tsx` passou a reconstruir paragrafos de leitura por sinais semanticos do PDF: dialogos iniciados por travessao e finais de linha curta com pontuacao seguidos de nova frase. Linhas apenas quebradas pela largura da pagina continuam unidas.
+- A varredura renderizada carregou as 531 questoes expostas e 389 textos de apoio. O texto `As caridades odiosas`, antes exibido como bloco unico, passou a ter 31 paragrafos; somente dois textos longos permaneceram com um unico paragrafo, ambos assim estruturados nos originais.
+- No navegador, as cinco alternativas da questao de referencia apresentaram marcacao, o console terminou sem erros ou avisos e nao houve falha de renderizacao. A base integral permanece com 591 questoes em nove PDFs; as outras 60 continuam preservadas, mas ocultas conforme decisao anterior.
+- Verificacoes finais: `npm run audit:questions` aprovado com zero referencia visual sem marcacao; lint sem erros, mantendo apenas os tres avisos historicos; build de producao aprovado, com somente o alerta conhecido de chunk grande.
+
 ## 9. Pendencias e melhorias futuras
 
 - Tratar os 3 avisos restantes de efeitos nos componentes de treino sem alterar a experiencia de reset/foco.

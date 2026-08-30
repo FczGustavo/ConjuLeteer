@@ -10,6 +10,7 @@ if (!filePath) {
 const data = new Uint8Array(fs.readFileSync(filePath));
 const document = await pdfjsLib.getDocument({ data, disableWorker: true }).promise;
 const pages = [];
+const isCompactVerbSheet = /(?:^|[\\/])(?:16\.|17\.)/.test(filePath);
 
 for (let pageNumber = 1; pageNumber <= document.numPages; pageNumber += 1) {
   const page = await document.getPage(pageNumber);
@@ -19,7 +20,12 @@ for (let pageNumber = 1; pageNumber <= document.numPages; pageNumber += 1) {
   for (const item of content.items) {
     if (!('str' in item)) continue;
    const value = item.str;
-    const isEmphasis = typeof item.fontName === 'string' && /_f4$/i.test(item.fontName) && !/^\s+$/.test(value);
+    // The seven main Gran PDFs use their first embedded font for headings and
+    // pedagogical emphasis. The compact verb sheets use fonts 2 and 3 for the
+    // marked verbal forms. Font 4 in those sheets is mostly question chrome,
+    // so treating it as emphasis hid the actual targets and bolded commands.
+    const emphasisFont = isCompactVerbSheet ? /_(?:f2|f3)$/i : /_f1$/i;
+    const isEmphasis = typeof item.fontName === 'string' && emphasisFont.test(item.fontName) && !/^\s+$/.test(value);
     const renderedValue = isEmphasis ? `**${value}**` : value;
    if (value) {
       if (previous && !/^\s*$/.test(value) && !/^\s*$/.test(previous.str)) {

@@ -31,6 +31,17 @@ EXPECTED_LIST_COUNTS = {
     "pdf_17": 30,
 }
 
+REFERENCE_RE = re.compile(
+    r"\b(?:sublinhad[oa]s?|grif[oa]d[oa]s?|destacad[oa]s?|em destaque|"
+    r"em negrito|assinalad[oa]s?)\b",
+    re.IGNORECASE,
+)
+STRICT_VISUAL_REFERENCE_RE = re.compile(
+    r"\b(?:sublinhad[oa]s?|grif[oa]d[oa]s?|em negrito)\b",
+    re.IGNORECASE,
+)
+QUOTED_TARGET_RE = re.compile(r"[“\"]\s*[^”\"\n]{1,160}\s*[”\"]")
+
 
 def load_bank() -> list[dict]:
     source = BANK_PATH.read_text(encoding="utf-8")
@@ -139,6 +150,30 @@ def main() -> int:
         ):
             if field_value.count("**") % 2:
                 issues.append(f"{question['id']}: negrito Markdown desbalanceado em {field_name}")
+            if field_value.count("<u>") != field_value.count("</u>"):
+                issues.append(f"{question['id']}: sublinhado HTML desbalanceado em {field_name}")
+            if re.search(r"<u>\s*</u>|\*\*\s*\*\*", field_value):
+                issues.append(f"{question['id']}: marcação pedagógica vazia em {field_name}")
+        statement = question.get("statement", "")
+        has_visual_markup = bool(re.search(r"<u>.+?</u>|\*\*.+?\*\*", combined_text, re.DOTALL))
+        has_quoted_target = bool(QUOTED_TARGET_RE.search(statement))
+        if STRICT_VISUAL_REFERENCE_RE.search(statement) and not has_visual_markup:
+            issues.append(f"{question['id']}: enunciado exige marcação visual, mas ela está ausente")
+        elif REFERENCE_RE.search(statement) and not (has_visual_markup or has_quoted_target):
+            issues.append(f"{question['id']}: referência a destaque sem alvo identificável")
+        option_markers = [
+            bool(re.search(r"<u>.+?</u>|\*\*.+?\*\*", option.get("text", ""), re.DOTALL))
+            for option in options
+        ]
+        compares_marked_options = bool(
+            re.search(r"\b(?:alternativas?|opç(?:ão|ões))\b", statement, re.IGNORECASE)
+            and REFERENCE_RE.search(statement)
+        )
+        if compares_marked_options and sum(option_markers) >= 2 and not all(option_markers):
+            missing_letters = [option["letter"] for option, present in zip(options, option_markers) if not present]
+            issues.append(
+                f"{question['id']}: alternativas sem o destaque exigido ({missing_letters})"
+            )
         if re.search(r"(?:^|\n)\s*[A-E]\)\s+", question.get("readingText", "")):
             issues.append(f"{question['id']}: marcador de alternativa vazou para o texto de apoio")
         if question.get("readingText", "").splitlines()[-1:] and re.match(
@@ -168,6 +203,7 @@ def main() -> int:
     # Regression guards for the two 30-question verb sheets. These are the
     # exact structures most affected by PDF style-run fragmentation.
     formatting_guards = {
+        "verbos-pdf_7-q1": "<u>havia visto</u>",
         "verbos-pdf_16-q1": "______",
         "verbos-pdf_16-q9": "1 –",
         "verbos-pdf_16-q11": "**derem**",
@@ -177,10 +213,27 @@ def main() -> int:
         "verbos-pdf_17-q17": "o céu",
         "verbos-pdf_17-q24": "O verbo pertence à segunda conjugação",
         "verbos-pdf_17-q27": "______ mais aperfeiçoados",
+        "classes_var-pdf_4_classes_var-q23": "<u>vitórias-régias</u>",
+        "pronomes-pdf_6_pronomes-q47": "<u>onde</u>",
+        "verbos-pdf_7-q50": "<u>fui germinada</u>",
     }
     for question_id, marker in formatting_guards.items():
-        if marker not in by_id.get(question_id, {}).get("statement", "") and marker not in by_id.get(question_id, {}).get("readingText", ""):
+        guarded = by_id.get(question_id, {})
+        guarded_text = " ".join(
+            [guarded.get("statement", ""), guarded.get("readingText", "")]
+            + [option.get("text", "") for option in guarded.get("options", [])]
+        )
+        if marker not in guarded_text:
             issues.append(f"{question_id}: estrutura de formatação esperada ausente ({marker})")
+
+    verb_q1 = by_id.get("verbos-pdf_7-q1", {})
+    verb_q1_missing = [
+        option.get("letter")
+        for option in verb_q1.get("options", [])
+        if not re.search(r"<u>.+?</u>|\*\*.+?\*\*", option.get("text", ""), re.DOTALL)
+    ]
+    if verb_q1_missing:
+        issues.append(f"verbos-pdf_7-q1: alternativas sem forma verbal marcada ({verb_q1_missing})")
 
     if issues:
         print(f"FALHA: {len(issues)} problema(s)")
