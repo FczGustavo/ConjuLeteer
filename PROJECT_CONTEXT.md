@@ -339,6 +339,12 @@ Depois de cada rodada de mudancas:
 
 - `src/components/TablesView.tsx`: removido do cabeçalho o texto solto `Progresso: 0/163 verbos praticados · 0 dominados`. O acompanhamento permanece exclusivamente no box expansível `Progresso da sessão`, evitando informação repetida e mantendo feitos, pendentes e a relação individual de verbos.
 
+### 2026-08-30 - rodada 23: README do produto
+
+- `README.md`: substituído integralmente o texto padrão do template Vite e removido o título residual com codificação quebrada.
+- A nova documentação apresenta proposta do produto, recursos das três áreas, pipeline de IA, números auditados, tecnologias, instalação, comandos de validação, estrutura do repositório, persistência, privacidade, estado conhecido e autoria.
+- Foi documentada explicitamente a diferença entre as 591 questões preservadas/auditadas e as 531 atualmente expostas no filtro, evitando que a ocultação dos dois cadernos de 30 seja confundida com exclusão de dados.
+
 ## 9. Pendencias e melhorias futuras
 
 - Tratar os 3 avisos restantes de efeitos nos componentes de treino sem alterar a experiencia de reset/foco.
