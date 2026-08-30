@@ -3,7 +3,7 @@ import { Header, type MainNavTab } from './components/Header';
 import { TablesView } from './components/TablesView';
 import { QuestionsView } from './components/QuestionsView';
 import { QuestionBankView } from './components/QuestionBankView';
-import { SettingsModal } from './components/SettingsModal';
+import { SettingsView } from './components/SettingsView';
 import { loadUserSettings, recordVerbAttempt } from './utils/srsEngine';
 import type { UserSettings } from './utils/srsEngine';
 
@@ -11,7 +11,6 @@ export function App() {
   const [activeTab, setActiveTab] = useState<MainNavTab>('tabelas');
   const [selectedVerbId, setSelectedVerbId] = useState<string>('por');
   const [settings, setSettings] = useState<UserSettings>(loadUserSettings());
-  const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
 
   const handleRecordAttempt = (verbId: string, mood: any, tense: any, isCorrect: boolean) => {
     recordVerbAttempt(verbId, mood, tense, isCorrect);
@@ -23,7 +22,6 @@ export function App() {
       <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        onOpenSettings={() => setIsSettingsOpen(true)}
         onOpenQuestionLists={() => setActiveTab('listas')}
         onQuickSelectVerb={(verbId) => {
           setSelectedVerbId(verbId);
@@ -60,15 +58,14 @@ export function App() {
             onRecordAttempt={handleRecordAttempt}
           />
         )}
-      </main>
 
-      {/* Settings Modal */}
-      <SettingsModal
-        isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
-        settings={settings}
-        onUpdateSettings={setSettings}
-      />
+        {activeTab === 'configuracoes' && (
+          <SettingsView
+            settings={settings}
+            onUpdateSettings={setSettings}
+          />
+        )}
+      </main>
     </div>
   );
 }

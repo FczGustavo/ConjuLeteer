@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { Settings as SettingsIcon, Search, FileText, BookOpen, Library, ListChecks, ChevronDown } from 'lucide-react';
 import { CANONICAL_VERBS } from '../data/canonicalVerbs';
 
-export type MainNavTab = 'tabelas' | 'questoes' | 'simulados' | 'listas';
+export type MainNavTab = 'tabelas' | 'questoes' | 'simulados' | 'listas' | 'configuracoes';
 
 interface HeaderProps {
   activeTab: MainNavTab;
   setActiveTab: (tab: MainNavTab) => void;
-  onOpenSettings: () => void;
   onOpenQuestionLists: () => void;
   onQuickSelectVerb?: (verbId: string) => void;
 }
@@ -15,7 +14,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
-  onOpenSettings,
   onOpenQuestionLists,
   onQuickSelectVerb
 }) => {
@@ -112,9 +110,14 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
-              onClick={onOpenSettings}
-              className="p-2 rounded-xl text-[#8b949e] hover:text-[#f3ede6] hover:bg-[#1f242b] border border-transparent hover:border-[#2e353e] transition-colors"
-              title="Configurações e Chave OpenRouter"
+              onClick={() => setActiveTab('configuracoes')}
+              className={`p-2 rounded-xl border transition-colors ${
+                activeTab === 'configuracoes'
+                  ? 'border-[#e8a87c]/40 bg-[#262c35] text-[#e8a87c]'
+                  : 'border-transparent text-[#8b949e] hover:border-[#2e353e] hover:bg-[#1f242b] hover:text-[#f3ede6]'
+              }`}
+              title="Abrir Configurações"
+              aria-label="Abrir Configurações"
             >
               <SettingsIcon className="w-4 h-4 stroke-[1.75]" />
             </button>

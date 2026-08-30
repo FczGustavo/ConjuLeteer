@@ -345,6 +345,14 @@ Depois de cada rodada de mudancas:
 - A nova documentação apresenta proposta do produto, recursos das três áreas, pipeline de IA, números auditados, tecnologias, instalação, comandos de validação, estrutura do repositório, persistência, privacidade, estado conhecido e autoria.
 - Foi documentada explicitamente a diferença entre as 591 questões preservadas/auditadas e as 531 atualmente expostas no filtro, evitando que a ocultação dos dois cadernos de 30 seja confundida com exclusão de dados.
 
+### 2026-08-30 - rodada 24: Configurações como guia própria
+
+- `src/components/SettingsModal.tsx` foi removido e substituído por `src/components/SettingsView.tsx`: Configurações deixou de ser um modal e passou a ocupar uma página interna completa.
+- `src/App.tsx` e `src/components/Header.tsx`: adicionada a rota de interface `configuracoes`; o botão de engrenagem agora navega para a guia e exibe estado ativo.
+- A nova tela separa experiência de estudo, integração OpenRouter e dados locais. Inclui seletor descritivo de colunas, acentuação estrita, mostrar/ocultar chave, modelo, status da IA, resumo atual, explicação de privacidade e confirmação de salvamento sem fechar a tela.
+- O reset passou a explicar que apaga também listas, respostas, importações e progresso, mantendo confirmação explícita antes da operação.
+- Teste no navegador: a engrenagem abriu uma página sem semântica de `dialog`; todas as três seções e a ação de salvar foram renderizadas. Desktop sem overflow e viewport 390 px com `scrollWidth` 385; console sem erros/avisos. Build e lint aprovados, mantendo apenas os três avisos históricos e o alerta de chunk.
+
 ## 9. Pendencias e melhorias futuras
 
 - Tratar os 3 avisos restantes de efeitos nos componentes de treino sem alterar a experiencia de reset/foco.
