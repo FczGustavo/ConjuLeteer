@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { AlertCircle, BookOpen, Check, Sparkles, X } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import type { MilitaryQuestion, QuestionArchetype } from '../types/verbs';
 import { generateMilitaryQuestions } from '../services/aiGenerator';
 import { FormattedExamText } from '../utils/textFormatter';
@@ -74,7 +73,6 @@ export const QuestionsView: React.FC<QuestionsViewProps> = ({ onRecordAttempt })
 
     const trackedVerb = question.targetVerbs[0] || 'questao-ia';
     onRecordAttempt(trackedVerb, 'indicativo', 'presente', isCorrect);
-    if (isCorrect) confetti({ particleCount: 45, spread: 55, origin: { y: 0.7 } });
   };
 
   return (

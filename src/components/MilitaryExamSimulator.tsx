@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Brain, Sparkles, ArrowRight, BookOpen } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import type { MilitaryBanca, MilitaryQuestion, QuestionArchetype } from '../types/verbs';
 import { MILITARY_QUESTIONS } from '../data/militaryQuestions';
 import { generateMilitaryQuestion } from '../services/aiGenerator';
@@ -55,13 +54,6 @@ export const MilitaryExamSimulator: React.FC<MilitaryExamSimulatorProps> = ({
       onRecordAttempt(currentQuestion.targetVerbs[0], 'indicativo' as any, 'presente' as any, isCorrect);
     }
 
-    if (isCorrect) {
-      confetti({
-        particleCount: 70,
-        spread: 60,
-        origin: { y: 0.7 }
-      });
-    }
   };
 
   const handleNextQuestion = async (useAi: boolean = false) => {

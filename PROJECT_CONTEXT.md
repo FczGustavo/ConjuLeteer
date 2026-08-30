@@ -353,6 +353,13 @@ Depois de cada rodada de mudancas:
 - O reset passou a explicar que apaga também listas, respostas, importações e progresso, mantendo confirmação explícita antes da operação.
 - Teste no navegador: a engrenagem abriu uma página sem semântica de `dialog`; todas as três seções e a ação de salvar foram renderizadas. Desktop sem overflow e viewport 390 px com `scrollWidth` 385; console sem erros/avisos. Build e lint aprovados, mantendo apenas os três avisos históricos e o alerta de chunk.
 
+### 2026-08-30 - rodada 25: remoção do confete nas questões
+
+- `src/components/QuestionsView.tsx`, `QuestionBankView.tsx`, `SimuladosView.tsx` e `MilitaryExamSimulator.tsx`: removidos os imports e disparos de `canvas-confetti` acionados ao acertar questões, tanto na confirmação individual quanto na confirmação em lote.
+- A validação da alternativa, o registro da tentativa, o placar e os estados de feedback foram preservados. O confete continua somente nos exercícios de conjugação/treino (Tabelas, Drill, Imperativos e Confronto), fora do fluxo de questões.
+- Verificações: não há mais referências de confete nos quatro fluxos de questões; auditoria verbal aprovada (163 verbos/11 paradigmas); auditoria do banco aprovada (591 questões/9 PDFs); build aprovado; lint sem erros novos, mantendo apenas os três avisos históricos e o alerta de tamanho do chunk.
+- Teste no navegador: a guia Questões abriu e exibiu a geração de questões; a guia Banco de Questões abriu e exibiu a pré-visualização; console sem erros ou avisos.
+
 ## 9. Pendencias e melhorias futuras
 
 - Tratar os 3 avisos restantes de efeitos nos componentes de treino sem alterar a experiencia de reset/foco.

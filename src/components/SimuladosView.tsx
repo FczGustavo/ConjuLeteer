@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { ArrowLeft, ArrowRight, RotateCcw, BookOpen, ChevronDown, ChevronUp, Award, Layers } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import { SIMULADO_QUESTIONS, type SimuladoQuestion } from '../data/simuladoQuestions';
 
 import { FormattedExamText } from '../utils/textFormatter';
@@ -67,24 +66,15 @@ export const SimuladosView: React.FC<SimuladosViewProps> = ({
       onRecordAttempt('militar_simulado', 'indicativo' as any, 'presente' as any, isCorrect);
     }
 
-    if (isCorrect) {
-      confetti({
-        particleCount: 35,
-        spread: 55,
-        origin: { y: 0.7 }
-      });
-    }
   };
 
   const handleConfirmAllOnPage = () => {
-    let anyCorrect = false;
     const newConfirmed = { ...confirmedAnswers };
 
     pageQuestions.forEach(q => {
       if (userAnswers[q.id] && !newConfirmed[q.id]) {
         newConfirmed[q.id] = true;
         const isCorrect = userAnswers[q.id] === q.correctLetter;
-        if (isCorrect) anyCorrect = true;
         if (onRecordAttempt) {
           onRecordAttempt('militar_simulado', 'indicativo' as any, 'presente' as any, isCorrect);
         }
@@ -92,9 +82,6 @@ export const SimuladosView: React.FC<SimuladosViewProps> = ({
     });
 
     setConfirmedAnswers(newConfirmed);
-    if (anyCorrect) {
-      confetti({ particleCount: 50, spread: 65, origin: { y: 0.6 } });
-    }
   };
 
   const toggleReadingText = (qId: string) => {

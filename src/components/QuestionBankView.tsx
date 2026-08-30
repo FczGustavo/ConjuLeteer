@@ -14,7 +14,6 @@ import {
   Copy,
   Check
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import { QUESTION_BANK, type QuestionBankItem, SUBJECTS_CONFIG } from '../data/questionBank';
 import { getCustomQuestions } from '../services/pdfImportService';
 import { ImportPdfModal } from './ImportPdfModal';
@@ -365,35 +364,21 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     setConfirmedAnswers(prev => ({ ...prev, [q.id]: true }));
     const isCorrect = chosen === q.correctLetter;
 
-    if (isCorrect) {
-      confetti({
-        particleCount: 40,
-        spread: 50,
-        origin: { y: 0.7 }
-      });
-    }
-
     onRecordAttempt?.(q.id, 'banco', q.subjectId, isCorrect);
   };
 
   const handleConfirmAllOnPage = () => {
     const newConfirmed = { ...confirmedAnswers };
-    let hasAnyCorrect = false;
-
     pageQuestions.forEach(q => {
       const chosen = userAnswers[q.id];
       if (chosen && !confirmedAnswers[q.id]) {
         newConfirmed[q.id] = true;
         const isCorrect = chosen === q.correctLetter;
-        if (isCorrect) hasAnyCorrect = true;
         onRecordAttempt?.(q.id, 'banco', q.subjectId, isCorrect);
       }
     });
 
     setConfirmedAnswers(newConfirmed);
-    if (hasAnyCorrect) {
-      confetti({ particleCount: 55, spread: 60, origin: { y: 0.6 } });
-    }
   };
 
   const handleResetAnswers = () => {
