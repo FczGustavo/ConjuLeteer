@@ -8,7 +8,8 @@ import { loadUserSettings, recordVerbAttempt } from './utils/srsEngine';
 import type { UserSettings } from './utils/srsEngine';
 
 export function App() {
-  const [activeTab, setActiveTab] = useState<MainNavTab>('tabelas');
+  const auditQuestions = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('audit') === 'questions';
+  const [activeTab, setActiveTab] = useState<MainNavTab>(auditQuestions ? 'simulados' : 'tabelas');
   const [selectedVerbId, setSelectedVerbId] = useState<string>('por');
   const [settings, setSettings] = useState<UserSettings>(loadUserSettings());
 
@@ -49,6 +50,7 @@ export function App() {
         {activeTab === 'simulados' && (
           <QuestionBankView
             onRecordAttempt={handleRecordAttempt}
+            includeAuditLists={auditQuestions}
           />
         )}
 

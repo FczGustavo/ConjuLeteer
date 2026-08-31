@@ -70,6 +70,12 @@ MANUAL_MARKS: dict[tuple[str, int, str], list[tuple[str, str]]] = {
     ("pdf_6_pronomes", 92, "option:E"): [("sabê-lo", "sabê-<u>lo</u>")],
     ("pdf_7", 10, "option:B"): [("ferira-me", "<u>ferira-me</u>")],
     ("pdf_7", 10, "option:E"): [("Estivera", "<u>Estivera</u>")],
+    ("pdf_7", 20, "readingText"): [("requer", "<u>requer</u>")],
+    ("pdf_6_pronomes", 88, "option:A"): [("Visava ao circunstancial , ao episódico", "<u>Visava ao circunstancial , ao episódico</u>")],
+    ("pdf_6_pronomes", 88, "option:B"): [("Não sou poeta (. . .)", "<u>Não sou poeta (. . .)</u>")],
+    ("pdf_6_pronomes", 88, "option:C"): [("mal ousa balançar as perninhas", "<u>mal ousa balançar as perninhas</u>")],
+    ("pdf_6_pronomes", 88, "option:D"): [("A meu lado o garçom encaminha a ordem", "<u>A meu lado o garçom encaminha a ordem</u>")],
+    ("pdf_6_pronomes", 88, "option:E"): [("A negrinha agarra finalmente o bolo (.. .)", "<u>A negrinha agarra finalmente o bolo (.. .)</u>")],
     ("pdf_1_fonetica", 74, "statement"): [("da noite", "da <u>noite</u>"), ("tênues", "<u>tênues</u>"), ("de luar", "de <u>luar</u>")],
     ("pdf_6_pronomes", 66, "option:E"): [("informavam-me", "informavam-<u>me</u>")],
     ("pdf_6_pronomes", 68, "option:A"): [("me dirá", "<u>me</u> dirá")],
@@ -92,6 +98,16 @@ MANUAL_MARKS: dict[tuple[str, int, str], list[tuple[str, str]]] = {
     ("pdf_4_classes_var", 23, "readingText"): [("das vitórias-régias", "das <u>vitórias-régias</u>")],
     ("pdf_16", 1, "statement"): [("ninguém nesse caso", "ninguém ______ nesse caso"), ("ele os documentos", "ele ______ os documentos"), ("a banca\nexaminadora", "a banca ______\nexaminadora")],
     ("pdf_17", 12, "statement"): [("se o resultado.", "se ______ o resultado."), ("ele aqui.", "ele ______ aqui.")],
+}
+
+# Marks that were present in an extracted option but are not pedagogically
+# referenced by the original command.  Keep this list explicit and scoped to
+# the individual record so future imports cannot silently lose meaningful
+# emphasis.  In q5 of "Mulheres de Atenas", only "pros seus maridos" is
+# referenced as underlined; the underline on "castigadas" is decorative OCR
+# residue.
+MANUAL_UNMARKS: dict[tuple[str, int, str], list[str]] = {
+    ("pdf_7", 5, "option:B"): ["castigadas."],
 }
 
 
@@ -194,6 +210,19 @@ def apply_manual_marks(question: dict) -> None:
                 for old, new in replacements:
                     if old in target and new not in target:
                         target = target.replace(old, new, 1)
+                option["text"] = target
+
+    for (list_id, number, field), targets in MANUAL_UNMARKS.items():
+        if key != (list_id, number):
+            continue
+        if field.startswith("option:"):
+            letter = field.split(":", 1)[1]
+            for option in question.get("options", []):
+                if option.get("letter") != letter:
+                    continue
+                target = option.get("text", "")
+                for phrase in targets:
+                    target = target.replace(f"<u>{phrase}</u>", phrase)
                 option["text"] = target
 
 

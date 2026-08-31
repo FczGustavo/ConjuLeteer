@@ -13,8 +13,10 @@ import {
   ListPlus
 } from 'lucide-react';
 import { SUBJECTS_CONFIG, type SubjectId, type QuestionBankItem } from '../data/questionBank';
+import { ENGLISH_SUBJECTS_CONFIG } from '../data/englishSubjects';
 
 export interface FilterState {
+  languageFilter: 'pt' | 'en';
   selectedSubjectIds: SubjectId[];
   /** Kept for compatibility with persisted filters; Verbos always uses PDF 7. */
   selectedListIds: string[];
@@ -31,6 +33,8 @@ interface QuestionBankFilterViewProps {
   onOpenImportModal: () => void;
   userAnswers: Record<string, string>;
   confirmedAnswers: Record<string, boolean>;
+  /** Internal visual-audit mode; includes the two hidden 30-question sheets. */
+  includeAuditLists?: boolean;
 }
 
 export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
@@ -41,13 +45,19 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
   onCreateList,
   onOpenImportModal,
   userAnswers,
-  confirmedAnswers
+  confirmedAnswers,
+  includeAuditLists = false
 }) => {
   const [isTreeExpanded, setIsTreeExpanded] = useState<boolean>(true);
   const [simuladoQty, setSimuladoQty] = useState<number>(10);
+  const subjectConfig = filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
   const visibleQuestions = useMemo(
-    () => allQuestions.filter(question => question.subjectId !== 'verbos' || question.listId === 'pdf_7'),
-    [allQuestions]
+    () => allQuestions.filter(question => {
+      const inLanguage = filterState.languageFilter === 'en' ? question.language === 'en' : question.language !== 'en';
+      if (!inLanguage) return false;
+      return includeAuditLists || question.subjectId !== 'verbos' || question.listId === 'pdf_7';
+    }),
+    [allQuestions, includeAuditLists, filterState.languageFilter]
   );
 
   // Helper to toggle subject selection
@@ -63,14 +73,14 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
   };
 
   // Select all or deselect all subjects
-  const allSubIds = SUBJECTS_CONFIG.filter(s => s.id !== 'todos').map(s => s.id);
+  const allSubIds = subjectConfig.filter(s => s.id !== 'todos').map(s => s.id);
   const isAllSubjectsSelected = allSubIds.length > 0 && allSubIds.every(id => filterState.selectedSubjectIds.includes(id));
 
   const toggleSelectAllSubjects = () => {
     if (isAllSubjectsSelected) {
       onFilterChange({ ...filterState, selectedSubjectIds: [] });
     } else {
-      onFilterChange({ ...filterState, selectedSubjectIds: allSubIds, selectedListIds: ['pdf_7'] });
+      onFilterChange({ ...filterState, selectedSubjectIds: allSubIds, selectedListIds: filterState.languageFilter === 'pt' ? ['pdf_7'] : [] });
     }
   };
 
@@ -82,8 +92,9 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
   // Clear all filters
   const handleClearFilters = () => {
     onFilterChange({
+      languageFilter: filterState.languageFilter,
       selectedSubjectIds: allSubIds,
-      selectedListIds: ['pdf_7'],
+      selectedListIds: filterState.languageFilter === 'pt' ? ['pdf_7'] : [],
       statusFilter: 'all',
       limitQuantity: undefined
     });
@@ -122,7 +133,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
         <div>
           <div className="flex items-center space-x-2 text-xs font-mono text-[#8b949e]">
             <BookOpen className="w-3.5 h-3.5 text-[#e8a87c]" />
-            <span>Português</span>
+            <span>{filterState.languageFilter === 'en' ? 'Inglês' : 'Português'}</span>
             <span>/</span>
             <span className="text-[#e8a87c]">Banco de Questões</span>
             <span>/</span>
@@ -142,6 +153,42 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
         </button>
       </div>
 
+      {/* Language subdivision */}
+      <div className="flex flex-col gap-3 rounded-2xl border border-[#2e353e] bg-[#181b20] p-4 shadow-xl sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-xs font-mono font-bold uppercase tracking-[0.14em] text-[#e8a87c]">Subdivisão do banco</p>
+          <p className="mt-1 text-xs text-[#8b949e]">Escolha o idioma e filtre somente os assuntos daquela coleção.</p>
+        </div>
+        <div className="grid w-full grid-cols-2 gap-2 sm:w-auto">
+          {([
+            { id: 'pt' as const, label: 'Português', count: allQuestions.filter(question => question.language !== 'en').length },
+            { id: 'en' as const, label: 'Inglês', count: allQuestions.filter(question => question.language === 'en').length },
+          ]).map(language => (
+            <button
+              key={language.id}
+              onClick={() => {
+                const nextConfig = language.id === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
+                onFilterChange({
+                  ...filterState,
+                  languageFilter: language.id,
+                  selectedSubjectIds: nextConfig.filter(subject => subject.id !== 'todos').map(subject => subject.id),
+                  selectedListIds: language.id === 'pt' ? ['pdf_7'] : [],
+                  statusFilter: 'all',
+                  limitQuantity: undefined,
+                });
+              }}
+              className={`rounded-xl border px-4 py-2.5 text-xs font-mono transition-all ${
+                filterState.languageFilter === language.id
+                  ? 'border-[#e8a87c] bg-[#2a1d17] font-bold text-[#e8a87c] shadow-sm'
+                  : 'border-[#2e353e] bg-[#20242b] text-[#9ca3af] hover:border-[#e8a87c]/50 hover:text-[#f3ede6]'
+              }`}
+            >
+              {language.label} <span className="ml-1 opacity-70">({language.count})</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* 2-Column Matrix */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         
@@ -158,7 +205,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
               ) : (
                 <Square className="w-4 h-4 text-[#6b7280]" />
               )}
-              <span>Português (Todos os Assuntos)</span>
+              <span>{filterState.languageFilter === 'en' ? 'Inglês (Todos os Assuntos)' : 'Português (Todos os Assuntos)'}</span>
             </button>
 
             <button
@@ -171,7 +218,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
 
           {isTreeExpanded && (
             <div className="space-y-1 pl-1">
-              {SUBJECTS_CONFIG.filter(s => s.id !== 'todos').map(sub => {
+              {subjectConfig.filter(s => s.id !== 'todos').map(sub => {
                 const isSelected = filterState.selectedSubjectIds.includes(sub.id);
                 const count = visibleQuestions.filter(q => q.subjectId === sub.id).length;
 

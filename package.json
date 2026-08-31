@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "import:english": "python src/scratch/import_english_questions.py",
+    "audit:english": "python src/scratch/audit_english_question_bank.py",
     "audit:questions": "python src/scratch/audit_question_bank.py",
+    "audit:question-report": "python src/scratch/generate_question_audit_report.py",
     "audit:verbs": "node scripts/audit-verbs.cjs",
     "lint": "oxlint",
     "preview": "vite preview"

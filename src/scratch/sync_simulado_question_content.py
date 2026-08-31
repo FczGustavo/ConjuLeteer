@@ -40,7 +40,7 @@ def main() -> None:
         source = canonical.get((item.get("listId"), item.get("questionNumber")))
         if not source:
             continue
-        for field in ("statement", "readingText", "correctLetter"):
+        for field in ("statement", "readingText", "support", "provenance", "quality", "correctLetter"):
             if field in source:
                 item[field] = source[field]
             else:

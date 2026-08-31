@@ -10,7 +10,7 @@ O **ConjuLetter** é uma aplicação educacional focada no domínio de verbos e 
 |---|---|
 | **Tabelas** | Treino de 163 verbos em 11 paradigmas, tabela única, sessão multi-tempos, confrontos e imperativos |
 | **Questões** | Geração sob demanda de 5, 10 ou 20 questões inéditas por IA, sem atribuir banca fictícia |
-| **Banco de Questões** | Filtros por assunto, pré-visualização, resolução e criação de listas persistentes |
+| **Banco de Questões** | Filtros por idioma e assunto, pré-visualização, resolução e criação de listas persistentes |
 | **Listas salvas** | Retomada do ponto exato, respostas persistidas, progresso, precisão e gabarito comparativo |
 
 ## Principais recursos
@@ -33,6 +33,15 @@ O **ConjuLetter** é uma aplicação educacional focada no domínio de verbos e 
 - Listas persistentes ficam salvas no navegador e podem ser retomadas posteriormente.
 - Ações para copiar somente o enunciado ou a questão completa.
 
+#### Subdivisão de Inglês
+
+O banco também inclui uma coleção independente de **1.500 questões de Inglês para Concursos Militares**, importada de `1500 Questões de Inglês para Concursos Militares.pdf`. A interface alterna entre **Português** e **Inglês** sem misturar filtros ou contagens.
+
+- São **24 assuntos**, exatamente na ordem e com as quantidades do índice do PDF (Adjectives and Adverbs, Pronouns, Verbs, Modal Auxiliaries, Reading Skills and General Review, Translations e demais subdivisões).
+- Os enunciados e alternativas são extraídos sem atribuir banca fictícia; a banca impressa é preservada quando existe e as traduções ficam identificadas como compilação.
+- Cada item guarda a página da questão e a página exata do gabarito, localizado na seção `Answers` das páginas **190–196**.
+- O importador determinístico restaura quebras de texto, marcadores de alternativa fora de ordem e o único caso em que o PDF repetia `a)` nas cinco alternativas. A ficha completa fica em [`reports/english-question-audit.md`](./reports/english-question-audit.md) e [`reports/english-question-audit.json`](./reports/english-question-audit.json).
+
 ### Questões inéditas por IA
 
 O fluxo de IA segue o pipeline:
@@ -44,7 +53,8 @@ planejar → gerar → validar → resolver sem o gabarito → aprovar ou regene
 - A geração usa a base verbal canônica como contexto.
 - Um segundo processo resolve a questão sem receber a resposta indicada pelo gerador.
 - A questão só é aceita quando estrutura, conteúdo e resposta independente são compatíveis.
-- Questões ambíguas, incompletas ou divergentes são rejeitadas ou regeneradas.
+- No gerador de questões inéditas, itens ambíguos, incompletos ou divergentes são rejeitados ou regenerados.
+- Importações de PDF salvam os itens utilizáveis mesmo quando há ambiguidade; o modal lista avisos por questão e o Banco exibe o selo `Revisar` até a conferência.
 - É necessária uma chave da **OpenRouter**, configurada pela própria interface.
 
 ## Qualidade e auditoria
@@ -54,8 +64,11 @@ O projeto possui verificações reproduzíveis para impedir regressões:
 - **163 páginas de referência verbal** comparadas.
 - **10.758 formas** confrontadas nos paradigmas exibidos.
 - **591 questões**, **2.803 alternativas** e **9 gabaritos oficiais** verificados.
+- **1.500 questões de Inglês**, **24 assuntos** e **1.500 gabaritos** do PDF militar conferidos individualmente, sem divergência.
 - Auditoria de IDs, numeração, quantidade de alternativas, resposta única e padrões conhecidos de corrupção textual.
+- Ficha individual das 591 questões em [`reports/question-audit.md`](./reports/question-audit.md) e versão legível por máquina em [`reports/question-audit.json`](./reports/question-audit.json).
 - Testes visuais em desktop e viewport móvel, incluindo overflow e console do navegador.
+- A galeria interna de revisão pode ser aberta em `/?audit=questions`; ela inclui também as duas folhas de 30 verbos que ficam ocultas no fluxo público.
 
 Os PDFs em `lists/` e seus blocos oficiais de respostas são a fonte de verdade do banco. Para as conjugações, a fonte local é `src/data/canonicalVerbs.ts`.
 
@@ -105,6 +118,15 @@ npm run audit:verbs
 
 # Integridade das 591 questões contra os 9 PDFs
 python src/scratch/audit_question_bank.py
+
+# Regenerar as fichas individuais de auditoria
+npm run audit:question-report
+
+# Reimportar o PDF de Inglês (fonte padrão em C:\\Users\\gusta\\Downloads)
+npm run import:english
+
+# Conferir estrutura, páginas e 1.500 gabaritos de Inglês
+npm run audit:english
 
 # Comparação integral das formas verbais com a referência brasileira
 python scripts/audit-verbs-ptbr.py

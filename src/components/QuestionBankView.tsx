@@ -15,10 +15,13 @@ import {
   Check
 } from 'lucide-react';
 import { QUESTION_BANK, type QuestionBankItem, SUBJECTS_CONFIG } from '../data/questionBank';
+import { ENGLISH_QUESTION_BANK } from '../data/englishQuestionBank';
+import { ENGLISH_SUBJECTS_CONFIG } from '../data/englishSubjects';
 import { getCustomQuestions } from '../services/pdfImportService';
 import { ImportPdfModal } from './ImportPdfModal';
 import { QuestionBankFilterView, type FilterState } from './QuestionBankFilterView';
 import { FormattedExamText } from '../utils/textFormatter';
+import { getQuestionSupport, supportToClipboardText } from '../utils/questionSupport';
 import {
   createQuestionList,
   deleteQuestionList,
@@ -30,6 +33,8 @@ import {
 interface QuestionBankViewProps {
   onRecordAttempt?: (verbId: string, mood: any, tense: any, isCorrect: boolean) => void;
   initialMode?: 'filters' | 'lists';
+  /** Enables the internal ?audit=questions gallery for all 591 native items. */
+  includeAuditLists?: boolean;
 }
 
 function toClipboardText(text: string): string {
@@ -61,12 +66,14 @@ function toClipboardText(text: string): string {
 
 export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   onRecordAttempt,
-  initialMode = 'filters'
+  initialMode = 'filters',
+  includeAuditLists = false
 }) => {
   const [viewMode, setViewMode] = useState<'filters' | 'practice' | 'lists'>(initialMode);
 
   // Filter State
   const [filterState, setFilterState] = useState<FilterState>({
+    languageFilter: 'pt',
     selectedSubjectIds: SUBJECTS_CONFIG.filter(s => s.id !== 'todos').map(s => s.id),
     selectedListIds: ['pdf_7'],
     statusFilter: 'all',
@@ -99,7 +106,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
   // Combined questions (Base + Custom)
   const allBankQuestions = useMemo(() => {
-    return [...QUESTION_BANK, ...customQuestions];
+    return [...QUESTION_BANK, ...ENGLISH_QUESTION_BANK, ...customQuestions];
   }, [customQuestions]);
 
   const questionById = useMemo(
@@ -114,6 +121,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
       return activeList.questionIds.map(id => questionById.get(id)).filter((question): question is QuestionBankItem => Boolean(question));
     }
     let list = allBankQuestions.filter(q => {
+      if (filterState.languageFilter === 'en' ? q.language !== 'en' : q.language === 'en') return false;
       // 1. Subject filter
       if (filterState.selectedSubjectIds.length > 0) {
         if (!filterState.selectedSubjectIds.includes(q.subjectId)) {
@@ -123,7 +131,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
         return false;
       }
 
-      if (q.subjectId === 'verbos' && q.listId !== 'pdf_7') {
+      if (!includeAuditLists && q.subjectId === 'verbos' && q.listId !== 'pdf_7') {
         return false;
       }
 
@@ -144,7 +152,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     }
 
     return list;
-  }, [allBankQuestions, filterState, confirmedAnswers, userAnswers, activeListId, savedLists, questionById]);
+  }, [allBankQuestions, filterState, confirmedAnswers, userAnswers, activeListId, savedLists, questionById, includeAuditLists]);
 
   // Start practice handler
   const handleStartPractice = (limit?: number) => {
@@ -162,8 +170,9 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
   const matchingFilteredQuestions = (limit?: number) => {
     const matching = allBankQuestions.filter(question => {
+      if (filterState.languageFilter === 'en' ? question.language !== 'en' : question.language === 'en') return false;
       if (!filterState.selectedSubjectIds.includes(question.subjectId)) return false;
-      if (question.subjectId === 'verbos' && question.listId !== 'pdf_7') return false;
+      if (!includeAuditLists && question.subjectId === 'verbos' && question.listId !== 'pdf_7') return false;
       if (filterState.statusFilter === 'pending') return !confirmedAnswers[question.id];
       if (filterState.statusFilter === 'correct') return confirmedAnswers[question.id] && userAnswers[question.id] === question.correctLetter;
       if (filterState.statusFilter === 'wrong') return confirmedAnswers[question.id] && userAnswers[question.id] !== question.correctLetter;
@@ -175,11 +184,12 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const handleCreateList = (limit?: number) => {
     const questions = matchingFilteredQuestions(limit);
     if (!questions.length) return;
+    const activeSubjectConfig = filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
     const subjectNames = filterState.selectedSubjectIds
-      .map(id => SUBJECTS_CONFIG.find(subject => subject.id === id)?.shortTitle)
+      .map(id => activeSubjectConfig.find(subject => subject.id === id)?.shortTitle)
       .filter(Boolean);
-    const label = subjectNames.length === SUBJECTS_CONFIG.filter(subject => subject.id !== 'todos').length
-      ? 'Todos os assuntos'
+    const label = subjectNames.length === activeSubjectConfig.filter(subject => subject.id !== 'todos').length
+      ? (filterState.languageFilter === 'en' ? 'Todos os assuntos de Inglês' : 'Todos os assuntos')
       : subjectNames.slice(0, 2).join(' + ') + (subjectNames.length > 2 ? ` +${subjectNames.length - 2}` : '');
     const list = createQuestionList(
       `${label} · ${questions.length} questões`,
@@ -209,8 +219,9 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
   const buildQuestionCopy = (question: QuestionBankItem, includeSupport: boolean) => {
     const sections: string[] = [];
-    if (includeSupport && question.readingText?.trim()) {
-      sections.push(`TEXTO DE APOIO\n${toClipboardText(question.readingText)}`);
+    const support = getQuestionSupport(question);
+    if (includeSupport && support) {
+      sections.push(`TEXTO DE APOIO\n${supportToClipboardText(support)}`);
     }
     sections.push(`ENUNCIADO\n${toClipboardText(question.statement)}`);
     if (includeSupport) {
@@ -328,6 +339,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     setCustomQuestions(prev => [...prev, ...imported]);
     setFilterState(prev => ({
       ...prev,
+      languageFilter: imported[0]?.language || 'pt',
       selectedSubjectIds: Array.from(new Set([...prev.selectedSubjectIds, imported[0]?.subjectId || 'importadas']))
     }));
   };
@@ -432,7 +444,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   if (viewMode === 'filters') {
     return (
       <>
-        <QuestionBankFilterView
+      <QuestionBankFilterView
           allQuestions={allBankQuestions}
           filterState={filterState}
           onFilterChange={setFilterState}
@@ -440,8 +452,9 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
           onCreateList={handleCreateList}
           onOpenImportModal={() => setIsImportModalOpen(true)}
           userAnswers={userAnswers}
-          confirmedAnswers={confirmedAnswers}
-        />
+        confirmedAnswers={confirmedAnswers}
+        includeAuditLists={includeAuditLists}
+      />
         <ImportPdfModal
           isOpen={isImportModalOpen}
           onClose={() => setIsImportModalOpen(false)}
@@ -494,9 +507,9 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
             <SlidersHorizontal className="w-3.5 h-3.5 text-[#e8a87c]" />
             <span>Assuntos: </span>
             <strong className="text-[#f3ede6]">
-              {filterState.selectedSubjectIds.length === 8 
-                ? 'Todos os Assuntos' 
-                : filterState.selectedSubjectIds.map(id => SUBJECTS_CONFIG.find(s => s.id === id)?.shortTitle).join(', ')}
+              {filterState.selectedSubjectIds.length === (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).filter(subject => subject.id !== 'todos').length
+                ? (filterState.languageFilter === 'en' ? 'Todos os Assuntos de Inglês' : 'Todos os Assuntos')
+                : filterState.selectedSubjectIds.map(id => (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).find(s => s.id === id)?.shortTitle).join(', ')}
             </strong>
             {filterState.selectedSubjectIds.includes('verbos') && (
               <span className="text-[#8b949e]"> · Verbos: caderno de 92 questões</span>
@@ -582,6 +595,14 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                       Questão {q.questionNumber}
                     </span>
                     <span className="text-[#d1d5db] font-sans font-medium">{q.subjectTitle}</span>
+                    {q.quality?.status === 'warning' && (
+                      <details className="relative text-[10px] font-mono text-[#fbbf24]">
+                        <summary className="cursor-pointer list-none rounded-md border border-[#fbbf24]/40 px-1.5 py-0.5 hover:bg-[#fbbf24]/10">Revisar</summary>
+                        <div className="absolute left-0 top-7 z-10 w-64 rounded-lg border border-[#fbbf24]/40 bg-[#1b1f25] p-2 text-[10px] leading-relaxed text-[#fef3c7] shadow-xl">
+                          {q.quality.warnings.map((warning, warningIndex) => <p key={warningIndex}>• {warning}</p>)}
+                        </div>
+                      </details>
+                    )}
                   </div>
 
                   <div className="flex flex-wrap items-center justify-end gap-2">
@@ -610,7 +631,10 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                 </div>
 
                 {/* Formatted Support Text (Sem scroll interno, cabe por inteiro, fonte limpa e legível sem negrito) */}
-                {q.readingText && q.readingText.trim() !== '' && (
+                {(() => {
+                  const support = getQuestionSupport(q);
+                  if (!support) return null;
+                  return (
                   <div data-reading-text className="rounded-xl bg-[#14161a] border border-[#262c33] overflow-hidden">
                     <button
                       onClick={() => toggleReadingText(q.id)}
@@ -628,11 +652,24 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
                     {isExpanded && (
                       <div data-reading-body className="p-4 sm:p-5 text-sm text-[#d1d5db] leading-relaxed font-sans select-text">
-                        <FormattedExamText text={q.readingText} mode="reading" className="text-sm text-[#d1d5db] font-normal leading-relaxed" />
+                        <div className="space-y-3">
+                          {support.label && <p data-support-label className="text-[11px] uppercase tracking-[0.16em] text-[#e8a87c] font-semibold leading-tight">{support.label}</p>}
+                          {support.title && <h3 data-support-title className="text-base sm:text-lg text-[#fff7ed] font-semibold leading-tight">{support.title}</h3>}
+                          {support.author && <p data-support-author className="text-xs text-[#9ca3af] italic leading-relaxed">{support.author}</p>}
+                          {support.paragraphs.length > 0 && (
+                            <div data-support-paragraphs className="space-y-3">
+                              {support.paragraphs.map((paragraph, paragraphIndex) => (
+                                <FormattedExamText key={paragraphIndex} text={paragraph} mode="prose" preserveLineBreaks className="text-sm text-[#d1d5db] font-normal leading-[1.75]" />
+                              ))}
+                            </div>
+                          )}
+                          {support.source && <p data-support-source className="border-t border-[#343c46] pt-3 text-xs text-[#9ca3af] italic leading-relaxed break-words [overflow-wrap:anywhere]">{support.source}</p>}
+                        </div>
                       </div>
                     )}
                   </div>
-                )}
+                  );
+                })()}
 
                 {/* Statement / Comando da Questão */}
                 <div className="text-sm sm:text-base leading-relaxed text-[#f3ede6] font-normal p-3.5 bg-[#1b1f25]/60 rounded-xl border border-[#262b33]/60">

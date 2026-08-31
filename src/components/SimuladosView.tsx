@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, RotateCcw, BookOpen, ChevronDown, ChevronUp, Awa
 import { SIMULADO_QUESTIONS, type SimuladoQuestion } from '../data/simuladoQuestions';
 
 import { FormattedExamText } from '../utils/textFormatter';
+import { getQuestionSupport } from '../utils/questionSupport';
 
 interface SimuladosViewProps {
   onRecordAttempt?: (verbId: string, mood: any, tense: any, isCorrect: boolean) => void;
@@ -221,6 +222,7 @@ export const SimuladosView: React.FC<SimuladosViewProps> = ({
           {pageQuestions.map((q, idxOnPage) => {
             const isConfirmed = Boolean(confirmedAnswers[q.id]);
             const isExpanded = expandedReadingTexts[q.id] !== false; // default expanded
+            const support = getQuestionSupport(q);
 
             return (
               <div 
@@ -242,7 +244,7 @@ export const SimuladosView: React.FC<SimuladosViewProps> = ({
                 </div>
 
                 {/* Formatted Support Text (Sem scroll interno, cabe por inteiro, fonte limpa e legível sem negrito) */}
-                {q.readingText && q.readingText.trim() !== '' && (
+                {support && (
                   <div data-reading-text className="rounded-xl bg-[#14161a] border border-[#262c33] overflow-hidden">
                     <button
                       onClick={() => toggleReadingText(q.id)}
@@ -260,7 +262,19 @@ export const SimuladosView: React.FC<SimuladosViewProps> = ({
 
                     {isExpanded && (
                       <div className="p-5 text-sm text-[#d1d5db] leading-relaxed font-sans select-text">
-                        <FormattedExamText text={q.readingText} mode="reading" className="text-sm text-[#d1d5db] font-normal leading-relaxed" />
+                        <div className="space-y-3">
+                          {support.label && <p data-support-label className="text-[11px] uppercase tracking-[0.16em] text-[#e8a87c] font-semibold leading-tight">{support.label}</p>}
+                          {support.title && <h3 data-support-title className="text-base sm:text-lg text-[#fff7ed] font-semibold leading-tight">{support.title}</h3>}
+                          {support.author && <p data-support-author className="text-xs text-[#9ca3af] italic leading-relaxed">{support.author}</p>}
+                          {support.paragraphs.length > 0 && (
+                            <div data-support-paragraphs className="space-y-3">
+                              {support.paragraphs.map((paragraph, paragraphIndex) => (
+                                <FormattedExamText key={paragraphIndex} text={paragraph} mode="prose" preserveLineBreaks className="text-sm text-[#d1d5db] font-normal leading-[1.75]" />
+                              ))}
+                            </div>
+                          )}
+                          {support.source && <p data-support-source className="border-t border-[#343c46] pt-3 text-xs text-[#9ca3af] italic leading-relaxed break-words [overflow-wrap:anywhere]">{support.source}</p>}
+                        </div>
                       </div>
                     )}
                   </div>

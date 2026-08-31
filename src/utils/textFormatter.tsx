@@ -22,7 +22,7 @@ export const FormattedExamText: React.FC<{
   const paragraphs = splitReadableBlocks(text, mode, preserveLineBreaks);
 
   return (
-    <div className={`space-y-3 select-text font-sans font-normal ${className}`}>
+    <div className={`space-y-3 select-text font-sans font-normal break-words [overflow-wrap:anywhere] ${className}`}>
       {paragraphs.map((p, pIdx) => {
         const readingKind = mode === 'reading' ? classifyReadingBlock(p, pIdx, paragraphs.length) : 'body';
         if (readingKind === 'label') {
@@ -47,7 +47,7 @@ export const FormattedExamText: React.FC<{
           );
         }
         return (
-          <p key={pIdx} className={`leading-[1.75] ${preserveLineBreaks ? 'whitespace-pre-line' : ''}`}>
+            <p key={pIdx} className={`leading-[1.75] break-words [overflow-wrap:anywhere] ${preserveLineBreaks ? 'whitespace-pre-line' : ''}`}>
             {parseInlineFormatting(p)}
           </p>
         );

@@ -9,6 +9,11 @@ interface ImportPdfModalProps {
   onQuestionsImported: (newQuestions: QuestionBankItem[]) => void;
 }
 
+interface ImportSummary {
+  importedCount: number;
+  warningItems: Array<{ questionNumber: number; warnings: string[] }>;
+}
+
 export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
   isOpen,
   onClose,
@@ -21,8 +26,17 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [statusMessage, setStatusMessage] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [importSummary, setImportSummary] = useState<ImportSummary | null>(null);
 
   if (!isOpen) return null;
+
+  const handleClose = () => {
+    if (isLoading) return;
+    setImportSummary(null);
+    setErrorMessage(null);
+    setStatusMessage('');
+    onClose();
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -36,6 +50,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
 
   const handleStartImport = async () => {
     setErrorMessage(null);
+    setImportSummary(null);
     setIsLoading(true);
     setStatusMessage('Lendo conteúdo...');
 
@@ -67,10 +82,13 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
       );
 
       onQuestionsImported(imported);
-      setTimeout(() => {
-        setIsLoading(false);
-        onClose();
-      }, 1000);
+      setIsLoading(false);
+      setImportSummary({
+        importedCount: imported.length,
+        warningItems: imported
+          .filter(item => item.quality?.status === 'warning')
+          .map(item => ({ questionNumber: item.questionNumber, warnings: item.quality?.warnings ?? [] }))
+      });
     } catch (err: any) {
       setIsLoading(false);
       setErrorMessage(err.message || 'Erro inesperado durante a importação.');
@@ -88,7 +106,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
             <span>Importar Questões via PDF / IA</span>
           </div>
           <button
-            onClick={onClose}
+            onClick={handleClose}
             disabled={isLoading}
             className="p-1 rounded-lg text-[#9ca3af] hover:text-[#f3ede6] hover:bg-[#242930] transition-colors"
           >
@@ -98,6 +116,33 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
 
         {/* Scrollable Form Body */}
         <div className="p-5 space-y-4 overflow-y-auto flex-1 text-xs font-mono">
+          {importSummary ? (
+            <div className="space-y-4" data-import-summary>
+              <div className="rounded-xl border border-[#34d399]/40 bg-[#182a22] p-4 text-[#d1fae5]">
+                <p className="font-bold text-sm">Importação concluída</p>
+                <p className="mt-1 font-sans leading-relaxed">
+                  {importSummary.importedCount} {importSummary.importedCount === 1 ? 'questão foi salva' : 'questões foram salvas'} no Banco de Questões.
+                </p>
+              </div>
+              {importSummary.warningItems.length > 0 ? (
+                <div className="rounded-xl border border-[#fbbf24]/40 bg-[#2a2417] p-4 text-[#fef3c7]">
+                  <p className="font-bold">{importSummary.warningItems.length} questão(ões) precisam de revisão</p>
+                  <p className="mt-1 font-sans text-[11px] leading-relaxed text-[#fde68a]">Elas continuam utilizáveis, mas permanecem identificadas até a conferência editorial.</p>
+                  <div className="mt-3 max-h-64 space-y-2 overflow-y-auto pr-1">
+                    {importSummary.warningItems.map(item => (
+                      <div key={item.questionNumber} className="rounded-lg border border-[#fbbf24]/25 bg-[#1b1f25] p-2.5">
+                        <p className="font-bold">Questão {item.questionNumber}</p>
+                        {item.warnings.map((warning, index) => <p key={index} className="font-sans text-[11px] leading-relaxed">• {warning}</p>)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <p className="rounded-xl border border-[#343c46] bg-[#20242b] p-4 font-sans leading-relaxed text-[#d1d5db]">Todas as questões passaram na validação estrutural.</p>
+              )}
+            </div>
+          ) : (
+          <>
           
           {/* Destination Subject */}
           <div className="space-y-1.5">
@@ -183,12 +228,15 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
             </div>
           )}
 
+          </>
+          )}
+
         </div>
 
         {/* Fixed Footer */}
         <div className="flex items-center justify-between p-4 border-t border-[#2e353e] bg-[#14161a] shrink-0">
           <button
-            onClick={onClose}
+            onClick={handleClose}
             disabled={isLoading}
             className="px-4 py-2 rounded-xl bg-[#20242b] hover:bg-[#282e37] text-[#9ca3af] hover:text-[#f3ede6] text-xs font-mono transition-colors"
           >
@@ -196,12 +244,12 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
           </button>
 
           <button
-            onClick={handleStartImport}
-            disabled={isLoading || (!selectedFile && !pastedText.trim())}
+            onClick={importSummary ? handleClose : handleStartImport}
+            disabled={isLoading || (!importSummary && !selectedFile && !pastedText.trim())}
             className="flex items-center space-x-1.5 px-6 py-2.5 rounded-xl bg-[#e8a87c] hover:bg-[#f0b58e] disabled:opacity-40 disabled:cursor-not-allowed text-[#16181b] font-bold text-xs font-mono transition-all shadow-md active:scale-95"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>{isLoading ? 'Processando...' : 'Estruturar com IA & Salvar'}</span>
+            <span>{isLoading ? 'Processando...' : importSummary ? 'Fechar' : 'Estruturar com IA & Salvar'}</span>
           </button>
         </div>
 

@@ -11,6 +11,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[2]
 BANK_PATH = ROOT / "src" / "data" / "questionBank.ts"
+SIMULADO_PATH = ROOT / "src" / "data" / "simuladoQuestions.ts"
 PDF_DIR = ROOT / "lists"
 
 PDFS = [
@@ -46,6 +47,13 @@ QUOTED_TARGET_RE = re.compile(r"[“\"]\s*[^”\"\n]{1,160}\s*[”\"]")
 def load_bank() -> list[dict]:
     source = BANK_PATH.read_text(encoding="utf-8")
     declaration = source.index("export const QUESTION_BANK")
+    payload = source.index(" = ", declaration) + 3
+    return json.loads(source[payload:].rstrip().removesuffix(";"))
+
+
+def load_simulados() -> list[dict]:
+    source = SIMULADO_PATH.read_text(encoding="utf-8")
+    declaration = source.index("export const SIMULADO_QUESTIONS")
     payload = source.index(" = ", declaration) + 3
     return json.loads(source[payload:].rstrip().removesuffix(";"))
 
@@ -97,6 +105,27 @@ def main() -> int:
 
     for question in questions:
         options = question.get("options", [])
+        support = question.get("support")
+        provenance = question.get("provenance")
+        quality = question.get("quality")
+        # Built-in records must be fully migrated to the explicit support
+        # schema.  Legacy readingText remains only as a compatibility field.
+        if support is not None and not isinstance(support, dict):
+            issues.append(f"{question['id']}: suporte estruturado inválido")
+        elif isinstance(support, dict):
+            paragraphs = support.get("paragraphs")
+            if not isinstance(paragraphs, list):
+                issues.append(f"{question['id']}: support.paragraphs inválido")
+            elif any(not isinstance(paragraph, str) or not paragraph.strip() for paragraph in paragraphs):
+                issues.append(f"{question['id']}: parágrafo vazio ou inválido")
+            if any(re.search(r"<u>|</u>|\*\*", str(support.get(field, ""))) for field in ("label", "title", "author", "source")):
+                issues.append(f"{question['id']}: marcação decorativa em metadado do apoio")
+        if not isinstance(provenance, dict) or not provenance.get("pdf"):
+            issues.append(f"{question['id']}: proveniência do PDF ausente")
+        elif not isinstance(provenance.get("questionPage"), int) or not isinstance(provenance.get("answerPage"), int):
+            issues.append(f"{question['id']}: páginas de questão/gabarito ausentes")
+        if not isinstance(quality, dict) or quality.get("status") != "verified" or quality.get("warnings"):
+            issues.append(f"{question['id']}: qualidade nativa não verificada")
         marked = [option["letter"] for option in options if option.get("correct")]
         letters = [option["letter"] for option in options]
         if len(options) not in (4, 5):
@@ -185,6 +214,15 @@ def main() -> int:
         if not question.get("readingText") and re.match(r"^TEXTO\s+[IVX]+\b", question.get("statement", ""), re.I):
             issues.append(f"{question['id']}: referência a texto de apoio sem conteúdo")
 
+        if isinstance(support, dict):
+            support_text = " ".join(
+                [str(support.get(field, "")) for field in ("label", "title", "author")]
+                + [str(paragraph) for paragraph in support.get("paragraphs", [])]
+                + [str(support.get("source", ""))]
+            )
+            if any(marker in support_text for marker in ("�", "¢", "€", "†")):
+                issues.append(f"{question['id']}: caractere corrompido no apoio estruturado")
+
     restored_support = {
         "classes_var-pdf_4_classes_var-q39",
         "classes_var-pdf_4_classes_var-q60",
@@ -196,9 +234,35 @@ def main() -> int:
         "verbos-pdf_7-q5",
     }
     by_id = {question["id"]: question for question in questions}
+
+    # Simulator cards are a presentation copy of the canonical bank.  Keep
+    # their content synchronized while preserving simulator-only explanations.
+    canonical_by_key = {(question["listId"], question["questionNumber"]): question for question in questions}
+    simulados = load_simulados()
+    for simulado in simulados:
+        canonical = canonical_by_key.get((simulado.get("listId"), simulado.get("questionNumber")))
+        if canonical is None:
+            issues.append(f"{simulado.get('id', '<simulado>')}: questão não encontrada no banco canônico")
+            continue
+        if simulado.get("statement") != canonical.get("statement") or simulado.get("correctLetter") != canonical.get("correctLetter"):
+            issues.append(f"{simulado.get('id', '<simulado>')}: enunciado/gabarito divergente do banco")
+        sim_options = [(option.get("letter"), option.get("text"), option.get("correct")) for option in simulado.get("options", [])]
+        bank_options = [(option.get("letter"), option.get("text"), option.get("correct")) for option in canonical.get("options", [])]
+        if sim_options != bank_options:
+            issues.append(f"{simulado.get('id', '<simulado>')}: alternativas divergentes do banco")
+        if simulado.get("support") != canonical.get("support"):
+            issues.append(f"{simulado.get('id', '<simulado>')}: suporte estruturado divergente do banco")
     for question_id in restored_support:
         if not by_id.get(question_id, {}).get("readingText", "").strip():
             issues.append(f"{question_id}: texto escaneado restaurado ausente")
+
+    # The original command for "Mulheres de Atenas" only refers to the
+    # expression underlined in option C.  Option B's underline is an OCR
+    # decoration and must stay removed; this is a focused regression guard.
+    women_q5 = by_id.get("verbos-pdf_7-q5", {})
+    option_b = next((option for option in women_q5.get("options", []) if option.get("letter") == "B"), {})
+    if re.search(r"<u>\s*castigadas\.?\s*</u>", option_b.get("text", ""), re.IGNORECASE):
+        issues.append("verbos-pdf_7-q5: sublinhado decorativo em 'castigadas' não removido")
 
     # Regression guards for the two 30-question verb sheets. These are the
     # exact structures most affected by PDF style-run fragmentation.
