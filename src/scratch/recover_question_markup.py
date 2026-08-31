@@ -70,7 +70,10 @@ MANUAL_REPLACEMENTS: dict[tuple[str, int, str], list[tuple[str, str]]] = {
     ("pdf_6_pronomes", 34, "option:D"): [("real, este insabido", "real, <u>este</u> insabido")],
     ("pdf_7", 16, "option:C"): [("que conserve", "que <u>conserve</u>")],
     ("pdf_7", 1, "statement"): [("havia visto", "<u>havia visto</u>")],
+    ("pdf_7", 1, "option:A"): [("e disse", "e <u>disse</u>")],
+    ("pdf_7", 1, "option:B"): [("Eu fiquei", "Eu <u>fiquei</u>")],
     ("pdf_7", 1, "option:C"): [("me revelasse", "me <u>revelasse</u>")],
+    ("pdf_7", 1, "option:D"): [("Entretanto, faz", "Entretanto, <u>faz</u>")],
     ("pdf_7", 1, "option:E"): [("já fizera", "já <u>fizera</u>")],
     ("pdf_2_acentuacao", 60, "option:A"): [("O menino tem", "O menino <u>tem</u>")],
     ("pdf_2_acentuacao", 60, "option:B"): [("Encontro nesse", "<u>Encontro</u> nesse")],
@@ -347,7 +350,8 @@ def normalize_markup(question: dict) -> int:
     """Remove empty style runs and join adjacent PDF font fragments."""
     changed = 0
     for field, value in question_fields(question):
-        normalized = re.sub(r"\*\*(\s*)\*\*", lambda match: match.group(1), value)
+        normalized = sanitize_markup_text(value)
+        normalized = re.sub(r"\*\*(\s*)\*\*", lambda match: match.group(1), normalized)
         normalized = re.sub(r"<u>\s*</u>", "", normalized)
         if field == "readingText":
             normalized = re.sub(
@@ -360,6 +364,18 @@ def normalize_markup(question: dict) -> int:
             set_question_field(question, field, normalized)
             changed += 1
     return changed
+
+
+def sanitize_markup_text(text: str) -> str:
+    """Repair malformed/nested underline tags from fragmented PDF runs."""
+    normalized = text.replace("</u</u>>", "</u></u>")
+    normalized = normalized.replace("<</u>/u>", "</u></u>")
+    # Collapse a wrapper duplicated around the same target.
+    normalized = re.sub(r"<u><u>(.*?)</u></u>", r"<u>\1</u>", normalized, flags=re.DOTALL)
+    # If the outer wrapper also swallowed following prose, retain emphasis
+    # only on the inner target rather than bolding the whole sentence.
+    normalized = re.sub(r"<u><u>(.*?)</u>(.*?)</u>", r"<u>\1</u>\2", normalized, flags=re.DOTALL)
+    return normalized
 
 
 def main() -> int:
@@ -387,6 +403,12 @@ def main() -> int:
     ambiguous_rows: list[str] = []
     for dataset_name, questions in (("bank", bank), ("simulado", simulados)):
         for question in questions:
+            # Normalize any malformed tags already present before applying new
+            # PDF-derived spans, preventing nested wrappers on reruns.
+            for field, value in question_fields(question):
+                cleaned_value = sanitize_markup_text(value)
+                if cleaned_value != value:
+                    set_question_field(question, field, cleaned_value)
             if args.strip_all:
                 for field, value in question_fields(question):
                     set_question_field(question, field, re.sub(r"</?u>|\*\*", "", value))

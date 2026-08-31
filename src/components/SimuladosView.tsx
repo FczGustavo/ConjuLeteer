@@ -243,7 +243,7 @@ export const SimuladosView: React.FC<SimuladosViewProps> = ({
 
                 {/* Formatted Support Text (Sem scroll interno, cabe por inteiro, fonte limpa e legível sem negrito) */}
                 {q.readingText && q.readingText.trim() !== '' && (
-                  <div className="rounded-xl bg-[#14161a] border border-[#262c33] overflow-hidden">
+                  <div data-reading-text className="rounded-xl bg-[#14161a] border border-[#262c33] overflow-hidden">
                     <button
                       onClick={() => toggleReadingText(q.id)}
                       className="w-full px-4 py-2.5 bg-[#1b1f25] border-b border-[#262c33] flex items-center justify-between text-xs font-mono text-[#e8a87c] hover:bg-[#20252d] transition-colors"

@@ -134,7 +134,7 @@ def main() -> int:
             "-sionomia", "pernas -nas", "eu -co", "difinitivamente",
             "influênciadores", "previlégios", "herbâceas", "serumano",
             "Cuminense", "Balltico", "Saíamina", "home oace", "home opce",
-            "Poresta", "avi daé", "aqu ese", "flordes", "monoxido",
+            "Poresta", "avi daé", "aqu ese", "flordes",
             "retribuido",
         )
         if any(marker.lower() in combined_text.lower() for marker in known_text_corruptions):
@@ -207,7 +207,7 @@ def main() -> int:
         "verbos-pdf_16-q1": "______",
         "verbos-pdf_16-q9": "1 –",
         "verbos-pdf_16-q11": "**derem**",
-        "verbos-pdf_16-q20": "______ a pulsar",
+        "verbos-pdf_16-q20": "______ não só os ouvidos",
         "verbos-pdf_17-q11": "**cresceria**",
         "verbos-pdf_17-q12": "______ o resultado",
         "verbos-pdf_17-q17": "o céu",

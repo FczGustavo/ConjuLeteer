@@ -387,6 +387,22 @@ Depois de cada rodada de mudancas:
 - No navegador, as cinco alternativas da questao de referencia apresentaram marcacao, o console terminou sem erros ou avisos e nao houve falha de renderizacao. A base integral permanece com 591 questoes em nove PDFs; as outras 60 continuam preservadas, mas ocultas conforme decisao anterior.
 - Verificacoes finais: `npm run audit:questions` aprovado com zero referencia visual sem marcacao; lint sem erros, mantendo apenas os tres avisos historicos; build de producao aprovado, com somente o alerta conhecido de chunk grande.
 
+### 2026-08-30 - rodada 29: auditoria visual integral e normalizacao de apoio
+
+- `src/scratch/repair_embedded_support.py` reorganizou 23 registros longos que estavam com o texto de apoio inteiro dentro do enunciado. Tres blocos que eram apenas citacoes de fonte foram preservados no enunciado, evitando criar caixas vazias ou fontes sem corpo.
+- `src/utils/textFormatter.tsx` passou a separar inline fontes coladas ao corpo, instrucoes que vinham na mesma linha da fonte, cabecalhos de assunto que vazavam para o texto e continuacoes minusculas de paragrafo. O renderizador tambem normaliza espacos de OCR (`1§`, `e o`, `e a`, `um verbo`), remove marcadores Markdown/HTML cruzados e impede a exibicao de asteriscos, tags ou caracteres estranhos.
+- `src/scratch/normalize_bank_formatting.py` materializa essa limpeza na base (marcadores cruzados, asteriscos residuais, ligaduras OCR e fontes/instrucoes coladas); `src/scratch/apply_vector_marks.py` recupera 146 sublinhados com contexto geometrico unico dos PDFs. O conteudo sincronizado de `simuladoQuestions.ts` preserva a mesma apresentacao.
+- A questao `verbos-pdf_7-q1` agora abre com caixa de Texto de Apoio, rotulo `Texto I`, titulo `A complicada arte de ver`, paragrafos numerados legiveis, fonte separada e as cinco alternativas com o verbo destacado.
+- Verificacao no navegador: 531 cartoes expostos (as folhas 16/17 permanecem preservadas, mas ocultas do Banco), 352 caixas de texto de apoio, 381 blocos de fonte e 241 titulos. A varredura nao encontrou texto colado, cabecalho vazado, fonte absorvendo instrucao, tags ou marcadores literais, nem caracteres `�`, `¢`, `€` ou `†`; console sem erros/avisos.
+- Comparacao independente com os nove PDFs: 591/591 questoes, 0 divergencias de letra de gabarito e 0 inconsistencias entre `correctLetter` e a alternativa marcada. Build e lint aprovados; permanecem somente os tres avisos historicos de efeitos e o alerta de chunk grande do Vite.
+
+### 2026-08-30 - rodada 30: restauração de apoios ausentes e revalidação final
+
+- `src/scratch/restore_missing_support.py` passou a restaurar os trechos que os PDFs disponibilizam apenas como imagem: *Viagens de Gulliver*, a cena de Xantós, *O silêncio incomoda*, *Retrato* e *Mulheres de Atenas*. Cada um voltou ao campo de texto de apoio, preservando rótulo, título, parágrafos e fonte no mesmo bloco de leitura, sem absorção pelo enunciado.
+- `src/scratch/normalize_bank_formatting.py` recebeu proteções adicionais de OCR e marcação pedagógica. Foram corrigidas formas como `privilégios`, `herbáceas`, `definitivamente`, `ser humano` e espaçamentos colados; a sincronização foi refeita para as 152 questões de simulados.
+- Revalidação no navegador: as 531 questões expostas carregaram de uma vez (1.633.408 caracteres), com 361 caixas de apoio, zero caractere de substituição e as quatro passagens restauradas verificadas na renderização. As 60 questões das duas folhas de 30 verbos seguem preservadas e auditadas, porém ocultas no Banco conforme decisão de produto.
+- Verificações finais: normalização, sincronização e `audit_question_bank.py` aprovados para 591 questões / 9 PDFs, incluindo gabaritos e estrutura; `npm run lint` sem erros novos e `npm run build` aprovado. Permanecem apenas os três avisos históricos de `set-state-in-effect` e o aviso conhecido de tamanho do bundle.
+
 ## 9. Pendencias e melhorias futuras
 
 - Tratar os 3 avisos restantes de efeitos nos componentes de treino sem alterar a experiencia de reset/foco.

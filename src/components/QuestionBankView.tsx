@@ -32,12 +32,6 @@ interface QuestionBankViewProps {
   initialMode?: 'filters' | 'lists';
 }
 
-interface ReadingMetadata {
-  title: string;
-  source: string;
-  body: string;
-}
-
 function toClipboardText(text: string): string {
   return text
     .replace(/\*\*(\d{1,2})\*\*\*\*\s*([-–—])\*\*/g, '$1 $2')
@@ -47,122 +41,22 @@ function toClipboardText(text: string): string {
     .replace(/\*\*/g, '')
     .replace(/<\/?(?:b|strong|u)>/gi, '')
     .replace(/\bocéu\b/gi, 'o céu')
+    .replace(/(\d{1,2}\s*[§º°])(?=\S)/g, '$1 ')
+    .replace(/\bEo\b/g, 'E o')
+    .replace(/\beo\b/g, 'e o')
+    .replace(/\bEa\b/g, 'E a')
+    .replace(/\beA\b/g, 'e A')
+    .replace(/\bea\b/g, 'e a')
+    .replace(/\béa\b/gi, 'é a')
+    .replace(/\bu\s+mpronome\b/gi, 'um pronome')
+    .replace(/\bu\s+mverbo\b/gi, 'um verbo')
+    .replace(/\bfiorescia\b/gi, 'florescia')
+    .replace(/\bfiores\b/gi, 'flores')
+    .replace(/[�¢€†]/g, '')
+    .replace(/\*/g, '')
     .replace(/[ \t]+\n/g, '\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
-}
-
-/** Separates bibliographic chrome from the excerpt without discarding text. */
-function getReadingMetadata(text: string): ReadingMetadata {
-  const rawLines = text.replace(/\r\n?/g, '\n').split('\n');
-  const indexedLines = rawLines
-    .map((line, rawIndex) => ({ text: line.trim(), rawIndex }))
-    .filter(line => Boolean(line.text));
-  const lines = indexedLines.map(line => line.text);
-  if (!lines.length) return { title: '', source: '', body: '' };
-
-  const looksLikeBibliographicSource = (line: string) =>
-    /^\([A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ][^)]{2,}\)$/.test(line)
-    && /(?:\b(?:19|20)\d{2}\b|\bp\.\s*\d+|\b(?:LP|Editora|Folha)\b)/.test(line);
-
-  const isSourceLine = (line: string) =>
-    /^(?:\(?\s*(?:Fonte|Disponível|Adaptado|Fragmento retirado)|https?:\/\/|<https?:\/\/|www\.)/i.test(line)
-    || /\bAcesso em\b/i.test(line)
-    || /\bTexto adaptado\b/i.test(line)
-    || looksLikeBibliographicSource(line);
-  // Sources can be extracted before, between, or after the excerpt. A long
-  // citation may also wrap over two lines, so join that run before classifying
-  // it; remove only source lines so a note or paragraph after the citation is
-  // not silently discarded.
-  const sourceIndexes = new Set<number>();
-  for (let index = 0; index < lines.length; index += 1) {
-    if (isSourceLine(lines[index])) {
-      sourceIndexes.add(index);
-      // Bibliographic notes frequently wrap before the closing parenthesis.
-      // Keep every continuation in the source instead of rendering its final
-      // line as a loose paragraph at the bottom of the excerpt.
-      let parenthesesBalance = (lines[index].match(/\(/g) || []).length
-        - (lines[index].match(/\)/g) || []).length;
-      if (parenthesesBalance > 0) {
-        let closingIndex = index;
-        // Citations in this bank wrap over at most a few extraction lines.
-        // Only consume the continuation when a closing parenthesis is found,
-        // preventing a malformed citation from swallowing the passage body.
-        for (let cursor = index + 1; cursor < lines.length && cursor <= index + 4; cursor += 1) {
-          parenthesesBalance += (lines[cursor].match(/\(/g) || []).length
-            - (lines[cursor].match(/\)/g) || []).length;
-          if (parenthesesBalance <= 0) {
-            closingIndex = cursor;
-            break;
-          }
-        }
-        if (closingIndex > index) {
-          for (let cursor = index + 1; cursor <= closingIndex; cursor += 1) sourceIndexes.add(cursor);
-          index = closingIndex;
-        }
-      }
-      continue;
-    }
-    if (/^\(\s*[A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ]/.test(lines[index])) {
-      let end = index;
-      while (end + 1 < lines.length && !lines[end].includes(')')) end += 1;
-      const candidate = lines.slice(index, end + 1).join(' ');
-      if (looksLikeBibliographicSource(candidate)
-        || /\b(?:domínio público|Revista|Jornal|Conto|Obra|Seminário dos Ratos)\b/i.test(candidate)) {
-        for (let cursor = index; cursor <= end; cursor += 1) sourceIndexes.add(cursor);
-        index = end;
-      }
-    }
-  }
-  const sourceLines = lines.filter((_, index) => sourceIndexes.has(index));
-  const contentEntries = indexedLines.filter((_, index) => !sourceIndexes.has(index));
-  const contentLines = contentEntries.map(line => line.text);
-  let title = '';
-  let titleLines = 0;
-  const first = contentLines[0] || '';
-  const second = contentLines[1] || '';
-  const isCommand = /^(?:Leia|Analise|Considere|Observe|Assinale|Com base|Após a leitura)/i.test(first);
-  // A support passage can begin with a perfectly ordinary sentence (for
-  // example, "O homem deixou...").  Treat only title-like lines as headings;
-  // inline emphasis, commas and other sentence punctuation are strong signals
-  // that the first line belongs to the body and must remain formatted.
-  const looksLikeHeading = !isCommand && first.length <= 120 && !/[.!?]$/.test(first)
-    && !/[,:;]/.test(first)
-    && !/[*<>]/.test(first)
-    && (/^[A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ0-9][A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ0-9\s–—:.'’'()/-]+$/.test(first)
-      || /^Texto\s+(?:de apoio\s+)?(?:I{1,3}|[0-9]+)\b/i.test(first)
-      || /^(?:Do Diário|A Última|Um Cinturão|O homem|A sociedade|Mulher na Marinha)\b/i.test(first));
-
-  if (looksLikeHeading && contentLines.length > 0) {
-    title = first;
-    titleLines = 1;
-    const secondLooksLikeShortHeading = second.length <= 120
-      && !/[.!?]$/.test(second)
-      && (second.match(/[.!?]/g) || []).length <= 1;
-    if (/^Texto\s+(?:de apoio\s+)?(?:I{1,3}|[0-9]+)\b/i.test(first)
-      && second
-      && secondLooksLikeShortHeading) {
-      title = `${first} — ${second}`;
-      titleLines = 2;
-    }
-  }
-
-  const source = sourceLines.join(' ')
-    // The card already supplies the ``Fonte`` label; avoid repeating it when
-    // the PDF citation itself also begins with ``Fonte:``.
-    .replace(/^\(\s*Fonte:\s*/i, '(')
-    .replace(/^Fonte:\s*/i, '');
-  const bodyEntries = contentEntries.slice(titleLines);
-  const body = bodyEntries.map((entry, index) => {
-    if (index === 0) return entry.text;
-    const previous = bodyEntries[index - 1];
-    // Preserve a real blank line from the source. Single newlines are usually
-    // only visual wraps produced by PDF extraction; two or more delimit
-    // paragraphs and must survive title/source separation.
-    const separator = entry.rawIndex - previous.rawIndex > 1 ? '\n\n' : '\n';
-    return `${separator}${entry.text}`;
-  }).join('');
-  return { title, source, body: body || text.trim() };
 }
 
 export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
@@ -674,7 +568,6 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
           {pageQuestions.map((q, idxOnPage) => {
             const isConfirmed = Boolean(confirmedAnswers[q.id]);
             const isExpanded = expandedReadingTexts[q.id] !== false; // default expanded
-            const readingMeta = q.readingText ? getReadingMetadata(q.readingText) : null;
 
             return (
               <div 
@@ -718,7 +611,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
                 {/* Formatted Support Text (Sem scroll interno, cabe por inteiro, fonte limpa e legível sem negrito) */}
                 {q.readingText && q.readingText.trim() !== '' && (
-                  <div className="rounded-xl bg-[#14161a] border border-[#262c33] overflow-hidden">
+                  <div data-reading-text className="rounded-xl bg-[#14161a] border border-[#262c33] overflow-hidden">
                     <button
                       onClick={() => toggleReadingText(q.id)}
                       className="w-full px-4 py-2.5 bg-[#1b1f25] border-b border-[#262c33] flex items-center justify-between text-xs font-mono text-[#e8a87c] hover:bg-[#20252d] transition-colors"
@@ -735,21 +628,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
                     {isExpanded && (
                       <div data-reading-body className="p-4 sm:p-5 text-sm text-[#d1d5db] leading-relaxed font-sans select-text">
-                        {readingMeta?.title && (
-                          <div className="mb-2 text-sm leading-relaxed text-[#f3ede6]">
-                            <span className="mr-2 font-mono text-xs font-bold uppercase tracking-wide text-[#e8a87c]">Título</span>
-                            <span>{readingMeta.title}</span>
-                          </div>
-                        )}
-                        <FormattedExamText text={readingMeta?.body || q.readingText} mode="reading" className="text-sm text-[#d1d5db] font-normal leading-relaxed" />
-                        {readingMeta?.source && (
-                          <div className="mt-5 border-t border-[#303742] pt-3 text-xs leading-relaxed">
-                            <span className="mr-2 font-mono font-bold uppercase tracking-wide text-[#e8a87c]">Fonte</span>
-                            <span className="break-words text-[#9ca3af]">
-                              {readingMeta.source.replace(/\*\*/g, '')}
-                            </span>
-                          </div>
-                        )}
+                        <FormattedExamText text={q.readingText} mode="reading" className="text-sm text-[#d1d5db] font-normal leading-relaxed" />
                       </div>
                     )}
                   </div>
