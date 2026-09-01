@@ -6,8 +6,8 @@
   "quarantinedQuestions": 180,
   "visualQuestions": 41,
   "visualDescriptors": 49,
-  "highlightedQuestions": 59,
-  "highlightTargets": 95,
+  "highlightedQuestions": 63,
+  "highlightTargets": 105,
   "unresolvedVisualQuestions": [],
   "checks": {
     "allPagesAccountedFor": true,

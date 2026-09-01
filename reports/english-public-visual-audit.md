@@ -4,7 +4,7 @@
 - Questões auditadas: **1500** (**1320** publicadas; **180** isoladas)
 - Questões com imagem recortada: **41**
 - Recortes verificáveis: **49**
-- Questões com destaques restaurados: **59** (95 alvos)
+- Questões com destaques restaurados: **63** (105 alvos)
 - Questões visuais sem evidência: **0**
 - Texto inventado ou página não contabilizada: **0**
 

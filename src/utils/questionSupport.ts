@@ -405,7 +405,8 @@ export function validateQuestionQuality(
 ): QuestionBankQuality {
   const warnings: string[] = [];
   const support = getQuestionSupport(question);
-  const allText = [question.statement, supportToClipboardText(support), ...question.options.map(option => option.text)].join('\n');
+  const supportRawText = support?.paragraphs?.length ? support.paragraphs.join('\n') : (question.readingText || '');
+  const allText = [question.statement, supportRawText, ...question.options.map(option => option.text)].join('\n');
 
   if (!question.statement?.trim()) warnings.push('Enunciado vazio.');
   if (![4, 5].includes(question.options.length)) warnings.push('Quantidade de alternativas diferente de 4 ou 5.');

@@ -1,54 +1,12 @@
 {
-  "generatedAt": "2026-09-01T23:14:12.034Z",
+  "generatedAt": "2026-09-01T23:44:37.140Z",
   "questions": 2031,
-  "changed": 66,
+  "changed": 46,
   "changes": [
     {
       "id": "fonetica-pdf_1_fonetica-q41",
       "fields": [
         "support"
-      ]
-    },
-    {
-      "id": "fonetica-pdf_1_fonetica-q67",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "fonetica-pdf_1_fonetica-q71",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "fonetica-pdf_1_fonetica-q72",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "fonetica-pdf_1_fonetica-q73",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "fonetica-pdf_1_fonetica-q74",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "fonetica-pdf_1_fonetica-q78",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "fonetica-pdf_1_fonetica-q81",
-      "fields": [
-        "quality"
       ]
     },
     {
@@ -162,12 +120,6 @@
       ]
     },
     {
-      "id": "formacao-pdf_3_formacao-q64",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
       "id": "formacao-pdf_3_formacao-q72",
       "fields": [
         "support"
@@ -192,12 +144,6 @@
       ]
     },
     {
-      "id": "formacao-pdf_3_formacao-q81",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
       "id": "formacao-pdf_3_formacao-q82",
       "fields": [
         "support"
@@ -213,12 +159,6 @@
       "id": "formacao-pdf_3_formacao-q90",
       "fields": [
         "support"
-      ]
-    },
-    {
-      "id": "formacao-pdf_3_formacao-q92",
-      "fields": [
-        "quality"
       ]
     },
     {
@@ -258,18 +198,6 @@
       ]
     },
     {
-      "id": "classes_var-pdf_4_classes_var-q67",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "classes_invar-pdf_5_classes_invar-q3",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
       "id": "pronomes-pdf_6_pronomes-q8",
       "fields": [
         "support"
@@ -294,21 +222,9 @@
       ]
     },
     {
-      "id": "pronomes-pdf_6_pronomes-q56",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
       "id": "pronomes-pdf_6_pronomes-q75",
       "fields": [
         "support"
-      ]
-    },
-    {
-      "id": "pronomes-pdf_6_pronomes-q77",
-      "fields": [
-        "quality"
       ]
     },
     {
@@ -352,12 +268,6 @@
       ]
     },
     {
-      "id": "verbos-pdf_7-q34",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
       "id": "verbos-pdf_7-q47",
       "fields": [
         "support"
@@ -373,36 +283,6 @@
       "id": "verbos-pdf_7-q82",
       "fields": [
         "support"
-      ]
-    },
-    {
-      "id": "english_adjectives_adverbs-q54",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_conjunctions-q74",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_synonyms_antonyms-q29",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_reading_review-q8",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_reading_review-q79",
-      "fields": [
-        "quality"
       ]
     }
   ],

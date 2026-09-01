@@ -22363,7 +22363,7 @@ export const QUESTION_BANK: QuestionBankItem[] = [
     "listId": "pdf_6_pronomes",
     "listTitle": "Pronomes",
     "questionNumber": 56,
-    "statement": "“Então, ELA ficara encaixotada num desvão da memória (...)” (2º §). O pronome pessoal de 3ª\npessoa, destacado na frase acima, refere-se ao termo, anteriormente citado,",
+    "statement": "“Então, **ELA** ficara encaixotada num desvão da memória (...)” (2º §). O pronome pessoal de 3ª\npessoa, destacado na frase acima, refere-se ao termo, anteriormente citado,",
     "options": [
       {
         "letter": "A",

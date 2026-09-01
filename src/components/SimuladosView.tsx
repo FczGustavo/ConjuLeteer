@@ -300,11 +300,11 @@ export const SimuladosView: React.FC<SimuladosViewProps> = ({
                 <div className={`question-meta-support-group ${support ? 'has-support' : 'no-support'} space-y-6`}>
                 {/* Question Top Metadata */}
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#9ca3af] pb-3">
-                  <div className="flex items-center space-x-2">
-                    <span className="question-number-badge px-2.5 py-1 rounded-lg bg-[#242930] text-[#e8a87c] font-bold border border-[#343c46]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="question-number-badge rounded-full border border-[#e8a87c]/35 bg-[#2a1d17] px-2.5 py-1 text-xs font-semibold leading-none text-[#e8a87c]">
                       Questão {q.questionNumber}
                     </span>
-                    <span className="text-[#d1d5db] font-sans">{q.listTitle}</span>
+                    <span className="inline-flex items-center text-sm font-medium font-sans text-[#d1d5db] leading-none">{q.listTitle}</span>
                   </div>
 
                   <div className="text-xs text-[#8b949e]">

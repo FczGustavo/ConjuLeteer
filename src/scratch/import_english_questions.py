@@ -762,7 +762,7 @@ EDITORIAL_HIGHLIGHTS: dict[tuple[str, int], list[tuple[str, str, str]]] = {
     ("english_adjectives_adverbs", 6): [("statement", "THE SMALLEST", "underline")],
     ("english_adjectives_adverbs", 7): [("statement", "MAIS INTERESSANTE", "underline")],
     ("english_adjectives_adverbs", 49): [("statement", "THE BEST", "underline"), ("statement", "THE NEWEST", "underline")],
-    ("english_adjectives_adverbs", 54): [("support:1", "FASTER THAN", "underline")],
+    ("english_adjectives_adverbs", 54): [("support:1", "FASTER THAN", "bold")],
     ("english_pronouns", 31): [("support:2", "THE TITANIC", "underline"), ("support:2", "THE BABY OF OUR UPSTAIRS NEIGHBORS", "underline"), ("support:2", "MY PET", "underline")],
     ("english_pronouns", 61): [("statement", "ANY", "underline")],
     ("english_pronouns", 87): [("statement", "WHO", "underline")],
@@ -787,7 +787,7 @@ EDITORIAL_HIGHLIGHTS: dict[tuple[str, int], list[tuple[str, str, str]]] = {
     ("english_conjunctions", 8): [("support:1", "because", "bold")],
     ("english_conjunctions", 33): [("support:1", "even", "underline")],
     ("english_conjunctions", 51): [("support:1", "LIKE", "underline")],
-    ("english_conjunctions", 74): [("support:1", "ALTHOUGH", "underline")],
+    ("english_conjunctions", 74): [("support:1", "ALTHOUGH", "bold")],
     ("english_conjunctions", 75): [("statement", "BESIDES", "underline")],
     ("english_conjunctions", 92): [("statement", "according to", "underline")],
     ("english_conjunctions", 95): [("statement", "Inasmuch as", "bold")],
@@ -816,8 +816,12 @@ EDITORIAL_HIGHLIGHTS: dict[tuple[str, int], list[tuple[str, str, str]]] = {
     ("english_synonyms_antonyms", 30): [("statement", "far", "underline")],
     ("english_synonyms_antonyms", 34): [("statement", "response", "underline")],
     ("english_synonyms_antonyms", 35): [("support:2", "perceptions", "underline")],
+    ("english_reading_review", 8): [("statement", "receitas", "bold")],
     ("english_reading_review", 46): [("statement", "observadoras", "bold")],
     ("english_reading_review", 54): [("support:1", "on the verge of", "bold")],
+    ("english_reading_review", 79): [("support:3", "cope", "bold"), ("support:3", "gauge", "bold"), ("support:3", "threatening", "bold"), ("support:3", "dire", "bold")],
+    ("english_reading_review", 91): [("statement", "conducting", "bold"), ("statement", "harsh", "bold"), ("statement", "thrive", "bold")],
+    ("english_reading_review", 95): [("statement", "used", "bold"), ("statement", "building", "bold")],
 }
 
 

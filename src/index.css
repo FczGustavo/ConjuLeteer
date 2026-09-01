@@ -176,19 +176,43 @@
     letter-spacing: -0.025em;
   }
 
-  /* Source credits are intentionally quiet: they add provenance without
-     competing with the question title or answer controls. */
+  /* Source credits are rendered as clean inline metadata tags with official link navigation. */
   .question-source-credit {
-    color: #7f8b9a;
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-muted);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 11px;
+    font-weight: 500;
     letter-spacing: 0.015em;
-    line-height: 1.35;
+    line-height: 1;
     white-space: nowrap;
+    text-decoration: none;
+    transition: color 150ms ease, opacity 150ms ease;
+  }
+
+  a.question-source-credit {
+    cursor: pointer;
+  }
+
+  a.question-source-credit:hover {
+    color: var(--accent-peach);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  :root[data-theme='light'] a.question-source-credit:hover {
+    color: var(--accent-peach);
   }
 
   :root[data-theme^='alexandria'] .question-source-credit {
     color: var(--accent-blue);
+  }
+
+  :root[data-theme^='alexandria'] a.question-source-credit:hover {
+    color: var(--accent-gold, #c49b66);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   /* Centered navigation drawer: Home remains the quiet anchor when closed. */
@@ -1232,21 +1256,24 @@
 }
 
 :root[data-theme^='alexandria'] .question-filter-status-option,
-:root[data-theme^='alexandria'] .question-filter-quantity-option {
+:root[data-theme^='alexandria'] .question-filter-quantity-option,
+:root[data-theme^='alexandria'] .question-filter-board-option {
   background: var(--filter-item-bg) !important;
   border-color: var(--filter-item-border) !important;
   color: var(--theme-text-muted) !important;
 }
 
 :root[data-theme^='alexandria'] .question-filter-status-option:hover,
-:root[data-theme^='alexandria'] .question-filter-quantity-option:hover {
+:root[data-theme^='alexandria'] .question-filter-quantity-option:hover,
+:root[data-theme^='alexandria'] .question-filter-board-option:hover {
   background: var(--filter-item-hover) !important;
   border-color: color-mix(in srgb, var(--theme-text) 18%, var(--filter-item-border)) !important;
   color: var(--theme-text) !important;
 }
 
 :root[data-theme^='alexandria'] .question-filter-status-option[data-selected='true'],
-:root[data-theme^='alexandria'] .question-filter-quantity-option[data-selected='true'] {
+:root[data-theme^='alexandria'] .question-filter-quantity-option[data-selected='true'],
+:root[data-theme^='alexandria'] .question-filter-board-option[data-selected='true'] {
   background: var(--filter-selected-bg) !important;
   border-color: var(--filter-selected-border) !important;
   color: var(--filter-selected-text) !important;
@@ -1288,7 +1315,8 @@
 }
 
 :root[data-theme^='alexandria'] .question-filter-status-option[data-selected='true'],
-:root[data-theme^='alexandria'] .question-filter-quantity-option[data-selected='true'] {
+:root[data-theme^='alexandria'] .question-filter-quantity-option[data-selected='true'],
+:root[data-theme^='alexandria'] .question-filter-board-option[data-selected='true'] {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -1301,6 +1329,7 @@
 :root[data-theme^='alexandria'] .question-filter-topic[data-selected='true'],
 :root[data-theme^='alexandria'] .question-filter-status-option[data-selected='true'],
 :root[data-theme^='alexandria'] .question-filter-quantity-option[data-selected='true'],
+:root[data-theme^='alexandria'] .question-filter-board-option[data-selected='true'],
 :root[data-theme^='alexandria'] .settings-theme-option[aria-pressed='true'] {
   border-color: transparent !important;
 }
@@ -1310,7 +1339,8 @@
 :root[data-theme^='alexandria'] .question-filter-subjects .question-filter-topic[data-selected='true'] svg,
 :root[data-theme^='alexandria'] .question-filter-subjects .question-filter-topic[data-selected='true'] .question-filter-count,
 :root[data-theme^='alexandria'] .question-filter-status-card > div:first-child,
-:root[data-theme^='alexandria'] .question-filter-quantity-card > div:first-child {
+:root[data-theme^='alexandria'] .question-filter-quantity-card > div:first-child,
+:root[data-theme^='alexandria'] .question-filter-board-card > div:first-child {
   color: var(--accent-blue) !important;
 }
 
@@ -1430,6 +1460,10 @@
 }
 
 .question-number-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
   color: var(--question-accent) !important;
   border-color: color-mix(in srgb, var(--question-accent) 58%, transparent) !important;
   background: color-mix(in srgb, var(--question-accent) 12%, var(--bg-card)) !important;

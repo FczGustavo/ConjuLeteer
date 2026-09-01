@@ -24,6 +24,7 @@ import { QuestionBankFilterView, type FilterState } from './QuestionBankFilterVi
 import { FormattedExamText } from '../utils/textFormatter';
 import { QuestionMedia } from './QuestionMedia';
 import { getQuestionSupport, normalizeQuestionSupportCached, supportToClipboardText } from '../utils/questionSupport';
+import { getBoardExamUrl } from '../utils/boardLinks';
 import {
   createQuestionList,
   deleteQuestionList,
@@ -152,9 +153,16 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
         return false;
       }
 
+      // 2. Board filter (English bank)
+      if (filterState.languageFilter === 'en' && filterState.selectedBoard && filterState.selectedBoard !== 'all') {
+        if (q.examMetadata?.board !== filterState.selectedBoard) {
+          return false;
+        }
+      }
+
       return true;
     });
-  }, [allBankQuestions, filterState.languageFilter, filterState.selectedSubjectIds, activeListId, savedLists, questionById]);
+  }, [allBankQuestions, filterState.languageFilter, filterState.selectedSubjectIds, filterState.selectedBoard, activeListId, savedLists, questionById]);
 
   const statusConfirmedAnswers = filterState.statusFilter === 'all' ? EMPTY_BOOLEAN_RECORD : confirmedAnswers;
   const statusUserAnswers = filterState.statusFilter === 'correct' || filterState.statusFilter === 'wrong' ? userAnswers : EMPTY_STRING_RECORD;
@@ -608,14 +616,19 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
         <div className="flex flex-col gap-4 border-t border-[#343c46]/60 pt-5 xl:flex-row xl:items-center xl:justify-between">
           <div className="min-w-0 text-xs text-[#8b949e]">
-            <div className="flex items-start gap-2">
-              <SlidersHorizontal className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#e8a87c]" />
-              <span className="shrink-0">Assuntos</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <SlidersHorizontal className="h-3.5 w-3.5 shrink-0 text-[#e8a87c]" />
+              <span className="shrink-0">Assuntos:</span>
               <strong className="truncate text-[#f3ede6]">
                 {filterState.selectedSubjectIds.length === (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).filter(subject => subject.id !== 'todos').length
                   ? (filterState.languageFilter === 'en' ? 'Todos os Assuntos de Inglês' : 'Todos os Assuntos')
                   : filterState.selectedSubjectIds.map(id => (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).find(s => s.id === id)?.shortTitle).join(', ')}
               </strong>
+              {filterState.languageFilter === 'en' && filterState.selectedBoard && filterState.selectedBoard !== 'all' && (
+                <span className="inline-flex items-center gap-1 rounded-md border border-[#e8a87c]/30 bg-[#2a1d17] px-2 py-0.5 text-[11px] font-mono text-[#e8a87c]">
+                  Banca: {filterState.selectedBoard}
+                </span>
+              )}
             </div>
             {filterState.languageFilter === 'pt'
               && filterState.selectedSubjectIds.length === 1
@@ -676,23 +689,38 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                 <div className={`question-meta-support-group ${support ? 'has-support' : 'no-support'} space-y-6`}>
                 {/* Question Top Metadata */}
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#9ca3af] pb-3">
-                  <div className="flex items-center space-x-2">
-                    <span className="question-number-badge rounded-full border border-[#e8a87c]/35 bg-[#2a1d17] px-2.5 py-1 font-semibold text-[#e8a87c]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="question-number-badge rounded-full border border-[#e8a87c]/35 bg-[#2a1d17] px-2.5 py-1 text-xs font-semibold leading-none text-[#e8a87c]">
                       Questão {q.questionNumber}
                     </span>
-                    <span className="text-[#d1d5db] font-sans font-medium">{q.subjectTitle}</span>
-                    {q.language === 'en' && q.examMetadata && (
-                      <span
-                        className="question-source-credit"
-                        title="Crédito editorial identificado no PDF de origem"
-                        data-source-credit
-                      >
-                        {q.examMetadata.board}
-                        {q.examMetadata.year ? ` · ${q.examMetadata.year}` : ''}
-                        {q.examMetadata.role ? ` · ${q.examMetadata.role}` : ''}
-                        {q.examMetadata.adapted ? ' · adaptada' : ''}
-                      </span>
-                    )}
+                    <span className="inline-flex items-center text-sm font-medium font-sans text-[#d1d5db] leading-none">{q.subjectTitle}</span>
+                    {q.language === 'en' && q.examMetadata && (() => {
+                      const boardUrl = getBoardExamUrl(q.examMetadata.board);
+                      const labelText = `${q.examMetadata.board}${q.examMetadata.year ? ` · ${q.examMetadata.year}` : ''}${q.examMetadata.role ? ` · ${q.examMetadata.role}` : ''}${q.examMetadata.adapted ? ' · adaptada' : ''}`;
+                      if (boardUrl) {
+                        return (
+                          <a
+                            href={boardUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="question-source-credit"
+                            title={`Acessar portal / provas anteriores de ${q.examMetadata.board}`}
+                            data-source-credit
+                          >
+                            {labelText}
+                          </a>
+                        );
+                      }
+                      return (
+                        <span
+                          className="question-source-credit"
+                          title="Crédito editorial identificado no PDF de origem"
+                          data-source-credit
+                        >
+                          {labelText}
+                        </span>
+                      );
+                    })()}
                     {(q.quality?.status === 'warning' || q.quality?.status === 'quarantined' || q.quality?.status === 'rejected') && (
                       <details className="relative text-[10px] font-mono text-[#fbbf24]">
                         <summary className="cursor-pointer list-none rounded-md border border-[#fbbf24]/40 px-1.5 py-0.5 hover:bg-[#fbbf24]/10">{q.quality.status === 'quarantined' ? 'Isolada' : 'Revisar'}</summary>
