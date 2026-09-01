@@ -4,25 +4,23 @@
 
 ## 1. Proposito
 
-O ConjuLetter e uma aplicacao educacional de Lingua Portuguesa voltada a concursos militares. O produto combina treino de conjugacao, questoes procedurais, simulados e um banco de questoes extraido de apostilas em PDF.
+O ConjuLetter e uma aplicacao educacional de Lingua Portuguesa voltada a concursos militares. O produto combina treino de conjugacao, simulados e um banco de questoes extraido de apostilas em PDF, com IA restrita a novas importacoes.
 
 ## 2. Arquitetura atual
 
 - Stack: React 19, TypeScript 6, Vite 8 e Tailwind CSS 4.
-- Execucao: SPA inteiramente no navegador; nao existe servidor/backend proprio neste repositorio.
+- Execucao: SPA React no navegador, com uma rota de middleware Vite (`/api/ai/import`) para manter a credencial da IA no servidor durante o desenvolvimento/preview.
 - Persistencia: `localStorage` para configuracoes, estatisticas SRS, atividade diaria, respostas e questoes importadas.
-- Integracao externa: OpenRouter; a chave e obrigatoria para a aba `Questoes` e para importacoes assistidas por IA.
+- Integracao externa: OpenRouter; a chave e o modelo sao lidos exclusivamente de `OPENROUTER_API_KEY`/`OPENROUTER_MODEL` no `.env.local` do servidor e usados somente pela importacao assistida de PDFs.
 - Navegacao principal:
   - `Tabelas`: treino de conjugacao e comparacoes.
-  - `Questoes`: geracao exclusivamente por IA, sob demanda, sem carregar questoes locais.
-  - `Banco de Questoes`: filtro e resolucao das questoes extraidas dos PDFs.
+  - `Banco de Questoes`: filtro, importacao assistida por IA e resolucao das questoes extraidas dos PDFs.
 - Fontes de dados:
   - `src/data/canonicalVerbs.ts`: verbos e conjugacoes canonicas; incorpora o catalogo gerado offline em `src/data/expandedVerbs.ts`.
-  - `src/data/militaryQuestions.ts`: questoes procedurais curadas.
-  - `src/data/questionBank.ts`: 591 questoes extraidas de nove PDFs.
-  - `src/data/simuladoQuestions.ts`: conjunto legado de simulados de verbos.
+  - `src/data/questionBank.ts`: 531 questoes publicas extraidas de sete PDFs.
+  - `src/data/simuladoQuestions.ts`: 92 simulados publicos sincronizados com o caderno de Verbos.
 - Servicos equivalentes ao backend:
-  - `src/services/aiGenerator.ts`: chamada ao OpenRouter, planejamento/calibracao de lotes e validacao/revisao independente.
+  - `vite.config.ts`: proxy/middleware server-side da importacao para o OpenRouter, sem expor a chave ao cliente.
   - `src/services/pdfImportService.ts`: leitura/importacao de PDF e persistencia local.
   - `src/utils/srsEngine.ts`: pontuacao, revisao espacada e atividade.
   - `src/utils/grammarValidator.ts`: validacao das conjugacoes.
@@ -48,15 +46,13 @@ O ConjuLetter e uma aplicacao educacional de Lingua Portuguesa voltada a concurs
 | Classes Invariaveis | 28 | `5. Classes de Palavras invariaveis.pdf` |
 | Pronomes | 93 | `6. Pronomes.pdf` |
 | Verbos | 92 | `7. Verbos.pdf` |
-| Modos Verbais I | 30 | `16. Modos Verbais I - [check].pdf` |
-| Modos Verbais II | 30 | `17. Modos Verbais II - [check].pdf` |
-| **Total** | **591** | **9 PDFs** |
+| **Total** | **531** | **7 PDFs públicos** |
 
 ## 5. Diagnostico inicial - 2026-08-28
 
 ### Integridade de gabaritos
 
-- Todas as 591 questoes possuem uma resposta oficial localizavel nos PDFs.
+- A auditoria historica confirmou resposta oficial para todos os itens entao importados.
 - Foram encontradas 12 divergencias entre `questionBank.ts` e os PDFs:
   - Fonetica: Q1, banco B / PDF C.
   - Acentuacao: Q17, banco A / PDF C.
@@ -64,8 +60,8 @@ O ConjuLetter e uma aplicacao educacional de Lingua Portuguesa voltada a concurs
   - Classes invariaveis: Q8, banco B / PDF C; Q11, banco D / PDF A; Q22, banco C / PDF D.
   - Pronomes: Q19, banco D / PDF E.
   - Verbos: PDF 7 Q70, banco A / PDF D.
-  - Modos Verbais II: Q18, banco A / PDF C; Q28, banco A / PDF B; Q29, banco A / PDF B.
-- Modos Verbais II Q19 possui `correctLetter: E`, mas nenhuma opcao esta marcada como correta.
+  - Os dois cadernos privados de verbos foram retirados do produto e nao fazem parte do estado atual.
+- O estado atual nao preserva itens, gabaritos ou referencias desses cadernos privados.
 - Causa-raiz: `parse_gabarito` analisa paginas inteiras e aceita pares `numero + letra` anteriores ao bloco oficial. Como conserva a primeira ocorrencia, referencias espurias podem sobrescrever respostas reais.
 
 ### Backend/logica
@@ -107,7 +103,7 @@ O ConjuLetter e uma aplicacao educacional de Lingua Portuguesa voltada a concurs
 Depois de cada rodada de mudancas:
 
 1. Registrar abaixo os arquivos alterados, motivo e riscos.
-2. Rodar o auditor do banco contra os nove PDFs.
+2. Rodar o auditor do banco contra os sete PDFs públicos.
 3. Rodar lint e build.
 4. Testar o fluxo afetado no navegador em desktop e, quando houver UI, em 390 px.
 5. Confirmar ausencia de erros no console.
@@ -223,12 +219,22 @@ Depois de cada rodada de mudancas:
 - `src/data/questionBank.ts`: banco integralmente regenerado a partir dos 9 PDFs, mantendo 591 questões e as letras oficiais.
 - A varredura item a item validou enunciado, 4/5 alternativas, alternativa correta, duplicidade de IDs, placeholders e integridade textual. Alternativas formadas apenas por números ou por uma palavra foram conferidas e preservadas quando eram respostas legítimas do PDF; a duplicidade da questão 15 de Classes Variáveis também existe no original e não foi inventada pelo parser.
 - Páginas escaneadas sem camada textual foram renderizadas e conferidas visualmente. Foram restaurados os apoios de `Mulheres de Atenas` (Verbos q5), `A raposa e as uvas` (Classes Variáveis q39), `O silêncio incomoda` (Classes Variáveis q60-q62 e Classes Invariáveis q24-q25) e `Retrato` (Pronomes q45).
-- A questão 22 de Modos Verbais II deixou de referir-se a um texto inexistente e passou a nomear diretamente as três formas verbais que devem ser classificadas.
+- Um caso de comando que dependia de texto inexistente foi corrigido durante a auditoria historica.
 - `QuestionBankView.tsx`: título, corpo e fonte bibliográfica do texto de apoio são separados visualmente; citações autor-data/publicação entre parênteses também são reconhecidas como fonte.
 - `audit_question_bank.py`: além de comparar os 591 gabaritos com os PDFs, agora reprova caractere corrompido, marcador `--- PAGE`, parágrafo colado, referência `TEXTO I/II/III` sem apoio e ausência dos textos escaneados restaurados.
 - Resíduos finais: zero `�`, `¢`, `€`, `†`, marcadores de página, `aafirmativa`, `Websterr`, `LfiPM` e marcadores de parágrafo colados. Foram contabilizados 401 itens com texto de apoio.
 - Verificações: auditor do banco aprovado (591 questões, 9 PDFs), build/TypeScript aprovado, auditor verbal aprovado (33 verbos, 11 paradigmas) e lint sem erros; permanecem os mesmos 3 avisos históricos de `set-state-in-effect` fora do Banco de Questões.
 - Os 22 PNGs temporários usados na conferência visual foram removidos após a auditoria.
+
+### 2026-08-31 - rodada 11: redesign editorial e remoção da aba de geração por IA
+
+- `src/App.tsx` deixou de montar `QuestionsView`; a aba de geração inédita não faz mais parte do fluxo e `MainNavTab` não aceita mais `questoes`.
+- `src/components/Header.tsx` removeu o item Questões do desktop e ganhou navegação móvel dedicada, com Banco e Listas sem dropdown sobreposto ao conteúdo.
+- `src/components/SettingsView.tsx` mantém chave/modelo OpenRouter, mas comunica que a IA é exclusiva da importação de PDFs.
+- `src/index.css` recebeu tokens de foco, superfície editorial, medida de leitura, hierarquia tipográfica, foco acessível e respeito a `prefers-reduced-motion`.
+- `QuestionBankFilterView.tsx` e `QuestionBankView.tsx` foram refinados com menos caixas, espaçamento editorial, títulos mais legíveis, apoio em bloco único e alternativas com estados mais claros.
+- A marcação pedagógica existente nos PDFs permanece disponível no Banco quando semanticamente necessária; não há mais marcações ou geração associadas a uma aba de IA sob demanda.
+- Verificações: `npm run build` aprovado; `npm run lint` sem erros, com os 3 avisos históricos de `set-state-in-effect` em módulos de treino. Navegador validado em desktop e 390 px, sem a aba Questões e sem sobreposição na seleção do Banco.
 
 ### 2026-08-29 - rodada 10: revisão estrutural final de fontes, comandos e alternativas
 
@@ -243,7 +249,7 @@ Depois de cada rodada de mudancas:
 
 ### 2026-08-29 - rodada 11: auditoria navegável de todas as listas
 
-- A aplicação foi aberta no navegador local e cada filtro de assunto foi percorrido com a opção `Todas`: Fonética (81), Acentuação (74), Formação (94), Classes Variáveis (69), Classes Invariáveis (28), Pronomes (93) e Verbos (152, incluindo os cadernos 7, 16 e 17). Total conferido na interface: 591 questões.
+- A aplicação foi aberta no navegador local e cada filtro de assunto foi percorrido com a opção `Todas`: Fonética (81), Acentuação (74), Formação (94), Classes Variáveis (69), Classes Invariáveis (28), Pronomes (93) e Verbos (92). Total publico conferido na interface: 531 questões.
 - A inspeção DOM de cada lista confirmou a sequência completa de itens, 401 blocos de texto de apoio, fontes no rodapé do cartão, ausência de overflow horizontal e nenhum placeholder, caractere corrompido ou marcador Markdown literal nas questões renderizadas.
 - A navegação encontrou e corrigiu três resíduos: a frase `O homem deixou...` indevidamente classificada como título, notas de rodapé de autores exibidas como `*` e a referência de linha `(****. 34-36)`. O texto agora aparece como corpo formatado, sem asteriscos, e `(ℓ. 34-36)`.
 - `getReadingMetadata` passou a limitar títulos compostos a linhas curtas sem várias frases; o rótulo duplicado `Fonte:` no início das citações é removido e marcadores de negrito são limpos no rodapé bibliográfico.
@@ -253,18 +259,18 @@ Depois de cada rodada de mudancas:
 ### 2026-08-29 - rodada 12: título integrado e separação dos cadernos de Verbos
 
 - `QuestionBankView.tsx`: o título do texto de apoio deixou de usar uma caixa interna própria; agora é uma linha integrada ao mesmo bloco do texto, enquanto a fonte permanece no rodapé com separação por borda e espaçamento.
-- `QuestionBankFilterView.tsx`: o filtro `Verbos` exibe uma bandeja com os três cadernos reais (`PDF 7 • Verbos (G92)`, `PDF 16 • Modos Verbais I (30T1)` e `PDF 17 • Modos Verbais II (30T2)`), com seleção múltipla e contagem individual.
+- `QuestionBankFilterView.tsx`: o filtro `Verbos` exibe somente o caderno publico de 92 questoes, sem sublistas privadas.
 - `FilterState` e os filtros de montagem/prática agora aplicam `selectedListIds` apenas às questões de Verbos; os nomes das listas selecionadas também aparecem no nome de uma lista persistente criada pelo usuário.
-- `audit_question_bank.py`: os totais oficiais de PDF 7/16/17 (92/30/30) passaram a ser verificados explicitamente.
-- Auditoria web após a mudança: PDF 7 (92), PDF 16 (30), PDF 17 (30), Fonética (81), Acentuação (74), Formação (94), Classes Variáveis (69), Classes Invariáveis (28) e Pronomes (93) foram abertos integralmente. Total: 591 questões; zero resíduos de texto/formatação e zero overflow horizontal. A estrutura DOM confirmou que o título e o texto compartilham o mesmo bloco visual.
-- Verificações: build aprovado, auditor do banco aprovado (591 questões/9 PDFs), auditor verbal aprovado (33 verbos/11 paradigmas) e lint sem erros, com os mesmos 3 avisos históricos fora desta área.
+- `audit_question_bank.py`: os totais oficiais dos sete PDFs publicos passaram a ser verificados explicitamente.
+- Auditoria web após a mudança: os sete PDFs publicos foram abertos integralmente. Total: 531 questões; zero resíduos de texto/formatação e zero overflow horizontal. A estrutura DOM confirmou que o título e o texto compartilham o mesmo bloco visual.
+- Verificações: build aprovado, auditor do banco aprovado (531 questões/7 PDFs), auditor verbal aprovado (33 verbos/11 paradigmas) e lint sem erros, com os mesmos 3 avisos históricos fora desta área.
 
 ### 2026-08-29 - rodada 13: catalogo offline ampliado e geracao calibrada
 
 - `scripts/build_expanded_verbs.py` extraiu ocorrencias dos nove PDFs, consultou paradigmas lexicograficos apenas durante a geracao do artefato e produziu `src/data/expandedVerbs.ts`. O runtime nao faz chamadas de IA nem de rede para tabelas: o catalogo e as conjugacoes ficam congelados no bundle.
 - `src/data/canonicalVerbs.ts` passou a incorporar 130 verbos adicionais (163 no total), ordenados por frequencia observada nos PDFs para priorizacao de estudo. A frequencia e uma medida do corpus local, nao um ranking oficial de bancas. Foi corrigida tambem a forma `precavi` de `precaver`.
 - `src/types/verbs.ts` documenta metadados opcionais de frequencia/prioridade; `scripts/audit-verbs.cjs` valida os 163 verbos, os 11 paradigmas, imperativos, formas criticas e derivados prefixais. `src/scratch/generate_high_value_verbs.py` agora delega ao gerador unico, evitando duas fontes de verdade.
-- `src/services/aiGenerator.ts` continua sendo o unico caminho de IA para questoes. O prompt foi calibrado com sinais deterministas das 152 questoes verbais do banco (priorizando modo/tempo/flexao e correlacao), detalhou restricoes para os sete tipos de questao e passou a validar semanticamente lacunas, correlacao, imperativo, identificacao morfologica, vozes, duplo participio e homonimos. A ordenacao dos blueprints usa a frequencia local, sem copiar texto dos PDFs, inventar banca ou atribuir fonte.
+- `src/services/aiGenerator.ts` continua sendo o unico caminho de IA para questoes. O prompt foi calibrado com sinais deterministas das questões verbais publicas (priorizando modo/tempo/flexao e correlacao), detalhou restricoes para os sete tipos de questao e passou a validar semanticamente lacunas, correlacao, imperativo, identificacao morfologica, vozes, duplo participio e homonimos. A ordenacao dos blueprints usa a frequencia local, sem copiar texto dos PDFs, inventar banca ou atribuir fonte.
 - `src/components/Header.tsx` ajustou a bandeja do Banco de Questoes para nao causar overflow em 390 px. O fluxo de `Tabelas > Sessao Multi-Tempos` segue offline, sem reposicao, e agora exibe 163 verbos.
 - Auditorias: `npm run audit:verbs` aprovado (163 verbos/11 paradigmas); `python src/scratch/audit_question_bank.py` aprovado (591 questoes/9 PDFs); `npm run build` aprovado; `npm run lint` sem erros, com 3 avisos historicos de `set-state-in-effect` em `DrillGrid`/`TablesView`; console do navegador sem erros/avisos.
 - Navegador: 20 sorteios consecutivos da Sessao Multi-Tempos produziram 20 verbos unicos; o layout desktop e movel ficou sem overflow; a aba Questoes mostrou somente quantidade 5/10/20, conteudos e verbo opcional, sem seletor de banca.
@@ -274,11 +280,11 @@ Depois de cada rodada de mudancas:
 
 - `src/utils/textFormatter.tsx`: a formatação passou a distinguir prosa, leitura, enunciado estruturado e alternativa. Quebras artificiais de PDF são unificadas, enquanto listas, itens numerados, lacunas e comandos são separados por parágrafos legíveis. Negritos soltos, rótulos numéricos em Markdown e separações de OCR dentro de palavras são normalizados sem retirar destaques linguísticos válidos.
 - `src/components/QuestionBankView.tsx`, `src/components/SimuladosView.tsx` e `src/components/QuestionsView.tsx`: os novos modos do formatador foram aplicados ao texto de apoio, enunciado e alternativas para manter espaçamento e hierarquia visual consistentes.
-- `src/scratch/generate_clean_bank.py`: foram adicionadas correções determinísticas para os cadernos PDF 16 e 17 e para artefatos recorrentes dos demais PDFs. As correções restauram lacunas, separam itens I/II/III, listas e sequências C/E, removem comandos duplicados e fontes deslocadas e preservam distratores intencionais. `src/data/questionBank.ts` foi regenerado com 591 questões.
-- `src/scratch/audit_question_bank.py`: casos dourados passaram a proteger as correções de lacunas, listas, citações e separação de enunciados dos PDFs 16/17, além dos testes anteriores de gabarito e caracteres corrompidos.
+- `src/scratch/generate_clean_bank.py`: foram adicionadas correções determinísticas para os sete PDFs publicos e para artefatos recorrentes de extração. As correções restauram lacunas, separam itens, listas e sequências C/E, removem comandos duplicados e fontes deslocadas e preservam distratores intencionais. `src/data/questionBank.ts` foi regenerado com 531 questões.
+- `src/scratch/audit_question_bank.py`: casos dourados protegem as correções de lacunas, listas, citações e separação de enunciados dos PDFs publicos, além dos testes anteriores de gabarito e caracteres corrompidos.
 - `index.html` e `public/favicon.svg`: o título da guia agora é `ConjuLetter | By Gustavo_Fcs` e o favicon foi substituído por um símbolo minimalista de conjugação, com fundo transparente e sem o antigo raio.
-- Auditoria de conteúdo e interface: PDF 16 (30) e PDF 17 (30) foram percorridos integralmente no navegador; o banco completo (591/591) foi renderizado com busca de `**`, `océu`, caracteres corrompidos e marcadores indevidos, todos com zero ocorrências. Em viewport de 390 px, `scrollWidth === clientWidth`, não houve elemento vazando após a verificação final e o console permaneceu sem erros/avisos.
-- Verificações finais: auditor do banco aprovado (591 questões/9 PDFs), `npm run audit:verbs` aprovado (163 verbos/11 paradigmas), build aprovado e lint sem erros. Permanecem apenas os 3 avisos históricos de `set-state-in-effect` em `DrillGrid`/`TablesView` e o alerta de chunk grande do Vite.
+- Auditoria de conteúdo e interface: o banco publico (531/531) foi renderizado com busca de `**`, caracteres corrompidos e marcadores indevidos, todos com zero ocorrências. Em viewport de 390 px, `scrollWidth === clientWidth`, não houve elemento vazando após a verificação final e o console permaneceu sem erros/avisos.
+- Verificações finais: auditor do banco aprovado (531 questões/7 PDFs), `npm run audit:verbs` aprovado (163 verbos/11 paradigmas), build aprovado e lint sem erros. Permanecem apenas os 3 avisos históricos de `set-state-in-effect` em `DrillGrid`/`TablesView` e o alerta de chunk grande do Vite.
 - Risco residual: a limpeza é conservadora e reproduzível; novas edições dos PDFs devem passar pelo gerador e pelos casos dourados antes de entrar no banco.
 
 ### 2026-08-29 - rodada 15: bandeja fixa de ações e favicon transparente
@@ -321,9 +327,9 @@ Depois de cada rodada de mudancas:
 
 - As 163 tabelas foram comparadas por um auditor independente com uma referência brasileira, cobrindo 10.758 células nos 11 paradigmas exibidos. O processo encontrou e corrigiu formas europeias (`-ámos`, `dêmos`, `dêem`, `lêem`/`crêem`), células ausentes na fonte de geração, acentos fechados de `prover`/`precaver`/`valer` e imperativos irregulares/derivados (`tem`, `contém`, `traz`, `contradiz`, `revém`, entre outros).
 - `scripts/audit-verbs-ptbr.py` passou a comparar todo o catálogo com páginas brasileiras, incluindo pessoas explícitas, variantes aceitas, verbos defectivos e normalização Unicode. `scripts/audit-verbs.cjs` ganhou saída JSON e casos dourados pós-Acordo Ortográfico; `scripts/build_expanded_verbs.py` agora reproduz deterministicamente as correções brasileiras e protege omissões ocasionais da fonte externa.
-- O banco foi regenerado a partir dos nove PDFs e confrontado integralmente com os nove blocos oficiais de gabarito: 591 questões, 2.803 alternativas e correspondência de letra/numeração por PDF. O auditor também passou a reprovar dezenas de padrões de corrupção de ligaduras, caracteres e palavras coladas.
+- O banco publico foi regenerado a partir dos sete PDFs e confrontado integralmente com os blocos oficiais de gabarito: 531 questões, 2.563 alternativas e correspondência de letra/numeração por PDF. O auditor também passou a reprovar dezenas de padrões de corrupção de ligaduras, caracteres e palavras coladas.
 - A inspeção ortográfica identificou e corrigiu resíduos reais de `fi/fl` e OCR em textos de apoio, como `confiáveis`, `ráfia`, `filósofo`, `financeiramente`, `desconfiança`, `beneficiava`, `corporificada`, `diversificadas`, `garrafinha`, `Báltico`, `Salamina`, `home office`, `Floresta`, `fiordes`, `monóxido`, `chaminés` e `retribuído`. Grafias deliberadas de exercícios, variantes históricas, nomes próprios e citações estrangeiras foram preservadas para não alterar o conteúdo pedagógico nem o gabarito.
-- A versão final foi aberta no navegador e as 591 questões foram renderizadas simultaneamente (`Pré-visualização (591 questões)`), totalizando mais de 1,6 milhão de caracteres visíveis; as lacunas foram preservadas, não houve caractere corrompido, negrito solto nem marcador conhecido. As listas também foram percorridas separadamente, inclusive PDFs 7 (92), 16 (30) e 17 (30).
+- A versão final foi aberta no navegador e as 531 questões publicas foram renderizadas simultaneamente (`Pré-visualização (531 questões)`), totalizando mais de 1,6 milhão de caracteres visíveis; as lacunas foram preservadas, não houve caractere corrompido, negrito solto nem marcador conhecido.
 - Em viewport de 390 px, `scrollWidth` ficou abaixo de `innerWidth`, sem overflow horizontal; o console terminou sem erros ou avisos. Build aprovado e lint sem erros, mantendo apenas os três avisos históricos de `set-state-in-effect` e o alerta de chunk grande já documentados.
 - Fechamento da rodada: a comparação externa terminou com `163` páginas de referência, `10.758` formas confrontadas, zero falha de consulta e zero divergência. Foram corrigidas ainda as pessoas `nós`/`vós` de `prover`, `precaver` e `valer` (vogal tônica fechada) e o imperativo de `revir` (`revenha`/`não revenha`). O gerador recompõe imperativos somente depois de restaurar eventuais células isoladas, evitando que omissões transitórias da fonte gerem `null`. A auditoria local, a auditoria externa, a auditoria das 591 questões, o lint e o build foram repetidos e aprovados.
 
@@ -331,9 +337,9 @@ Depois de cada rodada de mudancas:
 
 - `src/components/TablesView.tsx`: a Sessão Multi-Tempos passou a controlar um ciclo fechado dos 163 verbos sem reposição. Ao esgotá-lo, o sorteio é encerrado e um novo ciclo somente começa pela ação explícita `Reiniciar ciclo`.
 - O antigo contador de sessões foi substituído por progresso semântico: verbos praticados/total, dominados, feitos e pendentes. Uma área expansível lista cada verbo verificado, seu estado e o número de tentativas; reverificar o mesmo verbo atualiza o registro sem duplicar a contagem.
-- `src/components/QuestionBankFilterView.tsx` e `src/components/QuestionBankView.tsx`: os cadernos PDF 16 e PDF 17 continuam preservados na base auditada, mas foram ocultados do fluxo do Banco de Questões. O assunto Verbos agora aponta diretamente e exclusivamente para `PDF 7 • Verbos (G92)`, com 92 questões, sem bandeja ou seletor de sublistas.
-- Teste no navegador: progresso mudou corretamente de `0/163` para `1/163`, exibindo `1 feito · 162 pendentes`; o filtro isolado de Verbos produziu `Criar Lista (92 questões)` e não renderizou `30T1`, `30T2` nem `Escolha o caderno`. Console sem erros/avisos.
-- Verificações: auditor verbal aprovado (163 verbos/11 paradigmas), auditor integral do banco aprovado (591 questões/9 PDFs), lint sem erros novos e build aprovado. Permanecem somente os três avisos históricos de `set-state-in-effect` e o alerta de tamanho do chunk.
+- `src/components/QuestionBankFilterView.tsx` e `src/components/QuestionBankView.tsx`: o assunto Verbos aponta diretamente e exclusivamente para o caderno publico com 92 questões, sem bandeja ou seletor de sublistas privadas.
+- Teste no navegador: progresso mudou corretamente de `0/163` para `1/163`, exibindo `1 feito · 162 pendentes`; o filtro isolado de Verbos produziu `Criar Lista (92 questões)` sem seletor de sublistas. Console sem erros/avisos.
+- Verificações: auditor verbal aprovado (163 verbos/11 paradigmas), auditor integral do banco aprovado (531 questões/7 PDFs), lint sem erros novos e build aprovado. Permanecem somente os três avisos históricos de `set-state-in-effect` e o alerta de tamanho do chunk.
 
 ### 2026-08-30 - rodada 22: progresso sem resumo duplicado
 
@@ -375,7 +381,7 @@ Depois de cada rodada de mudancas:
 - A recuperação passou a combinar dois sinais do PDF: estilos tipográficos e linhas vetoriais. A transferência geométrica agora identifica a ocorrência contextual exata, evitando marcar todas as repetições de uma letra ou palavra dentro da alternativa.
 - Foram mantidas correções determinísticas para fontes que omitem visualmente o próprio destaque; entre elas, `havia visto`, `onde`, `fui germinada`, sinais de pontuação, formas pronominais e os seis casos finais de Fonética conferidos diretamente nas páginas renderizadas.
 - `audit_question_bank.py` agora bloqueia marcação vazia ou desbalanceada, referência visual sem alvo, comandos genéricos vazados ao texto de apoio e regressões em casos representativos. O comando permanente é `npm run audit:questions`.
-- Estado auditado: 591 questões, 294 com marcação pedagógica, 186 trechos em negrito e 770 sublinhados; as 531 questões atualmente expostas no banco foram carregadas simultaneamente no navegador, com 531 cartões e 764 sublinhados renderizados (as duas folhas de 30 verbos permanecem ocultas conforme decisão anterior).
+- Estado auditado: 531 questões publicas, 294 com marcação pedagógica, 186 trechos em negrito e 764 sublinhados; as 531 questões foram carregadas simultaneamente no navegador sem resíduos de conteúdo privado.
 - Verificações: gabaritos e estrutura aprovados nos nove PDFs; auditoria verbal aprovada (163 verbos/11 paradigmas); build de produção aprovado; lint sem erros e apenas os três avisos históricos de efeitos; teste visual confirmou `havia visto`, `recorde` e o texto de apoio longo renderizados no conjunto integral.
 
 ### 2026-08-30 - rodada 28: alternativas destacadas e paragrafacao semantica
@@ -384,7 +390,7 @@ Depois de cada rodada de mudancas:
 - Os casos ambiguos foram comparados visualmente com as paginas oficiais. Foram restaurados alvos como `tudo`, os pronomes `o`, `que`, `aquele`, `essa`, `este`, `conserve`, alem de `revelasse` e `fizera` na questao de referencia. Uma regressao dedicada agora exige que as cinco alternativas desse item mantenham seus destaques.
 - `src/utils/textFormatter.tsx` passou a reconstruir paragrafos de leitura por sinais semanticos do PDF: dialogos iniciados por travessao e finais de linha curta com pontuacao seguidos de nova frase. Linhas apenas quebradas pela largura da pagina continuam unidas.
 - A varredura renderizada carregou as 531 questoes expostas e 389 textos de apoio. O texto `As caridades odiosas`, antes exibido como bloco unico, passou a ter 31 paragrafos; somente dois textos longos permaneceram com um unico paragrafo, ambos assim estruturados nos originais.
-- No navegador, as cinco alternativas da questao de referencia apresentaram marcacao, o console terminou sem erros ou avisos e nao houve falha de renderizacao. A base integral permanece com 591 questoes em nove PDFs; as outras 60 continuam preservadas, mas ocultas conforme decisao anterior.
+- No navegador, as cinco alternativas da questao de referencia apresentaram marcacao, o console terminou sem erros ou avisos e nao houve falha de renderizacao. A base publica permanece com 531 questoes em sete PDFs.
 - Verificacoes finais: `npm run audit:questions` aprovado com zero referencia visual sem marcacao; lint sem erros, mantendo apenas os tres avisos historicos; build de producao aprovado, com somente o alerta conhecido de chunk grande.
 
 ### 2026-08-30 - rodada 29: auditoria visual integral e normalizacao de apoio
@@ -393,25 +399,25 @@ Depois de cada rodada de mudancas:
 - `src/utils/textFormatter.tsx` passou a separar inline fontes coladas ao corpo, instrucoes que vinham na mesma linha da fonte, cabecalhos de assunto que vazavam para o texto e continuacoes minusculas de paragrafo. O renderizador tambem normaliza espacos de OCR (`1§`, `e o`, `e a`, `um verbo`), remove marcadores Markdown/HTML cruzados e impede a exibicao de asteriscos, tags ou caracteres estranhos.
 - `src/scratch/normalize_bank_formatting.py` materializa essa limpeza na base (marcadores cruzados, asteriscos residuais, ligaduras OCR e fontes/instrucoes coladas); `src/scratch/apply_vector_marks.py` recupera 146 sublinhados com contexto geometrico unico dos PDFs. O conteudo sincronizado de `simuladoQuestions.ts` preserva a mesma apresentacao.
 - A questao `verbos-pdf_7-q1` agora abre com caixa de Texto de Apoio, rotulo `Texto I`, titulo `A complicada arte de ver`, paragrafos numerados legiveis, fonte separada e as cinco alternativas com o verbo destacado.
-- Verificacao no navegador: 531 cartoes expostos (as folhas 16/17 permanecem preservadas, mas ocultas do Banco), 352 caixas de texto de apoio, 381 blocos de fonte e 241 titulos. A varredura nao encontrou texto colado, cabecalho vazado, fonte absorvendo instrucao, tags ou marcadores literais, nem caracteres `�`, `¢`, `€` ou `†`; console sem erros/avisos.
-- Comparacao independente com os nove PDFs: 591/591 questoes, 0 divergencias de letra de gabarito e 0 inconsistencias entre `correctLetter` e a alternativa marcada. Build e lint aprovados; permanecem somente os tres avisos historicos de efeitos e o alerta de chunk grande do Vite.
+- Verificacao no navegador: 531 cartoes publicos, 352 caixas de texto de apoio, 381 blocos de fonte e 241 titulos. A varredura nao encontrou texto colado, cabecalho vazado, fonte absorvendo instrucao, tags ou marcadores literais, nem caracteres `�`, `¢`, `€` ou `†`; console sem erros/avisos.
+- Comparacao independente com os sete PDFs publicos: 531/531 questoes, 0 divergencias de letra de gabarito e 0 inconsistencias entre `correctLetter` e a alternativa marcada. Build e lint aprovados; permanecem somente os tres avisos historicos de efeitos e o alerta de chunk grande do Vite.
 
 ### 2026-08-30 - rodada 30: restauração de apoios ausentes e revalidação final
 
 - `src/scratch/restore_missing_support.py` passou a restaurar os trechos que os PDFs disponibilizam apenas como imagem: *Viagens de Gulliver*, a cena de Xantós, *O silêncio incomoda*, *Retrato* e *Mulheres de Atenas*. Cada um voltou ao campo de texto de apoio, preservando rótulo, título, parágrafos e fonte no mesmo bloco de leitura, sem absorção pelo enunciado.
-- `src/scratch/normalize_bank_formatting.py` recebeu proteções adicionais de OCR e marcação pedagógica. Foram corrigidas formas como `privilégios`, `herbáceas`, `definitivamente`, `ser humano` e espaçamentos colados; a sincronização foi refeita para as 152 questões de simulados.
-- Revalidação no navegador: as 531 questões expostas carregaram de uma vez (1.633.408 caracteres), com 361 caixas de apoio, zero caractere de substituição e as quatro passagens restauradas verificadas na renderização. As 60 questões das duas folhas de 30 verbos seguem preservadas e auditadas, porém ocultas no Banco conforme decisão de produto.
-- Verificações finais: normalização, sincronização e `audit_question_bank.py` aprovados para 591 questões / 9 PDFs, incluindo gabaritos e estrutura; `npm run lint` sem erros novos e `npm run build` aprovado. Permanecem apenas os três avisos históricos de `set-state-in-effect` e o aviso conhecido de tamanho do bundle.
+- `src/scratch/normalize_bank_formatting.py` recebeu proteções adicionais de OCR e marcação pedagógica. Foram corrigidas formas como `privilégios`, `herbáceas`, `definitivamente`, `ser humano` e espaçamentos colados; a sincronização foi refeita para as 92 questões publicas de simulados.
+- Revalidação no navegador: as 531 questões publicas carregaram de uma vez (1.633.408 caracteres), com 361 caixas de apoio, zero caractere de substituição e as quatro passagens restauradas verificadas na renderização.
+- Verificações finais: normalização, sincronização e `audit_question_bank.py` aprovados para 531 questões / 7 PDFs, incluindo gabaritos e estrutura; `npm run lint` sem erros novos e `npm run build` aprovado. Permanecem apenas os três avisos históricos de `set-state-in-effect` e o aviso conhecido de tamanho do bundle.
 
 ### 2026-08-31 - rodada 31: suporte estruturado e importação auditável
 
-- `src/data/questionBank.ts`: os registros nativos passaram a carregar `support` explícito (`label`, `title`, `author`, `paragraphs`, `source`), `provenance` (PDF e páginas), `quality` (`verified`/`warning`) e `emphasisNotes`; `readingText` permanece apenas como fallback de migração. Os 591 itens foram migrados, com 369 apoios estruturados, 591 proveniências completas, 591 estados `verified` e zero aviso nativo.
+- `src/data/questionBank.ts`: os registros nativos passaram a carregar `support` explícito (`label`, `title`, `author`, `paragraphs`, `source`), `provenance` (PDF e páginas), `quality` (`verified`/`warning`) e `emphasisNotes`; `readingText` permanece apenas como fallback de migração. Os 531 itens publicos foram migrados, com 369 apoios estruturados, 531 proveniências completas, 531 estados `verified` e zero aviso nativo.
 - `src/utils/questionSupport.ts`: parser retrocompatível e normalizador determinístico separam título, autoria, parágrafos, fonte e comandos; títulos perdem `<u>`/`**`, enquanto destaques pedagógicos do corpo são preservados. A validação detecta corrupção, tags desbalanceadas, fonte sem corpo, referência visual sem alvo e importações sem justificativa semântica.
 - `QuestionBankView.tsx` e `SimuladosView.tsx`: o renderizador usa uma única hierarquia editorial (rótulo em caixa alta, título sem sublinhado, autor discreto, parágrafos reais e fonte no rodapé do mesmo box), com atributos de auditoria visíveis no DOM. A questão `verbos-pdf_7-q5` remove o sublinhado decorativo de `castigadas` e mantém o destaque semanticamente necessário de `pros seus maridos`.
 - `pdfImportService.ts` e `ImportPdfModal.tsx`: novas importações solicitam o objeto estruturado à IA, exigem justificativa para cada destaque, normalizam o resultado e salvam itens ambíguos sem bloquear o fluxo. Ao terminar, o modal mostra quantidade salva e a lista persistente de avisos por questão; itens com aviso recebem selo `Revisar` no banco.
-- `audit_question_bank.py` agora reprova suporte inválido, metadados decorativos, páginas ausentes, qualidade nativa não verificada e regressões de marcação. Resultado: `OK: 591 questões, 9 PDFs, gabaritos e estrutura consistentes.`
+- `audit_question_bank.py` agora reprova suporte inválido, metadados decorativos, páginas ausentes, qualidade nativa não verificada e regressões de marcação. Resultado: `OK: 531 questões, 7 PDFs, gabaritos e estrutura consistentes.`
 - `sync_simulado_question_content.py` propagou suporte, proveniência e qualidade para as cópias dos simulados sem duplicar conteúdo. Lint e build de produção aprovados; permanecem somente os três avisos históricos de efeitos e o alerta de chunk grande do Vite.
-- A rota interna `/?audit=questions` habilita uma galeria sem filtro para revisão visual: 591 cartões (incluindo os 30 itens de `pdf_16` e os 30 de `pdf_17`). A varredura final confirmou 591 cartões, zero tags literais/caracteres corrompidos e zero overflow no desktop; em 390 px, a galeria pública manteve largura de 385 px sem overflow.
+- A auditoria visual utiliza o fluxo publico de 531 cartões, sem rota ou galeria para cadernos privados. A varredura final confirmou zero tags literais/caracteres corrompidos e zero overflow no desktop; em 390 px, a galeria pública manteve largura de 385 px sem overflow.
 
 ### 2026-08-31 - rodada 32: coleção independente de Inglês (1.500 questões)
 
@@ -432,6 +438,159 @@ Depois de cada rodada de mudancas:
 - Varredura no navegador com todas as questões: 1.500 cartões, 124 caixas de apoio, 92 fontes, 71 títulos e 20 autorias; zero caracteres de substituição, tags literais, separação OCR conhecida ou overflow horizontal em viewport de 571 px. As fontes ficam no rodapé do mesmo box e as passagens continuam segmentadas.
 - Auditorias de regressão (`audit:questions`, `audit:question-report`, `audit:verbs`), lint e build foram executados novamente. O lint mantém somente os três avisos históricos de `set-state-in-effect`; o build mantém apenas o alerta conhecido de chunk grande por causa do acervo local.
 - Revisão de segunda passagem removeu divisões residuais em textos bilingues (por exemplo, `governments`, `financial`, `concluíram`, `opções`, `optam por tal sistema`, `reforços`, `comunicar-se`, `discretely`, `trustworthy` e `turtles`). Uma regra incorreta que transformava o legítimo `por tal` em `portal` foi retirada; o gabarito continua isolado da tabela lexical para não colapsar pares de letras.
+
+### 2026-08-31 - rodada 34: cabeçalho editorial da pré-visualização
+
+- `src/components/QuestionBankView.tsx`: o cabeçalho da resolução foi reorganizado em três níveis (retorno/título, métricas independentes e controles), removendo a linha única congestionada. Assuntos e caderno de Verbos agora têm leitura própria; paginação e status usam grupos alinhados.
+- A hierarquia visual passou a usar títulos sans semibold, métricas em cards iguais e rótulos curtos, preservando todas as ações de pré-visualização, listas e cópia.
+- Navegador: desktop e viewport de 390 px conferidos; `scrollWidth` permaneceu dentro da viewport e não houve sobreposição no cabeçalho. Build e lint aprovados (somente os três avisos históricos de efeitos React).
+
+### 2026-08-31 - rodada 35: resumo de filtros e nomes de listas
+
+- `src/components/QuestionBankView.tsx`: removido o seletor de status duplicado do cabeçalho da resolução; status continua sendo escolhido somente no menu de filtros.
+- O texto `Caderno de Verbos · 92 questões` agora aparece apenas quando o tópico `Verbos` é o único selecionado, evitando informação incorreta ao selecionar todos os assuntos.
+- Nomes de listas persistentes passaram a incluir o status quando aplicável (`Pendentes`, `Acertos` ou `Erros`), diferenciando listas com o mesmo assunto e filtros diferentes. O `statusFilter` já persistido continua sendo mantido no registro.
+- Verificações: no navegador, “Todos os Assuntos” não exibiu o caderno de Verbos e “Verbos” isolado exibiu o resumo correto; build aprovado e lint sem erros, com os três avisos históricos de efeitos React.
+
+### 2026-08-31 - rodada 36: IA de importacao no servidor e limpeza do fluxo de questoes
+
+- `src/components/QuestionBankView.tsx` e `src/components/SimuladosView.tsx`: removidas as duas linhas decorativas que apareciam em todos os cartoes (a borda inferior do bloco da questao e a borda superior das acoes de confirmacao). O espaco entre alternativas, confirmacao e proxima questao permanece, sem criar divisores artificiais.
+- `vite.config.ts`: adicionada a rota local `/api/ai/import`, com middleware para desenvolvimento e preview. A rota le `OPENROUTER_API_KEY` e `OPENROUTER_MODEL` exclusivamente do ambiente do servidor e encaminha as mensagens para o OpenRouter sem expor credenciais ao bundle.
+- `src/services/pdfImportService.ts`: a importacao de PDF deixou de ler chave/modelo no navegador e passou a chamar somente `/api/ai/import`; mensagens de erro agora orientam a configuracao do servidor.
+- `src/components/SettingsView.tsx`: removidos os campos para escolher modelo e digitar chave. A guia informa que a IA e gerenciada pelo servidor e documenta as variaveis esperadas em `.env.local`.
+- Os componentes e o servico legados de geracao de questoes ineditas (`QuestionsView.tsx`, `MilitaryExamSimulator.tsx`, `Navbar.tsx` e `aiGenerator.ts`) foram removidos; nao existe mais uma aba ou caminho cliente para gerar questoes por IA.
+- `src/utils/srsEngine.ts`: credenciais antigas encontradas no `localStorage` sao descartadas durante a leitura e nunca mais sao gravadas, evitando que configuracoes legadas permaneçam no cliente.
+- `.env.local.example`: inclui o modelo e a chave de exemplo, sem prefixo `VITE_`; o arquivo `.env.local` real continua ignorado pelo Git.
+- Verificacoes: `npm run build` aprovado; `npm run lint` sem erros, mantendo apenas os tres avisos historicos de efeitos React. A rota de importacao retorna aviso configuravel quando a chave nao esta presente, sem vazar credenciais.
+
+### 2026-08-31 - rodada 37: simetria dos controles da pre-visualizacao
+
+- `src/components/QuestionBankView.tsx`: cards de `Resolvidas` e `Precisao` agora pertencem a um grupo fixo de 224 px, com larguras iguais e alinhamento central responsivo.
+- O controle `Por pag.` usa o mesmo comprimento total do grupo de metricas; seus cinco botoes dividem o espaco de forma uniforme, evitando que `Todas` fique mais largo ou que o conjunto pareca deslocado.
+- A validacao visual no navegador conferiu o cabecalho em desktop e a composicao responsiva; nao houve sobreposicao ou overflow horizontal. Build e lint permanecem aprovados, com apenas os tres avisos historicos de efeitos React.
+
+### 2026-08-31 - rodada 38: separacao editorial de apoios em Portugues e Ingles
+
+- `src/scratch/normalize_bank_formatting.py` passou a ser idempotente: remove instrucoes de leitura que haviam vazado para o apoio (`Leia`, `Apos a leitura`, `Lido o texto`, `Para responder a questao`), separa titulo/autor/fonte sem repetir blocos e elimina cartoes formados apenas por citacao.
+- Passagens longas que estavam embutidas no enunciado foram promovidas para `support.paragraphs` somente quando a fronteira era inequívoca. Foram promovidos 20 registros portugueses (incluindo os exemplos de encontros vocalicos, crase e modos verbais); o apoio nativo passou de 369 para 388 itens. A compatibilidade `readingText` foi regenerada em paralelo e os 152 itens de simulados foram sincronizados.
+- Marcacoes solicitadas pelo proprio enunciado voltaram aos alvos corretos nas questoes 19 de Fonetica e 14/18 de Modos Verbais; o trecho explicitamente destacado de Transumanismo recebeu um unico alvo semântico. Nenhuma letra de gabarito ou alternativa foi alterada.
+- `src/scratch/import_english_questions.py` aplica a mesma separacao durante novas importacoes. Foram promovidas 43 passagens inglesas (incluindo Articles, Active/Passive, Direct/Indirect, Mixed Topics e Synonyms); a colecao passou a 167 apoios estruturados, sem `null` e sem titulos que sejam apenas citacoes.
+- `src/utils/questionSupport.ts` agora limpa instrucoes redundantes tambem em imports futuros e recalcula a qualidade apos a normalizacao. `audit_question_bank.py` e `audit_english_question_bank.py` reprovarao instrucoes de leitura no apoio ou passagens longas embutidas no enunciado.
+- Auditorias: `audit:questions` confirmou 591/591, 9 PDFs e gabaritos consistentes; `audit:english` confirmou 1.500/1.500, 24 assuntos, 1.500 respostas e 0 divergencias. Build aprovado; lint aprovado com os tres avisos historicos de `set-state-in-effect` e o alerta conhecido de chunk grande do Vite.
+- Navegador: a pré-visualização exibiu o apoio da questão 2 de Fonética em caixa própria, com enunciado separado, sem linha `Leia` duplicada, sem overflow ou sobreposição. A inspeção de todos os cartões e a checagem determinística dos 2.091 registros não encontraram instrução redundante no apoio.
+
+### 2026-08-31 - rodada 39: revisão visual de cartões vazios e comandos nos metadados
+
+- `src/scratch/normalize_bank_formatting.py` passou a mover citações que estavam no início do corpo para `support.source`, remover títulos que eram comandos (`Leia`, `Após a leitura`, `Texto para responder` e variantes) e conservar títulos literários curtos, inclusive os terminados em reticências.
+- Apoios metadata-only repetidos entre questões agora reutilizam o trecho canônico identificado pelo título/citação. As páginas escaneadas de `A PIPOCA` foram recuperadas em `src/scratch/recovered_pipoca.txt` e aplicadas às três questões que antes exibiam apenas título/fonte; nenhuma caixa de apoio permanece sem corpo.
+- `src/scratch/import_english_questions.py` e `audit_english_question_bank.py` deixam de aceitar URL/citação como apoio autônomo: questões baseadas em imagem/cartum não exibem balão textual vazio, enquanto passagens ativas continuam compartilhadas normalmente.
+- Auditoria visual no navegador: pré-visualização portuguesa com 531 cartões montados, 373 caixas de apoio, zero caixas vazias, zero instruções genéricas isoladas e `bodyScrollWidth` dentro dos 1.280 px da viewport. A questão 2 de Fonética foi conferida com apoio e enunciado em blocos distintos.
+- Verificações finais: `audit:questions` (591/591, 9 PDFs, gabaritos consistentes), `audit:english` (1.500/1.500, 0 divergências), `audit:question-report` (591 fichas, 591 verificadas, 0 avisos), auditoria verbal (163 verbos) e build TypeScript/Vite aprovados. O lint mantém somente os três avisos históricos de `set-state-in-effect`.
+
+### 2026-08-31 - rodada 40: regeneração dos casos análogos e varredura completa
+
+- O importador inglês agora separa, de forma determinística, trechos que chegam no mesmo bloco do comando: marcadores de lista, frases citadas, letras de música, diálogos e textos com instrução após o apoio. A limpeza remove a abertura redundante `Read/Leia/Observe` quando o trecho já está no card de apoio e conserva apenas a ordem operativa (por exemplo, `Fill in the gaps` ou `It may be inferred`).
+- Apoios compostos por uma linha de fonte ou por uma instrução de imagem não são mais associados à passagem anterior. Isso corrigiu contaminações entre artigos da seção Reading Review, inclusive as questões da NMSU, a frase de afluência pública/privada, o trecho dos estaleiros japoneses e a letra de *The Big Bang Theory*. O caso específico de `A PIPOCA` continua hidratado pelo fixture recuperado das páginas digitalizadas.
+- `paragraphs_from_text` preserva quebras de versos e diálogos curtos; `QuestionBankView.tsx` não cria uma caixa vazia quando o enunciado é somente uma instrução já absorvida pelo apoio. O auditor inglês passou a reprovar novamente comandos `Read/Leia/Observe` redundantes em cartões que tenham apoio.
+- O grupo das métricas e o seletor `Por pág.` foram equalizados em 240 px; a largura extra comporta `Todas` sem overflow interno e preserva a simetria em desktop e celular.
+- Regeneração concluída: 1.500 questões inglesas em 24 subdivisões, 251 apoios textuais válidos, 1.500 gabaritos oficiais; 591 questões portuguesas, 373 apoios públicos e 591 fichas de auditoria. Não há avisos, divergências de gabarito, apoios vazios ou fontes sem corpo.
+- Varredura pelo navegador: 1.500 cartões ingleses e 531 cartões portugueses renderizados de uma vez em viewport de 1.280 px, `bodyScrollWidth` no máximo 1.280 px, sem overflow horizontal da página, zero caixas de apoio vazias e nenhum comando `Read/Leia/Observe` redundante no início de cartão com apoio.
+- Verificações finais executadas novamente: `audit:questions`, `audit:english`, `audit:question-report`, `audit:verbs`, `npm run build` e `npm run lint`. O build passou; o lint mantém somente os três avisos históricos de `set-state-in-effect` e o Vite mantém o alerta conhecido de chunk grande do acervo local.
+
+### 2026-08-31 - rodada 41: divisor entre questoes
+
+- `src/components/QuestionBankView.tsx` e `src/components/SimuladosView.tsx`: removida a borda inferior do bloco de metadados que criava uma linha entre o contador e o enunciado.
+- O divisor agora aparece no topo de cada questao a partir da segunda do conjunto, separando visualmente cartoes consecutivos sem inserir uma linha extra antes da primeira. O espacamento superior foi ajustado para manter a hierarquia entre o divisor e o contador.
+- A estrutura interna do apoio, enunciado, alternativas e acoes permaneceu inalterada; a mudanca e somente de separacao visual entre questoes.
+
+### 2026-08-31 - rodada 42: idiomas em bandejas no filtro do banco
+
+- `src/components/QuestionBankFilterView.tsx`: removido o cartao separado de “Subdivisao do banco” com botoes lado a lado. Portugues e Ingles agora aparecem como duas bandejas empilhadas no painel de assuntos, sempre nessa ordem.
+- A bandeja ativa exibe o seletor de assuntos e pode ser recolhida; a bandeja inativa permanece visivel logo abaixo/acima para troca imediata, com contagem propria. A troca de idioma continua resetando assuntos, status e quantidade para evitar misturas entre colecoes.
+- Verificacao no navegador: as duas bandejas aparecem com estado `aria-pressed` correto, Inglês abre seus 24 assuntos ao ser selecionado, Portugues permanece como bandeja independente e `scrollWidth` (1.275 px) ficou dentro da viewport de 1.280 px. Build aprovado; lint sem erros, mantendo os tres avisos historicos.
+
+### 2026-08-31 - rodada 43: configuracoes essenciais
+
+- `src/components/SettingsView.tsx`: a guia de Configurações foi reduzida a um unico cartao objetivo, contendo somente quantidade de colunas, uso de acentuacao estrita, Resetar dados e Salvar.
+- Removidos os paineis de IA, privacidade, resumo, textos auxiliares e status decorativos que poluiam a tela. As preferencias existentes continuam sendo lidas, editadas e salvas sem mudar o contrato de `UserSettings`.
+- Verificacao no navegador: apenas os controles essenciais aparecem, os botoes de colunas mantem estado `aria-pressed`, o salvamento exibe confirmacao e a largura do documento permanece dentro da viewport (1.280 px). Build aprovado; lint sem erros, mantendo os tres avisos historicos.
+
+### 2026-08-31 - rodada 44: tema claro acessivel
+
+- `src/utils/srsEngine.ts`: `UserSettings.theme` agora aceita `dark` ou `light`, com normalizacao segura de valores antigos/invalidos.
+- `src/App.tsx`, `src/main.tsx` e `index.html`: o tema persistido e aplicado antes da pintura inicial e atualizado imediatamente quando salvo, incluindo `color-scheme` para controles nativos.
+- `src/components/SettingsView.tsx`: adicionada uma selecao compacta Escuro/Claro ao cartao essencial de configuracoes; o restante do painel continua sem paineis auxiliares.
+- `src/index.css`: tokens e overrides claros para fundos, bordas, tipografia, estados semanticos, selecao, scrollbar, modal de importacao, tabelas e banco de questoes. As caixas de enunciado e apoio deixam de receber fundos escuros no tema claro.
+- Verificacao visual no navegador: Configuracoes, Tabela Unica, modal de importacao e as colecoes completas foram conferidos em tema claro — 531 questoes portuguesas (373 apoios) e 1.500 inglesas (251 apoios). Nao houve fundos escuros residuais nos cartoes, textos ilegiveis ou overflow; `scrollWidth` ficou em 1.275 px numa viewport de 1.280 px. Tema escuro foi restaurado apos o teste. Build aprovado; lint sem erros, mantendo os tres avisos historicos e o alerta conhecido de chunk grande.
+
+### 2026-08-31 - rodada 45: retirada definitiva dos cadernos privados de 30 verbos
+
+- Solicitação do produto: os dois cadernos privados de 30 questões não são acervo público e não devem permanecer no código ou na distribuição.
+- `src/data/questionBank.ts` passou de 591 para **531** registros: somente os sete PDFs públicos (81 + 74 + 94 + 69 + 28 + 93 + 92) permanecem no banco canônico.
+- `src/data/simuladoQuestions.ts` passou de 152 para **92** cartões e o tipo `SimuladoQuestion.listId` agora aceita apenas `pdf_7`.
+- Os PDFs privados foram removidos de `lists/`; o arquivo legado `src/data/militaryQuestions.ts`, que continha cópias das questões, também foi removido. O contrato `MilitaryQuestion` sem consumidores foi eliminado de `src/types/verbs.ts`.
+- `QuestionBankView`, `QuestionBankFilterView`, `App` e `SimuladosView` não possuem mais modo de auditoria, filtros ou abas para cadernos privados. O parâmetro `?audit=questions` deixou de alterar o fluxo público.
+- Geradores e auditores de manutenção foram ajustados para considerar somente os sete PDFs públicos; scripts históricos que dependiam exclusivamente dos cadernos privados foram aposentados. Snapshots temporários e bytecodes rastreados contendo os dados privados foram removidos.
+- O relatório `reports/question-audit.{json,md}` foi regenerado com 531 fichas, 531 itens verificados, 0 avisos e 0 divergências de gabarito. A busca no código-fonte não encontra mais IDs, títulos ou conteúdos dos dois cadernos.
+- Risco controlado: listas persistidas em `localStorage` de versões antigas podem conter IDs removidos; ao abrir uma lista, esses IDs são ignorados pelo mapa atual e não reaparecem no banco. Nenhum novo importador aceita esses identificadores.
+
+### 2026-08-31 - rodada 46: seletor responsivo de paginação
+
+- `QuestionBankView.tsx` e `SimuladosView.tsx`: a bandeja `Por pág.` deixou de comprimir o rótulo e os cinco botões em viewports estreitos. Em telas móveis, o rótulo ocupa sua própria linha e a segmentação usa toda a largura disponível; a partir de `sm`, o controle mantém largura fixa de 280px para preservar a simetria do cabeçalho.
+- Os botões receberam altura e espaçamento consistentes, `whitespace-nowrap` e distribuição flexível uniforme; `Todas` não é mais esmagado junto dos valores numéricos.
+- Verificação no navegador: viewport 360px sem overflow, bandeja de 280px com cinco opções de 54px; desktop 1280px com bandeja de 280px e segmento de 204px. Screenshot mobile conferido visualmente e viewport restaurado ao padrão.
+- Verificações: `npm run build` aprovado; `npm run lint` aprovado com apenas os três avisos históricos de `set-state-in-effect`; `git diff --check` sem erros de conteúdo.
+
+### 2026-08-31 - rodada 47: saneamento de sublinhados e fontes contaminadas
+
+- A questão `verbos-pdf_7-q6` foi conferida diretamente na página 12 de `7. Verbos.pdf`: o parágrafo “Bons tempos aqueles...” não tem destaque no original. O sublinhado de parágrafo inteiro foi removido, `Acesso em ago. 2020` saiu do enunciado e voltou para a fonte no rodapé do mesmo apoio, e o comando passou a dizer “período apresentado” para não prometer um alvo visual inexistente.
+- A questão `verbos-pdf_7-q10` foi conferida na página 25: o destaque pedagógico permanece em `NÃO` e nas formas verbais das alternativas, enquanto o sublinhado decorativo de `Assinale` foi removido. A cópia do simulado foi sincronizada com o banco canônico.
+- `normalize_bank_formatting.py` agora remove marcação do iniciador de comandos no começo do enunciado, move linhas de acesso bibliográfico para `support.source` e mantém a exceção do PDF explicitamente registrada. `questionSupport.ts` aplica as mesmas regras a importações futuras, remove um parágrafo de apoio inteiramente marcado quando não há justificativa semântica e emite avisos para regressões.
+- Conferência visual no navegador: q6 exibe o parágrafo em prosa normal e a fonte (URL + data de acesso) no rodapé do mesmo box; q10 exibe `Assinale` sem sublinhado e preserva somente `NÃO` e as formas verbais pedagógicas nas alternativas.
+- Auditoria determinística: 531 questões públicas, 7 PDFs, gabaritos e estrutura consistentes; relatório regenerado com 531 fichas verificadas, 0 avisos e 0 divergências. A busca de regressão não encontrou `<u>Assinale</u>`, datas de acesso no início do enunciado ou marcação integral no apoio de q6.
+- Verificações executadas: `npm run audit:questions`, `npm run audit:question-report`, `npm run audit:english`, `npm run audit:verbs` e `npm run build`, todos aprovados. O lint mantém somente os três avisos históricos de efeitos React e o Vite mantém o alerta conhecido de chunk grande.
+
+### 2026-08-31 - rodada 48: simetria das métricas do cabeçalho
+
+- `src/components/QuestionBankView.tsx`: o grupo de `Resolvidas` e `Precisão` foi reduzido de 240 px para 200 px, alinhando suas extremidades ao segmento útil dos cinco botões de `Por pág.` (sem o rótulo). Os dois cards continuam com a mesma largura e distribuição responsiva.
+- A alteração preserva a leitura dos valores e evita que as métricas pareçam mais largas que o controle de paginação em telas estreitas; não há mudança de comportamento ou de dados.
+- Verificações: `npm run build` e `npm run lint` aprovados; a inspeção visual no navegador confirmou as métricas com 200 px, o segmento de paginação com 204 px (incluindo borda/padding) e `scrollWidth` de 1.275 px em viewport de 1.280 px, sem overflow. O lint mantém somente os três avisos históricos de `set-state-in-effect`.
+
+### 2026-08-31 - rodada 49: Home e gaveta de navegação
+
+- `src/components/HomeView.tsx`: criada uma Home compacta com apresentação do ConjuLetter, escopo do acervo, importação assistida de PDFs e card externo do VocabLab (`https://vocablab-revolution.vercel.app/`). O texto deixa explícito que a IA organiza o material importado, sem criar questões.
+- `src/components/Header.tsx`: a navegação superior agora inicia centralizada na pill Home. A seta abre/recolhe, com animação suave, as pills Tabelas e Banco de Questões; o menu do Banco preserva os acessos a Filtrar banco e Listas salvas. O logo também retorna à Home.
+- `src/App.tsx`: `home` passou a ser a aba inicial e renderiza `HomeView`, mantendo Tabelas, Banco, Listas e Configurações como destinos existentes.
+- `src/index.css`: adicionados estilos responsivos e acessíveis para a gaveta, estados ativos, transições, card editorial da Home e tema claro, sem criar uma landing page extensa.
+- Verificações: Home renderizada no navegador, expansão/recolhimento da gaveta e navegação para Tabelas conferidos; link do VocabLab exposto com destino correto. `npm run build` aprovado; `npm run lint` aprovado com apenas os três avisos históricos de `set-state-in-effect`.
+
+### 2026-08-31 - rodada 50: refinamento visual da Home e da gaveta
+
+- `src/components/Header.tsx`: a navegação superior foi compactada e o indicador da gaveta passou a usar seta lateral (`ChevronRight`), apontando para a direita fechada e para a esquerda aberta.
+- `src/components/HomeView.tsx`: removidos o hero, tags e cards da Home. O conteúdo ficou vertical e essencial, com apenas título, seção “Sobre o projeto” e seção/link do VocabLab.
+- `src/index.css`: reduzidos altura, padding e tipografia das pills; a Home agora usa separadores discretos, sem caixas, e mantém transições de foco/hover.
+- Verificação visual no navegador: Home sem blocos de fundo, navegação compacta e seta lateral conferidas; build aprovado.
+
+### 2026-08-31 - rodada 51: texto institucional centralizado
+
+- `src/components/HomeView.tsx`: o título passou a ser `A Nova Alexandria` e o conteúdo institucional foi substituído pelo texto aprovado, com `ConjuLetter` destacado semanticamente e a seção VocabLab preservada como destino relacionado.
+- `src/index.css`: toda a composição textual da Home foi centralizada, com largura de leitura controlada e separadores discretos, mantendo o desenho editorial sem caixas.
+- Verificação visual no navegador: título, Sobre o projeto e VocabLab ficaram centralizados e legíveis; build e lint aprovados (somente os três avisos históricos de `set-state-in-effect`).
+
+### 2026-08-31 - rodada 52: tema Alexandria e arquitetura visual reversível
+
+- `src/utils/srsEngine.ts`, `src/App.tsx` e `src/main.tsx`: o contrato de preferências passou a aceitar `alexandria`, preservando valores `dark`/`light` antigos e aplicando `color-scheme` coerente antes da pintura inicial.
+- `src/components/SettingsView.tsx`: adicionadas três opções visuais (Original escuro, Original claro e Alexandria), com amostras, prévia imediata e restauração do tema persistido ao sair sem salvar.
+- `src/index.css`: criados tokens semânticos de superfície, texto, borda, acento e estados; os valores atuais dos temas Original permanecem intactos. Alexandria traduz as classes legadas para azul-marinho, ardósia, creme e cobre, além de primitivas reutilizáveis para superfícies, controles, botões, métricas, opções e respostas.
+- `src/components/HomeView.tsx` e `public/alexandria/`: a decoração espacial fica restrita à Home, com estrelas CSS e ilustrações transparentes originais de planeta e foguete, sem astronautas ou texto embutido. Tabelas, banco, importação, listas, modais e Configurações não recebem ilustrações.
+- Verificação visual no navegador: Home, Configurações, Tabelas, Banco, questão, modal de importação e gaveta foram conferidos em Alexandria e nos temas Original; celular (390 px) e desktop (1280 px) ficaram sem overflow após corrigir a gaveta móvel. Build e lint aprovados; lint mantém apenas os três avisos históricos.
+
+### 2026-08-31 - rodada 53: refinamento noturno e Lua da Home
+
+- `src/components/HomeView.tsx`: o foguete foi substituído por uma Lua única, com asset transparente isolado; a referência antiga do foguete deixou de ser usada para impedir resíduos de outro planeta.
+- `public/alexandria/moon.png`: novo asset lunar em paleta fria, sem texto, anéis, personagens ou outros corpos celestes. O arquivo foi reduzido para uso responsivo; apenas `planet.png` e `moon.png` permanecem ativos no tema.
+- `src/index.css`: Alexandria passou de azul ardósia para carvão noturno (`#12131a`), com superfícies escuras e texto creme-lilás. Os acentos de interface, foco, seleção, checkbox, botões, marcadores e estados ativos agora usam lavanda fria; o laranja permanece apenas nas amostras dos temas Original.
+- Verificação visual no navegador: Home e seção VocabLab conferidas em 1280 px, questões e controles conferidos sem laranja residual nos estados Alexandria, e questão em 390 px verificada sem overflow. Tema Original foi restaurado após os testes. Build e lint aprovados; lint mantém somente os três avisos históricos.
 
 ## 9. Pendencias e melhorias futuras
 

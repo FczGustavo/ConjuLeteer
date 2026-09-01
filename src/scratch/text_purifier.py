@@ -239,8 +239,23 @@ def deep_clean_portuguese(text):
 
     text = re.sub(r'([a-záéíóúâêîôûãõç]{3,})\s+([bcdfghjklmnpqrstvxyz])(?=\s|[,.;:!?\-]|\b)', join_suffix_consonant, text)
 
-    # 11. Normalize hyphen spacing in verbs and words (e.g. "encontram- se" -> "encontram-se")
-    text = re.sub(r'([a-zA-ZáéíóúâêîôûãõçÁÉÍÓÚÂÊÎÔÛÃÕÇ]+)\s*-\s+([a-zA-ZáéíóúâêîôûãõçÁÉÍÓÚÂÊÎÔÛÃÕÇ]+)', r'\1-\2', text)
+    # 11. Normalize hyphen spacing in clitic/compound words (e.g. "encontram- se" ->
+    # "encontram-se").  Keep spaces around a standalone separator ("palavra - palavra"):
+    # those separators are part of the question's layout and must not be glued to either
+    # neighboring word.
+    def join_hyphenated_word(match):
+        left, right = match.group(1), match.group(2)
+        # Preserve notation such as "I- pretérito" and "nota D- por".  A
+        # one-letter capital token is a label/grade, not a clitic compound.
+        if len(left) == 1 and left.isupper():
+            return match.group(0)
+        return f'{left}-{right}'
+
+    text = re.sub(
+        r'([a-zA-ZáéíóúâêîôûãõçÁÉÍÓÚÂÊÎÔÛÃÕÇ]+)-\s+([a-zA-ZáéíóúâêîôûãõçÁÉÍÓÚÂÊÎÔÛÃÕÇ]+)',
+        join_hyphenated_word,
+        text,
+    )
     
     # 12. Strip leading dangling punctuation
     text = re.sub(r'^[)\].:;,\-\s]+', '', text)

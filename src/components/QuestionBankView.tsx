@@ -12,7 +12,8 @@ import {
   Trash2,
   ClipboardCheck,
   Copy,
-  Check
+  Check,
+  Scissors
 } from 'lucide-react';
 import { QUESTION_BANK, type QuestionBankItem, SUBJECTS_CONFIG } from '../data/questionBank';
 import { ENGLISH_QUESTION_BANK } from '../data/englishQuestionBank';
@@ -33,8 +34,6 @@ import {
 interface QuestionBankViewProps {
   onRecordAttempt?: (verbId: string, mood: any, tense: any, isCorrect: boolean) => void;
   initialMode?: 'filters' | 'lists';
-  /** Enables the internal ?audit=questions gallery for all 591 native items. */
-  includeAuditLists?: boolean;
 }
 
 function toClipboardText(text: string): string {
@@ -66,8 +65,7 @@ function toClipboardText(text: string): string {
 
 export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   onRecordAttempt,
-  initialMode = 'filters',
-  includeAuditLists = false
+  initialMode = 'filters'
 }) => {
   const [viewMode, setViewMode] = useState<'filters' | 'practice' | 'lists'>(initialMode);
 
@@ -93,16 +91,19 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   // Preview answers are intentionally ephemeral; only an active saved list persists.
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
   const [confirmedAnswers, setConfirmedAnswers] = useState<Record<string, boolean>>({});
+  const [noIdeaQuestions, setNoIdeaQuestions] = useState<Record<string, boolean>>({});
+  const [eliminatedOptions, setEliminatedOptions] = useState<Record<string, string[]>>({});
 
   useEffect(() => {
     if (!activeListId) return;
     saveQuestionListProgress(activeListId, {
       userAnswers,
       confirmedAnswers,
+      noIdeaQuestions,
       currentPage,
       pageSize
     });
-  }, [activeListId, userAnswers, confirmedAnswers, currentPage, pageSize]);
+  }, [activeListId, userAnswers, confirmedAnswers, noIdeaQuestions, currentPage, pageSize]);
 
   // Combined questions (Base + Custom)
   const allBankQuestions = useMemo(() => {
@@ -131,10 +132,6 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
         return false;
       }
 
-      if (!includeAuditLists && q.subjectId === 'verbos' && q.listId !== 'pdf_7') {
-        return false;
-      }
-
       // 2. Status filter
       if (filterState.statusFilter === 'pending') {
         if (confirmedAnswers[q.id]) return false;
@@ -142,6 +139,8 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
         if (!confirmedAnswers[q.id] || userAnswers[q.id] !== q.correctLetter) return false;
       } else if (filterState.statusFilter === 'wrong') {
         if (!confirmedAnswers[q.id] || userAnswers[q.id] === q.correctLetter) return false;
+      } else if (filterState.statusFilter === 'noIdea') {
+        if (!noIdeaQuestions[q.id]) return false;
       }
 
       return true;
@@ -152,13 +151,14 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     }
 
     return list;
-  }, [allBankQuestions, filterState, confirmedAnswers, userAnswers, activeListId, savedLists, questionById, includeAuditLists]);
+  }, [allBankQuestions, filterState, confirmedAnswers, userAnswers, noIdeaQuestions, activeListId, savedLists, questionById]);
 
   // Start practice handler
   const handleStartPractice = (limit?: number) => {
     setActiveListId(null);
     setUserAnswers({});
     setConfirmedAnswers({});
+    setEliminatedOptions({});
     if (limit) {
       setFilterState(prev => ({ ...prev, limitQuantity: limit }));
     } else {
@@ -172,10 +172,10 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     const matching = allBankQuestions.filter(question => {
       if (filterState.languageFilter === 'en' ? question.language !== 'en' : question.language === 'en') return false;
       if (!filterState.selectedSubjectIds.includes(question.subjectId)) return false;
-      if (!includeAuditLists && question.subjectId === 'verbos' && question.listId !== 'pdf_7') return false;
       if (filterState.statusFilter === 'pending') return !confirmedAnswers[question.id];
       if (filterState.statusFilter === 'correct') return confirmedAnswers[question.id] && userAnswers[question.id] === question.correctLetter;
       if (filterState.statusFilter === 'wrong') return confirmedAnswers[question.id] && userAnswers[question.id] !== question.correctLetter;
+      if (filterState.statusFilter === 'noIdea') return Boolean(noIdeaQuestions[question.id]);
       return true;
     });
     return limit ? matching.slice(0, limit) : matching;
@@ -191,11 +191,22 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     const label = subjectNames.length === activeSubjectConfig.filter(subject => subject.id !== 'todos').length
       ? (filterState.languageFilter === 'en' ? 'Todos os assuntos de Inglês' : 'Todos os assuntos')
       : subjectNames.slice(0, 2).join(' + ') + (subjectNames.length > 2 ? ` +${subjectNames.length - 2}` : '');
+    const statusLabel: Record<FilterState['statusFilter'], string> = {
+      all: '',
+      pending: 'Pendentes',
+      correct: 'Acertos',
+      wrong: 'Erros',
+      noIdea: 'Marcadas como não sei'
+    };
+    const filterSuffix = statusLabel[filterState.statusFilter]
+      ? ` · ${statusLabel[filterState.statusFilter]}`
+      : '';
     const list = createQuestionList(
-      `${label} · ${questions.length} questões`,
+      `${label}${filterSuffix} · ${questions.length} questões`,
       questions.map(question => question.id),
       filterState.selectedSubjectIds,
-      filterState.statusFilter
+      filterState.statusFilter,
+      noIdeaQuestions
     );
     setSavedLists(loadQuestionLists());
     openSavedList(list);
@@ -205,6 +216,8 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     setActiveListId(list.id);
     setUserAnswers(list.userAnswers);
     setConfirmedAnswers(list.confirmedAnswers);
+    setNoIdeaQuestions(list.noIdeaQuestions ?? {});
+    setEliminatedOptions({});
     setCurrentPage(list.currentPage);
     setPageSize(list.pageSize);
     setViewMode('practice');
@@ -292,18 +305,43 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
   // User Actions
   const handleSelectOption = (questionId: string, letter: string) => {
-    if (confirmedAnswers[questionId]) return;
+    if (confirmedAnswers[questionId] || noIdeaQuestions[questionId] || eliminatedOptions[questionId]?.includes(letter)) return;
     setUserAnswers(prev => ({
       ...prev,
       [questionId]: letter
     }));
   };
 
+  const toggleEliminatedOption = (questionId: string, letter: string) => {
+    if (confirmedAnswers[questionId]) return;
+    setEliminatedOptions(prev => {
+      const current = prev[questionId] ?? [];
+      const isEliminated = current.includes(letter);
+      const next = isEliminated ? current.filter(item => item !== letter) : [...current, letter];
+      const updated = { ...prev };
+      if (next.length) updated[questionId] = next;
+      else delete updated[questionId];
+      return updated;
+    });
+    if (!eliminatedOptions[questionId]?.includes(letter)) {
+      setUserAnswers(prev => {
+        if (prev[questionId] !== letter) return prev;
+        const { [questionId]: _removed, ...rest } = prev;
+        return rest;
+      });
+    }
+  };
+
   const handleConfirmQuestion = (q: QuestionBankItem) => {
     const chosen = userAnswers[q.id];
-    if (!chosen) return;
+    if (!chosen || confirmedAnswers[q.id] || noIdeaQuestions[q.id]) return;
 
     setConfirmedAnswers(prev => ({ ...prev, [q.id]: true }));
+    setNoIdeaQuestions(prev => {
+      if (!prev[q.id]) return prev;
+      const { [q.id]: _removed, ...rest } = prev;
+      return rest;
+    });
     const isCorrect = chosen === q.correctLetter;
 
     onRecordAttempt?.(q.id, 'banco', q.subjectId, isCorrect);
@@ -311,21 +349,50 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
   const handleConfirmAllOnPage = () => {
     const newConfirmed = { ...confirmedAnswers };
+    const newNoIdea = { ...noIdeaQuestions };
     pageQuestions.forEach(q => {
       const chosen = userAnswers[q.id];
-      if (chosen && !confirmedAnswers[q.id]) {
+      if (chosen && !confirmedAnswers[q.id] && !newNoIdea[q.id]) {
         newConfirmed[q.id] = true;
+        delete newNoIdea[q.id];
         const isCorrect = chosen === q.correctLetter;
         onRecordAttempt?.(q.id, 'banco', q.subjectId, isCorrect);
       }
     });
 
     setConfirmedAnswers(newConfirmed);
+    setNoIdeaQuestions(newNoIdea);
   };
 
   const handleResetAnswers = () => {
     setUserAnswers({});
     setConfirmedAnswers({});
+    setNoIdeaQuestions({});
+    setEliminatedOptions({});
+  };
+
+  const toggleNoIdeaQuestion = (questionId: string) => {
+    if (confirmedAnswers[questionId]) return;
+    const isMarked = Boolean(noIdeaQuestions[questionId]);
+    setNoIdeaQuestions(prev => {
+      const next = { ...prev };
+      if (isMarked) delete next[questionId];
+      else next[questionId] = true;
+      return next;
+    });
+    if (!isMarked) {
+      setEliminatedOptions(prev => {
+        if (!prev[questionId]) return prev;
+        const next = { ...prev };
+        delete next[questionId];
+        return next;
+      });
+      setUserAnswers(prev => {
+        if (!prev[questionId]) return prev;
+        const { [questionId]: _removed, ...rest } = prev;
+        return rest;
+      });
+    }
   };
 
   const toggleReadingText = (id: string) => {
@@ -452,8 +519,8 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
           onCreateList={handleCreateList}
           onOpenImportModal={() => setIsImportModalOpen(true)}
           userAnswers={userAnswers}
-        confirmedAnswers={confirmedAnswers}
-        includeAuditLists={includeAuditLists}
+          confirmedAnswers={confirmedAnswers}
+          noIdeaQuestions={noIdeaQuestions}
       />
         <ImportPdfModal
           isOpen={isImportModalOpen}
@@ -466,61 +533,61 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
   // Stage 2: Questions Practice Notebook
   return (
-    <div className="max-w-5xl mx-auto py-6 px-4 sm:px-6 space-y-6">
+    <div className="mx-auto max-w-5xl space-y-8 px-4 py-7 sm:px-6 sm:py-9">
       
       {/* Top Bar with Return to Filters, Active Filters Summary & Metrics */}
-      <div className="rounded-2xl bg-[#181b20] border border-[#2e353e] p-6 shadow-xl space-y-4">
+      <section className="rounded-2xl border border-[#343c46]/80 bg-[#181b20]/80 p-5 shadow-xl sm:p-6">
         
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#262b33]">
+        <div className="flex flex-col gap-5 pb-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <button
               onClick={returnFromPractice}
-              className="flex items-center space-x-1.5 text-xs font-mono text-[#e8a87c] hover:text-[#f0b58e] transition-colors mb-1.5"
+              className="mb-2 flex items-center gap-1.5 text-xs text-[#e8a87c] transition-colors hover:text-[#f0b58e]"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>{activeListId ? 'Voltar às listas' : 'Voltar aos filtros'}</span>
             </button>
-            <h1 className="text-xl sm:text-2xl font-bold text-[#f3ede6] font-mono">
+            <h1 className="text-2xl font-semibold tracking-tight text-[#f3ede6] sm:text-3xl">
               {activeListId
                 ? savedLists.find(list => list.id === activeListId)?.name
                 : `Pré-visualização (${filteredQuestions.length} questões)`}
             </h1>
           </div>
 
-          {/* Quick Metrics */}
-          <div className="flex items-center space-x-3 px-4 py-2 rounded-xl bg-[#20242b] border border-[#2e353e] text-xs font-mono">
-            <div>
-              <span className="text-[#8b949e]">Resolvidas: </span>
-              <strong className="text-[#f3ede6]">{metrics.confirmed}</strong>/{metrics.total}
+          <div className="grid w-full max-w-[200px] grid-cols-2 gap-2 self-center sm:w-[200px] sm:self-auto">
+            <div className="min-w-0 rounded-xl border border-[#343c46] bg-[#20242b] px-3 py-2.5 text-center">
+              <span className="block text-[10px] uppercase tracking-[0.12em] text-[#8b949e]">Resolvidas</span>
+              <strong className="mt-1 block font-mono text-sm text-[#f3ede6]">{metrics.confirmed}<span className="text-[#8b949e]">/{metrics.total}</span></strong>
             </div>
-            <div className="w-px h-4 bg-[#343c46]" />
-            <div>
-              <span className="text-[#8b949e]">Precisão: </span>
-              <strong className="text-[#34d399]">{metrics.accuracy}%</strong>
+            <div className="min-w-0 rounded-xl border border-[#343c46] bg-[#20242b] px-3 py-2.5 text-center">
+              <span className="block text-[10px] uppercase tracking-[0.12em] text-[#8b949e]">Precisão</span>
+              <strong className="mt-1 block font-mono text-sm text-[#34d399]">{metrics.accuracy}%</strong>
             </div>
           </div>
         </div>
 
-        {/* Filters Summary & Quick Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
-          <div className="flex items-center space-x-2 text-[#8b949e]">
-            <SlidersHorizontal className="w-3.5 h-3.5 text-[#e8a87c]" />
-            <span>Assuntos: </span>
-            <strong className="text-[#f3ede6]">
-              {filterState.selectedSubjectIds.length === (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).filter(subject => subject.id !== 'todos').length
-                ? (filterState.languageFilter === 'en' ? 'Todos os Assuntos de Inglês' : 'Todos os Assuntos')
-                : filterState.selectedSubjectIds.map(id => (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).find(s => s.id === id)?.shortTitle).join(', ')}
-            </strong>
-            {filterState.selectedSubjectIds.includes('verbos') && (
-              <span className="text-[#8b949e]"> · Verbos: caderno de 92 questões</span>
-            )}
+        <div className="flex flex-col gap-4 border-t border-[#343c46]/60 pt-5 xl:flex-row xl:items-center xl:justify-between">
+          <div className="min-w-0 text-xs text-[#8b949e]">
+            <div className="flex items-start gap-2">
+              <SlidersHorizontal className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#e8a87c]" />
+              <span className="shrink-0">Assuntos</span>
+              <strong className="truncate text-[#f3ede6]">
+                {filterState.selectedSubjectIds.length === (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).filter(subject => subject.id !== 'todos').length
+                  ? (filterState.languageFilter === 'en' ? 'Todos os Assuntos de Inglês' : 'Todos os Assuntos')
+                  : filterState.selectedSubjectIds.map(id => (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).find(s => s.id === id)?.shortTitle).join(', ')}
+              </strong>
+            </div>
+            {filterState.languageFilter === 'pt'
+              && filterState.selectedSubjectIds.length === 1
+              && filterState.selectedSubjectIds[0] === 'verbos'
+              && <span className="ml-5 mt-1 block text-[11px] text-[#8b949e]">Caderno de Verbos · 92 questões</span>}
           </div>
 
-          <div className="flex w-full lg:w-auto flex-col sm:flex-row sm:items-center gap-3">
+          <div className="flex w-full flex-wrap items-center justify-center gap-3 xl:w-auto xl:justify-end">
             {/* Questions Per Page (1, 5, 10, 20 ou Todas) */}
-            <div className="flex items-center space-x-1.5">
-              <span className="text-[11px] text-[#8b949e]">Por pág:</span>
-              <div className="inline-flex p-1 rounded-xl bg-[#20242b] border border-[#2e353e]">
+            <div className="flex w-full max-w-[280px] flex-col items-stretch gap-2 sm:w-[280px] sm:flex-row sm:items-center">
+              <span className="shrink-0 text-left text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8b949e] sm:w-[4.25rem] sm:text-right">Por pág.</span>
+              <div className="flex min-w-0 flex-1 rounded-xl border border-[#2e353e] bg-[#20242b] p-1">
                 {[
                   { size: 1, label: '1' },
                   { size: 5, label: '5' },
@@ -534,7 +601,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                       setPageSize(item.size);
                       setCurrentPage(0);
                     }}
-                    className={`px-2 py-0.5 rounded-lg transition-all text-xs ${
+                    className={`min-w-0 flex-1 whitespace-nowrap rounded-lg px-1.5 py-1.5 text-[11px] transition-all sm:py-1 ${
                       pageSize === item.size
                         ? 'bg-[#2a3038] text-[#e8a87c] font-bold'
                         : 'text-[#8b949e] hover:text-[#f3ede6]'
@@ -546,52 +613,31 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
               </div>
             </div>
 
-            {/* Status Filter Selector */}
-            <div className="inline-flex p-1 rounded-xl bg-[#20242b] border border-[#2e353e]">
-              {[
-                { id: 'all', label: 'Todas' },
-                { id: 'pending', label: 'Pendentes' },
-                { id: 'correct', label: 'Acertos' },
-                { id: 'wrong', label: 'Erros' }
-              ].map(f => (
-                <button
-                  key={f.id}
-                  onClick={() => {
-                    setFilterState(prev => ({ ...prev, statusFilter: f.id as any }));
-                    setCurrentPage(0);
-                  }}
-                  className={`px-2.5 py-0.5 rounded-lg transition-all text-xs ${
-                    filterState.statusFilter === f.id
-                      ? 'bg-[#2a3038] text-[#e8a87c] font-bold'
-                      : 'text-[#8b949e] hover:text-[#f3ede6]'
-                  }`}
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
 
-      </div>
+      </section>
 
       {/* Render Questions for Current Page */}
       {pageQuestions.length > 0 ? (
         <div className="space-y-8">
           {pageQuestions.map((q, idxOnPage) => {
             const isConfirmed = Boolean(confirmedAnswers[q.id]);
+            const isNoIdea = Boolean(noIdeaQuestions[q.id]);
             const isExpanded = expandedReadingTexts[q.id] !== false; // default expanded
+            const support = getQuestionSupport(q);
 
             return (
               <div 
                 key={q.id}
                 data-question-id={q.id}
-                className="rounded-2xl bg-[#181b20] border border-[#2e353e] p-6 sm:p-7 shadow-xl space-y-6"
+                className={`question-sheet space-y-6 pb-10 sm:pb-12 ${idxOnPage > 0 ? 'border-t border-[#262b33] pt-8' : 'pt-2'}`}
               >
+                <div className={`question-meta-support-group ${support ? 'has-support' : 'no-support'} space-y-6`}>
                 {/* Question Top Metadata */}
-                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#9ca3af] pb-3 border-b border-[#262b33]">
+                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#9ca3af] pb-3">
                   <div className="flex items-center space-x-2">
-                    <span className="px-2.5 py-1 rounded-lg bg-[#242930] text-[#e8a87c] font-bold border border-[#343c46]">
+                    <span className="question-number-badge rounded-full border border-[#e8a87c]/35 bg-[#2a1d17] px-2.5 py-1 font-semibold text-[#e8a87c]">
                       Questão {q.questionNumber}
                     </span>
                     <span className="text-[#d1d5db] font-sans font-medium">{q.subjectTitle}</span>
@@ -631,14 +677,11 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                 </div>
 
                 {/* Formatted Support Text (Sem scroll interno, cabe por inteiro, fonte limpa e legível sem negrito) */}
-                {(() => {
-                  const support = getQuestionSupport(q);
-                  if (!support) return null;
-                  return (
-                  <div data-reading-text className="rounded-xl bg-[#14161a] border border-[#262c33] overflow-hidden">
+                {support && (
+                  <div data-reading-text className="overflow-hidden rounded-2xl border border-[#343c46]/80 bg-[#17191d]">
                     <button
                       onClick={() => toggleReadingText(q.id)}
-                      className="w-full px-4 py-2.5 bg-[#1b1f25] border-b border-[#262c33] flex items-center justify-between text-xs font-mono text-[#e8a87c] hover:bg-[#20252d] transition-colors"
+                      className="flex w-full items-center justify-between border-b border-[#343c46]/70 bg-[#1d2025] px-4 py-3 text-xs text-[#e8a87c] transition-colors hover:bg-[#242930]"
                     >
                       <div className="flex items-center space-x-2">
                         <BookOpen className="w-3.5 h-3.5" />
@@ -651,36 +694,40 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                     </button>
 
                     {isExpanded && (
-                      <div data-reading-body className="p-4 sm:p-5 text-sm text-[#d1d5db] leading-relaxed font-sans select-text">
-                        <div className="space-y-3">
-                          {support.label && <p data-support-label className="text-[11px] uppercase tracking-[0.16em] text-[#e8a87c] font-semibold leading-tight">{support.label}</p>}
-                          {support.title && <h3 data-support-title className="text-base sm:text-lg text-[#fff7ed] font-semibold leading-tight">{support.title}</h3>}
-                          {support.author && <p data-support-author className="text-xs text-[#9ca3af] italic leading-relaxed">{support.author}</p>}
+                      <div data-reading-body className="select-text p-5 text-[#d1d5db] sm:p-7">
+                        <div className="space-y-4">
+                          {support.label && <p data-support-label className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#e8a87c]">{support.label}</p>}
+                          {support.title && <h3 data-support-title className="text-lg font-semibold leading-tight text-[#fff7ed] sm:text-xl">{support.title}</h3>}
+                          {support.author && <p data-support-author className="text-sm italic leading-relaxed text-[#a8a29e]">{support.author}</p>}
                           {support.paragraphs.length > 0 && (
-                            <div data-support-paragraphs className="space-y-3">
+                            <div data-support-paragraphs className="editorial-prose space-y-3">
                               {support.paragraphs.map((paragraph, paragraphIndex) => (
-                                <FormattedExamText key={paragraphIndex} text={paragraph} mode="prose" preserveLineBreaks className="text-sm text-[#d1d5db] font-normal leading-[1.75]" />
+                                <FormattedExamText key={paragraphIndex} text={paragraph} mode="prose" preserveLineBreaks className="text-[0.98rem] font-normal leading-[1.8] text-[#e4dfd9]" />
                               ))}
                             </div>
                           )}
-                          {support.source && <p data-support-source className="border-t border-[#343c46] pt-3 text-xs text-[#9ca3af] italic leading-relaxed break-words [overflow-wrap:anywhere]">{support.source}</p>}
+                          {support.source && <p data-support-source className="border-t border-[#343c46]/70 pt-4 text-xs italic leading-relaxed text-[#a8a29e] break-words [overflow-wrap:anywhere]">{support.source}</p>}
                         </div>
                       </div>
                     )}
                   </div>
-                  );
-                })()}
-
-                {/* Statement / Comando da Questão */}
-                <div className="text-sm sm:text-base leading-relaxed text-[#f3ede6] font-normal p-3.5 bg-[#1b1f25]/60 rounded-xl border border-[#262b33]/60">
-                  <FormattedExamText text={q.statement} mode="statement" className="text-sm sm:text-base text-[#f3ede6] font-normal leading-relaxed" />
+                )}
                 </div>
 
+                <div className={`question-body-group ${support ? 'has-support' : 'no-support'} space-y-6`}>
+                {/* Statement / Comando da Questão */}
+                {q.statement.trim() && (
+                  <div className="statement-block rounded-xl border border-[#343c46]/60 bg-[#1d2025]/65 p-4 text-sm font-normal leading-relaxed text-[#f3ede6] sm:p-5 sm:text-base">
+                    <FormattedExamText text={q.statement} mode="statement" className="text-sm sm:text-base text-[#f3ede6] font-normal leading-relaxed" />
+                  </div>
+                )}
+
                 {/* Alternatives (Rigorous A, B, C, D, E) */}
-                <div className="space-y-2.5 pt-1">
+                <div className="question-option-list space-y-2.5 pt-1">
                   {q.options.map((opt) => {
                     const isSelected = userAnswers[q.id] === opt.letter;
                     const isCorrectOption = opt.letter === q.correctLetter;
+                    const isEliminated = eliminatedOptions[q.id]?.includes(opt.letter) ?? false;
 
                     let btnStyle = 'bg-[#20242b] border-[#2e353e] hover:bg-[#262c35] text-[#d1d5db]';
 
@@ -692,54 +739,85 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                       } else {
                         btnStyle = 'bg-[#15181d] border-[#2e353e]/40 text-[#6b7280] opacity-60';
                       }
+                    } else if (isNoIdea) {
+                      btnStyle = isCorrectOption
+                        ? 'bg-[#182a22] border-[#34d399] text-[#f3ede6] shadow-sm'
+                        : 'bg-[#15181d] border-[#2e353e]/40 text-[#6b7280] opacity-60';
                     } else if (isSelected) {
                       btnStyle = 'bg-[#282e38] border-[#e8a87c] text-[#f3ede6]';
                     }
 
                     return (
-                      <button
-                        key={opt.letter}
-                        onClick={() => handleSelectOption(q.id, opt.letter)}
-                        disabled={isConfirmed}
-                        className={`w-full p-3.5 rounded-xl border text-left text-xs sm:text-sm transition-all flex items-start space-x-3 ${btnStyle}`}
-                      >
-                        <span className={`w-6 h-6 rounded-lg border flex items-center justify-center font-mono font-bold text-xs shrink-0 ${
-                          isSelected ? 'bg-[#e8a87c] text-[#16181b] border-[#e8a87c]' : 'bg-[#14161a] border-[#343c46] text-[#9ca3af]'
-                        }`}>
-                          {opt.letter}
-                        </span>
-                        <div className="flex-1 pt-0.5 leading-snug">
-                          <FormattedExamText text={opt.text} mode="option" className="text-xs sm:text-sm font-normal text-inherit" />
-                        </div>
-                      </button>
+                      <div key={opt.letter} className={`question-option-row flex items-center gap-2 rounded-xl border p-4 text-left text-xs transition-all sm:text-sm ${btnStyle} ${isEliminated ? 'opacity-55' : ''}`}>
+                        <button
+                          onClick={() => handleSelectOption(q.id, opt.letter)}
+                          disabled={isConfirmed || isNoIdea || isEliminated}
+                          className="flex min-w-0 flex-1 items-start space-x-3 text-left text-xs transition-all sm:text-sm"
+                        >
+                          <span className={`w-6 h-6 rounded-lg border flex items-center justify-center font-mono font-bold text-xs shrink-0 ${
+                            (isSelected || (isNoIdea && isCorrectOption))
+                              ? 'bg-[#34d399] text-[#16181b] border-[#34d399]'
+                              : 'bg-[#14161a] border-[#343c46] text-[#9ca3af]'
+                          }`}>
+                            {opt.letter}
+                          </span>
+                          <div className={`flex-1 pt-0.5 leading-snug ${isEliminated ? 'line-through decoration-1' : ''}`}>
+                            <FormattedExamText text={opt.text} mode="option" className="text-xs sm:text-sm font-normal text-inherit" />
+                          </div>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => toggleEliminatedOption(q.id, opt.letter)}
+                          disabled={isConfirmed || isNoIdea}
+                          aria-pressed={isEliminated}
+                          aria-label={`${isEliminated ? 'Restaurar' : 'Eliminar'} alternativa ${opt.letter}`}
+                          title={`${isEliminated ? 'Restaurar' : 'Eliminar'} alternativa ${opt.letter}`}
+                          className={`question-eliminate-button inline-flex w-8 shrink-0 items-center justify-center rounded-lg border text-[#8b949e] transition-all hover:text-[#f3ede6] disabled:cursor-not-allowed disabled:opacity-30 ${isEliminated ? 'is-eliminated' : ''}`}
+                        >
+                          <Scissors className="h-4 w-4" />
+                        </button>
+                      </div>
                     );
                   })}
                 </div>
 
                 {/* Individual Question Confirmation */}
                 {!isConfirmed && (
-                  <div className="flex justify-end pt-3 border-t border-[#262b33]">
+                  <div className="flex flex-wrap items-center justify-between gap-2 pt-3">
                     <button
                       onClick={() => handleConfirmQuestion(q)}
                       disabled={!userAnswers[q.id]}
-                      className="px-5 py-2 rounded-xl bg-[#e8a87c] hover:bg-[#f0b58e] disabled:opacity-40 disabled:cursor-not-allowed text-[#16181b] font-semibold text-xs font-mono transition-all shadow-md active:scale-95"
+                      className="question-confirm-button inline-flex min-h-11 items-center justify-center rounded-xl bg-[#e8a87c] px-5 py-2 text-xs font-semibold font-mono text-[#16181b] transition-all shadow-md hover:bg-[#f0b58e] active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
                     >
                       Confirmar Resposta ({q.questionNumber})
                     </button>
+                    <button
+                      type="button"
+                      onClick={() => toggleNoIdeaQuestion(q.id)}
+                      aria-pressed={isNoIdea}
+                      aria-label="I have no idea"
+                      title={isNoIdea ? 'Desmarcar esta questão' : 'Marcar como não sei'}
+                      className={`question-no-idea-button inline-flex min-h-11 items-center justify-center rounded-xl border px-4 py-3 text-xs font-mono font-semibold transition-all ${isNoIdea
+                        ? 'border-[#e8a87c]/70 bg-[#2a1d17] text-[#e8a87c]'
+                        : 'border-[#343c46] bg-[#20242b] text-[#9ca3af] hover:bg-[#282e37] hover:text-[#f3ede6]'}`}
+                    >
+                      I have no idea
+                    </button>
                   </div>
                 )}
+                </div>
 
               </div>
             );
           })}
 
           {/* Bottom Pagination & Bulk Actions */}
-          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-[#181b20] border border-[#2e353e] shadow-lg">
-            <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#2e353e] bg-[#181b20] p-4 shadow-lg">
+            <div className="flex items-center gap-2">
               <button
                 onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
                 disabled={safeCurrentPage === 0}
-                className="p-2 rounded-xl bg-[#20242b] border border-[#2e353e] disabled:opacity-30 disabled:cursor-not-allowed text-[#f3ede6] hover:bg-[#262c35]"
+                className="question-footer-nav-button inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#2e353e] bg-[#20242b] text-[#f3ede6] hover:bg-[#262c35] disabled:cursor-not-allowed disabled:opacity-30"
               >
                 <ArrowLeft className="w-4 h-4" />
               </button>
@@ -751,16 +829,16 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
               <button
                 onClick={() => setCurrentPage(prev => Math.min(totalPages - 1, prev + 1))}
                 disabled={safeCurrentPage >= totalPages - 1}
-                className="p-2 rounded-xl bg-[#20242b] border border-[#2e353e] disabled:opacity-30 disabled:cursor-not-allowed text-[#f3ede6] hover:bg-[#262c35]"
+                className="question-footer-nav-button inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#2e353e] bg-[#20242b] text-[#f3ede6] hover:bg-[#262c35] disabled:cursor-not-allowed disabled:opacity-30"
               >
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex w-full flex-wrap items-center justify-end gap-3 sm:w-auto">
               <button
                 onClick={handleResetAnswers}
-                className="flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-[#20242b] hover:bg-[#262c35] text-[#9ca3af] hover:text-[#f87171] text-xs font-mono transition-colors"
+                className="question-footer-action inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#20242b] text-xs font-mono text-[#9ca3af] transition-colors hover:bg-[#262c35] hover:text-[#f87171] sm:w-auto"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Limpar Respostas</span>
@@ -768,7 +846,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
               <button
                 onClick={handleConfirmAllOnPage}
-                className="px-5 py-2 rounded-xl bg-[#e8a87c] hover:bg-[#f0b58e] text-[#16181b] font-bold text-xs font-mono transition-all shadow-md active:scale-95"
+                className="question-footer-action question-confirm-button inline-flex w-full items-center justify-center rounded-xl bg-[#e8a87c] text-xs font-bold font-mono text-[#16181b] shadow-md transition-all hover:bg-[#f0b58e] active:scale-95 sm:w-auto"
               >
                 Confirmar Todas da Página
               </button>

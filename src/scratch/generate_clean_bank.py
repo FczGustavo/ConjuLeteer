@@ -101,189 +101,9 @@ PDF_CONFIGS = [
         "expectedCount": 92,
         "banca": "AFA / EN / EFOMM / Concursos Militares"
     },
-    {
-        "file": "16. Modos Verbais I  - [✅].pdf",
-        "subjectId": "verbos",
-        "subjectTitle": "Verbos & Modos Verbais",
-        "listId": "pdf_16",
-        "listTitle": "PDF 16 • Modos Verbais I (30T1)",
-        "expectedCount": 30,
-        "banca": "Tropa do Arcanjo / EEAr / EsPCEx"
-    },
-    {
-        "file": "17.  Modos Verbais II  - [✅].pdf",
-        "subjectId": "verbos",
-        "subjectTitle": "Verbos & Modos Verbais",
-        "listId": "pdf_17",
-        "listTitle": "PDF 17 • Modos Verbais II (30T2)",
-        "expectedCount": 30,
-        "banca": "Tropa do Arcanjo / EEAr / EsPCEx"
-    }
 ]
 
-# The verb sheets use bold to mark the target forms. PDF.js can split one
-# styled run at a glyph boundary, which produces fragments such as
-# ``avi**õ**es`` or ``**1****-**``. Keep the pedagogical emphasis, but repair
-# the few structural fragments and restore blanks that the PDF represents as
-# an underline/empty space. This map is intentionally keyed by PDF and item
-# so that regeneration remains deterministic and auditable.
 QUESTION_FORMAT_OVERRIDES = {
-    ("pdf_16", 1, "statement"): (
-        "Assinale a alternativa cujos verbos completam corretamente as seguintes frases:\n\n"
-        "• Se ninguém ______ nesse caso, sabe lá Deus que fim terá.\n\n"
-        "• No mesmo dia, ele ______ os documentos que perdera.\n\n"
-        "• Foram designados alguns advogados para que ______ a banca examinadora."
-    ),
-    ("pdf_16", 2, "statement"): (
-        "Se eu **correr** em busca dos meus sonhos, talvez **consiga** encontrá-los bem próximo a mim.\n\n"
-        "Na frase acima, os verbos destacados encontram-se, respectivamente, no"
-    ),
-    ("pdf_16", 3, "statement"): "Os verbos destacados acima estão, respectivamente, no",
-    ("pdf_16", 4, "statement"): "Mantendo-se o mesmo tempo e modo dos verbos, a transcrição do período acima para a primeira pessoa do plural resulta em:",
-    ("pdf_16", 5, "readingText"): (
-        "A evidência de que a terra era habitada não **impediu** que os marujos recém-desembarcados **gravassem** seus nomes e o de seus navios "
-        "nas árvores e nas rochas costeiras e, a seguir, **imprimissem** o dia, o mês e o ano de seu desembarque (...)."
-    ),
-    ("pdf_16", 5, "statement"): (
-        "Passe os verbos em destaque no texto acima para o presente, observando o modo.\n\n"
-        "Em seguida, assinale a alternativa correta."
-    ),
-    ("pdf_16", 6, "statement"): (
-        "Complete as lacunas abaixo com os verbos nos tempos e modos indicados entre parênteses; depois, assinale a alternativa com a sequência correta.\n\n"
-        "I – Quando você ______ ao Brasil, traga-me uma bandeira do seu país. (vir – futuro do subjuntivo)\n\n"
-        "II – No dia em que você ______ turistas eufóricos diante da Estátua da Liberdade, saberá que são brasileiros. (ver – futuro do subjuntivo)\n\n"
-        "III – Muitos turistas italianos ______ ao Brasil na Copa do Mundo. (vir – presente do indicativo)"
-    ),
-    ("pdf_16", 7, "statement"): (
-        "Leia:\n\nOptando-se pela forma **você** em vez da forma **tu**, a alternativa que contém a correta conjugação verbal é"
-    ),
-    ("pdf_16", 7, "readingText"): (
-        "“Amigo, **abraça** tuas quedas e **tira** delas o conhecimento. Não te **deixes** abater.”"
-    ),
-    ("pdf_16", 9, "statement"): (
-        "Relacione as colunas quanto à conjugação dos verbos em destaque e, em seguida, assinale a alternativa com a sequência correta.\n\n"
-        "1 – O garoto **olhou** pela janela a noite enluarada.\n"
-        "2 – **Havia** tempo para mais uma conversa séria.\n"
-        "3 – Se **buscarmos** respostas, certamente as acharemos.\n"
-        "4 – Não **desistas** de teus objetivos.\n"
-        "5 – Eu jamais **imaginaria** encontrá-lo outra vez.\n\n"
-        "( ) futuro do pretérito do indicativo\n"
-        "( ) futuro do subjuntivo\n"
-        "( ) pretérito perfeito do indicativo\n"
-        "( ) pretérito imperfeito do indicativo\n"
-        "( ) imperativo negativo"
-    ),
-    ("pdf_16", 10, "statement"): (
-        "Complete as lacunas abaixo com os verbos nos tempos e modos indicados entre parênteses; depois, assinale a alternativa com a sequência correta.\n\n"
-        "I – Quando você ______ ao Brasil, traga-me uma bandeira do seu país. (vir – futuro do subjuntivo)\n\n"
-        "II – No dia em que você ______ turistas eufóricos diante da Estátua da Liberdade, saberá que são brasileiros. (ver – futuro do subjuntivo)\n\n"
-        "III – Muitos turistas italianos ______ ao Brasil na Copa do Mundo. (vir – presente do indicativo)"
-    ),
-    ("pdf_16", 11, "statement"): (
-        "Coloque C (certo) ou E (errado) para a flexão de tempo e modo dos verbos destacados e, a seguir, assinale a alternativa com a sequência correta.\n\n"
-        "( ) Quando vocês lhes **derem** essa boa notícia, eles não desistirão do curso. (futuro do subjuntivo)\n\n"
-        "( ) Não é necessário que ele se **aborreça** por ter ela evitado o último encontro. (presente do indicativo)\n\n"
-        "( ) Enquanto o cientista não obtiver todos os dados, não **terminará** a pesquisa. (futuro do pretérito do indicativo)"
-    ),
-    ("pdf_16", 12, "statement"): (
-        "Qual sequência de verbos no presente do subjuntivo completa corretamente as lacunas das frases abaixo?\n\n"
-        "1 – Quem sabe ela ______ reverter a situação desagradável pela qual passou.\n"
-        "2 – Possivelmente ______ o trem lotado, fato que não nos deve irritar jamais.\n"
-        "3 – Os técnicos esperam que ______ chegar logo para a competição de futebol de salão.\n"
-        "4 – Talvez os juízes ______ qualquer tentativa de suborno durante as apurações dos fatos."
-    ),
-    ("pdf_16", 14, "statement"): "Os verbos destacados nas frases acima estão conjugados, respectivamente, no",
-    ("pdf_16", 18, "statement"): (
-        "Observe os verbos destacados.\n\n“**Denuncie.** Se você recebeu uma proposta sem referência para melhorar de vida, **desconfie**. Nunca **entregue** seu caráter a ninguém.”\n\n"
-        "Os verbos destacados apresentam-se em qual modo?"
-    ),
-    ("pdf_16", 19, "statement"): (
-        "**Corríamos** atrás uns dos outros na nossa infância. **Corremos**, hoje, atrás da felicidade de outrora.\n\n"
-        "Nas frases acima, os verbos destacados encontram-se, respectivamente, no:"
-    ),
-    ("pdf_16", 20, "readingText"): (
-        "“Se soubésseis o quanto era aprazível ouvir, mergulhar nas histórias de minha velha avó, não só os ouvidos, mas cada centímetro do ‘lado de dentro do corpo’ ______ a pulsar com tudo o que sua voz desenhava.”"
-    ),
-    ("pdf_16", 20, "statement"): "Complete o espaço demarcado no texto com a correta conjugação do verbo pôr.",
-    ("pdf_16", 21, "statement"): (
-        "Em qual alternativa a lacuna não pode ser preenchida com o verbo indicado nos parênteses no modo subjuntivo?\n\n"
-        "A) Era necessário que outra pessoa ______ a liderança. (assumir)\n"
-        "B) Saiu sorrateiramente, sem que ninguém ______ a sua ausência. (notar)\n"
-        "C) Acordou de madrugada, esperando que alguém lhe ______ um copo d’água. (dar)\n"
-        "D) O encarregado me denunciou para o patrão: disse que eu sempre ______ atrasado. (chegar)"
-    ),
-    ("pdf_16", 22, "statement"): (
-        "Em qual alternativa a lacuna não pode ser preenchida com o verbo indicado nos parênteses no modo subjuntivo?\n\n"
-        "A) Era necessário que outra pessoa ______ a liderança. (assumir)\n"
-        "B) Saiu sorrateiramente, sem que ninguém ______ a sua ausência. (notar)\n"
-        "C) Acordou de madrugada, esperando que alguém lhe ______ um copo d’água. (dar)\n"
-        "D) O encarregado me denunciou para o patrão: disse que eu sempre ______ atrasado. (chegar)"
-    ),
-    ("pdf_16", 24, "readingText"): (
-        "“**Sentia-se** cansada. A barriga, as pernas, a cabeça, o corpo todo **era** um enorme peso que lhe **caía** irremediavelmente em cima. "
-        "Esperava que a qualquer momento o coração lhe **perfurasse** o peito, lhe **rasgasse** a blusa. Como **seria** o coração?” (Dina Salústio)"
-    ),
-    ("pdf_16", 24, "statement"): "Os verbos destacados no texto acima estão conjugados, respectivamente, no",
-    ("pdf_16", 26, "readingText"): (
-        "“Todas as manhãs, antes de a aurora anunciar o dia, o galo-da-campina **punha-se a cantar** emitindo notas maviosas, ritmadas.” (Adalberon C. Lins)"
-    ),
-    ("pdf_16", 26, "statement"): "O verbo da segunda conjugação, na frase acima, encontra-se no",
-    ("pdf_16", 28, "statement"): (
-        "**Voltem** logo para casa hoje, meninas, pois meus pais **exigem** que **estejam** presentes à cerimônia de formatura do meu irmão à noite, na faculdade. "
-        "Vocês não **podem** faltar, ou eles ficarão aborrecidos.\n\nOs verbos destacados encontram-se conjugados, respectivamente, no"
-    ),
-    ("pdf_17", 3, "statement"): (
-        "No trecho “Lamento, não vai acontecer”, as formas no futuro do presente e do futuro do pretérito do verbo lamentar são, respectivamente:"
-    ),
-    ("pdf_17", 4, "statement"): (
-        "Analise as palavras destacadas no fragmento “Quando dizemos palavras que **entusiasmam**, dizendo coisas que **trarão** paz, harmonia e felicidade para as pessoas que **estão** à nossa volta.” Quais os tempos verbais dessas palavras, respectivamente?"
-    ),
-    ("pdf_17", 5, "statement"): (
-        "“(...) **seja** na nossa carreira, **seja** no nosso trabalho, **seja** na família, **seja** no atingimento de algum objetivo.”\n\n"
-        "Para dar ênfase ao valor da persistência, o autor empregou a forma verbal no:"
-    ),
-    ("pdf_17", 6, "statement"): (
-        "Leia o fragmento seguinte e responda à questão: “Ele **chegara** a afirmar, em outro episódio, que era uma ‘luta perdida’.”\n\n"
-        "O verbo ‘chegara’ sinaliza uma ação no passado, anterior a outro fato ocorrido no passado. Logo, o tempo verbal empregado foi do:"
-    ),
-    ("pdf_17", 7, "statement"): (
-        "“(...) **seja** na nossa carreira, **seja** no nosso trabalho, **seja** na família, **seja** no atingimento de algum objetivo.”\n\n"
-        "Para dar ênfase ao valor da persistência, o autor empregou a forma verbal no:"
-    ),
-    ("pdf_17", 11, "readingText"): (
-        "Observe as orações abaixo:\n\n"
-        "1) “A jabuticabeira **cresceria** em graça e beleza caso...”\n"
-        "2) “...talvez **reconheça** a primeira imagem que lhe mostrem...”\n"
-        "3) “É como se nós mesmos **desejássemos** plantar no chão.”"
-    ),
-    ("pdf_17", 11, "statement"): "Assinale a alternativa que indica a ordem em que os verbos em destaque estão flexionados:",
-    ("pdf_17", 12, "statement"): (
-        "Assinale a alternativa que preenche as lacunas corretamente.\n\n"
-        "I – Ele ficará maravilhado se ______ o resultado. (ver)\n"
-        "II – Nós lhe daremos o recado assim que ele ______ aqui. (vir)"
-    ),
-    ("pdf_17", 13, "statement"): (
-        "O verbo destacado na frase “Para nunca se separar de sua esposa, o índio macuxi **teceu** uma tipóia...” está no"
-    ),
-    ("pdf_17", 15, "statement"): (
-        "“**Perderíamos** muito com essa mudança.”\n\nAssinale a alternativa que não corresponde ao modo e tempo da forma verbal em destaque."
-    ),
-    ("pdf_17", 16, "statement"): "O radical do verbo encontrado no período “Ele **suava** durante o jantar” é:",
-    ("pdf_17", 17, "statement"): (
-        "As formas **aquece**, **era** e **olhávamos** estão empregadas, respectivamente, nos tempos:\n\n"
-        "A neve caindo **aquece** o meu coração. **Era** horário de trabalho e as pessoas entravam e saíam dos edifícios. E nós também **olhávamos** para o céu com os olhos daquele menino..."
-    ),
-    ("pdf_17", 19, "statement"): (
-        "“... que **possa** garantir a vida na Terra.”\n\nO verbo empregado nos mesmos tempo e modo em que se encontra a forma grifada acima está na frase:"
-    ),
-    ("pdf_17", 23, "statement"): (
-        "“**Perderíamos** muito com essa mudança.”\n\nAssinale a alternativa que não corresponde ao modo e tempo da forma verbal em destaque."
-    ),
-    ("pdf_17", 24, "statement"): "O verbo pertence à segunda conjugação na alternativa:",
-    ("pdf_17", 27, "statement"): (
-        "Assinale a alternativa que completa corretamente a seguinte frase.\n\n"
-        "“Quando ______ mais aperfeiçoados, os aviões, certamente, ______ maior conforto e segurança em qualquer viagem.”"
-    ),
 }
 
 def normalize_question_formatting(text, list_id, question_number, field):
@@ -322,17 +142,9 @@ for cfg in PDF_CONFIGS:
     gabarito_map = parse_gabarito(gab_text)
     print(f"  Extracted {len(gabarito_map)} gabarito answers.")
     
-    # Extract questions
-    if cfg["file"].startswith("16.") or cfg["file"].startswith("17."):
-        # These two sheets bold the question labels in the PDF. Requiring the
-        # Markdown-preserved ``**n)**`` marker (with a plain-label fallback
-        # for the final ``30)`` in Modos Verbais II) avoids mistaking hyphenated
-        # numbered lists inside a prompt for new questions.
-        pattern = re.compile(r'((?:^|\n)\s*\*{0,2}(\d+)\)\*{0,2}\s+)', re.IGNORECASE)
-        question_source = re.split(r'\n\s*GABARITO\b', cleaned_full_text, maxsplit=1, flags=re.IGNORECASE)[0]
-    else:
-        pattern = re.compile(r'(Questão\s+(\d+)[^\n]*)', re.IGNORECASE)
-        question_source = cleaned_full_text
+    # Extract questions from the public Portuguese PDFs.
+    pattern = re.compile(r'(Questão\s+(\d+)[^\n]*)', re.IGNORECASE)
+    question_source = cleaned_full_text
 
     matches = list(pattern.finditer(question_source))
     seen_q = set()
@@ -357,19 +169,9 @@ for cfg in PDF_CONFIGS:
             end = p_gab
             
         block = question_source[start:end].strip()
-        # The 30-question verb sheets append a second heading and the answer
-        # table immediately after the final alternative. Keep that metadata
-        # out of the option text while retaining the official key parsed above.
         block = re.split(r'\n\s*(?:GABARITO|RESPOSTAS)\s*[–—:-]', block, maxsplit=1, flags=re.IGNORECASE)[0].strip()
         stmt_part, raw_opts = parse_strict_options(block)
-        if cfg["file"].startswith("16.") or cfg["file"].startswith("17."):
-            # The question label is bold in the source and therefore arrives
-            # as ``**17)**``. It is a structural marker, not question text.
-            stmt_part = re.sub(r'^\s*\*{1,2}\d+\)\*{1,2}\s*', '', stmt_part).strip()
         reading_text, statement = smart_split_reading_statement(stmt_part)
-        
-        if cfg["file"].startswith("16.") or cfg["file"].startswith("17."):
-            statement = re.sub(r'^\d+[\)\.\-]\s*', '', statement).strip()
             
         correct_letter = gabarito_map.get(q_num, 'A')
         
@@ -448,12 +250,6 @@ for cfg in PDF_CONFIGS:
             cleaned_reading += "\n\nXANTÓS — Bravo, Esopo. Realmente, tu nos trouxeste o que há de melhor. Vai agora ao mercado e traz-nos o que houver de pior.\n\n(Entra Esopo com prato coberto.)\n\nXANTÓS — Língua, ainda? Mais língua? Não disseste que língua era o que havia de melhor? Queres ser espancado?"
             cleaned_reading += "\n\nESOPO — A língua, senhor, é o que há de pior no mundo. É a fonte de todas as intrigas, o início de todos os processos, a mãe de todas as discussões. É a língua que mente, que esconde, que tergiversa, que blasfema, que insulta, que se acovarda, que mendiga, que impreca, que bajula, que destrói, que calunia, que vende, que seduz. É com a língua que dizemos não. Aí está, Xantós, porque a língua é a pior de todas as coisas!"
             cleaned_reading += "\n\n(FIGUEIREDO, Guilherme. A raposa e as uvas — peça em 3 atos. Texto adaptado para fins didáticos.)"
-
-        if cfg["listId"] == "pdf_17" and q_num == 22:
-            cleaned_statement = (
-                "Assinale a alternativa que identifica correta e respectivamente "
-                "as formas verbais fazia, eram e haverá, indicadas no enunciado."
-            )
 
         cleaned_statement = normalize_question_formatting(
             cleaned_statement, cfg["listId"], q_num, "statement"

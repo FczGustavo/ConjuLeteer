@@ -26,6 +26,9 @@ export const ENGLISH_SUBJECTS_CONFIG: SubjectMetadata[] = [
   { id: 'english_synonyms_antonyms', title: 'Synonyms and Antonyms', shortTitle: 'Synonyms & Antonyms', description: 'Relações de sentido e vocabulário', iconName: 'AlignHorizontalSpaceAround' },
   { id: 'english_reading_review', title: 'Reading Skills and General Review', shortTitle: 'Reading & General Review', description: 'Interpretação de textos e revisão geral', iconName: 'BookOpenText' },
   { id: 'english_translations', title: 'Translations', shortTitle: 'Translations', description: 'Tradução contextual de frases e vocabulário', iconName: 'Languages' },
+  { id: 'importadas', title: 'Importadas / Personalizadas', shortTitle: 'Importadas', description: 'Questões importadas via IA ou arquivos PDF do usuário', iconName: 'FileUp' },
 ];
 
-export const ENGLISH_SUBJECT_IDS = ENGLISH_SUBJECTS_CONFIG.map(subject => subject.id as EnglishSubjectId);
+export const ENGLISH_SUBJECT_IDS = ENGLISH_SUBJECTS_CONFIG
+  .filter(subject => subject.id !== 'importadas')
+  .map(subject => subject.id as EnglishSubjectId);

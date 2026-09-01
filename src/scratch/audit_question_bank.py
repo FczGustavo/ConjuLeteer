@@ -22,14 +22,10 @@ PDFS = [
     ("pdf_5_classes_invar", "5. Classes de Palavras invariáveis.pdf", "Respostas"),
     ("pdf_6_pronomes", "6. Pronomes.pdf", "Respostas"),
     ("pdf_7", "7. Verbos.pdf", "Respostas"),
-    ("pdf_16", "16. Modos Verbais I  - [✅].pdf", "GABARITO"),
-    ("pdf_17", "17.  Modos Verbais II  - [✅].pdf", "GABARITO"),
 ]
 
 EXPECTED_LIST_COUNTS = {
     "pdf_7": 92,
-    "pdf_16": 30,
-    "pdf_17": 30,
 }
 
 REFERENCE_RE = re.compile(
@@ -42,6 +38,14 @@ STRICT_VISUAL_REFERENCE_RE = re.compile(
     re.IGNORECASE,
 )
 QUOTED_TARGET_RE = re.compile(r"[“\"]\s*[^”\"\n]{1,160}\s*[”\"]")
+REDUNDANT_SUPPORT_INSTRUCTION_RE = re.compile(
+    r"^(?:Leia\s*:?|Leia(?:\s+(?:o|a|os|as))?\s+(?:textos?|trechos?|excertos?|fragmentos?|frases?)(?:\s+(?:a|ao)\s+seguir|\s+abaixo|\s+seguinte|\s+destacado)?\s*[:.]?|"
+    r"Leia\s+atentamente(?:\s+e\s+assinale\s+a\s+alternativa\s+correta)?\s*[:.]?|"
+    r"Observe\s*:?|Após\s+a\s+leitura\s+atenta[^.?!]{0,180}(?:responda|questão\s+proposta)[.!?]?|"
+    r"Lido\s+o\s+texto,[^.?!]{0,220}(?:alternativa|opção)\s+correta(?:\s+em\s+cada\s+questão)?[.!?]?|"
+    r"Com\s+base\s+no\s+texto,?\s+responda\s+(?:à\s+)?questão[.!?]?|Para\s+responder\s+(?:à\s+)?questão\s*:?)$",
+    re.IGNORECASE,
+)
 
 
 def load_bank() -> list[dict]:
@@ -76,8 +80,8 @@ def main() -> int:
     questions = load_bank()
     issues: list[str] = []
 
-    if len(questions) != 591:
-        issues.append(f"Quantidade inesperada: {len(questions)} (esperado: 591)")
+    if len(questions) != 531:
+        issues.append(f"Quantidade inesperada: {len(questions)} (esperado: 531)")
     if len({question["id"] for question in questions}) != len(questions):
         issues.append("Existem IDs duplicados")
 
@@ -205,6 +209,11 @@ def main() -> int:
             )
         if re.search(r"(?:^|\n)\s*[A-E]\)\s+", question.get("readingText", "")):
             issues.append(f"{question['id']}: marcador de alternativa vazou para o texto de apoio")
+        if isinstance(support, dict):
+            if any(REDUNDANT_SUPPORT_INSTRUCTION_RE.fullmatch(re.sub(r"\s+", " ", paragraph).strip()) for paragraph in support.get("paragraphs", [])):
+                issues.append(f"{question['id']}: instrução de leitura redundante permaneceu no apoio")
+        elif len(statement) > 180 and re.match(r"^(?:Leia|Observe|Considere)\b", statement, re.IGNORECASE):
+            issues.append(f"{question['id']}: passagem longa permaneceu embutida no enunciado")
         if question.get("readingText", "").splitlines()[-1:] and re.match(
             r"^Com base no texto,\s*responda\s+(?:à|às|a)\s+quest", 
             question.get("readingText", "").splitlines()[-1],
@@ -264,19 +273,28 @@ def main() -> int:
     if re.search(r"<u>\s*castigadas\.?\s*</u>", option_b.get("text", ""), re.IGNORECASE):
         issues.append("verbos-pdf_7-q5: sublinhado decorativo em 'castigadas' não removido")
 
-    # Regression guards for the two 30-question verb sheets. These are the
-    # exact structures most affected by PDF style-run fragmentation.
+    # The Verbos q6/q10 examples are permanent guards for two recurring PDF
+    # extraction failures: a whole prose paragraph accidentally underlined,
+    # bibliographic access metadata leaking into the command, and a bold
+    # command starter being rendered as an instructional underline.
+    verb_q6 = by_id.get("verbos-pdf_7-q6", {})
+    q6_support = verb_q6.get("support") or {}
+    q6_paragraph = (q6_support.get("paragraphs") or [""])[0]
+    if re.fullmatch(r"\s*<u>[\s\S]+</u>\s*|\s*\*\*[\s\S]+\*\*\s*", q6_paragraph, re.IGNORECASE):
+        issues.append("verbos-pdf_7-q6: sublinhado decorativo no parágrafo de apoio")
+    if re.match(r"^\s*Acesso\s+em[^\n]{2,120}\n", verb_q6.get("statement", ""), re.IGNORECASE):
+        issues.append("verbos-pdf_7-q6: data de acesso vazou para o enunciado")
+    if "Acesso em ago. 2020" not in str(q6_support.get("source", "")):
+        issues.append("verbos-pdf_7-q6: data de acesso ausente na fonte")
+
+    verb_q10 = by_id.get("verbos-pdf_7-q10", {})
+    if re.match(r"^\s*<u>\s*Assinale\s*</u>|^\s*\*\*\s*Assinale\s*\*\*", verb_q10.get("statement", ""), re.IGNORECASE):
+        issues.append("verbos-pdf_7-q10: sublinhado decorativo em 'Assinale'")
+
+    # Regression guards for the public verb sheet and the formatting fixes
+    # most affected by PDF style-run fragmentation.
     formatting_guards = {
         "verbos-pdf_7-q1": "<u>havia visto</u>",
-        "verbos-pdf_16-q1": "______",
-        "verbos-pdf_16-q9": "1 –",
-        "verbos-pdf_16-q11": "**derem**",
-        "verbos-pdf_16-q20": "______ não só os ouvidos",
-        "verbos-pdf_17-q11": "**cresceria**",
-        "verbos-pdf_17-q12": "______ o resultado",
-        "verbos-pdf_17-q17": "o céu",
-        "verbos-pdf_17-q24": "O verbo pertence à segunda conjugação",
-        "verbos-pdf_17-q27": "______ mais aperfeiçoados",
         "classes_var-pdf_4_classes_var-q23": "<u>vitórias-régias</u>",
         "pronomes-pdf_6_pronomes-q47": "<u>onde</u>",
         "verbos-pdf_7-q50": "<u>fui germinada</u>",
@@ -304,7 +322,7 @@ def main() -> int:
         print("\n".join(f"- {issue}" for issue in issues))
         return 1
 
-    print(f"OK: {len(questions)} questões, 9 PDFs, gabaritos e estrutura consistentes.")
+    print(f"OK: {len(questions)} questões, 7 PDFs públicos, gabaritos e estrutura consistentes.")
     return 0
 
 

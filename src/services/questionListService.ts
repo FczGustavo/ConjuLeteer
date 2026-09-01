@@ -7,13 +7,14 @@ export interface SavedQuestionList {
   name: string;
   questionIds: string[];
   subjectIds: SubjectId[];
-  statusFilter: 'all' | 'pending' | 'correct' | 'wrong';
+  statusFilter: 'all' | 'pending' | 'correct' | 'wrong' | 'noIdea';
   createdAt: string;
   updatedAt: string;
   currentPage: number;
   pageSize: number;
   userAnswers: Record<string, string>;
   confirmedAnswers: Record<string, boolean>;
+  noIdeaQuestions?: Record<string, boolean>;
 }
 
 export function loadQuestionLists(): SavedQuestionList[] {
@@ -30,7 +31,8 @@ export function createQuestionList(
   name: string,
   questionIds: string[],
   subjectIds: SubjectId[],
-  statusFilter: SavedQuestionList['statusFilter']
+  statusFilter: SavedQuestionList['statusFilter'],
+  noIdeaQuestions: Record<string, boolean> = {}
 ): SavedQuestionList {
   const now = new Date().toISOString();
   const list: SavedQuestionList = {
@@ -44,7 +46,8 @@ export function createQuestionList(
     currentPage: 0,
     pageSize: 1,
     userAnswers: {},
-    confirmedAnswers: {}
+    confirmedAnswers: {},
+    noIdeaQuestions: { ...noIdeaQuestions }
   };
   saveQuestionLists([list, ...loadQuestionLists()]);
   return list;
@@ -59,7 +62,7 @@ export function updateQuestionList(updated: SavedQuestionList): SavedQuestionLis
 
 export function saveQuestionListProgress(
   id: string,
-  progress: Pick<SavedQuestionList, 'userAnswers' | 'confirmedAnswers' | 'currentPage' | 'pageSize'>
+  progress: Pick<SavedQuestionList, 'userAnswers' | 'confirmedAnswers' | 'noIdeaQuestions' | 'currentPage' | 'pageSize'>
 ): void {
   const lists = loadQuestionLists();
   const next = lists.map(list => list.id === id

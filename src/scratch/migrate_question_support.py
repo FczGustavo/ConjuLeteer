@@ -23,8 +23,6 @@ PDFS = {
     "pdf_5_classes_invar": "5. Classes de Palavras invariáveis.pdf",
     "pdf_6_pronomes": "6. Pronomes.pdf",
     "pdf_7": "7. Verbos.pdf",
-    "pdf_16": "16. Modos Verbais I  - [✅].pdf",
-    "pdf_17": "17.  Modos Verbais II  - [✅].pdf",
 }
 
 LABEL_RE = re.compile(r"^(?:TEXTO|Texto)\s+(?:[IVX]+|\d+)$", re.I)

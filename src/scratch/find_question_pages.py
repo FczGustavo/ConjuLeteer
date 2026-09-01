@@ -29,11 +29,3 @@ for filename, wanted in CASES:
             if found.keys() >= wanted:
                 break
     print(filename, dict(sorted(found.items())))
-
-with pdfplumber.open(ROOT / "lists" / "17.  Modos Verbais II  - [✅].pdf") as pdf:
-    pages = [
-        page_number
-        for page_number, page in enumerate(pdf.pages, start=1)
-        if re.search(r"(?:^|\n)\s*9\)\s+", page.extract_text() or "")
-    ]
-print("17. Modos Verbais II", {9: pages})

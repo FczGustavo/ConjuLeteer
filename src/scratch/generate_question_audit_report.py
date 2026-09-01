@@ -27,8 +27,6 @@ PDFS = {
     "pdf_5_classes_invar": ("5. Classes de Palavras invariáveis.pdf", "Respostas"),
     "pdf_6_pronomes": ("6. Pronomes.pdf", "Respostas"),
     "pdf_7": ("7. Verbos.pdf", "Respostas"),
-    "pdf_16": ("16. Modos Verbais I  - [✅].pdf", "GABARITO"),
-    "pdf_17": ("17.  Modos Verbais II  - [✅].pdf", "GABARITO"),
 }
 
 

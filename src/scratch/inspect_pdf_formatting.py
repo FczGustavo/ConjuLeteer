@@ -14,8 +14,6 @@ files = [
     "5. Classes de Palavras invariáveis.pdf",
     "6. Pronomes.pdf",
     "7. Verbos.pdf",
-    "16. Modos Verbais I  - [✅].pdf",
-    "17.  Modos Verbais II  - [✅].pdf"
 ]
 
 for filename in files:

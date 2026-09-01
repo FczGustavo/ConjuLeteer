@@ -44,7 +44,7 @@ export interface VerbEntry {
   classification: 'regular' | 'irregular' | 'anomalo' | 'defectivo' | 'abundante';
   examTags: ('espcex' | 'eear' | 'afa' | 'efomm' | 'cn' | 'epcar')[];
   criticalTrapDescription?: string;
-  /** Frequência observada nos nove PDFs locais (para priorização, nunca para corrigir a forma). */
+  /** Frequência observada nos sete PDFs públicos locais (para priorização, nunca para corrigir a forma). */
   pdfFrequency?: number;
   /** Quantidade de PDFs nos quais o verbo ou uma forma flexionada foi encontrado. */
   pdfDocumentCount?: number;
@@ -73,19 +73,6 @@ export interface QuestionOption {
   text: string;
   correct: boolean;
   explanation: string;
-}
-
-export interface MilitaryQuestion {
-  id: string;
-  archetype: QuestionArchetype;
-  bancaTarget: MilitaryBanca;
-  statement: string;
-  options: QuestionOption[];
-  resolutionCommentary: string;
-  targetVerbs: string[];
-  ruleContext: string;
-  difficulty: 'facil' | 'medio' | 'dificil' | 'insano';
-  isAiGenerated?: boolean;
 }
 
 export interface MilitaryRank {

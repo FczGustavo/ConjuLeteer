@@ -1,15 +1,14 @@
 # ConjuLetter
 
-> Treino de Língua Portuguesa para concursos militares, com conjugação verbal, questões auditadas e geração assistida por IA.
+> Treino de Língua Portuguesa para concursos militares, com conjugação verbal, questões auditadas e importação inteligente de PDFs.
 
-O **ConjuLetter** é uma aplicação educacional focada no domínio de verbos e nos assuntos de Português mais recorrentes em provas militares. O projeto combina estudo inteiramente offline, um banco extraído de materiais em PDF e geração de questões inéditas com revisão independente por IA.
+O **ConjuLetter** é uma aplicação educacional focada no domínio de verbos e nos assuntos de Português mais recorrentes em provas militares. O projeto combina estudo offline, um banco extraído de materiais em PDF e importação assistida por IA para novos acervos.
 
 ## Visão geral
 
 | Área | O que oferece |
 |---|---|
 | **Tabelas** | Treino de 163 verbos em 11 paradigmas, tabela única, sessão multi-tempos, confrontos e imperativos |
-| **Questões** | Geração sob demanda de 5, 10 ou 20 questões inéditas por IA, sem atribuir banca fictícia |
 | **Banco de Questões** | Filtros por idioma e assunto, pré-visualização, resolução e criação de listas persistentes |
 | **Listas salvas** | Retomada do ponto exato, respostas persistidas, progresso, precisão e gabarito comparativo |
 
@@ -26,8 +25,7 @@ O **ConjuLetter** é uma aplicação educacional focada no domínio de verbos e 
 
 ### Banco de questões
 
-- Acervo interno auditado com **591 questões**, extraídas de **9 PDFs**.
-- No filtro público atual, são exibidas **531 questões**: os dois cadernos de Modos Verbais com 30 questões cada permanecem preservados na base, mas ocultos da interface.
+- Acervo interno auditado com **531 questões públicas**, extraídas de **7 PDFs**.
 - O assunto **Verbos** apresenta exclusivamente o caderno principal com **92 questões**.
 - Textos de apoio, fontes, títulos, enunciados, alternativas e gabaritos passaram por limpeza e auditoria determinísticas.
 - Listas persistentes ficam salvas no navegador e podem ser retomadas posteriormente.
@@ -42,20 +40,22 @@ O banco também inclui uma coleção independente de **1.500 questões de Inglê
 - Cada item guarda a página da questão e a página exata do gabarito, localizado na seção `Answers` das páginas **190–196**.
 - O importador determinístico restaura quebras de texto, marcadores de alternativa fora de ordem e o único caso em que o PDF repetia `a)` nas cinco alternativas. A ficha completa fica em [`reports/english-question-audit.md`](./reports/english-question-audit.md) e [`reports/english-question-audit.json`](./reports/english-question-audit.json).
 
-### Questões inéditas por IA
+### Importação de PDFs com IA
 
-O fluxo de IA segue o pipeline:
+O único fluxo de IA disponível no produto é a importação de PDFs. Ela segue o pipeline:
 
 ```text
-planejar → gerar → validar → resolver sem o gabarito → aprovar ou regenerar
+ler → estruturar → validar → salvar
 ```
 
-- A geração usa a base verbal canônica como contexto.
-- Um segundo processo resolve a questão sem receber a resposta indicada pelo gerador.
-- A questão só é aceita quando estrutura, conteúdo e resposta independente são compatíveis.
-- No gerador de questões inéditas, itens ambíguos, incompletos ou divergentes são rejeitados ou regenerados.
+- O PDF é lido e enviado para estruturação em JSON conforme o contrato do banco.
+- A resposta é validada localmente antes de qualquer persistência.
+- Gabaritos, alternativas e páginas são preservados para auditoria.
+- A importação não cria uma banca ou questão fictícia: apenas organiza o material fornecido.
 - Importações de PDF salvam os itens utilizáveis mesmo quando há ambiguidade; o modal lista avisos por questão e o Banco exibe o selo `Revisar` até a conferência.
-- É necessária uma chave da **OpenRouter**, configurada pela própria interface.
+- A chave da **OpenRouter** é configurada somente no servidor, em `.env.local`; a interface não oferece campo de chave nem de modelo e o navegador nunca recebe esses valores.
+
+Para executar a importação localmente, copie `.env.local.example` para `.env.local` e preencha `OPENROUTER_API_KEY` (e, opcionalmente, `OPENROUTER_MODEL`) antes de iniciar o Vite.
 
 ## Qualidade e auditoria
 
@@ -63,12 +63,11 @@ O projeto possui verificações reproduzíveis para impedir regressões:
 
 - **163 páginas de referência verbal** comparadas.
 - **10.758 formas** confrontadas nos paradigmas exibidos.
-- **591 questões**, **2.803 alternativas** e **9 gabaritos oficiais** verificados.
+- **531 questões**, **2.563 alternativas** e **7 gabaritos oficiais** verificados.
 - **1.500 questões de Inglês**, **24 assuntos** e **1.500 gabaritos** do PDF militar conferidos individualmente, sem divergência.
 - Auditoria de IDs, numeração, quantidade de alternativas, resposta única e padrões conhecidos de corrupção textual.
-- Ficha individual das 591 questões em [`reports/question-audit.md`](./reports/question-audit.md) e versão legível por máquina em [`reports/question-audit.json`](./reports/question-audit.json).
+- Ficha individual das 531 questões em [`reports/question-audit.md`](./reports/question-audit.md) e versão legível por máquina em [`reports/question-audit.json`](./reports/question-audit.json).
 - Testes visuais em desktop e viewport móvel, incluindo overflow e console do navegador.
-- A galeria interna de revisão pode ser aberta em `/?audit=questions`; ela inclui também as duas folhas de 30 verbos que ficam ocultas no fluxo público.
 
 Os PDFs em `lists/` e seus blocos oficiais de respostas são a fonte de verdade do banco. Para as conjugações, a fonte local é `src/data/canonicalVerbs.ts`.
 
@@ -81,7 +80,7 @@ Os PDFs em `lists/` e seus blocos oficiais de respostas são a fonte de verdade 
 - Oxlint
 - PDF.js
 - Lucide React
-- OpenRouter, somente nos fluxos de IA
+- OpenRouter, somente na importação assistida de PDFs
 
 ## Executando localmente
 
@@ -116,7 +115,7 @@ npm run lint
 # Estrutura e formas críticas dos 163 verbos
 npm run audit:verbs
 
-# Integridade das 591 questões contra os 9 PDFs
+# Integridade das 531 questões contra os 7 PDFs públicos
 python src/scratch/audit_question_bank.py
 
 # Regenerar as fichas individuais de auditoria
@@ -155,9 +154,9 @@ ConjuLetter/
 ## Persistência e privacidade
 
 - Configurações, listas, respostas, progresso e questões importadas são armazenados em `localStorage`.
-- O projeto não possui backend próprio nem banco de dados remoto.
+- A importação de PDFs usa a rota server-side `/api/ai/import` do Vite para proteger a credencial; não há banco de dados remoto.
 - As tabelas e o banco local não dependem de rede.
-- Conteúdo só é enviado à OpenRouter quando o usuário utiliza um recurso de IA com uma chave configurada.
+- Conteúdo só é enviado à OpenRouter quando o usuário importa um PDF e o servidor está configurado com uma chave válida.
 
 ## Estado conhecido
 

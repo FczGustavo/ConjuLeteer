@@ -195,6 +195,8 @@ SPLIT_WORD_REPAIRS = [
     (r"\bco rridors\b", "corridors"), (r"\bquantid ade\b", "quantidade"),
     (r"\bespeci alista\b", "especialista"), (r"\bdifí cil\b", "difícil"),
     (r"\bscie ntists\b", "scientists"), (r"\btur tles\b", "turtles"),
+    (r"\bpa ssado\b", "passado"), (r"\ba s palavras\b", "as palavras"),
+    (r"\bJ ew\b", "Jew"),
 ]
 
 
@@ -222,8 +224,16 @@ def repair_extraction(value: str) -> str:
             flags=re.I,
         )
     value = re.sub(r"\s+([,.;:!?])", r"\1", value)
-    value = re.sub(r"(?<=\w)\s*-(?=\s*\w)", "-", value)
-    value = re.sub(r"(?<=\w)-\s+(?=\w)", "-", value)
+    # Join a hyphenated word only when the dash is attached to its left-hand
+    # word.  Keep editorial separators such as ``word - word`` intact, and
+    # preserve one-letter labels/grades such as ``D- por``.
+    def join_hyphenated_word(match: re.Match[str]) -> str:
+        left, right = match.group(1), match.group(2)
+        if len(left) == 1 and left.isupper():
+            return match.group(0)
+        return f"{left}-{right}"
+
+    value = re.sub(r"([A-Za-zÀ-ÿ]+)-\s+([A-Za-zÀ-ÿ]+)", join_hyphenated_word, value)
     value = re.sub(r"[ \t]+", " ", value)
     return value.strip()
 
@@ -275,7 +285,16 @@ def paragraphs_from_text(value: str) -> list[str]:
     for group in groups:
         # Preserve poetry/dialogue/numbered lists; ordinary visual line wraps
         # become one readable paragraph.
-        if len(group) >= 3 and all(len(line) <= 105 for line in group) and all(not re.search(r"[.!?;:]$", line) for line in group):
+        short_line_group = (
+            len(group) >= 4
+            and all(len(line) <= 105 for line in group)
+            and sum(len(line) for line in group) / len(group) <= 70
+            and not all(re.search(r"[.!?;:]$", line) for line in group)
+        )
+        if (
+            (len(group) >= 3 and all(len(line) <= 105 for line in group) and all(not re.search(r"[.!?;:]$", line) for line in group))
+            or short_line_group
+        ):
             paragraphs.append("\n".join(group))
         else:
             # Some PDF pages encode paragraph spacing only as a slightly
@@ -312,8 +331,13 @@ def paragraphs_from_text(value: str) -> list[str]:
 
 def is_instruction(value: str) -> bool:
     plain = value.strip()
+    # Long paragraphs beginning with a question word are usually prose (for
+    # example, a lyric line beginning with "When"), not commands.  Keep the
+    # command detector focused on short editorial directions.
+    if len(plain) > 180:
+        return False
     return bool(re.match(
-        r"(?:What|Which|Who|Where|When|Why|How|According|In the text|The text|The author|Based on|It can be inferred|Choose|Mark|Indicate|Complete|Assinale|Indique|Marque|Leia|Observe|Considere|Julgue|Analise|Aponte|Em relação|De acordo|Na frase|O vocábulo|A palavra|A expressão|A principal|Infere-se|Para responder)",
+        r"(?:What|Which|Who|Where|When|Why|How|According|In the text|In the context|The text|The author|Based on|It can be inferred|Choose|Mark|Indicate|Complete|The correct|The same|The underlined|Assinale|Indique|Marque|Leia|Observe|Considere|Julgue|Analise|Aponte|Em relação|De acordo|Na frase|No contexto|O espaço|Qual|A lacuna|As lacunas|O vocábulo|A palavra|A expressão|A principal|Infere-se|Para responder)",
         plain,
         re.I,
     ))
@@ -333,10 +357,41 @@ def is_source(value: str) -> bool:
                 or re.match(r"\([^\n]{2,180}\b(?:19|20)\d{2}\b[^\n]*\)$", value))
 
 
+def is_redundant_support_instruction(value: str) -> bool:
+    """Return true for a standalone reading direction, never for prose."""
+    plain = re.sub(r"\s+", " ", value).strip()
+    return bool(re.fullmatch(
+        r"(?:Read(?:\s+the)?\s+(?:following\s+)?(?:text|excerpt|fragment|sentence|dialogue|lyrics)(?:\s+below|\s+that\s+follows)?|"
+        r"Read\s+(?:this|the\s+following)\s+(?:sentence|dialogue|text|excerpt|fragment|lyrics)|"
+        r"Read\s+the\s+sentence\s+below|"
+        r"Observe(?:\s+the)?\s+(?:following\s+)?(?:text|fragment)?|"
+        r"Consider\s+the\s+following(?:\s+text|\s+sentences)?|"
+        r"Leia(?:\s+o\s+)?(?:texto|trecho|excerto|fragmento)|"
+        r"Leia\s+atentamente(?:\s+o\s+seguinte\s+texto)?|"
+        r"Para\s+responder\s+(?:à|a)\s+questão)\s*[:.]?",
+        plain,
+        re.I,
+    ))
+
+
+def clean_support_blocks(blocks: list[str]) -> list[str]:
+    cleaned: list[str] = []
+    for block in blocks:
+        value = repair_extraction(block).strip()
+        # The source PDF uses a replacement glyph for bullets separating the
+        # excerpt from its command.  It is a visual separator, never part of
+        # the support prose, so discard it only at a block boundary.
+        value = re.sub(r"^[\uFFFD\u2013\u2014•]\s*", "", value)
+        if not value or is_redundant_support_instruction(value):
+            continue
+        cleaned.append(value)
+    return cleaned
+
+
 def build_support(support_paragraphs: list[str], active: dict | None = None) -> dict | None:
     if not support_paragraphs:
         return active
-    blocks = [repair_extraction(p) for p in support_paragraphs if p.strip()]
+    blocks = clean_support_blocks(support_paragraphs)
     if not blocks:
         return active
     support: dict = {"paragraphs": []}
@@ -350,16 +405,204 @@ def build_support(support_paragraphs: list[str], active: dict | None = None) -> 
         if title_match and not is_instruction(title_match.group(1)):
             support["title"] = title_match.group(1).strip()
             blocks[0] = title_match.group(2).strip()
-    if blocks and len(blocks[0]) <= 140 and not is_instruction(blocks[0]) and not is_source(blocks[0]):
+    if (
+        blocks
+        and len(blocks[0]) <= 140
+        and len(blocks[0].split()) <= 12
+        and not re.search(r"[.!?;:]$", blocks[0])
+        and not re.match(r"^[\"“']", blocks[0])
+        and not is_instruction(blocks[0])
+        and not is_source(blocks[0])
+    ):
         support["title"] = blocks.pop(0)
     if blocks and is_byline(blocks[0]):
         support["author"] = blocks.pop(0)
     if blocks and is_source(blocks[-1]):
         support["source"] = blocks.pop()
     support["paragraphs"] = blocks
-    if not any(support.get(k) for k in ("label", "title", "author", "source")) and not support["paragraphs"]:
-        return active
+    # A bare URL/citation (common after a cartoon or image-only question) is
+    # provenance, not a readable support excerpt.  Do not render it as an
+    # empty support card; an already active passage may still be reused.
+    if not support["paragraphs"]:
+        # A citation/URL by itself identifies an image or a source page but
+        # is not readable support.  In particular, it must not resurrect the
+        # previous passage through ``active`` (which produced phantom cards
+        # on image-only questions).
+        return None
     return support
+
+
+def strip_statement_support_preamble(statement: str, has_support: bool) -> str:
+    """Remove a redundant reading lead-in once the excerpt has its own card.
+
+    Keep the actual command (for example, ``fill in the gaps`` or ``it may
+    be inferred``); only the visual instruction to read a passage is removed.
+    """
+    if not has_support:
+        return statement
+    value = repair_extraction(statement).strip()
+    if not value:
+        return value
+    # ``Read ... piece from extract 1 “...” It may be inferred that:``
+    # repeats both the reading lead-in and a quotation already present in the
+    # support card.  Preserve the operative command.
+    command = re.search(
+        r"\b(It\s+may\s+be\s+inferred\s+that:|It\s+is\s+correct\s+to\s+say\s+that:|"
+        r"The\s+principal\s+idea\b[^:]*:)",
+        value,
+        re.I,
+    )
+    if command and re.match(r"(?:Read|Leia|Após\s+a\s+leitura)\b", value, re.I):
+        return value[command.start():].strip()
+    # Keep a useful suffix in compound commands such as "Read the text and
+    # fill in the gaps..." while removing only the redundant first clause.
+    compound = re.match(
+        r"^(?:Read|Leia|Observe|Considere|Considerando)\b[^\n:]{0,180}?(?:\band\b|\be\b)\s+(.+)$",
+        value,
+        re.I | re.S,
+    )
+    if compound and len(compound.group(1).strip()) >= 8:
+        result = compound.group(1).strip()
+        return result[:1].upper() + result[1:] if result else result
+    # Portuguese ``Após a leitura do texto, é ...`` has an operative
+    # predicate after the comma; keep it and remove the boilerplate.
+    after_reading = re.match(
+        r"^Após\s+a\s+leitura\s+(?:do|da)\s+(?:texto|trecho),?\s*(.+)$",
+        value,
+        re.I | re.S,
+    )
+    if after_reading:
+        result = after_reading.group(1).strip()
+        return result[:1].upper() + result[1:] if result else result
+    value = re.sub(
+        r"^Leia\s+atentamente\s+todo\s+o\s+per[ií]odo\s+transcrito\s+abaixo,?\s*",
+        "",
+        value,
+        flags=re.I,
+    ).strip()
+    # When a command was recovered from the support tail, the PDF can leave
+    # its original ``Leia/Read ...:`` lead-in as a separate trailing block.
+    # Remove that block while retaining the operative command before it.
+    chunks = re.split(r"\n{2,}", value)
+    if len(chunks) > 1:
+        chunks = [
+            chunk.strip()
+            for chunk in chunks
+            if not re.fullmatch(r"(?:Read|Leia|Observe)\b[\s\S]{0,180}?:?", chunk.strip(), re.I)
+        ]
+        value = "\n\n".join(chunk for chunk in chunks if chunk)
+    # Standalone leads (the excerpt itself is now in support) should not
+    # leave an empty-looking statement card.
+    if is_redundant_support_instruction(value):
+        return ""
+    if value and value[0].islower():
+        value = value[0].upper() + value[1:]
+    return value
+
+
+def split_support_command(support: dict) -> tuple[dict, str | None]:
+    """Detach an instruction accidentally captured after a support excerpt."""
+    paragraphs = list(support.get("paragraphs", []))
+    if len(paragraphs) < 2:
+        return support, None
+    index = next(
+        (i for i, paragraph in enumerate(paragraphs) if i > 0 and is_instruction(paragraph)),
+        None,
+    )
+    if index is None:
+        return support, None
+    command = "\n\n".join(paragraphs[index:]).strip()
+    support = {**support, "paragraphs": paragraphs[:index]}
+    if not support["paragraphs"]:
+        return {}, command
+    return support, command
+
+
+def support_is_instruction_only(support: dict) -> bool:
+    paragraphs = support.get("paragraphs") or []
+    if not paragraphs:
+        return True
+    return all(
+        is_instruction(paragraph)
+        or re.match(r"^(?:[IVX]+|\d{1,3})[.)]?\s", paragraph, re.I)
+        for paragraph in paragraphs
+    )
+
+
+def promote_inline_support(statement: str) -> tuple[str, dict | None]:
+    """Move a clearly delimited reading passage out of the question command.
+
+    The English PDF has several pages where the support excerpt and the
+    command share one text layer.  A blank line followed by ``�`` (the PDF's
+    bullet glyph) or a known command starter is a high-confidence boundary.
+    """
+    value = statement.replace("\r", "").strip()
+    if len(value) < 100:
+        return statement, None
+    starts_reading = bool(re.match(r"(?:Read|Leia|Observe|Consider|Considere|Considerando|Após\s+a\s+leitura)\b", value, re.I))
+    # A bullet/dash is emitted between the excerpt and its question command.
+    # Choose the last candidate whose suffix looks like an operative command;
+    # this also handles commands beginning with "According", "The", "It"
+    # and Portuguese interrogatives that were previously left in support.
+    marker = None
+    marker_candidates = list(re.finditer(r"\n\s*[\uFFFD\u2013\u2014•]\s*", value))
+    command_starter = re.compile(
+        r"(?:Which|What|Who|Where|When|Why|How|According|The|It|A|An|This|Fill|Complete|"
+        r"Assinale|Indique|Marque|Em\s+relação|De\s+acordo|A\s+principal|Agora|No\s+contexto)\b",
+        re.I,
+    )
+    for candidate in reversed(marker_candidates):
+        prefix = value[:candidate.start()].strip()
+        suffix = value[candidate.end():].strip()
+        if len(prefix) >= 24 and len(suffix) >= 10 and command_starter.match(suffix):
+            marker = candidate
+            break
+    if marker:
+        body = value[:marker.start()].strip()
+        command = value[marker.end():].strip()
+        # For "Consider(e) a frase ..." records, only the quoted excerpt is
+        # support; the surrounding sentence is an instruction and belongs to
+        # the command area.
+        if re.match(r"(?:Consider|Considere)\b", body, re.I):
+            quoted = re.search(r"[\"“](.{20,260}?)[\"”]", body, re.S)
+            if quoted:
+                body = quoted.group(0)
+        # Remove a leading reading direction from the excerpt side.
+        if starts_reading and ":" in body.split("\n", 1)[0]:
+            first_line, _, rest = body.partition("\n")
+            head, excerpt = first_line.split(":", 1)
+            body = (excerpt.strip() + ("\n" + rest if rest else "")).strip()
+        if len(body) < 40 or len(command) < 10:
+            return statement, None
+        return command, build_support(paragraphs_from_text(body))
+    if starts_reading:
+        # Some Portuguese source pages end the reading instruction with a
+        # period rather than a colon before the blank line that starts the
+        # excerpt (``Leia o texto ... correta.``).
+        header_match = re.search(r"(?:[:.]\s*)(?=\n|$)", value[:300])
+        if header_match:
+            command = value[: header_match.start() + 1].strip()
+            body = value[header_match.end():].strip()
+            if len(body) >= 80:
+                body_paragraphs = paragraphs_from_text(body)
+                instruction_index = next(
+                    (i for i, paragraph in enumerate(body_paragraphs) if i > 0 and is_instruction(paragraph)),
+                    None,
+                )
+                if instruction_index is not None:
+                    support_body = "\n\n".join(body_paragraphs[:instruction_index])
+                    command_body = "\n\n".join(body_paragraphs[instruction_index:])
+                    parsed_support = build_support(paragraphs_from_text(support_body))
+                    if parsed_support:
+                        return command_body, parsed_support
+                parsed_support = build_support(body_paragraphs)
+                if parsed_support:
+                    if support_is_instruction_only(parsed_support):
+                        # A short image/cartoon prompt has no textual support;
+                        # retain the complete prompt as the statement.
+                        return statement, None
+                    return command, parsed_support
+    return statement, None
 
 
 def choose_option_group(content: str) -> tuple[int, list[re.Match[str]]]:
@@ -516,21 +759,53 @@ def parse_questions(reader: PdfReader) -> list[dict]:
             else:
                 support = support or active_support.get(subject_id)
             if trailing_text.strip():
-                next_support = build_support(paragraphs_from_text(trailing_text), active_support.get(subject_id))
+                trailing_blocks = paragraphs_from_text(trailing_text)
+                next_support = build_support(trailing_blocks, active_support.get(subject_id))
                 if next_support:
                     pending_support[subject_id] = next_support
                     active_support[subject_id] = next_support
+                elif trailing_blocks and all(is_source(block) for block in clean_support_blocks(trailing_blocks)):
+                    # A source-only line normally belongs to an image/cartoon
+                    # question.  It is a boundary, not a continuation of the
+                    # previous literary passage.
+                    pending_support.pop(subject_id, None)
+                    active_support.pop(subject_id, None)
+        # Run this before falling back to a shared passage: a question may
+        # contain its own quoted sentence/lyrics even when the preceding
+        # question had an active support card (e.g. q14 and q122).
+        statement_text, inline_support = promote_inline_support(statement_text)
+        if inline_support:
+            support = inline_support
+        elif not support:
+            support = None
+        if support:
+            support, captured_command = split_support_command(support)
+            if captured_command:
+                if is_redundant_support_instruction(statement_text):
+                    statement_text = captured_command
+                else:
+                    statement_text = "\n\n".join(part for part in (captured_command, statement_text) if part).strip()
+            if not support or support_is_instruction_only(support):
+                # A question-specific instruction (or an image-only prompt)
+                # is not a support passage.  Put it back in the statement and
+                # suppress the empty/phantom support card.
+                if support:
+                    statement_text = "\n\n".join(
+                        part for part in ("\n\n".join(support.get("paragraphs", [])), statement_text) if part
+                    ).strip()
+                support = None
+        if support:
+            statement_text = strip_statement_support_preamble(statement_text, True)
         if support:
             support = json.loads(json.dumps(support, ensure_ascii=False))
 
-        records.append({
+        record = {
             "id": f"{subject_id}-q{local_number}",
             "subjectId": subject_id,
             "subjectTitle": title,
             "listId": subject_id,
             "listTitle": title,
             "questionNumber": local_number,
-            "support": support,
             "provenance": {
                 "pdf": "1500 Questões de Inglês para Concursos Militares.pdf",
                 "questionPage": page,
@@ -542,7 +817,10 @@ def parse_questions(reader: PdfReader) -> list[dict]:
             "correctLetter": "A",
             "banca": "Compilação de concursos militares" if is_translation else repair_extraction(header_tail),
             "language": "en",
-        })
+        }
+        if support:
+            record["support"] = support
+        records.append(record)
     return records
 
 

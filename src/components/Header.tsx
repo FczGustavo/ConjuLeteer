@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Settings as SettingsIcon, Search, FileText, BookOpen, Library, ListChecks, ChevronDown } from 'lucide-react';
+import { Settings as SettingsIcon, Search, BookOpen, Library, ListChecks, ChevronDown, ChevronRight, House } from 'lucide-react';
 import { CANONICAL_VERBS } from '../data/canonicalVerbs';
 
-export type MainNavTab = 'tabelas' | 'questoes' | 'simulados' | 'listas' | 'configuracoes';
+export type MainNavTab = 'home' | 'tabelas' | 'simulados' | 'listas' | 'configuracoes';
 
 interface HeaderProps {
   activeTab: MainNavTab;
@@ -10,6 +10,101 @@ interface HeaderProps {
   onOpenQuestionLists: () => void;
   onQuickSelectVerb?: (verbId: string) => void;
 }
+
+interface NavigationDrawerProps {
+  activeTab: MainNavTab;
+  setActiveTab: (tab: MainNavTab) => void;
+  onOpenQuestionLists: () => void;
+  isExpanded: boolean;
+  onToggle: () => void;
+  mobile?: boolean;
+}
+
+/** Compact navigation: Home stays visible while the study tools slide out from the drawer. */
+const NavigationDrawer: React.FC<NavigationDrawerProps> = ({
+  activeTab,
+  setActiveTab,
+  onOpenQuestionLists,
+  isExpanded,
+  onToggle,
+  mobile = false
+}) => {
+  const drawerId = `${mobile ? 'mobile' : 'desktop'}-navigation-drawer`;
+  const isBankActive = activeTab === 'simulados' || activeTab === 'listas';
+
+  return (
+    <nav
+      aria-label={mobile ? 'Navegação móvel' : 'Navegação principal'}
+      className={`home-nav${isExpanded ? ' home-nav--expanded' : ''}${mobile ? ' home-nav--mobile' : ''}`}
+    >
+      <button
+        type="button"
+        onClick={() => {
+          setActiveTab('home');
+          if (isExpanded) onToggle();
+        }}
+        className={`home-nav__home${activeTab === 'home' ? ' is-active' : ''}`}
+        aria-current={activeTab === 'home' ? 'page' : undefined}
+      >
+        <House className="h-3.5 w-3.5" aria-hidden="true" />
+        <span>Home</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={onToggle}
+        className="home-nav__toggle"
+        aria-expanded={isExpanded}
+        aria-controls={drawerId}
+        aria-label={isExpanded ? 'Recolher navegação' : 'Abrir navegação'}
+      >
+        <ChevronRight className={`h-3.5 w-3.5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} aria-hidden="true" />
+      </button>
+
+      <div id={drawerId} className="home-nav__drawer" aria-hidden={!isExpanded}>
+        <div className="home-nav__drawer-inner">
+          <button
+            type="button"
+            tabIndex={isExpanded ? 0 : -1}
+            onClick={() => setActiveTab('tabelas')}
+            className={`home-nav__item${activeTab === 'tabelas' ? ' is-active' : ''}`}
+            aria-current={activeTab === 'tabelas' ? 'page' : undefined}
+          >
+            <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
+            <span>Tabelas</span>
+          </button>
+
+          <div className="home-nav__bank-wrap group relative">
+            <button
+              type="button"
+              tabIndex={isExpanded ? 0 : -1}
+              onClick={() => setActiveTab('simulados')}
+              className={`home-nav__item${isBankActive ? ' is-active' : ''}`}
+              aria-current={isBankActive ? 'page' : undefined}
+              aria-haspopup="menu"
+            >
+              <Library className="h-3.5 w-3.5" aria-hidden="true" />
+              <span>Banco de Questões</span>
+              <ChevronDown className="h-3 w-3 opacity-70" aria-hidden="true" />
+            </button>
+            <div className="home-nav__bank-menu invisible absolute left-1/2 top-full z-50 w-52 -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              <div className="home-nav__bank-menu-inner">
+                <button type="button" tabIndex={isExpanded ? 0 : -1} onClick={() => setActiveTab('simulados')}>
+                  <Library className="h-3.5 w-3.5" aria-hidden="true" />
+                  Filtrar banco
+                </button>
+                <button type="button" tabIndex={isExpanded ? 0 : -1} onClick={onOpenQuestionLists}>
+                  <ListChecks className="h-3.5 w-3.5" aria-hidden="true" />
+                  Listas salvas
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
@@ -19,10 +114,11 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   const filteredVerbs = searchQuery.trim() === ''
     ? CANONICAL_VERBS.slice(0, 6)
-    : CANONICAL_VERBS.filter(v => 
+    : CANONICAL_VERBS.filter(v =>
         v.infinitive.toLowerCase().includes(searchQuery.toLowerCase()) ||
         v.classification.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (v.primitiveRoot && v.primitiveRoot.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -30,88 +126,56 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      {/* Navbar com fundo invisível e posição estática (não acompanha o scroll) */}
-      <header className="w-full bg-transparent border-b border-transparent relative z-30 pt-3 sm:pt-4 pb-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 min-h-14 flex flex-wrap sm:flex-nowrap items-center justify-between gap-y-3">
-          
-          {/* Logo limpo com apenas a escrita ConjuLetter */}
-          <div 
-            className="flex items-center cursor-pointer select-none" 
-            onClick={() => setActiveTab('tabelas')}
+      <header className="site-header relative z-30 w-full px-4 pt-4 sm:px-8 sm:pt-5">
+        <div className="relative mx-auto flex min-h-14 max-w-7xl items-center justify-between gap-4">
+          <div
+            className="flex cursor-pointer select-none items-center"
+            onClick={() => {
+              setActiveTab('home');
+              setIsNavExpanded(false);
+            }}
             title="ConjuLetter"
+            role="button"
+            tabIndex={0}
+            onKeyDown={event => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                setActiveTab('home');
+                setIsNavExpanded(false);
+              }
+            }}
           >
-            <span className="font-bold text-lg text-[#f3ede6] tracking-tight hover:text-[#e8a87c] transition-colors">
+            <span className="brand-wordmark text-lg font-semibold tracking-tight text-[#f3ede6] transition-colors hover:text-[#e8a87c]">
               Conju<span className="text-[#e8a87c]">Letter</span>
             </span>
           </div>
 
-          {/* Central Dock com botões mais quadradinhos (rounded-xl) */}
-          <nav className="order-3 sm:order-none w-full sm:w-auto inline-flex items-stretch justify-center p-1 rounded-xl bg-[#181b20]/90 border border-[#2e353e] shadow-lg shadow-black/20">
-            <button
-              onClick={() => setActiveTab('tabelas')}
-              className={`flex flex-1 sm:flex-none justify-center items-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-mono transition-all duration-150 ${
-                activeTab === 'tabelas'
-                  ? 'bg-[#262c35] text-[#f3ede6] font-bold shadow-sm'
-                  : 'text-[#8b949e] hover:text-[#f3ede6] hover:bg-[#20242b]'
-              }`}
-            >
-              <BookOpen className="w-3.5 h-3.5 opacity-90 text-[#e8a87c]" />
-              <span>Tabelas</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('questoes')}
-              className={`flex flex-1 sm:flex-none justify-center items-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-mono transition-all duration-150 ${
-                activeTab === 'questoes'
-                  ? 'bg-[#262c35] text-[#f3ede6] font-bold shadow-sm'
-                  : 'text-[#8b949e] hover:text-[#f3ede6] hover:bg-[#20242b]'
-              }`}
-            >
-              <FileText className="w-3.5 h-3.5 opacity-90 text-[#e8a87c]" />
-              <span>Questões</span>
-            </button>
-
-            <div className="group relative flex flex-1 sm:flex-none">
-              <button
-                onClick={() => setActiveTab('simulados')}
-                className={`flex w-full justify-center items-center gap-1.5 px-2 sm:px-4 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-mono transition-all duration-150 ${
-                activeTab === 'simulados' || activeTab === 'listas'
-                  ? 'bg-[#262c35] text-[#f3ede6] font-bold shadow-sm'
-                  : 'text-[#8b949e] hover:text-[#f3ede6] hover:bg-[#20242b]'
-              }`}
-              >
-                <Library className="w-3.5 h-3.5 opacity-90 text-[#e8a87c]" />
-                <span>Banco de Questões</span>
-                <ChevronDown className="h-3 w-3 text-[#8b949e]" />
-              </button>
-              <div className="invisible absolute right-0 top-full z-50 w-52 translate-x-0 pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 sm:left-1/2 sm:right-auto sm:-translate-x-1/2">
-                <div className="rounded-xl border border-[#343c46] bg-[#181b20] p-1.5 shadow-2xl">
-                  <button onClick={() => setActiveTab('simulados')} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-mono text-[#d1d5db] hover:bg-[#262c35]">
-                    <Library className="h-3.5 w-3.5 text-[#e8a87c]" />
-                    Filtrar banco
-                  </button>
-                  <button onClick={onOpenQuestionLists} className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-mono text-[#d1d5db] hover:bg-[#262c35]">
-                    <ListChecks className="h-3.5 w-3.5 text-[#e8a87c]" />
-                    Listas salvas
-                  </button>
-                </div>
-              </div>
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-1/2 justify-center sm:flex">
+            <div className="pointer-events-auto">
+              <NavigationDrawer
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                onOpenQuestionLists={onOpenQuestionLists}
+                isExpanded={isNavExpanded}
+                onToggle={() => setIsNavExpanded(value => !value)}
+              />
             </div>
-          </nav>
+          </div>
 
-          {/* Right Action Icons */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-1">
             <button
+              type="button"
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 rounded-xl text-[#8b949e] hover:text-[#f3ede6] hover:bg-[#1f242b] border border-transparent hover:border-[#2e353e] transition-colors"
+              className="icon-button rounded-full border border-transparent p-2.5 text-[#8b949e] transition-colors hover:border-[#2e353e] hover:bg-[#1f242b] hover:text-[#f3ede6]"
               title="Buscar verbo (Ctrl+K)"
+              aria-label="Buscar verbo"
             >
-              <Search className="w-4 h-4 stroke-[1.75]" />
+              <Search className="h-4 w-4 stroke-[1.75]" />
             </button>
 
             <button
+              type="button"
               onClick={() => setActiveTab('configuracoes')}
-              className={`p-2 rounded-xl border transition-colors ${
+              className={`icon-button rounded-full border p-2.5 transition-colors ${
                 activeTab === 'configuracoes'
                   ? 'border-[#e8a87c]/40 bg-[#262c35] text-[#e8a87c]'
                   : 'border-transparent text-[#8b949e] hover:border-[#2e353e] hover:bg-[#1f242b] hover:text-[#f3ede6]'
@@ -119,64 +183,63 @@ export const Header: React.FC<HeaderProps> = ({
               title="Abrir Configurações"
               aria-label="Abrir Configurações"
             >
-              <SettingsIcon className="w-4 h-4 stroke-[1.75]" />
+              <SettingsIcon className="h-4 w-4 stroke-[1.75]" />
             </button>
           </div>
+        </div>
 
+        <div className="mt-3 flex justify-center sm:hidden">
+          <NavigationDrawer
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            onOpenQuestionLists={onOpenQuestionLists}
+            isExpanded={isNavExpanded}
+            onToggle={() => setIsNavExpanded(value => !value)}
+            mobile
+          />
         </div>
       </header>
 
-      {/* Quick Search Modal */}
       {isSearchOpen && (
-        <div 
-          className="fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-black/75 backdrop-blur-sm animate-in fade-in"
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/75 p-4 pt-20 backdrop-blur-sm animate-in fade-in"
           onClick={() => setIsSearchOpen(false)}
         >
-          <div 
-            className="w-full max-w-lg rounded-2xl bg-[#181b20] border border-[#2e353e] p-4 shadow-2xl space-y-3"
-            onClick={e => e.stopPropagation()}
+          <div
+            className="w-full max-w-lg space-y-3 rounded-2xl border border-[#2e353e] bg-[#181b20] p-4 shadow-2xl"
+            onClick={event => event.stopPropagation()}
           >
             <div className="relative">
-              <Search className="w-4 h-4 text-[#8b949e] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#8b949e]" />
               <input
                 type="text"
                 autoFocus
                 value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
+                onChange={event => setSearchQuery(event.target.value)}
                 placeholder="Buscar verbo militar (ex: pôr, reaver, intervir, prever)..."
-                className="w-full pl-10 pr-4 py-2.5 bg-[#121417] rounded-xl border border-[#2e353e] text-xs font-mono text-[#f3ede6] focus:border-[#e8a87c] focus:outline-none placeholder:text-[#6b7280]"
+                className="w-full rounded-xl border border-[#2e353e] bg-[#121417] py-3 pl-10 pr-4 text-sm text-[#f3ede6] placeholder:text-[#6b7280] focus:border-[#e8a87c] focus:outline-none"
               />
             </div>
 
-            <div className="divide-y divide-[#262b33] max-h-64 overflow-y-auto pt-1">
+            <div className="max-h-64 divide-y divide-[#262b33] overflow-y-auto pt-1">
               {filteredVerbs.map(verb => (
                 <div
                   key={verb.id}
                   onClick={() => {
-                    if (onQuickSelectVerb) {
-                      onQuickSelectVerb(verb.id);
-                    }
+                    if (onQuickSelectVerb) onQuickSelectVerb(verb.id);
                     setActiveTab('tabelas');
                     setIsSearchOpen(false);
                   }}
-                  className="p-2.5 hover:bg-[#20252c] rounded-lg cursor-pointer flex items-center justify-between transition-colors"
+                  className="flex cursor-pointer items-center justify-between rounded-lg p-2.5 transition-colors hover:bg-[#20252c]"
                 >
                   <div>
-                    <span className="font-mono font-bold text-xs uppercase text-[#f3ede6]">
-                      {verb.infinitive}
-                    </span>
-                    <span className="text-[10px] text-[#8b949e] ml-2 font-mono">
-                      ({verb.classification})
-                    </span>
+                    <span className="font-mono text-xs font-bold uppercase text-[#f3ede6]">{verb.infinitive}</span>
+                    <span className="ml-2 font-mono text-[10px] text-[#8b949e]">({verb.classification})</span>
                     {verb.criticalTrapDescription && (
-                      <p className="text-[10px] text-[#9ca3af] truncate max-w-sm mt-0.5">
-                        {verb.criticalTrapDescription}
-                      </p>
+                      <p className="mt-0.5 max-w-sm truncate text-[10px] text-[#9ca3af]">{verb.criticalTrapDescription}</p>
                     )}
                   </div>
-                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#242930] text-[#e8a87c] border border-[#343c46]">
-                    Treinar
-                  </span>
+                  <span className="rounded border border-[#343c46] bg-[#242930] px-1.5 py-0.5 font-mono text-[10px] text-[#e8a87c]">Treinar</span>
                 </div>
               ))}
             </div>

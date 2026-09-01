@@ -78,24 +78,6 @@ PDF_CONFIGS = [
         "expectedCount": 92,
         "banca": "AFA / EN / EFOMM / Concursos Militares"
     },
-    {
-        "file": "16. Modos Verbais I  - [✅].pdf",
-        "subjectId": "verbos",
-        "subjectTitle": "Verbos & Modos Verbais",
-        "listId": "pdf_16",
-        "listTitle": "Modos Verbais I (30T1)",
-        "expectedCount": 30,
-        "banca": "Tropa do Arcanjo / EEAr / EsPCEx"
-    },
-    {
-        "file": "17.  Modos Verbais II  - [✅].pdf",
-        "subjectId": "verbos",
-        "subjectTitle": "Verbos & Modos Verbais",
-        "listId": "pdf_17",
-        "listTitle": "Modos Verbais II (30T2)",
-        "expectedCount": 30,
-        "banca": "Tropa do Arcanjo / EEAr / EsPCEx"
-    }
 ]
 
 def format_reading_text(raw_text):
@@ -152,10 +134,7 @@ for cfg in PDF_CONFIGS:
     gabarito_map = parse_gabarito(full_text[-12000:])
     print(f"  Extracted {len(gabarito_map)} official gabarito answers.")
     
-    if cfg["file"].startswith("16.") or cfg["file"].startswith("17."):
-        pattern = re.compile(r'(\n\s*(\d+)\s*[\)\.\-]\s+)', re.IGNORECASE)
-    else:
-        pattern = re.compile(r'(Questão\s+(\d+)[^\n]*)', re.IGNORECASE)
+    pattern = re.compile(r'(Questão\s+(\d+)[^\n]*)', re.IGNORECASE)
         
     matches = list(pattern.finditer(cleaned_full_text))
     seen_q = set()
@@ -183,9 +162,6 @@ for cfg in PDF_CONFIGS:
         stmt_part, raw_opts = parse_strict_options(block)
         reading_text, statement = split_reading_statement_perfect(stmt_part)
         
-        if cfg["file"].startswith("16.") or cfg["file"].startswith("17."):
-            statement = re.sub(r'^\d+[\)\.\-]\s*', '', statement).strip()
-            
         statement = re.sub(r'^[a-z0-9\-_/]+(?:/|\.html|\.com|\.br)\s*\n*', '', statement, flags=re.IGNORECASE).strip()
         statement = clean_subject_tags_from_header(statement)
         correct_letter = gabarito_map.get(q_num, 'A')

@@ -14,18 +14,826 @@
     --text-main: #f3ede6;
     --text-muted: #9ca3af;
     --text-dark: #16181b;
+    --focus-ring: rgba(232, 168, 124, 0.75);
+    --content-measure: 74ch;
+
+    /* Semantic aliases keep the existing Original theme stable while making
+       every surface available to the Alexandria palette. */
+    --theme-bg: var(--bg-base);
+    --theme-surface: var(--bg-surface);
+    --theme-surface-raised: var(--bg-card);
+    --theme-surface-inset: var(--bg-card-subtle);
+    --theme-border: var(--border-subtle);
+    --theme-border-strong: var(--border-card);
+    --theme-text: var(--text-main);
+    --theme-text-muted: var(--text-muted);
+    --theme-text-faint: #6b7280;
+    --theme-accent: var(--accent-peach);
+    --theme-accent-hover: var(--accent-peach-hover);
+    --theme-accent-soft: var(--accent-peach-muted);
+    --theme-success: #34d399;
+    --theme-danger: #f87171;
+    --theme-warning: #fbbf24;
+    --question-accent: var(--accent-peach);
+  }
+
+  :root[data-theme='light'] {
+    --bg-base: #f5f7fa;
+    --bg-surface: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-subtle: #eef1f5;
+    --bg-inset: #f8fafc;
+    --bg-hover: #e8edf3;
+    --border-subtle: #d9e0e8;
+    --border-card: #c5ced9;
+    --accent-peach: #a94f13;
+    --accent-peach-hover: #8f3f0d;
+    --accent-peach-muted: rgba(169, 79, 19, 0.12);
+    --accent-fill: #f0b27f;
+    --accent-fill-hover: #e79a5c;
+    --success: #087443;
+    --success-soft: #e7f6ee;
+    --danger: #b42318;
+    --danger-soft: #fef0ef;
+    --warning: #9a4d00;
+    --warning-soft: #fff5df;
+    --text-main: #1f2937;
+    --text-strong: #111827;
+    --text-body: #344054;
+    --text-muted: #667085;
+    --text-faint: #7a8699;
+    --text-dark: #16181b;
+    --focus-ring: rgba(169, 79, 19, 0.62);
+
+    --theme-bg: var(--bg-base);
+    --theme-surface: var(--bg-surface);
+    --theme-surface-raised: var(--bg-card);
+    --theme-surface-inset: var(--bg-card-subtle);
+    --theme-border: var(--border-subtle);
+    --theme-border-strong: var(--border-card);
+    --theme-text: var(--text-main);
+    --theme-text-muted: var(--text-muted);
+    --theme-text-faint: var(--text-faint);
+    --theme-accent: var(--accent-peach);
+    --theme-accent-hover: var(--accent-peach-hover);
+    --theme-accent-soft: var(--accent-peach-muted);
+    --theme-success: var(--success);
+    --theme-danger: var(--danger);
+    --theme-warning: var(--warning);
+    --question-accent: var(--accent-peach);
+  }
+
+  :root[data-theme='alexandria'] {
+    color-scheme: dark;
+    --bg-base: #111213;
+    --bg-surface: #17191a;
+    --bg-card: #1e2022;
+    --bg-card-subtle: #272a2c;
+    --bg-inset: #1a1c1d;
+    --bg-hover: #2e3133;
+    --border-subtle: transparent;
+    --border-card: transparent;
+    --accent-peach: #aeb1b4;
+    --accent-peach-hover: #c7c9cc;
+    --accent-peach-muted: rgba(174, 177, 180, 0.12);
+    --accent-fill: #4a83d0;
+    --accent-fill-hover: #5e92da;
+    --success: #77c5ad;
+    --success-soft: #18372f;
+    --danger: #ef9693;
+    --danger-soft: #3b252d;
+    --warning: #d8c47d;
+    --warning-soft: #39331f;
+    --text-main: #f0f1f2;
+    --text-strong: #ffffff;
+    --text-body: #dde0e2;
+    --text-muted: #a8acb0;
+    --text-faint: #858a8e;
+    --text-dark: #17191a;
+    --focus-ring: rgba(219, 221, 223, 0.9);
+    --accent-blue: #4a83d0;
+    --accent-blue-strong: #5e92da;
+    --accent-blue-soft: rgba(74, 131, 208, 0.12);
+
+    --theme-bg: var(--bg-base);
+    --theme-surface: var(--bg-surface);
+    --theme-surface-raised: var(--bg-card);
+    --theme-surface-inset: var(--bg-card-subtle);
+    --theme-border: var(--border-subtle);
+    --theme-border-strong: var(--border-card);
+    --theme-text: var(--text-main);
+    --theme-text-muted: var(--text-muted);
+    --theme-text-faint: var(--text-faint);
+    --theme-accent: var(--accent-peach);
+    --theme-accent-hover: var(--accent-peach-hover);
+    --theme-accent-soft: var(--accent-peach-muted);
+    --theme-success: var(--success);
+    --theme-danger: var(--danger);
+    --theme-warning: var(--warning);
+    --question-accent: var(--accent-blue);
   }
 
   body {
     background-color: var(--bg-base);
-    background-image: radial-gradient(circle at 50% 10%, #20252c 0%, #121417 80%);
+    background-image: radial-gradient(circle at 50% -12%, rgba(55, 47, 43, 0.46) 0%, var(--bg-base) 52%);
     color: var(--text-main);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     min-height: 100vh;
   }
 
+  :root[data-theme='light'] body {
+    background-image: radial-gradient(circle at 50% -12%, rgba(255, 237, 213, 0.68) 0%, var(--bg-base) 54%);
+  }
+
   code, pre, kbd, .font-mono {
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  button, input, select, textarea {
+    font: inherit;
+  }
+
+  button, [role='button'], a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .site-header {
+    background: linear-gradient(180deg, rgba(18, 20, 23, 0.96), rgba(18, 20, 23, 0.78) 78%, transparent);
+  }
+
+  :root[data-theme='light'] .site-header {
+    background: linear-gradient(180deg, rgba(245, 247, 250, 0.98), rgba(245, 247, 250, 0.9) 78%, transparent);
+  }
+
+  .brand-wordmark {
+    letter-spacing: -0.025em;
+  }
+
+  /* Centered navigation drawer: Home remains the quiet anchor when closed. */
+  .home-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.12rem;
+    max-width: calc(100vw - 2rem);
+    padding: 0.16rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    background: rgba(24, 27, 32, 0.9);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    color: var(--text-muted);
+    transition: border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+  }
+
+  .home-nav:hover,
+  .home-nav:focus-within {
+    border-color: color-mix(in srgb, var(--accent-peach) 38%, var(--border-subtle));
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  }
+
+  .home-nav__home,
+  .home-nav__toggle,
+  .home-nav__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 1.8rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  .home-nav__home {
+    padding: 0.5rem 0.72rem;
+    color: var(--text-main);
+  }
+
+  .home-nav__home svg,
+  .home-nav__item svg {
+    color: var(--accent-peach);
+  }
+
+  .home-nav__toggle {
+    width: 1.8rem;
+    flex: 0 0 1.8rem;
+    padding: 0;
+    color: var(--text-muted);
+  }
+
+  .home-nav__home:hover,
+  .home-nav__toggle:hover,
+  .home-nav__item:hover {
+    background: var(--bg-card-subtle);
+    color: var(--text-main);
+  }
+
+  .home-nav__home:active,
+  .home-nav__toggle:active,
+  .home-nav__item:active {
+    transform: scale(0.98);
+  }
+
+  .home-nav__home.is-active,
+  .home-nav__item.is-active {
+    border-color: color-mix(in srgb, var(--accent-peach) 46%, transparent);
+    background: var(--accent-peach-muted);
+    color: var(--text-main);
+    font-weight: 700;
+  }
+
+  .home-nav__drawer {
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-0.4rem);
+    pointer-events: none;
+    transition: max-width 320ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .home-nav--expanded .home-nav__drawer {
+    max-width: 32rem;
+    overflow: visible;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .home-nav__drawer-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.12rem;
+  }
+
+  .home-nav__item {
+    padding: 0.5rem 0.64rem;
+  }
+
+  .home-nav__bank-wrap {
+    display: flex;
+  }
+
+  .home-nav__bank-menu-inner {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.35rem;
+    border: 1px solid var(--border-card);
+    border-radius: 0.9rem;
+    background: var(--bg-surface);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+  }
+
+  .home-nav__bank-menu-inner button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    border-radius: 0.65rem;
+    padding: 0.55rem 0.7rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-align: left;
+    transition: color 180ms ease, background-color 180ms ease;
+  }
+
+  .home-nav__bank-menu-inner button:hover,
+  .home-nav__bank-menu-inner button:focus-visible {
+    background: var(--bg-card-subtle);
+    color: var(--text-main);
+  }
+
+  .home-nav__bank-menu-inner svg {
+    flex: 0 0 auto;
+    color: var(--accent-peach);
+  }
+
+  .home-nav--mobile {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 1rem;
+  }
+
+  .home-nav--mobile.home-nav--expanded {
+    flex-wrap: wrap;
+  }
+
+  .home-nav--mobile .home-nav__home {
+    flex: 1;
+  }
+
+  .home-nav--mobile .home-nav__drawer {
+    width: 0;
+    flex: 0 0 0;
+  }
+
+  .home-nav--mobile.home-nav--expanded .home-nav__drawer {
+    width: 100%;
+    flex: 0 0 100%;
+    margin-top: 0.15rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .home-nav--mobile .home-nav__drawer-inner {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .home-nav--mobile .home-nav__drawer-inner > button,
+  .home-nav--mobile .home-nav__bank-wrap {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .home-nav--mobile .home-nav__item {
+    width: 100%;
+    padding-inline: 0.55rem;
+    font-size: 0.68rem;
+  }
+
+  .home-nav--mobile .home-nav__item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .home-nav--mobile .home-nav__bank-menu {
+    left: auto;
+    right: 0;
+    transform: translateY(0.25rem);
+  }
+
+  /* Home stays compact and editorial: three vertical sections without cards. */
+  .home-page {
+    color: var(--text-main);
+    text-align: center;
+  }
+
+  .home-title-block {
+    padding: 1rem 0 2.25rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .home-hero-title {
+    max-width: 18ch;
+    margin-inline: auto;
+    color: var(--text-main);
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    line-height: 1.04;
+  }
+
+  .home-section {
+    display: block;
+    padding: 2.25rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .home-section-kicker {
+    color: var(--accent-peach);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .home-section h2 {
+    margin-top: 0.4rem;
+    color: var(--text-main);
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+  }
+
+  .home-card-copy {
+    max-width: 70ch;
+    margin-top: 1.25rem;
+    margin-inline: auto;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .home-card-copy p + p {
+    margin-top: 1rem;
+  }
+
+  .home-vocablab {
+    color: inherit;
+    text-decoration: none;
+    transition: color 180ms ease, border-color 180ms ease;
+  }
+
+  .home-vocablab:hover h2,
+  .home-vocablab:focus-visible h2 {
+    color: var(--accent-peach);
+  }
+
+  .home-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .home-vocablab-mark {
+    display: inline-flex;
+    flex: 0 0 auto;
+    color: var(--accent-peach);
+  }
+
+  .home-card-arrow {
+    margin-left: 0;
+    color: var(--accent-peach);
+    transition: transform 180ms ease;
+  }
+
+  .home-vocablab:hover .home-card-arrow,
+  .home-vocablab:focus-visible .home-card-arrow {
+    transform: translate(0.15rem, -0.15rem);
+  }
+
+  .home-vocablab-copy {
+    max-width: 65ch;
+    margin-top: 1.25rem;
+    margin-inline: auto;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .home-vocablab-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1.25rem;
+    justify-content: center;
+    color: var(--accent-peach);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .settings-theme-option {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    min-height: 3.1rem;
+  }
+
+  .settings-theme-swatch {
+    display: inline-block;
+    width: 1.65rem;
+    height: 1.65rem;
+    flex: 0 0 auto;
+    border: 1px solid currentColor;
+    border-radius: 0.55rem;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.08);
+  }
+
+  .settings-theme-swatch--dark { background: linear-gradient(135deg, #121417 0 52%, #e8a87c 53% 61%, #20242b 62%); color: #8b949e; }
+  .settings-theme-swatch--light { background: linear-gradient(135deg, #f5f7fa 0 52%, #a94f13 53% 61%, #eef1f5 62%); color: #667085; }
+  .settings-theme-swatch--alexandria { background: linear-gradient(135deg, #111213 0 52%, #aeb1b4 53% 61%, #272a2c 62%); color: #aeb1b4; }
+
+  /* Shared semantic primitives for future surfaces and newly imported UI. */
+  .ui-surface { background: var(--theme-surface); color: var(--theme-text); border: 1px solid var(--theme-border); }
+  .ui-card { background: var(--theme-surface-raised); color: var(--theme-text); border: 1px solid var(--theme-border-strong); border-radius: 1rem; }
+  .ui-inset { background: var(--theme-surface-inset); border: 1px solid var(--theme-border); border-radius: 0.8rem; }
+  .ui-control { background: var(--theme-surface-inset); color: var(--theme-text); border: 1px solid var(--theme-border); border-radius: 0.75rem; transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease; }
+  .ui-control:hover, .ui-control:focus-within { border-color: var(--theme-accent); background: var(--theme-surface-raised); }
+  .ui-pill { display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid var(--theme-border); border-radius: 999px; color: var(--theme-text-muted); }
+  .ui-button-primary { background: var(--theme-accent); color: var(--text-dark); border: 1px solid var(--theme-accent); border-radius: 0.75rem; }
+  .ui-button-primary:hover { background: var(--theme-accent-hover); }
+  .ui-button-secondary { background: var(--theme-surface-inset); color: var(--theme-text); border: 1px solid var(--theme-border); border-radius: 0.75rem; }
+  .ui-button-secondary:hover { border-color: var(--theme-accent); background: var(--theme-surface-raised); }
+  .ui-metric { background: var(--theme-surface-inset); border: 1px solid var(--theme-border); border-radius: 0.85rem; }
+  .ui-option { background: var(--theme-surface-raised); color: var(--theme-text); border: 1px solid var(--theme-border); border-radius: 0.8rem; }
+  .ui-option[data-selected='true'], .ui-option.is-selected { border-color: var(--theme-accent); background: var(--theme-accent-soft); }
+  .ui-response--correct { color: var(--theme-success); border-color: var(--theme-success); }
+  .ui-response--wrong { color: var(--theme-danger); border-color: var(--theme-danger); }
+  .ui-response--warning { color: var(--theme-warning); border-color: var(--theme-warning); }
+
+  :root[data-theme='light'] .home-nav {
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  }
+
+  .editorial-prose {
+    max-width: var(--content-measure);
+    color: #e7e2dc;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.04rem;
+    line-height: 1.82;
+  }
+
+  .editorial-prose p + p {
+    margin-top: 1.25em;
+  }
+
+  .editorial-prose blockquote {
+    margin: 1.25rem 0;
+    border-inline-start: 2px solid var(--accent-peach);
+    padding-inline-start: 1rem;
+    color: #d7cfc7;
+  }
+
+  :root[data-theme='light'] .editorial-prose {
+    color: var(--text-body);
+  }
+
+  :root[data-theme='light'] .editorial-prose blockquote {
+    color: #475467;
+  }
+
+  .quiet-divider {
+    border-color: rgba(148, 163, 184, 0.16);
+  }
+}
+
+/*
+ * The application intentionally keeps its dark palette in component markup so
+ * the default theme remains stable. These light-theme overrides translate the
+ * same utility classes to semantic light tokens, including the question bank,
+ * tables, import dialog and responsive navigation.
+ */
+@layer components {
+  :root[data-theme='light'] .bg-\[\#121417\],
+  :root[data-theme='light'] .bg-\[\#121417\]\/90 { background-color: var(--bg-base) !important; }
+  :root[data-theme='light'] .bg-\[\#181b20\],
+  :root[data-theme='light'] .bg-\[\#181b20\]\/70,
+  :root[data-theme='light'] .bg-\[\#181b20\]\/90,
+  :root[data-theme='light'] .bg-\[\#181b20\]\/80,
+  :root[data-theme='light'] .bg-\[\#181b1f\] { background-color: var(--bg-surface) !important; }
+  :root[data-theme='light'] .bg-\[\#14161a\],
+  :root[data-theme='light'] .bg-\[\#15181d\],
+  :root[data-theme='light'] .bg-\[\#17191d\],
+  :root[data-theme='light'] .bg-\[\#1a1d22\] { background-color: var(--bg-inset) !important; }
+  :root[data-theme='light'] .bg-\[\#1b1f25\],
+  :root[data-theme='light'] .bg-\[\#1b1f25\]\/60,
+  :root[data-theme='light'] .bg-\[\#1b1e23\],
+  :root[data-theme='light'] .bg-\[\#20242b\],
+  :root[data-theme='light'] .bg-\[\#1f2329\] { background-color: var(--bg-card) !important; }
+  :root[data-theme='light'] .bg-\[\#1d2025\],
+  :root[data-theme='light'] .bg-\[\#1d2025\]\/65,
+  :root[data-theme='light'] .bg-\[\#242930\],
+  :root[data-theme='light'] .bg-\[\#262b32\],
+  :root[data-theme='light'] .bg-\[\#262c35\],
+  :root[data-theme='light'] .bg-\[\#282e37\],
+  :root[data-theme='light'] .bg-\[\#282e38\],
+  :root[data-theme='light'] .bg-\[\#2a3038\] { background-color: var(--bg-card-subtle) !important; }
+  :root[data-theme='light'] .bg-\[\#1a1d23\],
+  :root[data-theme='light'] .bg-\[\#1f242b\],
+  :root[data-theme='light'] .bg-\[\#20252c\],
+  :root[data-theme='light'] .bg-\[\#20252d\],
+  :root[data-theme='light'] .bg-\[\#38261e\] { background-color: var(--bg-hover) !important; }
+  :root[data-theme='light'] .bg-\[\#2a1d17\],
+  :root[data-theme='light'] .bg-\[\#2a2417\],
+  :root[data-theme='light'] .bg-\[\#e8a87c\]\/20 { background-color: var(--accent-peach-muted) !important; }
+  :root[data-theme='light'] .bg-\[\#182a22\] { background-color: var(--success-soft) !important; }
+  :root[data-theme='light'] .bg-\[\#2f1c1f\] { background-color: var(--danger-soft) !important; }
+  :root[data-theme='light'] .bg-\[\#e8a87c\] { background-color: var(--accent-fill) !important; }
+  :root[data-theme='light'] .bg-\[\#f0b58e\] { background-color: var(--accent-fill-hover) !important; }
+  :root[data-theme='light'] .bg-black\/75 { background-color: rgba(15, 23, 42, 0.48) !important; }
+
+  :root[data-theme='light'] .text-\[\#f3ede6\],
+  :root[data-theme='light'] .text-\[\#fff7ed\] { color: var(--text-strong) !important; }
+  :root[data-theme='light'] .text-\[\#d1d5db\],
+  :root[data-theme='light'] .text-\[\#d7cfc7\],
+  :root[data-theme='light'] .text-\[\#e4dfd9\],
+  :root[data-theme='light'] .text-\[\#e7e2dc\] { color: var(--text-body) !important; }
+  :root[data-theme='light'] .text-\[\#9ca3af\],
+  :root[data-theme='light'] .text-\[\#8b949e\],
+  :root[data-theme='light'] .text-\[\#a8a29e\],
+  :root[data-theme='light'] .text-\[\#6b7280\],
+  :root[data-theme='light'] .text-\[\#525b68\] { color: var(--text-muted) !important; }
+  :root[data-theme='light'] .text-\[\#4b5563\] { color: #596579 !important; }
+  :root[data-theme='light'] .text-\[\#e8a87c\] { color: var(--accent-peach) !important; }
+  :root[data-theme='light'] .text-\[\#f0b58e\] { color: var(--accent-peach-hover) !important; }
+  :root[data-theme='light'] .text-\[\#16181b\] { color: var(--text-dark) !important; }
+  :root[data-theme='light'] .text-\[\#34d399\],
+  :root[data-theme='light'] .text-\[\#d1fae5\] { color: var(--success) !important; }
+  :root[data-theme='light'] .text-\[\#f87171\] { color: var(--danger) !important; }
+  :root[data-theme='light'] .text-\[\#fbbf24\],
+  :root[data-theme='light'] .text-\[\#fde68a\],
+  :root[data-theme='light'] .text-\[\#fef3c7\] { color: var(--warning) !important; }
+
+  :root[data-theme='light'] .border-\[\#2e353e\],
+  :root[data-theme='light'] .border-\[\#2e353e\]\/40,
+  :root[data-theme='light'] .border-\[\#2e353e\]\/60,
+  :root[data-theme='light'] .border-\[\#2e353e\]\/80 { border-color: var(--border-subtle) !important; }
+  :root[data-theme='light'] .border-\[\#343c46\],
+  :root[data-theme='light'] .border-\[\#343c46\]\/30,
+  :root[data-theme='light'] .border-\[\#343c46\]\/40,
+  :root[data-theme='light'] .border-\[\#343c46\]\/60,
+  :root[data-theme='light'] .border-\[\#343c46\]\/70,
+  :root[data-theme='light'] .border-\[\#343c46\]\/80 { border-color: var(--border-card) !important; }
+  :root[data-theme='light'] .border-\[\#262b33\],
+  :root[data-theme='light'] .border-\[\#262b33\]\/60,
+  :root[data-theme='light'] .border-\[\#262c33\] { border-color: #e4e7ec !important; }
+  :root[data-theme='light'] .border-\[\#3d4652\],
+  :root[data-theme='light'] .border-\[\#4a5563\] { border-color: #aeb8c5 !important; }
+  :root[data-theme='light'] .border-\[\#e8a87c\],
+  :root[data-theme='light'] .border-\[\#e8a87c\]\/30,
+  :root[data-theme='light'] .border-\[\#e8a87c\]\/35,
+  :root[data-theme='light'] .border-\[\#e8a87c\]\/40,
+  :root[data-theme='light'] .border-\[\#e8a87c\]\/60 { border-color: var(--accent-peach) !important; }
+  :root[data-theme='light'] .border-\[\#34d399\],
+  :root[data-theme='light'] .border-\[\#34d399\]\/30,
+  :root[data-theme='light'] .border-\[\#34d399\]\/40 { border-color: var(--success) !important; }
+  :root[data-theme='light'] .border-\[\#f87171\],
+  :root[data-theme='light'] .border-\[\#f87171\]\/20,
+  :root[data-theme='light'] .border-\[\#f87171\]\/30,
+  :root[data-theme='light'] .border-\[\#f87171\]\/40 { border-color: var(--danger) !important; }
+  :root[data-theme='light'] .border-\[\#fbbf24\],
+  :root[data-theme='light'] .border-\[\#fbbf24\]\/25,
+  :root[data-theme='light'] .border-\[\#fbbf24\]\/40 { border-color: var(--warning) !important; }
+
+  :root[data-theme='light'] .hover\:bg-\[\#1a1d23\]:hover,
+  :root[data-theme='light'] .hover\:bg-\[\#1f242b\]:hover,
+  :root[data-theme='light'] .hover\:bg-\[\#20242b\]:hover,
+  :root[data-theme='light'] .hover\:bg-\[\#20252c\]:hover,
+  :root[data-theme='light'] .hover\:bg-\[\#20252d\]:hover,
+  :root[data-theme='light'] .hover\:bg-\[\#242930\]:hover,
+  :root[data-theme='light'] .hover\:bg-\[\#262c35\]:hover,
+  :root[data-theme='light'] .hover\:bg-\[\#262c35\]:focus-visible:hover,
+  :root[data-theme='light'] .hover\:bg-\[\#282e37\]:hover { background-color: var(--bg-hover) !important; }
+  :root[data-theme='light'] .hover\:bg-\[\#f0b58e\]:hover { background-color: var(--accent-fill-hover) !important; }
+  :root[data-theme='light'] .hover\:bg-\[\#fbbf24\]\/10:hover { background-color: var(--warning-soft) !important; }
+  :root[data-theme='light'] .hover\:text-\[\#f3ede6\]:hover { color: var(--text-strong) !important; }
+  :root[data-theme='light'] .hover\:text-\[\#e8a87c\]:hover { color: var(--accent-peach) !important; }
+  :root[data-theme='light'] .hover\:text-\[\#f0b58e\]:hover { color: var(--accent-peach-hover) !important; }
+  :root[data-theme='light'] .focus\:border-\[\#e8a87c\]:focus { border-color: var(--accent-peach) !important; }
+  :root[data-theme='light'] .decoration-\[\#e8a87c\] { text-decoration-color: var(--accent-peach) !important; }
+
+  :root[data-theme='light'] input,
+  :root[data-theme='light'] select,
+  :root[data-theme='light'] textarea { color-scheme: light; }
+  :root[data-theme='light'] ::selection {
+    background-color: #fed7aa !important;
+    color: #1f2937 !important;
+  }
+  :root[data-theme='light'] ::-moz-selection {
+    background-color: #fed7aa !important;
+    color: #1f2937 !important;
+  }
+}
+
+/* Alexandria translates the existing utility palette without changing the
+   source markup. This keeps the Original themes pixel-stable and makes the
+   new visual a single, reversible theme choice. */
+@layer components {
+  :root[data-theme='alexandria'] body {
+    background-image: radial-gradient(circle at 50% -18%, rgba(91, 86, 112, 0.18) 0%, var(--bg-base) 56%);
+  }
+
+  :root[data-theme='alexandria'] .site-header {
+    background: linear-gradient(180deg, rgba(18, 19, 26, 0.98), rgba(18, 19, 26, 0.86) 78%, transparent);
+  }
+
+  :root[data-theme='alexandria'] .home-nav {
+    background: rgba(23, 25, 34, 0.94);
+    box-shadow: 0 12px 30px rgba(4, 5, 10, 0.34);
+  }
+
+  :root[data-theme='alexandria'] .bg-\[\#121417\],
+  :root[data-theme='alexandria'] .bg-\[\#121417\]\/90 { background-color: var(--bg-base) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#181b20\],
+  :root[data-theme='alexandria'] .bg-\[\#181b20\]\/70,
+  :root[data-theme='alexandria'] .bg-\[\#181b20\]\/80,
+  :root[data-theme='alexandria'] .bg-\[\#181b20\]\/90,
+  :root[data-theme='alexandria'] .bg-\[\#181b1f\] { background-color: var(--bg-surface) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#14161a\],
+  :root[data-theme='alexandria'] .bg-\[\#15181d\],
+  :root[data-theme='alexandria'] .bg-\[\#17191d\],
+  :root[data-theme='alexandria'] .bg-\[\#1a1d22\] { background-color: var(--bg-inset) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#1b1e23\],
+  :root[data-theme='alexandria'] .bg-\[\#1b1f25\],
+  :root[data-theme='alexandria'] .bg-\[\#1b1f25\]\/60,
+  :root[data-theme='alexandria'] .bg-\[\#1f2329\],
+  :root[data-theme='alexandria'] .bg-\[\#20242b\] { background-color: var(--bg-card) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#1d2025\],
+  :root[data-theme='alexandria'] .bg-\[\#1d2025\]\/65,
+  :root[data-theme='alexandria'] .bg-\[\#242930\],
+  :root[data-theme='alexandria'] .bg-\[\#262b32\],
+  :root[data-theme='alexandria'] .bg-\[\#262c35\],
+  :root[data-theme='alexandria'] .bg-\[\#282e37\],
+  :root[data-theme='alexandria'] .bg-\[\#282e38\],
+  :root[data-theme='alexandria'] .bg-\[\#2a3038\] { background-color: var(--bg-card-subtle) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#1a1d23\],
+  :root[data-theme='alexandria'] .bg-\[\#1f242b\],
+  :root[data-theme='alexandria'] .bg-\[\#20252c\],
+  :root[data-theme='alexandria'] .bg-\[\#20252d\],
+  :root[data-theme='alexandria'] .bg-\[\#38261e\] { background-color: var(--bg-hover) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#2a1d17\],
+  :root[data-theme='alexandria'] .bg-\[\#2a2417\],
+  :root[data-theme='alexandria'] .bg-\[\#e8a87c\]\/20 { background-color: var(--accent-peach-muted) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#182a22\] { background-color: var(--success-soft) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#2f1c1f\] { background-color: var(--danger-soft) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#e8a87c\] { background-color: var(--accent-fill) !important; }
+  :root[data-theme='alexandria'] .bg-\[\#f0b58e\] { background-color: var(--accent-fill-hover) !important; }
+  :root[data-theme='alexandria'] .bg-black\/75 { background-color: rgba(5, 10, 18, 0.78) !important; }
+
+  :root[data-theme='alexandria'] .text-\[\#f3ede6\],
+  :root[data-theme='alexandria'] .text-\[\#fff7ed\] { color: var(--text-strong) !important; }
+  :root[data-theme='alexandria'] .text-\[\#d1d5db\],
+  :root[data-theme='alexandria'] .text-\[\#d7cfc7\],
+  :root[data-theme='alexandria'] .text-\[\#e4dfd9\],
+  :root[data-theme='alexandria'] .text-\[\#e7e2dc\] { color: var(--text-body) !important; }
+  :root[data-theme='alexandria'] .text-\[\#9ca3af\],
+  :root[data-theme='alexandria'] .text-\[\#8b949e\],
+  :root[data-theme='alexandria'] .text-\[\#a8a29e\],
+  :root[data-theme='alexandria'] .text-\[\#6b7280\],
+  :root[data-theme='alexandria'] .text-\[\#525b68\] { color: var(--text-muted) !important; }
+  :root[data-theme='alexandria'] .text-\[\#4b5563\] { color: var(--text-faint) !important; }
+  :root[data-theme='alexandria'] .text-\[\#e8a87c\] { color: var(--accent-peach) !important; }
+  :root[data-theme='alexandria'] .text-\[\#f0b58e\] { color: var(--accent-peach-hover) !important; }
+  :root[data-theme='alexandria'] .text-\[\#16181b\] { color: var(--text-dark) !important; }
+  :root[data-theme='alexandria'] .text-\[\#34d399\],
+  :root[data-theme='alexandria'] .text-\[\#d1fae5\] { color: var(--success) !important; }
+  :root[data-theme='alexandria'] .text-\[\#f87171\] { color: var(--danger) !important; }
+  :root[data-theme='alexandria'] .text-\[\#fbbf24\],
+  :root[data-theme='alexandria'] .text-\[\#fde68a\],
+  :root[data-theme='alexandria'] .text-\[\#fef3c7\] { color: var(--warning) !important; }
+
+  :root[data-theme='alexandria'] .border-\[\#2e353e\],
+  :root[data-theme='alexandria'] .border-\[\#2e353e\]\/40,
+  :root[data-theme='alexandria'] .border-\[\#2e353e\]\/60,
+  :root[data-theme='alexandria'] .border-\[\#2e353e\]\/80 { border-color: var(--border-subtle) !important; }
+  :root[data-theme='alexandria'] .border-\[\#343c46\],
+  :root[data-theme='alexandria'] .border-\[\#343c46\]\/30,
+  :root[data-theme='alexandria'] .border-\[\#343c46\]\/40,
+  :root[data-theme='alexandria'] .border-\[\#343c46\]\/60,
+  :root[data-theme='alexandria'] .border-\[\#343c46\]\/70,
+  :root[data-theme='alexandria'] .border-\[\#343c46\]\/80 { border-color: var(--border-card) !important; }
+  :root[data-theme='alexandria'] .border-\[\#262b33\],
+  :root[data-theme='alexandria'] .border-\[\#262b33\]\/60,
+  :root[data-theme='alexandria'] .border-\[\#262c33\] { border-color: var(--border-subtle) !important; }
+  :root[data-theme='alexandria'] .border-\[\#3d4652\],
+  :root[data-theme='alexandria'] .border-\[\#4a5563\] { border-color: var(--border-card) !important; }
+  :root[data-theme='alexandria'] .border-\[\#e8a87c\],
+  :root[data-theme='alexandria'] .border-\[\#e8a87c\]\/30,
+  :root[data-theme='alexandria'] .border-\[\#e8a87c\]\/35,
+  :root[data-theme='alexandria'] .border-\[\#e8a87c\]\/40,
+  :root[data-theme='alexandria'] .border-\[\#e8a87c\]\/60 { border-color: var(--accent-peach) !important; }
+  :root[data-theme='alexandria'] .border-\[\#34d399\],
+  :root[data-theme='alexandria'] .border-\[\#34d399\]\/30,
+  :root[data-theme='alexandria'] .border-\[\#34d399\]\/40 { border-color: var(--success) !important; }
+  :root[data-theme='alexandria'] .border-\[\#f87171\],
+  :root[data-theme='alexandria'] .border-\[\#f87171\]\/20,
+  :root[data-theme='alexandria'] .border-\[\#f87171\]\/30,
+  :root[data-theme='alexandria'] .border-\[\#f87171\]\/40 { border-color: var(--danger) !important; }
+  :root[data-theme='alexandria'] .border-\[\#fbbf24\],
+  :root[data-theme='alexandria'] .border-\[\#fbbf24\]\/25,
+  :root[data-theme='alexandria'] .border-\[\#fbbf24\]\/40 { border-color: var(--warning) !important; }
+
+  :root[data-theme='alexandria'] .hover\:bg-\[\#1a1d23\]:hover,
+  :root[data-theme='alexandria'] .hover\:bg-\[\#1f242b\]:hover,
+  :root[data-theme='alexandria'] .hover\:bg-\[\#20242b\]:hover,
+  :root[data-theme='alexandria'] .hover\:bg-\[\#20252c\]:hover,
+  :root[data-theme='alexandria'] .hover\:bg-\[\#20252d\]:hover,
+  :root[data-theme='alexandria'] .hover\:bg-\[\#242930\]:hover,
+  :root[data-theme='alexandria'] .hover\:bg-\[\#262c35\]:hover,
+  :root[data-theme='alexandria'] .hover\:bg-\[\#282e37\]:hover { background-color: var(--bg-hover) !important; }
+  :root[data-theme='alexandria'] .hover\:bg-\[\#f0b58e\]:hover { background-color: var(--accent-fill-hover) !important; }
+  :root[data-theme='alexandria'] .hover\:bg-\[\#fbbf24\]\/10:hover { background-color: var(--warning-soft) !important; }
+  :root[data-theme='alexandria'] .hover\:text-\[\#f3ede6\]:hover { color: var(--text-strong) !important; }
+  :root[data-theme='alexandria'] .hover\:text-\[\#e8a87c\]:hover { color: var(--accent-peach) !important; }
+  :root[data-theme='alexandria'] .hover\:text-\[\#f0b58e\]:hover { color: var(--accent-peach-hover) !important; }
+  :root[data-theme='alexandria'] .focus\:border-\[\#e8a87c\]:focus { border-color: var(--accent-peach) !important; }
+  :root[data-theme='alexandria'] .decoration-\[\#e8a87c\] { text-decoration-color: var(--accent-peach) !important; }
+  :root[data-theme='alexandria'] .accent-\[\#e8a87c\] { accent-color: var(--accent-peach) !important; }
+
+  :root[data-theme='alexandria'] input,
+  :root[data-theme='alexandria'] select,
+  :root[data-theme='alexandria'] textarea { color-scheme: dark; }
+  :root[data-theme='alexandria'] ::selection,
+  :root[data-theme='alexandria'] ::-moz-selection { background-color: var(--accent-peach-muted) !important; color: var(--text-strong) !important; }
+  :root[data-theme='alexandria'] ::-webkit-scrollbar-thumb { background: var(--border-card); }
+  :root[data-theme='alexandria'] .table-input:focus { border-color: var(--accent-peach); background-color: var(--bg-hover); }
+}
+
+.alexandria-home-sky { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -40,6 +848,14 @@
 ::-webkit-scrollbar-thumb {
   background: #2e353e;
   border-radius: 4px;
+}
+
+:root[data-theme='light'] ::-webkit-scrollbar-thumb {
+  background: #c4ccd6;
+}
+
+:root[data-theme='light'] ::-webkit-scrollbar-thumb:hover {
+  background: #aeb8c5;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3d4652;
@@ -61,4 +877,658 @@
 ::-moz-selection {
   background-color: #383f4a !important;
   color: #f3ede6 !important;
+}
+
+/* Alexandria Classic -----------------------------------------------------
+   The classic variants intentionally share the same semantic palette hooks.
+   This keeps study surfaces quiet while allowing Home to carry the richer
+   architectural illustration. */
+:root[data-theme='alexandria-dark'] {
+  color-scheme: dark;
+  --bg-base: #111213;
+  --bg-surface: #17191a;
+  --bg-card: #1e2022;
+  --bg-card-subtle: #272a2c;
+  --bg-inset: #1a1c1d;
+  --bg-hover: #2e3133;
+  --border-subtle: transparent;
+  --border-card: transparent;
+  --accent-peach: #aeb1b4;
+  --accent-peach-hover: #c7c9cc;
+  --accent-peach-muted: rgba(174, 177, 180, 0.12);
+  --accent-fill: #4a83d0;
+  --accent-fill-hover: #5e92da;
+  --success: #83b6a0;
+  --success-soft: #1e352e;
+  --danger: #dd8e92;
+  --danger-soft: #3a252d;
+  --warning: #d8c28a;
+  --warning-soft: #39321e;
+  --text-main: #f0f1f2;
+  --text-strong: #ffffff;
+  --text-body: #dde0e2;
+  --text-muted: #a8acb0;
+  --text-faint: #858a8e;
+  --text-dark: #17191a;
+  --focus-ring: rgba(219, 221, 223, 0.9);
+  --accent-blue: #4a83d0;
+  --accent-blue-strong: #5e92da;
+  --accent-blue-soft: rgba(74, 131, 208, 0.12);
+  --theme-bg: var(--bg-base);
+  --theme-surface: var(--bg-surface);
+  --theme-surface-raised: var(--bg-card);
+  --theme-surface-inset: var(--bg-card-subtle);
+  --theme-border: var(--border-subtle);
+  --theme-border-strong: var(--border-card);
+  --theme-text: var(--text-main);
+  --theme-text-muted: var(--text-muted);
+  --theme-text-faint: var(--text-faint);
+  --theme-accent: var(--accent-peach);
+  --theme-accent-hover: var(--accent-peach-hover);
+  --theme-accent-soft: var(--accent-peach-muted);
+  --theme-success: var(--success);
+  --theme-danger: var(--danger);
+  --theme-warning: var(--warning);
+  --question-accent: var(--accent-blue);
+}
+
+:root[data-theme='alexandria-light'] {
+  color-scheme: light;
+  --bg-base: #eef0f1;
+  --bg-surface: #f3f4f4;
+  --bg-card: #f7f8f8;
+  --bg-card-subtle: #e7e9ea;
+  --bg-inset: #f1f2f2;
+  --bg-hover: #e1e3e4;
+  --border-subtle: transparent;
+  --border-card: transparent;
+  --accent-peach: #55595d;
+  --accent-peach-hover: #3e4246;
+  --accent-peach-muted: rgba(85, 89, 93, 0.11);
+  --accent-fill: #376fae;
+  --accent-fill-hover: #2f6098;
+  --success: #2f725c;
+  --success-soft: #e2f0e8;
+  --danger: #a83f49;
+  --danger-soft: #f8e5e4;
+  --warning: #87601d;
+  --warning-soft: #f8edd3;
+  --text-main: #292b2d;
+  --text-strong: #151718;
+  --text-body: #414548;
+  --text-muted: #686d71;
+  --text-faint: #858a8e;
+  --text-dark: #ffffff;
+  --focus-ring: rgba(63, 67, 71, 0.72);
+  --accent-blue: #376fae;
+  --accent-blue-strong: #2f6098;
+  --accent-blue-soft: rgba(55, 111, 174, 0.11);
+  --theme-bg: var(--bg-base);
+  --theme-surface: var(--bg-surface);
+  --theme-surface-raised: var(--bg-card);
+  --theme-surface-inset: var(--bg-card-subtle);
+  --theme-border: var(--border-subtle);
+  --theme-border-strong: var(--border-card);
+  --theme-text: var(--text-main);
+  --theme-text-muted: var(--text-muted);
+  --theme-text-faint: var(--text-faint);
+  --theme-accent: var(--accent-peach);
+  --theme-accent-hover: var(--accent-peach-hover);
+  --theme-accent-soft: var(--accent-peach-muted);
+  --theme-success: var(--success);
+  --theme-danger: var(--danger);
+  --theme-warning: var(--warning);
+  --question-accent: var(--accent-blue);
+}
+
+:root[data-theme^='alexandria'] body {
+  background-color: var(--bg-base);
+  background-image: none !important;
+}
+
+:root[data-theme^='alexandria'] .site-header {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-base) 98%, transparent), color-mix(in srgb, var(--bg-base) 84%, transparent) 78%, transparent);
+}
+
+:root[data-theme^='alexandria'] .home-nav {
+  background: color-mix(in srgb, var(--bg-surface) 94%, transparent);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--bg-base) 26%, transparent);
+}
+
+/* Translate legacy utility colors used by older study components. */
+:root[data-theme^='alexandria'] .bg-\[\#121417\],
+:root[data-theme^='alexandria'] .bg-\[\#121417\]\/90 { background-color: var(--bg-base) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#181b20\],
+:root[data-theme^='alexandria'] .bg-\[\#181b20\]\/70,
+:root[data-theme^='alexandria'] .bg-\[\#181b20\]\/80,
+:root[data-theme^='alexandria'] .bg-\[\#181b20\]\/90,
+:root[data-theme^='alexandria'] .bg-\[\#181b1f\] { background-color: var(--bg-surface) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#14161a\],
+:root[data-theme^='alexandria'] .bg-\[\#15181d\],
+:root[data-theme^='alexandria'] .bg-\[\#17191d\],
+:root[data-theme^='alexandria'] .bg-\[\#1a1d22\] { background-color: var(--bg-inset) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#1b1e23\],
+:root[data-theme^='alexandria'] .bg-\[\#1b1f25\],
+:root[data-theme^='alexandria'] .bg-\[\#1b1f25\]\/60,
+:root[data-theme^='alexandria'] .bg-\[\#1f2329\],
+:root[data-theme^='alexandria'] .bg-\[\#20242b\] { background-color: var(--bg-card) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#1d2025\],
+:root[data-theme^='alexandria'] .bg-\[\#1d2025\]\/65,
+:root[data-theme^='alexandria'] .bg-\[\#242930\],
+:root[data-theme^='alexandria'] .bg-\[\#262b32\],
+:root[data-theme^='alexandria'] .bg-\[\#262c35\],
+:root[data-theme^='alexandria'] .bg-\[\#282e37\],
+:root[data-theme^='alexandria'] .bg-\[\#282e38\],
+:root[data-theme^='alexandria'] .bg-\[\#2a3038\] { background-color: var(--bg-card-subtle) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#2a1d17\],
+:root[data-theme^='alexandria'] .bg-\[\#2a2417\],
+:root[data-theme^='alexandria'] .bg-\[\#e8a87c\]\/20 { background-color: var(--accent-peach-muted) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#182a22\] { background-color: var(--success-soft) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#2f1c1f\] { background-color: var(--danger-soft) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#e8a87c\] { background-color: var(--accent-fill) !important; }
+:root[data-theme^='alexandria'] .bg-\[\#f0b58e\] { background-color: var(--accent-fill-hover) !important; }
+
+:root[data-theme^='alexandria'] .text-\[\#f3ede6\],
+:root[data-theme^='alexandria'] .text-\[\#fff7ed\] { color: var(--text-strong) !important; }
+:root[data-theme^='alexandria'] .text-\[\#d1d5db\],
+:root[data-theme^='alexandria'] .text-\[\#d7cfc7\],
+:root[data-theme^='alexandria'] .text-\[\#e4dfd9\],
+:root[data-theme^='alexandria'] .text-\[\#e7e2dc\] { color: var(--text-body) !important; }
+:root[data-theme^='alexandria'] .text-\[\#9ca3af\],
+:root[data-theme^='alexandria'] .text-\[\#8b949e\],
+:root[data-theme^='alexandria'] .text-\[\#a8a29e\],
+:root[data-theme^='alexandria'] .text-\[\#6b7280\],
+:root[data-theme^='alexandria'] .text-\[\#525b68\] { color: var(--text-muted) !important; }
+:root[data-theme^='alexandria'] .text-\[\#4b5563\] { color: var(--text-faint) !important; }
+:root[data-theme^='alexandria'] .text-\[\#e8a87c\] { color: var(--accent-peach) !important; }
+:root[data-theme^='alexandria'] .text-\[\#f0b58e\] { color: var(--accent-peach-hover) !important; }
+:root[data-theme^='alexandria'] .text-\[\#16181b\] { color: var(--text-dark) !important; }
+:root[data-theme^='alexandria'] .text-\[\#34d399\],
+:root[data-theme^='alexandria'] .text-\[\#d1fae5\] { color: var(--success) !important; }
+:root[data-theme^='alexandria'] .text-\[\#f87171\] { color: var(--danger) !important; }
+:root[data-theme^='alexandria'] .text-\[\#fbbf24\],
+:root[data-theme^='alexandria'] .text-\[\#fde68a\],
+:root[data-theme^='alexandria'] .text-\[\#fef3c7\] { color: var(--warning) !important; }
+
+:root[data-theme^='alexandria'] .border-\[\#2e353e\],
+:root[data-theme^='alexandria'] .border-\[\#2e353e\]\/40,
+:root[data-theme^='alexandria'] .border-\[\#2e353e\]\/60,
+:root[data-theme^='alexandria'] .border-\[\#2e353e\]\/80 { border-color: var(--border-subtle) !important; }
+:root[data-theme^='alexandria'] .border-\[\#343c46\],
+:root[data-theme^='alexandria'] .border-\[\#343c46\]\/30,
+:root[data-theme^='alexandria'] .border-\[\#343c46\]\/40,
+:root[data-theme^='alexandria'] .border-\[\#343c46\]\/60,
+:root[data-theme^='alexandria'] .border-\[\#343c46\]\/70,
+:root[data-theme^='alexandria'] .border-\[\#343c46\]\/80 { border-color: var(--border-card) !important; }
+:root[data-theme^='alexandria'] .border-\[\#e8a87c\],
+:root[data-theme^='alexandria'] .border-\[\#e8a87c\]\/30,
+:root[data-theme^='alexandria'] .border-\[\#e8a87c\]\/35,
+:root[data-theme^='alexandria'] .border-\[\#e8a87c\]\/40,
+:root[data-theme^='alexandria'] .border-\[\#e8a87c\]\/60 { border-color: var(--accent-peach) !important; }
+:root[data-theme^='alexandria'] .border-\[\#34d399\],
+:root[data-theme^='alexandria'] .border-\[\#34d399\]\/30,
+:root[data-theme^='alexandria'] .border-\[\#34d399\]\/40 { border-color: var(--success) !important; }
+:root[data-theme^='alexandria'] .border-\[\#f87171\],
+:root[data-theme^='alexandria'] .border-\[\#f87171\]\/20,
+:root[data-theme^='alexandria'] .border-\[\#f87171\]\/30,
+:root[data-theme^='alexandria'] .border-\[\#f87171\]\/40 { border-color: var(--danger) !important; }
+:root[data-theme^='alexandria'] .border-\[\#fbbf24\],
+:root[data-theme^='alexandria'] .border-\[\#fbbf24\]\/25,
+:root[data-theme^='alexandria'] .border-\[\#fbbf24\]\/40 { border-color: var(--warning) !important; }
+
+:root[data-theme^='alexandria'] .accent-\[\#e8a87c\] { accent-color: var(--accent-peach) !important; }
+:root[data-theme^='alexandria'] input,
+:root[data-theme^='alexandria'] select,
+:root[data-theme^='alexandria'] textarea { color-scheme: inherit; }
+:root[data-theme^='alexandria'] ::selection,
+:root[data-theme^='alexandria'] ::-moz-selection { background-color: var(--accent-peach-muted) !important; color: var(--text-strong) !important; }
+:root[data-theme^='alexandria'] .table-input:focus { border-color: var(--accent-peach); background-color: var(--bg-hover); }
+
+/* Architectural Home only. */
+:root[data-theme^='alexandria'] .home-page { position: relative; isolation: isolate; overflow: hidden; }
+:root[data-theme^='alexandria'] .home-title-block,
+:root[data-theme^='alexandria'] .home-section { position: relative; z-index: 1; }
+:root[data-theme^='alexandria'] .alexandria-home-sky {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+}
+:root[data-theme^='alexandria'] .alexandria-home-sky::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  background-image: repeating-linear-gradient(0deg, transparent 0 3px, color-mix(in srgb, var(--text-main) 5%, transparent) 4px);
+  mix-blend-mode: soft-light;
+}
+:root[data-theme='alexandria-light'] .alexandria-home-sky::before { opacity: 0.24; }
+:root[data-theme^='alexandria'] .alexandria-philosopher {
+  position: absolute;
+  width: clamp(8.5rem, 19vw, 14rem);
+  top: 0.8rem;
+  right: 1%;
+  opacity: 0.64;
+  filter: saturate(0.7) contrast(0.94) drop-shadow(0 1.35rem 1.25rem color-mix(in srgb, var(--bg-base) 72%, transparent));
+  animation: alexandria-architecture-float 15s ease-in-out infinite;
+}
+:root[data-theme='alexandria-light'] .alexandria-philosopher { opacity: 0.5; filter: saturate(0.56) contrast(0.9) drop-shadow(0 1.35rem 1.25rem rgba(72, 52, 60, 0.18)); }
+:root[data-theme^='alexandria'] .alexandria-muse {
+  position: absolute;
+  width: clamp(6rem, 12vw, 9rem);
+  left: 50%;
+  right: auto;
+  bottom: -1.2rem;
+  opacity: 0.34;
+  transform: translateX(-50%);
+  filter: saturate(0.68) contrast(0.92) drop-shadow(0 1rem 1rem color-mix(in srgb, var(--bg-base) 70%, transparent));
+  animation: alexandria-muse-float 16s ease-in-out -3s infinite reverse;
+}
+:root[data-theme='alexandria-light'] .alexandria-muse { opacity: 0.28; filter: saturate(0.54) contrast(0.88) drop-shadow(0 1rem 1rem rgba(72, 52, 60, 0.16)); }
+@keyframes alexandria-architecture-float { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(-0.25rem, 0.35rem, 0); } }
+@keyframes alexandria-muse-float { 0%, 100% { transform: translate3d(-50%, 0, 0); } 50% { transform: translate3d(-50%, 0.35rem, 0); } }
+:root[data-theme^='alexandria'] .home-hero-title { letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-strong); }
+:root[data-theme^='alexandria'] .home-title-block,
+:root[data-theme^='alexandria'] .home-section { border-color: color-mix(in srgb, var(--accent-peach) 24%, transparent); }
+:root[data-theme^='alexandria'] .home-section-kicker { color: var(--accent-peach); letter-spacing: 0.18em; }
+:root[data-theme^='alexandria'] .home-card-copy,
+:root[data-theme^='alexandria'] .home-vocablab-copy { color: var(--text-body); }
+:root[data-theme^='alexandria'] .settings-theme-swatch--alexandria-dark { background: linear-gradient(135deg, #111213 0 52%, #4a83d0 53% 61%, #272a2c 62%); color: #4a83d0; }
+:root[data-theme^='alexandria'] .settings-theme-swatch--alexandria-light { background: linear-gradient(135deg, #eef0f1 0 52%, #376fae 53% 61%, #e7e9ea 62%); color: #376fae; }
+:root[data-theme^='alexandria'] .settings-theme-option[class*='border-\\[\\#e8a87c\\]'],
+:root[data-theme^='alexandria'] .settings-theme-option[aria-pressed='true'] { border-color: var(--theme-accent) !important; background: var(--theme-accent-soft) !important; color: var(--theme-text) !important; }
+
+@media (max-width: 640px) {
+  :root[data-theme^='alexandria'] .alexandria-philosopher { width: 8rem; top: 0.55rem; right: -1rem; opacity: 0.4; }
+  :root[data-theme^='alexandria'] .alexandria-muse { width: 6rem; left: 50%; right: auto; bottom: -1.4rem; opacity: 0.24; }
+}
+
+/* Question-bank filter refinement (Alexandria only).  The Original themes
+   intentionally keep their existing utility-driven appearance. */
+:root[data-theme^='alexandria'] {
+  --filter-card-bg: var(--bg-card);
+  --filter-card-border: transparent;
+  --filter-item-bg: color-mix(in srgb, var(--bg-card) 84%, var(--bg-surface));
+  --filter-item-border: transparent;
+  --filter-item-hover: color-mix(in srgb, var(--bg-card) 88%, var(--accent-peach));
+  --filter-count-bg: color-mix(in srgb, var(--text-main) 11%, transparent);
+  --filter-count-text: var(--text-muted);
+  --filter-selected-bg: #2b2d2f;
+  --filter-selected-text: #f5f6f7;
+  --filter-selected-border: transparent;
+  --filter-card-shadow: 0 18px 42px rgba(0, 0, 0, 0.28), 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+:root[data-theme='alexandria-light'] {
+  --filter-card-bg: #f7f8f8;
+  --filter-card-border: transparent;
+  --filter-item-bg: #f2f3f3;
+  --filter-item-border: transparent;
+  --filter-item-hover: #e9ebec;
+  --filter-count-bg: rgba(60, 64, 68, 0.1);
+  --filter-count-text: #5d6266;
+  --filter-selected-bg: #2b2d2f;
+  --filter-selected-text: #f5f6f7;
+  --filter-selected-border: transparent;
+  --filter-card-shadow: 0 12px 30px rgba(48, 52, 56, 0.14), 0 2px 10px rgba(48, 52, 56, 0.07);
+}
+
+:root[data-theme^='alexandria'] .question-filter-card {
+  background: var(--filter-card-bg) !important;
+  border-color: var(--filter-card-border) !important;
+  box-shadow: var(--filter-card-shadow);
+}
+
+:root[data-theme^='alexandria'] .question-filter-language:not(:first-child) {
+  border-color: var(--filter-item-border) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-topic {
+  background: var(--filter-item-bg) !important;
+  border-color: var(--filter-item-border) !important;
+  color: var(--theme-text-muted) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-topic:hover {
+  background: var(--filter-item-hover) !important;
+  border-color: var(--filter-item-border) !important;
+  color: var(--theme-text) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-topic[data-selected='true'] {
+  background: color-mix(in srgb, var(--accent-peach) 10%, var(--filter-item-bg)) !important;
+  border-color: color-mix(in srgb, var(--accent-peach) 42%, var(--filter-item-border)) !important;
+  color: var(--theme-text) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-count {
+  border: 0 !important;
+  background: var(--filter-count-bg) !important;
+  color: var(--filter-count-text) !important;
+  border-radius: 9999px !important;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+}
+
+:root[data-theme^='alexandria'] .question-filter-status-option,
+:root[data-theme^='alexandria'] .question-filter-quantity-option {
+  background: var(--filter-item-bg) !important;
+  border-color: var(--filter-item-border) !important;
+  color: var(--theme-text-muted) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-status-option:hover,
+:root[data-theme^='alexandria'] .question-filter-quantity-option:hover {
+  background: var(--filter-item-hover) !important;
+  border-color: color-mix(in srgb, var(--theme-text) 18%, var(--filter-item-border)) !important;
+  color: var(--theme-text) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-status-option[data-selected='true'],
+:root[data-theme^='alexandria'] .question-filter-quantity-option[data-selected='true'] {
+  background: var(--filter-selected-bg) !important;
+  border-color: var(--filter-selected-border) !important;
+  color: var(--filter-selected-text) !important;
+  box-shadow: 0 1px 2px rgba(30, 24, 32, 0.16);
+}
+
+:root[data-theme^='alexandria'] .question-filter-actions {
+  background: var(--filter-card-bg) !important;
+}
+
+@media (min-width: 1024px) {
+  :root[data-theme^='alexandria'] .question-filter-quantity-card > div:first-child {
+    white-space: nowrap;
+  }
+
+  :root[data-theme^='alexandria'] .question-filter-quantity-card > div:first-child span {
+    font-size: 0.68rem;
+  }
+}
+
+/* Alexandria is intentionally borderless: depth comes from tonal surfaces and
+   restrained shadows. Focus remains visible through the global focus ring. */
+:root[data-theme^='alexandria'] :where(
+  [class~='border'],
+  [class~='border-t'],
+  [class~='border-r'],
+  [class~='border-b'],
+  [class~='border-l'],
+  [class*='border-[#'],
+  [class*='border-zinc-'],
+  [class*='border-indigo-'],
+  [class*='border-cyan-'],
+  [class*='border-pink-'],
+  [class*='border-emerald-'],
+  [class*='border-rose-'],
+  [class*='border-amber-']
+) {
+  border-color: transparent !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-status-option[data-selected='true'],
+:root[data-theme^='alexandria'] .question-filter-quantity-option[data-selected='true'] {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme^='alexandria'] .question-filter-card,
+:root[data-theme^='alexandria'] .ui-card,
+:root[data-theme^='alexandria'] .ui-surface {
+  border-color: transparent !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-topic[data-selected='true'],
+:root[data-theme^='alexandria'] .question-filter-status-option[data-selected='true'],
+:root[data-theme^='alexandria'] .question-filter-quantity-option[data-selected='true'],
+:root[data-theme^='alexandria'] .settings-theme-option[aria-pressed='true'] {
+  border-color: transparent !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-subjects .question-filter-language > div > button[aria-pressed='true'],
+:root[data-theme^='alexandria'] .question-filter-subjects .question-filter-language > div > button[aria-pressed='true'] svg,
+:root[data-theme^='alexandria'] .question-filter-subjects .question-filter-topic[data-selected='true'] svg,
+:root[data-theme^='alexandria'] .question-filter-subjects .question-filter-topic[data-selected='true'] .question-filter-count,
+:root[data-theme^='alexandria'] .question-filter-status-card > div:first-child,
+:root[data-theme^='alexandria'] .question-filter-quantity-card > div:first-child {
+  color: var(--accent-blue) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-subjects .question-filter-topic[data-selected='true'] {
+  /* Selection is communicated by the blue check, not a saturated row. */
+  background: var(--filter-item-bg) !important;
+  color: var(--theme-text) !important;
+  box-shadow: none !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-subjects .question-filter-topic[data-selected='true'] .question-filter-count {
+  background: var(--filter-count-bg) !important;
+  color: var(--filter-count-text) !important;
+}
+
+/* Alexandria action language: keep the app mark and primary actions in the
+   same restrained blue family used for selection checks. */
+:root[data-theme^='alexandria'] .brand-wordmark {
+  color: var(--theme-text) !important;
+}
+
+:root[data-theme^='alexandria'] .brand-wordmark > span {
+  color: var(--accent-blue) !important;
+}
+
+:root[data-theme^='alexandria'] .brand-wordmark:hover,
+:root[data-theme^='alexandria'] .brand-wordmark:hover > span {
+  color: var(--accent-blue-strong) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-clear,
+:root[data-theme^='alexandria'] .question-filter-preview {
+  background: var(--filter-item-bg) !important;
+  border-color: transparent !important;
+  color: var(--theme-text-muted) !important;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.16) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-preview {
+  color: var(--accent-blue) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-clear:hover,
+:root[data-theme^='alexandria'] .question-filter-preview:hover {
+  background: var(--filter-item-hover) !important;
+  color: var(--accent-blue-strong) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-create {
+  background: var(--accent-fill) !important;
+  border-color: transparent !important;
+  color: #f7f9fc !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24) !important;
+}
+
+:root[data-theme^='alexandria'] .question-filter-create:hover {
+  background: var(--accent-fill-hover) !important;
+}
+
+:root[data-theme^='alexandria'] .ui-control:hover,
+:root[data-theme^='alexandria'] .ui-control:focus-within,
+:root[data-theme^='alexandria'] .ui-button-primary,
+:root[data-theme^='alexandria'] .ui-button-secondary:hover,
+:root[data-theme^='alexandria'] .ui-option[data-selected='true'],
+:root[data-theme^='alexandria'] .ui-option.is-selected {
+  border-color: transparent !important;
+}
+
+:root[data-theme^='alexandria'] .home-title-block,
+:root[data-theme^='alexandria'] .home-section {
+  border-color: transparent !important;
+}
+
+:root[data-theme^='alexandria'] .home-section-kicker,
+:root[data-theme^='alexandria'] .home-vocablab-link {
+  color: var(--accent-blue) !important;
+}
+
+:root[data-theme^='alexandria'] .home-vocablab {
+  /* Reserve a quiet visual bay beneath the link so the muse sits in the
+     footer instead of competing with the copy. */
+  padding-bottom: clamp(5rem, 8vw, 6.5rem);
+}
+
+:root[data-theme^='alexandria'] .alexandria-philosopher,
+:root[data-theme^='alexandria'] .alexandria-muse {
+  filter: grayscale(0.78) saturate(0.18) contrast(0.94) drop-shadow(0 1.25rem 1.2rem color-mix(in srgb, var(--bg-base) 72%, transparent));
+}
+
+/* Shared question rhythm and affordances.  The divider belongs between
+   question sheets, while the metadata row stays visually open. */
+.question-sheet + .question-sheet {
+  border-top: 1px solid color-mix(in srgb, var(--theme-text) 18%, var(--bg-base)) !important;
+}
+
+.question-number-badge {
+  color: var(--question-accent) !important;
+  border-color: color-mix(in srgb, var(--question-accent) 58%, transparent) !important;
+  background: color-mix(in srgb, var(--question-accent) 12%, var(--bg-card)) !important;
+}
+
+/* The legacy utility color on the badge is intentionally overridden only for
+   Alexandria, where the blue accent is part of the theme identity. */
+:root[data-theme^='alexandria'] .question-number-badge {
+  color: var(--accent-blue) !important;
+  border-color: color-mix(in srgb, var(--accent-blue) 58%, transparent) !important;
+  background: color-mix(in srgb, var(--accent-blue) 12%, var(--bg-card)) !important;
+}
+
+.question-confirm-button {
+  min-height: 2.75rem;
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Footer actions share the same 44px rhythm as the individual response
+   control, keeping the navigation bar balanced without forcing equal text
+   widths. */
+.question-footer-action {
+  min-height: 2.75rem;
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem;
+  line-height: 1.2;
+}
+
+.question-footer-nav-button {
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: 0 !important;
+}
+
+.question-eliminate-button {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.question-eliminate-button:hover {
+  background: color-mix(in srgb, var(--theme-text) 10%, transparent) !important;
+}
+
+.question-eliminate-button.is-eliminated {
+  color: var(--question-accent) !important;
+  background: color-mix(in srgb, var(--question-accent) 12%, transparent) !important;
+}
+
+/* Alexandria questions use two editorial surfaces when support text exists:
+   metadata + support, followed by statement + answers + confirmation.  When
+   there is no support text, the question sheet itself becomes the single
+   surface, keeping the metadata with the statement. */
+:root[data-theme^='alexandria'] .question-meta-support-group.has-support,
+:root[data-theme^='alexandria'] .question-body-group.has-support,
+:root[data-theme^='alexandria'] .question-sheet:has(.question-meta-support-group.no-support) {
+  background: var(--bg-card) !important;
+  border-radius: 1.25rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+}
+
+:root[data-theme^='alexandria'] .question-meta-support-group.has-support,
+:root[data-theme^='alexandria'] .question-body-group.has-support {
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+:root[data-theme='alexandria-light'] .question-meta-support-group.has-support,
+:root[data-theme='alexandria-light'] .question-body-group.has-support,
+:root[data-theme='alexandria-light'] .question-sheet:has(.question-meta-support-group.no-support) {
+  box-shadow: 0 14px 30px rgba(48, 52, 56, 0.12);
+}
+
+:root[data-theme^='alexandria'] .question-sheet:has(.question-meta-support-group.has-support) {
+  padding-block: 0.5rem !important;
+}
+
+:root[data-theme^='alexandria'] .question-sheet:has(.question-meta-support-group.no-support) {
+  padding: clamp(1.1rem, 2vw, 1.6rem) !important;
+}
+
+:root[data-theme^='alexandria'] .question-meta-support-group.no-support,
+:root[data-theme^='alexandria'] .question-body-group.no-support {
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+:root[data-theme^='alexandria'] .question-meta-support-group.has-support > [data-reading-text],
+:root[data-theme^='alexandria'] .question-body-group .statement-block {
+  background: transparent !important;
+  border-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+:root[data-theme^='alexandria'] .question-meta-support-group [data-reading-text] > button {
+  background: transparent !important;
+  border-bottom-color: color-mix(in srgb, var(--theme-text) 12%, transparent) !important;
+}
+
+:root[data-theme^='alexandria'] .question-meta-support-group [data-reading-body] {
+  padding-inline: 0 !important;
+}
+
+:root[data-theme^='alexandria'] .question-body-group .statement-block {
+  padding-inline: 0 !important;
+  padding-block: 0.25rem !important;
+}
+
+:root[data-theme^='alexandria'] .question-body-group > .question-option-list {
+  border-top: 1px solid color-mix(in srgb, var(--theme-text) 10%, transparent) !important;
+  padding-top: 1rem !important;
+}
+
+:root[data-theme^='alexandria'] .question-meta-support-group [data-support-source] {
+  border-top-color: color-mix(in srgb, var(--theme-text) 12%, transparent) !important;
+}
+
+/* Alexandria keeps the useful internal reading cues.  Only the separator
+   between consecutive questions is removed, as requested. */
+:root[data-theme^='alexandria'] .question-body-group.has-support {
+  border-top: 1px solid color-mix(in srgb, var(--theme-text) 12%, transparent) !important;
+}
+
+:root[data-theme^='alexandria'] .question-sheet + .question-sheet {
+  border-top: 0 !important;
+}
+
+/* Exam emphasis uses the active Alexandria blue instead of the legacy orange
+   decoration used by the Original palette. */
+:root[data-theme^='alexandria'] .decoration-\[\#e8a87c\] {
+  text-decoration-color: var(--accent-blue) !important;
+}
+
+:root[data-theme^='alexandria'] .question-no-idea-button[aria-pressed='true'] {
+  background: var(--accent-blue-soft) !important;
+  border-color: transparent !important;
+  color: var(--accent-blue) !important;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-blue) 16%, transparent);
 }

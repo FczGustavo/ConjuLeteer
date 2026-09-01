@@ -1,6 +1,6 @@
 # Fichas de auditoria das questões
 
-Gerado em 2026-08-31. **591 questões**, **9 PDFs**, **591 verificadas**, **0 com aviso**.
+Gerado em 2026-08-31. **531 questões**, **7 PDFs**, **531 verificadas**, **0 com aviso**.
 
 | ID | PDF | Pág. questão | Pág. gabarito | Oficial | Banco | Estado |
 |---|---|---:|---:|:---:|:---:|---|
@@ -535,63 +535,3 @@ Gerado em 2026-08-31. **591 questões**, **9 PDFs**, **591 verificadas**, **0 co
 | `verbos-pdf_7-q90` | `7. Verbos.pdf` | 148 | 155 | D | D | verified |
 | `verbos-pdf_7-q91` | `7. Verbos.pdf` | 150 | 155 | E | E | verified |
 | `verbos-pdf_7-q92` | `7. Verbos.pdf` | 152 | 155 | C | C | verified |
-| `verbos-pdf_16-q1` | `16. Modos Verbais I  - [✅].pdf` | 1 | 3 | D | D | verified |
-| `verbos-pdf_16-q2` | `16. Modos Verbais I  - [✅].pdf` | 1 | 3 | D | D | verified |
-| `verbos-pdf_16-q3` | `16. Modos Verbais I  - [✅].pdf` | 1 | 3 | D | D | verified |
-| `verbos-pdf_16-q4` | `16. Modos Verbais I  - [✅].pdf` | 2 | 3 | B | B | verified |
-| `verbos-pdf_16-q5` | `16. Modos Verbais I  - [✅].pdf` | 2 | 3 | A | A | verified |
-| `verbos-pdf_16-q6` | `16. Modos Verbais I  - [✅].pdf` | 2 | 3 | A | A | verified |
-| `verbos-pdf_16-q7` | `16. Modos Verbais I  - [✅].pdf` | 3 | 3 | C | C | verified |
-| `verbos-pdf_16-q8` | `16. Modos Verbais I  - [✅].pdf` | 3 | 3 | B | B | verified |
-| `verbos-pdf_16-q9` | `16. Modos Verbais I  - [✅].pdf` | 3 | 3 | D | D | verified |
-| `verbos-pdf_16-q10` | `16. Modos Verbais I  - [✅].pdf` | 4 | 3 | A | A | verified |
-| `verbos-pdf_16-q11` | `16. Modos Verbais I  - [✅].pdf` | 4 | 3 | A | A | verified |
-| `verbos-pdf_16-q12` | `16. Modos Verbais I  - [✅].pdf` | 4 | 3 | B | B | verified |
-| `verbos-pdf_16-q13` | `16. Modos Verbais I  - [✅].pdf` | 5 | 3 | D | D | verified |
-| `verbos-pdf_16-q14` | `16. Modos Verbais I  - [✅].pdf` | 5 | 3 | D | D | verified |
-| `verbos-pdf_16-q15` | `16. Modos Verbais I  - [✅].pdf` | 5 | 3 | B | B | verified |
-| `verbos-pdf_16-q16` | `16. Modos Verbais I  - [✅].pdf` | 6 | 3 | B | B | verified |
-| `verbos-pdf_16-q17` | `16. Modos Verbais I  - [✅].pdf` | 6 | 3 | C | C | verified |
-| `verbos-pdf_16-q18` | `16. Modos Verbais I  - [✅].pdf` | 6 | 3 | C | C | verified |
-| `verbos-pdf_16-q19` | `16. Modos Verbais I  - [✅].pdf` | 6 | 3 | B | B | verified |
-| `verbos-pdf_16-q20` | `16. Modos Verbais I  - [✅].pdf` | 7 | 3 | B | B | verified |
-| `verbos-pdf_16-q21` | `16. Modos Verbais I  - [✅].pdf` | 7 | 3 | D | D | verified |
-| `verbos-pdf_16-q22` | `16. Modos Verbais I  - [✅].pdf` | 7 | 3 | D | D | verified |
-| `verbos-pdf_16-q23` | `16. Modos Verbais I  - [✅].pdf` | 7 | 3 | D | D | verified |
-| `verbos-pdf_16-q24` | `16. Modos Verbais I  - [✅].pdf` | 8 | 3 | D | D | verified |
-| `verbos-pdf_16-q25` | `16. Modos Verbais I  - [✅].pdf` | 8 | 3 | D | D | verified |
-| `verbos-pdf_16-q26` | `16. Modos Verbais I  - [✅].pdf` | 8 | 3 | C | C | verified |
-| `verbos-pdf_16-q27` | `16. Modos Verbais I  - [✅].pdf` | 8 | 3 | A | A | verified |
-| `verbos-pdf_16-q28` | `16. Modos Verbais I  - [✅].pdf` | 9 | 3 | B | B | verified |
-| `verbos-pdf_16-q29` | `16. Modos Verbais I  - [✅].pdf` | 9 | 3 | B | B | verified |
-| `verbos-pdf_16-q30` | `16. Modos Verbais I  - [✅].pdf` | 9 | 3 | D | D | verified |
-| `verbos-pdf_17-q1` | `17.  Modos Verbais II  - [✅].pdf` | 1 | 9 | C | C | verified |
-| `verbos-pdf_17-q2` | `17.  Modos Verbais II  - [✅].pdf` | 1 | 9 | A | A | verified |
-| `verbos-pdf_17-q3` | `17.  Modos Verbais II  - [✅].pdf` | 1 | 9 | A | A | verified |
-| `verbos-pdf_17-q4` | `17.  Modos Verbais II  - [✅].pdf` | 1 | 9 | B | B | verified |
-| `verbos-pdf_17-q5` | `17.  Modos Verbais II  - [✅].pdf` | 2 | 9 | A | A | verified |
-| `verbos-pdf_17-q6` | `17.  Modos Verbais II  - [✅].pdf` | 2 | 9 | A | A | verified |
-| `verbos-pdf_17-q7` | `17.  Modos Verbais II  - [✅].pdf` | 2 | 9 | A | A | verified |
-| `verbos-pdf_17-q8` | `17.  Modos Verbais II  - [✅].pdf` | 2 | 9 | D | D | verified |
-| `verbos-pdf_17-q9` | `17.  Modos Verbais II  - [✅].pdf` | 3 | 9 | A | A | verified |
-| `verbos-pdf_17-q10` | `17.  Modos Verbais II  - [✅].pdf` | 3 | 9 | D | D | verified |
-| `verbos-pdf_17-q11` | `17.  Modos Verbais II  - [✅].pdf` | 3 | 9 | B | B | verified |
-| `verbos-pdf_17-q12` | `17.  Modos Verbais II  - [✅].pdf` | 3 | 9 | D | D | verified |
-| `verbos-pdf_17-q13` | `17.  Modos Verbais II  - [✅].pdf` | 4 | 9 | C | C | verified |
-| `verbos-pdf_17-q14` | `17.  Modos Verbais II  - [✅].pdf` | 4 | 9 | A | A | verified |
-| `verbos-pdf_17-q15` | `17.  Modos Verbais II  - [✅].pdf` | 4 | 9 | D | D | verified |
-| `verbos-pdf_17-q16` | `17.  Modos Verbais II  - [✅].pdf` | 4 | 9 | C | C | verified |
-| `verbos-pdf_17-q17` | `17.  Modos Verbais II  - [✅].pdf` | 5 | 9 | C | C | verified |
-| `verbos-pdf_17-q18` | `17.  Modos Verbais II  - [✅].pdf` | 5 | 9 | C | C | verified |
-| `verbos-pdf_17-q19` | `17.  Modos Verbais II  - [✅].pdf` | 5 | 9 | E | E | verified |
-| `verbos-pdf_17-q20` | `17.  Modos Verbais II  - [✅].pdf` | 5 | 9 | A | A | verified |
-| `verbos-pdf_17-q21` | `17.  Modos Verbais II  - [✅].pdf` | 6 | 9 | B | B | verified |
-| `verbos-pdf_17-q22` | `17.  Modos Verbais II  - [✅].pdf` | 6 | 9 | C | C | verified |
-| `verbos-pdf_17-q23` | `17.  Modos Verbais II  - [✅].pdf` | 6 | 9 | D | D | verified |
-| `verbos-pdf_17-q24` | `17.  Modos Verbais II  - [✅].pdf` | 6 | 9 | C | C | verified |
-| `verbos-pdf_17-q25` | `17.  Modos Verbais II  - [✅].pdf` | 7 | 9 | B | B | verified |
-| `verbos-pdf_17-q26` | `17.  Modos Verbais II  - [✅].pdf` | 7 | 9 | B | B | verified |
-| `verbos-pdf_17-q27` | `17.  Modos Verbais II  - [✅].pdf` | 7 | 9 | B | B | verified |
-| `verbos-pdf_17-q28` | `17.  Modos Verbais II  - [✅].pdf` | 7 | 9 | B | B | verified |
-| `verbos-pdf_17-q29` | `17.  Modos Verbais II  - [✅].pdf` | 8 | 9 | B | B | verified |
-| `verbos-pdf_17-q30` | `17.  Modos Verbais II  - [✅].pdf` | 8 | 9 | B | B | verified |

@@ -20,7 +20,7 @@ export interface FilterState {
   selectedSubjectIds: SubjectId[];
   /** Kept for compatibility with persisted filters; Verbos always uses PDF 7. */
   selectedListIds: string[];
-  statusFilter: 'all' | 'pending' | 'correct' | 'wrong';
+  statusFilter: 'all' | 'pending' | 'correct' | 'wrong' | 'noIdea';
   limitQuantity?: number;
 }
 
@@ -33,8 +33,7 @@ interface QuestionBankFilterViewProps {
   onOpenImportModal: () => void;
   userAnswers: Record<string, string>;
   confirmedAnswers: Record<string, boolean>;
-  /** Internal visual-audit mode; includes the two hidden 30-question sheets. */
-  includeAuditLists?: boolean;
+  noIdeaQuestions: Record<string, boolean>;
 }
 
 export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
@@ -46,7 +45,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
   onOpenImportModal,
   userAnswers,
   confirmedAnswers,
-  includeAuditLists = false
+  noIdeaQuestions
 }) => {
   const [isTreeExpanded, setIsTreeExpanded] = useState<boolean>(true);
   const [simuladoQty, setSimuladoQty] = useState<number>(10);
@@ -55,9 +54,9 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
     () => allQuestions.filter(question => {
       const inLanguage = filterState.languageFilter === 'en' ? question.language === 'en' : question.language !== 'en';
       if (!inLanguage) return false;
-      return includeAuditLists || question.subjectId !== 'verbos' || question.listId === 'pdf_7';
+      return true;
     }),
-    [allQuestions, includeAuditLists, filterState.languageFilter]
+    [allQuestions, filterState.languageFilter]
   );
 
   // Helper to toggle subject selection
@@ -85,7 +84,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
   };
 
   // Set status filter
-  const setStatusFilter = (st: 'all' | 'pending' | 'correct' | 'wrong') => {
+  const setStatusFilter = (st: FilterState['statusFilter']) => {
     onFilterChange({ ...filterState, statusFilter: st });
   };
 
@@ -97,6 +96,18 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
       selectedListIds: filterState.languageFilter === 'pt' ? ['pdf_7'] : [],
       statusFilter: 'all',
       limitQuantity: undefined
+    });
+  };
+
+  const handleLanguageChange = (language: 'pt' | 'en') => {
+    const nextConfig = language === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
+    onFilterChange({
+      ...filterState,
+      languageFilter: language,
+      selectedSubjectIds: nextConfig.filter(subject => subject.id !== 'todos').map(subject => subject.id),
+      selectedListIds: language === 'pt' ? ['pdf_7'] : [],
+      statusFilter: 'all',
+      limitQuantity: undefined,
     });
   };
 
@@ -119,17 +130,19 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
         if (!confirmedAnswers[q.id] || userAnswers[q.id] !== q.correctLetter) return false;
       } else if (filterState.statusFilter === 'wrong') {
         if (!confirmedAnswers[q.id] || userAnswers[q.id] === q.correctLetter) return false;
+      } else if (filterState.statusFilter === 'noIdea') {
+        if (!noIdeaQuestions[q.id]) return false;
       }
 
       return true;
     });
-  }, [visibleQuestions, filterState.selectedSubjectIds, filterState.statusFilter, confirmedAnswers, userAnswers]);
+  }, [visibleQuestions, filterState.selectedSubjectIds, filterState.statusFilter, confirmedAnswers, userAnswers, noIdeaQuestions]);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6 sm:px-6 space-y-6">
+    <div className="question-filter-page mx-auto max-w-5xl space-y-8 px-4 py-7 sm:px-6 sm:py-9">
       
       {/* Top Header Card */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-[#181b20] border border-[#2e353e] shadow-xl">
+      <div className="flex flex-col justify-between gap-5 border-b border-[#343c46]/70 pb-6 sm:flex-row sm:items-end">
         <div>
           <div className="flex items-center space-x-2 text-xs font-mono text-[#8b949e]">
             <BookOpen className="w-3.5 h-3.5 text-[#e8a87c]" />
@@ -139,133 +152,122 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
             <span>/</span>
             <span className="text-[#f3ede6]">Seleção</span>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold text-[#f3ede6] mt-1 font-mono">
+          <h1 className="mt-2 text-2xl font-semibold tracking-tight text-[#f3ede6] sm:text-3xl">
             Filtrar e Montar Questões
           </h1>
         </div>
 
         <button
           onClick={onOpenImportModal}
-          className="flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-[#20242b] hover:bg-[#282e37] border border-[#2e353e] hover:border-[#e8a87c] text-[#f3ede6] text-xs font-mono transition-all shadow-md active:scale-95 shrink-0"
+          className="flex shrink-0 items-center space-x-2 rounded-xl border border-[#343c46] bg-[#20242b] px-4 py-2.5 text-xs text-[#f3ede6] shadow-sm transition-all hover:border-[#e8a87c] hover:bg-[#282e37] active:scale-95"
         >
           <PlusCircle className="w-4 h-4 text-[#e8a87c]" />
           <span>Importar PDF</span>
         </button>
       </div>
 
-      {/* Language subdivision */}
-      <div className="flex flex-col gap-3 rounded-2xl border border-[#2e353e] bg-[#181b20] p-4 shadow-xl sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-xs font-mono font-bold uppercase tracking-[0.14em] text-[#e8a87c]">Subdivisão do banco</p>
-          <p className="mt-1 text-xs text-[#8b949e]">Escolha o idioma e filtre somente os assuntos daquela coleção.</p>
-        </div>
-        <div className="grid w-full grid-cols-2 gap-2 sm:w-auto">
-          {([
-            { id: 'pt' as const, label: 'Português', count: allQuestions.filter(question => question.language !== 'en').length },
-            { id: 'en' as const, label: 'Inglês', count: allQuestions.filter(question => question.language === 'en').length },
-          ]).map(language => (
-            <button
-              key={language.id}
-              onClick={() => {
-                const nextConfig = language.id === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
-                onFilterChange({
-                  ...filterState,
-                  languageFilter: language.id,
-                  selectedSubjectIds: nextConfig.filter(subject => subject.id !== 'todos').map(subject => subject.id),
-                  selectedListIds: language.id === 'pt' ? ['pdf_7'] : [],
-                  statusFilter: 'all',
-                  limitQuantity: undefined,
-                });
-              }}
-              className={`rounded-xl border px-4 py-2.5 text-xs font-mono transition-all ${
-                filterState.languageFilter === language.id
-                  ? 'border-[#e8a87c] bg-[#2a1d17] font-bold text-[#e8a87c] shadow-sm'
-                  : 'border-[#2e353e] bg-[#20242b] text-[#9ca3af] hover:border-[#e8a87c]/50 hover:text-[#f3ede6]'
-              }`}
-            >
-              {language.label} <span className="ml-1 opacity-70">({language.count})</span>
-            </button>
-          ))}
-        </div>
-      </div>
-
       {/* 2-Column Matrix */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         
         {/* Left Column: Subjects Tree (5 cols) */}
-        <div className="md:col-span-6 rounded-2xl bg-[#181b20] border border-[#2e353e] p-5 shadow-xl space-y-4">
-          
-          <div className="flex items-center justify-between pb-3 border-b border-[#262b33]">
-            <button
-              onClick={toggleSelectAllSubjects}
-              className="flex items-center space-x-2 text-sm font-bold text-[#f3ede6] hover:text-[#e8a87c] transition-colors font-mono"
-            >
-              {isAllSubjectsSelected ? (
-                <CheckSquare className="w-4 h-4 text-[#e8a87c]" />
-              ) : (
-                <Square className="w-4 h-4 text-[#6b7280]" />
-              )}
-              <span>{filterState.languageFilter === 'en' ? 'Inglês (Todos os Assuntos)' : 'Português (Todos os Assuntos)'}</span>
-            </button>
+        <div className="question-filter-card question-filter-subjects md:col-span-6 overflow-hidden rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70">
+          {([
+            { id: 'pt' as const, label: 'Português', count: allQuestions.filter(question => question.language !== 'en').length },
+            { id: 'en' as const, label: 'Inglês', count: allQuestions.filter(question => question.language === 'en').length },
+          ]).map((language, languageIndex) => {
+            const isActiveLanguage = filterState.languageFilter === language.id;
 
-            <button
-              onClick={() => setIsTreeExpanded(!isTreeExpanded)}
-              className="p-1 rounded-lg hover:bg-[#20242b] text-[#9ca3af]"
-            >
-              {isTreeExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-            </button>
-          </div>
+            return (
+              <div key={language.id} className={`question-filter-language ${languageIndex > 0 ? 'border-t border-[#262b33]' : ''}`}>
+                <div className="flex items-center justify-between gap-3 px-5 py-4">
+                  <button
+                    type="button"
+                    onClick={() => isActiveLanguage ? toggleSelectAllSubjects() : handleLanguageChange(language.id)}
+                    aria-pressed={isActiveLanguage && isAllSubjectsSelected}
+                    data-language-active={isActiveLanguage}
+                    className={`flex min-w-0 items-center gap-2.5 text-left text-sm font-semibold transition-colors hover:text-[#e8a87c] ${
+                      isActiveLanguage ? 'text-[#f3ede6]' : 'text-[#9ca3af]'
+                    }`}
+                  >
+                    {isActiveLanguage && isAllSubjectsSelected ? (
+                      <CheckSquare className="h-4 w-4 shrink-0 text-[#e8a87c]" />
+                    ) : (
+                      <Square className="h-4 w-4 shrink-0 text-[#4b5563]" />
+                    )}
+                    <span className="truncate">{language.label} {isActiveLanguage && isAllSubjectsSelected ? '(Todos os Assuntos)' : ''}</span>
+                  </button>
 
-          {isTreeExpanded && (
-            <div className="space-y-1 pl-1">
-              {subjectConfig.filter(s => s.id !== 'todos').map(sub => {
-                const isSelected = filterState.selectedSubjectIds.includes(sub.id);
-                const count = visibleQuestions.filter(q => q.subjectId === sub.id).length;
-
-                return (
-                  <React.Fragment key={sub.id}>
-                    <label
-                      className={`flex items-center justify-between p-2.5 rounded-xl cursor-pointer transition-all ${
-                        isSelected
-                          ? 'bg-[#20242b] text-[#f3ede6] border border-[#e8a87c]/30'
-                          : 'hover:bg-[#1a1d23] text-[#9ca3af] border border-transparent'
-                      }`}
+                  <div className="flex shrink-0 items-center gap-2">
+                    <span className={`question-filter-count inline-flex min-w-[3rem] justify-center rounded-lg px-2 py-0.5 text-[10.5px] font-mono ${
+                      isActiveLanguage ? 'bg-[#e8a87c]/20 font-bold text-[#e8a87c]' : 'bg-[#15181d] text-[#6b7280]'
+                    }`}>
+                      {language.count}Q
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => isActiveLanguage ? setIsTreeExpanded(!isTreeExpanded) : handleLanguageChange(language.id)}
+                      aria-label={isActiveLanguage
+                        ? (isTreeExpanded ? 'Recolher assuntos' : 'Expandir assuntos')
+                        : `Selecionar ${language.label} e ver assuntos`}
+                      aria-expanded={isActiveLanguage ? isTreeExpanded : false}
+                      className="question-filter-tree-trigger h-6 w-6 rounded-lg p-1 text-[#9ca3af] transition-colors hover:bg-[#20242b] hover:text-[#f3ede6]"
                     >
-                      <div className="flex items-center space-x-2.5">
-                        <input
-                          type="checkbox"
-                          checked={isSelected}
-                          onChange={() => toggleSubject(sub.id)}
-                          className="hidden"
-                        />
-                        {isSelected ? (
-                          <CheckSquare className="w-4 h-4 text-[#e8a87c] shrink-0" />
-                        ) : (
-                          <Square className="w-4 h-4 text-[#4b5563] shrink-0" />
-                        )}
-                        <span className="text-xs font-mono font-medium">{sub.shortTitle}</span>
-                      </div>
+                      {isActiveLanguage && isTreeExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+                    </button>
+                  </div>
+                </div>
 
-                      <span className={`text-[10.5px] font-mono px-2 py-0.5 rounded-lg ${
-                        isSelected ? 'bg-[#e8a87c]/20 text-[#e8a87c] font-bold' : 'bg-[#15181d] text-[#6b7280]'
-                      }`}>
-                        {count}Q
-                      </span>
-                    </label>
+                {isActiveLanguage && isTreeExpanded && (
+                  <div className="space-y-1 border-t border-[#262b33] px-4 py-3 sm:px-5">
+                    {subjectConfig.filter(s => s.id !== 'todos').map(sub => {
+                      const isSelected = filterState.selectedSubjectIds.includes(sub.id);
+                      const count = visibleQuestions.filter(q => q.subjectId === sub.id).length;
 
-                  </React.Fragment>
-                );
-              })}
-            </div>
-          )}
+                      return (
+                        <label
+                          key={sub.id}
+                          data-selected={isSelected}
+                          className={`question-filter-topic flex cursor-pointer items-center justify-between rounded-xl border p-2.5 transition-all ${
+                            isSelected
+                              ? 'border-[#e8a87c]/30 bg-[#20242b] text-[#f3ede6]'
+                              : 'border-transparent text-[#9ca3af] hover:bg-[#1a1d23]'
+                          }`}
+                        >
+                          <div className="flex items-center space-x-2.5">
+                            <input
+                              type="checkbox"
+                              checked={isSelected}
+                              onChange={() => toggleSubject(sub.id)}
+                              className="hidden"
+                            />
+                            {isSelected ? (
+                              <CheckSquare className="h-4 w-4 shrink-0 text-[#e8a87c]" />
+                            ) : (
+                              <Square className="h-4 w-4 shrink-0 text-[#4b5563]" />
+                            )}
+                            <span className="text-sm font-medium">{sub.shortTitle}</span>
+                          </div>
 
+                          <span className={`question-filter-count inline-flex min-w-[3rem] justify-center rounded-lg px-2 py-0.5 text-[10.5px] font-mono ${
+                            isSelected ? 'bg-[#e8a87c]/20 font-bold text-[#e8a87c]' : 'bg-[#15181d] text-[#6b7280]'
+                          }`}>
+                            {count}Q
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Right Column: Status & Active Chips (6 cols) */}
-        <div className="md:col-span-6 space-y-5">
+        <div className="question-filter-controls md:col-span-6 space-y-5">
           
           {/* Status de Resolução */}
-          <div className="rounded-2xl bg-[#181b20] border border-[#2e353e] p-5 shadow-xl space-y-3">
+          <div className="question-filter-card question-filter-status-card space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
             <div className="flex items-center space-x-2 text-xs font-mono text-[#e8a87c] font-bold">
               <Filter className="w-3.5 h-3.5" />
               <span>Status das Questões</span>
@@ -276,12 +278,15 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
                 { id: 'all', label: 'Todas as Questões' },
                 { id: 'pending', label: 'Pendentes' },
                 { id: 'correct', label: 'Acertos' },
-                { id: 'wrong', label: 'Erros' }
+                { id: 'wrong', label: 'Erros' },
+                { id: 'noIdea', label: 'Marcadas como não sei' }
               ].map(st => (
                 <button
                   key={st.id}
                   onClick={() => setStatusFilter(st.id as any)}
-                  className={`p-2.5 rounded-xl text-xs font-mono text-center transition-all border ${
+                  aria-pressed={filterState.statusFilter === st.id}
+                  data-selected={filterState.statusFilter === st.id}
+                  className={`question-filter-status-option p-2.5 rounded-xl text-xs font-mono text-center transition-all border ${
                     filterState.statusFilter === st.id
                       ? 'bg-[#262c35] border-[#e8a87c] text-[#f3ede6] font-bold shadow-sm'
                       : 'bg-[#20242b] border-[#2e353e] text-[#8b949e] hover:text-[#f3ede6]'
@@ -294,7 +299,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
           </div>
 
           {/* Opção de Criar Simulado Rápido */}
-          <div className="rounded-2xl bg-[#181b20] border border-[#2e353e] p-5 shadow-xl space-y-3">
+          <div className="question-filter-card question-filter-quantity-card space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
             <div className="flex items-center space-x-2 text-xs font-mono text-[#e8a87c] font-bold">
               <ListPlus className="w-3.5 h-3.5" />
               <span>Quantidade para Simulado Rápido</span>
@@ -305,7 +310,9 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
                 <button
                   key={qty}
                   onClick={() => setSimuladoQty(qty)}
-                  className={`py-2 px-1 rounded-xl text-xs font-mono text-center transition-all border ${
+                  aria-pressed={simuladoQty === qty}
+                  data-selected={simuladoQty === qty}
+                  className={`question-filter-quantity-option py-2 px-1 rounded-xl text-xs font-mono text-center transition-all border ${
                     simuladoQty === qty
                       ? 'bg-[#2a1d17] border-[#e8a87c] text-[#e8a87c] font-bold'
                       : 'bg-[#20242b] border-[#2e353e] text-[#8b949e] hover:text-[#f3ede6]'
@@ -324,13 +331,13 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
       {/* Final page actions: normal document flow, visible only at the end of the filters. */}
       <section
         aria-label="Ações do Banco de Questões"
-        className="flex w-full flex-col gap-3 rounded-2xl border border-[#3d4652] bg-[#181b20] p-3 shadow-xl shadow-black/20 sm:flex-row sm:items-center sm:justify-between sm:p-4"
+        className="question-filter-card question-filter-actions flex w-full flex-col gap-3 rounded-2xl border border-[#3d4652] bg-[#181b20] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5"
       >
         {/* Left Actions */}
         <div className="flex w-full items-center sm:w-auto">
           <button
             onClick={handleClearFilters}
-            className="flex w-full items-center justify-center space-x-1.5 rounded-xl border border-[#2e353e] bg-[#20242b] px-3.5 py-2.5 text-xs font-mono text-[#9ca3af] transition-colors hover:bg-[#282e37] hover:text-[#f87171] sm:w-auto"
+            className="question-filter-clear flex w-full items-center justify-center space-x-1.5 rounded-xl border border-[#2e353e] bg-[#20242b] px-3.5 py-2.5 text-xs font-mono text-[#9ca3af] transition-colors hover:bg-[#282e37] hover:text-[#f87171] sm:w-auto"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Limpar filtros</span>
@@ -342,7 +349,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
           <button
             onClick={() => onStartPractice(simuladoQty === 0 ? undefined : simuladoQty)}
             disabled={matchingQuestions.length === 0}
-            className="flex h-10 w-full items-center justify-center space-x-2 rounded-xl border border-[#e8a87c]/60 bg-[#2a1d17] px-4 text-xs font-bold font-mono text-[#e8a87c] shadow-md transition-all hover:bg-[#38261e] disabled:cursor-not-allowed disabled:opacity-40"
+            className="question-filter-preview flex h-10 w-full items-center justify-center space-x-2 rounded-xl border border-[#e8a87c]/60 bg-[#2a1d17] px-4 text-xs font-bold font-mono text-[#e8a87c] shadow-md transition-all hover:bg-[#38261e] disabled:cursor-not-allowed disabled:opacity-40"
           >
             <Eye className="h-4 w-4 shrink-0" />
             <span>Pré-visualizar ({simuladoQty === 0 ? 'Todas' : `${simuladoQty}Q`})</span>
@@ -351,7 +358,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
           <button
             onClick={() => onCreateList(simuladoQty === 0 ? undefined : simuladoQty)}
             disabled={matchingQuestions.length === 0}
-            className="flex h-10 w-full items-center justify-center space-x-2 rounded-xl bg-[#e8a87c] px-4 text-xs font-bold font-mono text-[#16181b] shadow-lg transition-all hover:bg-[#f0b58e] active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+            className="question-filter-create flex h-10 w-full items-center justify-center space-x-2 rounded-xl bg-[#e8a87c] px-4 text-xs font-bold font-mono text-[#16181b] shadow-lg transition-all hover:bg-[#f0b58e] active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
           >
             <CheckCircle2 className="w-4 h-4" />
             <span>Criar Lista ({simuladoQty === 0 ? matchingQuestions.length : Math.min(simuladoQty, matchingQuestions.length)} questões)</span>

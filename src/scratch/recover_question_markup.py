@@ -105,11 +105,6 @@ MANUAL_REPLACEMENTS: dict[tuple[str, int, str], list[tuple[str, str]]] = {
     ("pdf_7", 61, "option:C"): [("tornou-se", "tornou-<u>se</u>")],
     ("pdf_7", 61, "option:D"): [("Se você", "<u>Se</u> você")],
     ("pdf_7", 61, "option:E"): [("passaram-se", "passaram-<u>se</u>")],
-    ("pdf_17", 9, "option:A"): [("permita", "<u>permita</u>")],
-    ("pdf_17", 9, "option:B"): [("morra", "<u>morra</u>")],
-    ("pdf_17", 9, "option:C"): [("volte", "<u>volte</u>")],
-    ("pdf_17", 9, "option:D"): [("desfrute", "<u>desfrute</u>")],
-    ("pdf_17", 9, "option:E"): [("aviste", "<u>aviste</u>")],
 }
 
 
@@ -418,7 +413,7 @@ def main() -> int:
             skip_font = (
                 args.manual_only
                 or args.underlines_only
-                or (args.compact_fonts and question.get("listId") not in {"pdf_16", "pdf_17"})
+                or args.compact_fonts
                 or (
                     args.residual_fonts
                     and (

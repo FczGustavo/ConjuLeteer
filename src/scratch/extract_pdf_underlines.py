@@ -27,8 +27,6 @@ PDF_CONFIGS = [
     ("pdf_5_classes_invar", "5. Classes de Palavras invariáveis.pdf", False),
     ("pdf_6_pronomes", "6. Pronomes.pdf", False),
     ("pdf_7", "7. Verbos.pdf", False),
-    ("pdf_16", "16. Modos Verbais I  - [✅].pdf", True),
-    ("pdf_17", "17.  Modos Verbais II  - [✅].pdf", True),
 ]
 
 

@@ -1,5 +1,4 @@
 import type { QuestionBankEmphasisNote, QuestionBankItem, QuestionBankSupport, SubjectId } from '../data/questionBank';
-import { loadUserSettings } from '../utils/srsEngine';
 import { normalizeQuestionSupport, parseLegacySupport, validateQuestionQuality } from '../utils/questionSupport';
 
 const CUSTOM_QUESTIONS_STORAGE_KEY = 'conjuletter_custom_questions_v1';
@@ -71,15 +70,7 @@ export async function parsePdfQuestionsWithAi(
   listTitle: string,
   onProgress?: (msg: string) => void
 ): Promise<QuestionBankItem[]> {
-  const settings = loadUserSettings();
-  const apiKey = settings.openRouterApiKey;
-  const model = settings.aiModel || 'google/gemini-3.7-flash';
-
-  if (!apiKey) {
-    throw new Error('Chave de API do OpenRouter não configurada. Por favor, adicione sua chave no modal de Configurações.');
-  }
-
-  onProgress?.('Enviando texto do PDF para análise da IA...');
+  onProgress?.('Enviando texto do PDF para o servidor de importação...');
 
   // Preserve both the questions and the answer table when a document is large.
   const maxCharacters = 120000;
@@ -133,16 +124,12 @@ CONTEÚDO DO DOCUMENTO:
 
 ${textSample}`;
 
-  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+  const response = await fetch('/api/ai/import', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
-      'HTTP-Referer': 'https://conjuletter.local',
-      'X-Title': 'ConjuLetter Question Bank Import'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      model: model,
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt }
@@ -154,7 +141,14 @@ ${textSample}`;
 
   if (!response.ok) {
     const errText = await response.text();
-    throw new Error(`Erro na API OpenRouter (${response.status}): ${errText}`);
+    let detail = errText;
+    try {
+      const parsedError = JSON.parse(errText) as { error?: unknown };
+      if (typeof parsedError.error === 'string' && parsedError.error.trim()) detail = parsedError.error;
+    } catch {
+      // Keep the raw response when the server returns a non-JSON error page.
+    }
+    throw new Error(`Erro no servidor de importação (${response.status}): ${detail}`);
   }
 
   onProgress?.('Processando resposta estruturada da IA...');

@@ -12,6 +12,12 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[2]
 PDF = Path(r"C:\Users\gusta\Downloads\1500 Questões de Inglês para Concursos Militares.pdf")
 DATA = ROOT / "src" / "data" / "englishQuestionBank.ts"
+REDUNDANT_SUPPORT_RE = re.compile(
+    r"^(?:Read(?:\s+the)?\s+(?:following\s+)?(?:texts?|excerpts?|fragments?)(?:\s+below|\s+that\s+follows)?|"
+    r"Observe(?:\s+the)?\s+(?:following\s+)?(?:text|fragment)?|Consider\s+the\s+following(?:\s+text|\s+sentences)?)\s*[:.]?$",
+    re.IGNORECASE,
+)
+REDUNDANT_STATEMENT_RE = re.compile(r"^(?:Read|Leia|Observe)\b", re.IGNORECASE)
 
 sys.path.insert(0, str(Path(__file__).parent))
 from import_english_questions import TOPICS, answer_key  # noqa: E402
@@ -54,6 +60,15 @@ def main() -> None:
         assert 190 <= record["provenance"]["answerPage"] <= 196
         assert record["quality"]["status"] == "verified", record["id"]
         assert record["quality"]["warnings"] == [], record["id"]
+        support = record.get("support")
+        if isinstance(support, dict):
+            assert support.get("paragraphs"), f"support sem corpo textual: {record['id']}"
+            assert not any(REDUNDANT_SUPPORT_RE.fullmatch(re.sub(r"\s+", " ", paragraph).strip()) for paragraph in support.get("paragraphs", [])), record["id"]
+            assert not REDUNDANT_STATEMENT_RE.match(record.get("statement", "").strip()), f"comando de leitura redundante: {record['id']}"
+            if support.get("title"):
+                assert not re.match(r"^[\"“']", support["title"]), record["id"]
+        elif len(record.get("statement", "")) > 360 and re.match(r"^(?:Read|Observe|Consider|Considere|Considerando)\b", record.get("statement", ""), re.IGNORECASE):
+            raise AssertionError(f"passagem longa embutida no enunciado: {record['id']}")
         assert record["questionNumber"] >= 1 and record["questionNumber"] <= expected_topics[subject_id]
         options = record["options"]
         assert len(options) in (4, 5), (record["id"], len(options))

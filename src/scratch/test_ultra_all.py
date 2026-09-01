@@ -18,8 +18,6 @@ PDF_CONFIGS = [
     { "file": "5. Classes de Palavras invariáveis.pdf", "count": 28 },
     { "file": "6. Pronomes.pdf", "count": 93 },
     { "file": "7. Verbos.pdf", "count": 92 },
-    { "file": "16. Modos Verbais I  - [✅].pdf", "count": 30 },
-    { "file": "17.  Modos Verbais II  - [✅].pdf", "count": 30 }
 ]
 
 total_reading_split = 0

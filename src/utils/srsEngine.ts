@@ -8,11 +8,19 @@ const SETTINGS_STORAGE_KEY = 'conjuletter_settings_v1';
 export interface UserSettings {
   strictAccents: boolean;
   soundEffects: boolean;
-  theme: 'dark';
+  theme: ThemeId;
   defaultBanca: string;
-  openRouterApiKey?: string;
-  aiModel?: string;
   tableColumns?: 1 | 2 | 3;
+}
+
+export type ThemeId = 'dark' | 'light' | 'alexandria-dark' | 'alexandria-light';
+
+/** Keep settings written by older versions valid while the Alexandria theme
+ * evolves into explicit light/dark variants. */
+function normalizeTheme(value: unknown): ThemeId {
+  if (value === 'light' || value === 'alexandria-light') return value;
+  if (value === 'alexandria' || value === 'alexandria-dark') return 'alexandria-dark';
+  return 'dark';
 }
 
 export function loadUserSettings(): UserSettings {
@@ -20,14 +28,16 @@ export function loadUserSettings(): UserSettings {
     const data = localStorage.getItem(SETTINGS_STORAGE_KEY);
     if (data) {
       const parsed = JSON.parse(data);
+      delete parsed.openRouterApiKey;
+      delete parsed.aiModel;
+      const savedTheme = normalizeTheme(parsed.theme);
       return {
         strictAccents: true,
         soundEffects: true,
-        theme: 'dark',
         defaultBanca: 'EsPCEx',
-        aiModel: 'google/gemini-3.7-flash',
         tableColumns: 2,
-        ...parsed
+        ...parsed,
+        theme: savedTheme
       };
     }
   } catch (e) {
@@ -38,14 +48,16 @@ export function loadUserSettings(): UserSettings {
     soundEffects: true,
     theme: 'dark',
     defaultBanca: 'EsPCEx',
-    aiModel: 'google/gemini-3.7-flash',
     tableColumns: 2
   };
 }
 
 export function saveUserSettings(settings: UserSettings): void {
   try {
-    localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(settings));
+    const sanitized = { ...settings } as UserSettings & Record<string, unknown>;
+    delete sanitized.openRouterApiKey;
+    delete sanitized.aiModel;
+    localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(sanitized));
   } catch (e) {
     console.error('Error saving settings', e);
   }

@@ -39,8 +39,6 @@ PDF_FILES = [
     ("5. Classes de Palavras invariáveis.pdf", "pdf_5_classes_invar", 28),
     ("6. Pronomes.pdf", "pdf_6_pronomes", 93),
     ("7. Verbos.pdf", "pdf_7", 92),
-    ("16. Modos Verbais I  - [✅].pdf", "pdf_16", 30),
-    ("17.  Modos Verbais II  - [✅].pdf", "pdf_17", 30),
 ]
 
 mismatches = []

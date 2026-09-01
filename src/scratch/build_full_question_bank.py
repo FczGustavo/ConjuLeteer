@@ -75,24 +75,6 @@ PDF_CONFIGS = [
         "expectedCount": 92,
         "banca": "AFA / EN / EFOMM / Concursos Militares"
     },
-    {
-        "file": "16. Modos Verbais I  - [✅].pdf",
-        "subjectId": "verbos",
-        "subjectTitle": "Verbos & Modos Verbais",
-        "listId": "pdf_16",
-        "listTitle": "PDF 16 • Modos Verbais I (30T1)",
-        "expectedCount": 30,
-        "banca": "Tropa do Arcanjo / EEAr / EsPCEx"
-    },
-    {
-        "file": "17.  Modos Verbais II  - [✅].pdf",
-        "subjectId": "verbos",
-        "subjectTitle": "Verbos & Modos Verbais",
-        "listId": "pdf_17",
-        "listTitle": "PDF 17 • Modos Verbais II (30T2)",
-        "expectedCount": 30,
-        "banca": "Tropa do Arcanjo / EEAr / EsPCEx"
-    }
 ]
 
 all_questions = []
@@ -118,13 +100,8 @@ for cfg in PDF_CONFIGS:
     gabarito_map = parse_gabarito(gab_text)
     print(f"  Extracted {len(gabarito_map)} gabarito answers.")
     
-    # 2. Extract Questions
-    if cfg["file"].startswith("16.") or cfg["file"].startswith("17."):
-        # Pattern like: \n 1) or \n 1.
-        pattern = re.compile(r'(\n\s*(\d+)\s*[\)\.\-]\s+)', re.IGNORECASE)
-    else:
-        # Pattern like: Questão 1
-        pattern = re.compile(r'(Questão\s+(\d+)[^\n]*)', re.IGNORECASE)
+    # 2. Extract questions from the seven public Portuguese PDFs.
+    pattern = re.compile(r'(Questão\s+(\d+)[^\n]*)', re.IGNORECASE)
         
     matches = list(pattern.finditer(cleaned_full_text))
     seen_q = set()
@@ -153,9 +130,6 @@ for cfg in PDF_CONFIGS:
         pre_text, raw_opts = extract_options_from_bottom(block)
         reading_text, statement = smart_split_reading_statement(pre_text)
         
-        if cfg["file"].startswith("16.") or cfg["file"].startswith("17."):
-            statement = re.sub(r'^\d+[\)\.\-]\s*', '', statement).strip()
-            
         correct_letter = gabarito_map.get(q_num, 'A')
         
         options = []

@@ -18,20 +18,6 @@ GABARITO_PDF_7 = {
     89: 'D', 90: 'D', 91: 'E', 92: 'C'
 }
 
-GABARITO_PDF_16 = {
-    1: 'D', 2: 'D', 3: 'D', 4: 'B', 5: 'A', 6: 'A', 7: 'C', 8: 'B',
-    9: 'D', 10: 'A', 11: 'A', 12: 'B', 13: 'D', 14: 'D', 15: 'B', 16: 'B',
-    17: 'C', 18: 'C', 19: 'B', 20: 'B', 21: 'D', 22: 'D', 23: 'D', 24: 'D',
-    25: 'D', 26: 'C', 27: 'A', 28: 'B', 29: 'B', 30: 'D'
-}
-
-GABARITO_PDF_17 = {
-    1: 'C', 2: 'A', 3: 'A', 4: 'B', 5: 'A', 6: 'A', 7: 'A', 8: 'D',
-    9: 'A', 10: 'D', 11: 'B', 12: 'D', 13: 'C', 14: 'A', 15: 'D', 16: 'C',
-    17: 'C', 18: 'C', 19: 'E', 20: 'A', 21: 'B', 22: 'C', 23: 'D', 24: 'C',
-    25: 'B', 26: 'B', 27: 'B', 28: 'B', 29: 'B', 30: 'B'
-}
-
 def parse_full_p7():
     with open(r"C:\Users\gusta\.gemini\antigravity-ide\brain\67056bc6-9ca1-40e1-9b72-a304ad3b8d54\scratch\pdf_7_verbos.txt", "r", encoding="utf-8") as f:
         raw = f.read()
