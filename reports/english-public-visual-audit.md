@@ -2,9 +2,9 @@
 
 - Fonte: `1500 Questões de Inglês para Concursos Militares.pdf`
 - Questões auditadas: **1500** (**1320** publicadas; **180** isoladas)
-- Questões com imagem recortada: **99**
-- Recortes verificáveis: **107**
-- Questões com destaques restaurados: **58** (94 alvos)
+- Questões com imagem recortada: **41**
+- Recortes verificáveis: **49**
+- Questões com destaques restaurados: **59** (95 alvos)
 - Questões visuais sem evidência: **0**
 - Texto inventado ou página não contabilizada: **0**
 

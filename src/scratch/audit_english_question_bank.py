@@ -133,13 +133,13 @@ def write_report(summary: dict, media_index: dict[str, list[dict]], highlight_id
 
 
 def expected_visual_question_ids() -> set[str]:
-    """Reviewed source mapping: every question in these groups has a visual."""
+    """Reviewed source mapping: every question in these groups has an essential visual."""
     ids: set[str] = {
         "english_pronouns-q77", "english_pronouns-q114", "english_pronouns-q146",
-        "english_verbs-q73", "english_verbs-q104", "english_verbs-q165", "english_verbs-q175",
-        "english_modal_auxiliaries-q50", "english_modal_auxiliaries-q57", "english_modal_auxiliaries-q60", "english_modal_auxiliaries-q74",
+        "english_verbs-q73", "english_verbs-q104", "english_verbs-q165",
+        "english_modal_auxiliaries-q50", "english_modal_auxiliaries-q60",
         "english_active_passive-q70", "english_direct_indirect-q27", "english_direct_indirect-q29",
-        "english_conditionals-q28", "english_plural_nouns-q9", "english_conjunctions-q46", "english_conjunctions-q110",
+        "english_plural_nouns-q9", "english_conjunctions-q46", "english_conjunctions-q110",
         "english_subjunctive_imperative_infinitive_gerund-q15", "english_mixed_topics-q12",
         "english_idioms_vocabulary-q29", "english_synonyms_antonyms-q6", "english_synonyms_antonyms-q32",
         "english_reading_review-q13", "english_reading_review-q29", "english_reading_review-q69",
@@ -147,7 +147,7 @@ def expected_visual_question_ids() -> set[str]:
     }
     for prefix, ranges in (
         ("english_mixed_topics", [(19, 23)]),
-        ("english_reading_review", [(31, 45), (46, 48), (60, 64), (70, 77), (87, 95), (96, 103), (104, 110), (112, 114), (115, 116), (117, 121), (123, 124)]),
+        ("english_reading_review", [(31, 33), (42, 45), (46, 48), (112, 114)]),
     ):
         for start, end in ranges:
             ids.update(f"{prefix}-q{number}" for number in range(start, end + 1))
@@ -192,7 +192,7 @@ def main() -> None:
             assert float(crop.get("width", 0)) > 0 and float(crop.get("height", 0)) > 0, (question_id, crop)
             assert float(crop["width"]) * float(crop["height"]) < 0.82, (question_id, crop)
             assert descriptor.get("mimeType") in {"image/png", "image/jpeg", "image/webp"}, question_id
-    assert media_count == 107, media_count
+    assert media_count == 49, media_count
     highlight_targets, highlight_ids = assert_editorial_highlights(records)
     expected = sum(item[3] for item in TOPICS)
     assert len(records) == expected == 1500, (len(records), expected)

@@ -599,6 +599,21 @@ Depois de cada rodada de mudancas:
 - `QuestionBankView.tsx` exibe o crédito de origem de questões inglesas de forma discreta junto ao cabeçalho. Os relatórios JSON/Markdown agora registram cobertura de bancas, anos, cargos e créditos de seção.
 - Verificações: `python src/scratch/audit_english_question_bank.py` aprovado (1.500 questões, 1.500 respostas, 0 divergências, 0 avisos; 1.320 anos e 0 cargos).
 
+### 2026-09-01 - rodada 55: auditoria em lote e qualidade integral do banco de inglês (1.500 itens)
+
+- **Separação de Blocos e Texto de Apoio:** Preservação estrita dos textos de leitura no campo estruturado `support` (`paragraphs`, `title`, `author`, `source`), garantindo quebras `\n\n`, eliminação de comandos residuais e isolamento em relação a comandos e alternativas.
+- **Consistência Semântica, Lacunas e Destaques:**
+  - Padronização de marcadores de lacunas em enunciados (ex: `| 1` -> `______ [1]`, numerais `(I)` / `(II)` no corpo de frases -> `______ [I]` / `______ [II]`, dois-pontos finais -> `: ______`, lacunas no corpo de sentenças).
+  - Normalização de colagem de lacunas em sufixos e limpeza de artefatos (`\uf0e3` -> `©`, `\u2016` -> `"`).
+  - Restauração de destaque pedagógico em `english_synonyms_antonyms-q30` (`<u>far</u>` na frase *"far more intelligent"*).
+- **Curadoria e Expurgo de Imagens:**
+  - Expurgo e exclusão de 15 imagens de estoque/decorativas (fotografias genéricas de leitura teórica) do storage `public/assets/questions/english/` e desindexação de `englishQuestionMedia.ts`.
+  - Preservação e indexação de 28 assets visuais essenciais (49 questões atendidas com tirinhas do Garfield, Peanuts, Charlie Brown, quadrinhos com balões de preenchimento, charges da Grande Depressão, Casa Branca, mapa satírico e anúncios como DHL e NMSU).
+- **Metadados e Gabaritos:**
+  - Padronização canônica das bancas (`EsPCEx`, `EFOMM`, `EEAr`, `PUC-Rio`, `PUC-PR`, `PUC-SP`, `PUC-RS`, `PUC-MG`, `PUCCAMP`, `UFSCar`, `UECE`, etc.).
+  - Validação de 100% dos gabaritos oficiais contra as páginas 190–196 do PDF (0 divergências nas 1.500 questões).
+- **Validações:** `npm run check` aprovado (oxlint 0 avisos/erros, vitest 24/24 testes, 163 verbos auditados, 531 questões de Português e 1.500 questões de Inglês auditadas, build Vite aprovado em 763 ms).
+
 ## 9. Pendencias e melhorias futuras
 
 - Tratar os 3 avisos restantes de efeitos nos componentes de treino sem alterar a experiencia de reset/foco.

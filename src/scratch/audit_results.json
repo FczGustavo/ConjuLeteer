@@ -1,0 +1,2400 @@
+{
+  "gabarito_divergences": [],
+  "bancas": {
+    "UNITAU": {
+      "count": 23,
+      "years": [
+        1995
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q1",
+        "english_adjectives_adverbs-q6",
+        "english_adjectives_adverbs-q7",
+        "english_pronouns-q10",
+        "english_pronouns-q61"
+      ]
+    },
+    "MACKENZIE": {
+      "count": 131,
+      "years": [
+        1976,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q2",
+        "english_adjectives_adverbs-q3",
+        "english_adjectives_adverbs-q4",
+        "english_adjectives_adverbs-q12",
+        "english_adjectives_adverbs-q30"
+      ]
+    },
+    "FATEC": {
+      "count": 35,
+      "years": [
+        1998,
+        1999,
+        2000,
+        2002,
+        2003,
+        2004,
+        2005,
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q5",
+        "english_adjectives_adverbs-q39",
+        "english_adjectives_adverbs-q62",
+        "english_adjectives_adverbs-q65",
+        "english_adjectives_adverbs-q90"
+      ]
+    },
+    "CESGRANRIO": {
+      "count": 49,
+      "years": [
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1997,
+        1998,
+        1999
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q8",
+        "english_pronouns-q15",
+        "english_pronouns-q18",
+        "english_pronouns-q40",
+        "english_pronouns-q89"
+      ]
+    },
+    "FEI": {
+      "count": 27,
+      "years": [
+        1994,
+        1995,
+        1996,
+        1997,
+        2000
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q9",
+        "english_adjectives_adverbs-q31",
+        "english_adjectives_adverbs-q42",
+        "english_adjectives_adverbs-q47",
+        "english_adjectives_adverbs-q115"
+      ]
+    },
+    "FUVEST": {
+      "count": 54,
+      "years": [
+        1977,
+        1978,
+        1979,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2003,
+        2006,
+        2012
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q10",
+        "english_adjectives_adverbs-q81",
+        "english_adjectives_adverbs-q82",
+        "english_adjectives_adverbs-q113",
+        "english_pronouns-q67"
+      ]
+    },
+    "UDESC": {
+      "count": 13,
+      "years": [
+        1996,
+        1997,
+        1999,
+        2002
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q11",
+        "english_pronouns-q44",
+        "english_verbs-q15",
+        "english_verbs-q87",
+        "english_verbs-q153"
+      ]
+    },
+    "PUCCAMP": {
+      "count": 10,
+      "years": [
+        1992,
+        1994,
+        2005
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q13",
+        "english_adjectives_adverbs-q14",
+        "english_pronouns-q32",
+        "english_verbs-q114",
+        "english_modal_auxiliaries-q8"
+      ]
+    },
+    "EN": {
+      "count": 8,
+      "years": [
+        1983,
+        1989,
+        1990,
+        2001,
+        2010
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q15",
+        "english_quantifiers_intensifiers-q33",
+        "english_question_tags-q17",
+        "english_false_cognates-q10",
+        "english_false_cognates-q11"
+      ]
+    },
+    "UNESP": {
+      "count": 133,
+      "years": [
+        1983,
+        1984,
+        1985,
+        1986,
+        1987,
+        1988,
+        1989,
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q16",
+        "english_adjectives_adverbs-q17",
+        "english_adjectives_adverbs-q18",
+        "english_adjectives_adverbs-q23",
+        "english_adjectives_adverbs-q26"
+      ]
+    },
+    "UFRS": {
+      "count": 51,
+      "years": [
+        1996,
+        1997,
+        1998,
+        2000,
+        2001,
+        2002,
+        2004,
+        2005,
+        2006,
+        2007
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q19",
+        "english_adjectives_adverbs-q49",
+        "english_adjectives_adverbs-q50",
+        "english_adjectives_adverbs-q54",
+        "english_adjectives_adverbs-q61"
+      ]
+    },
+    "EFOMM": {
+      "count": 73,
+      "years": [
+        1994,
+        1997,
+        2000,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2012
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q20",
+        "english_adjectives_adverbs-q21",
+        "english_adjectives_adverbs-q22",
+        "english_adjectives_adverbs-q92",
+        "english_adjectives_adverbs-q105"
+      ]
+    },
+    "UEL": {
+      "count": 58,
+      "years": [
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2005
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q24",
+        "english_adjectives_adverbs-q25",
+        "english_adjectives_adverbs-q48",
+        "english_adjectives_adverbs-q83",
+        "english_adjectives_adverbs-q88"
+      ]
+    },
+    "PUC": {
+      "count": 1,
+      "years": [
+        1975
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q27"
+      ]
+    },
+    "PUCPR": {
+      "count": 46,
+      "years": [
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q34",
+        "english_adjectives_adverbs-q40",
+        "english_adjectives_adverbs-q43",
+        "english_pronouns-q17",
+        "english_pronouns-q26"
+      ]
+    },
+    "PUCRS": {
+      "count": 22,
+      "years": [
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q37",
+        "english_adjectives_adverbs-q45",
+        "english_pronouns-q60",
+        "english_verbs-q26",
+        "english_modal_auxiliaries-q58"
+      ]
+    },
+    "UFPE": {
+      "count": 18,
+      "years": [
+        1995,
+        1996,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2006,
+        2007
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q38",
+        "english_adjectives_adverbs-q52",
+        "english_adjectives_adverbs-q60",
+        "english_adjectives_adverbs-q89",
+        "english_adjectives_adverbs-q95"
+      ]
+    },
+    "PUCMG": {
+      "count": 6,
+      "years": [
+        1999,
+        2001,
+        2004,
+        2005
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q44",
+        "english_pronouns-q5",
+        "english_modal_auxiliaries-q39",
+        "english_modal_auxiliaries-q49",
+        "english_prepositions-q53"
+      ]
+    },
+    "UNIT": {
+      "count": 2,
+      "years": [
+        1999
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q46",
+        "english_conjunctions-q87"
+      ]
+    },
+    "UFV": {
+      "count": 17,
+      "years": [
+        1996,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q51",
+        "english_adjectives_adverbs-q57",
+        "english_adjectives_adverbs-q58",
+        "english_adjectives_adverbs-q98",
+        "english_adjectives_adverbs-q99"
+      ]
+    },
+    "PUCRIO": {
+      "count": 24,
+      "years": [
+        1995,
+        1998,
+        1999,
+        2000,
+        2002,
+        2003,
+        2004,
+        2006,
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q53",
+        "english_pronouns-q77",
+        "english_pronouns-q115",
+        "english_verbs-q21",
+        "english_verbs-q94"
+      ]
+    },
+    "UFRRJ": {
+      "count": 18,
+      "years": [
+        1998,
+        1999,
+        2000,
+        2003,
+        2004,
+        2005
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q55",
+        "english_adjectives_adverbs-q96",
+        "english_pronouns-q75",
+        "english_pronouns-q108",
+        "english_pronouns-q110"
+      ]
+    },
+    "UERJ": {
+      "count": 16,
+      "years": [
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q56",
+        "english_pronouns-q59",
+        "english_pronouns-q124",
+        "english_verbs-q132",
+        "english_modal_auxiliaries-q27"
+      ]
+    },
+    "UFSM": {
+      "count": 23,
+      "years": [
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q59",
+        "english_pronouns-q39",
+        "english_pronouns-q83",
+        "english_pronouns-q85",
+        "english_quantifiers_intensifiers-q16"
+      ]
+    },
+    "FGV": {
+      "count": 14,
+      "years": [
+        1995,
+        2007,
+        2009
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q66",
+        "english_verbs-q112",
+        "english_verbs-q113",
+        "english_modal_auxiliaries-q7",
+        "english_conjunctions-q6"
+      ]
+    },
+    "ITA": {
+      "count": 96,
+      "years": [
+        1984,
+        1985,
+        1987,
+        1988,
+        1989,
+        1990,
+        1991,
+        1992,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q68",
+        "english_adjectives_adverbs-q69",
+        "english_adjectives_adverbs-q73",
+        "english_adjectives_adverbs-q109",
+        "english_adjectives_adverbs-q120"
+      ]
+    },
+    "UFSC": {
+      "count": 3,
+      "years": [
+        1996,
+        1997
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q70",
+        "english_pronouns-q13",
+        "english_subjunctive_imperative_infinitive_gerund-q17"
+      ]
+    },
+    "PUCSP": {
+      "count": 11,
+      "years": [
+        1998,
+        2001,
+        2002,
+        2003,
+        2005,
+        2006,
+        2007
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q71",
+        "english_pronouns-q23",
+        "english_pronouns-q30",
+        "english_modal_auxiliaries-q43",
+        "english_conjunctions-q25"
+      ]
+    },
+    "AFA": {
+      "count": 27,
+      "years": [
+        1986,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2004,
+        2005,
+        2007,
+        2008,
+        2011,
+        2012
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q77",
+        "english_quantifiers_intensifiers-q25",
+        "english_quantifiers_intensifiers-q27",
+        "english_quantifiers_intensifiers-q32",
+        "english_verbs-q37"
+      ]
+    },
+    "JFS": {
+      "count": 173,
+      "years": [
+        1999,
+        2000,
+        2002,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q80",
+        "english_adjectives_adverbs-q100",
+        "english_adjectives_adverbs-q101",
+        "english_adjectives_adverbs-q118",
+        "english_adjectives_adverbs-q119"
+      ]
+    },
+    "UECE": {
+      "count": 18,
+      "years": [
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q87",
+        "english_pronouns-q20",
+        "english_pronouns-q56",
+        "english_verbs-q36",
+        "english_verbs-q65"
+      ]
+    },
+    "FURG": {
+      "count": 2,
+      "years": [
+        1999
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q102",
+        "english_conjunctions-q85"
+      ]
+    },
+    "OSEC": {
+      "count": 1,
+      "years": [
+        1977
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q103"
+      ]
+    },
+    "FAAP": {
+      "count": 13,
+      "years": [
+        1975,
+        1996,
+        1997
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q104",
+        "english_pronouns-q29",
+        "english_pronouns-q54",
+        "english_pronouns-q55",
+        "english_verbs-q1"
+      ]
+    },
+    "EEAR": {
+      "count": 13,
+      "years": [
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_adjectives_adverbs-q106",
+        "english_adjectives_adverbs-q107",
+        "english_adjectives_adverbs-q108",
+        "english_verbs-q38",
+        "english_verbs-q39"
+      ]
+    },
+    "UNIRIO": {
+      "count": 20,
+      "years": [
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2002,
+        2003
+      ],
+      "sample_ids": [
+        "english_pronouns-q2",
+        "english_pronouns-q91",
+        "english_verbs-q119",
+        "english_modal_auxiliaries-q3",
+        "english_modal_auxiliaries-q17"
+      ]
+    },
+    "UFMG": {
+      "count": 4,
+      "years": [
+        1995
+      ],
+      "sample_ids": [
+        "english_pronouns-q3",
+        "english_pronouns-q9",
+        "english_direct_indirect-q29",
+        "english_conditionals-q5"
+      ]
+    },
+    "UFAL": {
+      "count": 3,
+      "years": [
+        1999,
+        2000
+      ],
+      "sample_ids": [
+        "english_pronouns-q4",
+        "english_pronouns-q28",
+        "english_prepositions-q55"
+      ]
+    },
+    "UNIFESP": {
+      "count": 7,
+      "years": [
+        2002,
+        2003,
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_pronouns-q6",
+        "english_pronouns-q121",
+        "english_prepositions-q66",
+        "english_conjunctions-q67",
+        "english_conjunctions-q68"
+      ]
+    },
+    "UFRN": {
+      "count": 4,
+      "years": [
+        1999,
+        2000
+      ],
+      "sample_ids": [
+        "english_pronouns-q27",
+        "english_verbs-q124",
+        "english_modal_auxiliaries-q32",
+        "english_conjunctions-q82"
+      ]
+    },
+    "UNIOESTE": {
+      "count": 1,
+      "years": [
+        1999
+      ],
+      "sample_ids": [
+        "english_pronouns-q107"
+      ]
+    },
+    "UFV/PASES": {
+      "count": 3,
+      "years": [
+        2000
+      ],
+      "sample_ids": [
+        "english_pronouns-q109",
+        "english_verbs-q72",
+        "english_prepositions-q57"
+      ]
+    },
+    "UECE/2ª FASE": {
+      "count": 4,
+      "years": [
+        2007,
+        2008
+      ],
+      "sample_ids": [
+        "english_pronouns-q116",
+        "english_pronouns-q117",
+        "english_pronouns-q118",
+        "english_pronouns-q119"
+      ]
+    },
+    "UFPR": {
+      "count": 2,
+      "years": [
+        1992,
+        1994
+      ],
+      "sample_ids": [
+        "english_quantifiers_intensifiers-q6",
+        "english_conjunctions-q12"
+      ]
+    },
+    "UFPB": {
+      "count": 5,
+      "years": [
+        1998
+      ],
+      "sample_ids": [
+        "english_verbs-q23",
+        "english_active_passive-q24",
+        "english_direct_indirect-q13",
+        "english_articles-q7",
+        "english_conjunctions-q32"
+      ]
+    },
+    "UFSCAR": {
+      "count": 2,
+      "years": [
+        2000,
+        2004
+      ],
+      "sample_ids": [
+        "english_verbs-q33",
+        "english_conjunctions-q80"
+      ]
+    },
+    "ESPCEX": {
+      "count": 4,
+      "years": [
+        1999
+      ],
+      "sample_ids": [
+        "english_verbs-q99",
+        "english_plural_nouns-q15",
+        "english_genitive_case-q12",
+        "english_idioms_vocabulary-q16"
+      ]
+    },
+    "UFPEL": {
+      "count": 2,
+      "years": [
+        2000,
+        2006
+      ],
+      "sample_ids": [
+        "english_verbs-q157",
+        "english_modal_auxiliaries-q48"
+      ]
+    },
+    "UFG": {
+      "count": 1,
+      "years": [
+        2006
+      ],
+      "sample_ids": [
+        "english_verbs-q165"
+      ]
+    },
+    "UFF": {
+      "count": 4,
+      "years": [
+        1996,
+        1997,
+        2000,
+        2001
+      ],
+      "sample_ids": [
+        "english_verbs-q174",
+        "english_articles-q19",
+        "english_conjunctions-q24",
+        "english_conjunctions-q61"
+      ]
+    },
+    "IME/CG": {
+      "count": 2,
+      "years": [
+        2011,
+        2012
+      ],
+      "sample_ids": [
+        "english_verbs-q176",
+        "english_conjunctions-q122"
+      ]
+    },
+    "FASM": {
+      "count": 1,
+      "years": [
+        2000
+      ],
+      "sample_ids": [
+        "english_active_passive-q92"
+      ]
+    },
+    "UFC": {
+      "count": 4,
+      "years": [
+        2000,
+        2001,
+        2005,
+        2006
+      ],
+      "sample_ids": [
+        "english_conditionals-q13",
+        "english_conditionals-q25",
+        "english_conjunctions-q113",
+        "english_conjunctions-q114"
+      ]
+    },
+    "FMTM": {
+      "count": 1,
+      "years": [
+        1998
+      ],
+      "sample_ids": [
+        "english_question_tags-q9"
+      ]
+    },
+    "EOMM": {
+      "count": 1,
+      "years": [
+        2012
+      ],
+      "sample_ids": [
+        "english_articles-q21"
+      ]
+    },
+    "IME": {
+      "count": 15,
+      "years": [
+        2010,
+        2011,
+        2012
+      ],
+      "sample_ids": [
+        "english_conjunctions-q123",
+        "english_subjunctive_imperative_infinitive_gerund-q20",
+        "english_synonyms_antonyms-q19",
+        "english_synonyms_antonyms-q20",
+        "english_synonyms_antonyms-q21"
+      ]
+    },
+    "UFMA": {
+      "count": 1,
+      "years": [
+        2000
+      ],
+      "sample_ids": [
+        "english_mixed_topics-q12"
+      ]
+    },
+    "Compilação de concursos militares": {
+      "count": 180,
+      "years": [],
+      "sample_ids": [
+        "english_translations-q1",
+        "english_translations-q2",
+        "english_translations-q3",
+        "english_translations-q4",
+        "english_translations-q5"
+      ]
+    }
+  },
+  "special_chars": [
+    {
+      "id": "english_mixed_topics-q12",
+      "chars": [
+        ""
+      ]
+    }
+  ],
+  "missing_highlights": [
+    {
+      "id": "english_synonyms_antonyms-q30",
+      "kind": "underline",
+      "page": 146,
+      "statement": "They would keep on developing until they were far more\nintelligent than we are.\n\nNa sentença acima, o vocábulo grifado poderia ser\nsubstituído por:",
+      "support": null,
+      "options": [
+        "far away.",
+        "incredible.",
+        "much.",
+        "distant.",
+        "many."
+      ]
+    }
+  ],
+  "blank_issues": [
+    {
+      "id": "english_adjectives_adverbs-q40",
+      "page": 6,
+      "statement": "About adjectives, choose the alternative that completes the\nsentences correctly:\n\nI. Is this | 1 one you have?\nII. Celine Dion sings | 2 Madonna, but Madonna dances | 3.\nIII. I wish I was | 4 Sean Connery.\nIV. The church is | 5 monument of the town.",
+      "support": null,
+      "options": [
+        "1. the better; 2. best than; 3. well; 4. so handsome as; 5. the more ancient",
+        "1. the best; 2. so well as; 3. best; 4. more handsome than; 5. the ancienter",
+        "1. the worst; 2. worse than; 3. better; 4. most handsome than; 5. the most ancient",
+        "1. the best; 2. as well as; 3. better; 4. as handsome as; 5. the most ancient",
+        "1. the worse; 2. better than; 3. best; 4. as handsome than; 5. the least ancient"
+      ]
+    },
+    {
+      "id": "english_pronouns-q146",
+      "page": 32,
+      "statement": "Fill in the balloons with the right interrogative pronouns.\nRelate the numbers given to the pronouns:",
+      "support": null,
+      "options": [
+        "1. Whose, 2. Who, 3. Why, 4. How, 5. Who",
+        "1. Who, 2. Which, 3. What, 4. Why, 5. How",
+        "1. What, 2. Whose, 3. What, 4. Why, 5. What",
+        "1. Which, 2. Who, 3. How, 4. What, 5. How",
+        "1. Who, 2. Whose, 3. What, 4. Why, 5. How"
+      ]
+    },
+    {
+      "id": "english_quantifiers_intensifiers-q31",
+      "page": 36,
+      "statement": "Which of the following is the best option to be used after\nthe word many in the sentence “many in the crowd shouted\nprotests against the morality police” in order to complete its\nmeaning?",
+      "support": "Watched by his wife, Zahra Rahnavard, Mr. Mousavi told an\naudience of female supporters in Tehran: \"We should reform\nlaws that are unfair to women.\" As Ms. Rahnavard spoke,\nmany in the crowd shouted p",
+      "options": [
+        "women.",
+        "people.",
+        "citizens.",
+        "dwellers.",
+        "wives."
+      ]
+    },
+    {
+      "id": "english_verbs-q175",
+      "page": 57,
+      "statement": "Considere as seguintes asserções:\n\n* Em \"We're\" e \"they'd\", \"'re\" e \"'d\" são, respectivamente,\ncontrações de flexões verbais dos verbos I e II.\n* Uma outra forma de expressar a oração \"If we told you\neverything, they'd have to kill us.\" é III.\n\nA opção que melhor preenche as lacunas I, II e III é:",
+      "support": "(Time, May 12, 2003)",
+      "options": [
+        "I. are; II. would; III. They'd kill us, unless we told you everything.",
+        "I. are; II. had; III. They had to kill us, unless we told you everything.",
+        "I. were; II. would; III. Unless we told you everything, they would have to kill us.",
+        "I. were; II. could; III. Unless we told you everything, they could kill us.",
+        "I. are; II. would; III. They wouldn't have to kill us, unless we told you everything."
+      ]
+    },
+    {
+      "id": "english_direct_indirect-q16",
+      "page": 81,
+      "statement": "\"How would you describe yourself?\" is a direct question.\nComplete the sentence below with the appropriate indirect\nquestion form:\n\nDaniel Hart asked an African-American teenager:",
+      "support": null,
+      "options": [
+        "how to describe it.",
+        "how to describe yourself.",
+        "how he would describe yourself.",
+        "to describe himself.",
+        "to describe yourself."
+      ]
+    },
+    {
+      "id": "english_direct_indirect-q29",
+      "page": 83,
+      "statement": "A wife is telling us what happened this morning. Complete\nthe following text according to the comic strip below:\n\nThis morning, my husband stepped on our scale and shouted\nthat (1) that much. He pointed at the machine and said it (2)\na dirty liar.",
+      "support": null,
+      "options": [
+        "he didn’t weigh – was",
+        "he don’t weigh – was",
+        "he doesn’t weigh – were",
+        "he did weigh – were",
+        "he hadn’t weigh – was"
+      ]
+    },
+    {
+      "id": "english_direct_indirect-q30",
+      "page": 83,
+      "statement": "Complete the following sentences meaningfully:\n\n1. I told him:\n2. I didn't know:",
+      "support": null,
+      "options": [
+        "1. what the homework was./2. what he meant.",
+        "1. what was the homework./2. what he mean.",
+        "1. what was to be the homework./2. what did he mean.",
+        "1. what is the homework./2. what did he meant."
+      ]
+    },
+    {
+      "id": "english_numbers-q8",
+      "page": 102,
+      "statement": "A alternativa que corretamente preenche as lacunas I, II e III\nde:\n\n1. Five from six leaves I.\n2. Two into eight goes II times.\n3. The third power of two is III.\n\n– é:",
+      "support": null,
+      "options": [
+        "30; 8; 10",
+        "11; 10; 10",
+        "30; 12; 8",
+        "1; 4; 8",
+        "1; 8; 1"
+      ]
+    },
+    {
+      "id": "english_conjunctions-q43",
+      "page": 118,
+      "statement": "Indicate the alternative that best completes the following\nsentence:\n\nPhilip never borrowed money:",
+      "support": null,
+      "options": [
+        "not either from his parents or from the bank",
+        "neither from his parents or from the bank",
+        "both from his parents and from the bank",
+        "either from his parents or from the bank",
+        "neither from his parents and from the bank"
+      ]
+    },
+    {
+      "id": "english_conjunctions-q77",
+      "page": 122,
+      "statement": "Indicate the alternative that best completes the sentence:\n\nThe road was in bad condition:",
+      "support": null,
+      "options": [
+        "despite, I was very late.",
+        "however, we didn't stop.",
+        "nonetheless, the road was long.",
+        "in fact, it was 7 o'clock.",
+        "if I had more time, I'd call you."
+      ]
+    },
+    {
+      "id": "english_conjunctions-q109",
+      "page": 126,
+      "statement": "Marque a alternativa que completa as lacunas na sentença a\nseguir corretamente:\n\nCharles... Mary are brother... sister.",
+      "support": null,
+      "options": [
+        "or / and",
+        "and / or",
+        "and / but",
+        "and / and",
+        "but / and"
+      ]
+    },
+    {
+      "id": "english_subjunctive_imperative_infinitive_gerund-q15",
+      "page": 130,
+      "statement": "A alternativa que deve preencher a lacuna no quadro a\nseguir é:",
+      "support": null,
+      "options": [
+        "there is",
+        "you do",
+        "there be",
+        "have",
+        "may be"
+      ]
+    },
+    {
+      "id": "english_reading_review-q50",
+      "page": 159,
+      "statement": "According to the text, complete the sentence: “The\nmicrowave oven…”",
+      "support": "The history of technology is full of breakthroughs in\none field that wound up working wonders in a related one.\nThe 300B vacuum tube, introduced by Western Electric in\n1937 to amplify telephone signal",
+      "options": [
+        "relies on the proper function of radars.",
+        "and the magnetron were repurposed after their inventions.",
+        "is one more example of the technological inventions which have benefited from the innovations generated during the space race.",
+        "and radars used during the World War II both count on the magnetron as one of its components.",
+        "was first idealized at General Electric."
+      ]
+    }
+  ],
+  "glued_blanks": [
+    {
+      "id": "english_reading_review-q70",
+      "matches": [
+        "e_____"
+      ],
+      "statement": "Para estar adequada ao contexto em que aparece, a palavra\neffective (linha 1), deve ser acrescida de:"
+    },
+    {
+      "id": "english_reading_review-q71",
+      "matches": [
+        "e_____"
+      ],
+      "statement": "A opção que descreve a palavra empathy é:"
+    },
+    {
+      "id": "english_reading_review-q72",
+      "matches": [
+        "e_____"
+      ],
+      "statement": "Segundo o texto:"
+    },
+    {
+      "id": "english_reading_review-q73",
+      "matches": [
+        "e_____"
+      ],
+      "statement": "“All right, everyone, we're not here to talk shop. Let's have a\ngood time.” We are not here to:"
+    }
+  ],
+  "image_audit": {
+    "attached_images": [
+      {
+        "id": "english_pronouns-q77",
+        "page": 23,
+        "kind": "figure",
+        "url": "/assets/questions/english/p023-Im11.png",
+        "alt": "Tirinha de Garfield procurando a jaqueta em vários lugares.",
+        "statement": "\"International Herald Tribune\", August 30, 2001.\n\n– Mark the sentence which must be completed with\n\"anywhere\":"
+      },
+      {
+        "id": "english_pronouns-q114",
+        "page": 28,
+        "kind": "figure",
+        "url": "/assets/questions/english/p028-Im11.png",
+        "alt": "Tirinha em quatro quadrinhos sobre crianças observadoras.",
+        "statement": "– \"A man named\", no primeiro quadrinho, é equivalente a:"
+      },
+      {
+        "id": "english_pronouns-q146",
+        "page": 32,
+        "kind": "figure",
+        "url": "/assets/questions/english/p032-Im11.png",
+        "alt": "Tirinha com balões para completar pronomes interrogativos.",
+        "statement": "Fill in the balloons with the right interrogative pronouns.\nRelate the numbers given to the pronouns:"
+      },
+      {
+        "id": "english_verbs-q73",
+        "page": 45,
+        "kind": "figure",
+        "url": "/assets/questions/english/p045-Im11.png",
+        "alt": "Tirinha usada para corrigir uma forma verbal.",
+        "statement": "Based on your knowledge of English grammar, correct the\nsentence in the cartoon below:"
+      },
+      {
+        "id": "english_verbs-q104",
+        "page": 48,
+        "kind": "figure",
+        "url": "/assets/questions/english/p048-Im11.png",
+        "alt": "Tirinha usada para interpretar uma condição verbal.",
+        "statement": "Considere a imagem a seguir:\n\n– Qual seria o correspondente, no passado, de \"if I ever\ncatch\" and \"I'll wash\"?"
+      },
+      {
+        "id": "english_verbs-q165",
+        "page": 55,
+        "kind": "figure",
+        "url": "/assets/questions/english/p055-Im11.png",
+        "alt": "Tirinha de Charlie Brown e Lucy com linguagem coloquial.",
+        "statement": "Adapted from www.unitedmedia.com\n\n– É exemplo de agramaticalidade característica da linguagem\noral:"
+      },
+      {
+        "id": "english_verbs-q175",
+        "page": 57,
+        "kind": "photo",
+        "url": "/assets/questions/english/p057-Im11.png",
+        "alt": "Capa ilustrada de Secrets of the New Matrix.",
+        "statement": "Considere as seguintes asserções:\n\n* Em \"We're\" e \"they'd\", \"'re\" e \"'d\" são, respectivamente,\ncontrações de flexões ver"
+      },
+      {
+        "id": "english_modal_auxiliaries-q50",
+        "page": 63,
+        "kind": "figure",
+        "url": "/assets/questions/english/p063-Im11.png",
+        "alt": "Tirinha de Peanuts sobre tomar café da manhã.",
+        "statement": "– In \"you should start each day with a song... in your soul\",\n\"should\" expresses an idea of:"
+      },
+      {
+        "id": "english_modal_auxiliaries-q57",
+        "page": 64,
+        "kind": "photo",
+        "url": "/assets/questions/english/p064-Im11.png",
+        "alt": "Fotografia histórica de uma manifestação pelo sufrágio feminino.",
+        "statement": "Disponível em:\nhttp://www.loc.gov/rr/print/list/listguid.html\nAcesso em: 14 out. 2004.\n\n– Com base no texto, \"ought to\" "
+      },
+      {
+        "id": "english_modal_auxiliaries-q60",
+        "page": 65,
+        "kind": "figure",
+        "url": "/assets/questions/english/p065-Im11.png",
+        "alt": "Ilustração com placas e um balão sobre não precisar parar.",
+        "statement": "– \"Don't have to\" and \"must not\" indicate:"
+      },
+      {
+        "id": "english_modal_auxiliaries-q74",
+        "page": 67,
+        "kind": "figure",
+        "url": "/assets/questions/english/p067-Im11.png",
+        "alt": "Ilustração de um homem sentado em um banco com uma criança.",
+        "statement": "Which sentence has the same idea as the modal can’t in\nthe sentence above?"
+      },
+      {
+        "id": "english_active_passive-q70",
+        "page": 75,
+        "kind": "figure",
+        "url": "/assets/questions/english/p075-Im11.png",
+        "alt": "Tirinha usada para interpretar a forma passiva dragged.",
+        "statement": "– \"I was dragged\", no início do quinto quadrinho, significa:"
+      },
+      {
+        "id": "english_direct_indirect-q27",
+        "page": 82,
+        "kind": "figure",
+        "url": "/assets/questions/english/p082-Im11.jpg",
+        "alt": "Três tirinhas usadas no exercício de discurso indireto.",
+        "statement": "Read the following cartoons:\n\n– Which alternative has the correct forms of the sentences\nbelow in the Reported Speech?\n\n"
+      },
+      {
+        "id": "english_direct_indirect-q27",
+        "page": 82,
+        "kind": "figure",
+        "url": "/assets/questions/english/p082-Im12.jpg",
+        "alt": "Três tirinhas usadas no exercício de discurso indireto.",
+        "statement": "Read the following cartoons:\n\n– Which alternative has the correct forms of the sentences\nbelow in the Reported Speech?\n\n"
+      },
+      {
+        "id": "english_direct_indirect-q27",
+        "page": 82,
+        "kind": "figure",
+        "url": "/assets/questions/english/p082-Im13.jpg",
+        "alt": "Três tirinhas usadas no exercício de discurso indireto.",
+        "statement": "Read the following cartoons:\n\n– Which alternative has the correct forms of the sentences\nbelow in the Reported Speech?\n\n"
+      },
+      {
+        "id": "english_direct_indirect-q29",
+        "page": 83,
+        "kind": "figure",
+        "url": "/assets/questions/english/p083-Im11.png",
+        "alt": "Tirinha com uma menina pedindo que o pai desenhe uma aranha.",
+        "statement": "A wife is telling us what happened this morning. Complete\nthe following text according to the comic strip below:\n\nThis m"
+      },
+      {
+        "id": "english_conditionals-q28",
+        "page": 88,
+        "kind": "figure",
+        "url": "/assets/questions/english/p088-Im11.png",
+        "alt": "Imagem de Nikita Khrushchev acompanhada de uma citação.",
+        "statement": "– The sentence that contains \"if-clauses\" correctly used is:"
+      },
+      {
+        "id": "english_plural_nouns-q9",
+        "page": 97,
+        "kind": "figure",
+        "url": "/assets/questions/english/p097-Im11.png",
+        "alt": "Tirinha de Garfield usada no exercício de plural.",
+        "statement": "– Which alternative shows the correct plural form of the\nwords given?"
+      },
+      {
+        "id": "english_conjunctions-q46",
+        "page": 118,
+        "kind": "figure",
+        "url": "/assets/questions/english/p118-Im11.png",
+        "alt": "Charge sobre a Grande Depressão e o uso de conjunções.",
+        "statement": "Considerando a \"charge\" a seguir bem como a sua tradução,\nassinale a opção cuja conjunção corresponda à palavra que\nfoi "
+      },
+      {
+        "id": "english_conjunctions-q110",
+        "page": 126,
+        "kind": "figure",
+        "url": "/assets/questions/english/p126-Im11.png",
+        "alt": "Charge sobre a Grande Depressão e suas relações de causa e efeito.",
+        "statement": "– In \"... BECAUSE there weren't any malls, SO everyone was\ndepressed\", the ideas expressed by the capital words are\nresp"
+      },
+      {
+        "id": "english_subjunctive_imperative_infinitive_gerund-q15",
+        "page": 130,
+        "kind": "figure",
+        "url": "/assets/questions/english/p130-Im11.png",
+        "alt": "Charge sobre a proibição de fumar na Casa Branca.",
+        "statement": "A alternativa que deve preencher a lacuna no quadro a\nseguir é:"
+      },
+      {
+        "id": "english_mixed_topics-q19",
+        "page": 138,
+        "kind": "figure",
+        "url": "/assets/questions/english/p138-Im11.png",
+        "alt": "Tirinha A 90s Vacation com balões para completar.",
+        "statement": "After a __________ I enjoy __________ beer __________\ntwo."
+      },
+      {
+        "id": "english_mixed_topics-q20",
+        "page": 138,
+        "kind": "figure",
+        "url": "/assets/questions/english/p138-Im11.png",
+        "alt": "Tirinha A 90s Vacation com balões para completar.",
+        "statement": "The magic __________ had __________ audience\nparticipation, with people shouting things __________ the\nperformers and go"
+      },
+      {
+        "id": "english_mixed_topics-q21",
+        "page": 138,
+        "kind": "figure",
+        "url": "/assets/questions/english/p138-Im11.png",
+        "alt": "Tirinha A 90s Vacation com balões para completar.",
+        "statement": "Preenche corretamente a lacuna (I) a alternativa:"
+      },
+      {
+        "id": "english_mixed_topics-q22",
+        "page": 138,
+        "kind": "figure",
+        "url": "/assets/questions/english/p138-Im11.png",
+        "alt": "Tirinha A 90s Vacation com balões para completar.",
+        "statement": "Preenche corretamente a lacuna (II) a alternativa:"
+      },
+      {
+        "id": "english_mixed_topics-q23",
+        "page": 138,
+        "kind": "figure",
+        "url": "/assets/questions/english/p138-Im11.png",
+        "alt": "Tirinha A 90s Vacation com balões para completar.",
+        "statement": "Preenche corretamente a lacuna (III) a alternativa:"
+      },
+      {
+        "id": "english_mixed_topics-q12",
+        "page": 137,
+        "kind": "figure",
+        "url": "/assets/questions/english/p137-Im11.png",
+        "alt": "Duas tirinhas usadas na questão sobre construções adequadas.",
+        "statement": "Copyright  2000 United Feature Syndicate, Inc.\nRedistribution in whole or in part prohibited.\n\n– In the context of the "
+      },
+      {
+        "id": "english_mixed_topics-q12",
+        "page": 137,
+        "kind": "figure",
+        "url": "/assets/questions/english/p137-Im12.png",
+        "alt": "Duas tirinhas usadas na questão sobre construções adequadas.",
+        "statement": "Copyright  2000 United Feature Syndicate, Inc.\nRedistribution in whole or in part prohibited.\n\n– In the context of the "
+      },
+      {
+        "id": "english_idioms_vocabulary-q29",
+        "page": 142,
+        "kind": "figure",
+        "url": "/assets/questions/english/p142-Im11.png",
+        "alt": "Tirinha sobre alcançar um pote e a expressão hit the sack.",
+        "statement": "Adapted from http://3.bp.blogspot.com/\n\n– No cartun acima, a expressão hit the sack poderia ser\nsubstituída por:"
+      },
+      {
+        "id": "english_idioms_vocabulary-q29",
+        "page": 142,
+        "kind": "figure",
+        "url": "/assets/questions/english/p142-Im12.png",
+        "alt": "Tirinha sobre alcançar um pote e a expressão hit the sack.",
+        "statement": "Adapted from http://3.bp.blogspot.com/\n\n– No cartun acima, a expressão hit the sack poderia ser\nsubstituída por:"
+      },
+      {
+        "id": "english_synonyms_antonyms-q6",
+        "page": 143,
+        "kind": "figure",
+        "url": "/assets/questions/english/p143-Im11.png",
+        "alt": "Charge sobre frango grelhado e o verbo to broil.",
+        "statement": "The verb TO BROIL means the same as:"
+      },
+      {
+        "id": "english_synonyms_antonyms-q32",
+        "page": 147,
+        "kind": "figure",
+        "url": "/assets/questions/english/p147-Im11.png",
+        "alt": "Charge sobre avanços tecnológicos e a palavra breakthrough.",
+        "statement": "A palavra breakthrough, na charge, tem o mesmo sentido\nde:"
+      },
+      {
+        "id": "english_reading_review-q13",
+        "page": 151,
+        "kind": "figure",
+        "url": "/assets/questions/english/p151-Im11.png",
+        "alt": "Anúncio ilustrado da New Mexico State University.",
+        "statement": "Julgue os itens a seguir:\n\nI. Os cursos da NMSU abrangem as áreas de magistério,\nengenharia, hotelaria e artes cênicas.\n"
+      },
+      {
+        "id": "english_reading_review-q29",
+        "page": 155,
+        "kind": "figure",
+        "url": "/assets/questions/english/p155-Im11.png",
+        "alt": "Mapa satírico dos impérios do futebol.",
+        "statement": "According to the cartoon, FIFA:"
+      },
+      {
+        "id": "english_reading_review-q31",
+        "page": 155,
+        "kind": "figure",
+        "url": "/assets/questions/english/p155-Im12.png",
+        "alt": "Tirinha sobre futebol, tarefas e a escolha de times.",
+        "statement": "The expression run a couple of errands (1st balloon) means\nthe same as:"
+      },
+      {
+        "id": "english_reading_review-q31",
+        "page": 155,
+        "kind": "figure",
+        "url": "/assets/questions/english/p155-Im13.png",
+        "alt": "Tirinha sobre futebol, tarefas e a escolha de times.",
+        "statement": "The expression run a couple of errands (1st balloon) means\nthe same as:"
+      },
+      {
+        "id": "english_reading_review-q32",
+        "page": 155,
+        "kind": "figure",
+        "url": "/assets/questions/english/p155-Im12.png",
+        "alt": "Tirinha sobre futebol, tarefas e a escolha de times.",
+        "statement": "In the 2nd balloon, take-out is a kind of:"
+      },
+      {
+        "id": "english_reading_review-q32",
+        "page": 155,
+        "kind": "figure",
+        "url": "/assets/questions/english/p155-Im13.png",
+        "alt": "Tirinha sobre futebol, tarefas e a escolha de times.",
+        "statement": "In the 2nd balloon, take-out is a kind of:"
+      },
+      {
+        "id": "english_reading_review-q33",
+        "page": 155,
+        "kind": "figure",
+        "url": "/assets/questions/english/p155-Im12.png",
+        "alt": "Tirinha sobre futebol, tarefas e a escolha de times.",
+        "statement": "The couple in the cartoon:"
+      },
+      {
+        "id": "english_reading_review-q33",
+        "page": 155,
+        "kind": "figure",
+        "url": "/assets/questions/english/p155-Im13.png",
+        "alt": "Tirinha sobre futebol, tarefas e a escolha de times.",
+        "statement": "The couple in the cartoon:"
+      },
+      {
+        "id": "english_reading_review-q34",
+        "page": 156,
+        "kind": "figure",
+        "url": "/assets/questions/english/p156-Im11.png",
+        "alt": "Ilustração televisiva que acompanha o texto TV Will Save the World.",
+        "statement": "De acordo com o texto, o argumento que melhor justifica o\ntítulo TV Will Save the World é:"
+      },
+      {
+        "id": "english_reading_review-q35",
+        "page": 156,
+        "kind": "figure",
+        "url": "/assets/questions/english/p156-Im11.png",
+        "alt": "Ilustração televisiva que acompanha o texto TV Will Save the World.",
+        "statement": "Sobre a presença da TV no mundo, o texto informa que:"
+      },
+      {
+        "id": "english_reading_review-q36",
+        "page": 156,
+        "kind": "figure",
+        "url": "/assets/questions/english/p156-Im11.png",
+        "alt": "Ilustração televisiva que acompanha o texto TV Will Save the World.",
+        "statement": "Segundo o texto, um dos impactos que a TV a cabo trouxe\npara a vida das mulheres indianas foi que elas:"
+      },
+      {
+        "id": "english_reading_review-q37",
+        "page": 157,
+        "kind": "photo",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "Preencha as lacunas I, II, III, IV e V correta e coerentemente:"
+      },
+      {
+        "id": "english_reading_review-q38",
+        "page": 157,
+        "kind": "photo",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "Segundo o texto:"
+      },
+      {
+        "id": "english_reading_review-q39",
+        "page": 157,
+        "kind": "photo",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "Marque o item correto."
+      },
+      {
+        "id": "english_reading_review-q40",
+        "page": 157,
+        "kind": "photo",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "A opção que descreve a palavra secular (5º parágrafo) é:"
+      },
+      {
+        "id": "english_reading_review-q41",
+        "page": 157,
+        "kind": "photo",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "No 3º parágrafo, o vocábulo affluent pode ser definido\ncomo:"
+      },
+      {
+        "id": "english_reading_review-q42",
+        "page": 158,
+        "kind": "figure",
+        "url": "/assets/questions/english/p158-ad-panel.png",
+        "alt": "Recorte do anúncio da DHL para a Fórmula 1, incluindo a chamada e o logotipo.",
+        "statement": "Assinale a opção que preenche corretamente a lacuna\npresente no texto e que indica o tipo de serviço ofertado\npelo anunc"
+      },
+      {
+        "id": "english_reading_review-q43",
+        "page": 158,
+        "kind": "figure",
+        "url": "/assets/questions/english/p158-ad-panel.png",
+        "alt": "Recorte do anúncio da DHL para a Fórmula 1, incluindo a chamada e o logotipo.",
+        "statement": "Assinale uma característica, associada à Fórmula 1, que NÃO\nfoi considerada como essencial pelo anunciante."
+      },
+      {
+        "id": "english_reading_review-q44",
+        "page": 158,
+        "kind": "figure",
+        "url": "/assets/questions/english/p158-ad-panel.png",
+        "alt": "Recorte do anúncio da DHL para a Fórmula 1, incluindo a chamada e o logotipo.",
+        "statement": "Escolha o termo cuja função gramatical e significado se\naproximam do vocábulo drive, na chamada do anúncio."
+      },
+      {
+        "id": "english_reading_review-q45",
+        "page": 158,
+        "kind": "figure",
+        "url": "/assets/questions/english/p158-ad-panel.png",
+        "alt": "Recorte do anúncio da DHL para a Fórmula 1, incluindo a chamada e o logotipo.",
+        "statement": "O texto informa que Bernie Ecclestone:"
+      },
+      {
+        "id": "english_reading_review-q46",
+        "page": 159,
+        "kind": "figure",
+        "url": "/assets/questions/english/p159-Im11.png",
+        "alt": "Tirinha de Charlie Brown em quatro quadrinhos, incluindo o terceiro quadrinho.",
+        "statement": "Consoante o autor do livro que Charlie Brown está lendo, as\ncrianças são muito **observadoras**. Qual das opções abaixo\n"
+      },
+      {
+        "id": "english_reading_review-q47",
+        "page": 159,
+        "kind": "figure",
+        "url": "/assets/questions/english/p159-Im11.png",
+        "alt": "Tirinha de Charlie Brown em quatro quadrinhos, incluindo o terceiro quadrinho.",
+        "statement": "A mensagem transmitida pela charge denota, em especial:"
+      },
+      {
+        "id": "english_reading_review-q48",
+        "page": 159,
+        "kind": "figure",
+        "url": "/assets/questions/english/p159-Im11.png",
+        "alt": "Tirinha de Charlie Brown em quatro quadrinhos, incluindo o terceiro quadrinho.",
+        "statement": "O vocábulo rather, no 3º quadrinho, equivale a:"
+      },
+      {
+        "id": "english_reading_review-q60",
+        "page": 162,
+        "kind": "photo",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "De acordo com o título e o subtítulo do texto, avatares:"
+      },
+      {
+        "id": "english_reading_review-q61",
+        "page": 162,
+        "kind": "photo",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "Assinale a opção CORRETA."
+      },
+      {
+        "id": "english_reading_review-q62",
+        "page": 162,
+        "kind": "photo",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "Assinale a opção em que o referente do pronome está\nINCORRETO."
+      },
+      {
+        "id": "english_reading_review-q63",
+        "page": 162,
+        "kind": "photo",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "A measure of aggression (linha 11), encroachment (linha\n13), roughing the kicker (linha 13) e digital representations\nof"
+      },
+      {
+        "id": "english_reading_review-q64",
+        "page": 162,
+        "kind": "photo",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "De acordo com o texto:"
+      },
+      {
+        "id": "english_reading_review-q69",
+        "page": 163,
+        "kind": "figure",
+        "url": "/assets/questions/english/p163-Im11.png",
+        "alt": "Tirinha sobre análise de dados e o histórico escolar.",
+        "statement": "Analise as seguintes asserções:\n\nI. O computador analisou o passado estudantil do rapaz sem\ncuriosidade pessoal alguma.\n"
+      },
+      {
+        "id": "english_reading_review-q69",
+        "page": 163,
+        "kind": "figure",
+        "url": "/assets/questions/english/p163-Im12.png",
+        "alt": "Tirinha sobre análise de dados e o histórico escolar.",
+        "statement": "Analise as seguintes asserções:\n\nI. O computador analisou o passado estudantil do rapaz sem\ncuriosidade pessoal alguma.\n"
+      },
+      {
+        "id": "english_reading_review-q70",
+        "page": 164,
+        "kind": "figure",
+        "url": "/assets/questions/english/p164-Im11.png",
+        "alt": "Ilustração que acompanha o texto sobre programas de empatia e bullying.",
+        "statement": "Para estar adequada ao contexto em que aparece, a palavra\neffective (linha 1), deve ser acrescida de:"
+      },
+      {
+        "id": "english_reading_review-q71",
+        "page": 164,
+        "kind": "figure",
+        "url": "/assets/questions/english/p164-Im11.png",
+        "alt": "Ilustração que acompanha o texto sobre programas de empatia e bullying.",
+        "statement": "A opção que descreve a palavra empathy é:"
+      },
+      {
+        "id": "english_reading_review-q72",
+        "page": 164,
+        "kind": "figure",
+        "url": "/assets/questions/english/p164-Im11.png",
+        "alt": "Ilustração que acompanha o texto sobre programas de empatia e bullying.",
+        "statement": "Segundo o texto:"
+      },
+      {
+        "id": "english_reading_review-q73",
+        "page": 164,
+        "kind": "figure",
+        "url": "/assets/questions/english/p164-Im11.png",
+        "alt": "Ilustração que acompanha o texto sobre programas de empatia e bullying.",
+        "statement": "“All right, everyone, we're not here to talk shop. Let's have a\ngood time.” We are not here to:"
+      },
+      {
+        "id": "english_reading_review-q74",
+        "page": 165,
+        "kind": "photo",
+        "url": "/assets/questions/english/p165-Im11.png",
+        "alt": "Fotografia de um tubarão híbrido que acompanha o texto científico.",
+        "statement": "De acordo com o texto:"
+      },
+      {
+        "id": "english_reading_review-q75",
+        "page": 165,
+        "kind": "photo",
+        "url": "/assets/questions/english/p165-Im11.png",
+        "alt": "Fotografia de um tubarão híbrido que acompanha o texto científico.",
+        "statement": "Qual das referências a seguir está incorreta:"
+      },
+      {
+        "id": "english_reading_review-q76",
+        "page": 165,
+        "kind": "photo",
+        "url": "/assets/questions/english/p165-Im11.png",
+        "alt": "Fotografia de um tubarão híbrido que acompanha o texto científico.",
+        "statement": "Assinale a opção em que a tradução do termo da coluna I\nnão corresponde ao termo da coluna II.\n\nColuna I Coluna II"
+      },
+      {
+        "id": "english_reading_review-q77",
+        "page": 165,
+        "kind": "photo",
+        "url": "/assets/questions/english/p165-Im11.png",
+        "alt": "Fotografia de um tubarão híbrido que acompanha o texto científico.",
+        "statement": "Julgue os itens a seguir:\n\nI. A preposição along (3º parágrafo) pode ser substituída por\nbetween.\nII. Os vocábulos measu"
+      },
+      {
+        "id": "english_reading_review-q87",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "It can be inferred from the text that:"
+      },
+      {
+        "id": "english_reading_review-q88",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "Which of the following options fills in the gap in the 6 th\nparagraph of the text?"
+      },
+      {
+        "id": "english_reading_review-q89",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "Judge the following items:\n\nI. The new microorganism is the only microbe on Earth that\nis able to cope with arsenic.\nII."
+      },
+      {
+        "id": "english_reading_review-q90",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "Judge the following items:\n\nI. The scientists are still investigating the very moment\narsenic was incorporated by the mi"
+      },
+      {
+        "id": "english_reading_review-q91",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "In the sentence “ Researchers conducting tests in the harsh\nenvironment of Mono Lake in California have discovered the\nf"
+      },
+      {
+        "id": "english_reading_review-q92",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "Which of the following words can be turned into the plural\nform in the same way as bacteria?"
+      },
+      {
+        "id": "english_reading_review-q93",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "In the sentence “ Arsenic, which is chemically similar to\nphosphorus, is poi sonous for most life on Earth”, extracted\nf"
+      },
+      {
+        "id": "english_reading_review-q94",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "In the sentence “the researchers successfully grew microbes\nfrom the lake on a diet that was very lean on phosphorus”,\na"
+      },
+      {
+        "id": "english_reading_review-q95",
+        "page": 168,
+        "kind": "photo",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "In the sentence “ the arsenic was being used to produce the\nbuilding blocks of new GFAJ-1 cells”, extracted from the 8 t"
+      },
+      {
+        "id": "english_reading_review-q96",
+        "page": 170,
+        "kind": "photo",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "According to the information in the article, Alfred and Albert\nStratton:"
+      },
+      {
+        "id": "english_reading_review-q97",
+        "page": 170,
+        "kind": "photo",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "Which of the following probably best explains the\nimportance of Francis Galton?"
+      },
+      {
+        "id": "english_reading_review-q98",
+        "page": 170,
+        "kind": "photo",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "According to the information in the article:"
+      },
+      {
+        "id": "english_reading_review-q99",
+        "page": 170,
+        "kind": "photo",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "According to the article, in the 1860s William Herschel:"
+      },
+      {
+        "id": "english_reading_review-q100",
+        "page": 170,
+        "kind": "photo",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "In paragraph 4, this in the phrase “In instituting this…” most\nlikely refers to:"
+      },
+      {
+        "id": "english_reading_review-q101",
+        "page": 170,
+        "kind": "photo",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "According to the information in the article:"
+      },
+      {
+        "id": "english_reading_review-q102",
+        "page": 170,
+        "kind": "photo",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "Which of the following probably best describes the “crucial\nfeature” mentioned in paragraph 4?"
+      },
+      {
+        "id": "english_reading_review-q103",
+        "page": 170,
+        "kind": "photo",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "With respect to the information in the article, which of the\nfollowing is not true about Francis Galton?"
+      },
+      {
+        "id": "english_reading_review-q104",
+        "page": 171,
+        "kind": "photo",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "President Barack Obama has approved a significant troop\nincrease for Afghanistan, Pentagon officials said Tuesday.\nThe n"
+      },
+      {
+        "id": "english_reading_review-q105",
+        "page": 171,
+        "kind": "photo",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "Qual dos voc ábulos a seguir, extraídos do texto, não pode\nser considerado um falso cognato?"
+      },
+      {
+        "id": "english_reading_review-q106",
+        "page": 171,
+        "kind": "photo",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "Assinale a opção que preenche corretamente a lacuna (I)\npresente no 10º parágrafo do texto."
+      },
+      {
+        "id": "english_reading_review-q107",
+        "page": 171,
+        "kind": "photo",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "Assinale a opção que preenche corretamente a lacuna (II)\npresente no 12º parágrafo do texto."
+      },
+      {
+        "id": "english_reading_review-q108",
+        "page": 171,
+        "kind": "photo",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "Assinale a opção correta."
+      },
+      {
+        "id": "english_reading_review-q109",
+        "page": 171,
+        "kind": "photo",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "As perguntas feitas pelo autor ao longo do texto:"
+      },
+      {
+        "id": "english_reading_review-q110",
+        "page": 171,
+        "kind": "photo",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "A sentença Yet we've allowed ourselves to get stuck there?,\nextraída do 5º parágrafo, apresenta uma idéia de:"
+      },
+      {
+        "id": "english_reading_review-q111",
+        "page": 173,
+        "kind": "figure",
+        "url": "/assets/questions/english/p173-Im11.png",
+        "alt": "Charge de soldados usada na questão sobre a imagem.",
+        "statement": "Consoante a imagem:"
+      },
+      {
+        "id": "english_reading_review-q112",
+        "page": 173,
+        "kind": "chart",
+        "url": "/assets/questions/english/p173-Im12.png",
+        "alt": "Gráficos circulares da pesquisa sobre a opinião dos norte-americanos.",
+        "statement": "A pesquisa descrita no texto mostrou que a maioria dos\nnorte-americanos:"
+      },
+      {
+        "id": "english_reading_review-q113",
+        "page": 173,
+        "kind": "chart",
+        "url": "/assets/questions/english/p173-Im12.png",
+        "alt": "Gráficos circulares da pesquisa sobre a opinião dos norte-americanos.",
+        "statement": "A sequência “most Americans think another terrorist attack\nin the U.S. i s likely” significa que, para a maioria dos nor"
+      },
+      {
+        "id": "english_reading_review-q114",
+        "page": 173,
+        "kind": "chart",
+        "url": "/assets/questions/english/p173-Im12.png",
+        "alt": "Gráficos circulares da pesquisa sobre a opinião dos norte-americanos.",
+        "statement": "Com base nos gráficos que acompanham o texto, é correto\nafirmar que, para os norte-americanos:"
+      },
+      {
+        "id": "english_reading_review-q115",
+        "page": 174,
+        "kind": "photo",
+        "url": "/assets/questions/english/p174-Im11.png",
+        "alt": "Imagem de um robô que acompanha o texto sobre robótica.",
+        "statement": "Segundo o texto, um grande desafio da robótica é:"
+      },
+      {
+        "id": "english_reading_review-q116",
+        "page": 174,
+        "kind": "photo",
+        "url": "/assets/questions/english/p174-Im11.png",
+        "alt": "Imagem de um robô que acompanha o texto sobre robótica.",
+        "statement": "De acordo com o texto, o especialista Gary Bradski afirma\nque:"
+      },
+      {
+        "id": "english_reading_review-q117",
+        "page": 174,
+        "kind": "figure",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "O texto informa que Damon Albarn:"
+      },
+      {
+        "id": "english_reading_review-q118",
+        "page": 174,
+        "kind": "figure",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "Analise as asserções a seguir:\n\nI. O Gorillaz foi a atração principal do festival de Glastonbury\nde 2010.\nII. O Gorillaz"
+      },
+      {
+        "id": "english_reading_review-q119",
+        "page": 174,
+        "kind": "figure",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "Analise as asserções a seguir:\n\nI. No 1º parágrafo, notch up equivale semanticamente a\nachieve.\nII. No 5º parágrafo, ers"
+      },
+      {
+        "id": "english_reading_review-q120",
+        "page": 174,
+        "kind": "figure",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "Assinale a opção CORRETA."
+      },
+      {
+        "id": "english_reading_review-q121",
+        "page": 174,
+        "kind": "figure",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "Qual das sentenças a seguir, extraídas do texto, não se\nencontra na voz passiva?"
+      },
+      {
+        "id": "english_reading_review-q123",
+        "page": 176,
+        "kind": "photo",
+        "url": "/assets/questions/english/p176-Im11.png",
+        "alt": "Fotografia da estudante que acompanha o estudo sobre rótulos de baixo teor de gordura.",
+        "statement": "The study described in the text shows that:"
+      },
+      {
+        "id": "english_reading_review-q124",
+        "page": 176,
+        "kind": "photo",
+        "url": "/assets/questions/english/p176-Im11.png",
+        "alt": "Fotografia da estudante que acompanha o estudo sobre rótulos de baixo teor de gordura.",
+        "statement": "The college students who participated in the study:"
+      }
+    ],
+    "decorative_candidates": [
+      {
+        "id": "english_verbs-q175",
+        "url": "/assets/questions/english/p057-Im11.png",
+        "kind": "photo",
+        "alt": "Capa ilustrada de Secrets of the New Matrix.",
+        "statement": "Considere as seguintes asserções:\n\n* Em \"We're\" e \"they'd\", \"'re\" e \"'d\" são, respectivamente,\ncontrações de flexões verbais dos verbos I e II.\n* Uma outra forma de expressar a oração \"If we told you\neverything, they'd have to kill us.\" é III.\n\nA opção que melhor preenche as lacunas I, II e III é:"
+      },
+      {
+        "id": "english_modal_auxiliaries-q57",
+        "url": "/assets/questions/english/p064-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia histórica de uma manifestação pelo sufrágio feminino.",
+        "statement": "Disponível em:\nhttp://www.loc.gov/rr/print/list/listguid.html\nAcesso em: 14 out. 2004.\n\n– Com base no texto, \"ought to\" é usado para indicar o que é\nconsiderado:"
+      },
+      {
+        "id": "english_conditionals-q28",
+        "url": "/assets/questions/english/p088-Im11.png",
+        "kind": "figure",
+        "alt": "Imagem de Nikita Khrushchev acompanhada de uma citação.",
+        "statement": "– The sentence that contains \"if-clauses\" correctly used is:"
+      },
+      {
+        "id": "english_reading_review-q37",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "Preencha as lacunas I, II, III, IV e V correta e coerentemente:"
+      },
+      {
+        "id": "english_reading_review-q38",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "Segundo o texto:"
+      },
+      {
+        "id": "english_reading_review-q39",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "Marque o item correto."
+      },
+      {
+        "id": "english_reading_review-q40",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "A opção que descreve a palavra secular (5º parágrafo) é:"
+      },
+      {
+        "id": "english_reading_review-q41",
+        "url": "/assets/questions/english/p157-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de mãe e filha lendo, que acompanha o texto sobre educação domiciliar.",
+        "statement": "No 3º parágrafo, o vocábulo affluent pode ser definido\ncomo:"
+      },
+      {
+        "id": "english_reading_review-q60",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "kind": "photo",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "De acordo com o título e o subtítulo do texto, avatares:"
+      },
+      {
+        "id": "english_reading_review-q61",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "kind": "photo",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "Assinale a opção CORRETA."
+      },
+      {
+        "id": "english_reading_review-q62",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "kind": "photo",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "Assinale a opção em que o referente do pronome está\nINCORRETO."
+      },
+      {
+        "id": "english_reading_review-q63",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "kind": "photo",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "A measure of aggression (linha 11), encroachment (linha\n13), roughing the kicker (linha 13) e digital representations\nof players (linhas 27/28) têm, respectivamente, valor\nsemântico de:"
+      },
+      {
+        "id": "english_reading_review-q64",
+        "url": "/assets/questions/english/p162-Im11.png",
+        "kind": "photo",
+        "alt": "Pintura The Card Players, reproduzida no texto sobre arte digital.",
+        "statement": "De acordo com o texto:"
+      },
+      {
+        "id": "english_reading_review-q74",
+        "url": "/assets/questions/english/p165-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de um tubarão híbrido que acompanha o texto científico.",
+        "statement": "De acordo com o texto:"
+      },
+      {
+        "id": "english_reading_review-q75",
+        "url": "/assets/questions/english/p165-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de um tubarão híbrido que acompanha o texto científico.",
+        "statement": "Qual das referências a seguir está incorreta:"
+      },
+      {
+        "id": "english_reading_review-q76",
+        "url": "/assets/questions/english/p165-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de um tubarão híbrido que acompanha o texto científico.",
+        "statement": "Assinale a opção em que a tradução do termo da coluna I\nnão corresponde ao termo da coluna II.\n\nColuna I Coluna II"
+      },
+      {
+        "id": "english_reading_review-q77",
+        "url": "/assets/questions/english/p165-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de um tubarão híbrido que acompanha o texto científico.",
+        "statement": "Julgue os itens a seguir:\n\nI. A preposição along (3º parágrafo) pode ser substituída por\nbetween.\nII. Os vocábulos measurements (5º parágrafo) e measures\nsão equivalentes.\nIII. O vocábulo spanning (6º parágrafo) pode ser traduzido\ncomo “abrangendo”.\nIV. O vocábulo news (7º parágrafo) equivale a press.\n\nAgora, marque a opção correta:"
+      },
+      {
+        "id": "english_reading_review-q87",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "It can be inferred from the text that:"
+      },
+      {
+        "id": "english_reading_review-q88",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "Which of the following options fills in the gap in the 6 th\nparagraph of the text?"
+      },
+      {
+        "id": "english_reading_review-q89",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "Judge the following items:\n\nI. The new microorganism is the only microbe on Earth that\nis able to cope with arsenic.\nII. It is possible that life can do things scientists have not\ncontemplated yet.\nIII. GFAJ-1, a breed of the Gammaprot eobacteria, is capable\nof incorporating the element arsenic in its proteins.\n\n– Now, Mark the correct option:"
+      },
+      {
+        "id": "english_reading_review-q90",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "Judge the following items:\n\nI. The scientists are still investigating the very moment\narsenic was incorporated by the microorganism.\nII. Mono Lake’s salinity, alkalinity and arsenic levels\nincreased 50 years ago.\nIII. Not only microbiology but also other scientific fields shall\nbe benefited with the discovery.\n\n– Now, Mark the correct option:"
+      },
+      {
+        "id": "english_reading_review-q91",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "In the sentence “ Researchers conducting tests in the harsh\nenvironment of Mono Lake in California have discovered the\nfirst known microorganism on Earth able to thrive and\nreproduce using the toxic chemical arse nic”, extracted from\nthe 2 nd paragraph, the words in bold can be replaced,\nrespectively, by:"
+      },
+      {
+        "id": "english_reading_review-q92",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "Which of the following words can be turned into the plural\nform in the same way as bacteria?"
+      },
+      {
+        "id": "english_reading_review-q93",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "In the sentence “ Arsenic, which is chemically similar to\nphosphorus, is poi sonous for most life on Earth”, extracted\nfrom the 6th paragraph, the Relative Pronoun which:"
+      },
+      {
+        "id": "english_reading_review-q94",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "In the sentence “the researchers successfully grew microbes\nfrom the lake on a diet that was very lean on phosphorus”,\nalso taken from the 8 th paragraph, the word lean can be\nreplaced by:"
+      },
+      {
+        "id": "english_reading_review-q95",
+        "url": "/assets/questions/english/p168-Im11.png",
+        "kind": "photo",
+        "alt": "Micrografia dos microrganismos do texto da NASA sobre arsênio.",
+        "statement": "In the sentence “ the arsenic was being used to produce the\nbuilding blocks of new GFAJ-1 cells”, extracted from the 8 th\nparagraph, the words in bold are, respectively:"
+      },
+      {
+        "id": "english_reading_review-q96",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "According to the information in the article, Alfred and Albert\nStratton:"
+      },
+      {
+        "id": "english_reading_review-q97",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "Which of the following probably best explains the\nimportance of Francis Galton?"
+      },
+      {
+        "id": "english_reading_review-q98",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "According to the information in the article:"
+      },
+      {
+        "id": "english_reading_review-q99",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "According to the article, in the 1860s William Herschel:"
+      },
+      {
+        "id": "english_reading_review-q100",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "In paragraph 4, this in the phrase “In instituting this…” most\nlikely refers to:"
+      },
+      {
+        "id": "english_reading_review-q101",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "According to the information in the article:"
+      },
+      {
+        "id": "english_reading_review-q102",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "Which of the following probably best describes the “crucial\nfeature” mentioned in paragraph 4?"
+      },
+      {
+        "id": "english_reading_review-q103",
+        "url": "/assets/questions/english/p170-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de uma impressão digital que acompanha o texto Sticky Fingers.",
+        "statement": "With respect to the information in the article, which of the\nfollowing is not true about Francis Galton?"
+      },
+      {
+        "id": "english_reading_review-q104",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "President Barack Obama has approved a significant troop\nincrease for Afghanistan, Pentagon officials said Tuesday.\nThe new troop deployment is expected to include 8,000\nMarines from Camp Lejeune, North Carolina, as well as\n4,000 additional Army troops from Fort Lewis, Washington."
+      },
+      {
+        "id": "english_reading_review-q105",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "Qual dos voc ábulos a seguir, extraídos do texto, não pode\nser considerado um falso cognato?"
+      },
+      {
+        "id": "english_reading_review-q106",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "Assinale a opção que preenche corretamente a lacuna (I)\npresente no 10º parágrafo do texto."
+      },
+      {
+        "id": "english_reading_review-q107",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "Assinale a opção que preenche corretamente a lacuna (II)\npresente no 12º parágrafo do texto."
+      },
+      {
+        "id": "english_reading_review-q108",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "Assinale a opção correta."
+      },
+      {
+        "id": "english_reading_review-q109",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "As perguntas feitas pelo autor ao longo do texto:"
+      },
+      {
+        "id": "english_reading_review-q110",
+        "url": "/assets/questions/english/p171-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia de militares que acompanha o texto sobre a guerra no Afeganistão.",
+        "statement": "A sentença Yet we've allowed ourselves to get stuck there?,\nextraída do 5º parágrafo, apresenta uma idéia de:"
+      },
+      {
+        "id": "english_reading_review-q115",
+        "url": "/assets/questions/english/p174-Im11.png",
+        "kind": "photo",
+        "alt": "Imagem de um robô que acompanha o texto sobre robótica.",
+        "statement": "Segundo o texto, um grande desafio da robótica é:"
+      },
+      {
+        "id": "english_reading_review-q116",
+        "url": "/assets/questions/english/p174-Im11.png",
+        "kind": "photo",
+        "alt": "Imagem de um robô que acompanha o texto sobre robótica.",
+        "statement": "De acordo com o texto, o especialista Gary Bradski afirma\nque:"
+      },
+      {
+        "id": "english_reading_review-q117",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "kind": "figure",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "O texto informa que Damon Albarn:"
+      },
+      {
+        "id": "english_reading_review-q118",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "kind": "figure",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "Analise as asserções a seguir:\n\nI. O Gorillaz foi a atração principal do festival de Glastonbury\nde 2010.\nII. O Gorillaz adotará um novo formato antes de voltar a se\napresentar ao vivo.\nIII. O Gorillaz disponibilizou o álbum The Fall para download\ngratuito no site oficial da banda.\n\nAgora, assinale a opção certa:"
+      },
+      {
+        "id": "english_reading_review-q119",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "kind": "figure",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "Analise as asserções a seguir:\n\nI. No 1º parágrafo, notch up equivale semanticamente a\nachieve.\nII. No 5º parágrafo, erstwhile significa o mesmo que former.\nIII. Ainda no 5º parágrafo, stalwart pode ser substituído por\npartisan.\n\nAgora, assinale a opção certa:"
+      },
+      {
+        "id": "english_reading_review-q120",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "kind": "figure",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "Assinale a opção CORRETA."
+      },
+      {
+        "id": "english_reading_review-q121",
+        "url": "/assets/questions/english/p174-Im12.png",
+        "kind": "figure",
+        "alt": "Imagem do Gorillaz que acompanha o texto sobre o álbum feito em iPad.",
+        "statement": "Qual das sentenças a seguir, extraídas do texto, não se\nencontra na voz passiva?"
+      },
+      {
+        "id": "english_reading_review-q123",
+        "url": "/assets/questions/english/p176-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia da estudante que acompanha o estudo sobre rótulos de baixo teor de gordura.",
+        "statement": "The study described in the text shows that:"
+      },
+      {
+        "id": "english_reading_review-q124",
+        "url": "/assets/questions/english/p176-Im11.png",
+        "kind": "photo",
+        "alt": "Fotografia da estudante que acompanha o estudo sobre rótulos de baixo teor de gordura.",
+        "statement": "The college students who participated in the study:"
+      }
+    ],
+    "questions_referencing_images_without_media": [
+      {
+        "id": "english_synonyms_antonyms-q24",
+        "page": 146,
+        "statement": "Give the correct sequence of synonyms for the highlighted\nwords in the excerpt below:\n\nEgypt’s **tough** 82-year-old president, in charge for the past\nthree decades, now says he will go – but only at the end of\nhis **term** in September, with dignity and with a **subtle** threat\nthat if he does not get his way, things could **turn** uglier still."
+      }
+    ]
+  },
+  "support_text_issues": []
+}

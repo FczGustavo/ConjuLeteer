@@ -215,6 +215,10 @@ SPLIT_WORD_REPAIRS = [
 def repair_extraction(value: str) -> str:
     value = value.replace("\u00a0", " ").replace("\u2007", " ").replace("\u202f", " ")
     value = value.replace("\ufffd", "")
+    value = value.replace("\uf0e3", "©")
+    value = value.replace("\u2016", "\"")
+    # Normalize glued blanks in text while keeping intentional suffix blanks intact
+    value = re.sub(r"effective_{2,}\s*_{2,}", "effective__________", value)
     # One isolated font glyph in the source is a cent-sign codepoint where
     # the printed page contains a dash ("and — yet").
     value = re.sub(r"\s*\u00a2\s*", " — ", value)
@@ -277,6 +281,23 @@ EXAM_HEADER_RE = re.compile(
 ADAPTED_SUFFIX_RE = re.compile(r"(?:\s*[–—-]\s*|\s+)ADAPTED\s*$", re.IGNORECASE)
 ROLE_RE = re.compile(r"\b(?:CARGO|POSTO|FUN[CÇ][AÃ]O)\s*[:\-]\s*(?P<role>.+)$", re.IGNORECASE)
 
+BOARD_NORMALIZATIONS = {
+    "ESPCEX": "EsPCEx",
+    "Espcex": "EsPCEx",
+    "EOMM": "EFOMM",
+    "EEAR": "EEAr",
+    "IME/CG": "IME",
+    "UECE/2ª FASE": "UECE",
+    "UFV/PASES": "UFV",
+    "PUCRIO": "PUC-Rio",
+    "PUCPR": "PUC-PR",
+    "PUCRS": "PUC-RS",
+    "PUCSP": "PUC-SP",
+    "PUCMG": "PUC-MG",
+    "PUCCAMP": "PUCCAMP",
+    "UFSCAR": "UFSCar",
+}
+
 
 def parse_exam_metadata(header: str, *, is_translation: bool = False) -> dict:
     """Return structured source credits without inventing missing metadata."""
@@ -295,19 +316,24 @@ def parse_exam_metadata(header: str, *, is_translation: bool = False) -> dict:
     if not match:
         # This branch is audited and surfaced in the report.  It retains the
         # printed credit while making the missing year explicit.
-        result = {"board": cleaned, "source": "pdf-header"}
+        board = BOARD_NORMALIZATIONS.get(cleaned, cleaned)
+        result = {"board": board, "source": "pdf-header"}
     else:
         board = match.group("board").strip(" -–—")
         raw_year = int(match.group("year"))
         # The only two-digit year in this PDF is ESPCEX 99.  Apply the usual
         # century window while retaining the printed value in ``banca``.
         year = raw_year + (1900 if raw_year >= 50 else 2000) if raw_year < 100 else raw_year
-        result = {"board": board, "year": year, "source": "pdf-header"}
-
+        role = None
         role_match = ROLE_RE.search(board)
         if role_match:
-            result["role"] = role_match.group("role").strip()
-            result["board"] = board[: role_match.start()].strip(" -–—")
+            role = role_match.group("role").strip()
+            board = board[: role_match.start()].strip(" -–—")
+
+        board = BOARD_NORMALIZATIONS.get(board, board)
+        result = {"board": board, "year": year, "source": "pdf-header"}
+        if role:
+            result["role"] = role
 
     if adapted:
         result["adapted"] = True
@@ -787,11 +813,60 @@ EDITORIAL_HIGHLIGHTS: dict[tuple[str, int], list[tuple[str, str, str]]] = {
     ("english_synonyms_antonyms", 27): [("statement", "reliably", "underline")],
     ("english_synonyms_antonyms", 28): [("support:1", "austere", "underline")],
     ("english_synonyms_antonyms", 29): [("support:1", "dons", "bold"), ("support:1", "the reins", "bold"), ("support:1", "hammered", "bold"), ("support:1", "championed", "bold")],
+    ("english_synonyms_antonyms", 30): [("statement", "far", "underline")],
     ("english_synonyms_antonyms", 34): [("statement", "response", "underline")],
     ("english_synonyms_antonyms", 35): [("support:2", "perceptions", "underline")],
     ("english_reading_review", 46): [("statement", "observadoras", "bold")],
     ("english_reading_review", 54): [("support:1", "on the verge of", "bold")],
 }
+
+
+def normalize_question_blanks_and_statements(record: dict) -> None:
+    """Normalize gap and blank formatting across statements."""
+    qid = record["id"]
+    statement = record["statement"]
+
+    if qid == "english_adjectives_adverbs-q40":
+        statement = statement.replace("| 1", "______ [1]")
+        statement = statement.replace("| 2", "______ [2]")
+        statement = statement.replace("| 3", "______ [3]")
+        statement = statement.replace("| 4", "______ [4]")
+        statement = statement.replace("| 5", "______ [5]")
+    elif qid == "english_pronouns-q40":
+        statement = statement.replace("changing (I) composition", "changing ______ [I] composition")
+        statement = statement.replace("changing (II) teeth", "changing ______ [II] teeth")
+    elif qid == "english_quantifiers_intensifiers-q18":
+        statement = statement.replace("Would you like (I) pizza", "Would you like ______ [I] pizza")
+        statement = statement.replace("Would you like (II) other thing", "Would you like ______ [II] other thing")
+    elif qid == "english_verbs-q175":
+        statement = statement.replace("dos verbos I e II.", "dos verbos ______ [I] e ______ [II].")
+        statement = statement.replace('é III.', 'é ______ [III].')
+    elif qid == "english_direct_indirect-q16":
+        if not statement.endswith("______"):
+            statement = re.sub(r":\s*$", ": ______", statement)
+    elif qid == "english_direct_indirect-q29":
+        statement = statement.replace("that (1) that much", "that ______ [1] that much")
+        statement = statement.replace("said it (2) a dirty liar", "said it ______ [2] a dirty liar")
+    elif qid == "english_direct_indirect-q30":
+        statement = statement.replace("1. I told him:\n2. I didn't know:", "1. I told him: ______\n2. I didn't know: ______")
+        if statement.endswith("2. I didn't know:"):
+            statement = statement + " ______"
+    elif qid == "english_numbers-q8":
+        statement = statement.replace("leaves I.", "leaves ______ [I].")
+        statement = statement.replace("goes II times.", "goes ______ [II] times.")
+        statement = statement.replace("is III.", "is ______ [III].")
+    elif qid == "english_conjunctions-q43":
+        if not statement.endswith("______"):
+            statement = re.sub(r":\s*$", ": ______", statement)
+    elif qid == "english_conjunctions-q77":
+        if not statement.endswith("______"):
+            statement = re.sub(r":\s*$", ": ______", statement)
+    elif qid == "english_conjunctions-q109":
+        statement = statement.replace("Charles... Mary are brother... sister.", "Charles ______ Mary are brother ______ sister.")
+    elif qid == "english_reading_review-q50":
+        statement = statement.replace("“The microwave oven…”", "“The microwave oven…” ______")
+
+    record["statement"] = statement
 
 
 def mark_editorial_highlights(record: dict) -> None:
@@ -1060,6 +1135,7 @@ def validate_and_attach(records: list[dict], answers: dict[tuple[str, int], str]
             record["quality"] = {"status": "quarantined", "warnings": warnings}
         else:
             record["quality"] = {"status": "warning" if warnings else "verified", "warnings": warnings}
+        normalize_question_blanks_and_statements(record)
         # Restore the visual spans only after structural validation so a
         # missing source target can never be hidden by the quality reset above.
         mark_editorial_highlights(record)
