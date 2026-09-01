@@ -197,6 +197,18 @@ SPLIT_WORD_REPAIRS = [
     (r"\bscie ntists\b", "scientists"), (r"\btur tles\b", "turtles"),
     (r"\bpa ssado\b", "passado"), (r"\ba s palavras\b", "as palavras"),
     (r"\bJ ew\b", "Jew"),
+    # Final pass from the visual audit of the English reading pages.  These
+    # fragments are unambiguous font-span splits in the source PDF (the
+    # surrounding wording confirms the joined lexical form).
+    (r"\bkid s\b", "kids"), (r"\bw onders\b", "wonders"),
+    (r"\bexamp le\b", "example"), (r"\bsens ors\b", "sensors"),
+    (r"\batt ention\b", "attention"),
+    (r"\bp erfect\b", "perfect"), (r"\bp eriod\b", "period"),
+    (r"\bcommerci al\b", "commercial"), (r"\bs pirit\b", "spirit"),
+    (r"\btwen ty\b", "twenty"), (r"\bpromi sed\b", "promised"),
+    (r"\bpromis ed\b", "promised"), (r"\ba ppropriately\b", "appropriately"),
+    (r"\bex plores\b", "explores"), (r"\bn ight\b", "night"),
+    (r"\bou r\b", "our"),
 ]
 
 
@@ -234,8 +246,72 @@ def repair_extraction(value: str) -> str:
         return f"{left}-{right}"
 
     value = re.sub(r"([A-Za-zÀ-ÿ]+)-\s+([A-Za-zÀ-ÿ]+)", join_hyphenated_word, value)
+    # The PDF frequently places a space before a hyphen because the dash and
+    # the adjacent word were emitted by different font spans (``high
+    # -fidelity``, ``off -the-grid``).  Join only multi-letter words; a
+    # one-letter label followed by a dash is an editorial separator and must
+    # remain untouched.
+    value = re.sub(
+        # ``word -ING`` is intentional source notation (the suffix is not a
+        # hyphenated lexical word), so keep that space.  Likewise, an
+        # em-dash-style ``own - and`` separator must not become ``own-and``.
+        r"(?<![A-Za-zÀ-ÿ])([A-Za-zÀ-ÿ]{2,})\s+-\s*(?!ING\b|and\b)([A-Za-zÀ-ÿ]{2,})(?![A-Za-zÀ-ÿ])",
+        r"\1-\2",
+        value,
+        flags=re.IGNORECASE,
+    )
+    value = re.sub(r"\bown-and\b", "own — and", value, flags=re.IGNORECASE)
     value = re.sub(r"[ \t]+", " ", value)
     return value.strip()
+
+
+# Question headers in the source use a compact ``BOARD YEAR`` form.  A few
+# institutions omit the space (``UNIRIO1995``), use a two-digit year
+# (``ESPCEX 99``), or append the editorial marker ``ADAPTED``.  Keep this
+# parser deliberately conservative: if a header does not contain a year we
+# preserve its text as the board credit instead of guessing one.
+EXAM_HEADER_RE = re.compile(
+    r"^(?P<board>.*?)(?P<year>(?:19|20)\d{2}|\d{2})\s*$",
+    re.IGNORECASE,
+)
+ADAPTED_SUFFIX_RE = re.compile(r"(?:\s*[–—-]\s*|\s+)ADAPTED\s*$", re.IGNORECASE)
+ROLE_RE = re.compile(r"\b(?:CARGO|POSTO|FUN[CÇ][AÃ]O)\s*[:\-]\s*(?P<role>.+)$", re.IGNORECASE)
+
+
+def parse_exam_metadata(header: str, *, is_translation: bool = False) -> dict:
+    """Return structured source credits without inventing missing metadata."""
+    if is_translation:
+        return {
+            "board": "Compilação de concursos militares",
+            "source": "pdf-section",
+        }
+
+    cleaned = repair_extraction(header)
+    adapted = bool(ADAPTED_SUFFIX_RE.search(cleaned))
+    if adapted:
+        cleaned = ADAPTED_SUFFIX_RE.sub("", cleaned).strip()
+
+    match = EXAM_HEADER_RE.match(cleaned)
+    if not match:
+        # This branch is audited and surfaced in the report.  It retains the
+        # printed credit while making the missing year explicit.
+        result = {"board": cleaned, "source": "pdf-header"}
+    else:
+        board = match.group("board").strip(" -–—")
+        raw_year = int(match.group("year"))
+        # The only two-digit year in this PDF is ESPCEX 99.  Apply the usual
+        # century window while retaining the printed value in ``banca``.
+        year = raw_year + (1900 if raw_year >= 50 else 2000) if raw_year < 100 else raw_year
+        result = {"board": board, "year": year, "source": "pdf-header"}
+
+        role_match = ROLE_RE.search(board)
+        if role_match:
+            result["role"] = role_match.group("role").strip()
+            result["board"] = board[: role_match.start()].strip(" -–—")
+
+    if adapted:
+        result["adapted"] = True
+    return result
 
 
 def clean_lines(value: str) -> list[str]:
@@ -652,6 +728,119 @@ def split_options(content: str) -> tuple[str, list[dict], str]:
     return repair_extraction(statement), options, trailing
 
 
+# The printed book uses real bold/underline spans for these targets, but a
+# PDF text extraction exposes only the characters and drops the visual style.
+# Keep the audit deterministic: targets are copied from the rendered source
+# pages and are marked only in the field where the source places them.
+EDITORIAL_HIGHLIGHTS: dict[tuple[str, int], list[tuple[str, str, str]]] = {
+    ("english_adjectives_adverbs", 6): [("statement", "THE SMALLEST", "underline")],
+    ("english_adjectives_adverbs", 7): [("statement", "MAIS INTERESSANTE", "underline")],
+    ("english_adjectives_adverbs", 49): [("statement", "THE BEST", "underline"), ("statement", "THE NEWEST", "underline")],
+    ("english_adjectives_adverbs", 54): [("support:1", "FASTER THAN", "underline")],
+    ("english_pronouns", 31): [("support:2", "THE TITANIC", "underline"), ("support:2", "THE BABY OF OUR UPSTAIRS NEIGHBORS", "underline"), ("support:2", "MY PET", "underline")],
+    ("english_pronouns", 61): [("statement", "ANY", "underline")],
+    ("english_pronouns", 87): [("statement", "WHO", "underline")],
+    ("english_pronouns", 88): [("statement", "THAT", "underline")],
+    ("english_pronouns", 113): [("statement", "that", "underline")],
+    ("english_quantifiers_intensifiers", 25): [("statement", "relatively small amount of heat", "bold")],
+    ("english_verbs", 37): [("support:1", "led", "underline")],
+    ("english_verbs", 92): [("option:A", "hope to capitalize", "underline"), ("option:B", "shall run", "underline"), ("option:C", "will face", "underline"), ("option:D", "expect a fight", "underline"), ("option:E", "is trying to pack", "underline")],
+    ("english_verbs", 128): [("statement", "HAVE already CONVERGED", "underline")],
+    ("english_verbs", 174): [("support:1", "had we known", "bold"), ("support:1", "would not have changed", "bold")],
+    ("english_modal_auxiliaries", 53): [("statement", "might have occurred", "underline")],
+    ("english_modal_auxiliaries", 55): [("statement", "MUST", "bold"), ("statement", "CAN", "bold")],
+    ("english_modal_auxiliaries", 73): [("support:1", "must", "underline"), ("support:1", "can", "underline"), ("support:1", "may", "underline"), ("support:1", "should", "underline")],
+    ("english_active_passive", 22): [("statement", "so that you can't be seen", "underline")],
+    ("english_active_passive", 45): [("statement", "EPHEDRA HAS BEEN LINKED TO A NUMBER OF STROKES", "bold")],
+    ("english_active_passive", 99): [("support:1", "I will tell someone to do it", "underline")],
+    ("english_conditionals", 11): [("statement", "if you are otherwise healthy, just call your doctor", "underline")],
+    ("english_conditionals", 25): [("statement", "If this dental dream becomes a reality, stem cells will be taken from the patient, cultured in a lab and then reimplanted under the gum in the patient's jaw where the tooth is missing.", "underline")],
+    ("english_plural_nouns", 11): [("statement", "mouse and louse", "underline")],
+    ("english_genitive_case", 9): [("statement", "THE BEHAVIOR OF DEPRESSED CHILDREN", "bold")],
+    ("english_conjunctions", 2): [("statement", "DESPITE", "bold")],
+    ("english_conjunctions", 8): [("support:1", "because", "bold")],
+    ("english_conjunctions", 33): [("support:1", "even", "underline")],
+    ("english_conjunctions", 51): [("support:1", "LIKE", "underline")],
+    ("english_conjunctions", 74): [("support:1", "ALTHOUGH", "underline")],
+    ("english_conjunctions", 75): [("statement", "BESIDES", "underline")],
+    ("english_conjunctions", 92): [("statement", "according to", "underline")],
+    ("english_conjunctions", 95): [("statement", "Inasmuch as", "bold")],
+    ("english_conjunctions", 96): [("support:1", "for", "bold")],
+    ("english_conjunctions", 111): [("statement", "but", "bold"), ("statement", "while", "bold")],
+    ("english_conjunctions", 124): [("statement", "much-publicized", "bold"), ("statement", "shorter-term", "bold"), ("statement", "bus-only", "bold")],
+    ("english_conjunctions", 125): [("support:1", "Hence", "underline")],
+    ("english_subjunctive_imperative_infinitive_gerund", 19): [("option:A", "depending", "bold"), ("option:B", "Knowing", "bold"), ("option:C", "Using", "bold"), ("option:D", "finding", "bold"), ("option:E", "wondering", "bold")],
+    ("english_phrasal_verbs", 17): [("support:2", "bought", "underline")],
+    ("english_mixed_topics", 13): [("statement", "WINDS", "bold"), ("statement", "ITS", "bold")],
+    ("english_idioms_vocabulary", 26): [("statement", "run a tight ship", "bold")],
+    ("english_idioms_vocabulary", 30): [("support:1", "double-dip recession", "bold"), ("support:1", "silver bullets", "bold")],
+    ("english_synonyms_antonyms", 1): [("statement", "peasant", "underline")],
+    ("english_synonyms_antonyms", 2): [("statement", "deduced", "underline")],
+    ("english_synonyms_antonyms", 8): [("statement", "overwhelmed", "underline")],
+    ("english_synonyms_antonyms", 14): [("statement", "conducting", "bold"), ("statement", "harsh", "bold"), ("statement", "thrive", "bold")],
+    ("english_synonyms_antonyms", 17): [("statement", "SKIFF", "underline"), ("statement", "EVASIVE", "underline"), ("statement", "THWARTED", "underline"), ("statement", "RAMPANT", "underline")],
+    ("english_synonyms_antonyms", 18): [("statement", "hailed", "bold")],
+    ("english_synonyms_antonyms", 20): [("statement", "hallmarks", "underline")],
+    ("english_synonyms_antonyms", 22): [("statement", "cables", "bold"), ("statement", "tart", "bold")],
+    ("english_synonyms_antonyms", 24): [("statement", "tough", "bold"), ("statement", "term", "bold"), ("statement", "subtle", "bold"), ("statement", "turn", "bold")],
+    ("english_synonyms_antonyms", 26): [("statement", "entirely", "underline"), ("statement", "from a", "underline"), ("statement", "hazard", "underline"), ("statement", "approximately", "underline")],
+    ("english_synonyms_antonyms", 27): [("statement", "reliably", "underline")],
+    ("english_synonyms_antonyms", 28): [("support:1", "austere", "underline")],
+    ("english_synonyms_antonyms", 29): [("support:1", "dons", "bold"), ("support:1", "the reins", "bold"), ("support:1", "hammered", "bold"), ("support:1", "championed", "bold")],
+    ("english_synonyms_antonyms", 34): [("statement", "response", "underline")],
+    ("english_synonyms_antonyms", 35): [("support:2", "perceptions", "underline")],
+    ("english_reading_review", 46): [("statement", "observadoras", "bold")],
+    ("english_reading_review", 54): [("support:1", "on the verge of", "bold")],
+}
+
+
+def mark_editorial_highlights(record: dict) -> None:
+    """Restore source bold/underline spans lost by the PDF text layer."""
+    targets = EDITORIAL_HIGHLIGHTS.get((record["subjectId"], record["questionNumber"]), [])
+    if not targets:
+        return
+
+    def mark(value: str, target: str, style: str) -> tuple[str, bool]:
+        if not value:
+            return value, False
+        # Whitespace in a target can cross a PDF line boundary.
+        target_re = re.escape(target).replace(r"\ ", r"\s+")
+        pattern = re.compile(rf"(?<![A-Za-zÀ-ÿ]){target_re}(?![A-Za-zÀ-ÿ])", re.I)
+        wrapper = ("<u>" if style == "underline" else "**")
+        closing = "</u>" if style == "underline" else "**"
+        marked, count = pattern.subn(lambda match: f"{wrapper}{match.group(0)}{closing}", value)
+        return marked, count > 0
+
+    notes: list[dict[str, str]] = []
+    for location, target, style in targets:
+        if location == "statement":
+            record["statement"], changed = mark(record["statement"], target, style)
+        elif location.startswith("option:"):
+            letter = location.split(":", 1)[1]
+            option = next((item for item in record["options"] if item["letter"] == letter), None)
+            if option:
+                option["text"], changed = mark(option["text"], target, style)
+            else:
+                changed = False
+        elif location.startswith("support:"):
+            index = int(location.split(":", 1)[1]) - 1
+            paragraphs = (record.get("support") or {}).get("paragraphs", [])
+            if 0 <= index < len(paragraphs):
+                paragraphs[index], changed = mark(paragraphs[index], target, style)
+            else:
+                changed = False
+        else:
+            changed = False
+        if not changed:
+            record.setdefault("quality", {"status": "warning", "warnings": []})["warnings"].append(
+                f"Destaque editorial não localizado no campo {location}: {target}."
+            )
+        else:
+            notes.append({"target": location.replace(":", ".paragraph:") if location.startswith("support:") else location, "reason": "marca visual conferida no PDF de origem"})
+    if notes:
+        record["emphasisNotes"] = notes
+
+
 def topic_for_index(index: int) -> tuple[str, str, str, int]:
     cursor = 0
     for subject_id, title, short_title, count, _start_page in TOPICS:
@@ -734,6 +923,7 @@ def parse_questions(reader: PdfReader) -> list[dict]:
         page = question_page_from_offsets(page_offsets, match.start())
         cleaned_raw = "\n".join(clean_lines(raw))
         statement_text, options, trailing_text = split_options(cleaned_raw)
+        exam_metadata = parse_exam_metadata(header_tail, is_translation=is_translation)
 
         # Reading passages are shared by several questions.  A passage is the
         # long preamble before a command; once found, it is carried forward
@@ -816,6 +1006,7 @@ def parse_questions(reader: PdfReader) -> list[dict]:
             "options": options,
             "correctLetter": "A",
             "banca": "Compilação de concursos militares" if is_translation else repair_extraction(header_tail),
+            "examMetadata": exam_metadata,
             "language": "en",
         }
         if support:
@@ -862,7 +1053,23 @@ def validate_and_attach(records: list[dict], answers: dict[tuple[str, int], str]
             {**option, "correct": option["letter"] == record["correctLetter"]}
             for option in record["options"]
         ]
-        record["quality"] = {"status": "warning" if warnings else "verified", "warnings": warnings}
+        if record["subjectId"] == "english_translations":
+            warnings.append(
+                "Publicação isolada: o PDF não informa banca/ano e a auditoria localizou frases idênticas em fontes lexicográficas de terceiros."
+            )
+            record["quality"] = {"status": "quarantined", "warnings": warnings}
+        else:
+            record["quality"] = {"status": "warning" if warnings else "verified", "warnings": warnings}
+        # Restore the visual spans only after structural validation so a
+        # missing source target can never be hidden by the quality reset above.
+        mark_editorial_highlights(record)
+        editorial_warnings = record.get("quality", {}).get("warnings", [])
+        if editorial_warnings:
+            record["quality"] = {
+                **record["quality"],
+                "status": "warning" if record["quality"].get("status") == "verified" else record["quality"].get("status"),
+                "warnings": list(dict.fromkeys(editorial_warnings)),
+            }
 
 
 def emit(records: list[dict]) -> None:
@@ -875,7 +1082,14 @@ def emit(records: list[dict]) -> None:
     OUT_TS.write_text(
         "// Gerado por src/scratch/import_english_questions.py — fonte: PDF de 1.500 questões.\n"
         "import type { QuestionBankItem } from './questionBank';\n\n"
-        f"export const ENGLISH_QUESTION_BANK: QuestionBankItem[] = JSON.parse({serialized_payload}) as QuestionBankItem[];\n",
+        "import { ENGLISH_QUESTION_MEDIA } from './englishQuestionMedia';\n\n"
+        f"export const ENGLISH_QUESTION_BANK: QuestionBankItem[] = JSON.parse({serialized_payload}) as QuestionBankItem[];\n"
+        "\n"
+        "// Public English media is reviewed separately and merged by stable question id.\n"
+        "for (const question of ENGLISH_QUESTION_BANK) {\n"
+        "  const media = ENGLISH_QUESTION_MEDIA[question.id];\n"
+        "  if (media) question.media = media;\n"
+        "}\n",
         encoding="utf-8",
     )
 
@@ -888,23 +1102,45 @@ def emit(records: list[dict]) -> None:
             "questionNumber": record["questionNumber"],
             "questionPage": record["provenance"]["questionPage"],
             "answerPage": record["provenance"]["answerPage"],
+            "banca": record["banca"],
+            "examMetadata": record["examMetadata"],
             "correctLetter": record["correctLetter"],
             "optionCount": len(record["options"]),
             "quality": record["quality"],
         })
-    OUT_JSON.write_text(json.dumps({"pdf": records[0]["provenance"]["pdf"], "count": len(records), "rows": rows}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    pdf_headers = sum(1 for record in records if record["examMetadata"]["source"] == "pdf-header")
+    section_credits = sum(1 for record in records if record["examMetadata"]["source"] == "pdf-section")
+    years = sum(1 for record in records if record["examMetadata"].get("year") is not None)
+    roles = sum(1 for record in records if record["examMetadata"].get("role"))
+    OUT_JSON.write_text(json.dumps({
+        "pdf": records[0]["provenance"]["pdf"],
+        "count": len(records),
+        "metadata": {
+            "pdfHeaderCredits": pdf_headers,
+            "sectionCredits": section_credits,
+            "years": years,
+            "roles": roles,
+        },
+        "rows": rows,
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     counts: dict[str, int] = {}
     for record in records:
         counts[record["subjectTitle"]] = counts.get(record["subjectTitle"], 0) + 1
     warnings = [row for row in rows if row["quality"]["status"] == "warning"]
+    quarantined = [row for row in rows if row["quality"]["status"] == "quarantined"]
     lines = [
         "# Auditoria do banco de Inglês",
         "",
         f"- Fonte: `{records[0]['provenance']['pdf']}`",
         f"- Questões importadas: **{len(records)}**",
-        f"- Questões com `verified`: **{len(records) - len(warnings)}**",
+        f"- Questões com `verified`: **{len(records) - len(warnings) - len(quarantined)}**",
         f"- Questões com `warning`: **{len(warnings)}**",
+        f"- Questões com `quarantined`: **{len(quarantined)}**",
         f"- Gabaritos localizados nas páginas 190–196: **{sum(1 for row in rows if row['answerPage'])}**",
+        f"- Créditos de banca extraídos de cabeçalhos do PDF: **{pdf_headers}**",
+        f"- Créditos de seção (sem banca/ano impressos): **{section_credits}**",
+        f"- Anos identificados no PDF: **{years}**",
+        f"- Cargos identificados no PDF: **{roles}**",
         "",
         "## Subdivisões",
         "",
@@ -917,6 +1153,13 @@ def emit(records: list[dict]) -> None:
         lines.extend(f"- `{row['id']}`: {'; '.join(row['quality']['warnings'])}" for row in warnings)
     else:
         lines.extend(["", "Nenhuma inconsistência estrutural foi encontrada."])
+    if quarantined:
+        lines.extend([
+            "",
+            "## Itens isolados por proveniência",
+            "",
+            "As 180 questões da seção `Translations` permanecem no corpus de auditoria, mas não são publicadas no banco de estudo. O PDF não lhes atribui banca ou ano, e buscas por frases exatas localizaram exemplos coincidentes em dicionários de terceiros.",
+        ])
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -938,6 +1181,13 @@ def main() -> None:
         "topics": len(TOPICS),
         "answers": sum(1 for record in records if (record["subjectId"], record["questionNumber"]) in answers),
         "warnings": sum(1 for record in records if record["quality"]["status"] == "warning"),
+        "quarantined": sum(1 for record in records if record["quality"]["status"] == "quarantined"),
+        "metadata": {
+            "pdfHeaderCredits": sum(1 for record in records if record["examMetadata"]["source"] == "pdf-header"),
+            "sectionCredits": sum(1 for record in records if record["examMetadata"]["source"] == "pdf-section"),
+            "years": sum(1 for record in records if record["examMetadata"].get("year") is not None),
+            "roles": sum(1 for record in records if record["examMetadata"].get("role")),
+        },
         "output": str(OUT_TS),
     }, ensure_ascii=False))
 

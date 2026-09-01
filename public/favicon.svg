@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ConjuLetter">
-  <path d="M48 16.5A22 22 0 1 0 48 47.5" fill="none" stroke="#e8a87c" stroke-width="5" stroke-linecap="round"/>
-  <path d="M25 25h16M25 32h11M25 39h16" fill="none" stroke="#f3ede6" stroke-width="3.5" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="14" fill="#111213"/>
+  <path d="M10 51h44v5H10zM14 46h36v5H14z" fill="#4a83d0"/>
+  <path d="M19 18h26l-3 28H22z" fill="#d7d2c9"/>
+  <path d="M16 13h32l-4 6H20z" fill="#f0eee9"/>
+  <path d="M24 19h5v27h-5zM35 19h5v27h-5z" fill="#96999c"/>
+  <path d="M13 10h38v4H13z" fill="#f0eee9"/>
 </svg>

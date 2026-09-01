@@ -2,9 +2,14 @@
 
 - Fonte: `1500 Questões de Inglês para Concursos Militares.pdf`
 - Questões importadas: **1500**
-- Questões com `verified`: **1500**
+- Questões com `verified`: **1320**
 - Questões com `warning`: **0**
+- Questões com `quarantined`: **180**
 - Gabaritos localizados nas páginas 190–196: **1500**
+- Créditos de banca extraídos de cabeçalhos do PDF: **1320**
+- Créditos de seção (sem banca/ano impressos): **180**
+- Anos identificados no PDF: **1320**
+- Cargos identificados no PDF: **0**
 
 ## Subdivisões
 
@@ -36,3 +41,7 @@
 | Translations | 180 |
 
 Nenhuma inconsistência estrutural foi encontrada.
+
+## Itens isolados por proveniência
+
+As 180 questões da seção `Translations` permanecem no corpus de auditoria, mas não são publicadas no banco de estudo. O PDF não lhes atribui banca ou ano, e buscas por frases exatas localizaram exemplos coincidentes em dicionários de terceiros.

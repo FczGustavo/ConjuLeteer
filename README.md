@@ -36,7 +36,8 @@ O **ConjuLetter** é uma aplicação educacional focada no domínio de verbos e 
 O banco também inclui uma coleção independente de **1.500 questões de Inglês para Concursos Militares**, importada de `1500 Questões de Inglês para Concursos Militares.pdf`. A interface alterna entre **Português** e **Inglês** sem misturar filtros ou contagens.
 
 - São **24 assuntos**, exatamente na ordem e com as quantidades do índice do PDF (Adjectives and Adverbs, Pronouns, Verbs, Modal Auxiliaries, Reading Skills and General Review, Translations e demais subdivisões).
-- Os enunciados e alternativas são extraídos sem atribuir banca fictícia; a banca impressa é preservada quando existe e as traduções ficam identificadas como compilação.
+- Os enunciados e alternativas são extraídos sem atribuir banca fictícia. Cada questão mantém o crédito estruturado `examMetadata` (banca, ano e cargo quando impressos), além do campo legado `banca`. As 180 traduções sem banca/ano impressos ficam em quarentena e não aparecem no estudo: a auditoria encontrou frases coincidentes com exemplos lexicográficos de terceiros, sem licença de republicação documentada no PDF.
+- A auditoria do PDF confirmou 1.320 créditos de banca com ano e 180 créditos de seção sem ano impresso; nenhum ano ou cargo foi inferido.
 - Cada item guarda a página da questão e a página exata do gabarito, localizado na seção `Answers` das páginas **190–196**.
 - O importador determinístico restaura quebras de texto, marcadores de alternativa fora de ordem e o único caso em que o PDF repetia `a)` nas cinco alternativas. A ficha completa fica em [`reports/english-question-audit.md`](./reports/english-question-audit.md) e [`reports/english-question-audit.json`](./reports/english-question-audit.json).
 

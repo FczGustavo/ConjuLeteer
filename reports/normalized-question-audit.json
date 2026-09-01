@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-01T15:09:53.911Z",
+  "generatedAt": "2026-09-01T22:36:27.368Z",
   "questions": 2031,
-  "changed": 79,
+  "changed": 66,
   "changes": [
     {
       "id": "fonetica-pdf_1_fonetica-q41",
@@ -376,91 +376,13 @@
       ]
     },
     {
-      "id": "english_adjectives_adverbs-q6",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_adjectives_adverbs-q49",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
       "id": "english_adjectives_adverbs-q54",
       "fields": [
         "quality"
       ]
     },
     {
-      "id": "english_verbs-q92",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_verbs-q128",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_modal_auxiliaries-q55",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_active_passive-q45",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_conditionals-q11",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
       "id": "english_conjunctions-q74",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_conjunctions-q75",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_conjunctions-q92",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_conjunctions-q124",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_subjunctive_imperative_infinitive_gerund-q19",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_mixed_topics-q13",
-      "fields": [
-        "quality"
-      ]
-    },
-    {
-      "id": "english_synonyms_antonyms-q26",
       "fields": [
         "quality"
       ]

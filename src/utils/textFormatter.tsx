@@ -11,7 +11,7 @@ export const FormattedExamText: React.FC<{
   className?: string;
   preserveLineBreaks?: boolean;
   mode?: TextMode;
-}> = ({
+}> = React.memo(({
   text,
   className = '',
   preserveLineBreaks = false,
@@ -54,7 +54,7 @@ export const FormattedExamText: React.FC<{
       })}
     </div>
   );
-};
+});
 
 /**
  * PDF text extraction often puts each visual line in a separate line without

@@ -16,6 +16,7 @@ interface ImportSummary {
   quarantinedItems: Array<{ questionNumber: number; warnings: string[] }>;
   pagesProcessed: number;
   totalPages: number;
+  mediaCount: number;
 }
 
 export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
@@ -132,6 +133,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
         importedCount: result.verified.length,
         pagesProcessed: result.manifest.processedPages.length,
         totalPages: result.manifest.totalPages,
+        mediaCount: result.manifest.extractedMediaCount ?? 0,
         quarantinedItems: result.quarantined
           .map(item => ({ questionNumber: item.questionNumber, warnings: item.quality?.warnings ?? [] }))
       });
@@ -179,6 +181,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
                   {importSummary.importedCount} {importSummary.importedCount === 1 ? 'questão verificada foi publicada' : 'questões verificadas foram publicadas'} no Banco de Questões.
                 </p>
                 <p className="mt-1 font-sans text-[11px] opacity-80">Cobertura: {importSummary.pagesProcessed} de {importSummary.totalPages || importSummary.pagesProcessed} páginas processadas.</p>
+                <p className="mt-1 font-sans text-[11px] opacity-80">Recortes visuais validados: {importSummary.mediaCount}.</p>
               </div>
               {importSummary.quarantinedItems.length > 0 ? (
                 <div className="rounded-xl border border-[#fbbf24]/40 bg-[#2a2417] p-4 text-[#fef3c7]">

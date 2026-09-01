@@ -473,6 +473,18 @@ export function normalizeQuestionSupport(question: QuestionBankItem): QuestionBa
   };
 }
 
+// Bank records are immutable. Keeping the normalized result by source object
+// prevents reparsing long support texts on every answer selection/render.
+const normalizedQuestionCache = new WeakMap<QuestionBankItem, QuestionBankItem>();
+
+export function normalizeQuestionSupportCached(question: QuestionBankItem): QuestionBankItem {
+  const cached = normalizedQuestionCache.get(question);
+  if (cached) return cached;
+  const normalized = normalizeQuestionSupport(question);
+  normalizedQuestionCache.set(question, normalized);
+  return normalized;
+}
+
 export function optionHasVisualMarkup(option: QuestionBankOption): boolean {
   return hasMarkup(option.text);
 }

@@ -22,7 +22,8 @@ import { getCustomQuestions } from '../services/pdfImportService';
 import { ImportPdfModal } from './ImportPdfModal';
 import { QuestionBankFilterView, type FilterState } from './QuestionBankFilterView';
 import { FormattedExamText } from '../utils/textFormatter';
-import { getQuestionSupport, normalizeQuestionSupport, supportToClipboardText } from '../utils/questionSupport';
+import { QuestionMedia } from './QuestionMedia';
+import { getQuestionSupport, normalizeQuestionSupportCached, supportToClipboardText } from '../utils/questionSupport';
 import {
   createQuestionList,
   deleteQuestionList,
@@ -35,6 +36,9 @@ interface QuestionBankViewProps {
   onRecordAttempt?: (verbId: string, mood: any, tense: any, isCorrect: boolean) => void;
   initialMode?: 'filters' | 'lists';
 }
+
+const EMPTY_BOOLEAN_RECORD: Record<string, boolean> = {};
+const EMPTY_STRING_RECORD: Record<string, string> = {};
 
 function toClipboardText(text: string): string {
   return text
@@ -128,13 +132,15 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     [allBankQuestions]
   );
 
-  // Filtered Questions based on filterState
-  const filteredQuestions = useMemo(() => {
+  // Build the stable language/subject/list selection independently from answer
+  // state. In the common "Todas" view, selecting an option must not rescan the
+  // full bank and recreate every visible question.
+  const baseFilteredQuestions = useMemo(() => {
     const activeList = savedLists.find(list => list.id === activeListId);
     if (activeList) {
       return activeList.questionIds.map(id => questionById.get(id)).filter((question): question is QuestionBankItem => Boolean(question && question.quality?.status !== 'quarantined' && question.quality?.status !== 'rejected'));
     }
-    let list = allBankQuestions.filter(q => {
+    return allBankQuestions.filter(q => {
       if (q.quality?.status === 'quarantined' || q.quality?.status === 'rejected') return false;
       if (filterState.languageFilter === 'en' ? q.language !== 'en' : q.language === 'en') return false;
       // 1. Subject filter
@@ -146,26 +152,38 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
         return false;
       }
 
-      // 2. Status filter
-      if (filterState.statusFilter === 'pending') {
-        if (confirmedAnswers[q.id]) return false;
-      } else if (filterState.statusFilter === 'correct') {
-        if (!confirmedAnswers[q.id] || userAnswers[q.id] !== q.correctLetter) return false;
-      } else if (filterState.statusFilter === 'wrong') {
-        if (!confirmedAnswers[q.id] || userAnswers[q.id] === q.correctLetter) return false;
-      } else if (filterState.statusFilter === 'noIdea') {
-        if (!noIdeaQuestions[q.id]) return false;
-      }
-
       return true;
     });
+  }, [allBankQuestions, filterState.languageFilter, filterState.selectedSubjectIds, activeListId, savedLists, questionById]);
+
+  const statusConfirmedAnswers = filterState.statusFilter === 'all' ? EMPTY_BOOLEAN_RECORD : confirmedAnswers;
+  const statusUserAnswers = filterState.statusFilter === 'correct' || filterState.statusFilter === 'wrong' ? userAnswers : EMPTY_STRING_RECORD;
+  const statusNoIdeaQuestions = filterState.statusFilter === 'noIdea' ? noIdeaQuestions : EMPTY_BOOLEAN_RECORD;
+
+  const filteredQuestions = useMemo(() => {
+    let list = baseFilteredQuestions;
+    if (filterState.statusFilter !== 'all') {
+      list = baseFilteredQuestions.filter(q => {
+      if (filterState.statusFilter === 'pending') {
+        if (statusConfirmedAnswers[q.id]) return false;
+      } else if (filterState.statusFilter === 'correct') {
+        if (!statusConfirmedAnswers[q.id] || statusUserAnswers[q.id] !== q.correctLetter) return false;
+      } else if (filterState.statusFilter === 'wrong') {
+        if (!statusConfirmedAnswers[q.id] || statusUserAnswers[q.id] === q.correctLetter) return false;
+      } else if (filterState.statusFilter === 'noIdea') {
+        if (!statusNoIdeaQuestions[q.id]) return false;
+      }
+
+        return true;
+      });
+    }
 
     if (filterState.limitQuantity && filterState.limitQuantity > 0) {
       list = list.slice(0, filterState.limitQuantity);
     }
 
     return list;
-  }, [allBankQuestions, filterState, confirmedAnswers, userAnswers, noIdeaQuestions, activeListId, savedLists, questionById]);
+  }, [baseFilteredQuestions, filterState.statusFilter, filterState.limitQuantity, statusConfirmedAnswers, statusUserAnswers, statusNoIdeaQuestions]);
 
   // Start practice handler
   const handleStartPractice = (limit?: number) => {
@@ -256,6 +274,9 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     if (includeSupport) {
       sections.push(`ALTERNATIVAS\n${question.options.map(option => `${option.letter}) ${toClipboardText(option.text)}`).join('\n')}`);
     }
+    if (question.media?.length) {
+      sections.push(`ELEMENTOS VISUAIS\n${question.media.map(media => `[${media.kind}] ${media.altText}${media.caption ? ` — ${media.caption}` : ''}`).join('\n')}`);
+    }
     return sections.join('\n\n');
   };
 
@@ -291,10 +312,11 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     let confirmedCount = 0;
     let correctCount = 0;
 
-    filteredQuestions.forEach(q => {
-      if (confirmedAnswers[q.id]) {
+    const visibleIds = new Set(filteredQuestions.map(question => question.id));
+    Object.keys(confirmedAnswers).forEach(id => {
+      if (confirmedAnswers[id] && visibleIds.has(id)) {
         confirmedCount++;
-        if (userAnswers[q.id] === q.correctLetter) {
+        if (userAnswers[id] === questionById.get(id)?.correctLetter) {
           correctCount++;
         }
       }
@@ -307,7 +329,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
       correct: correctCount,
       accuracy
     };
-  }, [filteredQuestions, confirmedAnswers, userAnswers]);
+  }, [filteredQuestions, confirmedAnswers, userAnswers, questionById]);
 
   // Pagination calculations
   const effectivePageSize = pageSize === 0 ? filteredQuestions.length : pageSize;
@@ -315,9 +337,9 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const safeCurrentPage = Math.min(currentPage, totalPages - 1);
 
   const pageQuestions = useMemo(() => {
-    if (pageSize === 0) return filteredQuestions.map(normalizeQuestionSupport);
+    if (pageSize === 0) return filteredQuestions.map(normalizeQuestionSupportCached);
     const start = safeCurrentPage * pageSize;
-    return filteredQuestions.slice(start, start + pageSize).map(normalizeQuestionSupport);
+    return filteredQuestions.slice(start, start + pageSize).map(normalizeQuestionSupportCached);
   }, [filteredQuestions, safeCurrentPage, pageSize]);
 
   // User Actions
@@ -659,6 +681,18 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                       Questão {q.questionNumber}
                     </span>
                     <span className="text-[#d1d5db] font-sans font-medium">{q.subjectTitle}</span>
+                    {q.language === 'en' && q.examMetadata && (
+                      <span
+                        className="question-source-credit"
+                        title="Crédito editorial identificado no PDF de origem"
+                        data-source-credit
+                      >
+                        {q.examMetadata.board}
+                        {q.examMetadata.year ? ` · ${q.examMetadata.year}` : ''}
+                        {q.examMetadata.role ? ` · ${q.examMetadata.role}` : ''}
+                        {q.examMetadata.adapted ? ' · adaptada' : ''}
+                      </span>
+                    )}
                     {(q.quality?.status === 'warning' || q.quality?.status === 'quarantined' || q.quality?.status === 'rejected') && (
                       <details className="relative text-[10px] font-mono text-[#fbbf24]">
                         <summary className="cursor-pointer list-none rounded-md border border-[#fbbf24]/40 px-1.5 py-0.5 hover:bg-[#fbbf24]/10">{q.quality.status === 'quarantined' ? 'Isolada' : 'Revisar'}</summary>
@@ -724,6 +758,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                               ))}
                             </div>
                           )}
+                          <QuestionMedia media={(q.media ?? []).filter(media => media.placement === 'support')} />
                           {support.source && <p data-support-source className="border-t border-[#343c46]/70 pt-4 text-xs italic leading-relaxed text-[#a8a29e] break-words [overflow-wrap:anywhere]">{support.source}</p>}
                         </div>
                       </div>
@@ -737,6 +772,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                 {q.statement.trim() && (
                   <div className="statement-block rounded-xl border border-[#343c46]/60 bg-[#1d2025]/65 p-4 text-sm font-normal leading-relaxed text-[#f3ede6] sm:p-5 sm:text-base">
                     <FormattedExamText text={q.statement} mode="statement" className="text-sm sm:text-base text-[#f3ede6] font-normal leading-relaxed" />
+                    <QuestionMedia media={(q.media ?? []).filter(media => media.placement === 'statement')} className="mt-4" />
                   </div>
                 )}
 
@@ -766,13 +802,13 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                     }
 
                     return (
-                      <div key={opt.letter} className={`question-option-row flex items-center gap-2 rounded-xl border p-4 text-left text-xs transition-all sm:text-sm ${btnStyle} ${isEliminated ? 'opacity-55' : ''}`}>
+                      <div key={opt.letter} data-selected={isSelected && !isConfirmed ? 'true' : 'false'} className={`question-option-row flex items-center gap-2 rounded-xl border p-4 text-left text-xs transition-all sm:text-sm ${btnStyle} ${isEliminated ? 'opacity-55' : ''}`}>
                         <button
                           onClick={() => handleSelectOption(q.id, opt.letter)}
                           disabled={isConfirmed || isNoIdea || isEliminated}
                           className="flex min-w-0 flex-1 items-start space-x-3 text-left text-xs transition-all sm:text-sm"
                         >
-                          <span className={`w-6 h-6 rounded-lg border flex items-center justify-center font-mono font-bold text-xs shrink-0 ${
+                          <span data-selected={isSelected && !isConfirmed ? 'true' : 'false'} className={`question-option-letter w-6 h-6 rounded-lg border flex items-center justify-center font-mono font-bold text-xs shrink-0 ${
                             (isSelected || (isNoIdea && isCorrectOption))
                               ? 'bg-[#34d399] text-[#16181b] border-[#34d399]'
                               : 'bg-[#14161a] border-[#343c46] text-[#9ca3af]'
@@ -781,6 +817,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                           </span>
                           <div className={`flex-1 pt-0.5 leading-snug ${isEliminated ? 'line-through decoration-1' : ''}`}>
                             <FormattedExamText text={opt.text} mode="option" className="text-xs sm:text-sm font-normal text-inherit" />
+                            <QuestionMedia media={(q.media ?? []).filter(media => media.placement === 'option' && media.optionLetter === opt.letter)} className="mt-3" />
                           </div>
                         </button>
                         <button

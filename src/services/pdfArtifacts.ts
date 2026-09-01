@@ -12,6 +12,8 @@ export interface PdfArtifactResult {
   fileHash: string;
   artifacts: PageArtifact[];
   manifest: ImportManifest;
+  /** In-memory source used only to render verified crops after extraction. */
+  sourceData: Uint8Array;
 }
 
 function abortIfNeeded(signal?: AbortSignal): void {
@@ -88,6 +90,7 @@ export async function extractPdfArtifacts(
   const pdfjsLib = await import('pdfjs-dist');
   pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).href;
   const data = new Uint8Array(await file.arrayBuffer());
+  const sourceData = data.slice();
   const fileHash = await sha256(data);
   const loadingTask = pdfjsLib.getDocument({ data });
   const documentProxy = await loadingTask.promise;
@@ -104,6 +107,15 @@ export async function extractPdfArtifacts(
     for (let pageNumber = 1; pageNumber <= documentProxy.numPages; pageNumber += 1) {
       abortIfNeeded(signal);
       const page = await documentProxy.getPage(pageNumber);
+      const operatorList = await page.getOperatorList();
+      const visualOperators = new Set([
+        pdfjsLib.OPS.paintImageXObject,
+        pdfjsLib.OPS.paintInlineImageXObject,
+        pdfjsLib.OPS.paintImageMaskXObject,
+        pdfjsLib.OPS.paintSolidColorImageMask,
+      ]);
+      const imageOperatorCount = operatorList.fnArray.filter(operator => visualOperators.has(operator)).length;
+      const vectorPathCount = operatorList.fnArray.filter(operator => operator === pdfjsLib.OPS.constructPath).length;
       const content = await page.getTextContent();
       const spans: PageTextSpan[] = [];
       let nativeText = '';
@@ -132,14 +144,14 @@ export async function extractPdfArtifacts(
       const characterCount = nativeText.length;
       const wordCount = countWords(nativeText);
       const needsOcr = characterCount < 80 || wordCount < 12 || replacementCharacters > Math.max(2, Math.floor(characterCount * 0.01));
-      // Render every page for layout/image evidence. Healthy native pages
-      // release the bitmap immediately; uncertain pages retain a compressed
-      // thumbnail for the multimodal pass.
-      const rendered = await renderPage(page);
+      const hasVisualContent = imageOperatorCount > 0 || vectorPathCount >= 40;
+      // Only pages requiring vision are rasterized. The original PDF bytes are
+      // retained in memory so final assets can later be rendered as true crops.
+      const rendered = needsOcr || hasVisualContent ? await renderPage(page) : { width: viewport.width, height: viewport.height };
       let imageDataUrl: string | undefined;
-      if (needsOcr) {
+      if (needsOcr || hasVisualContent) {
         imageDataUrl = rendered.dataUrl;
-        reprocessedPages.push(pageNumber);
+        if (needsOcr) reprocessedPages.push(pageNumber);
         onProgress?.({ page: pageNumber, totalPages: documentProxy.numPages, method: 'native-text+vision' });
       } else {
         onProgress?.({ page: pageNumber, totalPages: documentProxy.numPages, method: 'native-text' });
@@ -148,7 +160,7 @@ export async function extractPdfArtifacts(
         pageNumber,
         width: Number(viewport.width || 0),
         height: Number(viewport.height || 0),
-        extractionMethod: needsOcr ? 'native-text+vision' : 'native-text',
+        extractionMethod: needsOcr || hasVisualContent ? 'native-text+vision' : 'native-text',
         nativeText,
         spans,
         ...inferLayout(spans, Number(viewport.width || 0), Number(viewport.height || 0)),
@@ -159,6 +171,7 @@ export async function extractPdfArtifacts(
           replacementCharacters,
           textCoverage: characterCount > 0 ? Math.min(1, wordCount / Math.max(1, characterCount / 6)) : 0,
           needsOcr,
+          hasVisualContent,
         },
       };
       artifacts.push(artifact);
@@ -189,7 +202,7 @@ export async function extractPdfArtifacts(
     quarantinedCount: 0,
     coverage: documentProxy.numPages ? processedPages.length / documentProxy.numPages : 0,
   };
-  return { importId, fileName: file.name, fileHash, artifacts, manifest };
+  return { importId, fileName: file.name, fileHash, artifacts, manifest, sourceData };
 }
 
 export function artifactsToText(artifacts: PageArtifact[]): string {

@@ -21,12 +21,48 @@ export interface QuestionEvidence {
   method: FieldConfidence['method'];
 }
 
+export type QuestionMediaKind = 'figure' | 'chart' | 'table' | 'map' | 'diagram' | 'formula' | 'photo';
+export type QuestionMediaPlacement = 'support' | 'statement' | 'option';
+
+/** Coordinates use the rendered page's top-left origin and values from 0 to 1. */
+export interface NormalizedMediaCrop {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+export interface QuestionMediaDescriptor {
+  id: string;
+  assetId: string;
+  /**
+   * Optional immutable URL for bundled/public media. Imported jobs use
+   * `assetId` in IndexedDB; audited catalogue entries can ship a cropped
+   * asset with the application and skip the local asset lookup entirely.
+   */
+  assetUrl?: string;
+  kind: QuestionMediaKind;
+  placement: QuestionMediaPlacement;
+  optionLetter?: 'A' | 'B' | 'C' | 'D' | 'E';
+  page: number;
+  crop: NormalizedMediaCrop;
+  width: number;
+  height: number;
+  mimeType: 'image/webp' | 'image/png' | 'image/jpeg';
+  altText: string;
+  caption?: string;
+  source?: string;
+  hash: string;
+  confidence: number;
+}
+
 export interface PageQualityMetrics {
   characterCount: number;
   wordCount: number;
   replacementCharacters: number;
   textCoverage: number;
   needsOcr: boolean;
+  hasVisualContent?: boolean;
 }
 
 export interface PageTextSpan {
@@ -84,6 +120,7 @@ export interface ImportManifest {
   questionCountDetected: number;
   verifiedCount: number;
   quarantinedCount: number;
+  extractedMediaCount?: number;
   coverage: number;
 }
 

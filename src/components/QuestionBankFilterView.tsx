@@ -52,12 +52,28 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
   const subjectConfig = filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
   const visibleQuestions = useMemo(
     () => allQuestions.filter(question => {
+      if (question.quality?.status === 'quarantined' || question.quality?.status === 'rejected') return false;
       const inLanguage = filterState.languageFilter === 'en' ? question.language === 'en' : question.language !== 'en';
       if (!inLanguage) return false;
       return true;
     }),
     [allQuestions, filterState.languageFilter]
   );
+  const subjectCounts = useMemo(() => {
+    const counts = new Map<SubjectId, number>();
+    visibleQuestions.forEach(question => counts.set(question.subjectId, (counts.get(question.subjectId) ?? 0) + 1));
+    return counts;
+  }, [visibleQuestions]);
+
+  const languageCounts = useMemo(() => {
+    const counts = { pt: 0, en: 0 };
+    allQuestions.forEach(question => {
+      if (question.quality?.status === 'quarantined' || question.quality?.status === 'rejected') return;
+      if (question.language === 'en') counts.en++;
+      else counts.pt++;
+    });
+    return counts;
+  }, [allQuestions]);
 
   // Helper to toggle subject selection
   const toggleSubject = (subId: SubjectId) => {
@@ -172,8 +188,8 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
         {/* Left Column: Subjects Tree (5 cols) */}
         <div className="question-filter-card question-filter-subjects md:col-span-6 overflow-hidden rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70">
           {([
-            { id: 'pt' as const, label: 'Português', count: allQuestions.filter(question => question.language !== 'en').length },
-            { id: 'en' as const, label: 'Inglês', count: allQuestions.filter(question => question.language === 'en').length },
+            { id: 'pt' as const, label: 'Português', count: languageCounts.pt },
+            { id: 'en' as const, label: 'Inglês', count: languageCounts.en },
           ]).map((language, languageIndex) => {
             const isActiveLanguage = filterState.languageFilter === language.id;
 
@@ -221,7 +237,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
                   <div className="space-y-1 border-t border-[#262b33] px-4 py-3 sm:px-5">
                     {subjectConfig.filter(s => s.id !== 'todos').map(sub => {
                       const isSelected = filterState.selectedSubjectIds.includes(sub.id);
-                      const count = visibleQuestions.filter(q => q.subjectId === sub.id).length;
+                      const count = subjectCounts.get(sub.id) ?? 0;
 
                       return (
                         <label

@@ -9,7 +9,7 @@ const importSessions = new Map<string, number>();
 const WINDOW_MS = 10 * 60_000;
 const SESSION_MS = 30 * 60_000;
 let providerCircuitOpenUntil = 0;
-const SYSTEM_PROMPT = `Você é o estágio editorial de um pipeline de importação. Reconstrua somente o que estiver comprovado no texto ou nas imagens recebidas. Não invente, complete, corrija ou resolva uma questão por conhecimento próprio. Separe support, statement, options, source e destaques. Leia o gabarito oficial em passagem independente e retorne answerEvidence com página e trecho literal. Para cada item retorne evidence (campo, página, coordenadas se disponíveis, texto original e método) e fieldConfidence (0 a 1 por campo). Se um campo ou o gabarito não tiver evidência suficiente, inclua o item mesmo assim para quarentena, nunca suponha um valor. Retorne somente JSON válido no formato {"questions":[{"questionNumber":1,"questionPage":1,"answerPage":10,"answerEvidence":"Gabarito 1-B","support":{"label":"","title":"","author":"","paragraphs":[],"source":""},"statement":"","options":[{"letter":"A","text":"","correct":false}],"correctLetter":"B","banca":"Concurso Militar","emphasisNotes":[],"evidence":[{"field":"answer","page":10,"originalText":"Gabarito 1-B","method":"independent-pass"}],"fieldConfidence":{"statement":{"confidence":0.99,"method":"native-text"},"answer":{"confidence":0.99,"method":"independent-pass"}}}]}.`;
+const SYSTEM_PROMPT = `Você é o estágio editorial de um pipeline de importação. Reconstrua somente o que estiver comprovado no texto ou nas imagens recebidas. Não invente, complete, corrija ou resolva uma questão por conhecimento próprio. Separe support, statement, options, source e destaques. Leia o gabarito oficial em passagem independente e retorne answerEvidence com página e trecho literal. Detecte figuras, gráficos, mapas, tabelas, diagramas, fórmulas e fotografias necessários para resolver a questão. Para cada elemento visual retorne media com página, tipo, posição semântica e crop normalizado (origem superior esquerda, x/y/width/height entre 0 e 1). O crop deve conter somente o elemento e suas legendas/eixos, nunca a página inteira, cabeçalho, rodapé ou questão vizinha. Não retorne media para decoração. Produza altText objetivo sem revelar a resposta. Para cada item retorne evidence e fieldConfidence (0 a 1). Se um campo, imagem ou gabarito não tiver evidência suficiente, inclua o item para quarentena, nunca suponha um valor. Retorne somente JSON válido no formato {"questions":[{"questionNumber":1,"questionPage":1,"answerPage":10,"answerEvidence":"Gabarito 1-B","support":{"label":"","title":"","author":"","paragraphs":[],"source":""},"statement":"","options":[{"letter":"A","text":"","correct":false}],"media":[{"kind":"diagram","placement":"statement","page":1,"crop":{"x":0.12,"y":0.25,"width":0.55,"height":0.3},"altText":"Diagrama apresentado no enunciado","confidence":0.98}],"correctLetter":"B","banca":"Concurso Militar","emphasisNotes":[],"evidence":[{"field":"answer","page":10,"originalText":"Gabarito 1-B","method":"independent-pass"}],"fieldConfidence":{"statement":{"confidence":0.99,"method":"native-text"},"answer":{"confidence":0.99,"method":"independent-pass"}}}]}.`;
 
 
 function sendJson(response: ServerResponse, status: number, value: unknown): void {
@@ -21,7 +21,7 @@ function sendJson(response: ServerResponse, status: number, value: unknown): voi
 }
 async function readJson(request: IncomingMessage): Promise<unknown> {
   const chunks: Buffer[] = []; let size = 0;
-  for await (const chunk of request) { const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk); size += buffer.length; if (size > 2_400_000) throw new Error('TOO_LARGE'); chunks.push(buffer); }
+  for await (const chunk of request) { const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk); size += buffer.length; if (size > 4_200_000) throw new Error('TOO_LARGE'); chunks.push(buffer); }
   return JSON.parse(Buffer.concat(chunks).toString('utf8'));
 }
 function allowedOrigin(request: IncomingMessage, configured?: string): boolean {
@@ -151,14 +151,17 @@ export function createAiImportHandler(environment: AiImportEnvironment) {
     const record = payload && typeof payload === 'object' ? payload as Record<string, unknown> : {};
     const rawText = typeof record.rawText === 'string' ? record.rawText.trim() : '';
     const rawImages = Array.isArray(record.images) ? record.images : [];
-    if (rawImages.length > 2 || rawImages.some(value => typeof value !== 'string' || !/^data:image\/(?:jpeg|png);base64,/u.test(value))) return sendJson(response, 400, { error: 'Imagens de evidência inválidas.', requestId });
-    const images = rawImages.filter((value): value is string => typeof value === 'string').slice(0, 2);
+    if (rawImages.length > 4 || rawImages.some(value => !value || typeof value !== 'object' || !Number.isInteger(Number((value as Record<string, unknown>).page)) || typeof (value as Record<string, unknown>).dataUrl !== 'string' || !/^data:image\/(?:jpeg|png);base64,/u.test(String((value as Record<string, unknown>).dataUrl)))) return sendJson(response, 400, { error: 'Imagens de evidência inválidas.', requestId });
+    const images = rawImages.slice(0, 4).map(value => ({ page: Number((value as Record<string, unknown>).page), dataUrl: String((value as Record<string, unknown>).dataUrl) }));
     const batch = Number(record.batch); const totalBatches = Number(record.totalBatches);
-    if (rawText.length < 20 || rawText.length > 130_000 || images.some(image => image.length > 900_000) || !Number.isInteger(batch) || !Number.isInteger(totalBatches) || batch < 1 || totalBatches < batch || totalBatches > 50) return sendJson(response, 400, { error: 'Texto, imagens ou metadados do lote inválidos.', requestId });
+    if (rawText.length < 20 || rawText.length > 130_000 || images.some(image => image.dataUrl.length > 900_000) || !Number.isInteger(batch) || !Number.isInteger(totalBatches) || batch < 1 || totalBatches < batch || totalBatches > 50) return sendJson(response, 400, { error: 'Texto, imagens ou metadados do lote inválidos.', requestId });
     const controller = new AbortController(); const timeout = setTimeout(() => controller.abort(), 45_000);
     try {
       const userContent: Array<Record<string, unknown>> = [{ type: 'text', text: `Lote ${batch} de ${totalBatches}. Extraia todas as questões completas com gabarito explícito. Faça uma segunda leitura independente do gabarito e registre as evidências.\n\n${rawText}` }];
-      for (const image of images) userContent.push({ type: 'image_url', image_url: { url: image } });
+      for (const image of images) {
+        userContent.push({ type: 'text', text: `Imagem integral temporária da página ${image.page}; use-a apenas para localizar elementos e devolver crops normalizados.` });
+        userContent.push({ type: 'image_url', image_url: { url: image.dataUrl } });
+      }
       const primaryModel = environment.OPENROUTER_MODEL?.trim() || 'google/gemini-3.7-flash';
       const fallbackModel = environment.OPENROUTER_FALLBACK_MODEL?.trim();
       const models = Date.now() < providerCircuitOpenUntil && fallbackModel ? [fallbackModel] : [primaryModel, ...(fallbackModel ? [fallbackModel] : [])];

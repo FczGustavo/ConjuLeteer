@@ -11,7 +11,7 @@ export default defineConfig({
       reporter: ['text', 'html'],
       // PDF.js worker/canvas behavior is covered by browser integration tests;
       // jsdom cannot execute a real worker or rasterize a PDF page.
-      exclude: ['src/services/pdfArtifacts.ts'],
+      exclude: ['src/services/pdfArtifacts.ts', 'src/services/questionMediaService.ts'],
       thresholds: { branches: 45, functions: 65, lines: 65, statements: 60 }
     }
   }

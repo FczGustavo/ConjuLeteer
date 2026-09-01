@@ -382,13 +382,13 @@ export const SimuladosView: React.FC<SimuladosViewProps> = ({
                     }
 
                     return (
-                      <div key={opt.letter} className={`question-option-row flex items-center gap-2 rounded-xl border p-3.5 text-left text-xs transition-all sm:text-sm ${btnStyle} ${isEliminated ? 'opacity-55' : ''}`}>
+                      <div key={opt.letter} data-selected={isSelected && !isConfirmed ? 'true' : 'false'} className={`question-option-row flex items-center gap-2 rounded-xl border p-3.5 text-left text-xs transition-all sm:text-sm ${btnStyle} ${isEliminated ? 'opacity-55' : ''}`}>
                         <button
                           onClick={() => handleSelectOption(q.id, opt.letter)}
                           disabled={isConfirmed || isNoIdea || isEliminated}
                           className="flex min-w-0 flex-1 items-start space-x-3 text-left text-xs transition-all sm:text-sm"
                         >
-                          <span className={`w-6 h-6 rounded-lg border flex items-center justify-center font-mono font-bold text-xs shrink-0 ${
+                          <span data-selected={isSelected && !isConfirmed ? 'true' : 'false'} className={`question-option-letter w-6 h-6 rounded-lg border flex items-center justify-center font-mono font-bold text-xs shrink-0 ${
                             (isSelected || (isNoIdea && isCorrectOption))
                               ? 'bg-[#34d399] text-[#16181b] border-[#34d399]'
                               : 'bg-[#14161a] border-[#343c46] text-[#9ca3af]'

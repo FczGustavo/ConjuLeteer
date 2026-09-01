@@ -1,6 +1,6 @@
 # Privacidade
 
-Configurações, progresso, listas, respostas e questões importadas ficam no `localStorage`. O produto não possui conta nem banco remoto para esses dados.
+Configurações, progresso, listas, respostas e metadados das questões importadas ficam no `localStorage`. Recortes visuais extraídos de PDFs ficam no IndexedDB do próprio navegador; páginas completas não são persistidas. O produto não possui conta nem banco remoto para esses dados.
 
 Somente ao confirmar uma importação, o texto do PDF é enviado ao servidor e à OpenRouter para estruturação. A interface informa esse processamento. Logs devem conter apenas request ID, status, duração e contagens, nunca PDFs, respostas integrais ou chaves.
 

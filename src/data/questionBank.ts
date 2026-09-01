@@ -64,6 +64,21 @@ export interface QuestionBankProvenance {
   answerPage?: number;
 }
 
+/**
+ * Crédito editorial impresso na fonte da questão.
+ *
+ * `board`/`year` só são preenchidos quando aparecem no PDF.  A coleção de
+ * traduções, por exemplo, traz apenas o título da seção e por isso mantém o
+ * crédito de compilação sem inventar uma banca ou um ano.
+ */
+export interface QuestionBankExamMetadata {
+  board: string;
+  year?: number;
+  role?: string;
+  adapted?: boolean;
+  source: 'pdf-header' | 'pdf-section';
+}
+
 export interface QuestionBankQuality {
   /** Verified items are safe to publish; the other states never enter study lists. */
   status: 'verified' | 'warning' | 'quarantined' | 'rejected';
@@ -89,12 +104,16 @@ export interface QuestionBankItem {
   provenance?: QuestionBankProvenance;
   quality?: QuestionBankQuality;
   emphasisNotes?: QuestionBankEmphasisNote[];
+  /** Cropped visual assets associated with this question; full PDF pages are never stored. */
+  media?: import('../types/importPipeline').QuestionMediaDescriptor[];
   /** Legacy serialized support, retained for localStorage/data migration fallback. */
   readingText?: string;
   statement: string;
   options: QuestionBankOption[];
   correctLetter: 'A' | 'B' | 'C' | 'D' | 'E';
   banca: string;
+  /** Structured source credit for audited English records. */
+  examMetadata?: QuestionBankExamMetadata;
   /** Native language/subdivision of the source bank. Legacy Portuguese items omit this field. */
   language?: 'pt' | 'en';
   isCustom?: boolean;

@@ -4,6 +4,7 @@ import type { ImportManifest, QuestionEvidence } from '../types/importPipeline';
 import { artifactsToText, extractPdfArtifacts, type PdfArtifactResult } from './pdfArtifacts';
 import { normalizeQuestionSupport, parseLegacySupport, validateQuestionQuality } from '../utils/questionSupport';
 import { createPdfImportBatches } from './pdfBatching';
+import { clearQuestionMediaAssets, cropAndStoreQuestionMedia, type RawMediaRequest } from './questionMediaService';
 
 const CUSTOM_QUESTIONS_STORAGE_KEY = 'conjuletter_custom_questions_v1';
 const CUSTOM_QUARANTINED_STORAGE_KEY = 'conjuletter_quarantined_questions_v1';
@@ -94,6 +95,7 @@ export function clearCustomQuestions(): void {
   try {
     localStorage.removeItem(CUSTOM_QUESTIONS_STORAGE_KEY);
     localStorage.removeItem(CUSTOM_QUARANTINED_STORAGE_KEY);
+    clearQuestionMediaAssets();
   } catch (e) {
     console.error('Error clearing custom questions', e);
   }
@@ -191,9 +193,9 @@ REGRAS OBRIGATÓRIAS
     try {
       const pagesInBatch = [...requestBatches[batchIndex].matchAll(/--- PAGINA (\d+) ---/gu)].map(match => Number(match[1]));
       const images = pagesInBatch
-        .map(page => artifactResult?.artifacts.find(artifact => artifact.pageNumber === page)?.imageDataUrl)
-        .filter((value): value is string => Boolean(value))
-        .slice(0, 2);
+        .map(page => ({ page, dataUrl: artifactResult?.artifacts.find(artifact => artifact.pageNumber === page)?.imageDataUrl }))
+        .filter((value): value is { page: number; dataUrl: string } => Boolean(value.dataUrl))
+        .slice(0, 4);
       let lastResponse: Response | undefined;
       for (let attempt = 0; attempt < 3; attempt += 1) {
         if (signal?.aborted) throw new DOMException('Importação cancelada.', 'AbortError');
@@ -242,7 +244,7 @@ REGRAS OBRIGATÓRIAS
 
   const seenQuestionNumbers = new Set<number>();
 
-  const resultItems: QuestionBankItem[] = parsedArray.map((q, idx) => {
+  const resultItems: QuestionBankItem[] = await Promise.all(parsedArray.map(async (q, idx) => {
     q = q && typeof q === 'object' ? q : {};
     const structuralWarnings: string[] = [];
     const requestedNumber = Number(q.questionNumber || idx + 1);
@@ -298,6 +300,42 @@ REGRAS OBRIGATÓRIAS
     },
     isCustom: true
     } as QuestionBankItem;
+    const rawMedia: RawMediaRequest[] = Array.isArray(q.media)
+      ? q.media.filter((entry: any) => entry && typeof entry === 'object').map((entry: any) => ({
+          kind: ['figure', 'chart', 'table', 'map', 'diagram', 'formula', 'photo'].includes(entry.kind) ? entry.kind : 'figure',
+          placement: ['support', 'statement', 'option'].includes(entry.placement) ? entry.placement : 'statement',
+          optionLetter: /^[A-E]$/.test(String(entry.optionLetter || '').toUpperCase()) ? String(entry.optionLetter).toUpperCase() as RawMediaRequest['optionLetter'] : undefined,
+          page: Number(entry.page),
+          crop: {
+            x: Number(entry.crop?.x),
+            y: Number(entry.crop?.y),
+            width: Number(entry.crop?.width),
+            height: Number(entry.crop?.height),
+          },
+          altText: typeof entry.altText === 'string' ? entry.altText : '',
+          caption: typeof entry.caption === 'string' ? entry.caption : undefined,
+          source: typeof entry.source === 'string' ? entry.source : undefined,
+          confidence: Number(entry.confidence),
+        }))
+      : [];
+    if (rawMedia.length) {
+      if (!artifactResult?.sourceData) {
+        structuralWarnings.push('Elemento visual identificado, mas o PDF original não está disponível para gerar o recorte.');
+      } else {
+        try {
+          const cropped = await cropAndStoreQuestionMedia(artifactResult.sourceData, rawMedia, importId);
+          item.media = cropped.media;
+          structuralWarnings.push(...cropped.warnings);
+          if (cropped.media.length !== rawMedia.length) structuralWarnings.push('Nem todos os elementos visuais produziram recortes válidos.');
+        } catch (error) {
+          structuralWarnings.push(`Falha ao gerar recorte visual: ${error instanceof Error ? error.message : 'erro desconhecido'}.`);
+        }
+      }
+    }
+    const requiresVisual = /\b(?:figura|imagem|gráfico|mapa|diagrama|esquema|ilustração|charge|tirinha|fotografia|figure|image|chart|map|diagram|illustration|photograph|tabela\s+(?:abaixo|acima|a seguir)|table\s+(?:below|above|following))\b/iu.test(
+      [item.statement, ...(item.support?.paragraphs ?? []), ...item.options.map(option => option.text)].join(' ')
+    );
+    if (requiresVisual && !item.media?.length) structuralWarnings.push('A questão referencia conteúdo visual, mas nenhum recorte comprovado foi produzido.');
     const deterministicKey = findOfficialAnswerKey(sourceText, questionNumber);
     const deterministicAnswer = deterministicKey?.letter === correctLetter ? deterministicKey : undefined;
     if (deterministicKey && deterministicKey.letter !== correctLetter) structuralWarnings.push('A letra estruturada diverge do gabarito oficial encontrado no documento.');
@@ -353,7 +391,7 @@ REGRAS OBRIGATÓRIAS
       normalizedItem.quality = { ...normalizedItem.quality, status: 'quarantined' };
     }
     return normalizedItem;
-  });
+  }));
 
   const verified = resultItems.filter(item => item.quality?.status === 'verified');
   const quarantined = resultItems.filter(item => item.quality?.status !== 'verified');
@@ -372,6 +410,7 @@ REGRAS OBRIGATÓRIAS
     questionCountDetected: resultItems.length,
     verifiedCount: verified.length,
     quarantinedCount: quarantined.length,
+    extractedMediaCount: resultItems.reduce((count, item) => count + (item.media?.length ?? 0), 0),
   };
   if (!storage.ok || !quarantineStorage.ok) onProgress?.('Questões processadas, mas o armazenamento local recusou parte do relatório.');
 

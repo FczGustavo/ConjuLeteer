@@ -15,7 +15,9 @@ O módulo que coordena PDF.js/canvas (`src/services/pdfArtifacts.ts`) fica fora 
 - `srsEngine`: JSON corrompido, números não finitos, datas inválidas, migração de tema, limites de domínio e falha de armazenamento.
 - `questionListService`: migração, deduplicação, página fora do intervalo, `pageSize` inválido, quota excedida e listas parcialmente corrompidas.
 - importador: resposta vazia, JSON inválido, letras duplicadas, gabarito ausente, 4/5 alternativas, páginas inválidas, IDs estáveis, evidência/confiança ausentes e isolamento em quarentena.
+- banco inglês: os 1.500 cabeçalhos do PDF são relidos e comparados item a item com `examMetadata`; a suíte exige 1.320 créditos verificáveis, 180 itens sem banca/ano em quarentena e nenhum crédito inferido.
 - pipeline multimodal: páginas nativas, scans sem camada de texto, páginas com caracteres corrompidos, hash repetido, manifesto de cobertura, renderização e cancelamento entre páginas.
+- mídia de questões: limites normalizados, rejeição de página inteira, confiança mínima, associação a alternativas, recorte WebP, hash, IndexedDB e quarentena quando a figura mencionada estiver ausente.
 
 ### Testes de componentes
 
@@ -27,6 +29,7 @@ O módulo que coordena PDF.js/canvas (`src/services/pdfArtifacts.ts`) fica fora 
 - Paginação em zero itens, 1, 5, 10, 20 e “Todas”; redução do conjunto enquanto a página atual deixa de existir.
 - Copiar questão com e sem permissão da Clipboard API e fallback legado.
 - Importação: progresso, cancelamento, erro recuperável, aviso editorial e sucesso.
+- Recortes visuais: imagem responsiva, legenda/fonte, texto alternativo, zoom, Escape, restauração de foco e asset ausente.
 - Jobs de importação: criar/status/patch/cancelar/relatório/publicar, isolamento por cookie de sessão e ausência de vazamento entre sessões.
 
 ### Testes de navegador
@@ -56,6 +59,7 @@ npm run audit:english
 - Zero erro de build, lint ou auditoria.
 - Zero teste instável e zero erro no console nos fluxos críticos.
 - Nenhuma perda silenciosa de questão ou progresso.
+- Cada questão inglesa publicada possui crédito rastreável no PDF; quando a fonte não imprime banca/ano, o relatório identifica explicitamente a seção de compilação.
 - Nenhum item sem evidência independente do gabarito é publicado; itens ambíguos permanecem em `quarantined`.
 - Cobertura de branches elevada nas rotinas de parsing, normalização e persistência; o percentual exato deve ser definido após a primeira linha de base, sem substituir testes de cenários.
 - Evidência visual dos quatro temas em 1440, 1024, 768 e 390 px.

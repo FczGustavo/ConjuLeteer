@@ -19,6 +19,7 @@ Revisão atualizada em **1º de setembro de 2026** para a versão **1.0.0**.
 - Error Boundary, limpeza de timers e melhorias de diálogo/foco/Escape.
 - Carregamento sob demanda; Home com aproximadamente **101 KiB gzip**.
 - Auditoria pós-normalização e CI com unitários, cobertura e Playwright.
+- Auditoria editorial do Inglês relê os 1.500 cabeçalhos no PDF: 1.320 bancas com ano, 180 créditos de seção sem ano impresso e zero cargos inferidos.
 
 ## Evidências executadas
 
@@ -31,7 +32,7 @@ Revisão atualizada em **1º de setembro de 2026** para a versão **1.0.0**.
 | Evidência visual | 16 capturas: 4 temas × 1440/1024/768/390 px em `reports/visual/` |
 | Verbos | 163 verbos e 11 paradigmas |
 | Português | 531 questões e 7 PDFs |
-| Inglês | 1.500 questões, 24 tópicos, zero divergências |
+| Inglês | 1.500 questões, 24 tópicos, zero divergências; créditos auditados (1.320 banca/ano + 180 seção) |
 | Pós-normalização | 2.031 questões; 79 mudanças registradas; zero alteração de estrutura/gabarito |
 | Dependências de produção | zero vulnerabilidades conhecidas |
 | Servidor local de produção | Home 200, health 200 + cookie; sem sessão 401; payload inválido autenticado 400; CSP presente |

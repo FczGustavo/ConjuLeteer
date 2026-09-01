@@ -176,6 +176,21 @@
     letter-spacing: -0.025em;
   }
 
+  /* Source credits are intentionally quiet: they add provenance without
+     competing with the question title or answer controls. */
+  .question-source-credit {
+    color: #7f8b9a;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.015em;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+
+  :root[data-theme^='alexandria'] .question-source-credit {
+    color: var(--accent-blue);
+  }
+
   /* Centered navigation drawer: Home remains the quiet anchor when closed. */
   .home-nav {
     display: flex;
@@ -1391,6 +1406,29 @@
   border-top: 1px solid color-mix(in srgb, var(--theme-text) 18%, var(--bg-base)) !important;
 }
 
+/* When the user chooses a large page size, off-screen questions should not
+   participate in layout/paint until they approach the viewport. */
+.question-sheet {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 760px;
+}
+
+.question-media-figure,
+.question-media-loading,
+.question-media-error {
+  background: color-mix(in srgb, var(--bg-card) 86%, var(--theme-bg));
+  box-shadow: 0 8px 22px color-mix(in srgb, #000 18%, transparent);
+}
+
+.question-media-figure img {
+  background: #fff;
+}
+
+.question-media-figure figcaption,
+.question-media-error {
+  color: var(--theme-text-muted);
+}
+
 .question-number-badge {
   color: var(--question-accent) !important;
   border-color: color-mix(in srgb, var(--question-accent) 58%, transparent) !important;
@@ -1406,20 +1444,65 @@
 }
 
 .question-confirm-button {
-  min-height: 2.75rem;
-  padding-block: 0.75rem;
-  padding-inline: 1.5rem;
+  min-height: 2.5rem;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
   line-height: 1.2;
 }
 
-/* Footer actions share the same 44px rhythm as the individual response
+/* Footer actions share the same compact 40px rhythm as the individual response
    control, keeping the navigation bar balanced without forcing equal text
    widths. */
 .question-footer-action {
-  min-height: 2.75rem;
-  padding-block: 0.75rem;
-  padding-inline: 1.5rem;
+  min-height: 2.5rem;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
   line-height: 1.2;
+}
+
+.question-no-idea-button {
+  min-height: 2.5rem !important;
+  padding-block: 0.625rem !important;
+  /* Keep this secondary action light and outlined across every theme. */
+  background: transparent !important;
+  border: 1px solid color-mix(in srgb, var(--theme-text) 28%, transparent) !important;
+  color: var(--theme-text-muted) !important;
+  box-shadow: none !important;
+}
+
+.question-no-idea-button[aria-pressed='true'] {
+  background: var(--theme-accent-soft) !important;
+  border-color: var(--theme-accent) !important;
+  color: var(--theme-accent) !important;
+}
+
+/* Legacy utility remapping is intentionally more specific in Alexandria;
+   repeat the outline contract here so the filled utility background cannot
+   win the cascade. */
+:root[data-theme^='alexandria'] .question-no-idea-button {
+  background: transparent !important;
+  border-color: color-mix(in srgb, var(--theme-text) 28%, transparent) !important;
+  color: var(--theme-text-muted) !important;
+  box-shadow: none !important;
+}
+
+/* Alexandria response controls use the same calm blue as question badges;
+   the selected letter is marked without tinting the entire answer row. */
+:root[data-theme^='alexandria'] .question-option-letter[data-selected='true'] {
+  background: var(--accent-blue) !important;
+  border-color: var(--accent-blue) !important;
+  color: #f7f9fc !important;
+}
+
+:root[data-theme^='alexandria'] .question-option-row[data-selected='true'] {
+  border-color: color-mix(in srgb, var(--accent-blue) 56%, transparent) !important;
+  background: var(--bg-card) !important;
+}
+
+:root[data-theme^='alexandria'] .question-no-idea-button:hover,
+:root[data-theme^='alexandria'] .question-no-idea-button[aria-pressed='true'] {
+  border-color: var(--accent-blue) !important;
+  color: var(--accent-blue) !important;
 }
 
 .question-footer-nav-button {
@@ -1530,7 +1613,7 @@
 
 :root[data-theme^='alexandria'] .question-no-idea-button[aria-pressed='true'] {
   background: var(--accent-blue-soft) !important;
-  border-color: transparent !important;
+  border-color: var(--accent-blue) !important;
   color: var(--accent-blue) !important;
   box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-blue) 16%, transparent);
 }

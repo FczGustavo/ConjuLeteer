@@ -592,6 +592,13 @@ Depois de cada rodada de mudancas:
 - `src/index.css`: Alexandria passou de azul ardósia para carvão noturno (`#12131a`), com superfícies escuras e texto creme-lilás. Os acentos de interface, foco, seleção, checkbox, botões, marcadores e estados ativos agora usam lavanda fria; o laranja permanece apenas nas amostras dos temas Original.
 - Verificação visual no navegador: Home e seção VocabLab conferidas em 1280 px, questões e controles conferidos sem laranja residual nos estados Alexandria, e questão em 390 px verificada sem overflow. Tema Original foi restaurado após os testes. Build e lint aprovados; lint mantém somente os três avisos históricos.
 
+### 2026-09-01 - rodada 54: auditoria de créditos do banco inglês
+
+- `src/scratch/import_english_questions.py` passou a extrair, de forma conservadora, `examMetadata` para cada uma das 1.500 questões: banca, ano normalizado (incluindo o cabeçalho abreviado `ESPCEX 99`), cargo quando impresso e indicação de questão adaptada. O texto legado `banca` permanece intacto para compatibilidade.
+- A auditoria relê os 1.500 cabeçalhos do PDF e compara cada crédito estruturado com a origem antes de validar os gabaritos. Foram confirmados 1.320 créditos de banca com ano e 180 créditos da seção `Translations` sem banca/ano impressos; nenhum dado foi inventado.
+- `QuestionBankView.tsx` exibe o crédito de origem de questões inglesas de forma discreta junto ao cabeçalho. Os relatórios JSON/Markdown agora registram cobertura de bancas, anos, cargos e créditos de seção.
+- Verificações: `python src/scratch/audit_english_question_bank.py` aprovado (1.500 questões, 1.500 respostas, 0 divergências, 0 avisos; 1.320 anos e 0 cargos).
+
 ## 9. Pendencias e melhorias futuras
 
 - Tratar os 3 avisos restantes de efeitos nos componentes de treino sem alterar a experiencia de reset/foco.

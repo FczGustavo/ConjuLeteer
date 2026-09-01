@@ -24,7 +24,8 @@ Nunca usar prefixo `VITE_` para segredos. Não registrar prompts, PDFs, resposta
 - Timeout e cancelamento do upstream.
 - Tratamento explícito de 400, 413, 429 e 5xx.
 - Jobs idempotentes por sessão, com progresso, cancelamento, relatório e publicação explícita; falhas de item vão para quarentena e nunca entram no banco de estudo.
-- Cada página recebe manifesto, método (`native-text` ou `native-text+vision`), métricas e hash; páginas com pouco texto são renderizadas para a passagem multimodal.
+- Cada página recebe manifesto, método (`native-text` ou `native-text+vision`), métricas e hash. Páginas com pouco texto, imagens incorporadas ou alta densidade vetorial recebem uma miniatura temporária para a passagem multimodal.
+- Elementos visuais retornam coordenadas normalizadas; o navegador reabre o PDF e persiste somente recortes WebP validados no IndexedDB. Página inteira, recorte fora dos limites, confiança inferior a 0,92 e imagem exigida mas ausente provocam quarentena.
 - CORS restrito, cabeçalhos de segurança e logs com request ID sem conteúdo educacional.
 - Métricas de latência, taxa de erro, itens importados, itens com aviso e custo.
 
@@ -35,9 +36,10 @@ Nunca usar prefixo `VITE_` para segredos. Não registrar prompts, PDFs, resposta
 3. Testar `/api/import/jobs` (criar, atualizar, consultar, cancelar e relatório) e `/api/ai/import` no domínio final com um PDF pequeno, um scan e um grande.
 4. Verificar carregamento direto e recarga de cada área suportada.
 5. Testar migração e recuperação de `localStorage` com dados reais anonimizados.
-6. Confirmar CSP, cache dos assets com hash e `Cache-Control: no-store` na API.
-7. Registrar versão, commit, horário, responsável e artefatos implantados.
-8. Fazer smoke test dos quatro temas, Tabelas, Banco, Listas e Configurações.
+6. Testar IndexedDB indisponível/quota excedida e confirmar que nenhuma questão dependente de imagem é publicada sem o asset.
+7. Confirmar CSP, cache dos assets com hash e `Cache-Control: no-store` na API.
+8. Registrar versão, commit, horário, responsável e artefatos implantados.
+9. Fazer smoke test dos quatro temas, Tabelas, Banco, Listas e Configurações.
 
 ## Rollback
 
