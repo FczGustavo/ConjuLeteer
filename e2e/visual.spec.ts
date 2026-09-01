@@ -16,6 +16,14 @@ test('matriz visual dos quatro temas e resoluções', async ({page}, testInfo) =
       await page.reload();
       await expect(page.locator('html')).toHaveAttribute('data-theme',theme);
       await page.screenshot({path:`reports/visual/home-${theme}-${viewport.name}.png`,fullPage:true});
+      if (theme === 'alexandria-light' && viewport.name === '1024') {
+        await page.getByRole('button',{name:'Abrir navegação'}).click();
+        await page.getByRole('button',{name:'Banco de Questões'}).click();
+        const selected = page.locator('.question-filter-status-option[data-selected="true"]').first();
+        await expect(selected).toBeVisible();
+        await expect(selected).toHaveCSS('background-color', 'rgb(55, 111, 174)');
+        await page.screenshot({path:'reports/visual/filter-alexandria-light-1024.png',fullPage:true});
+      }
     }
   }
 });

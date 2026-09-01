@@ -1165,12 +1165,14 @@
 :root[data-theme='alexandria-light'] {
   --filter-card-bg: #f7f8f8;
   --filter-card-border: transparent;
-  --filter-item-bg: #f2f3f3;
+  /* Alexandria claro uses the same restrained blue as its selection checks;
+     neutral gray controls were too low-contrast against the paper surface. */
+  --filter-item-bg: #e7eef6;
   --filter-item-border: transparent;
-  --filter-item-hover: #e9ebec;
+  --filter-item-hover: #d9e6f3;
   --filter-count-bg: rgba(60, 64, 68, 0.1);
   --filter-count-text: #5d6266;
-  --filter-selected-bg: #2b2d2f;
+  --filter-selected-bg: #376fae;
   --filter-selected-text: #f5f6f7;
   --filter-selected-border: transparent;
   --filter-card-shadow: 0 12px 30px rgba(48, 52, 56, 0.14), 0 2px 10px rgba(48, 52, 56, 0.07);
