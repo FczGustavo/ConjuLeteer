@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -22,7 +22,7 @@ import { getCustomQuestions } from '../services/pdfImportService';
 import { ImportPdfModal } from './ImportPdfModal';
 import { QuestionBankFilterView, type FilterState } from './QuestionBankFilterView';
 import { FormattedExamText } from '../utils/textFormatter';
-import { getQuestionSupport, supportToClipboardText } from '../utils/questionSupport';
+import { getQuestionSupport, normalizeQuestionSupport, supportToClipboardText } from '../utils/questionSupport';
 import {
   createQuestionList,
   deleteQuestionList,
@@ -87,6 +87,12 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const [activeListId, setActiveListId] = useState<string | null>(null);
   const [expandedAnswerKeyId, setExpandedAnswerKeyId] = useState<string | null>(null);
   const [copiedPart, setCopiedPart] = useState<{ questionId: string; kind: 'full' | 'statement' } | null>(null);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const copyTimerRef = useRef<number | null>(null);
+
+  useEffect(() => () => {
+    if (copyTimerRef.current !== null) window.clearTimeout(copyTimerRef.current);
+  }, []);
 
   // Preview answers are intentionally ephemeral; only an active saved list persists.
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
@@ -96,16 +102,23 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
   useEffect(() => {
     if (!activeListId) return;
-    saveQuestionListProgress(activeListId, {
-      userAnswers,
-      confirmedAnswers,
-      noIdeaQuestions,
-      currentPage,
-      pageSize
-    });
+    const timeout = window.setTimeout(() => {
+      const result = saveQuestionListProgress(activeListId, {
+        userAnswers,
+        confirmedAnswers,
+        noIdeaQuestions,
+        currentPage,
+        pageSize
+      });
+      setSaveError(result.ok ? null : result.reason === 'quota'
+        ? 'Armazenamento cheio: o progresso recente não foi salvo.'
+        : 'Não foi possível salvar o progresso neste navegador.');
+    }, 250);
+    return () => window.clearTimeout(timeout);
   }, [activeListId, userAnswers, confirmedAnswers, noIdeaQuestions, currentPage, pageSize]);
 
-  // Combined questions (Base + Custom)
+  // Keep the audited source records immutable. Editorial normalization is
+  // applied only to the visible page below, not to all 2,031 records at once.
   const allBankQuestions = useMemo(() => {
     return [...QUESTION_BANK, ...ENGLISH_QUESTION_BANK, ...customQuestions];
   }, [customQuestions]);
@@ -158,6 +171,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     setActiveListId(null);
     setUserAnswers({});
     setConfirmedAnswers({});
+    setNoIdeaQuestions({});
     setEliminatedOptions({});
     if (limit) {
       setFilterState(prev => ({ ...prev, limitQuantity: limit }));
@@ -259,7 +273,8 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
       textarea.remove();
     }
     setCopiedPart({ questionId: question.id, kind });
-    window.setTimeout(() => {
+    if (copyTimerRef.current !== null) window.clearTimeout(copyTimerRef.current);
+    copyTimerRef.current = window.setTimeout(() => {
       setCopiedPart(current => current?.questionId === question.id && current.kind === kind ? null : current);
     }, 1800);
   };
@@ -298,9 +313,9 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const safeCurrentPage = Math.min(currentPage, totalPages - 1);
 
   const pageQuestions = useMemo(() => {
-    if (pageSize === 0) return filteredQuestions;
+    if (pageSize === 0) return filteredQuestions.map(normalizeQuestionSupport);
     const start = safeCurrentPage * pageSize;
-    return filteredQuestions.slice(start, start + pageSize);
+    return filteredQuestions.slice(start, start + pageSize).map(normalizeQuestionSupport);
   }, [filteredQuestions, safeCurrentPage, pageSize]);
 
   // User Actions
@@ -534,6 +549,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   // Stage 2: Questions Practice Notebook
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-7 sm:px-6 sm:py-9">
+      {saveError && <div role="alert" className="rounded-xl bg-red-950/40 px-4 py-3 text-sm text-red-200">{saveError}</div>}
       
       {/* Top Bar with Return to Filters, Active Filters Summary & Metrics */}
       <section className="rounded-2xl border border-[#343c46]/80 bg-[#181b20]/80 p-5 shadow-xl sm:p-6">

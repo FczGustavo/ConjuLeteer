@@ -1,0 +1,48 @@
+# Operação e implantação
+
+## Arquitetura necessária
+
+O front-end Vite é servido pelo runtime Node em `server/index.ts`. O processo entrega `dist/`, `/api/health` e `/api/ai/import`. Execute `npm run build && npm start` ou use o `Dockerfile`. Um upload isolado de `dist/` mantém o acervo local, mas não oferece importação por IA.
+
+Variáveis obrigatórias no servidor:
+
+```text
+OPENROUTER_API_KEY
+OPENROUTER_MODEL (opcional)
+PUBLIC_ORIGIN (origem HTTPS exata)
+```
+
+Nunca usar prefixo `VITE_` para segredos. Não registrar prompts, PDFs, respostas integrais da IA ou a chave.
+
+## Controles obrigatórios da API
+
+- Autenticação ou token de sessão, rate limit e limite de custo.
+- A sessão atual é emitida por `/api/health` em cookie `HttpOnly`/`SameSite=Strict`; em múltiplas réplicas, substitua o armazenamento em memória por um backend compartilhado.
+- Schema estrito da requisição; o cliente não deve controlar mensagens de sistema.
+- Limites de bytes, páginas e questões por operação.
+- Timeout e cancelamento do upstream.
+- Tratamento explícito de 400, 413, 429 e 5xx.
+- CORS restrito, cabeçalhos de segurança e logs com request ID sem conteúdo educacional.
+- Métricas de latência, taxa de erro, itens importados, itens com aviso e custo.
+
+## Checklist de implantação
+
+1. Rodar todos os comandos de [TESTING.md](./TESTING.md).
+2. Confirmar que `.env.local` e chaves não estão no bundle nem no Git.
+3. Testar `/api/ai/import` no domínio final com um PDF pequeno e um grande.
+4. Verificar carregamento direto e recarga de cada área suportada.
+5. Testar migração e recuperação de `localStorage` com dados reais anonimizados.
+6. Confirmar CSP, cache dos assets com hash e `Cache-Control: no-store` na API.
+7. Registrar versão, commit, horário, responsável e artefatos implantados.
+8. Fazer smoke test dos quatro temas, Tabelas, Banco, Listas e Configurações.
+
+## Rollback
+
+- Manter o artefato anterior e a configuração de runtime disponíveis.
+- Não alterar ou apagar chaves persistidas sem uma migração reversível.
+- Se a API falhar, desabilitar somente a importação e manter o acervo local acessível.
+- Após rollback, validar abertura de listas existentes e registrar a causa do incidente.
+
+## Privacidade e retenção
+
+O produto armazena progresso localmente e envia conteúdo à OpenRouter somente durante uma importação. A interface pública deve informar esse envio antes da confirmação, identificar o provedor e esclarecer que o material submetido precisa estar autorizado para processamento. Definir e publicar política de privacidade, termos de uso e canal de contato antes de aceitar uploads públicos.

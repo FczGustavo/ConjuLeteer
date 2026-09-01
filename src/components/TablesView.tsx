@@ -91,11 +91,13 @@ export const TablesView: React.FC<TablesViewProps> = ({
 
   useEffect(() => {
     if (initialVerbId) {
+      // oxlint-disable-next-line react/set-state-in-effect -- external quick-search selection synchronizes this controlled view
       setSelectedVerbId(initialVerbId);
     }
   }, [initialVerbId]);
 
   useEffect(() => {
+    // oxlint-disable-next-line react/set-state-in-effect -- changing the exercise identity must discard stale answers atomically
     setSingleInputs({});
     setSingleResults({});
     setMultiInputs({});

@@ -38,6 +38,7 @@ export const DrillGrid: React.FC<DrillGridProps> = ({
 
   useEffect(() => {
     // Reset state on verb or tense change
+    // oxlint-disable-next-line react/set-state-in-effect -- a changed drill identity starts a new timed attempt atomically
     setInputs({});
     setResults({});
     setIsCompleted(false);

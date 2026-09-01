@@ -32,11 +32,10 @@ export function loadUserSettings(): UserSettings {
       delete parsed.aiModel;
       const savedTheme = normalizeTheme(parsed.theme);
       return {
-        strictAccents: true,
-        soundEffects: true,
-        defaultBanca: 'EsPCEx',
-        tableColumns: 2,
-        ...parsed,
+        strictAccents: typeof parsed.strictAccents === 'boolean' ? parsed.strictAccents : true,
+        soundEffects: typeof parsed.soundEffects === 'boolean' ? parsed.soundEffects : true,
+        defaultBanca: typeof parsed.defaultBanca === 'string' && parsed.defaultBanca.trim() ? parsed.defaultBanca : 'EsPCEx',
+        tableColumns: [1, 2, 3].includes(parsed.tableColumns) ? parsed.tableColumns : 2,
         theme: savedTheme
       };
     }

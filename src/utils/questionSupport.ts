@@ -82,6 +82,47 @@ export function stripSupportMarkup(value: string): string {
 }
 
 /**
+ * PDF extraction frequently leaves the bibliographic attribution as the last
+ * normal paragraph while the URL/access date is stored in `source`.  Keep the
+ * entire citation in the source treatment so it receives the same spacing and
+ * typography instead of appearing as a second prose paragraph.
+ */
+function isSourceFragment(value: string): boolean {
+  const plain = stripSupportMarkup(value).replace(/\s+/g, ' ').trim();
+  if (!plain || plain.length > 320) return false;
+  if (/^(?:Fonte\s*:|Adaptado(?:\s+de)?\b|Dispon[ií]vel\b|Acesso\b)/iu.test(plain)) return true;
+  if (/^[A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ][A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ'’.-]{2,},(?:\s|$)/u.test(plain)) return true;
+  return /^\([^\n]{3,}\b(?:19|20)\d{2}\b[^\n]*\)\.?$/u.test(plain);
+}
+
+function sourceStartsWithAccess(value: string): boolean {
+  return /^\(?\s*Acesso\b/iu.test(stripSupportMarkup(value).trim());
+}
+
+function normalizeSupportSourceFragments(support: QuestionBankSupport | undefined): QuestionBankSupport | undefined {
+  if (!support || !support.source?.trim() || !support.paragraphs.length) return support;
+
+  let paragraphs = [...support.paragraphs];
+  let source = support.source.trim();
+  const normalizeForCompare = (value: string) => stripSupportMarkup(value).replace(/\s+/g, ' ').trim().toLocaleLowerCase();
+
+  while (paragraphs.length > 0 && isSourceFragment(paragraphs[paragraphs.length - 1])) {
+    const fragment = paragraphs.pop()!.trim();
+    const fragmentKey = normalizeForCompare(fragment);
+    const sourceKey = normalizeForCompare(source);
+    if (!fragmentKey || sourceKey.includes(fragmentKey)) continue;
+
+    // Access dates conventionally follow the URL/citation; other fragments
+    // (author, “Fonte:” and “Adaptado de”) precede an existing source value.
+    source = sourceStartsWithAccess(fragment)
+      ? `${source} ${fragment}`
+      : `${fragment} ${source}`;
+  }
+
+  return { ...support, paragraphs, source };
+}
+
+/**
  * Command starters are not pedagogical targets.  PDF extraction can turn a
  * command's bold styling into an underline, so keep the command readable but
  * unmarked.  The match is intentionally limited to the beginning of the
@@ -89,6 +130,65 @@ export function stripSupportMarkup(value: string): string {
  */
 function stripInstructionMarkup(value: string): string {
   return value.replace(MARKED_INSTRUCTION_START_RE, (_match, whitespace: string, underline: string, bold: string) => `${whitespace}${underline || bold}`);
+}
+
+const INLINE_MARK_RE = /<u>([\s\S]*?)<\/u>|\*\*([\s\S]*?)\*\*/gi;
+
+/**
+ * A few PDFs place the only highlighted term in the long reading passage even
+ * though the command explicitly points to a quoted excerpt.  When the same
+ * short term is present in that excerpt, move the visual mark to the command
+ * and remove the duplicate from the reading copy.
+ */
+function moveReferencedHighlight(
+  statement: string,
+  readingText: string | undefined,
+  support: QuestionBankSupport | undefined,
+): { statement: string; readingText?: string; support?: QuestionBankSupport } {
+  if (!statement || hasMarkup(statement) || !/\b(?:sublinhad[oa]s?|grifad[oa]s?|destacad[oa]s?|em negrito)\b/iu.test(statement)) {
+    return { statement, readingText, support };
+  }
+
+  const sources = [readingText || '', ...(support?.paragraphs || [])];
+  let target: { plain: string; marker: 'underline' | 'bold' } | undefined;
+  for (const source of sources) {
+    INLINE_MARK_RE.lastIndex = 0;
+    let match: RegExpExecArray | null;
+    while ((match = INLINE_MARK_RE.exec(source)) !== null) {
+      const inner = (match[1] ?? match[2] ?? '').trim();
+      const plain = stripSupportMarkup(inner).replace(/\s+/g, ' ').trim();
+      // Ignore punctuation/one-letter OCR spans and complete prose blocks.
+      if (plain.length < 3 || plain.length > 80 || /[.!?:;]$/.test(plain)) continue;
+      const marker = match[1] !== undefined ? 'underline' : 'bold';
+      const escaped = plain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const inStatement = new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, 'iu').test(statement);
+      if (inStatement) {
+        target = { plain, marker };
+        break;
+      }
+    }
+    if (target) break;
+  }
+  if (!target) return { statement, readingText, support };
+
+  const escaped = target.plain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const statementWithMark = statement.replace(
+    new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, 'iu'),
+    match => target!.marker === 'underline' ? `<u>${match}</u>` : `**${match}**`,
+  );
+  const targetKey = target.plain.replace(/\s+/g, ' ').trim().toLocaleLowerCase();
+  const removeMatchingMark = (value: string) => value.replace(INLINE_MARK_RE, (full, underline: string, bold: string) => {
+    const inner = (underline ?? bold ?? '').trim();
+    return stripSupportMarkup(inner).replace(/\s+/g, ' ').trim().toLocaleLowerCase() === targetKey ? inner : full;
+  });
+
+  return {
+    statement: statementWithMark,
+    readingText: readingText ? removeMatchingMark(readingText) : readingText,
+    support: support
+      ? { ...support, paragraphs: support.paragraphs.map(removeMatchingMark) }
+      : support,
+  };
 }
 
 function normalizeRawBlock(value: string): string {
@@ -207,7 +307,7 @@ export function getQuestionSupport(question: Pick<QuestionBankItem, 'support' | 
       ? question.support.paragraphs.filter((paragraph): paragraph is string => typeof paragraph === 'string' && paragraph.trim().length > 0)
       : [];
     if (question.support.title || question.support.author || question.support.source || paragraphs.length > 0 || question.support.label) {
-      return { ...question.support, paragraphs: cleanSupportParagraphs(paragraphs) };
+      return normalizeSupportSourceFragments({ ...question.support, paragraphs: cleanSupportParagraphs(paragraphs) });
     }
   }
   return parseLegacySupport(question.readingText);
@@ -344,8 +444,25 @@ export function normalizeQuestionSupport(question: QuestionBankItem): QuestionBa
   const withoutPreamble = stripStatementSupportPreamble(question.statement, Boolean(support));
   const moved = moveLeadingAccessToSource(withoutPreamble, support);
   const statement = stripInstructionMarkup(moved.statement);
-  const quality = validateQuestionQuality({ ...question, statement, support: moved.support });
-  return { ...question, statement, support: moved.support, quality };
+  const highlighted = moveReferencedHighlight(statement, question.readingText, moved.support);
+  const validatedQuality = validateQuestionQuality({
+    ...question,
+    statement: highlighted.statement,
+    readingText: highlighted.readingText,
+    support: highlighted.support,
+  });
+  // Display-time cleanup may discover new issues, but it must never promote a
+  // record that an editorial audit had already marked for review.
+  const inheritedWarnings = question.quality?.status === 'warning' ? question.quality.warnings : [];
+  const warnings = [...new Set([...inheritedWarnings, ...validatedQuality.warnings])];
+  const quality: QuestionBankQuality = { status: warnings.length ? 'warning' : 'verified', warnings };
+  return {
+    ...question,
+    statement: highlighted.statement,
+    readingText: highlighted.readingText,
+    support: highlighted.support,
+    quality,
+  };
 }
 
 export function optionHasVisualMarkup(option: QuestionBankOption): boolean {

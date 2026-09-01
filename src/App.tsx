@@ -1,11 +1,12 @@
-import { useLayoutEffect, useState } from 'react';
+import { lazy, Suspense, useLayoutEffect, useState } from 'react';
 import { Header, type MainNavTab } from './components/Header';
-import { TablesView } from './components/TablesView';
-import { QuestionBankView } from './components/QuestionBankView';
-import { SettingsView } from './components/SettingsView';
 import { HomeView } from './components/HomeView';
 import { loadUserSettings, recordVerbAttempt } from './utils/srsEngine';
 import type { UserSettings } from './utils/srsEngine';
+
+const TablesView = lazy(() => import('./components/TablesView').then(module => ({ default: module.TablesView })));
+const QuestionBankView = lazy(() => import('./components/QuestionBankView').then(module => ({ default: module.QuestionBankView })));
+const SettingsView = lazy(() => import('./components/SettingsView').then(module => ({ default: module.SettingsView })));
 
 export function App() {
   const [activeTab, setActiveTab] = useState<MainNavTab>('home');
@@ -39,6 +40,7 @@ export function App() {
       <main className="flex-1 pb-16">
         {activeTab === 'home' && <HomeView />}
 
+        <Suspense fallback={<div className="mx-auto mt-16 h-10 w-10 animate-pulse rounded-full bg-[var(--theme-surface)]" aria-label="Carregando área" />}>
         {activeTab === 'tabelas' && (
           <TablesView
             initialVerbId={selectedVerbId}
@@ -67,6 +69,7 @@ export function App() {
             onUpdateSettings={setSettings}
           />
         )}
+        </Suspense>
       </main>
     </div>
   );

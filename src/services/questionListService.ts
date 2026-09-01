@@ -1,4 +1,5 @@
 import type { SubjectId } from '../data/questionBank';
+import { safeWriteStorage, type StorageWriteResult } from '../utils/storage';
 
 const STORAGE_KEY = 'conjuletter_saved_question_lists_v1';
 
@@ -21,10 +22,26 @@ export function loadQuestionLists(): SavedQuestionList[] {
   try {
     const parsed: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
     if (!Array.isArray(parsed)) return [];
-    return parsed.filter(isSavedQuestionList);
+    return parsed.filter(isSavedQuestionList).map(normalizeSavedQuestionList);
   } catch {
     return [];
   }
+}
+
+function normalizeSavedQuestionList(item: SavedQuestionList): SavedQuestionList {
+  const pageSize = [0, 1, 5, 10, 20].includes(item.pageSize) ? item.pageSize : 1;
+  const answers = Object.fromEntries(Object.entries(item.userAnswers).filter((entry): entry is [string, string] => typeof entry[0] === 'string' && /^[A-E]$/.test(entry[1])));
+  const booleans = (value: Record<string, boolean> | undefined) => Object.fromEntries(Object.entries(value || {}).filter((entry): entry is [string, boolean] => typeof entry[0] === 'string' && entry[1] === true));
+  return {
+    ...item,
+    questionIds: [...new Set(item.questionIds.filter(value => typeof value === 'string'))],
+    subjectIds: [...new Set(item.subjectIds.filter(value => typeof value === 'string'))],
+    currentPage: Number.isFinite(item.currentPage) ? Math.max(0, Math.floor(item.currentPage)) : 0,
+    pageSize,
+    userAnswers: answers,
+    confirmedAnswers: booleans(item.confirmedAnswers),
+    noIdeaQuestions: booleans(item.noIdeaQuestions),
+  };
 }
 
 export function createQuestionList(
@@ -63,12 +80,12 @@ export function updateQuestionList(updated: SavedQuestionList): SavedQuestionLis
 export function saveQuestionListProgress(
   id: string,
   progress: Pick<SavedQuestionList, 'userAnswers' | 'confirmedAnswers' | 'noIdeaQuestions' | 'currentPage' | 'pageSize'>
-): void {
+): StorageWriteResult {
   const lists = loadQuestionLists();
   const next = lists.map(list => list.id === id
     ? { ...list, ...progress, updatedAt: new Date().toISOString() }
     : list);
-  saveQuestionLists(next);
+  return saveQuestionLists(next);
 }
 
 export function deleteQuestionList(id: string): SavedQuestionList[] {
@@ -77,8 +94,8 @@ export function deleteQuestionList(id: string): SavedQuestionList[] {
   return next;
 }
 
-function saveQuestionLists(lists: SavedQuestionList[]): void {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(lists));
+function saveQuestionLists(lists: SavedQuestionList[]): StorageWriteResult {
+  return safeWriteStorage(STORAGE_KEY, lists);
 }
 
 function isSavedQuestionList(value: unknown): value is SavedQuestionList {
@@ -89,7 +106,9 @@ function isSavedQuestionList(value: unknown): value is SavedQuestionList {
     && Array.isArray(item.questionIds)
     && Array.isArray(item.subjectIds)
     && typeof item.currentPage === 'number'
+    && Number.isFinite(item.currentPage)
     && typeof item.pageSize === 'number'
+    && Number.isFinite(item.pageSize)
     && Boolean(item.userAnswers && typeof item.userAnswers === 'object')
     && Boolean(item.confirmedAnswers && typeof item.confirmedAnswers === 'object');
 }

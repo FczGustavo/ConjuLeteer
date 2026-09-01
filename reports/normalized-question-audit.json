@@ -1,0 +1,488 @@
+{
+  "generatedAt": "2026-09-01T13:13:16.032Z",
+  "questions": 2031,
+  "changed": 79,
+  "changes": [
+    {
+      "id": "fonetica-pdf_1_fonetica-q41",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "fonetica-pdf_1_fonetica-q67",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "fonetica-pdf_1_fonetica-q71",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "fonetica-pdf_1_fonetica-q72",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "fonetica-pdf_1_fonetica-q73",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "fonetica-pdf_1_fonetica-q74",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "fonetica-pdf_1_fonetica-q78",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "fonetica-pdf_1_fonetica-q81",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q3",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q7",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q11",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q18",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q38",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q45",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q63",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q64",
+      "fields": [
+        "statement",
+        "readingText",
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q71",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q2",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q12",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q15",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q21",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q32",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q43",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q49",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q61",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q62",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q64",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q72",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q77",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q78",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q79",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q81",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q82",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q84",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q90",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q92",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q1",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q8",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q9",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q11",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q46",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q54",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q67",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "classes_invar-pdf_5_classes_invar-q3",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q8",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q23",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q39",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q40",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q56",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q75",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q77",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q3",
+      "fields": [
+        "statement",
+        "readingText",
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q6",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q12",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q13",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q18",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q20",
+      "fields": [
+        "statement",
+        "readingText",
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q34",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q47",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q80",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q82",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "english_adjectives_adverbs-q6",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_adjectives_adverbs-q49",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_adjectives_adverbs-q54",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_verbs-q92",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_verbs-q128",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_modal_auxiliaries-q55",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_active_passive-q45",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_conditionals-q11",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_conjunctions-q74",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_conjunctions-q75",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_conjunctions-q92",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_conjunctions-q124",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_subjunctive_imperative_infinitive_gerund-q19",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_mixed_topics-q13",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_synonyms_antonyms-q26",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_synonyms_antonyms-q29",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_reading_review-q8",
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "id": "english_reading_review-q79",
+      "fields": [
+        "quality"
+      ]
+    }
+  ],
+  "failures": []
+}

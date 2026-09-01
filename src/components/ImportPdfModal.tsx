@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { X, FileUp, Sparkles, AlertCircle, Upload, BookOpen } from 'lucide-react';
 import { parsePdfQuestionsWithAi, extractTextFromPdfFile } from '../services/pdfImportService';
 import { SUBJECTS_CONFIG, type SubjectId, type QuestionBankItem } from '../data/questionBank';
@@ -27,11 +27,27 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
   const [statusMessage, setStatusMessage] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [importSummary, setImportSummary] = useState<ImportSummary | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const importControllerRef = useRef<AbortController | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !isLoading) {
+        setImportSummary(null); setErrorMessage(null); setStatusMessage(''); onClose();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    const focusTimer = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
+    return () => { document.removeEventListener('keydown', onKeyDown); window.clearTimeout(focusTimer); };
+  }, [isOpen, isLoading, onClose]);
 
   if (!isOpen) return null;
 
   const handleClose = () => {
-    if (isLoading) return;
+    if (isLoading) importControllerRef.current?.abort();
+    importControllerRef.current = null;
+    setIsLoading(false);
     setImportSummary(null);
     setErrorMessage(null);
     setStatusMessage('');
@@ -40,18 +56,22 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      setSelectedFile(file);
-      if (!listTitle) {
-        setListTitle(file.name.replace(/\.[^/.]+$/, ''));
-      }
+      acceptFile(e.target.files[0]);
     }
+  };
+
+  const acceptFile = (file: File) => {
+    if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) { setErrorMessage('Selecione um arquivo PDF válido.'); return; }
+    setSelectedFile(file);
+    if (!listTitle) setListTitle(file.name.replace(/\.[^/.]+$/, ''));
   };
 
   const handleStartImport = async () => {
     setErrorMessage(null);
     setImportSummary(null);
     setIsLoading(true);
+    const controller = new AbortController();
+    importControllerRef.current = controller;
     setStatusMessage('Lendo conteúdo...');
 
     try {
@@ -59,7 +79,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
 
       if (selectedFile) {
         setStatusMessage('Extraindo texto do arquivo PDF...');
-        const extracted = await extractTextFromPdfFile(selectedFile);
+        const extracted = await extractTextFromPdfFile(selectedFile, controller.signal);
         if (extracted && extracted.trim().length > 50) {
           rawText = extracted;
         } else if (!rawText) {
@@ -78,36 +98,39 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
         selectedSubjectId,
         targetSubject.title,
         listTitle || 'Simulado Importado via IA',
-        (msg) => setStatusMessage(msg)
+        (msg) => setStatusMessage(msg),
+        controller.signal,
       );
 
       onQuestionsImported(imported);
       setIsLoading(false);
+      importControllerRef.current = null;
       setImportSummary({
         importedCount: imported.length,
         warningItems: imported
           .filter(item => item.quality?.status === 'warning')
           .map(item => ({ questionNumber: item.questionNumber, warnings: item.quality?.warnings ?? [] }))
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
       setIsLoading(false);
-      setErrorMessage(err.message || 'Erro inesperado durante a importação.');
+      importControllerRef.current = null;
+      setErrorMessage(err instanceof Error ? err.message : 'Erro inesperado durante a importação.');
     }
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-      <div className="w-full max-w-lg max-h-[90vh] flex flex-col rounded-2xl bg-[#181b20] border border-[#2e353e] shadow-2xl overflow-hidden">
+      <div role="dialog" aria-modal="true" aria-labelledby="import-dialog-title" className="w-full max-w-lg max-h-[90vh] flex flex-col rounded-2xl bg-[#181b20] border border-[#2e353e] shadow-2xl overflow-hidden">
         
         {/* Fixed Header */}
         <div className="flex items-center justify-between border-b border-[#2e353e] p-5 shrink-0 bg-[#181b20]">
           <div className="flex items-center space-x-2 text-[#f3ede6] font-bold text-sm">
             <FileUp className="w-4 h-4 text-[#e8a87c]" />
-            <span>Importar Questões via PDF / IA</span>
+            <span id="import-dialog-title">Importar Questões via PDF / IA</span>
           </div>
           <button
+            ref={closeButtonRef}
             onClick={handleClose}
-            disabled={isLoading}
             className="p-1 rounded-lg text-[#9ca3af] hover:text-[#f3ede6] hover:bg-[#242930] transition-colors"
           >
             <X className="w-4 h-4" />
@@ -176,7 +199,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
           {/* PDF File Upload */}
           <div className="space-y-1.5">
             <label className="text-[#f3ede6] font-bold">Arquivo PDF com Questões e Gabarito:</label>
-            <div className="p-4 rounded-xl border border-dashed border-[#343c46] hover:border-[#e8a87c] bg-[#14161a] text-center transition-colors">
+            <div onDragOver={event => event.preventDefault()} onDrop={event => { event.preventDefault(); const file=event.dataTransfer.files[0]; if(file) acceptFile(file); }} className="p-4 rounded-xl border border-dashed border-[#343c46] hover:border-[#e8a87c] bg-[#14161a] text-center transition-colors">
               <input
                 type="file"
                 accept=".pdf"
@@ -199,6 +222,8 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
               </label>
             </div>
           </div>
+
+          <p className="rounded-lg bg-[#20242b] p-3 text-[10px] leading-relaxed text-[#9ca3af]">Ao confirmar, o texto extraído do PDF será enviado à OpenRouter exclusivamente para estruturar as questões. Envie somente materiais cujo processamento você esteja autorizado a realizar.</p>
 
           {/* Or Paste Raw Text */}
           <div className="space-y-1.5">
@@ -237,10 +262,9 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
         <div className="flex items-center justify-between p-4 border-t border-[#2e353e] bg-[#14161a] shrink-0">
           <button
             onClick={handleClose}
-            disabled={isLoading}
             className="px-4 py-2 rounded-xl bg-[#20242b] hover:bg-[#282e37] text-[#9ca3af] hover:text-[#f3ede6] text-xs font-mono transition-colors"
           >
-            Cancelar
+            {isLoading ? 'Cancelar importação' : 'Cancelar'}
           </button>
 
           <button

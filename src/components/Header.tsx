@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Settings as SettingsIcon, Search, BookOpen, Library, ListChecks, ChevronDown, ChevronRight, House } from 'lucide-react';
 import { CANONICAL_VERBS } from '../data/canonicalVerbs';
 
@@ -115,6 +115,25 @@ export const Header: React.FC<HeaderProps> = ({
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const searchButtonRef = useRef<HTMLButtonElement>(null);
+  const searchDialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isSearchOpen) return;
+    const returnFocus = searchButtonRef.current;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsSearchOpen(false);
+      if (event.key === 'Tab') {
+        const focusable = searchDialogRef.current?.querySelectorAll<HTMLElement>('input,button,[tabindex]:not([tabindex="-1"])');
+        if (!focusable?.length) return;
+        const first = focusable[0]; const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => { document.removeEventListener('keydown', handleKey); returnFocus?.focus(); };
+  }, [isSearchOpen]);
 
   const filteredVerbs = searchQuery.trim() === ''
     ? CANONICAL_VERBS.slice(0, 6)
@@ -163,6 +182,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="flex items-center gap-1">
             <button
+              ref={searchButtonRef}
               type="button"
               onClick={() => setIsSearchOpen(true)}
               className="icon-button rounded-full border border-transparent p-2.5 text-[#8b949e] transition-colors hover:border-[#2e353e] hover:bg-[#1f242b] hover:text-[#f3ede6]"
@@ -206,6 +226,10 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => setIsSearchOpen(false)}
         >
           <div
+            ref={searchDialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Buscar verbo"
             className="w-full max-w-lg space-y-3 rounded-2xl border border-[#2e353e] bg-[#181b20] p-4 shadow-2xl"
             onClick={event => event.stopPropagation()}
           >

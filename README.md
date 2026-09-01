@@ -71,6 +71,8 @@ O projeto possui verificações reproduzíveis para impedir regressões:
 
 Os PDFs em `lists/` e seus blocos oficiais de respostas são a fonte de verdade do banco. Para as conjugações, a fonte local é `src/data/canonicalVerbs.ts`.
 
+A avaliação de prontidão, as lacunas de teste e os requisitos de implantação ficam no [índice de documentação](./docs/README.md). As auditorias de dados não devem ser interpretadas isoladamente como aprovação para release.
+
 ## Tecnologias
 
 - React 19
@@ -160,9 +162,9 @@ ConjuLetter/
 
 ## Estado conhecido
 
-- Build e auditorias de dados estão aprovados.
-- O lint não apresenta erros; há três avisos conhecidos de atualização de estado em efeitos React.
-- O Vite alerta que o bundle principal é grande, principalmente porque os bancos de questões são embarcados estaticamente.
+- A versão 1.0.0 está apta para release controlado, observadas as condições do ambiente em [`docs/RELEASE_READINESS.md`](./docs/RELEASE_READINESS.md).
+- Lint, unitários, cobertura, auditorias e testes nos quatro perfis de navegador estão automatizados no CI.
+- A Home respeita o orçamento de 250 KiB gzip; o Banco é carregado sob demanda e permanece como próximo alvo de segmentação.
 - Alguns scripts históricos em `src/scratch/` ainda podem conter caminhos locais e devem ser tratados como ferramentas de manutenção, não como API pública estável.
 
 ## Autoria

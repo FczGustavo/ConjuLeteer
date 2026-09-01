@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { saveUserSettings } from '../utils/srsEngine';
 import type { ThemeId, UserSettings } from '../utils/srsEngine';
+import { removeConjuLetterStorage } from '../utils/storage';
 
 interface SettingsViewProps {
   settings: UserSettings;
@@ -20,6 +21,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ settings, onUpdateSe
   const [theme, setTheme] = useState<ThemeId>(settings.theme);
   const persistedTheme = useRef(settings.theme);
   const [savedMessage, setSavedMessage] = useState(false);
+  const savedMessageTimer = useRef<number | null>(null);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -28,6 +30,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ settings, onUpdateSe
 
   useEffect(() => {
     return () => {
+      if (savedMessageTimer.current !== null) window.clearTimeout(savedMessageTimer.current);
       const previousTheme = persistedTheme.current;
       document.documentElement.dataset.theme = previousTheme;
       document.documentElement.style.colorScheme = previousTheme === 'light' || previousTheme === 'alexandria-light' ? 'light' : 'dark';
@@ -45,12 +48,13 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ settings, onUpdateSe
     persistedTheme.current = theme;
     onUpdateSettings(updated);
     setSavedMessage(true);
-    window.setTimeout(() => setSavedMessage(false), 2400);
+    if (savedMessageTimer.current !== null) window.clearTimeout(savedMessageTimer.current);
+    savedMessageTimer.current = window.setTimeout(() => setSavedMessage(false), 2400);
   };
 
   const handleClearData = () => {
     if (window.confirm('Deseja apagar configurações, listas, respostas e todo o progresso salvo neste navegador?')) {
-      localStorage.clear();
+      removeConjuLetterStorage();
       window.location.reload();
     }
   };

@@ -275,6 +275,12 @@ function normalizeMarkup(text: string): string {
     .replace(/[ \t]+([,.;:!?])/g, '$1');
 }
 
+/** Pure formatting entry point used by data audits and regression tests. */
+// oxlint-disable-next-line react/only-export-components -- pure formatter is intentionally co-located with its renderer
+export function normalizeExamText(text: string): string {
+  return normalizeMarkup(text);
+}
+
 function repairBoldMarkers(value: string): string {
   const marker = /\*\*/g;
   const positions: number[] = [];
