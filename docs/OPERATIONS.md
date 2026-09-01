@@ -2,13 +2,14 @@
 
 ## Arquitetura necessária
 
-O front-end Vite é servido pelo runtime Node em `server/index.ts`. O processo entrega `dist/`, `/api/health` e `/api/ai/import`. Execute `npm run build && npm start` ou use o `Dockerfile`. Um upload isolado de `dist/` mantém o acervo local, mas não oferece importação por IA.
+O front-end Vite é servido pelo runtime Node em `server/index.ts`. O processo entrega `dist/`, `/api/health`, o job tracker `/api/import/jobs` e `/api/ai/import`. Execute `npm run build && npm start` ou use o `Dockerfile`. Um upload isolado de `dist/` mantém o acervo local, mas não oferece importação por IA.
 
 Variáveis obrigatórias no servidor:
 
 ```text
 OPENROUTER_API_KEY
 OPENROUTER_MODEL (opcional)
+OPENROUTER_FALLBACK_MODEL (opcional; ativa fallback/circuit breaker em 429/5xx)
 PUBLIC_ORIGIN (origem HTTPS exata)
 ```
 
@@ -22,6 +23,8 @@ Nunca usar prefixo `VITE_` para segredos. Não registrar prompts, PDFs, resposta
 - Limites de bytes, páginas e questões por operação.
 - Timeout e cancelamento do upstream.
 - Tratamento explícito de 400, 413, 429 e 5xx.
+- Jobs idempotentes por sessão, com progresso, cancelamento, relatório e publicação explícita; falhas de item vão para quarentena e nunca entram no banco de estudo.
+- Cada página recebe manifesto, método (`native-text` ou `native-text+vision`), métricas e hash; páginas com pouco texto são renderizadas para a passagem multimodal.
 - CORS restrito, cabeçalhos de segurança e logs com request ID sem conteúdo educacional.
 - Métricas de latência, taxa de erro, itens importados, itens com aviso e custo.
 
@@ -29,7 +32,7 @@ Nunca usar prefixo `VITE_` para segredos. Não registrar prompts, PDFs, resposta
 
 1. Rodar todos os comandos de [TESTING.md](./TESTING.md).
 2. Confirmar que `.env.local` e chaves não estão no bundle nem no Git.
-3. Testar `/api/ai/import` no domínio final com um PDF pequeno e um grande.
+3. Testar `/api/import/jobs` (criar, atualizar, consultar, cancelar e relatório) e `/api/ai/import` no domínio final com um PDF pequeno, um scan e um grande.
 4. Verificar carregamento direto e recarga de cada área suportada.
 5. Testar migração e recuperação de `localStorage` com dados reais anonimizados.
 6. Confirmar CSP, cache dos assets com hash e `Cache-Control: no-store` na API.

@@ -132,9 +132,10 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const filteredQuestions = useMemo(() => {
     const activeList = savedLists.find(list => list.id === activeListId);
     if (activeList) {
-      return activeList.questionIds.map(id => questionById.get(id)).filter((question): question is QuestionBankItem => Boolean(question));
+      return activeList.questionIds.map(id => questionById.get(id)).filter((question): question is QuestionBankItem => Boolean(question && question.quality?.status !== 'quarantined' && question.quality?.status !== 'rejected'));
     }
     let list = allBankQuestions.filter(q => {
+      if (q.quality?.status === 'quarantined' || q.quality?.status === 'rejected') return false;
       if (filterState.languageFilter === 'en' ? q.language !== 'en' : q.language === 'en') return false;
       // 1. Subject filter
       if (filterState.selectedSubjectIds.length > 0) {
@@ -184,6 +185,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
 
   const matchingFilteredQuestions = (limit?: number) => {
     const matching = allBankQuestions.filter(question => {
+      if (question.quality?.status === 'quarantined' || question.quality?.status === 'rejected') return false;
       if (filterState.languageFilter === 'en' ? question.language !== 'en' : question.language === 'en') return false;
       if (!filterState.selectedSubjectIds.includes(question.subjectId)) return false;
       if (filterState.statusFilter === 'pending') return !confirmedAnswers[question.id];
@@ -657,9 +659,9 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                       Questão {q.questionNumber}
                     </span>
                     <span className="text-[#d1d5db] font-sans font-medium">{q.subjectTitle}</span>
-                    {q.quality?.status === 'warning' && (
+                    {(q.quality?.status === 'warning' || q.quality?.status === 'quarantined' || q.quality?.status === 'rejected') && (
                       <details className="relative text-[10px] font-mono text-[#fbbf24]">
-                        <summary className="cursor-pointer list-none rounded-md border border-[#fbbf24]/40 px-1.5 py-0.5 hover:bg-[#fbbf24]/10">Revisar</summary>
+                        <summary className="cursor-pointer list-none rounded-md border border-[#fbbf24]/40 px-1.5 py-0.5 hover:bg-[#fbbf24]/10">{q.quality.status === 'quarantined' ? 'Isolada' : 'Revisar'}</summary>
                         <div className="absolute left-0 top-7 z-10 w-64 rounded-lg border border-[#fbbf24]/40 bg-[#1b1f25] p-2 text-[10px] leading-relaxed text-[#fef3c7] shadow-xl">
                           {q.quality.warnings.map((warning, warningIndex) => <p key={warningIndex}>• {warning}</p>)}
                         </div>

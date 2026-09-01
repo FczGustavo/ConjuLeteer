@@ -35,4 +35,10 @@ test('contrato público da API rejeita métodos, origens e payloads inválidos',
   expect((await request.post('/api/ai/import',{headers:{Origin:'https://example.invalid'},data:{rawText:'x'.repeat(100),batch:1,totalBatches:1}})).status()).toBe(403);
   expect((await request.get('/api/health')).status()).toBe(200);
   expect((await request.post('/api/ai/import',{data:{rawText:'curto',batch:1,totalBatches:1}})).status()).toBe(400);
+  const created = await request.post('/api/import/jobs', { data: { fileName: 'smoke.pdf', fileHash: `smoke-${Date.now()}`, totalPages: 2, totalBatches: 1 } });
+  expect(created.status()).toBe(201);
+  const jobId = (await created.json()).job.id as string;
+  expect((await request.patch(`/api/import/jobs/${jobId}`, { data: { status: 'completed', processedPages: 2, verifiedCount: 1, quarantinedCount: 0, manifest: { coverage: 1 } } })).status()).toBe(200);
+  expect((await request.get(`/api/import/jobs/${jobId}/report`)).status()).toBe(200);
+  expect((await request.delete(`/api/import/jobs/${jobId}`)).status()).toBe(202);
 });

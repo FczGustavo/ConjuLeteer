@@ -10,4 +10,9 @@ describe('lotes de PDF', () => {
     expect(batches.every(batch=>batch.length<=130_000)).toBe(true);
   });
   it('mantém documento pequeno em um lote',()=>expect(createPdfImportBatches('texto curto')).toEqual(['texto curto']));
+  it('não descarta o trecho intermediário de uma página grande', () => {
+    const source = `--- PAGINA 1 ---\n${'INICIO '.repeat(8_000)}\nMARCADOR-MEIO\n${'FIM '.repeat(8_000)}`;
+    const batches = createPdfImportBatches(source);
+    expect(batches.join('\n')).toContain('MARCADOR-MEIO');
+  });
 });

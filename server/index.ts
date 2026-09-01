@@ -1,12 +1,13 @@
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
-import { createAiImportHandler, createHealthHandler } from './aiImport.js';
-const port = Number(process.env.PORT || 4173); const dist = join(process.cwd(), 'dist'); const aiImport = createAiImportHandler(process.env); const health = createHealthHandler(process.env);
+import { createAiImportHandler, createHealthHandler, createImportJobsHandler } from './aiImport.js';
+const port = Number(process.env.PORT || 4173); const dist = join(process.cwd(), 'dist'); const aiImport = createAiImportHandler(process.env); const health = createHealthHandler(process.env); const jobs = createImportJobsHandler(process.env);
 const types: Record<string,string> = { '.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml' };
 createServer(async (request,response) => {
   const url = new URL(request.url || '/', `http://${request.headers.host || 'localhost'}`);
   if (url.pathname === '/api/health') return health(request,response);
+  if (url.pathname === '/api/import/jobs' || url.pathname.startsWith('/api/import/jobs/')) return jobs(request,response);
   if (url.pathname === '/api/ai/import') return aiImport(request,response);
   if (!['GET','HEAD'].includes(request.method || '')) { response.statusCode=405; response.end(); return; }
   const requested=normalize(url.pathname).replace(/^(\.\.[/\\])+/, ''); let file=join(dist,requested==='/'?'index.html':requested);

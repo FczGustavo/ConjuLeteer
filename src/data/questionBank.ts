@@ -65,8 +65,12 @@ export interface QuestionBankProvenance {
 }
 
 export interface QuestionBankQuality {
-  status: 'verified' | 'warning';
+  /** Verified items are safe to publish; the other states never enter study lists. */
+  status: 'verified' | 'warning' | 'quarantined' | 'rejected';
   warnings: string[];
+  /** Evidence references and confidence are optional for legacy bundled records. */
+  evidence?: import('../types/importPipeline').QuestionEvidence[];
+  fieldConfidence?: import('../types/importPipeline').FieldConfidenceMap;
 }
 
 export interface QuestionBankEmphasisNote {

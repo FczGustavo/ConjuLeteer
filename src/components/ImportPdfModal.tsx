@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { X, FileUp, Sparkles, AlertCircle, Upload, BookOpen } from 'lucide-react';
-import { parsePdfQuestionsWithAi, extractTextFromPdfFile } from '../services/pdfImportService';
+import { parsePdfQuestionsWithAiDetailed, extractPdfArtifactsFromFile } from '../services/pdfImportService';
+import { artifactsToText } from '../services/pdfArtifacts';
+import { createPdfImportBatches } from '../services/pdfBatching';
 import { SUBJECTS_CONFIG, type SubjectId, type QuestionBankItem } from '../data/questionBank';
 
 interface ImportPdfModalProps {
@@ -11,7 +13,9 @@ interface ImportPdfModalProps {
 
 interface ImportSummary {
   importedCount: number;
-  warningItems: Array<{ questionNumber: number; warnings: string[] }>;
+  quarantinedItems: Array<{ questionNumber: number; warnings: string[] }>;
+  pagesProcessed: number;
+  totalPages: number;
 }
 
 export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
@@ -29,6 +33,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
   const [importSummary, setImportSummary] = useState<ImportSummary | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const importControllerRef = useRef<AbortController | null>(null);
+  const jobIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -46,6 +51,8 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
 
   const handleClose = () => {
     if (isLoading) importControllerRef.current?.abort();
+    if (isLoading && jobIdRef.current) void fetch(`/api/import/jobs/${encodeURIComponent(jobIdRef.current)}`, { method: 'DELETE', credentials: 'same-origin' }).catch(() => undefined);
+    jobIdRef.current = null;
     importControllerRef.current = null;
     setIsLoading(false);
     setImportSummary(null);
@@ -62,6 +69,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
 
   const acceptFile = (file: File) => {
     if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) { setErrorMessage('Selecione um arquivo PDF válido.'); return; }
+    if (file.size > 25 * 1024 * 1024) { setErrorMessage('O PDF excede o limite de 25 MB. Divida o arquivo em lotes menores.'); return; }
     setSelectedFile(file);
     if (!listTitle) setListTitle(file.name.replace(/\.[^/.]+$/, ''));
   };
@@ -76,15 +84,13 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
 
     try {
       let rawText = pastedText.trim();
+      let artifactResult;
 
       if (selectedFile) {
-        setStatusMessage('Extraindo texto do arquivo PDF...');
-        const extracted = await extractTextFromPdfFile(selectedFile, controller.signal);
-        if (extracted && extracted.trim().length > 50) {
-          rawText = extracted;
-        } else if (!rawText) {
-          throw new Error('Não foi possível extrair texto legível do arquivo PDF selecionado. Tente copiar e colar o texto das questões no campo abaixo.');
-        }
+        setStatusMessage('Reconstruindo páginas, texto e evidências visuais...');
+        artifactResult = await extractPdfArtifactsFromFile(selectedFile, controller.signal, (page, total, method) => setStatusMessage(`Página ${page} de ${total}: ${method === 'native-text+vision' ? 'revisão visual/OCR preparada' : 'texto nativo extraído'}...`));
+        rawText = artifactsToText(artifactResult.artifacts).trim() || rawText;
+        if (!rawText && !artifactResult.artifacts.length) throw new Error('O PDF não contém páginas legíveis.');
       }
 
       if (!rawText) {
@@ -93,27 +99,53 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
 
       const targetSubject = SUBJECTS_CONFIG.find(s => s.id === selectedSubjectId) || SUBJECTS_CONFIG[1];
 
-      const imported = await parsePdfQuestionsWithAi(
+      const health = await fetch('/api/health', { credentials: 'same-origin', signal: controller.signal });
+      if (!health.ok) throw new Error('O serviço de importação não está disponível.');
+      const totalPages = artifactResult?.manifest.totalPages || (rawText.match(/--- PAGINA \d+ ---/gu) || []).length;
+      const totalBatches = createPdfImportBatches(rawText).length;
+      const jobResponse = await fetch('/api/import/jobs', { method: 'POST', credentials: 'same-origin', signal: controller.signal, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fileName: selectedFile?.name || listTitle, fileHash: artifactResult?.fileHash, totalPages, totalBatches }) });
+      if (jobResponse.ok) {
+        const jobData = await jobResponse.json() as { job?: { id?: string } };
+        jobIdRef.current = typeof jobData.job?.id === 'string' ? jobData.job.id : null;
+      }
+      const updateJob = (patch: Record<string, unknown>) => jobIdRef.current
+        ? fetch(`/api/import/jobs/${encodeURIComponent(jobIdRef.current)}`, { method: 'PATCH', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patch) }).catch(() => undefined)
+        : Promise.resolve();
+      await updateJob({ status: 'processing', processedPages: artifactResult?.manifest.processedPages.length || 0, manifest: artifactResult?.manifest });
+
+      const result = await parsePdfQuestionsWithAiDetailed(
         rawText,
         selectedSubjectId,
         targetSubject.title,
         listTitle || 'Simulado Importado via IA',
-        (msg) => setStatusMessage(msg),
+        (msg) => { setStatusMessage(msg); const match = msg.match(/lote (\d+) de (\d+)/iu); void updateJob({ status: 'processing', completedBatches: match ? Number(match[1]) - 1 : undefined, attempts: 1 }); },
         controller.signal,
+        artifactResult,
       );
 
-      onQuestionsImported(imported);
+      onQuestionsImported(result.verified);
+      await updateJob({ status: 'completed', completedBatches: result.manifest.totalPages ? totalBatches : totalBatches, processedPages: result.manifest.processedPages.length, verifiedCount: result.verified.length, quarantinedCount: result.quarantined.length, manifest: result.manifest });
       setIsLoading(false);
       importControllerRef.current = null;
+      jobIdRef.current = null;
       setImportSummary({
-        importedCount: imported.length,
-        warningItems: imported
-          .filter(item => item.quality?.status === 'warning')
+        importedCount: result.verified.length,
+        pagesProcessed: result.manifest.processedPages.length,
+        totalPages: result.manifest.totalPages,
+        quarantinedItems: result.quarantined
           .map(item => ({ questionNumber: item.questionNumber, warnings: item.quality?.warnings ?? [] }))
       });
     } catch (err: unknown) {
+      if (controller.signal.aborted) {
+        setIsLoading(false);
+        importControllerRef.current = null;
+        jobIdRef.current = null;
+        return;
+      }
+      if (jobIdRef.current) void fetch(`/api/import/jobs/${encodeURIComponent(jobIdRef.current)}`, { method: 'PATCH', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: controller.signal.aborted ? 'cancelled' : 'failed', error: err instanceof Error ? err.message : 'Erro inesperado' }) }).catch(() => undefined);
       setIsLoading(false);
       importControllerRef.current = null;
+      jobIdRef.current = null;
       setErrorMessage(err instanceof Error ? err.message : 'Erro inesperado durante a importação.');
     }
   };
@@ -144,15 +176,16 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
               <div className="rounded-xl border border-[#34d399]/40 bg-[#182a22] p-4 text-[#d1fae5]">
                 <p className="font-bold text-sm">Importação concluída</p>
                 <p className="mt-1 font-sans leading-relaxed">
-                  {importSummary.importedCount} {importSummary.importedCount === 1 ? 'questão foi salva' : 'questões foram salvas'} no Banco de Questões.
+                  {importSummary.importedCount} {importSummary.importedCount === 1 ? 'questão verificada foi publicada' : 'questões verificadas foram publicadas'} no Banco de Questões.
                 </p>
+                <p className="mt-1 font-sans text-[11px] opacity-80">Cobertura: {importSummary.pagesProcessed} de {importSummary.totalPages || importSummary.pagesProcessed} páginas processadas.</p>
               </div>
-              {importSummary.warningItems.length > 0 ? (
+              {importSummary.quarantinedItems.length > 0 ? (
                 <div className="rounded-xl border border-[#fbbf24]/40 bg-[#2a2417] p-4 text-[#fef3c7]">
-                  <p className="font-bold">{importSummary.warningItems.length} questão(ões) precisam de revisão</p>
-                  <p className="mt-1 font-sans text-[11px] leading-relaxed text-[#fde68a]">Elas continuam utilizáveis, mas permanecem identificadas até a conferência editorial.</p>
+                  <p className="font-bold">{importSummary.quarantinedItems.length} questão(ões) isolada(s)</p>
+                  <p className="mt-1 font-sans text-[11px] leading-relaxed text-[#fde68a]">Nenhum item inconclusivo foi publicado. Revise as evidências antes de liberar estas questões.</p>
                   <div className="mt-3 max-h-64 space-y-2 overflow-y-auto pr-1">
-                    {importSummary.warningItems.map(item => (
+                    {importSummary.quarantinedItems.map(item => (
                       <div key={item.questionNumber} className="rounded-lg border border-[#fbbf24]/25 bg-[#1b1f25] p-2.5">
                         <p className="font-bold">Questão {item.questionNumber}</p>
                         {item.warnings.map((warning, index) => <p key={index} className="font-sans text-[11px] leading-relaxed">• {warning}</p>)}
@@ -161,7 +194,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
                   </div>
                 </div>
               ) : (
-                <p className="rounded-xl border border-[#343c46] bg-[#20242b] p-4 font-sans leading-relaxed text-[#d1d5db]">Todas as questões passaram na validação estrutural.</p>
+                <p className="rounded-xl border border-[#343c46] bg-[#20242b] p-4 font-sans leading-relaxed text-[#d1d5db]">Todas as questões detectadas passaram pelas validações e têm evidência suficiente para publicação.</p>
               )}
             </div>
           ) : (
@@ -223,7 +256,7 @@ export const ImportPdfModal: React.FC<ImportPdfModalProps> = ({
             </div>
           </div>
 
-          <p className="rounded-lg bg-[#20242b] p-3 text-[10px] leading-relaxed text-[#9ca3af]">Ao confirmar, o texto extraído do PDF será enviado à OpenRouter exclusivamente para estruturar as questões. Envie somente materiais cujo processamento você esteja autorizado a realizar.</p>
+          <p className="rounded-lg bg-[#20242b] p-3 text-[10px] leading-relaxed text-[#9ca3af]">Ao confirmar, o texto extraído e, quando necessário, imagens comprimidas de páginas com baixa legibilidade serão enviados à OpenRouter exclusivamente para estruturar e verificar as questões. Envie somente materiais cujo processamento você esteja autorizado a realizar.</p>
 
           {/* Or Paste Raw Text */}
           <div className="space-y-1.5">

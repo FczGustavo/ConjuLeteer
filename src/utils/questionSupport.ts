@@ -453,9 +453,17 @@ export function normalizeQuestionSupport(question: QuestionBankItem): QuestionBa
   });
   // Display-time cleanup may discover new issues, but it must never promote a
   // record that an editorial audit had already marked for review.
-  const inheritedWarnings = question.quality?.status === 'warning' ? question.quality.warnings : [];
+  const inheritedWarnings = question.quality?.status && question.quality.status !== 'verified' ? question.quality.warnings : [];
   const warnings = [...new Set([...inheritedWarnings, ...validatedQuality.warnings])];
-  const quality: QuestionBankQuality = { status: warnings.length ? 'warning' : 'verified', warnings };
+  const inheritedStatus = question.quality?.status;
+  const quality: QuestionBankQuality = {
+    status: inheritedStatus === 'quarantined' || inheritedStatus === 'rejected'
+      ? inheritedStatus
+      : warnings.length ? 'warning' : 'verified',
+    warnings,
+    evidence: question.quality?.evidence,
+    fieldConfidence: question.quality?.fieldConfidence,
+  };
   return {
     ...question,
     statement: highlighted.statement,

@@ -9,6 +9,7 @@ Este diretório reúne os documentos necessários para preparar e operar uma ver
 - [Operação e implantação](./OPERATIONS.md): requisitos do ambiente, importação por IA, segurança e rollback.
 - [Privacidade](./PRIVACY.md): dados locais e processamento de PDFs.
 - [Segurança](./SECURITY.md): comunicação e controles implementados.
+- Contratos do pipeline: [src/types/importPipeline.ts](../src/types/importPipeline.ts) documenta `ImportJob`, `PageArtifact`, evidências, confiança e manifesto compartilhados pelo cliente e pela API.
 
 ## Fontes de verdade relacionadas
 
@@ -17,4 +18,4 @@ Este diretório reúne os documentos necessários para preparar e operar uma ver
 - A auditoria do banco de Inglês está em [reports/english-question-audit.md](../reports/english-question-audit.md).
 - O histórico técnico detalhado está em [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md).
 
-Os relatórios de auditoria comprovam a integridade dos dados estáticos. Eles não substituem testes da interface, da persistência, da importação por IA ou do ambiente de produção.
+Os relatórios de auditoria comprovam a integridade dos dados estáticos. Eles não substituem testes da interface, da persistência, da importação por IA ou do ambiente de produção. A importação segue a política “evidência ou quarentena”: a IA pode estruturar, mas não pode publicar uma questão sem prova do conteúdo e do gabarito.
