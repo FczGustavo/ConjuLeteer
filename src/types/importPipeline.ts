@@ -1,7 +1,7 @@
 /** Contracts shared by the browser importer, the API job tracker and reports. */
 
 export type ImportJobStatus = 'queued' | 'processing' | 'cancelling' | 'completed' | 'cancelled' | 'failed';
-export type ImportQualityStatus = 'verified' | 'quarantined' | 'rejected';
+export type ImportQualityStatus = 'verified' | 'warning' | 'quarantined' | 'rejected';
 
 export interface FieldConfidence {
   confidence: number;

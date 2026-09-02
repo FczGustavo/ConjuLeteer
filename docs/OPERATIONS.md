@@ -29,6 +29,17 @@ Nunca usar prefixo `VITE_` para segredos. Não registrar prompts, PDFs, resposta
 - CORS restrito, cabeçalhos de segurança e logs com request ID sem conteúdo educacional.
 - Métricas de latência, taxa de erro, itens importados, itens com aviso e custo.
 
+## Corpus Inglês Preview
+
+O corpus provisório é distribuído separadamente do Inglês público. A geração
+reprodutível usa `npm run import:english-preview` e a publicação só considera
+itens `verified` ou `warning`; quarentenas, rejeições e duplicatas permanecem
+no manifesto técnico. O relatório completo fica em
+`reports/english-preview-audit.{md,json}` e a política editorial em
+[ENGLISH_PREVIEW.md](./ENGLISH_PREVIEW.md). Os módulos de assunto são
+carregados dinamicamente e os 62 recortes visuais publicados são arquivos
+WebP individuais; nenhuma página completa do PDF é usada como imagem.
+
 ## Checklist de implantação
 
 1. Rodar todos os comandos de [TESTING.md](./TESTING.md).

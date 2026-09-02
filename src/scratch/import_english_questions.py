@@ -59,6 +59,12 @@ TOPIC_BY_ID = {item[0]: item for item in TOPICS}
 QUESTION_RE = re.compile(r"(?m)^\s*(\d{3})(?:\s*\|\s*|\.\s+)([^\n]*)")
 OPTION_RE = re.compile(r"(?m)^\s*([a-fA-F])\s*\)\s*")
 PAGE_FOOTER_RE = re.compile(r"Professor Jefferson Celestino da Costa\s*\d{1,3}", re.I)
+AUTHORIAL_BOARD_RE = re.compile(
+    r"(?:\bJFS\b|j(?:e|ef)f?erson\s+celestino|\bjerfeson\b|"
+    r"(?:mateus\s+)?germano|cola\s+da\s+web|"
+    r"quest[^\s]{0,3}\s+in[^\s]{0,3}dita|\bautoral\b)",
+    re.I,
+)
 
 
 # pypdf correctly decodes the PDF's accented glyphs, but the text layer also
@@ -249,7 +255,7 @@ def repair_extraction(value: str) -> str:
             return match.group(0)
         return f"{left}-{right}"
 
-    value = re.sub(r"([A-Za-zÀ-ÿ]+)-\s+([A-Za-zÀ-ÿ]+)", join_hyphenated_word, value)
+    value = re.sub(r"([A-Za-zÀ-ÿ]+)-[ \t]+([A-Za-zÀ-ÿ]+)(?!\s*\))", join_hyphenated_word, value)
     # The PDF frequently places a space before a hyphen because the dash and
     # the adjacent word were emitted by different font spans (``high
     # -fidelity``, ``off -the-grid``).  Join only multi-letter words; a
@@ -259,12 +265,17 @@ def repair_extraction(value: str) -> str:
         # ``word -ING`` is intentional source notation (the suffix is not a
         # hyphenated lexical word), so keep that space.  Likewise, an
         # em-dash-style ``own - and`` separator must not become ``own-and``.
-        r"(?<![A-Za-zÀ-ÿ])([A-Za-zÀ-ÿ]{2,})\s+-\s*(?!ING\b|and\b)([A-Za-zÀ-ÿ]{2,})(?![A-Za-zÀ-ÿ])",
+        r"(?<![A-Za-zÀ-ÿ])([A-Za-zÀ-ÿ]{2,})[ \t]+-[ \t]*(?!ING\b|and\b)([A-Za-zÀ-ÿ]{2,})(?![A-Za-zÀ-ÿ])",
         r"\1-\2",
         value,
         flags=re.IGNORECASE,
     )
     value = re.sub(r"\bown-and\b", "own — and", value, flags=re.IGNORECASE)
+    value = re.sub(r"\bChristie[’'\x92]s\b", "Christie's", value)
+    value = value.replace("Christies", "Christie's")
+    # Keep numeric values exactly as printed.  A previous workaround prefixed
+    # every occurrence of 100/1m with a currency glyph, corrupting ordinary
+    # percentages, counts and answer options.
     value = re.sub(r"[ \t]+", " ", value)
     return value.strip()
 
@@ -534,6 +545,53 @@ def build_support(support_paragraphs: list[str], active: dict | None = None) -> 
     return support
 
 
+def sanitize_support(support: dict | None) -> dict | None:
+    """Keep titles/body/source in separate fields for every rendered card.
+
+    Some reading passages contain an ``Adapted from …`` line between two
+    extracts.  Leaving that line in ``paragraphs`` makes the source look like
+    prose and is especially confusing when the same passage is shared by many
+    questions.  Move source-only blocks to the footer while retaining all
+    original citations.
+    """
+    if not support:
+        return None
+    result = {key: value for key, value in support.items() if key in {"label", "title", "author"}}
+    paragraphs: list[str] = []
+    sources: list[str] = []
+    existing_source = str(support.get("source") or "").strip()
+    if existing_source:
+        sources.append(existing_source)
+    for block in support.get("paragraphs") or []:
+        value = repair_extraction(str(block)).strip()
+        if not value or is_redundant_support_instruction(value):
+            continue
+        if is_source(value):
+            sources.append(value)
+        else:
+            # OCR often joins a byline and its citation into one line
+            # (``By Author Adapted from https://…``).  Split at the citation
+            # marker so the visible card keeps the byline/body hierarchy.
+            embedded = re.search(r"\b(?:Adapted\s+from|Source|Fonte|Available|Dispon[íi]vel)\b|https?://|www\.", value, re.I)
+            if embedded and embedded.start() > 0:
+                prefix = value[:embedded.start()].strip(" -–—")
+                citation = value[embedded.start():].strip()
+                if prefix.lower().startswith("by ") and not result.get("author"):
+                    result["author"] = prefix[3:].strip()
+                elif prefix:
+                    paragraphs.append(prefix)
+                if citation:
+                    sources.append(citation)
+                continue
+            paragraphs.append(value)
+    if paragraphs:
+        result["paragraphs"] = paragraphs
+    if sources:
+        # Preserve order and avoid duplicating an identical citation.
+        result["source"] = "; ".join(dict.fromkeys(sources))
+    return result if result.get("paragraphs") else None
+
+
 def strip_statement_support_preamble(statement: str, has_support: bool) -> str:
     """Remove a redundant reading lead-in once the excerpt has its own card.
 
@@ -745,9 +803,15 @@ def split_options(content: str) -> tuple[str, list[dict], str]:
         # same extracted block.  A blank-line boundary is the reliable visual
         # separator; keep that tail for the next question's shared support.
         if idx == len(matches) - 1:
-            boundary = re.search(r"\n\s*\n", option_text)
+            # Prefer the explicit shared-text marker before normalizing
+            # whitespace.  If we collapse the option first, the marker and
+            # the passage heading lose their line structure and the support
+            # parser can no longer recover a title (or may attach the passage
+            # to the previous option).
+            marker_boundary = re.search(r"\s+(?=Texto\s+para\s+(?:a|as)\s+quest)", option_text, re.I)
+            boundary = marker_boundary or re.search(r"\n\s*\n", option_text)
             if boundary:
-                trailing = option_text[boundary.end():]
+                trailing = option_text[boundary.start():].strip()
                 option_text = option_text[:boundary.start()]
         option_text = repair_extraction(re.sub(r"\s+", " ", option_text))
         options.append({"letter": match.group(1).upper(), "text": option_text})
@@ -1066,10 +1130,11 @@ def parse_questions(reader: PdfReader) -> list[dict]:
         if support:
             statement_text = strip_statement_support_preamble(statement_text, True)
         if support:
-            support = json.loads(json.dumps(support, ensure_ascii=False))
+            support = sanitize_support(support)
 
         record = {
             "id": f"{subject_id}-q{local_number}",
+            "corpusId": "english_public",
             "subjectId": subject_id,
             "subjectTitle": title,
             "listId": subject_id,
@@ -1132,13 +1197,28 @@ def validate_and_attach(records: list[dict], answers: dict[tuple[str, int], str]
             {**option, "correct": option["letter"] == record["correctLetter"]}
             for option in record["options"]
         ]
-        is_jfs = record.get("examMetadata", {}).get("board") == "JFS"
+        board_text = str(record.get("examMetadata", {}).get("board") or record.get("banca") or "")
+        is_authorial = bool(AUTHORIAL_BOARD_RE.search(board_text))
         is_translation = record["subjectId"] == "english_translations"
-        if is_jfs or is_translation:
+        if is_authorial:
+            record["authorialRemoved"] = True
+            record["removalReason"] = "authorial-content"
+            record["quality"] = {
+                "status": "rejected",
+                "warnings": [
+                    "Questão autoral removida por política de direitos autorais; não é exibida nem estudável."
+                ],
+            }
+            # Keep only the technical provenance and answer-key position; no
+            # authorial prompt, alternatives or support is shipped to learners.
+            record["statement"] = ""
+            record["options"] = []
+            record["support"] = None
+            record["emphasisNotes"] = []
+            continue
+        if is_translation:
             warnings.append(
-                "Publicação isolada/autoral: questão de autoria JFS / Jefferson Celestino colocada em quarentena técnica e não visível publicamente."
-                if is_jfs
-                else "Publicação isolada: o PDF não informa banca/ano e a auditoria localizou frases idênticas em fontes lexicográficas de terceiros."
+                "Publicação isolada: o PDF não informa banca/ano e a auditoria localizou frases idênticas em fontes lexicográficas de terceiros."
             )
             record["quality"] = {"status": "quarantined", "warnings": warnings}
         else:
@@ -1190,6 +1270,7 @@ def emit(records: list[dict]) -> None:
             "examMetadata": record["examMetadata"],
             "correctLetter": record["correctLetter"],
             "optionCount": len(record["options"]),
+            "authorialRemoved": bool(record.get("authorialRemoved")),
             "quality": record["quality"],
         })
     pdf_headers = sum(1 for record in records if record["examMetadata"]["source"] == "pdf-header")
@@ -1212,14 +1293,16 @@ def emit(records: list[dict]) -> None:
         counts[record["subjectTitle"]] = counts.get(record["subjectTitle"], 0) + 1
     warnings = [row for row in rows if row["quality"]["status"] == "warning"]
     quarantined = [row for row in rows if row["quality"]["status"] == "quarantined"]
+    rejected = [row for row in rows if row["quality"]["status"] == "rejected"]
     lines = [
         "# Auditoria do banco de Inglês",
         "",
         f"- Fonte: `{records[0]['provenance']['pdf']}`",
         f"- Questões importadas: **{len(records)}**",
-        f"- Questões com `verified`: **{len(records) - len(warnings) - len(quarantined)}**",
+        f"- Questões com `verified`: **{sum(1 for row in rows if row['quality']['status'] == 'verified')}**",
         f"- Questões com `warning`: **{len(warnings)}**",
         f"- Questões com `quarantined`: **{len(quarantined)}**",
+        f"- Questões autorais removidas (`rejected`): **{len(rejected)}**",
         f"- Gabaritos localizados nas páginas 190–196: **{sum(1 for row in rows if row['answerPage'])}**",
         f"- Créditos de banca extraídos de cabeçalhos do PDF: **{pdf_headers}**",
         f"- Créditos de seção (sem banca/ano impressos): **{section_credits}**",
@@ -1242,7 +1325,7 @@ def emit(records: list[dict]) -> None:
             "",
             "## Itens isolados por proveniência e direitos autorais",
             "",
-            f"Um total de **{len(quarantined)} questões** permanecem no corpus de auditoria em quarentena técnica e não são publicadas no banco público de estudos (incluindo as 180 questões da seção `Translations` e as 173 questões autorais da banca/fonte `JFS`).",
+            f"Um total de **{len(quarantined)} questões** permanece em quarentena técnica e não é publicado no banco de estudos. Questões autorais são removidas separadamente (`rejected`) e mantidas apenas como posição técnica do manifesto.",
         ])
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

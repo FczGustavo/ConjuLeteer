@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "sources": {
+    "public": {
+      "path": "C:\\Users\\gusta\\Downloads\\1500 Questões de Inglês para Concursos Militares.pdf",
+      "sha256": "54479ed800bda491adc7da535b074625c792daf6b9da5887ae15cd382b380336",
+      "pages": 197,
+      "positions": 1500
+    },
+    "preview": {
+      "path": "C:\\Users\\gusta\\Documents\\ConjuLetter\\lists\\Apostila de Inglês (CN, EPCAR, EAM, EsSA, EEAR, EsPCEx, AFA, EFOMM, EN e ITA) - Atualizada.pdf",
+      "sha256": "029a154daaf7e1c2a2b4073bfbb76f16959b76e01f09a446d37024f92fa039b9",
+      "pages": 394,
+      "positions": 2270
+    }
+  },
+  "public": {
+    "records": 1500,
+    "studyable": 1147,
+    "status": {
+      "verified": 1147,
+      "rejected": 173,
+      "quarantined": 180
+    },
+    "uniqueIds": 1500,
+    "support": 170,
+    "supportWithoutTitleOrSource": 125,
+    "visualStudyable": 27,
+    "visualWithoutMedia": [],
+    "unexpectedMedia": [],
+    "metadataWithoutBoard": [],
+    "quarantined": 180,
+    "rejected": 173,
+    "quarantineReasons": {
+      "provenance": 180
+    },
+    "media": {
+      "descriptors": 49,
+      "assets": 34
+    }
+  },
+  "preview": {
+    "records": 2270,
+    "studyable": 2163,
+    "status": {
+      "verified": 2126,
+      "quarantined": 48,
+      "rejected": 59,
+      "warning": 37
+    },
+    "uniqueIds": 2270,
+    "support": 785,
+    "supportWithoutTitleOrSource": 96,
+    "visualStudyable": 62,
+    "visualWithoutMedia": [],
+    "unexpectedMedia": [],
+    "metadataWithoutBoard": [],
+    "quarantined": 48,
+    "rejected": 59,
+    "quarantineReasons": {
+      "answer": 1,
+      "duplicate": 45,
+      "visual": 2
+    },
+    "media": {
+      "descriptors": 62,
+      "assets": 62
+    },
+    "manifestDuplicates": 45
+  },
+  "deduplication": {
+    "crossCorpusDuplicates": 0,
+    "previewManifestDuplicates": 45
+  },
+  "visualQuality": {
+    "public": {
+      "referencesAudited": 27,
+      "withCrop": 27,
+      "unresolved": [],
+      "allCropFilesPresent": true,
+      "onlySemanticReferencesPublished": true
+    },
+    "preview": {
+      "referencesAudited": 64,
+      "withCrop": 62,
+      "unresolved": [
+        "ep-029a154daaf7-preview_reading_epcar-q83",
+        "ep-029a154daaf7-preview_adjectives-q25"
+      ],
+      "allCropFilesPresent": true,
+      "onlySemanticReferencesPublished": true
+    }
+  },
+  "quarantineReview": {
+    "public": {
+      "total": 180,
+      "reasons": {
+        "provenance": 180
+      },
+      "allReviewed": true
+    },
+    "preview": {
+      "total": 48,
+      "reasons": {
+        "answer": 1,
+        "duplicate": 45,
+        "visual": 2
+      },
+      "allReviewed": true
+    }
+  },
+  "boardSelector": {
+    "canonicalExamples": {
+      "ITA-SP": "ITA",
+      "ITA 12": "ITA",
+      "EEAr 2020": "EEAr",
+      "EEAr BCT 2020": "EEAr BCT"
+    },
+    "rawCreditsPreserved": true
+  },
+  "uiContracts": {
+    "englishFilterMerged": true,
+    "supportRegions": true,
+    "savedCorpusIds": true
+  },
+  "qualityGate": {
+    "noUnprovenItemPublished": true,
+    "quarantineIsolated": true,
+    "authorialContentRejected": true
+  },
+  "issues": [],
+  "warnings": []
+}

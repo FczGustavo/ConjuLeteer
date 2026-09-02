@@ -1,4 +1,4 @@
-import type { SubjectId } from '../data/questionBank';
+import type { QuestionCorpusId, SubjectId } from '../data/questionBank';
 import { safeWriteStorage, type StorageWriteResult } from '../utils/storage';
 
 const STORAGE_KEY = 'conjuletter_saved_question_lists_v1';
@@ -8,6 +8,10 @@ export interface SavedQuestionList {
   name: string;
   questionIds: string[];
   subjectIds: SubjectId[];
+  /** Corpus namespace prevents Preview IDs from colliding with public lists. */
+  corpusId?: QuestionCorpusId;
+  /** All source corpora represented in a merged English list. */
+  corpusIds?: QuestionCorpusId[];
   statusFilter: 'all' | 'pending' | 'correct' | 'wrong' | 'noIdea';
   createdAt: string;
   updatedAt: string;
@@ -32,6 +36,8 @@ function normalizeSavedQuestionList(item: SavedQuestionList): SavedQuestionList 
   const pageSize = [0, 1, 5, 10, 20].includes(item.pageSize) ? item.pageSize : 1;
   const answers = Object.fromEntries(Object.entries(item.userAnswers).filter((entry): entry is [string, string] => typeof entry[0] === 'string' && /^[A-E]$/.test(entry[1])));
   const booleans = (value: Record<string, boolean> | undefined) => Object.fromEntries(Object.entries(value || {}).filter((entry): entry is [string, boolean] => typeof entry[0] === 'string' && entry[1] === true));
+  const corpusIds = Array.from(new Set((Array.isArray(item.corpusIds) ? item.corpusIds : item.corpusId ? [item.corpusId] : [])
+    .filter((value): value is QuestionCorpusId => value === 'portuguese_public' || value === 'english_public' || value === 'english_preview' || value === 'custom')));
   return {
     ...item,
     questionIds: [...new Set(item.questionIds.filter(value => typeof value === 'string'))],
@@ -41,6 +47,7 @@ function normalizeSavedQuestionList(item: SavedQuestionList): SavedQuestionList 
     userAnswers: answers,
     confirmedAnswers: booleans(item.confirmedAnswers),
     noIdeaQuestions: booleans(item.noIdeaQuestions),
+    corpusIds,
   };
 }
 
@@ -49,7 +56,9 @@ export function createQuestionList(
   questionIds: string[],
   subjectIds: SubjectId[],
   statusFilter: SavedQuestionList['statusFilter'],
-  noIdeaQuestions: Record<string, boolean> = {}
+  noIdeaQuestions: Record<string, boolean> = {},
+  corpusId?: QuestionCorpusId,
+  corpusIds?: QuestionCorpusId[],
 ): SavedQuestionList {
   const now = new Date().toISOString();
   const list: SavedQuestionList = {
@@ -57,6 +66,8 @@ export function createQuestionList(
     name,
     questionIds: [...new Set(questionIds)],
     subjectIds: [...new Set(subjectIds)],
+    corpusId,
+    corpusIds: [...new Set((corpusIds && corpusIds.length > 0 ? corpusIds : corpusId ? [corpusId] : []).filter(Boolean))],
     statusFilter,
     createdAt: now,
     updatedAt: now,

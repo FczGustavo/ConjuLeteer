@@ -16,9 +16,20 @@ import {
 } from 'lucide-react';
 import { SUBJECTS_CONFIG, type SubjectId, type QuestionBankItem } from '../data/questionBank';
 import { ENGLISH_SUBJECTS_CONFIG } from '../data/englishSubjects';
+import { ENGLISH_PREVIEW_SUBJECTS_CONFIG } from '../data/englishPreviewSubjects';
+import { ENGLISH_PREVIEW_MANIFEST } from '../data/englishPreviewManifest';
+import { buildBoardFilterOptions, getBoardFilterLabel, matchesBoardFilter } from '../utils/boardFilters';
+
+export type QuestionLanguageFilter = 'pt' | 'en' | 'en_preview';
+
+const isEnglishFilter = (value: QuestionLanguageFilter) => value === 'en' || value === 'en_preview';
+const questionBelongsToFilter = (question: QuestionBankItem, filter: QuestionLanguageFilter) => {
+  if (filter === 'pt') return question.language !== 'en';
+  return question.language === 'en';
+};
 
 export interface FilterState {
-  languageFilter: 'pt' | 'en';
+  languageFilter: QuestionLanguageFilter;
   selectedSubjectIds: SubjectId[];
   /** Kept for compatibility with persisted filters; Verbos always uses PDF 7. */
   selectedListIds: string[];
@@ -53,11 +64,11 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
   const [isTreeExpanded, setIsTreeExpanded] = useState<boolean>(true);
   const [simuladoQty, setSimuladoQty] = useState<number>(10);
   const [boardSearch, setBoardSearch] = useState<string>('');
-  const subjectConfig = filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
+  const subjectConfig = filterState.languageFilter === 'pt' ? SUBJECTS_CONFIG : ENGLISH_SUBJECTS_CONFIG;
   const visibleQuestions = useMemo(
     () => allQuestions.filter(question => {
       if (question.quality?.status === 'quarantined' || question.quality?.status === 'rejected') return false;
-      const inLanguage = filterState.languageFilter === 'en' ? question.language === 'en' : question.language !== 'en';
+      const inLanguage = questionBelongsToFilter(question, filterState.languageFilter);
       if (!inLanguage) return false;
       return true;
     }),
@@ -65,37 +76,49 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
   );
   const subjectCounts = useMemo(() => {
     const counts = new Map<SubjectId, number>();
-    visibleQuestions.forEach(question => counts.set(question.subjectId, (counts.get(question.subjectId) ?? 0) + 1));
+    if (filterState.languageFilter === 'en') {
+      visibleQuestions.forEach(question => {
+        for (const config of ENGLISH_SUBJECTS_CONFIG) {
+          const matches = config.matchingSubjectIds && config.matchingSubjectIds.length > 0
+            ? config.matchingSubjectIds.includes(question.subjectId)
+            : config.id === question.subjectId;
+          if (matches) {
+            counts.set(config.id as SubjectId, (counts.get(config.id as SubjectId) ?? 0) + 1);
+          }
+        }
+      });
+    } else {
+      visibleQuestions.forEach(question => counts.set(question.subjectId, (counts.get(question.subjectId) ?? 0) + 1));
+    }
     return counts;
-  }, [visibleQuestions]);
+  }, [visibleQuestions, filterState.languageFilter]);
 
   const availableBoards = useMemo(() => {
-    if (filterState.languageFilter !== 'en') return [];
-    const counts = new Map<string, number>();
-    visibleQuestions.forEach(q => {
-      const board = q.examMetadata?.board;
-      if (board && board !== 'Compilação de concursos militares') {
-        counts.set(board, (counts.get(board) ?? 0) + 1);
-      }
-    });
-    return Array.from(counts.entries())
-      .map(([board, count]) => ({ board, count }))
-      .sort((a, b) => b.count - a.count || a.board.localeCompare(b.board));
+    if (!isEnglishFilter(filterState.languageFilter)) return [];
+    return buildBoardFilterOptions(visibleQuestions, 'en');
   }, [visibleQuestions, filterState.languageFilter]);
 
   const filteredBoardsList = useMemo(() => {
     if (!boardSearch.trim()) return availableBoards;
     const q = boardSearch.trim().toLowerCase();
-    return availableBoards.filter(b => b.board.toLowerCase().includes(q));
+    return availableBoards.filter(b => b.label.toLowerCase().includes(q));
   }, [availableBoards, boardSearch]);
 
   const languageCounts = useMemo(() => {
     const counts = { pt: 0, en: 0 };
+    let previewLoaded = 0;
     allQuestions.forEach(question => {
       if (question.quality?.status === 'quarantined' || question.quality?.status === 'rejected') return;
-      if (question.language === 'en') counts.en++;
-      else counts.pt++;
+      if (question.language === 'en') {
+        counts.en++;
+        if (question.corpusId === 'english_preview') previewLoaded++;
+      } else {
+        counts.pt++;
+      }
     });
+    // The Preview question modules are lazy. Show the audited count before
+    // they finish loading, then replace it with the actual loaded count.
+    if (previewLoaded === 0) counts.en += ENGLISH_PREVIEW_MANIFEST.publishedQuestions;
     return counts;
   }, [allQuestions]);
 
@@ -145,8 +168,10 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
     });
   };
 
-  const handleLanguageChange = (language: 'pt' | 'en') => {
-    const nextConfig = language === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
+  const handleLanguageChange = (language: QuestionLanguageFilter) => {
+    const nextConfig = language === 'en_preview'
+      ? ENGLISH_PREVIEW_SUBJECTS_CONFIG
+      : language === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
     onFilterChange({
       ...filterState,
       languageFilter: language,
@@ -171,8 +196,8 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
       }
 
       // 2. Board filter (English bank)
-      if (filterState.languageFilter === 'en' && filterState.selectedBoard && filterState.selectedBoard !== 'all') {
-        if (q.examMetadata?.board !== filterState.selectedBoard) {
+      if (isEnglishFilter(filterState.languageFilter) && filterState.selectedBoard && filterState.selectedBoard !== 'all') {
+        if (!matchesBoardFilter(q, filterState.selectedBoard, filterState.languageFilter, availableBoards)) {
           return false;
         }
       }
@@ -190,7 +215,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
 
       return true;
     });
-  }, [visibleQuestions, filterState.selectedSubjectIds, filterState.selectedBoard, filterState.languageFilter, filterState.statusFilter, confirmedAnswers, userAnswers, noIdeaQuestions]);
+  }, [visibleQuestions, filterState.selectedSubjectIds, filterState.selectedBoard, filterState.languageFilter, filterState.statusFilter, confirmedAnswers, userAnswers, noIdeaQuestions, availableBoards]);
 
   return (
     <div className="question-filter-page mx-auto max-w-5xl space-y-8 px-4 py-7 sm:px-6 sm:py-9">
@@ -200,7 +225,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
         <div>
           <div className="flex items-center space-x-2 text-xs font-mono text-[#8b949e]">
             <BookOpen className="w-3.5 h-3.5 text-[#e8a87c]" />
-            <span>{filterState.languageFilter === 'en' ? 'Inglês' : 'Português'}</span>
+            <span>{filterState.languageFilter === 'en_preview' ? 'Inglês Preview' : filterState.languageFilter === 'en' ? 'Inglês' : 'Português'}</span>
             <span>/</span>
             <span className="text-[#e8a87c]">Banco de Questões</span>
             <span>/</span>
@@ -321,7 +346,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
         <div className="question-filter-controls md:col-span-6 space-y-5">
           
           {/* Banca / Instituição (Inglês) */}
-          {filterState.languageFilter === 'en' && availableBoards.length > 0 && (
+          {isEnglishFilter(filterState.languageFilter) && availableBoards.length > 0 && (
             <div className="question-filter-card question-filter-board-card space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 text-xs font-mono text-[#e8a87c] font-bold">
@@ -330,7 +355,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
                 </div>
                 <span className="text-[11px] font-mono text-[#8b949e]">
                   {filterState.selectedBoard && filterState.selectedBoard !== 'all' ? (
-                    <span className="text-[#e8a87c] font-bold">{filterState.selectedBoard}</span>
+                    <span className="text-[#e8a87c] font-bold">{getBoardFilterLabel(availableBoards, filterState.selectedBoard)}</span>
                   ) : (
                     `${availableBoards.length} bancas`
                   )}
@@ -376,12 +401,12 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
                 </button>
 
                 {filteredBoardsList.map(b => {
-                  const isSelected = filterState.selectedBoard === b.board;
+                  const isSelected = filterState.selectedBoard === b.key;
                   return (
                     <button
-                      key={b.board}
+                      key={b.key}
                       type="button"
-                      onClick={() => setBoardFilter(isSelected ? undefined : b.board)}
+                      onClick={() => setBoardFilter(isSelected ? undefined : b.key)}
                       aria-pressed={isSelected}
                       data-selected={isSelected}
                       className={`question-filter-board-option px-2.5 py-1.5 rounded-lg text-xs font-mono transition-all border ${
@@ -390,7 +415,7 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
                           : 'bg-[#20242b] border-[#2e353e] text-[#8b949e] hover:text-[#f3ede6]'
                       }`}
                     >
-                      {b.board} ({b.count}Q)
+                      {b.label} ({b.count}Q)
                     </button>
                   );
                 })}

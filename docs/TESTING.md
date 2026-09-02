@@ -15,7 +15,8 @@ O módulo que coordena PDF.js/canvas (`src/services/pdfArtifacts.ts`) fica fora 
 - `srsEngine`: JSON corrompido, números não finitos, datas inválidas, migração de tema, limites de domínio e falha de armazenamento.
 - `questionListService`: migração, deduplicação, página fora do intervalo, `pageSize` inválido, quota excedida e listas parcialmente corrompidas.
 - importador: resposta vazia, JSON inválido, letras duplicadas, gabarito ausente, 4/5 alternativas, páginas inválidas, IDs estáveis, evidência/confiança ausentes e isolamento em quarentena.
-- banco inglês: os 1.500 cabeçalhos do PDF são relidos e comparados item a item com `examMetadata`; a suíte exige 1.320 créditos verificáveis, 180 itens sem banca/ano em quarentena e nenhum crédito inferido.
+- banco inglês: os 1.500 cabeçalhos da fonte são relidos e comparados item a item com `examMetadata`; a suíte exige 1.320 créditos verificáveis, 180 itens sem banca/ano em quarentena e nenhum crédito inferido.
+- Inglês Preview: 59 questões autorais são rejeitadas e redigidas, 45 duplicatas ficam apenas no manifesto, bancas pequenas são agrupadas apenas no seletor, ITA/ITA-SP e EEAR/EEAR BCT são canônicos no filtro e as tags preservam a banca impressa.
 - pipeline multimodal: páginas nativas, scans sem camada de texto, páginas com caracteres corrompidos, hash repetido, manifesto de cobertura, renderização e cancelamento entre páginas.
 - mídia de questões: limites normalizados, rejeição de página inteira, confiança mínima, associação a alternativas, recorte WebP, hash, IndexedDB e quarentena quando a figura mencionada estiver ausente.
 
@@ -50,16 +51,30 @@ npm run build
 npm run audit:verbs
 npm run audit:questions
 npm run audit:english
+npm run audit:english-preview
+npm run audit:english-corpora
 ```
 
+Para o corpus provisório, `npm run audit:english-preview` valida 394 páginas,
+2.270 posições, 40 blocos de gabarito, ausência de respostas órfãs, alternativas
+válidas e existência dos recortes publicados. A auditoria visual também confirma
+que cada ativo publicado é um recorte semântico útil (charge, tirinha, mapa,
+anúncio ou diagrama), descartando fotografias decorativas. A saída completa fica em
+`reports/english-preview-audit.{md,json}`; itens em quarentena são esperados e
+não entram no conjunto estudável.
+
 `npm run audit:normalized` audita o banco **depois** de `normalizeQuestionSupport` e grava o diff revisável em `reports/normalized-question-audit.json`.
+
+`npm run audit:english-corpora` reconcilia os dois PDFs (páginas, posições,
+gabaritos, metadados, duplicatas, recortes, filtros canônicos e contratos da
+interface unificada) e grava `reports/english-corpora-audit.{md,json}`.
 
 ## Critérios de aprovação
 
 - Zero erro de build, lint ou auditoria.
 - Zero teste instável e zero erro no console nos fluxos críticos.
 - Nenhuma perda silenciosa de questão ou progresso.
-- Cada questão inglesa publicada possui crédito rastreável no PDF; quando a fonte não imprime banca/ano, o relatório identifica explicitamente a seção de compilação.
+- Cada questão inglesa publicada possui crédito rastreável na fonte original; quando a fonte não imprime banca/ano, o relatório identifica explicitamente a seção de compilação.
 - Nenhum item sem evidência independente do gabarito é publicado; itens ambíguos permanecem em `quarantined`.
 - Cobertura de branches elevada nas rotinas de parsing, normalização e persistência; o percentual exato deve ser definido após a primeira linha de base, sem substituir testes de cenários.
 - Evidência visual dos quatro temas em 1440, 1024, 768 e 390 px.

@@ -15,9 +15,9 @@ import {
   Check,
   Scissors
 } from 'lucide-react';
-import { QUESTION_BANK, type QuestionBankItem, SUBJECTS_CONFIG } from '../data/questionBank';
+import { QUESTION_BANK, type QuestionBankItem, type QuestionCorpusId, SUBJECTS_CONFIG } from '../data/questionBank';
 import { ENGLISH_QUESTION_BANK } from '../data/englishQuestionBank';
-import { ENGLISH_SUBJECTS_CONFIG } from '../data/englishSubjects';
+import { ENGLISH_SUBJECTS_CONFIG, matchesEnglishSubjectFilter } from '../data/englishSubjects';
 import { getCustomQuestions } from '../services/pdfImportService';
 import { ImportPdfModal } from './ImportPdfModal';
 import { QuestionBankFilterView, type FilterState } from './QuestionBankFilterView';
@@ -25,6 +25,7 @@ import { FormattedExamText } from '../utils/textFormatter';
 import { QuestionMedia } from './QuestionMedia';
 import { getQuestionSupport, normalizeQuestionSupportCached, supportToClipboardText } from '../utils/questionSupport';
 import { getBoardExamUrl } from '../utils/boardLinks';
+import { buildBoardFilterOptions, getBoardFilterLabel, matchesBoardFilter } from '../utils/boardFilters';
 import {
   createQuestionList,
   deleteQuestionList,
@@ -40,6 +41,14 @@ interface QuestionBankViewProps {
 
 const EMPTY_BOOLEAN_RECORD: Record<string, boolean> = {};
 const EMPTY_STRING_RECORD: Record<string, string> = {};
+const isEnglishFilter = (value: FilterState['languageFilter']) => value === 'en' || value === 'en_preview';
+const questionBelongsToFilter = (question: QuestionBankItem, filter: FilterState['languageFilter']) => {
+  if (filter === 'pt') return question.language !== 'en';
+  return question.language === 'en';
+};
+const subjectsForFilter = (filter: FilterState['languageFilter']) => (
+  filter === 'pt' ? SUBJECTS_CONFIG : ENGLISH_SUBJECTS_CONFIG
+);
 
 function toClipboardText(text: string): string {
   return text
@@ -88,6 +97,8 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const [expandedReadingTexts, setExpandedReadingTexts] = useState<Record<string, boolean>>({});
   const [isImportModalOpen, setIsImportModalOpen] = useState<boolean>(false);
   const [customQuestions, setCustomQuestions] = useState<QuestionBankItem[]>(getCustomQuestions);
+  const [previewQuestions, setPreviewQuestions] = useState<QuestionBankItem[]>([]);
+  const [previewLoadError, setPreviewLoadError] = useState<string | null>(null);
   const [savedLists, setSavedLists] = useState<SavedQuestionList[]>(loadQuestionLists);
   const [activeListId, setActiveListId] = useState<string | null>(null);
   const [expandedAnswerKeyId, setExpandedAnswerKeyId] = useState<string | null>(null);
@@ -104,6 +115,26 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const [confirmedAnswers, setConfirmedAnswers] = useState<Record<string, boolean>>({});
   const [noIdeaQuestions, setNoIdeaQuestions] = useState<Record<string, boolean>>({});
   const [eliminatedOptions, setEliminatedOptions] = useState<Record<string, string[]>>({});
+
+  // Keep the large provisional corpus out of the initial bundle.  It is only
+  // requested when the user opens Inglês Preview, and the guard prevents a
+  // late dynamic-import result from updating an unmounted view.
+  useEffect(() => {
+    if (!isEnglishFilter(filterState.languageFilter) || previewQuestions.length > 0) return;
+    let cancelled = false;
+    import('../data/englishPreviewQuestionBank')
+      .then(module => module.loadEnglishPreviewQuestions())
+      .then(questions => {
+        if (!cancelled) {
+          setPreviewQuestions(questions);
+          setPreviewLoadError(null);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setPreviewLoadError('Não foi possível carregar as questões complementares de Inglês.');
+      });
+    return () => { cancelled = true; };
+  }, [filterState.languageFilter, previewQuestions.length]);
 
   useEffect(() => {
     if (!activeListId) return;
@@ -125,12 +156,19 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   // Keep the audited source records immutable. Editorial normalization is
   // applied only to the visible page below, not to all 2,031 records at once.
   const allBankQuestions = useMemo(() => {
-    return [...QUESTION_BANK, ...ENGLISH_QUESTION_BANK, ...customQuestions];
-  }, [customQuestions]);
+    return [...QUESTION_BANK, ...ENGLISH_QUESTION_BANK, ...previewQuestions, ...customQuestions];
+  }, [customQuestions, previewQuestions]);
 
   const questionById = useMemo(
     () => new Map(allBankQuestions.map(question => [question.id, question])),
     [allBankQuestions]
+  );
+
+  const boardFilterOptions = useMemo(
+    () => isEnglishFilter(filterState.languageFilter)
+      ? buildBoardFilterOptions(allBankQuestions, filterState.languageFilter)
+      : [],
+    [allBankQuestions, filterState.languageFilter]
   );
 
   // Build the stable language/subject/list selection independently from answer
@@ -143,10 +181,14 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     }
     return allBankQuestions.filter(q => {
       if (q.quality?.status === 'quarantined' || q.quality?.status === 'rejected') return false;
-      if (filterState.languageFilter === 'en' ? q.language !== 'en' : q.language === 'en') return false;
+      if (!questionBelongsToFilter(q, filterState.languageFilter)) return false;
       // 1. Subject filter
       if (filterState.selectedSubjectIds.length > 0) {
-        if (!filterState.selectedSubjectIds.includes(q.subjectId)) {
+        if (filterState.languageFilter === 'en') {
+          if (!matchesEnglishSubjectFilter(q.subjectId, filterState.selectedSubjectIds)) {
+            return false;
+          }
+        } else if (!filterState.selectedSubjectIds.includes(q.subjectId)) {
           return false;
         }
       } else {
@@ -154,15 +196,15 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
       }
 
       // 2. Board filter (English bank)
-      if (filterState.languageFilter === 'en' && filterState.selectedBoard && filterState.selectedBoard !== 'all') {
-        if (q.examMetadata?.board !== filterState.selectedBoard) {
+      if (isEnglishFilter(filterState.languageFilter) && filterState.selectedBoard && filterState.selectedBoard !== 'all') {
+        if (!matchesBoardFilter(q, filterState.selectedBoard, filterState.languageFilter, boardFilterOptions)) {
           return false;
         }
       }
 
       return true;
     });
-  }, [allBankQuestions, filterState.languageFilter, filterState.selectedSubjectIds, filterState.selectedBoard, activeListId, savedLists, questionById]);
+  }, [allBankQuestions, filterState.languageFilter, filterState.selectedSubjectIds, filterState.selectedBoard, activeListId, savedLists, questionById, boardFilterOptions]);
 
   const statusConfirmedAnswers = filterState.statusFilter === 'all' ? EMPTY_BOOLEAN_RECORD : confirmedAnswers;
   const statusUserAnswers = filterState.statusFilter === 'correct' || filterState.statusFilter === 'wrong' ? userAnswers : EMPTY_STRING_RECORD;
@@ -212,8 +254,14 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const matchingFilteredQuestions = (limit?: number) => {
     const matching = allBankQuestions.filter(question => {
       if (question.quality?.status === 'quarantined' || question.quality?.status === 'rejected') return false;
-      if (filterState.languageFilter === 'en' ? question.language !== 'en' : question.language === 'en') return false;
+      if (!questionBelongsToFilter(question, filterState.languageFilter)) return false;
       if (!filterState.selectedSubjectIds.includes(question.subjectId)) return false;
+      if (isEnglishFilter(filterState.languageFilter)
+        && filterState.selectedBoard
+        && filterState.selectedBoard !== 'all'
+        && !matchesBoardFilter(question, filterState.selectedBoard, filterState.languageFilter, boardFilterOptions)) {
+        return false;
+      }
       if (filterState.statusFilter === 'pending') return !confirmedAnswers[question.id];
       if (filterState.statusFilter === 'correct') return confirmedAnswers[question.id] && userAnswers[question.id] === question.correctLetter;
       if (filterState.statusFilter === 'wrong') return confirmedAnswers[question.id] && userAnswers[question.id] !== question.correctLetter;
@@ -226,12 +274,12 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   const handleCreateList = (limit?: number) => {
     const questions = matchingFilteredQuestions(limit);
     if (!questions.length) return;
-    const activeSubjectConfig = filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG;
+    const activeSubjectConfig = subjectsForFilter(filterState.languageFilter);
     const subjectNames = filterState.selectedSubjectIds
       .map(id => activeSubjectConfig.find(subject => subject.id === id)?.shortTitle)
       .filter(Boolean);
     const label = subjectNames.length === activeSubjectConfig.filter(subject => subject.id !== 'todos').length
-      ? (filterState.languageFilter === 'en' ? 'Todos os assuntos de Inglês' : 'Todos os assuntos')
+      ? (isEnglishFilter(filterState.languageFilter) ? 'Todos os assuntos de Inglês' : 'Todos os assuntos')
       : subjectNames.slice(0, 2).join(' + ') + (subjectNames.length > 2 ? ` +${subjectNames.length - 2}` : '');
     const statusLabel: Record<FilterState['statusFilter'], string> = {
       all: '',
@@ -243,18 +291,43 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
     const filterSuffix = statusLabel[filterState.statusFilter]
       ? ` · ${statusLabel[filterState.statusFilter]}`
       : '';
+    const corpusIds = Array.from(new Set<QuestionCorpusId>(questions.map(question => (
+      question.corpusId ?? (question.language === 'en' ? 'english_public' : 'portuguese_public')
+    ))));
     const list = createQuestionList(
       `${label}${filterSuffix} · ${questions.length} questões`,
       questions.map(question => question.id),
       filterState.selectedSubjectIds,
       filterState.statusFilter,
-      noIdeaQuestions
+      noIdeaQuestions,
+      corpusIds.length === 1 ? corpusIds[0] : undefined,
+      corpusIds,
     );
     setSavedLists(loadQuestionLists());
     openSavedList(list);
   };
 
   const openSavedList = (list: SavedQuestionList) => {
+    // Restore the list's corpus before resolving IDs.
+    const savedCorpora = list.corpusIds?.length ? list.corpusIds : list.corpusId ? [list.corpusId] : [];
+    if (savedCorpora.length > 0) {
+      const languageFilter: FilterState['languageFilter'] = savedCorpora.some(corpus => corpus === 'english_preview' || corpus === 'english_public')
+        ? 'en'
+        : 'pt';
+      const subjectConfig = subjectsForFilter(languageFilter);
+      const selectedSubjectIds = list.subjectIds.filter(id => subjectConfig.some(subject => subject.id === id));
+      setFilterState(prev => ({
+        ...prev,
+        languageFilter,
+        selectedSubjectIds: selectedSubjectIds.length > 0
+          ? selectedSubjectIds
+          : subjectConfig.filter(subject => subject.id !== 'todos').map(subject => subject.id),
+        selectedListIds: languageFilter === 'pt' ? ['pdf_7'] : [],
+        selectedBoard: undefined,
+        statusFilter: list.statusFilter,
+        limitQuantity: undefined,
+      }));
+    }
     setActiveListId(list.id);
     setUserAnswers(list.userAnswers);
     setConfirmedAnswers(list.confirmedAnswers);
@@ -558,6 +631,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
   if (viewMode === 'filters') {
     return (
       <>
+      {previewLoadError && <div role="alert" className="mx-auto mt-4 max-w-5xl rounded-xl bg-red-950/40 px-4 py-3 text-sm text-red-200">{previewLoadError}</div>}
       <QuestionBankFilterView
           allQuestions={allBankQuestions}
           filterState={filterState}
@@ -620,13 +694,13 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
               <SlidersHorizontal className="h-3.5 w-3.5 shrink-0 text-[#e8a87c]" />
               <span className="shrink-0">Assuntos:</span>
               <strong className="truncate text-[#f3ede6]">
-                {filterState.selectedSubjectIds.length === (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).filter(subject => subject.id !== 'todos').length
-                  ? (filterState.languageFilter === 'en' ? 'Todos os Assuntos de Inglês' : 'Todos os Assuntos')
-                  : filterState.selectedSubjectIds.map(id => (filterState.languageFilter === 'en' ? ENGLISH_SUBJECTS_CONFIG : SUBJECTS_CONFIG).find(s => s.id === id)?.shortTitle).join(', ')}
+                {filterState.selectedSubjectIds.length === subjectsForFilter(filterState.languageFilter).filter(subject => subject.id !== 'todos').length
+                  ? (isEnglishFilter(filterState.languageFilter) ? 'Todos os Assuntos de Inglês' : 'Todos os Assuntos')
+                  : filterState.selectedSubjectIds.map(id => subjectsForFilter(filterState.languageFilter).find(s => s.id === id)?.shortTitle).join(', ')}
               </strong>
-              {filterState.languageFilter === 'en' && filterState.selectedBoard && filterState.selectedBoard !== 'all' && (
+              {isEnglishFilter(filterState.languageFilter) && filterState.selectedBoard && filterState.selectedBoard !== 'all' && (
                 <span className="inline-flex items-center gap-1 rounded-md border border-[#e8a87c]/30 bg-[#2a1d17] px-2 py-0.5 text-[11px] font-mono text-[#e8a87c]">
-                  Banca: {filterState.selectedBoard}
+                  Banca: {getBoardFilterLabel(boardFilterOptions, filterState.selectedBoard)}
                 </span>
               )}
             </div>
@@ -714,7 +788,7 @@ export const QuestionBankView: React.FC<QuestionBankViewProps> = ({
                       return (
                         <span
                           className="question-source-credit"
-                          title="Crédito editorial identificado no PDF de origem"
+                          title="Crédito editorial informado na fonte"
                           data-source-credit
                         >
                           {labelText}

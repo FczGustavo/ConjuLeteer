@@ -80,7 +80,11 @@ def assert_editorial_highlights(records: list[dict]) -> tuple[int, set[str]]:
     for (subject_id, number), targets in EDITORIAL_HIGHLIGHTS.items():
         question_id = f"{subject_id}-q{number}"
         record = by_id[question_id]
-        assert record["quality"]["status"] in {"verified", "quarantined"}, question_id
+        # Authorial records are intentionally redacted before publication;
+        # their original highlight cannot and should not be rendered.
+        if record.get("authorialRemoved"):
+            continue
+        assert record["quality"]["status"] in {"verified", "warning", "quarantined"}, question_id
         notes = {note["target"] for note in record.get("emphasisNotes", [])}
         for location, target, style in targets:
             value = field_value(record, location)
@@ -104,6 +108,8 @@ def write_report(summary: dict, media_index: dict[str, list[dict]], highlight_id
         "questionsAudited": summary["questions"],
         "verifiedQuestions": summary["verifiedQuestions"],
         "quarantinedQuestions": summary["quarantinedQuestions"],
+        "rejectedQuestions": summary.get("rejectedQuestions", 0),
+        "authorialRemovedQuestions": summary.get("authorialRemovedQuestions", 0),
         "visualQuestions": len(public_visual_ids),
         "visualDescriptors": summary["visualDescriptors"],
         "highlightedQuestions": len(public_highlight_ids),
@@ -224,14 +230,21 @@ def main() -> None:
         assert 2 <= record["provenance"]["questionPage"] <= 189
         assert topic_ranges[subject_id][0] <= record["provenance"]["questionPage"] <= topic_ranges[subject_id][1], record["id"]
         assert 190 <= record["provenance"]["answerPage"] <= 196
-        is_jfs = record.get("examMetadata", {}).get("board") == "JFS"
+        is_authorial = bool(record.get("authorialRemoved")) or record.get("examMetadata", {}).get("board") == "JFS"
         is_translation = subject_id == "english_translations"
-        if is_jfs or is_translation:
+        if is_authorial:
+            assert record["quality"]["status"] == "rejected", record["id"]
+            assert record.get("authorialRemoved") is True, record["id"]
+            assert record.get("statement") == "", record["id"]
+            assert record.get("options") == [], record["id"]
+            continue
+        if is_translation:
             assert record["quality"]["status"] == "quarantined", record["id"]
             assert any("Publicação isolada" in warning for warning in record["quality"]["warnings"]), record["id"]
         else:
-            assert record["quality"]["status"] == "verified", record["id"]
-            assert record["quality"]["warnings"] == [], record["id"]
+            assert record["quality"]["status"] in {"verified", "warning"}, record["id"]
+            if record["quality"]["status"] == "verified":
+                assert record["quality"]["warnings"] == [], record["id"]
         metadata = record.get("examMetadata")
         assert isinstance(metadata, dict), f"crédito estruturado ausente: {record['id']}"
         assert metadata.get("board"), f"banca ausente: {record['id']}"
@@ -297,6 +310,8 @@ def main() -> None:
         "divergences": 0,
         "warnings": 0,
         "quarantined": sum(1 for record in records if record["quality"]["status"] == "quarantined"),
+        "rejectedQuestions": sum(1 for record in records if record["quality"]["status"] == "rejected"),
+        "authorialRemovedQuestions": sum(1 for record in records if record.get("authorialRemoved")),
         "publicVisualQuestions": len(expected_media_ids),
         "visualDescriptors": media_count,
         "highlightTargets": highlight_targets,

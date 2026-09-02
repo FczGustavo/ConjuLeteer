@@ -10,7 +10,8 @@ export type SubjectId =
   | 'pronomes'
   | 'verbos'
   | 'importadas'
-  | EnglishSubjectId;
+  | EnglishSubjectId
+  | EnglishPreviewSubjectId;
 
 /** English topics imported from the military-exam compilation PDF. */
 export type EnglishSubjectId =
@@ -39,6 +40,51 @@ export type EnglishSubjectId =
   | 'english_reading_review'
   | 'english_translations';
 
+/** Isolated provisional corpus extracted from the 2,270-question apostila. */
+export type EnglishPreviewSubjectId =
+  | 'preview_reading'
+  | 'preview_reading_epcar'
+  | 'preview_reading_eam'
+  | 'preview_reading_essa'
+  | 'preview_reading_eear'
+  | 'preview_reading_eear_bct'
+  | 'preview_reading_espcex'
+  | 'preview_reading_afa'
+  | 'preview_reading_efomm'
+  | 'preview_reading_en'
+  | 'preview_reading_ita'
+  | 'preview_articles'
+  | 'preview_nouns_countable'
+  | 'preview_nouns_plural'
+  | 'preview_nouns_gender'
+  | 'preview_adjectives'
+  | 'preview_adverbs'
+  | 'preview_pronouns_personal'
+  | 'preview_pronouns_possessive'
+  | 'preview_pronouns_reflexive'
+  | 'preview_pronouns_relative'
+  | 'preview_pronouns_demonstrative'
+  | 'preview_pronouns_indefinite'
+  | 'preview_verbs'
+  | 'preview_numbers'
+  | 'preview_conjunctions'
+  | 'preview_prepositions'
+  | 'preview_modal_verbs'
+  | 'preview_phrasal_verbs'
+  | 'preview_passive_active'
+  | 'preview_wh_questions'
+  | 'preview_question_tags'
+  | 'preview_reported_speech'
+  | 'preview_so_too'
+  | 'preview_if_clauses'
+  | 'preview_determiners'
+  | 'preview_quantifiers'
+  | 'preview_infinitive_gerund'
+  | 'preview_genitive'
+  | 'preview_grammar_classes';
+
+export type QuestionCorpusId = 'portuguese_public' | 'english_public' | 'english_preview' | 'custom';
+
 export interface QuestionBankOption {
   letter: 'A' | 'B' | 'C' | 'D' | 'E';
   text: string;
@@ -62,6 +108,14 @@ export interface QuestionBankProvenance {
   pdf: string;
   questionPage?: number;
   answerPage?: number;
+  sectionId?: string;
+  sourceDocumentHash?: string;
+  evidence?: Array<{
+    field: string;
+    page: number;
+    coordinates?: { x: number; y: number; width: number; height: number };
+    method: 'native-text' | 'ocr' | 'vision' | 'deterministic' | 'independent-pass';
+  }>;
 }
 
 /**
@@ -80,7 +134,7 @@ export interface QuestionBankExamMetadata {
 }
 
 export interface QuestionBankQuality {
-  /** Verified items are safe to publish; the other states never enter study lists. */
+  /** Verified and warning items are studyable; quarantined/rejected stay out of lists. */
   status: 'verified' | 'warning' | 'quarantined' | 'rejected';
   warnings: string[];
   /** Evidence references and confidence are optional for legacy bundled records. */
@@ -95,6 +149,7 @@ export interface QuestionBankEmphasisNote {
 
 export interface QuestionBankItem {
   id: string;
+  corpusId?: QuestionCorpusId;
   subjectId: SubjectId;
   subjectTitle: string;
   listId: string;
@@ -114,6 +169,9 @@ export interface QuestionBankItem {
   banca: string;
   /** Structured source credit for audited English records. */
   examMetadata?: QuestionBankExamMetadata;
+  /** Set only in the technical Preview manifest for content removed by policy. */
+  authorialRemoved?: boolean;
+  removalReason?: string;
   /** Native language/subdivision of the source bank. Legacy Portuguese items omit this field. */
   language?: 'pt' | 'en';
   isCustom?: boolean;

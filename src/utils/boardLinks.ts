@@ -9,10 +9,11 @@ export const BOARD_EXAM_URLS: Record<string, string> = {
   ITA: 'https://www.vestibular.ita.br/provas.htm',
   IME: 'https://www.ime.eb.mil.br/',
   EsPCEx: 'https://www.espcex.eb.mil.br/index.php/concurso',
-  AFA: 'https://ingresso.fab.mil.br/',
-  EEAr: 'https://ingresso.fab.mil.br/',
-  EFOMM: 'https://www.marinha.mil.br/ciaga/',
-  EN: 'https://www.marinha.mil.br/sspm/',
+  AFA: 'https://www.fab.mil.br/ingresso/provas.html',
+  EEAr: 'https://ingresso.eear.fab.mil.br/SOO/home/provas_anteriores.php?sigla_conc=%25',
+  EFOMM: 'https://www.marinha.mil.br/ciaga/efommadmissao',
+  EN: 'https://www.inscricao.marinha.mil.br/marinha/concursos.jsp',
+  EsSA: 'https://esa.eb.mil.br/index.php/pt/concurso.html',
 
   // Public & State Universities / Vestibulares
   FUVEST: 'https://www.fuvest.br/vestibular-da-usp/',
@@ -68,6 +69,24 @@ export const BOARD_EXAM_URLS: Record<string, string> = {
 };
 
 /**
+ * Preview imports retain the printed edition after a board name (for example
+ * "EEAr 1." or "ITA 12"). Resolve those editions to the same official
+ * portal without changing the credit shown on the question itself.
+ */
+const BOARD_FAMILY_URLS: Array<{ pattern: RegExp; url: string }> = [
+  { pattern: /^ITA(?:\s|$)/i, url: BOARD_EXAM_URLS.ITA },
+  { pattern: /^IME(?:\s|$)/i, url: BOARD_EXAM_URLS.IME },
+  { pattern: /^E(?:SPCEX|sPCEx)(?:\s|$)/i, url: BOARD_EXAM_URLS.EsPCEx },
+  { pattern: /^AFA(?:\s|$)/i, url: BOARD_EXAM_URLS.AFA },
+  { pattern: /^E(?:EAR|EAr)(?:\s|$)/i, url: BOARD_EXAM_URLS.EEAr },
+  { pattern: /^EPCAR(?:\s|$)/i, url: BOARD_EXAM_URLS.AFA },
+  { pattern: /^EFOMM(?:\s|$)/i, url: BOARD_EXAM_URLS.EFOMM },
+  { pattern: /^(?:EN|Escola Naval)(?:\s|$)/i, url: BOARD_EXAM_URLS.EN },
+  { pattern: /^(?:EsSA|ESA)(?:\s|$)/i, url: BOARD_EXAM_URLS.EsSA },
+  { pattern: /^(?:EAM|Col[eé]gio Naval)(?:\s|$)/i, url: BOARD_EXAM_URLS.EN },
+];
+
+/**
  * Returns the official past exams or institution portal URL for a given board code.
  */
 export function getBoardExamUrl(board?: string): string | undefined {
@@ -81,5 +100,6 @@ export function getBoardExamUrl(board?: string): string | undefined {
   const match = Object.entries(BOARD_EXAM_URLS).find(
     ([key]) => key.toUpperCase() === upper
   );
-  return match ? match[1] : undefined;
+  if (match) return match[1];
+  return BOARD_FAMILY_URLS.find(({ pattern }) => pattern.test(normalized))?.url;
 }
