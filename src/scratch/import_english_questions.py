@@ -1132,9 +1132,13 @@ def validate_and_attach(records: list[dict], answers: dict[tuple[str, int], str]
             {**option, "correct": option["letter"] == record["correctLetter"]}
             for option in record["options"]
         ]
-        if record["subjectId"] == "english_translations":
+        is_jfs = record.get("examMetadata", {}).get("board") == "JFS"
+        is_translation = record["subjectId"] == "english_translations"
+        if is_jfs or is_translation:
             warnings.append(
-                "Publicação isolada: o PDF não informa banca/ano e a auditoria localizou frases idênticas em fontes lexicográficas de terceiros."
+                "Publicação isolada/autoral: questão de autoria JFS / Jefferson Celestino colocada em quarentena técnica e não visível publicamente."
+                if is_jfs
+                else "Publicação isolada: o PDF não informa banca/ano e a auditoria localizou frases idênticas em fontes lexicográficas de terceiros."
             )
             record["quality"] = {"status": "quarantined", "warnings": warnings}
         else:
@@ -1236,9 +1240,9 @@ def emit(records: list[dict]) -> None:
     if quarantined:
         lines.extend([
             "",
-            "## Itens isolados por proveniência",
+            "## Itens isolados por proveniência e direitos autorais",
             "",
-            "As 180 questões da seção `Translations` permanecem no corpus de auditoria, mas não são publicadas no banco de estudo. O PDF não lhes atribui banca ou ano, e buscas por frases exatas localizaram exemplos coincidentes em dicionários de terceiros.",
+            f"Um total de **{len(quarantined)} questões** permanecem no corpus de auditoria em quarentena técnica e não são publicadas no banco público de estudos (incluindo as 180 questões da seção `Translations` e as 173 questões autorais da banca/fonte `JFS`).",
         ])
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

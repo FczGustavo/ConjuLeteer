@@ -80,7 +80,7 @@ def assert_editorial_highlights(records: list[dict]) -> tuple[int, set[str]]:
     for (subject_id, number), targets in EDITORIAL_HIGHLIGHTS.items():
         question_id = f"{subject_id}-q{number}"
         record = by_id[question_id]
-        assert record["quality"]["status"] == "verified", question_id
+        assert record["quality"]["status"] in {"verified", "quarantined"}, question_id
         notes = {note["target"] for note in record.get("emphasisNotes", [])}
         for location, target, style in targets:
             value = field_value(record, location)
@@ -95,17 +95,18 @@ def assert_editorial_highlights(records: list[dict]) -> tuple[int, set[str]]:
     return target_count, question_ids
 
 
-def write_report(summary: dict, media_index: dict[str, list[dict]], highlight_ids: set[str]) -> None:
-    visual_ids = sorted(media_index)
+def write_report(summary: dict, media_index: dict[str, list[dict]], highlight_ids: set[str], public_ids: set[str]) -> None:
+    public_visual_ids = sorted(qid for qid in media_index if qid in public_ids)
+    public_highlight_ids = sorted(qid for qid in highlight_ids if qid in public_ids)
     report = {
         "scope": "public English questions (verified records only)",
         "sourcePdf": PDF.name,
         "questionsAudited": summary["questions"],
         "verifiedQuestions": summary["verifiedQuestions"],
         "quarantinedQuestions": summary["quarantinedQuestions"],
-        "visualQuestions": len(visual_ids),
+        "visualQuestions": len(public_visual_ids),
         "visualDescriptors": summary["visualDescriptors"],
-        "highlightedQuestions": len(highlight_ids),
+        "highlightedQuestions": len(public_highlight_ids),
         "highlightTargets": summary["highlightTargets"],
         "unresolvedVisualQuestions": [],
         "checks": {
@@ -115,7 +116,7 @@ def write_report(summary: dict, media_index: dict[str, list[dict]], highlight_id
             "allEditorialHighlightsHaveSourceEvidence": True,
             "noUnresolvedVisualQuestionsPublished": True,
         },
-        "visualQuestionIds": visual_ids,
+        "visualQuestionIds": public_visual_ids,
     }
     REPORT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     REPORT_MD.write_text(
@@ -161,9 +162,10 @@ def main() -> None:
         raise AssertionError(f"PDF não encontrado: {PDF}")
     records = load_data()
     media_index = load_media()
+    all_ids = {record["id"] for record in records}
     public_ids = {record["id"] for record in records if record.get("quality", {}).get("status") == "verified"}
     expected_media_ids = expected_visual_question_ids()
-    assert expected_media_ids <= public_ids, sorted(expected_media_ids - public_ids)
+    assert expected_media_ids <= all_ids, sorted(expected_media_ids - all_ids)
     assert set(media_index) == expected_media_ids, {
         "missing": sorted(expected_media_ids - set(media_index)),
         "unexpected": sorted(set(media_index) - expected_media_ids),
@@ -222,7 +224,9 @@ def main() -> None:
         assert 2 <= record["provenance"]["questionPage"] <= 189
         assert topic_ranges[subject_id][0] <= record["provenance"]["questionPage"] <= topic_ranges[subject_id][1], record["id"]
         assert 190 <= record["provenance"]["answerPage"] <= 196
-        if subject_id == "english_translations":
+        is_jfs = record.get("examMetadata", {}).get("board") == "JFS"
+        is_translation = subject_id == "english_translations"
+        if is_jfs or is_translation:
             assert record["quality"]["status"] == "quarantined", record["id"]
             assert any("Publicação isolada" in warning for warning in record["quality"]["warnings"]), record["id"]
         else:
@@ -298,7 +302,7 @@ def main() -> None:
         "highlightTargets": highlight_targets,
         "metadata": metadata_counts,
     }
-    write_report(summary, media_index, highlight_ids)
+    write_report(summary, media_index, highlight_ids, public_ids)
     print(json.dumps(summary, ensure_ascii=False))
 
 
