@@ -249,7 +249,14 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         
         {/* Left Column: Subjects Tree (5 cols) */}
-        <div className="question-filter-card question-filter-subjects md:col-span-6 overflow-hidden rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70">
+        <div className="question-filter-card question-filter-subjects relative md:col-span-6 overflow-hidden rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70">
+          <div className="vanguard-node-header" aria-hidden="true">
+            <span className="vanguard-node-tag">NODE // 01</span>
+            <span className="vanguard-node-status">MATÉRIA & ASSUNTOS</span>
+          </div>
+          <span className="vanguard-node-port vanguard-node-port--circle" aria-hidden="true" />
+          <span className="vanguard-node-port vanguard-node-port--square" aria-hidden="true" />
+          <span className="vanguard-node-wire" aria-hidden="true" />
           {([
             { id: 'pt' as const, label: 'Português', count: languageCounts.pt },
             { id: 'en' as const, label: 'Inglês', count: languageCounts.en },
@@ -347,7 +354,13 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
           
           {/* Banca / Instituição (Inglês) */}
           {isEnglishFilter(filterState.languageFilter) && availableBoards.length > 0 && (
-            <div className="question-filter-card question-filter-board-card space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
+            <div className="question-filter-card question-filter-board-card relative space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
+              <div className="vanguard-node-header" aria-hidden="true">
+                <span className="vanguard-node-tag">NODE // 02-B</span>
+                <span className="vanguard-node-status">BANCA EXAMINADORA</span>
+              </div>
+              <span className="vanguard-node-port vanguard-node-port--circle" aria-hidden="true" />
+              <span className="vanguard-node-port vanguard-node-port--square" aria-hidden="true" />
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 text-xs font-mono text-[#e8a87c] font-bold">
                   <Landmark className="w-3.5 h-3.5" />
@@ -424,13 +437,20 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
           )}
 
           {/* Status de Resolução */}
-          <div className="question-filter-card question-filter-status-card space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
+          <div className="question-filter-card question-filter-status-card relative space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
+            <div className="vanguard-node-header" aria-hidden="true">
+              <span className="vanguard-node-tag">NODE // 02</span>
+              <span className="vanguard-node-status">STATUS DE RESOLUÇÃO</span>
+            </div>
+            <span className="vanguard-node-port vanguard-node-port--circle" aria-hidden="true" />
+            <span className="vanguard-node-port vanguard-node-port--square" aria-hidden="true" />
+            <span className="vanguard-node-wire" aria-hidden="true" />
             <div className="flex items-center space-x-2 text-xs font-mono text-[#e8a87c] font-bold">
               <Filter className="w-3.5 h-3.5" />
               <span>Status das Questões</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-2">
+            <div className="question-filter-status-grid grid grid-cols-2 gap-2">
               {[
                 { id: 'all', label: 'Todas as Questões' },
                 { id: 'pending', label: 'Pendentes' },
@@ -456,13 +476,19 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
           </div>
 
           {/* Opção de Criar Simulado Rápido */}
-          <div className="question-filter-card question-filter-quantity-card space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
+          <div className="question-filter-card question-filter-quantity-card relative space-y-3 rounded-2xl border border-[#343c46]/80 bg-[#181b20]/70 p-5">
+            <div className="vanguard-node-header" aria-hidden="true">
+              <span className="vanguard-node-tag">NODE // 03</span>
+              <span className="vanguard-node-status">DIMENSIONAMENTO</span>
+            </div>
+            <span className="vanguard-node-port vanguard-node-port--circle" aria-hidden="true" />
+            <span className="vanguard-node-port vanguard-node-port--square" aria-hidden="true" />
             <div className="flex items-center space-x-2 text-xs font-mono text-[#e8a87c] font-bold">
               <ListPlus className="w-3.5 h-3.5" />
               <span>Quantidade para Simulado Rápido</span>
             </div>
 
-            <div className="grid grid-cols-4 gap-2">
+            <div className="question-filter-quantity-grid grid grid-cols-4 gap-2">
               {[10, 20, 30, 0].map(qty => (
                 <button
                   key={qty}
@@ -488,8 +514,14 @@ export const QuestionBankFilterView: React.FC<QuestionBankFilterViewProps> = ({
       {/* Final page actions: normal document flow, visible only at the end of the filters. */}
       <section
         aria-label="Ações do Banco de Questões"
-        className="question-filter-card question-filter-actions flex w-full flex-col gap-3 rounded-2xl border border-[#3d4652] bg-[#181b20] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5"
+        className="question-filter-card question-filter-actions relative flex w-full flex-col gap-3 rounded-2xl border border-[#3d4652] bg-[#181b20] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5"
       >
+        <div className="vanguard-node-header vanguard-node-header--action" aria-hidden="true">
+          <span className="vanguard-node-tag">OUTPUT BUS // EXECUTE</span>
+          <span className="vanguard-node-status">{matchingQuestions.length} QUESTÕES CONECTADAS</span>
+        </div>
+        <span className="vanguard-node-port vanguard-node-port--circle" aria-hidden="true" />
+        <span className="vanguard-node-port vanguard-node-port--square" aria-hidden="true" />
         {/* Left Actions */}
         <div className="flex w-full items-center sm:w-auto">
           <button

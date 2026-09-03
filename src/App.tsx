@@ -1,5 +1,6 @@
 import { lazy, Suspense, useLayoutEffect, useState } from 'react';
 import { Header, type MainNavTab } from './components/Header';
+import { Sidebar } from './components/Sidebar';
 import { HomeView } from './components/HomeView';
 import { loadUserSettings, recordVerbAttempt } from './utils/srsEngine';
 import type { UserSettings } from './utils/srsEngine';
@@ -12,11 +13,33 @@ export function App() {
   const [activeTab, setActiveTab] = useState<MainNavTab>('home');
   const [selectedVerbId, setSelectedVerbId] = useState<string>('por');
   const [settings, setSettings] = useState<UserSettings>(loadUserSettings());
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('conjuletter_sidebar_collapsed') === 'true';
+    } catch {
+      return false;
+    }
+  });
+
+  const handleToggleSidebar = () => {
+    setIsSidebarCollapsed(prev => {
+      const next = !prev;
+      try {
+        localStorage.setItem('conjuletter_sidebar_collapsed', String(next));
+      } catch {
+        // no-op
+      }
+      return next;
+    });
+  };
+
+  const isVanguard = (settings.theme as string).startsWith('vanguard');
 
   useLayoutEffect(() => {
     const theme = settings.theme;
     document.documentElement.dataset.theme = theme;
-    document.documentElement.style.colorScheme = theme === 'light' || theme === 'alexandria-light' ? 'light' : 'dark';
+    document.documentElement.style.colorScheme =
+      theme === 'light' || theme === 'alexandria-light' ? 'light' : 'dark';
   }, [settings.theme]);
 
   const handleRecordAttempt = (verbId: string, mood: any, tense: any, isCorrect: boolean) => {
@@ -24,17 +47,36 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--theme-bg)] text-[var(--theme-text)] flex flex-col selection:bg-[var(--theme-accent-soft)] selection:text-[var(--theme-text)]">
-      {/* Top Navbar with Invisible Background & Static/Relative Position */}
-      <Header
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        onOpenQuestionLists={() => setActiveTab('listas')}
-        onQuickSelectVerb={(verbId) => {
-          setSelectedVerbId(verbId);
-          setActiveTab('tabelas');
-        }}
-      />
+    <div className={`min-h-screen bg-[var(--theme-bg)] text-[var(--theme-text)] flex flex-col selection:bg-[var(--theme-accent-soft)] selection:text-[var(--theme-text)] ${
+      isVanguard ? (isSidebarCollapsed ? 'md:pl-16' : 'md:pl-60') : ''
+    } transition-[padding] duration-250`}>
+      {/* Top Navbar with Invisible Background & Static/Relative Position for classic themes */}
+      {!isVanguard && (
+        <Header
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          onOpenQuestionLists={() => setActiveTab('listas')}
+          onQuickSelectVerb={(verbId) => {
+            setSelectedVerbId(verbId);
+            setActiveTab('tabelas');
+          }}
+        />
+      )}
+
+      {/* Retractable Sidebar for Vanguard theme */}
+      {isVanguard && (
+        <Sidebar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          onOpenQuestionLists={() => setActiveTab('listas')}
+          onQuickSelectVerb={(verbId) => {
+            setSelectedVerbId(verbId);
+            setActiveTab('tabelas');
+          }}
+          isCollapsed={isSidebarCollapsed}
+          onToggleCollapse={handleToggleSidebar}
+        />
+      )}
 
       {/* Main Content Area */}
       <main className="flex-1 pb-16">

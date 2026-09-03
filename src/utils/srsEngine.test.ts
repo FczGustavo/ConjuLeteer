@@ -6,6 +6,14 @@ describe('configurações e SRS', () => {
     localStorage.setItem('conjuletter_settings_v1', JSON.stringify({theme:'alexandria'}));
     expect(loadUserSettings().theme).toBe('alexandria-dark');
   });
+  it('desabilita e migra tema Vanguard para tema padrão', () => {
+    localStorage.setItem('conjuletter_settings_v1', JSON.stringify({ theme: 'vanguard' }));
+    expect(loadUserSettings().theme).toBe('dark');
+    localStorage.setItem('conjuletter_settings_v1', JSON.stringify({ theme: 'vanguard-dark' }));
+    expect(loadUserSettings().theme).toBe('dark');
+    localStorage.setItem('conjuletter_settings_v1', JSON.stringify({ theme: 'vanguard-light' }));
+    expect(loadUserSettings().theme).toBe('dark');
+  });
   it('recupera JSON corrompido', () => {
     localStorage.setItem('conjuletter_settings_v1', '{');
     expect(loadUserSettings().theme).toBe('dark');

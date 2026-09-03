@@ -612,7 +612,30 @@ Depois de cada rodada de mudancas:
 - **Metadados e Gabaritos:**
   - Padronização canônica das bancas (`EsPCEx`, `EFOMM`, `EEAr`, `PUC-Rio`, `PUC-PR`, `PUC-SP`, `PUC-RS`, `PUC-MG`, `PUCCAMP`, `UFSCar`, `UECE`, etc.).
   - Validação de 100% dos gabaritos oficiais contra as páginas 190–196 do PDF (0 divergências nas 1.500 questões).
-- **Validações:** `npm run check` aprovado (oxlint 0 avisos/erros, vitest 24/24 testes, 163 verbos auditados, 531 questões de Português e 1.500 questões de Inglês auditadas, build Vite aprovado em 763 ms).
+### 2026-09-03 - rodada 56: família de temas Vanguard e reformulação do Banco de Questões
+
+- **Arquitetura de Navegação Lateral Retrátil (`Sidebar.tsx`):**
+  - Criado o componente de sidebar retrátil para o tema Vanguard, substituindo a homebar superior.
+  - No Desktop: estado colapsado (rail de 64px com monograma `CL`, ícones centralizados e tooltips) e expandido (240px com marca `ConjuLetter VANGUARD`, links de navegação, sub-menu expansível para *Filtros & Montagem* e *Listas Salvas*, atalho `Ctrl+K` para busca rápida de verbos e link de Configurações).
+  - Persistência do estado colapsado/expandido em `localStorage`.
+  - No Mobile: barra compacta exclusiva com acionamento de drawer deslizante (slide-over) com fundo translúcido.
+  - `src/App.tsx`: alterna dinamicamente entre `<Header />` (temas Original e Alexandria, 100% preservados como backup) e `<Sidebar />` (Vanguard), ajustando o recuo de conteúdo via padding responsivo.
+- **Família de Temas Vanguard (`vanguard-dark` e `vanguard-light`):**
+  - `src/utils/srsEngine.ts` e `srsEngine.test.ts`: `ThemeId` e `normalizeTheme` atualizados com testes unitários.
+  - `src/components/SettingsView.tsx`: adicionadas opções de Vanguard escuro e claro com swatches temáticos e `colorScheme` correspondente.
+  - `src/index.css`: adicionados tokens de cor (Slate/Carbon `#0c0e12` no escuro e Zinc/Off-white `#f8fafc` no claro, linhas nítidas de 1px e cobalto `#3b82f6` / `#2563eb`).
+- **Reformulação Visual do Banco de Questões (Eliminação dos "balões soltos"):**
+  - Eliminação completa de botões em cápsula/pílula e de sombras difusas flutuantes em `data-theme^='vanguard'`.
+  - Layout plano e técnico: bordas de 1px (`border: 1px solid var(--theme-border)`), raios de curvatura curtos (`4px` a `6px`) e superfícies chapadas.
+  - Assuntos organizados em linhas tabulares com divisores sutis e badges numéricos monospace (`[ 81Q ]`).
+  - Filtros de *Status das Questões* e *Quantidade para Simulado Rápido* reestruturados como controles segmentados conectados (*segmented button groups*).
+- **Validações e Verificações:**
+  - `npm run test`: 12/12 arquivos aprovados (52 testes).
+  - `npm run lint`: 0 erros, 0 avisos.
+  - `npm run audit:verbs`: 163 verbos e 11 paradigmas aprovados.
+  - `npm run audit:questions`: 531 questões e 7 PDFs íntegros.
+  - `npm run build`: aprovado (1.05s, zero erros TypeScript).
+  - Navegador: testados Vanguard escuro e claro, retração/expansão da sidebar e visual plano sem balões soltos.
 
 ## 9. Pendencias e melhorias futuras
 
