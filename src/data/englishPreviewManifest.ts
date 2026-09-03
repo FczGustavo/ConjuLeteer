@@ -6,7 +6,7 @@ export const ENGLISH_PREVIEW_MANIFEST = {
   "totalPages": 394,
   "expectedQuestions": 2270,
   "detectedQuestions": 2270,
-  "publishedQuestions": 2163,
+  "publishedQuestions": 2166,
   "expectedAnswerBlocks": 40,
   "editorialTotals": {
     "declared": {
@@ -63,9 +63,9 @@ export const ENGLISH_PREVIEW_MANIFEST = {
       ],
       "complete": true,
       "extracted": 84,
-      "verified": 83,
+      "verified": 84,
       "warning": 0,
-      "quarantined": 1,
+      "quarantined": 0,
       "rejected": 0,
       "duplicates": 0
     },
@@ -345,9 +345,9 @@ export const ENGLISH_PREVIEW_MANIFEST = {
       ],
       "complete": true,
       "extracted": 67,
-      "verified": 66,
+      "verified": 67,
       "warning": 0,
-      "quarantined": 1,
+      "quarantined": 0,
       "rejected": 0,
       "duplicates": 0
     },
@@ -445,9 +445,9 @@ export const ENGLISH_PREVIEW_MANIFEST = {
       ],
       "complete": true,
       "extracted": 35,
-      "verified": 34,
+      "verified": 35,
       "warning": 0,
-      "quarantined": 1,
+      "quarantined": 0,
       "rejected": 0,
       "duplicates": 0
     },
@@ -2025,12 +2025,12 @@ export const ENGLISH_PREVIEW_MANIFEST = {
     "394": "native-text"
   },
   "questionCountDetected": 2270,
-  "verifiedCount": 2126,
-  "quarantinedCount": 48,
+  "verifiedCount": 2129,
+  "quarantinedCount": 45,
   "rejectedCount": 59,
   "authorialRemovedCount": 59,
   "coverage": 1.0,
-  "extractedMediaCount": 62,
+  "extractedMediaCount": 64,
   "visualAudit": [
     {
       "questionId": "ep-029a154daaf7-preview_reading-q20",
@@ -2040,7 +2040,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading-q20-p15-0-3d36a31a01ccb25f.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading-q21",
@@ -2050,7 +2051,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading-q21-p15-1-b4581a4b424b2dac.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading-q30",
@@ -2060,17 +2062,19 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading-q30-p17-0-fb6e1c556fd761d8.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_epcar-q83",
       "questionPage": 34,
-      "status": "quarantined",
-      "assetIds": [],
-      "warnings": [
-        "A questão solicita um elemento visual ausente no PDF; recorte oficial necessário."
+      "status": "verified",
+      "assetIds": [
+        "english-preview/ep-029a154daaf7-preview_reading_epcar-q83-external-epcar-2022.webp"
       ],
-      "officialSourceRecovered": false
+      "warnings": [],
+      "officialSourceRecovered": true,
+      "source": "https://raesidecartoon.com/vault/global-warming-climate-change/"
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eam-q1",
@@ -2080,7 +2084,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eam-q1-p36-0-7f427b7b1836f151.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_essa-q3",
@@ -2090,7 +2095,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_essa-q3-p40-0-023e73b9e30ea142.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_essa-q8",
@@ -2100,7 +2106,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_essa-q8-p41-0-2a582e39ada3b3eb.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q1",
@@ -2110,7 +2117,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q1-p43-0-31e581b6aad594da.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q2",
@@ -2120,7 +2128,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q2-p43-1-3cdb991ab17ff57a.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q4",
@@ -2130,7 +2139,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q4-p43-2-977c26552e6b3e65.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q32",
@@ -2140,7 +2150,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q32-p46-0-5359d6751ffb210f.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q35",
@@ -2150,7 +2161,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q35-p47-0-044aa83ec8b21ee9.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q37",
@@ -2160,7 +2172,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q37-p47-1-3649b655e93cf5a5.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q49",
@@ -2170,7 +2183,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q49-p49-0-e1376fae1d6cb3f4.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q54",
@@ -2180,7 +2194,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q54-p49-1-74b5a4f9ebf02cd3.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q55",
@@ -2190,7 +2205,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q55-p49-1-74b5a4f9ebf02cd3.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q62",
@@ -2200,7 +2216,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q62-p50-1-443c2b695927c90d.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q69",
@@ -2210,7 +2227,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q69-p51-1-9b4d58da89f960f5.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q100",
@@ -2220,7 +2238,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q100-p57-0-16b940853794c10f.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear-q104",
@@ -2230,7 +2249,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear-q104-p58-0-0bc1daf2ae1c0a9f.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q7",
@@ -2240,7 +2260,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q7-p63-0-140ceeab1b089bee.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q30",
@@ -2250,7 +2271,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q30-p66-0-c46bae8ae508597c.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q34",
@@ -2260,7 +2282,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q34-p66-1-34210db91a32ee33.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q35",
@@ -2270,7 +2293,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q35-p66-2-8a7e0b5c9600e567.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q38",
@@ -2280,7 +2304,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q38-p67-0-4f680a98431596a6.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q50",
@@ -2290,7 +2315,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q50-p69-0-8899cd8a1cd3c15e.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q56",
@@ -2300,7 +2326,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q56-p69-1-6010635e190904cb.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q178",
@@ -2310,7 +2337,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q178-p89-0-980c9071d5d6a04b.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_eear_bct-q179",
@@ -2320,7 +2348,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_eear_bct-q179-p89-1-f7484162057b4832.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_efomm-q34",
@@ -2330,7 +2359,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_efomm-q34-p142-0-156f4f15f510f737.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q19",
@@ -2340,7 +2370,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q19-p178-0-b9781649fb47ec8d.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q20",
@@ -2350,7 +2381,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q20-p178-0-b9781649fb47ec8d.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q21",
@@ -2360,7 +2392,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q21-p178-0-b9781649fb47ec8d.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q22",
@@ -2370,7 +2403,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q22-p178-0-b9781649fb47ec8d.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q29",
@@ -2380,7 +2414,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q29-p179-0-df9c9003f45b2602.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q57",
@@ -2390,7 +2425,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q57-p184-0-13b63b058ad23f6f.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q62",
@@ -2400,7 +2436,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q62-p186-0-dc2998def7200c30.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q63",
@@ -2410,7 +2447,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q63-p186-0-dc2998def7200c30.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reading_ita-q101",
@@ -2420,7 +2458,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reading_ita-q101-p195-0-c56dc2da117ac93c.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_adjectives-q8",
@@ -2430,7 +2469,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_adjectives-q8-p222-0-1bdb9ea2e18689e8.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_adjectives-q21",
@@ -2440,7 +2480,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_adjectives-q21-p223-0-ffe5ac878f273e7b.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_adjectives-q22",
@@ -2450,17 +2491,19 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_adjectives-q22-p223-1-ba4e8d3e12bd3e13.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_adjectives-q25",
       "questionPage": 223,
-      "status": "quarantined",
-      "assetIds": [],
-      "warnings": [
-        "Há mais de um recorte visual possível na página; atribuição ambígua."
+      "status": "verified",
+      "assetIds": [
+        "english-preview/ep-029a154daaf7-preview_adjectives-q25-external-eear-2022.webp"
       ],
-      "officialSourceRecovered": false
+      "warnings": [],
+      "officialSourceRecovered": true,
+      "source": "https://www.grammarly.com/blog/10-interesting-english-facts-guest/"
     },
     {
       "questionId": "ep-029a154daaf7-preview_adjectives-q26",
@@ -2470,7 +2513,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_adjectives-q26-p223-2-3193f10e69ffa1e3.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_pronouns_personal-q3",
@@ -2480,7 +2524,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_pronouns_personal-q3-p234-0-eacb98ce5a3a8d81.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_pronouns_personal-q5",
@@ -2490,7 +2535,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_pronouns_personal-q5-p234-1-ebfa679a7ebde65d.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_pronouns_demonstrative-q18",
@@ -2500,7 +2546,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_pronouns_demonstrative-q18-p270-0-72a69dfcd327a4f6.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_verbs-q11",
@@ -2510,7 +2557,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_verbs-q11-p280-0-3b3c520093f4230b.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_verbs-q30",
@@ -2520,7 +2568,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_verbs-q30-p282-0-7646837965bf6aaf.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_verbs-q75",
@@ -2530,7 +2579,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_verbs-q75-p286-0-36f9e9d67a7ee671.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_verbs-q80",
@@ -2540,7 +2590,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_verbs-q80-p286-1-8b8c6e7ae0d6b295.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_verbs-q87",
@@ -2550,7 +2601,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_verbs-q87-p287-0-5c763a0b4abf5ffb.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_verbs-q111",
@@ -2560,7 +2612,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_verbs-q111-p290-0-36744bbc9c1fbcdd.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_verbs-q113",
@@ -2570,7 +2623,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_verbs-q113-p290-1-f08cc780d107ea36.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_conjunctions-q12",
@@ -2580,7 +2634,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_conjunctions-q12-p306-0-26d6439fb393a1e9.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_modal_verbs-q20",
@@ -2590,7 +2645,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_modal_verbs-q20-p323-1-fdd42e10e57f7dde.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_modal_verbs-q23",
@@ -2600,7 +2656,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_modal_verbs-q23-p324-0-54c2057e8a0f94fe.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_phrasal_verbs-q13",
@@ -2610,7 +2667,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_phrasal_verbs-q13-p329-1-4fc40039318e8ee3.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_question_tags-q9",
@@ -2620,7 +2678,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_question_tags-q9-p346-1-747ff1b463b37261.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_reported_speech-q6",
@@ -2630,7 +2689,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_reported_speech-q6-p350-0-9e7d19a77ba8ca6e.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_grammar_classes-q22",
@@ -2640,7 +2700,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_grammar_classes-q22-p381-0-495d5a04205c1eb7.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_grammar_classes-q28",
@@ -2650,7 +2711,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_grammar_classes-q28-p382-0-1399b46bd77930db.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_grammar_classes-q91",
@@ -2660,7 +2722,8 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_grammar_classes-q91-p390-1-81287c84d46562f4.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     },
     {
       "questionId": "ep-029a154daaf7-preview_grammar_classes-q92",
@@ -2670,13 +2733,14 @@ export const ENGLISH_PREVIEW_MANIFEST = {
         "english-preview/ep-029a154daaf7-preview_grammar_classes-q92-p390-1-81287c84d46562f4.webp"
       ],
       "warnings": [],
-      "officialSourceRecovered": false
+      "officialSourceRecovered": false,
+      "source": null
     }
   ],
   "quality": {
-    "verified": 2126,
+    "verified": 2129,
     "warning": 37,
-    "quarantined": 48,
+    "quarantined": 45,
     "rejected": 59
   }
 } as const;

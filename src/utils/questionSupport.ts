@@ -103,7 +103,15 @@ function normalizeSupportSourceFragments(support: QuestionBankSupport | undefine
   if (!support || !support.source?.trim() || !support.paragraphs.length) return support;
 
   let paragraphs = [...support.paragraphs];
-  let source = support.source.trim();
+  let source = support.source.trim()
+    // Correct an unambiguous OCR typo found in the EPCAR 2014 source line.
+    // The article is still available at UsingEnglish; keep the correction
+    // local to the rendered citation instead of replacing the PDF evidence.
+    .replace(
+      /htto:\/\/www\.usinaenalish\.com\/articles\/what-\s*offshore-enalish\.html/iu,
+      'https://www.usingenglish.com/articles/what-offshore-english.html',
+    )
+    .replace(/https:\/\/www\.science\.org\.au\/curious\/space-\s*time\//iu, 'https://www.science.org.au/curious/space-time/');
   const normalizeForCompare = (value: string) => stripSupportMarkup(value).replace(/\s+/g, ' ').trim().toLocaleLowerCase();
 
   while (paragraphs.length > 0 && isSourceFragment(paragraphs[paragraphs.length - 1])) {
@@ -117,6 +125,20 @@ function normalizeSupportSourceFragments(support: QuestionBankSupport | undefine
     source = sourceStartsWithAccess(fragment)
       ? `${source} ${fragment}`
       : `${fragment} ${source}`;
+  }
+
+  // Imported exam booklets frequently append a glossary immediately after
+  // the citation on the same physical line.  A glossary is support content,
+  // not source metadata; keep it in the prose column so the source footer is
+  // visually and semantically separated.
+  const glossaryMatch = source.match(/\s+Glossary\s*:\s*/iu);
+  if (glossaryMatch?.index !== undefined) {
+    const citation = source.slice(0, glossaryMatch.index).trim();
+    const glossary = source.slice(glossaryMatch.index).trim();
+    if (citation && glossary) {
+      source = citation;
+      paragraphs = [...paragraphs, glossary];
+    }
   }
 
   return { ...support, paragraphs, source };
@@ -332,8 +354,9 @@ function normalizeStructuredSupport(support: QuestionBankSupport | undefined): Q
   const cleanParagraphs = cleanSupportParagraphs((Array.isArray(support.paragraphs) ? support.paragraphs : [])
     .filter((paragraph): paragraph is string => typeof paragraph === 'string' && paragraph.trim().length > 0)
   );
+  const embedded = splitEmbeddedSupportBlocks(cleanParagraphs, support.title, support.author);
   const normalized: QuestionBankSupport = {
-    paragraphs: cleanParagraphs,
+    paragraphs: embedded.paragraphs,
   };
   const cleanMeta = (value?: string) => value ? stripSupportMarkup(value).replace(/\s+/g, ' ').trim() : '';
   const label = cleanMeta(support.label).replace(/^Texto\b/i, 'TEXTO');
@@ -341,12 +364,66 @@ function normalizeStructuredSupport(support: QuestionBankSupport | undefined): Q
   const author = cleanMeta(support.author);
   const source = cleanMeta(support.source);
   if (label) normalized.label = label;
-  if (title) normalized.title = title;
-  if (author) normalized.author = author;
+  if (title || embedded.title) normalized.title = title || embedded.title;
+  if (author || embedded.author) normalized.author = author || embedded.author;
   if (source) normalized.source = source;
   return normalized.label || normalized.title || normalized.author || normalized.source || normalized.paragraphs.length > 0
     ? normalized
     : undefined;
+}
+
+/**
+ * Recover headings and bylines that PDF extraction glued to the first prose
+ * sentence.  The patterns are deliberately conservative and only cover
+ * editorial forms observed in the two English source PDFs; ordinary prose is
+ * left untouched.
+ */
+function splitEmbeddedSupportBlocks(
+  paragraphs: string[],
+  existingTitle?: string,
+  existingAuthor?: string,
+): { paragraphs: string[]; title?: string; author?: string } {
+  let inferredTitle = existingTitle?.trim() || '';
+  let inferredAuthor = existingAuthor?.trim() || '';
+  const output: string[] = [];
+  for (const paragraph of paragraphs) {
+    let value = paragraph.trim();
+
+    // A short, title-cased heading followed immediately by a sentence.  The
+    // heading is rendered as a bold paragraph when a top-level title already
+    // exists; otherwise it is promoted by the caller's title field.
+    const headingMatch = value.match(/^(Benefits of meditation|Opening Ceremony|The search for extraterrestrial intelligence)\s+(?=[A-Z][a-z])/i);
+    if (headingMatch) {
+      const heading = headingMatch[1].trim();
+      value = value.slice(headingMatch[0].length).trim();
+      if (existingTitle?.trim()) output.push(`**${heading}**`);
+      else inferredTitle = heading;
+    }
+
+    // Preserve article bylines as metadata instead of leaving them in the
+    // body (e.g. ``By Mayo Clinic Staff If stress...``).
+    const bylineMatch = value.match(/^(By\s+[A-Z][\p{L}.'’ -]{2,70}|[A-Z][\p{L}.'’ -]{1,45},\s*[A-Z][A-Z .'-]{2,45})\s+(?=[A-Z])/u);
+    if (bylineMatch && !inferredAuthor) {
+      inferredAuthor = bylineMatch[1].replace(/\s+/g, ' ').trim();
+      value = value.slice(bylineMatch[0].length).trim();
+    }
+
+    // A fully-capitalized headline plus an all-caps byline is another common
+    // two-column extraction artifact in the ITA material.
+    const allCapsMatch = value.match(/^([A-Z][A-Z0-9'’ -]{8,90})\s+([A-Z][\p{L}.'’ -]{1,45},\s*[A-Z][A-Z .'-]{2,45})\s+(?=[A-Z])/u);
+    if (allCapsMatch) {
+      output.push(`**${allCapsMatch[1].trim()}**`);
+      if (!inferredAuthor) inferredAuthor = allCapsMatch[2].replace(/\s+/g, ' ').trim();
+      value = value.slice(allCapsMatch[0].length).trim();
+    }
+
+    if (value) output.push(value);
+  }
+  return {
+    paragraphs: output,
+    title: inferredTitle || undefined,
+    author: inferredAuthor || undefined,
+  };
 }
 
 /**

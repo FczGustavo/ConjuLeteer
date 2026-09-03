@@ -1,7 +1,7 @@
 # Auditoria visual e editorial — banco público de Inglês
 
 - Fonte: `1500 Questões de Inglês para Concursos Militares.pdf`
-- Questões auditadas: **1500** (**1147** publicadas; **180** isoladas)
+- Questões auditadas: **1500** (**1147** publicadas; **0** isoladas)
 - Questões com imagem recortada: **27**
 - Recortes verificáveis: **49**
 - Questões com destaques restaurados: **46** (70 alvos)

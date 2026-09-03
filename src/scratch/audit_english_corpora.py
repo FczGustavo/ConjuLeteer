@@ -24,6 +24,8 @@ PUBLIC_TS = ROOT / "src" / "data" / "englishQuestionBank.ts"
 PREVIEW_DIR = ROOT / "src" / "data" / "englishPreview"
 PREVIEW_MANIFEST_TS = ROOT / "src" / "data" / "englishPreviewManifest.ts"
 PUBLIC_PDF = Path(r"C:\Users\gusta\Downloads\1500 Questões de Inglês para Concursos Militares.pdf")
+if not PUBLIC_PDF.exists():
+    PUBLIC_PDF = ROOT / "lists" / "1500 Questões de Inglês para Concursos Militares.pdf"
 PREVIEW_PDF = ROOT / "lists" / "Apostila de Inglês (CN, EPCAR, EAM, EsSA, EEAR, EsPCEx, AFA, EFOMM, EN e ITA) - Atualizada.pdf"
 PUBLIC_REPORT = ROOT / "reports" / "english-public-visual-audit.json"
 PUBLIC_MEDIA_TS = ROOT / "src" / "data" / "englishQuestionMedia.ts"
@@ -59,6 +61,7 @@ REDUNDANT_SUPPORT_RE = re.compile(
     re.I,
 )
 SUPPORT_ARTIFACT_RE = re.compile(r"^\s*(?:put\s*)?\d{1,3}\s*$", re.I)
+SUPPORT_LIST_TITLE_RE = re.compile(r"^\s*(?:[IVXLCDM]+|[A-E]|\d{1,3})\s*[-–—.)]\s+", re.I)
 
 
 def parse_json_parse(path: Path) -> list[dict[str, Any]]:
@@ -187,6 +190,8 @@ def audit_records(
                 malformed_support.append(qid)
             if any(SUPPORT_ARTIFACT_RE.fullmatch(p) or p in {"<", ">"} for p in paragraphs):
                 malformed_support.append(qid)
+            if SUPPORT_LIST_TITLE_RE.match(str(support.get("title", ""))):
+                malformed_support.append(qid)
             # A source belongs to the support footer, never to the prose body.
             if any(re.search(r"(?:^|\s)(?:https?://|www\.)", p, re.I) for p in paragraphs):
                 warnings.append(f"{corpus}/{qid}: URL mantida no corpo; revisar separação da fonte.")
@@ -307,8 +312,8 @@ def main() -> None:
         issues.append(f"english_public: esperado 1500 posições, encontrado {len(public)}.")
     if len(preview) != 2270:
         issues.append(f"english_preview: esperado 2270 posições, encontrado {len(preview)}.")
-    if prev_summary["studyable"] != 2163:
-        issues.append(f"english_preview: esperado 2163 itens estudáveis, encontrado {prev_summary['studyable']}.")
+    if prev_summary["studyable"] != 2166:
+        issues.append(f"english_preview: esperado 2166 itens estudáveis, encontrado {prev_summary['studyable']}.")
     if pub_summary["studyable"] != 1147:
         issues.append(f"english_public: esperado 1147 itens estudáveis, encontrado {pub_summary['studyable']}.")
 
@@ -355,6 +360,11 @@ def main() -> None:
         "allCropFilesPresent": not prev_media_issues,
         "onlySemanticReferencesPublished": True,
     }
+    if preview_visual_quality["unresolved"]:
+        issues.append(
+            "english_preview: referências visuais sem recorte após revisão web: "
+            + ", ".join(str(item) for item in preview_visual_quality["unresolved"])
+        )
     public_visual_quality = {
         "referencesAudited": int(visual_report.get("visualQuestions", 0)) if PUBLIC_REPORT.exists() else 0,
         "withCrop": int(visual_report.get("visualQuestions", 0)) if PUBLIC_REPORT.exists() else 0,

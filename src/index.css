@@ -163,6 +163,16 @@
   }
 }
 
+/* Exam prose is intentionally justified in both the public and Preview
+   corpora.  The marker is attached by FormattedExamText so support passages,
+   statements and alternatives share the same editorial rhythm without
+   affecting metadata, controls or action buttons. */
+.question-readable-text,
+.question-readable-text > p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 @layer components {
   .site-header {
     background: linear-gradient(180deg, rgba(18, 20, 23, 0.96), rgba(18, 20, 23, 0.78) 78%, transparent);

@@ -130,6 +130,10 @@ OCR_TYPOS = [
     (r"€€€100", "100"),
     (r"€€€", ""),
     (r"\bTsnunami\b", "Tsunami"),
+    (r"\bBrazii\b", "Brazil"),
+    # A malformed opening quote in the source text layer is rendered as a
+    # closing curly apostrophe; restore the editorial headline punctuation.
+    (r"\bmedia\s+’destroying\b", "media 'destroying"),
 ]
 
 HEADER_PATTERNS = [
@@ -142,7 +146,7 @@ HEADER_PATTERNS = [
 ]
 
 SOURCE_RE = re.compile(
-    r"(?:^\s*\(?(?:Source|Fonte|Adapted\s+from|Dispon[íi]vel|Available|http|www\.)|The\s+Economist|The\s+Actuary|BBC|Reuters|\b(?:19|20)\d{2}\b\s*\)?$)",
+    r"(?:^\s*\(?(?:(?:Source|Fonte)\s*:|Adapted\s+from|Fragment\s+taken\s+from|Dispon[íi]vel|Available|http|www\.)|The\s+Economist|The\s+Actuary|BBC|Reuters|\b(?:19|20)\d{2}\b\s*\)?$)",
     re.I,
 )
 
@@ -152,6 +156,11 @@ EXTRACT_MARKER_RE = re.compile(r"^\s*\[\s*(?:EXTRACT|TEXTO?|PART)\s+\d+\s*\]\s*"
 # (``put 51``) immediately after the last option.  It is not learner content
 # and must not become a shared support passage for the following questions.
 PAGE_ARTIFACT_RE = re.compile(r"^\s*(?:put(?:\s+\d{1,3})?|\d{1,3})\s*$", re.I)
+# Roman-numeral/letter/number prefixes are statement or option markers, never
+# a learner-facing heading.  Keeping this check separate from the generic
+# title heuristic prevents a list such as ``I- ... II- ...`` from becoming a
+# faux support title when a shared passage is parsed.
+SUPPORT_LIST_ITEM_RE = re.compile(r"^\s*(?:[IVXLCDM]+|[A-E]|\d{1,3})\s*[-–—.)]\s+", re.I)
 
 RANGE_HEADER_RE = re.compile(
     r"Textos?\s+para\s+(?:a|as)?\s*quest(?:[õo]es|[ãa]o|oes)?\s*(\d+)(?:\s*(?:[–—e -]+)\s*(\d+))?",
@@ -164,20 +173,58 @@ def is_support_title_candidate(value: str) -> bool:
 
     PDF text extraction frequently emits the first sentence of a passage as a
     standalone line.  Treating every short line as a title produced cards with
-    duplicated/garbled headings.  A real heading in this corpus is short,
-    punctuation-free and starts like a heading; otherwise it remains part of
-    the passage body where no information is lost.
+    duplicated/garbled headings.  A real heading in this corpus is short and
+    starts like a heading; punctuation is allowed when a long body follows
+    (for example ``Shipping industry faces new risks, says Allianz.``).
     """
     text = value.strip()
     if not text or len(text) > 140 or len(text.split()) > 16:
         return False
-    if text[0] in {'"', "'", "“", "‘", "�", "-", "•"}:
+    if SUPPORT_LIST_ITEM_RE.match(text):
         return False
-    if re.search(r"[.!?;:,/]", text):
+    if text[0] in {'"', "'", "“", "‘", "�", "-", "•"}:
         return False
     if not re.match(r"^[A-ZÀ-ÖØ-Þ0-9]", text):
         return False
     return True
+
+
+def is_support_heading_line(lines: list[str]) -> bool:
+    """Return true only when the first line is a genuine passage heading.
+
+    Punctuation-free short headings are safe by themselves.  A punctuated
+    line is promoted only when the next line is clearly prose, which avoids
+    stealing one-sentence passages or Roman-numeral statement lists while
+    still preserving editorial headlines present in the PDF.
+    """
+    if not lines or not is_support_title_candidate(lines[0]):
+        return False
+    first = lines[0].strip()
+    if SUPPORT_LIST_ITEM_RE.match(first):
+        return False
+    following_lines = [line.strip() for line in lines[1:4] if line.strip()]
+    if not re.search(r"[.!?;:,/]", first):
+        # Even punctuation-free candidates can be wrapped prose.  A lowercase
+        # continuation is strong evidence that the first line is not a title.
+        return not (following_lines and following_lines[0][:1].islower())
+    # A trailing comma/colon is characteristic of a wrapped prose line (and
+    # of poetry such as ``When the sun rose this morning,``), not a headline.
+    if first.endswith((",", ";", ":", "/")):
+        return False
+    if len(lines) < 2:
+        return False
+    # A wrapped PDF line can be only 50–70 characters wide.  Inspect the
+    # first few physical lines as one prose sample rather than requiring the
+    # first line alone to reach the threshold.
+    following = " ".join(following_lines)
+    if following_lines and following_lines[0][:1].islower():
+        # A lowercase continuation (``the Highlands...`` / ``with the
+        # food...``) proves that the candidate is a wrapped sentence, not a
+        # standalone editorial heading.
+        return False
+    return len(following) >= max(80, len(first) * 1.4) and not any(
+        SUPPORT_LIST_ITEM_RE.match(line) for line in following_lines
+    )
 
 
 def extend_wrapped_support_title(title: str | None, lines: list[str]) -> str | None:
@@ -298,7 +345,7 @@ def parse_support_blocks_with_range(raw_text: str) -> dict[str, Any] | None:
         elif len(b_lines) > 2 and (SOURCE_RE.search(b_lines[-2]) and b_lines[-1].endswith(")")):
             source = b_lines.pop(-2) + " " + b_lines.pop(-1)
             
-        if b_lines and is_support_title_candidate(b_lines[0]) and not bool(SOURCE_RE.search(b_lines[0])):
+        if is_support_heading_line(b_lines) and not bool(SOURCE_RE.search(b_lines[0])):
             title = b_lines.pop(0)
             title = extend_wrapped_support_title(title, b_lines)
             
@@ -341,7 +388,7 @@ def parse_support_blocks_with_range(raw_text: str) -> dict[str, Any] | None:
             extract_source = None
             if len(b_lines) > 1 and (SOURCE_RE.search(b_lines[-1]) or (b_lines[-1].startswith("(") and b_lines[-1].endswith(")"))):
                 extract_source = b_lines.pop()
-            if b_lines and is_support_title_candidate(b_lines[0]):
+            if is_support_heading_line(b_lines):
                 extract_title = b_lines.pop(0)
                 extract_title = extend_wrapped_support_title(extract_title, b_lines)
             
@@ -440,11 +487,21 @@ def sanitize_support(support: dict[str, Any] | None) -> dict[str, Any] | None:
         if year_only:
             add_sources(value.strip("() "))
             continue
+        terminal_date = re.search(r"\s+(\d{1,2}[-/]\d{1,2}[-/]\d{2,4})\s*$", value)
+        if terminal_date and terminal_date.start() > 0:
+            # Publication dates can be concatenated to the final prose line
+            # before an ``Adapted from`` citation in the PDF text layer.
+            paragraphs.append(value[: terminal_date.start()].strip())
+            add_sources(terminal_date.group(1))
+            continue
+        if re.fullmatch(r"\(?\s*\d{1,2}[-/]\d{1,2}[-/]\d{2,4}\s*\)?", value):
+            add_sources(value.strip("() "))
+            continue
         if value and not REDUNDANT_SUPPORT_RE.fullmatch(value):
-            if re.match(r"^\s*[<]?\s*(?:Adapted\s+from|Source|Fonte|Available|Dispon[íi]vel|https?://|www\.)", value, re.I):
+            if re.match(r"^\s*[<]?\s*(?:Adapted\s+from|Fragment\s+taken\s+from|(?:Source|Fonte)\s*:|Available|Dispon[íi]vel|https?://|www\.)", value, re.I):
                 add_sources(value)
                 continue
-            embedded = re.search(r"\b(?:Adapted\s+from|Source|Fonte|Available|Dispon[íi]vel)\b|https?://|www\.", value, re.I)
+            embedded = re.search(r"\b(?:Adapted\s+from|Fragment\s+taken\s+from|(?:Source|Fonte)\s*:|Available|Dispon[íi]vel)\b|https?://|www\.", value, re.I)
             if embedded and embedded.start() > 0:
                 prefix = value[:embedded.start()].strip(" -–—()<>")
                 citation = value[embedded.start():].strip()
@@ -646,6 +703,30 @@ def remove_authorial_questions(records: list[dict[str, Any]]) -> int:
     return removed
 
 
+def apply_manual_record_fixes(records: list[dict[str, Any]]) -> None:
+    """Apply only documented, source-confirmed extraction repairs."""
+    for record in records:
+        fix = MANUAL_RECORD_FIXES.get(assignment_key(record))
+        if not fix:
+            continue
+        for field, value in fix.items():
+            record[field] = value
+        quality = record.setdefault("quality", {})
+        warnings = quality.setdefault("warnings", [])
+        note = "Enunciado recomposto a partir da camada textual da página de origem."
+        if note not in warnings:
+            warnings.append(note)
+        evidence = quality.setdefault("evidence", [])
+        if not any(item.get("field") == "statement" and item.get("method") == "manual-source-repair" for item in evidence):
+            evidence.append({
+                "field": "statement",
+                "page": record.get("provenance", {}).get("questionPage", 0),
+                "method": "manual-source-repair",
+            })
+        field_confidence = quality.setdefault("fieldConfidence", {})
+        field_confidence["statement"] = {"confidence": 0.99, "method": "manual-source-repair"}
+
+
 def clean_group_text(text: str, parser: Any, group: dict[str, Any]) -> str:
     value = text.replace("\r", "")
     value = clean_ocr(value)
@@ -677,11 +758,38 @@ def build_record(
     if not support_applies_to_question(support, number):
         support = None
 
+    inline_payload_appended = False
     statement_text, inline_support = parser.promote_inline_support(statement_text)
+    if not inline_support and not support:
+        statement_text, inline_support = split_inline_reading_payload(statement_text, parser)
     if inline_support:
-        cleaned_inline = parse_support_blocks_with_range("\n\n".join(inline_support.get("paragraphs", [])))
+        cleaned_inline = (
+            inline_support
+            if inline_support.get("_inlinePayload")
+            else parse_support_blocks_with_range("\n\n".join(inline_support.get("paragraphs", [])))
+        )
         if cleaned_inline:
-            support = cleaned_inline
+            if support and support_is_question_payload(cleaned_inline):
+                # I–IV/( ) statements are part of the question, not a second
+                # support card.  Preserve them in the prompt while retaining
+                # the validated shared passage (q6, q37 and similar layouts).
+                payload = "\n\n".join(
+                    str(part).strip()
+                    for part in (cleaned_inline.get("paragraphs") or [])
+                    if str(part).strip()
+                )
+                statement_text = "\n\n".join(part for part in (statement_text, payload) if part).strip()
+                inline_payload_appended = True
+            elif not support or not support_is_question_payload(cleaned_inline):
+                # A genuine question-specific reading excerpt supersedes a
+                # preceding shared passage (for example quoted lyrics).
+                support = cleaned_inline
+
+    if not inline_payload_appended:
+        split_statement, leading_support = split_leading_reading_payload(statement_text, parser)
+        if leading_support:
+            statement_text = split_statement
+            support = leading_support
 
     if group.get("kind") == "reading" and not support:
         paragraphs = parser.paragraphs_from_text(statement_text)
@@ -693,7 +801,10 @@ def build_record(
                 statement_text = "\n\n".join(paragraphs[instruction_index:]).strip()
 
     if support:
-        support, captured = parser.split_support_command(support)
+        if support_starts_with_prose_question_word(support):
+            captured = None
+        else:
+            support, captured = parser.split_support_command(support)
         if captured and parser.is_redundant_support_instruction(statement_text):
             statement_text = captured
         if support and parser.support_is_instruction_only(support):
@@ -701,10 +812,8 @@ def build_record(
                 part for part in ("\n\n".join(support.get("paragraphs", [])), statement_text) if part
             ).strip()
             support = None
-        if support:
+        if support and not inline_payload_appended:
             statement_text = parser.strip_statement_support_preamble(statement_text, True)
-        else:
-            support = None
 
     if support and not statement_text.strip():
         recovered_statement, recovered_support = recover_statement_from_support(support, parser)
@@ -969,6 +1078,64 @@ VISUAL_PAGE_OVERRIDES: dict[str, int] = {
     "preview_adjectives:q22": 223,
 }
 
+# A small number of source pages in the apostila refer to an artwork that is
+# not embedded in the PDF (or contain more than one candidate image).  These
+# corrections were verified against the corresponding exam publications on
+# the web.  The assets are committed, cropped WebP files; the importer never
+# downloads remote content during a build.
+EXTERNAL_VISUAL_CORRECTIONS: dict[str, dict[str, Any]] = {
+    "preview_reading_epcar:q83": {
+        "assetId": "english-preview/ep-029a154daaf7-preview_reading_epcar-q83-external-epcar-2022.webp",
+        "assetUrl": "/assets/english-preview/ep-029a154daaf7-preview_reading_epcar-q83-external-epcar-2022.webp",
+        "source": "https://raesidecartoon.com/vault/global-warming-climate-change/",
+        "verificationUrl": "https://www.fab.mil.br/ingresso/arquivos/provas/CPCAR_2023_versa%E2%95%A0%C3%A2o_A.pdf",
+        "sourcePage": 4,
+        "crop": {"x": 28.4399985 / 595.32, "y": 92.28000275 / 841.92, "width": 268.3200075 / 595.32, "height": 213.71999325 / 841.92},
+        "width": 537,
+        "height": 427,
+        "hash": "external-epcar-2022-cartoon",
+        "clearsWarnings": ("A questão solicita um elemento visual ausente no PDF; recorte oficial necessário.",),
+    },
+    "preview_adjectives:q25": {
+        "assetId": "english-preview/ep-029a154daaf7-preview_adjectives-q25-external-eear-2022.webp",
+        "assetUrl": "/assets/english-preview/ep-029a154daaf7-preview_adjectives-q25-external-eear-2022.webp",
+        "source": "https://www.grammarly.com/blog/10-interesting-english-facts-guest/",
+        "verificationUrl": "https://ingresso.eear.fab.mil.br/SOO/escolaridade/CFS%202%202022/prova_cfs%202%202022_cod_01.pdf",
+        "sourcePage": 8,
+        "crop": {"x": 46.5 / 595.22, "y": 372.0 / 842.0, "width": 227.27999999999997 / 595.22, "height": 119.27999999999997 / 842.0},
+        "width": 455,
+        "height": 239,
+        "hash": "external-eear-2022-longest-word",
+        "clearsWarnings": ("Há mais de um recorte visual possível na página; atribuição ambígua.",),
+    },
+}
+
+# The original Preview answer key has one malformed entry (E although only
+# A–D are printed).  Independent exam publications identify D as the official
+# answer.  Keeping this correction explicit prevents the importer from ever
+# guessing a key from the question's semantics.
+WEB_QUESTION_CORRECTIONS: dict[str, dict[str, Any]] = {
+    "preview_pronouns_relative:q17": {
+        "correctLetter": "D",
+        "sources": [
+            "https://www.concursosmilitares.com.br/provas-anteriores/aeronautica/afa/afa2013.pdf",
+            "https://mosaiko.com.br/portfolio/pensi/wp-content/uploads/2014/08/gabarito_AFA2013_ingles.pdf",
+        ],
+        "originalAnswer": "E",
+    },
+}
+
+# The Numbers section's question 19 has a split text layer in the source PDF:
+# the introductory direction is emitted as the command and the actual
+# question is emitted after the quoted support passage. Keep this explicit,
+# evidence-backed repair in the deterministic importer instead of allowing a
+# blank command to reach the studyable corpus.
+MANUAL_RECORD_FIXES: dict[str, dict[str, Any]] = {
+    "preview_numbers:q19": {
+        "statement": "How many numerals appear in the sentence?",
+    },
+}
+
 NEXT_SUPPORT_MARKER_RE = re.compile(
     r"\s+Texto\s+para\s+(?=(?:a|as)\s+quest)",
     re.I,
@@ -997,6 +1164,93 @@ def split_option_support_boundary(options: list[dict[str, Any]], trailing: str) 
         trailing = "\n\n".join(part for part in (support_tail, trailing) if part.strip())
         break
     return cleaned, trailing
+
+
+INLINE_SUPPORT_COMMAND_RE = re.compile(
+    # Keep this deliberately narrow: ``Choose ...: It is ...`` often denotes
+    # fill-in-the-blank content, not a passage.  The boundary splitter is for
+    # reading directions whose wording reliably introduces an excerpt.
+    r"^(?:according|based|read|observe|consider|considere|leia|ap[óo]s\s+a\s+leitura)\b",
+    re.I,
+)
+
+
+TRAILING_SUPPORT_COMMAND_RE = re.compile(
+    r"(?is)(?P<command>(?:According\s+to\s+(?:it|the\s+text|the\s+article|the\s+passage)[^\n]{0,180}"
+    r"|Based\s+on\s+the\s+text[^\n]{0,180}|It\s+is\s+(?:true|false)\s+to\s+say\s+that"
+    r"|The\s+text\s+above\s+can\s+be\s+considered"
+    r"|The\s+(?:word|expression|quotation)\b[^\n]{0,180}"
+    r"|What\s+can\s+be\s+inferred\s+from\s+the\s+text"
+    r"|Which\s+of\s+the\s+following\b[^\n]{0,180}))\s*:?\s*$",
+)
+
+
+def split_inline_reading_payload(statement: str, parser: Any) -> tuple[str, dict[str, Any] | None]:
+    """Separate a long passage that follows a question command and colon.
+
+    A few PDF text layers flatten the support passage into the statement (for
+    example ``... statements are true, EXCEPT: My name is Patrick...``).  Only
+    split when the prefix is a short, recognisable command, the boundary is a
+    colon, and the suffix contains multiple prose sentences.  This keeps
+    ordinary one-line questions intact and never fabricates a passage.
+    """
+    value = statement.replace("\r", "").strip()
+    if len(value) < 180:
+        return statement, None
+    for boundary in re.finditer(r":(?=\s*[A-ZÀ-ÖØ-Þ])", value):
+        prefix = value[: boundary.end()].strip()
+        body = value[boundary.end() :].strip()
+        if not (12 <= len(prefix) <= 220 and len(body) >= 100):
+            continue
+        if not INLINE_SUPPORT_COMMAND_RE.match(prefix):
+            continue
+        # Require an operative command ending before the passage.  This
+        # avoids treating arbitrary prose containing a colon as support.
+        if not re.search(
+            r"\b(?:except|following|below|true|false|correct(?:ly)?|statements?|question|text|passage)\s*:\s*$",
+            prefix,
+            re.I,
+        ):
+            continue
+        if len(re.findall(r"[.!?](?:\s|$)", body)) < 2:
+            continue
+        parsed = parse_support_blocks_with_range(body)
+        if not parsed:
+            parsed = {"paragraphs": [parser.repair_extraction(body)]}
+        elif parsed.get("title"):
+            # Inline payloads have no editorial heading boundary.  The generic
+            # support parser may mistake a wrapped first sentence for a title;
+            # restore it to the prose stream so no words disappear.
+            parsed = {
+                **parsed,
+                "paragraphs": [
+                    " ".join([str(parsed["title"]), *(parsed.get("paragraphs") or [])]).strip()
+                ],
+            }
+            parsed.pop("title", None)
+        parsed["_inlinePayload"] = True
+        return prefix, parsed
+    return statement, None
+
+
+def split_leading_reading_payload(statement: str, parser: Any) -> tuple[str, dict[str, Any] | None]:
+    """Move a passage that precedes a trailing reading command into support."""
+    value = statement.replace("\r", "").strip()
+    if len(value) < 180:
+        return statement, None
+    match = TRAILING_SUPPORT_COMMAND_RE.search(value)
+    if not match or match.start() < 100:
+        return statement, None
+    body = value[: match.start()].strip()
+    command = match.group("command").strip().rstrip(":").strip()
+    if value[match.start() :].rstrip().endswith(":"):
+        command += ":"
+    if len(body) < 80 or len(command) < 12:
+        return statement, None
+    parsed = parse_support_blocks_with_range(body)
+    if not parsed:
+        parsed = {"paragraphs": [parser.repair_extraction(body)]}
+    return command, parsed
 
 
 def recover_statement_from_support(support: dict[str, Any], parser: Any) -> tuple[str, dict[str, Any] | None]:
@@ -1037,6 +1291,17 @@ def support_is_question_payload(support: dict[str, Any] | None) -> bool:
     if re.match(r"^(?:\(\s*\)|[IVX]+\s*[-–—.)]|\d{1,3}\s*[.)])", text, re.I):
         return True
     return bool(re.search(r"\b(?:choose|mark|assinale|marque|indique)\s+(?:the|a|o|a\s+opção|a\s+alternativa)", text, re.I)) and len(text) < 900
+
+
+def support_starts_with_prose_question_word(support: dict[str, Any] | None) -> bool:
+    """Guard against treating a short poem/prose line as a command."""
+    if not support:
+        return False
+    first = str((support.get("paragraphs") or [""])[0]).strip()
+    return bool(
+        re.match(r"^(?:When|Where|Who|Why|How)\b", first, re.I)
+        and not re.search(r"[?:]$", first)
+    )
 
 
 def needs_visual(record: dict[str, Any]) -> bool:
@@ -1216,6 +1481,100 @@ def attach_cropped_media(records: list[dict[str, Any]], pdf_path: Path, pdf_hash
                     record["quality"]["warnings"].append(f"Falha ao gerar recorte visual: {exc}")
 
 
+def attach_external_visual_corrections(records: list[dict[str, Any]]) -> None:
+    """Attach pre-verified crops recovered from the official exam sources.
+
+    Remote pages are recorded as provenance only.  Runtime data always points
+    to a local asset so a release cannot fail because a third-party site is
+    unavailable or changes its HTML.
+    """
+    output_dir = ROOT / "public" / "assets" / "english-preview"
+    for record in records:
+        correction = EXTERNAL_VISUAL_CORRECTIONS.get(assignment_key(record))
+        if not correction or record.get("authorialRemoved"):
+            continue
+        asset_path = ROOT / "public" / "assets" / correction["assetId"]
+        quality = record.setdefault("quality", {})
+        warnings = [
+            warning
+            for warning in quality.get("warnings", [])
+            if warning not in correction.get("clearsWarnings", ())
+        ]
+        if not asset_path.exists():
+            quality["status"] = "quarantined"
+            quality["warnings"] = [*warnings, "Recorte externo verificado não está disponível no pacote de release."]
+            continue
+        record["media"] = [{
+            "id": f"{record['id']}-visual-external",
+            "assetId": correction["assetId"],
+            "assetUrl": correction["assetUrl"],
+            "kind": "figure",
+            "placement": "statement",
+            "page": correction["sourcePage"],
+            "crop": correction["crop"],
+            "width": correction["width"],
+            "height": correction["height"],
+            "mimeType": "image/webp",
+            "altText": f"Recorte visual da questão {record['questionNumber']}",
+            "caption": "Recorte visual da questão",
+            "source": correction["source"],
+            "hash": correction["hash"],
+            "confidence": 0.99,
+        }]
+        provenance = record.setdefault("provenance", {})
+        provenance["externalVisualSource"] = {
+            "url": correction["verificationUrl"],
+            "page": correction["sourcePage"],
+            "assetSource": correction["source"],
+            "method": "official-exam-pdf",
+        }
+        quality["warnings"] = list(dict.fromkeys(warnings))
+        quality["status"] = "verified" if not quality["warnings"] else quality.get("status", "warning")
+        quality.setdefault("fieldConfidence", {})["media"] = {
+            "confidence": 0.99,
+            "method": "independent-pass",
+        }
+
+
+def apply_web_question_corrections(records: list[dict[str, Any]]) -> None:
+    """Apply only corrections backed by an independently published key."""
+    for record in records:
+        correction = WEB_QUESTION_CORRECTIONS.get(assignment_key(record))
+        if not correction or record.get("authorialRemoved"):
+            continue
+        answer = str(correction["correctLetter"]).upper()
+        if not any(option.get("letter") == answer for option in record.get("options", [])):
+            # Keep a malformed correction quarantined rather than hiding a
+            # mismatch in a generated answer key.
+            record.setdefault("quality", {}).setdefault("warnings", []).append(
+                "Correção web não corresponde às alternativas impressas."
+            )
+            record["quality"]["status"] = "quarantined"
+            continue
+        quality = record.setdefault("quality", {})
+        quality["warnings"] = [
+            warning for warning in quality.get("warnings", [])
+            if warning != "Gabarito não possui alternativa correspondente."
+        ]
+        record["correctLetter"] = answer
+        record["options"] = [
+            {**option, "correct": option.get("letter") == answer}
+            for option in record.get("options", [])
+        ]
+        provenance = record.setdefault("provenance", {})
+        provenance["webAnswerCorrection"] = {
+            "originalAnswer": correction.get("originalAnswer"),
+            "correctedAnswer": answer,
+            "sources": correction["sources"],
+            "method": "independent-pass",
+        }
+        quality.setdefault("fieldConfidence", {})["answer"] = {
+            "confidence": 0.99,
+            "method": "independent-pass",
+        }
+        quality["status"] = "verified" if not quality.get("warnings") else "warning"
+
+
 def prune_orphaned_media(records: list[dict[str, Any]]) -> int:
     output_dir = ROOT / "public" / "assets" / "english-preview"
     if not output_dir.exists():
@@ -1291,6 +1650,13 @@ def emit(
     OUT_DATA.parent.mkdir(parents=True, exist_ok=True)
     OUT_DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUT_REPORT.parent.mkdir(parents=True, exist_ok=True)
+    # A support donor can be copied during range backfill after its first
+    # normalization pass.  Normalize once more immediately before emission so
+    # dates, citations and other metadata fragments cannot leak into the body
+    # rendered by the UI.
+    for record in all_records:
+        if record.get("support"):
+            record["support"] = sanitize_support(record["support"])
     records_by_section: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for record in records:
         section_id = str((record.get("provenance") or {}).get("sectionId") or record["subjectId"])
@@ -1341,7 +1707,8 @@ def emit(
             "status": record.get("quality", {}).get("status"),
             "assetIds": [media["assetId"] for media in record.get("media", [])],
             "warnings": record.get("quality", {}).get("warnings", []),
-            "officialSourceRecovered": False,
+            "officialSourceRecovered": bool(record.get("provenance", {}).get("externalVisualSource")),
+            "source": (record.get("provenance", {}).get("externalVisualSource") or {}).get("assetSource"),
         }
         for record in all_records
         if (needs_visual(record) or record.get("media")) and record.get("quality", {}).get("status") != "rejected"
@@ -1412,7 +1779,7 @@ def emit(
         "",
         "## Auditoria de imagens",
         "",
-        "Somente figuras com associação inequívoca foram recortadas. Referências sem ativo no PDF permanecem isoladas; nenhuma fonte externa foi atribuída automaticamente.",
+        "Somente figuras com associação inequívoca foram recortadas. Quando a arte foi recuperada de uma prova publicada, a fonte externa fica registrada na proveniência técnica; a interface mostra apenas a legenda curta.",
         "",
         "| Questão | Página | Estado | Ativo | Motivo |",
         "| --- | ---: | --- | --- | --- |",
@@ -1438,11 +1805,17 @@ def main() -> None:
     answers, answer_duplicates = parse_answer_keys(reader)
     all_records, sections = parse_groups(reader, parser, answers, pdf_hash)
     reconciliation = validate_editorial_totals(reader, all_records, sections, answers, answer_duplicates)
+    apply_manual_record_fixes(all_records)
     authorial_removed = remove_authorial_questions(all_records)
     expected = reconciliation["declared"]["questions"]
     for record in all_records:
         record["provenance"]["sourceDocumentHash"] = pdf_hash
     attach_cropped_media(all_records, args.pdf, pdf_hash)
+    # Resolve the small set of visual/answer ambiguities only after the local
+    # PDF pass.  This keeps the normal importer offline and makes every web
+    # correction explicit in provenance.
+    attach_external_visual_corrections(all_records)
+    apply_web_question_corrections(all_records)
     published, duplicates = deduplicate(all_records, load_existing_fingerprints())
     # Duplicates remain as provenance rows in the manifest but are removed
     # from the studyable corpus, including their image payloads.  This keeps

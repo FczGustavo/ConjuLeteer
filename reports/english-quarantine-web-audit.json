@@ -1,0 +1,372 @@
+{
+  "status": "passed",
+  "reviewedSources": [
+    {
+      "key": "preview_reading_epcar:q83",
+      "id": "ep-029a154daaf7-preview_reading_epcar-q83",
+      "disposition": "released",
+      "evidence": "Recorte da charge localizado na prova EPCAR publicada; correspondência inequívoca.",
+      "sources": [
+        "https://www.fab.mil.br/ingresso/arquivos/provas/CPCAR_2023_versa%E2%95%A0%C3%A2o_A.pdf",
+        "https://raesidecartoon.com/vault/global-warming-climate-change/"
+      ],
+      "status": "verified",
+      "media": [
+        "english-preview/ep-029a154daaf7-preview_reading_epcar-q83-external-epcar-2022.webp"
+      ]
+    },
+    {
+      "key": "preview_adjectives:q25",
+      "id": "ep-029a154daaf7-preview_adjectives-q25",
+      "disposition": "released",
+      "evidence": "Recorte do material visual da questão 34 localizado na prova EEAR CFS 2/2022.",
+      "sources": [
+        "https://ingresso.eear.fab.mil.br/SOO/escolaridade/CFS%202%202022/prova_cfs%202%202022_cod_01.pdf",
+        "https://www.grammarly.com/blog/10-interesting-english-facts-guest/"
+      ],
+      "status": "verified",
+      "media": [
+        "english-preview/ep-029a154daaf7-preview_adjectives-q25-external-eear-2022.webp"
+      ]
+    },
+    {
+      "key": "preview_pronouns_relative:q17",
+      "id": "ep-029a154daaf7-preview_pronouns_relative-q17",
+      "disposition": "released",
+      "evidence": "Gabarito independente confirma a alternativa D; a alternativa E não existe na prova.",
+      "sources": [
+        "https://www.concursosmilitares.com.br/provas-anteriores/aeronautica/afa/afa2013.pdf",
+        "https://mosaiko.com.br/portfolio/pensi/wp-content/uploads/2014/08/gabarito_AFA2013_ingles.pdf"
+      ],
+      "status": "verified",
+      "media": []
+    }
+  ],
+  "preview": {
+    "resolved": 3,
+    "remainingQuarantined": 45,
+    "remainingAreDuplicates": true,
+    "remaining": [
+      {
+        "id": "ep-029a154daaf7-preview_reading_efomm-q1",
+        "duplicateOf": "english_reading_review-q18",
+        "warnings": [
+          "Duplicata da questão canônica english_reading_review-q18; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_reading_efomm-q4",
+        "duplicateOf": "english_reading_review-q21",
+        "warnings": [
+          "Duplicata da questão canônica english_reading_review-q21; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_reading_efomm-q5",
+        "duplicateOf": "english_reading_review-q22",
+        "warnings": [
+          "Duplicata da questão canônica english_reading_review-q22; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_reading_efomm-q6",
+        "duplicateOf": "english_phrasal_verbs-q14",
+        "warnings": [
+          "Duplicata da questão canônica english_phrasal_verbs-q14; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_reading_efomm-q7",
+        "duplicateOf": "english_idioms_vocabulary-q21",
+        "warnings": [
+          "Duplicata da questão canônica english_idioms_vocabulary-q21; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_reading_ita-q1",
+        "duplicateOf": "english_reading_review-q70",
+        "warnings": [
+          "Duplicata da questão canônica english_reading_review-q70; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_reading_ita-q2",
+        "duplicateOf": "english_reading_review-q71",
+        "warnings": [
+          "Duplicata da questão canônica english_reading_review-q71; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_reading_ita-q3",
+        "duplicateOf": "english_reading_review-q72",
+        "warnings": [
+          "Duplicata da questão canônica english_reading_review-q72; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_articles-q12",
+        "duplicateOf": "english_articles-q21",
+        "warnings": [
+          "Duplicata da questão canônica english_articles-q21; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_possessive-q32",
+        "duplicateOf": "english_pronouns-q18",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q18; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_reflexive-q14",
+        "duplicateOf": "english_pronouns-q17",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q17; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_reflexive-q18",
+        "duplicateOf": "ep-029a154daaf7-preview_pronouns_reflexive-q17",
+        "warnings": [
+          "Duplicata da questão canônica ep-029a154daaf7-preview_pronouns_reflexive-q17; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_reflexive-q28",
+        "duplicateOf": "english_pronouns-q55",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q55; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_reflexive-q29",
+        "duplicateOf": "english_pronouns-q60",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q60; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_reflexive-q30",
+        "duplicateOf": "english_pronouns-q54",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q54; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_reflexive-q32",
+        "duplicateOf": "english_pronouns-q51",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q51; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_demonstrative-q32",
+        "duplicateOf": "english_pronouns-q10",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q10; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_indefinite-q23",
+        "duplicateOf": "english_pronouns-q62",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q62; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_indefinite-q24",
+        "duplicateOf": "english_pronouns-q68",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q68; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_indefinite-q25",
+        "duplicateOf": "english_pronouns-q71",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q71; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_indefinite-q27",
+        "duplicateOf": "english_pronouns-q84",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q84; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_pronouns_indefinite-q28",
+        "duplicateOf": "english_pronouns-q85",
+        "warnings": [
+          "Duplicata da questão canônica english_pronouns-q85; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_verbs-q131",
+        "duplicateOf": "english_idioms_vocabulary-q22",
+        "warnings": [
+          "Duplicata da questão canônica english_idioms_vocabulary-q22; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_phrasal_verbs-q14",
+        "duplicateOf": "ep-029a154daaf7-preview_phrasal_verbs-q3",
+        "warnings": [
+          "Duplicata da questão canônica ep-029a154daaf7-preview_phrasal_verbs-q3; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_so_too-q22",
+        "duplicateOf": "english_rejoinders-q1",
+        "warnings": [
+          "Duplicata da questão canônica english_rejoinders-q1; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_so_too-q23",
+        "duplicateOf": "english_rejoinders-q2",
+        "warnings": [
+          "Duplicata da questão canônica english_rejoinders-q2; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_so_too-q24",
+        "duplicateOf": "english_rejoinders-q3",
+        "warnings": [
+          "Duplicata da questão canônica english_rejoinders-q3; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_so_too-q25",
+        "duplicateOf": "english_rejoinders-q4",
+        "warnings": [
+          "Duplicata da questão canônica english_rejoinders-q4; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_so_too-q26",
+        "duplicateOf": "english_rejoinders-q5",
+        "warnings": [
+          "Duplicata da questão canônica english_rejoinders-q5; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_if_clauses-q16",
+        "duplicateOf": "english_conditionals-q43",
+        "warnings": [
+          "Duplicata da questão canônica english_conditionals-q43; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_determiners-q9",
+        "duplicateOf": "english_quantifiers_intensifiers-q1",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q1; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_determiners-q11",
+        "duplicateOf": "english_quantifiers_intensifiers-q5",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q5; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_determiners-q28",
+        "duplicateOf": "english_quantifiers_intensifiers-q13",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q13; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_determiners-q29",
+        "duplicateOf": "english_quantifiers_intensifiers-q14",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q14; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_determiners-q30",
+        "duplicateOf": "english_quantifiers_intensifiers-q24",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q24; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_quantifiers-q8",
+        "duplicateOf": "english_quantifiers_intensifiers-q34",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q34; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_quantifiers-q26",
+        "duplicateOf": "english_quantifiers_intensifiers-q33",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q33; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_quantifiers-q27",
+        "duplicateOf": "english_quantifiers_intensifiers-q2",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q2; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_quantifiers-q28",
+        "duplicateOf": "english_quantifiers_intensifiers-q3",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q3; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_quantifiers-q29",
+        "duplicateOf": "english_quantifiers_intensifiers-q8",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q8; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_quantifiers-q30",
+        "duplicateOf": "english_quantifiers_intensifiers-q9",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q9; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_quantifiers-q33",
+        "duplicateOf": "english_quantifiers_intensifiers-q20",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q20; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_quantifiers-q34",
+        "duplicateOf": "english_quantifiers_intensifiers-q26",
+        "warnings": [
+          "Duplicata da questão canônica english_quantifiers_intensifiers-q26; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_infinitive_gerund-q23",
+        "duplicateOf": "ep-029a154daaf7-preview_verbs-q165",
+        "warnings": [
+          "Duplicata da questão canônica ep-029a154daaf7-preview_verbs-q165; mantida somente no manifesto."
+        ]
+      },
+      {
+        "id": "ep-029a154daaf7-preview_grammar_classes-q93",
+        "duplicateOf": "ep-029a154daaf7-preview_reading_ita-q105",
+        "warnings": [
+          "Duplicata da questão canônica ep-029a154daaf7-preview_reading_ita-q105; mantida somente no manifesto."
+        ]
+      }
+    ]
+  },
+  "public": {
+    "authorialCompilationRejected": 353,
+    "reason": "Translations são a compilação creditada a Jefferson Celestino da Costa, sem banca/ano de prova.",
+    "source": "https://projetomedicina.com.br/site/attachments/article/295/1500_questoes_ingles_concursos_militares_jefferson_celestino.pdf"
+  }
+}

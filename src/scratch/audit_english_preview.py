@@ -50,6 +50,8 @@ def main() -> None:
     visual_audit = report.get("visualAudit", [])
     assert visual_audit, "Referências visuais não foram registradas no manifesto"
     assert all(row.get("status") == "quarantined" for row in visual_audit if not row.get("assetIds"))
+    assert not [row for row in visual_audit if not row.get("assetIds")], "Há referência visual sem recorte após a revisão web"
+    assert sum(1 for row in visual_audit if row.get("officialSourceRecovered")) == 2
     assert all(row.get("provenance", {}).get("questionPage") for row in rows)
     assert all(row.get("provenance", {}).get("answerPage") for row in rows)
     for row in rows:

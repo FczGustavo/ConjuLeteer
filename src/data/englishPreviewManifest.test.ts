@@ -31,12 +31,12 @@ describe('Inglês Preview audit manifest', () => {
   });
 
   it('keeps deduplicated study count separate from the audit total', () => {
-    expect(ENGLISH_PREVIEW_MANIFEST.publishedQuestions).toBe(2163);
+    expect(ENGLISH_PREVIEW_MANIFEST.publishedQuestions).toBe(2166);
     expect(ENGLISH_PREVIEW_MANIFEST.publishedQuestions).toBeLessThan(ENGLISH_PREVIEW_MANIFEST.detectedQuestions);
     expect(ENGLISH_PREVIEW_MANIFEST.duplicateCount).toBeGreaterThan(0);
     expect(ENGLISH_PREVIEW_MANIFEST.quality.quarantined).toBeGreaterThan(0);
-    expect(ENGLISH_PREVIEW_MANIFEST.visualAudit.filter(item => item.assetIds.length > 0)).toHaveLength(62);
-    expect(ENGLISH_PREVIEW_MANIFEST.visualAudit.filter(item => item.assetIds.length === 0)).toHaveLength(2);
+    expect(ENGLISH_PREVIEW_MANIFEST.visualAudit.filter(item => item.assetIds.length > 0)).toHaveLength(64);
+    expect(ENGLISH_PREVIEW_MANIFEST.visualAudit.filter(item => (item.assetIds as readonly string[]).length === 0)).toHaveLength(0);
   });
 
   it('loads only publishable records from isolated, lazy section modules', async () => {
@@ -50,5 +50,29 @@ describe('Inglês Preview audit manifest', () => {
     expect(questions.every(question => !question.authorialRemoved)).toBe(true);
     expect(questions.every(question => question.options.length === 4 || question.options.length === 5)).toBe(true);
     expect(questions.flatMap(question => question.media ?? []).every(media => media.caption === 'Recorte visual da questão' && !media.caption.includes('.pdf'))).toBe(true);
+  });
+
+  it('publishes web-verified quarantine corrections with local crops', async () => {
+    const { loadEnglishPreviewQuestions } = await import('./englishPreviewQuestionBank');
+    const questions = await loadEnglishPreviewQuestions();
+    const byId = new Map(questions.map(question => [question.id, question]));
+    const epcar = byId.get('ep-029a154daaf7-preview_reading_epcar-q83');
+    const eear = byId.get('ep-029a154daaf7-preview_adjectives-q25');
+    const afa = byId.get('ep-029a154daaf7-preview_pronouns_relative-q17');
+    expect(epcar?.quality?.status).toBe('verified');
+    expect(epcar?.media?.[0]?.source).toContain('raesidecartoon.com');
+    expect(eear?.quality?.status).toBe('verified');
+    expect(eear?.media?.[0]?.source).toContain('grammarly.com');
+    expect(afa?.correctLetter).toBe('D');
+    expect(afa?.quality?.status).toBe('verified');
+  });
+
+  it('preserves the question command when the PDF splits it from the quoted support', async () => {
+    const { loadEnglishPreviewQuestions } = await import('./englishPreviewQuestionBank');
+    const question = (await loadEnglishPreviewQuestions()).find(item => item.id === 'ep-029a154daaf7-preview_numbers-q19');
+    expect(question?.statement).toBe('How many numerals appear in the sentence?');
+    expect(question?.support?.paragraphs.join(' ')).toContain('Mary has two young children');
+    expect(question?.options).toHaveLength(4);
+    expect(question?.correctLetter).toBe('D');
   });
 });

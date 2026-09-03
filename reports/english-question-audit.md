@@ -4,8 +4,8 @@
 - Questões importadas: **1500**
 - Questões com `verified`: **1147**
 - Questões com `warning`: **0**
-- Questões com `quarantined`: **180**
-- Questões autorais removidas (`rejected`): **173**
+- Questões com `quarantined`: **0**
+- Questões autorais removidas (`rejected`): **353**
 - Gabaritos localizados nas páginas 190–196: **1500**
 - Créditos de banca extraídos de cabeçalhos do PDF: **1320**
 - Créditos de seção (sem banca/ano impressos): **180**
@@ -42,7 +42,3 @@
 | Translations | 180 |
 
 Nenhuma inconsistência estrutural foi encontrada.
-
-## Itens isolados por proveniência e direitos autorais
-
-Um total de **180 questões** permanece em quarentena técnica e não é publicado no banco de estudos. Questões autorais são removidas separadamente (`rejected`) e mantidas apenas como posição técnica do manifesto.

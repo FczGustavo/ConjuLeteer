@@ -11,6 +11,7 @@
     "audit:english": "python src/scratch/audit_english_question_bank.py",
     "audit:english-preview": "python src/scratch/audit_english_preview.py",
     "audit:english-corpora": "python src/scratch/audit_english_corpora.py",
+    "audit:english-quarantine-web": "python src/scratch/audit_english_quarantine_web.py",
     "audit:questions": "python src/scratch/audit_question_bank.py",
     "audit:question-report": "python src/scratch/generate_question_audit_report.py",
     "audit:verbs": "node scripts/audit-verbs.cjs",
@@ -20,7 +21,7 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "check:bundle": "node scripts/check-bundle-budget.cjs",
-    "check": "npm run lint && npm run test:coverage && npm run audit:verbs && npm run audit:questions && npm run audit:english && npm run audit:english-preview && npm run audit:english-corpora && npm run audit:normalized && npm run build && npm run check:bundle",
+    "check": "npm run lint && npm run test:coverage && npm run audit:verbs && npm run audit:questions && npm run audit:english && npm run audit:english-preview && npm run audit:english-corpora && npm run audit:english-quarantine-web && npm run audit:normalized && npm run build && npm run check:bundle",
     "preview": "vite preview",
     "start": "tsx server/index.ts"
   },

@@ -22,7 +22,10 @@ export const FormattedExamText: React.FC<{
   const paragraphs = splitReadableBlocks(text, mode, preserveLineBreaks);
 
   return (
-    <div className={`space-y-3 select-text font-sans font-normal break-words [overflow-wrap:anywhere] ${className}`}>
+    <div
+      data-exam-text
+      className={`question-readable-text space-y-3 select-text font-sans font-normal break-words [overflow-wrap:anywhere] ${className}`}
+    >
       {paragraphs.map((p, pIdx) => {
         const readingKind = mode === 'reading' ? classifyReadingBlock(p, pIdx, paragraphs.length) : 'body';
         if (readingKind === 'label') {

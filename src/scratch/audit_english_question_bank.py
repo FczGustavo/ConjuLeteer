@@ -12,6 +12,8 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[2]
 PDF = Path(r"C:\Users\gusta\Downloads\1500 Questões de Inglês para Concursos Militares.pdf")
+if not PDF.exists():
+    PDF = ROOT / "lists" / "1500 Questões de Inglês para Concursos Militares.pdf"
 DATA = ROOT / "src" / "data" / "englishQuestionBank.ts"
 MEDIA_DATA = ROOT / "src" / "data" / "englishQuestionMedia.ts"
 MEDIA_ROOT = ROOT / "public" / "assets" / "questions" / "english"
@@ -230,21 +232,24 @@ def main() -> None:
         assert 2 <= record["provenance"]["questionPage"] <= 189
         assert topic_ranges[subject_id][0] <= record["provenance"]["questionPage"] <= topic_ranges[subject_id][1], record["id"]
         assert 190 <= record["provenance"]["answerPage"] <= 196
-        is_authorial = bool(record.get("authorialRemoved")) or record.get("examMetadata", {}).get("board") == "JFS"
         is_translation = subject_id == "english_translations"
+        # The Translations section is the Jefferson Celestino compilation,
+        # not an official exam source.  Keep this policy explicit in the audit
+        # instead of relying only on the generated flag.
+        is_authorial = (
+            bool(record.get("authorialRemoved"))
+            or record.get("examMetadata", {}).get("board") == "JFS"
+            or is_translation
+        )
         if is_authorial:
             assert record["quality"]["status"] == "rejected", record["id"]
             assert record.get("authorialRemoved") is True, record["id"]
             assert record.get("statement") == "", record["id"]
             assert record.get("options") == [], record["id"]
             continue
-        if is_translation:
-            assert record["quality"]["status"] == "quarantined", record["id"]
-            assert any("Publicação isolada" in warning for warning in record["quality"]["warnings"]), record["id"]
-        else:
-            assert record["quality"]["status"] in {"verified", "warning"}, record["id"]
-            if record["quality"]["status"] == "verified":
-                assert record["quality"]["warnings"] == [], record["id"]
+        assert record["quality"]["status"] in {"verified", "warning"}, record["id"]
+        if record["quality"]["status"] == "verified":
+            assert record["quality"]["warnings"] == [], record["id"]
         metadata = record.get("examMetadata")
         assert isinstance(metadata, dict), f"crédito estruturado ausente: {record['id']}"
         assert metadata.get("board"), f"banca ausente: {record['id']}"

@@ -684,7 +684,10 @@ def support_is_instruction_only(support: dict) -> bool:
         return True
     return all(
         is_instruction(paragraph)
-        or re.match(r"^(?:[IVX]+|\d{1,3})[.)]?\s", paragraph, re.I)
+        # Require an explicit list separator.  Without it, ordinary prose or
+        # lyrics beginning with ``I`` (for example ``I wouldn't call myself``)
+        # was incorrectly classified as an instruction-only block.
+        or re.match(r"^(?:[IVX]+|\d{1,3})\s*[-–—.)]\s+", paragraph, re.I)
         for paragraph in paragraphs
     )
 
@@ -1198,8 +1201,12 @@ def validate_and_attach(records: list[dict], answers: dict[tuple[str, int], str]
             for option in record["options"]
         ]
         board_text = str(record.get("examMetadata", {}).get("board") or record.get("banca") or "")
-        is_authorial = bool(AUTHORIAL_BOARD_RE.search(board_text))
         is_translation = record["subjectId"] == "english_translations"
+        # The final section is explicitly credited to Professor Jefferson
+        # Celestino da Costa in the source publication (and is not an exam
+        # board).  Treat the whole section as authorial so no compilation item
+        # can be mistaken for an official question when its header is generic.
+        is_authorial = bool(AUTHORIAL_BOARD_RE.search(board_text)) or is_translation
         if is_authorial:
             record["authorialRemoved"] = True
             record["removalReason"] = "authorial-content"
@@ -1216,13 +1223,7 @@ def validate_and_attach(records: list[dict], answers: dict[tuple[str, int], str]
             record["support"] = None
             record["emphasisNotes"] = []
             continue
-        if is_translation:
-            warnings.append(
-                "Publicação isolada: o PDF não informa banca/ano e a auditoria localizou frases idênticas em fontes lexicográficas de terceiros."
-            )
-            record["quality"] = {"status": "quarantined", "warnings": warnings}
-        else:
-            record["quality"] = {"status": "warning" if warnings else "verified", "warnings": warnings}
+        record["quality"] = {"status": "warning" if warnings else "verified", "warnings": warnings}
         normalize_question_blanks_and_statements(record)
         # Restore the visual spans only after structural validation so a
         # missing source target can never be hidden by the quality reset above.
