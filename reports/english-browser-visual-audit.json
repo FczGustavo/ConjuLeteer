@@ -15,9 +15,9 @@
   },
   "supportBlocks": {
     "rendered": 980,
-    "withTitle": 590,
-    "withAuthor": 52,
-    "withSource": 614
+    "withTitle": 593,
+    "withAuthor": 66,
+    "withSource": 613
   },
   "media": {
     "renderedDescriptors": 87,
@@ -44,6 +44,14 @@
     {
       "id": "ep-029a154daaf7-preview_reading_epcar-q47",
       "repair": "título incorporado separado do primeiro parágrafo"
+    },
+    {
+      "id": "ep-029a154daaf7-preview_reading_efomm-q22",
+      "repair": "manchete e autoria parentética separadas do corpo; ponto final terminal removido do título"
+    },
+    {
+      "id": "ep-029a154daaf7-preview_reading_efomm-q24",
+      "repair": "texto de apoio compartilhado EFOMM 2015 (questões 22–24) restaurado e comando mantido no enunciado"
     }
   ],
   "qualityGate": "passed"

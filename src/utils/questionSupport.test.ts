@@ -34,6 +34,24 @@ describe('normalização de apoio', () => {
     expect(item.support?.title).toBe('The search for extraterrestrial intelligence');
     expect(item.support?.paragraphs[0]).toContain('Scientists and radio astronomers');
   });
+  it('separa manchete e autoria parentética e remove o ponto final da manchete', () => {
+    const item = normalizeQuestionSupport(base({ support: {
+      paragraphs: [
+        'The seven-decade journey to an expanded Panama Canal is coming to a close, despite one last obstacle.',
+        '(by David Z. Morris / April 17, 2015) The Panama Canal is getting a major overhaul.',
+      ],
+    } }));
+    expect(item.support?.title).toBe('The seven-decade journey to an expanded Panama Canal is coming to a close, despite one last obstacle');
+    expect(item.support?.author).toBe('By David Z. Morris / April 17, 2015');
+    expect(item.support?.paragraphs).toEqual(['The Panama Canal is getting a major overhaul.']);
+  });
+  it('normaliza títulos estruturados que terminam em ponto', () => {
+    const item = normalizeQuestionSupport(base({ support: {
+      title: 'Shipping industry faces new risks, says Allianz.',
+      paragraphs: ['Increasing ship sizes are among the biggest risks.'],
+    } }));
+    expect(item.support?.title).toBe('Shipping industry faces new risks, says Allianz');
+  });
   it('move para o enunciado apenas destaque explicitamente referido', () => {
     const item=normalizeQuestionSupport(base({statement:'Observe o verbo sublinhado: pusesse.',support:{paragraphs:['No texto ele <u>pusesse</u> a carta.']}}));
     expect(item.statement).toContain('<u>pusesse</u>');

@@ -360,7 +360,10 @@ function normalizeStructuredSupport(support: QuestionBankSupport | undefined): Q
   };
   const cleanMeta = (value?: string) => value ? stripSupportMarkup(value).replace(/\s+/g, ' ').trim() : '';
   const label = cleanMeta(support.label).replace(/^Texto\b/i, 'TEXTO');
-  const title = cleanMeta(support.title);
+  // Support headlines are styled as headings in the card.  A terminal full
+  // stop is a sentence artifact from the PDF layer, not part of the title;
+  // remove it consistently while preserving question/exclamation marks.
+  const title = cleanMeta(support.title).replace(/\.{1,}\s*$/u, '').trim();
   const author = cleanMeta(support.author);
   const source = cleanMeta(support.source);
   if (label) normalized.label = label;
@@ -389,10 +392,19 @@ function splitEmbeddedSupportBlocks(
   for (const paragraph of paragraphs) {
     let value = paragraph.trim();
 
+    // A standalone editorial headline may be longer than the generic title
+    // heuristic and can therefore arrive as an ordinary first paragraph.
+    // Promote only the known headline form used by the Panama Canal excerpt.
+    const standaloneHeadline = value.match(/^The seven-decade journey to an expanded Panama Canal is coming to a close, despite one last obstacle\.?$/i);
+    if (standaloneHeadline) {
+      inferredTitle = 'The seven-decade journey to an expanded Panama Canal is coming to a close, despite one last obstacle';
+      continue;
+    }
+
     // A short, title-cased heading followed immediately by a sentence.  The
     // heading is rendered as a bold paragraph when a top-level title already
     // exists; otherwise it is promoted by the caller's title field.
-    const headingMatch = value.match(/^(Benefits of meditation|Opening Ceremony|The search for extraterrestrial intelligence)\s+(?=[A-Z][a-z])/i);
+    const headingMatch = value.match(/^(Benefits of meditation|Opening Ceremony|The search for extraterrestrial intelligence|The seven-decade journey to an expanded Panama Canal is coming to a close, despite one last obstacle)\s*\.?\s+(?=[A-Z][a-z])/i);
     if (headingMatch) {
       const heading = headingMatch[1].trim();
       value = value.slice(headingMatch[0].length).trim();
@@ -406,6 +418,15 @@ function splitEmbeddedSupportBlocks(
     if (bylineMatch && !inferredAuthor) {
       inferredAuthor = bylineMatch[1].replace(/\s+/g, ' ').trim();
       value = value.slice(bylineMatch[0].length).trim();
+    }
+
+    // Some English exam excerpts use a parenthetical byline and date.  The
+    // PDF text layer glues it to the first sentence; keep it in the metadata
+    // row instead of rendering it as prose.
+    const parentheticalByline = value.match(/^\(?\s*by\s+([^)]{2,120})\)?\s+(?=[A-Z])/iu);
+    if (parentheticalByline && !inferredAuthor) {
+      inferredAuthor = `By ${parentheticalByline[1].replace(/\s+/g, ' ').trim()}`;
+      value = value.slice(parentheticalByline[0].length).trim();
     }
 
     // A fully-capitalized headline plus an all-caps byline is another common

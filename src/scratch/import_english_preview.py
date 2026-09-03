@@ -167,6 +167,11 @@ RANGE_HEADER_RE = re.compile(
     re.I,
 )
 
+PANAMA_HEADLINE_RE = re.compile(
+    r"^The seven-decade journey to an expanded Panama Canal is coming to a close, despite one last obstacle\.?$",
+    re.I,
+)
+
 
 def is_support_title_candidate(value: str) -> bool:
     """Conservatively identify a heading without stealing the first prose line.
@@ -178,7 +183,7 @@ def is_support_title_candidate(value: str) -> bool:
     (for example ``Shipping industry faces new risks, says Allianz.``).
     """
     text = value.strip()
-    if not text or len(text) > 140 or len(text.split()) > 16:
+    if not text or len(text) > 140 or len(text.split()) > 24:
         return False
     if SUPPORT_LIST_ITEM_RE.match(text):
         return False
@@ -203,6 +208,11 @@ def is_support_heading_line(lines: list[str]) -> bool:
     if SUPPORT_LIST_ITEM_RE.match(first):
         return False
     following_lines = [line.strip() for line in lines[1:4] if line.strip()]
+    # The Panama Canal headline is wrapped after ``is`` in the PDF text
+    # layer.  Recognise the complete joined headline before the generic
+    # lowercase-continuation guard so the wrapper extender can promote it.
+    if following_lines and PANAMA_HEADLINE_RE.fullmatch(f"{first} {following_lines[0]}"):
+        return True
     if not re.search(r"[.!?;:,/]", first):
         # Even punctuation-free candidates can be wrapped prose.  A lowercase
         # continuation is strong evidence that the first line is not a title.
@@ -213,6 +223,11 @@ def is_support_heading_line(lines: list[str]) -> bool:
         return False
     if len(lines) < 2:
         return False
+    # Editorial headlines in the EFOMM material can be a full sentence and
+    # are followed by a parenthetical byline.  The byline is a strong visual
+    # boundary even when the headline ends with a period.
+    if following_lines and re.match(r"^\(?\s*by\b", following_lines[0], re.I):
+        return True
     # A wrapped PDF line can be only 50–70 characters wide.  Inspect the
     # first few physical lines as one prose sample rather than requiring the
     # first line alone to reach the threshold.
@@ -227,6 +242,11 @@ def is_support_heading_line(lines: list[str]) -> bool:
     )
 
 
+def clean_support_title(value: str) -> str:
+    """Keep support headlines typographically clean (no terminal full stop)."""
+    return re.sub(r"\.{1,}\s*$", "", value.strip()).strip()
+
+
 def extend_wrapped_support_title(title: str | None, lines: list[str]) -> str | None:
     """Join a heading split at a PDF line boundary (``... authorities in``)."""
     if not title or not lines:
@@ -234,7 +254,7 @@ def extend_wrapped_support_title(title: str | None, lines: list[str]) -> str | N
     # A continuation is most reliable when the first line ends in a
     # connector/preposition and the next line is a short, punctuation-free
     # fragment.  Do not join ordinary prose sentences.
-    if not re.search(r"\b(?:a|an|and|at|by|for|from|in|of|on|the|to|with)$", title, re.I):
+    if not re.search(r"\b(?:a|an|and|at|by|for|from|in|is|of|on|the|to|with)$", title, re.I):
         return title
     candidate = f"{title} {lines[0]}".strip()
     if is_support_title_candidate(candidate):
@@ -346,8 +366,8 @@ def parse_support_blocks_with_range(raw_text: str) -> dict[str, Any] | None:
             source = b_lines.pop(-2) + " " + b_lines.pop(-1)
             
         if is_support_heading_line(b_lines) and not bool(SOURCE_RE.search(b_lines[0])):
-            title = b_lines.pop(0)
-            title = extend_wrapped_support_title(title, b_lines)
+            title = clean_support_title(b_lines.pop(0))
+            title = clean_support_title(extend_wrapped_support_title(title, b_lines) or title)
             
         paras = []
         cur_para = []
@@ -389,8 +409,8 @@ def parse_support_blocks_with_range(raw_text: str) -> dict[str, Any] | None:
             if len(b_lines) > 1 and (SOURCE_RE.search(b_lines[-1]) or (b_lines[-1].startswith("(") and b_lines[-1].endswith(")"))):
                 extract_source = b_lines.pop()
             if is_support_heading_line(b_lines):
-                extract_title = b_lines.pop(0)
-                extract_title = extend_wrapped_support_title(extract_title, b_lines)
+                extract_title = clean_support_title(b_lines.pop(0))
+                extract_title = clean_support_title(extend_wrapped_support_title(extract_title, b_lines) or extract_title)
             
             paras = []
             cur_para = []
@@ -442,12 +462,12 @@ def sanitize_support(support: dict[str, Any] | None) -> dict[str, Any] | None:
     if not support:
         return None
     cleaned: dict[str, Any] = {key: value for key, value in support.items() if key == "_range"}
-    raw_title = str(support.get("title") or "").strip()
+    raw_title = clean_support_title(str(support.get("title") or "").strip())
     has_extract_markers = any(EXTRACT_MARKER_RE.match(str(part)) for part in support.get("paragraphs") or [])
     title_candidates = [part.strip() for part in re.split(r"\s+/\s+", raw_title) if part.strip()] if has_extract_markers else [raw_title]
     title_candidates = [part for part in title_candidates if part]
     if title_candidates:
-        cleaned["title"] = title_candidates[0]
+        cleaned["title"] = clean_support_title(title_candidates[0])
     for key in ("label", "author"):
         value = str(support.get(key) or "").strip()
         if not value:
@@ -498,6 +518,16 @@ def sanitize_support(support: dict[str, Any] | None) -> dict[str, Any] | None:
             add_sources(value.strip("() "))
             continue
         if value and not REDUNDANT_SUPPORT_RE.fullmatch(value):
+            # A parenthetical byline is often glued to the first body
+            # sentence (``(by Author / date) The article ...``).  Keep the
+            # attribution in the metadata row and leave only the article in
+            # the readable paragraph stream.
+            byline = re.match(r"^\(?\s*by\s+([^)]{2,120})\)?\s+(?=[A-ZÀ-ÖØ-Þ])", value, re.I)
+            if byline and not cleaned.get("author"):
+                cleaned["author"] = f"By {re.sub(r'\s+', ' ', byline.group(1)).strip()}"
+                value = value[byline.end():].strip()
+                if not value:
+                    continue
             if re.match(r"^\s*[<]?\s*(?:Adapted\s+from|Fragment\s+taken\s+from|(?:Source|Fonte)\s*:|Available|Dispon[íi]vel|https?://|www\.)", value, re.I):
                 add_sources(value)
                 continue
@@ -1246,6 +1276,17 @@ def split_leading_reading_payload(statement: str, parser: Any) -> tuple[str, dic
     if value[match.start() :].rstrip().endswith(":"):
         command += ":"
     if len(body) < 80 or len(command) < 12:
+        return statement, None
+    # A shared passage is already carried by ``active_support`` for this
+    # question.  In that layout, a short quoted context such as
+    # ``In lines 1–2 ... the word in bold`` is part of the command, not a
+    # second support card.  Returning no split here preserves the complete
+    # prompt while allowing the shared excerpt to remain attached.
+    if re.match(r"^(?:In|On)\s+lines?\b", body, re.I) or re.search(
+        r"\b(?:word|expression)\s+in\s+(?:bold|italics?|underline)|\bunderlined\s+word\b",
+        body,
+        re.I,
+    ):
         return statement, None
     parsed = parse_support_blocks_with_range(body)
     if not parsed:

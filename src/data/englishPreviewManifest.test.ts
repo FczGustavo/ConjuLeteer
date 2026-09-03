@@ -39,6 +39,15 @@ describe('Inglês Preview audit manifest', () => {
     expect(ENGLISH_PREVIEW_MANIFEST.visualAudit.filter(item => (item.assetIds as readonly string[]).length === 0)).toHaveLength(0);
   });
 
+  it('keeps support headlines clean across the published Preview corpus', async () => {
+    const { loadEnglishPreviewQuestions } = await import('./englishPreviewQuestionBank');
+    const questions = await loadEnglishPreviewQuestions();
+    expect(questions
+      .map(question => question.support?.title)
+      .filter((title): title is string => Boolean(title))
+      .every(title => !/\.{1,}\s*$/.test(title))).toBe(true);
+  });
+
   it('loads only publishable records from isolated, lazy section modules', async () => {
     const { loadEnglishPreviewQuestions } = await import('./englishPreviewQuestionBank');
     const questions = await loadEnglishPreviewQuestions();
@@ -74,5 +83,19 @@ describe('Inglês Preview audit manifest', () => {
     expect(question?.support?.paragraphs.join(' ')).toContain('Mary has two young children');
     expect(question?.options).toHaveLength(4);
     expect(question?.correctLetter).toBe('D');
+  });
+
+  it('keeps the EFOMM 2015 shared passage on questions 22–24', async () => {
+    const { loadEnglishPreviewQuestions } = await import('./englishPreviewQuestionBank');
+    const questions = await loadEnglishPreviewQuestions();
+    const efomm = questions.filter(item => item.provenance?.sectionId === 'preview_reading_efomm');
+    const q22 = efomm.find(item => item.questionNumber === 22);
+    const q24 = efomm.find(item => item.questionNumber === 24);
+    expect(q22?.support?.title).toBe('The seven-decade journey to an expanded Panama Canal is coming to a close, despite one last obstacle');
+    expect(q22?.support?.author).toBe('By David Z. Morris / April 17, 2015');
+    expect(q24?.support?.title).toBe(q22?.support?.title);
+    expect(q24?.support?.paragraphs.join(' ')).toContain('The Panama Canal is getting a major overhaul');
+    expect(q24?.statement).toContain('In lines 1');
+    expect(q24?.statement).toContain('the word is not correctly formed');
   });
 });

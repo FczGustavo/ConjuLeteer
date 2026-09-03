@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-09-03T05:11:39.556Z",
+  "generatedAt": "2026-09-03T13:00:11.303Z",
   "questions": 2031,
-  "changed": 432,
+  "changed": 447,
   "changes": [
+    {
+      "id": "fonetica-pdf_1_fonetica-q13",
+      "fields": [
+        "support"
+      ]
+    },
     {
       "id": "fonetica-pdf_1_fonetica-q41",
       "fields": [
@@ -16,6 +22,12 @@
       ]
     },
     {
+      "id": "acentuacao-pdf_2_acentuacao-q5",
+      "fields": [
+        "support"
+      ]
+    },
+    {
       "id": "acentuacao-pdf_2_acentuacao-q7",
       "fields": [
         "support"
@@ -23,6 +35,12 @@
     },
     {
       "id": "acentuacao-pdf_2_acentuacao-q11",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "acentuacao-pdf_2_acentuacao-q14",
       "fields": [
         "support"
       ]
@@ -90,7 +108,19 @@
       ]
     },
     {
+      "id": "formacao-pdf_3_formacao-q31",
+      "fields": [
+        "support"
+      ]
+    },
+    {
       "id": "formacao-pdf_3_formacao-q32",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "formacao-pdf_3_formacao-q37",
       "fields": [
         "support"
       ]
@@ -156,6 +186,12 @@
       ]
     },
     {
+      "id": "formacao-pdf_3_formacao-q89",
+      "fields": [
+        "support"
+      ]
+    },
+    {
       "id": "formacao-pdf_3_formacao-q90",
       "fields": [
         "support"
@@ -186,6 +222,30 @@
       ]
     },
     {
+      "id": "classes_var-pdf_4_classes_var-q42",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q43",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q44",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "classes_var-pdf_4_classes_var-q45",
+      "fields": [
+        "support"
+      ]
+    },
+    {
       "id": "classes_var-pdf_4_classes_var-q46",
       "fields": [
         "support"
@@ -193,6 +253,18 @@
     },
     {
       "id": "classes_var-pdf_4_classes_var-q54",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q5",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "pronomes-pdf_6_pronomes-q6",
       "fields": [
         "support"
       ]
@@ -242,6 +314,12 @@
       ]
     },
     {
+      "id": "verbos-pdf_7-q7",
+      "fields": [
+        "support"
+      ]
+    },
+    {
       "id": "verbos-pdf_7-q12",
       "fields": [
         "support"
@@ -269,6 +347,12 @@
     },
     {
       "id": "verbos-pdf_7-q47",
+      "fields": [
+        "support"
+      ]
+    },
+    {
+      "id": "verbos-pdf_7-q78",
       "fields": [
         "support"
       ]
@@ -756,6 +840,12 @@
       "fields": [
         "support",
         "quality"
+      ]
+    },
+    {
+      "id": "english_subjunctive_imperative_infinitive_gerund-q9",
+      "fields": [
+        "support"
       ]
     },
     {
